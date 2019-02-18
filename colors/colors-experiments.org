@@ -1,0 +1,454 @@
+* Colors Experiments
+
+#+name: session_init
+#+BEGIN_SRC python :results output :session session_init
+  import spacy
+  import pandas as pd
+  from nltk.corpus import wordnet as wn
+  import nltk
+  import matplotlib.pyplot as plt
+  import re
+  nlp = spacy.load('en_core_web_lg')
+  dalloway = open('dalloway.txt', errors="ignore").read()
+#+END_SRC
+
+Warning (python): Your ‘python-shell-interpreter’ doesn’t seem to support readline, yet ‘python-shell-completion-native-enable’ was t and "python" is not part of the ‘python-shell-completion-native-disabled-interpreters’ list.  Native completions have been disabled locally. 
+
+#+RESULTS: session_init
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+:   File "/run/user/1000/babel-Bvqa8W/python-vC1e0V", line 2, in <module>
+:     import pandas as pd
+: ModuleNotFoundError: No module named 'pandas'
+
+** WordNet Color Searches
+Start by creating a dictionary for color values from WordNet. This will be a simple lexical approach, but good as a first experiment.
+
+#+BEGIN_SRC python :results output :session session_init
+  # Do this first
+  # nltk.download('wordnet')
+
+for synset in wn.synsets('blue'): 
+  print(synset.definition())
+#+END_SRC
+
+#+RESULTS:
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+:   File "/tmp/babel-rPen9X/python-GkgIRP", line 4, in <module>
+:     for synset in wn.synsets('blue'): 
+: NameError: name 'wn' is not defined
+
+Navigate the WordNet hierarchy, up to colors, and then get all hyponyms of colors, and all of their hyponyms, and all associated lemma. 
+
+#+BEGIN_SRC python :results output :session session_init
+  blueSyn = wn.synsets('blue')[0]
+  color = blueSyn.hypernyms()[0]
+  colors = color.hyponyms()
+  colorTree = {}
+  for color in colors:   
+    colorLemmas = color.lemmas()
+    colorName = colorLemmas[0].name().replace('_', ' ')
+    # print(dir(color))
+    colorTree[colorName] = [w.name().replace('_',' ') for w in colorLemmas if hasattr(w, 'name')]
+    for lemma in [w.lemmas() for w in color.hyponyms()]:
+       for w in lemma:
+         colorTree[colorName].append(w.name().replace('_',' '))
+  print(colorTree)
+
+#+END_SRC
+
+#+RESULTS:
+: {'blond': ['blond', 'blonde'], 'blue': ['blue', 'blueness', 'azure', 'cerulean', 'sapphire', 'lazuline', 'sky-blue', 'dark blue', 'navy', 'navy blue', 'greenish blue', 'aqua', 'aquamarine', 'turquoise', 'cobalt blue', 'peacock blue', 'powder blue', 'Prussian blue', 'purplish blue', 'royal blue', 'steel blue', 'ultramarine'], 'brown': ['brown', 'brownness', 'chestnut', 'chocolate', 'coffee', 'deep brown', 'umber', 'burnt umber', 'hazel', 'light brown', 'mocha', 'olive brown', 'puce', 'reddish brown', 'sepia', 'burnt sienna', 'Venetian red', 'mahogany', 'taupe', 'Vandyke brown', 'yellowish brown', 'raw sienna', 'buff', 'caramel', 'caramel brown'], 'complementary color': ['complementary color', 'complementary'], 'green': ['green', 'greenness', 'viridity', 'bluish green', 'blue green', 'teal', 'bottle green', 'chrome green', 'emerald', 'greenishness', 'jade green', 'jade', 'olive green', 'olive-green', 'sage green', 'sea green', 'yellow green', 'yellowish green', 'chartreuse', 'Paris green', 'pea green'], 'olive': ['olive', 'olive drab', 'drab'], 'orange': ['orange', 'orangeness', 'reddish orange'], 'pastel': ['pastel'], 'pink': ['pink', 'carnation', 'coral', 'pinkness', 'rose', 'rosiness', 'solferino', 'purplish pink', 'yellowish pink', 'apricot', 'peach', 'salmon pink'], 'purple': ['purple', 'purpleness', 'lavender', 'mauve', 'reddish purple', 'royal purple', 'violet', 'reddish blue'], 'red': ['red', 'redness', 'cardinal', 'carmine', 'cerise', 'cherry', 'cherry red', 'chrome red', 'crimson', 'ruby', 'deep red', 'dark red', 'purplish red', 'purplish-red', 'sanguine', 'scarlet', 'vermilion', 'orange red', 'Turkey red', 'alizarine red'], 'salmon': ['salmon'], 'yellow': ['yellow', 'yellowness', 'amber', 'gold', 'brownish yellow', 'canary yellow', 'canary', 'gamboge', 'lemon', 'lemon yellow', 'maize', 'greenish yellow', 'old gold', 'orange yellow', 'saffron', 'pale yellow', 'straw', 'wheat']}
+
+: #+RESULTS:[Synset('chromatic_color.n.01')]
+
+
+I'm sure there are extra colors hiding in there somewhere. But how exactly to look for them is not immediately apparent. Meronyms? Holonyms?
+ 
+#+BEGIN_SRC python :results output :session session_init
+dir(color)
+#+END_SRC
+
+#+RESULTS:
+: ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '__unicode__', '__weakref__', '_all_hypernyms', '_definition', '_examples', '_frame_ids', '_hypernyms', '_instance_hypernyms', '_iter_hypernym_lists', '_lemma_names', '_lemma_pointers', '_lemmas', '_lexname', '_max_depth', '_min_depth', '_name', '_needs_root', '_offset', '_pointers', '_pos', '_related', '_shortest_hypernym_paths', '_wordnet_corpus_reader', 'also_sees', 'attributes', 'causes', 'closure', 'common_hypernyms', 'definition', 'entailments', 'examples', 'frame_ids', 'hypernym_distances', 'hypernym_paths', 'hypernyms', 'hyponyms', 'instance_hypernyms', 'instance_hyponyms', 'jcn_similarity', 'lch_similarity', 'lemma_names', 'lemmas', 'lexname', 'lin_similarity', 'lowest_common_hypernyms', 'max_depth', 'member_holonyms', 'member_meronyms', 'min_depth', 'name', 'offset', 'part_holonyms', 'part_meronyms', 'path_similarity', 'pos', 'region_domains', 'res_similarity', 'root_hypernyms', 'shortest_path_distance', 'similar_tos', 'substance_holonyms', 'substance_meronyms', 'topic_domains', 'tree', 'unicode_repr', 'usage_domains', 'verb_groups', 'wup_similarity']
+
+#+BEGIN_SRC python :results output :session session_init
+dallowayDoc = nlp(dalloway)
+#+END_SRC
+
+#+RESULTS:
+
+Next, get vectors for all of these, go through each word in /Mrs Dalloway/, and check its similarity against those vectors.
+ - Come up with a good similarity score that is discriminating.
+ - Ideally, the vector space shouldn't be the GloVe vectors, but some custom vector space.
+
+
+#+BEGIN_SRC python :results output :session session_init
+  def getContext(doc, i, numContextWords=4):
+    return [doc[i] for i in range(i-numContextWords, i+numContextWords)]
+
+  colorCount = {color: 0 for color, lemmas in colorTree.items()}
+  foundInstances = []
+  for w in dallowayDoc: 
+    for color, lemmas in colorTree.items():
+      if w.lemma_ in lemmas: 
+        colorCount[color] += 1 
+        foundInstances.append(getContext(dallowayDoc, w.i))
+  print(colorCount)
+  print(foundInstances)
+
+
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+{'blond': 0, 'blue': 25, 'brown': 20, 'complementary color': 0, 'green': 29, 'olive': 1, 'orange': 1, 'pastel': 0, 'pink': 71, 'purple': 5, 'red': 35, 'salmon': 8, 'yellow': 39}
+[[of, the, jay, ,, blue, -, green, ,], [jay, ,, blue, -, green, ,, light, ,], [of, the, grey, -, blue, morning, air, ,], [lovely, old, sea-, 
+, green, brooches, in, eighteenth], [a, few, pearls, ;, salmon, on, an, iceblock], [
+, cared, not, a, straw, for, either, of], [., 
+
+, Not, a, straw, ,, she, thought], [,, dressed, in, a, green, mackintosh, coat, .], [hands, were, always, bright, red, ,, as, if], [lilac, ;, and, 
+, carnations, ,, masses, of], [carnations, ,, masses, of, carnations, .,  , There], [.,  , There, were, roses, ;, there, were], [the, 
+, irises, and, roses, and, nodding, tufts], [in, wicker, trays, the, roses, 
+, looked, ;], [dark, and, prim, the, red, carnations, ,, holding], [and, prim, the, red, carnations, ,, holding, their], [their, bowls, ,, tinged, violet, ,, 
+, snow], [pick, sweet, peas, and, roses, after, the, superb], [,, with, its, almost, blue, -, black, sky], [delphiniums, ,, its, 
+, carnations, ,, its, arum], [when, every, flower, --, roses, ,, carnations, ,], [flower, --, roses, ,, carnations, ,, irises, ,], [glows, ;, white, ,, violet, ,, red, ,], [white, ,, violet, ,, red, ,, deep, orange], [,, red, ,, deep, orange, ;, every, flower], [out, ,, over, the, cherry, pie, ,, over], [nosed, ,, 
+, wearing, brown, shoes, and, a], [shabby, overcoat, ,, with, hazel, eyes, which, 
+], [parasols, ;, here, a, green, ,, here, a], [green, ,, here, a, red, 
+, parasol, opened], [with, her, little, 
+, pink, face, pursed, in], [
+, dust, and, the, gold, stoppings, of, innumerable], [or, above, it, ,, lemon, or, pale, grey], [a, bunch, 
+, of, roses, --, into, St.], [Mall, ,, in, the, Green, Park, ,, in], [and, thickening, 
+, from, blue, to, the, green], [from, blue, to, the, green, of, a, hollow], [the, white, and, 
+, blue, ,, barred, with], [,, showing, the, 
+, red, -, brown, cows], [the, 
+, red, -, brown, cows, peacefully, grazing], [like, a, length, of, green, stuff, 
+, with], [a, ceiling, cloth, of, blue, and, pink, smoke], [cloth, of, blue, and, pink, smoke, high, above], [no, mere, matter, of, roses, ,, and, what], [the, loss, of, 
+, roses, .,  , Pity], [spread, out, and, dark, brown, woods, where, 
+], [to, dogs, and, 
+, canaries, ,, above, all], [sounds, ,, of, the, green, lights, ,, of], [There, was, 
+, the, green, linoleum, and, a], [and, laid, her, feathered, yellow, hat, on, the], [off, ,, left, a, ruby, ring, .,  ], [be, wrapped, 
+, in, brown, paper, ), .], [and, down, in, the, pink, evening, light, ,], [
+
+, She, was, wearing, pink, gauze, --, was], [,, seeing, the, delicate, pink, face, of, the], [,, gently, detached, the, green, dress, and, carried], [By, artificial, light, the, green, shone, ,, but], [,, turning, a, little, pink, ,, Could, n't], [pause, ,, collected, the, green, folds, 
+, together], [knife, towards, her, 
+, green, dress, ., 
+
+], [by, side, on, the, blue, sofa, ,, challenged], [;, his, hands, are, red, ;, and, he], [very, young, ;, very, pink, ;, very, bright], [to, the, end, of, green, silk, ,, 
+], [-, coat, with, a, carnation, in, his, buttonhole], [
+, cared, not, a, straw, --, not, a], [straw, --, not, a, straw, (, though, it], [Peter, ,, the, 
+, red, carnation, he, had], [,, the, 
+, red, carnation, he, had, seen], [and, making, her, lips, red, .,  , But], [damned, 
+, proprieties, ,, yellow, dressing, -, gowns], [of, those, 
+, flat, red, houses, with, hanging], [a, 
+, moment, ;, blue, ,, circular, --], [lolloping, away, on, the, green, sea, waves, ,], [
+, like, bunches, of, roses, ,, or, rise], [room, was, bathed, in, yellow, light, and, full], [,, 
+, turning, bright, pink, ;, somehow, contracting], [,, 
+, white, ,, crimson, ), ,, her], [example, ,, the, vivid, green, moss, ., 
+
+], [sitting, there, on, the, green, chair, under, the], [
+, All, the, little, red, and, yellow, flowers], [the, little, red, and, yellow, flowers, were, out], [beneath, him, .,  , Red, flowers, grew, through], [the, snows, ,, and, roses, hang, about, him], [--, the, thick, 
+, red, roses, which, grow], [the, thick, 
+, red, roses, which, grow, on], [
+, it, with, soft, gold, in, pure, good], [richness, ;, the, 
+, greenness, ;, the, civilisation], [most, respectable, ,, had, roses, blooming, 
+, under], [quite, lately, about, ", blue, hydrangeas, ., "], [It, was, seeing, 
+, blue, hydrangeas, that, made], [Edith, or, 
+, Lady, Violet, ,, perhaps, ;], [in, place, ,, with, rose, -, bushes, 
+], [Sally, tearing, off, a, rose, ,, 
+, stopping], [that, 
+, mattered, a, straw, ,, stood, for], [,, with, nothing, but, red, asters, ,, he], [a, 
+, bunch, of, purple, -, heather, ,], [still, the, earth, seemed, green, and, flowery, ;], [she, no, longer, saw, brown, eyes, ,, black], [in, a, tuft, of, blue, smoke, among, the], [had, upright, bristles, of, straw, in, 
+, their], [for, 
+, he, wore, brown, boots, ;, his], [,, eyes, merely, ;, hazel, ,, large, ;], [two, years, from, a, pink, innocent, oval, to], [heat, ,, flickering, a, red, gold, flame, 
+], [,, flickering, a, red, gold, flame, 
+, infinitely], [,, she, corrected, in, red, ink, ;, he], [,, walking, in, a, green, dress, in, a], [Isabel, Pole, in, a, green, dress, walking, in], [", a, 
+, sturdy, red, -, haired, man], [liked, 
+, ices, ,, chocolates, ,, sweet, things], [his, waxed, moustache, ,, coral, tie, -, pin], [the, 
+, blood, -, red, nostrils, .,  ], [the, brute, with, the, red, nostrils, had, won], [
+, and, put, the, roses, in, a, vase], [had, to, buy, the, roses, ,, Rezia, said], [,, arranging, the, 
+, roses, ., 
+
+, So], [presumably, ;, and, the, roses, ,, which, 
+], [Clarissa, Dalloway, laid, her, green, dress, on, her], [the, 
+, wall, of, gold, ,, mounting, minute], [the, wall, 
+, of, gold, that, was, mounting], [,, on, a, 
+, pink, card, ), .], [
+, pencil, on, a, pink, card, ., 
+
+], [walking, hospitals, ,, catching, salmon, ,, begetting, one], [Bradshaw, ,, who, caught, salmon, herself, 
+, and], [,, she, had, caught, salmon, 
+, freely, :], [a, 
+, bunch, of, carnations, and, asking, Miss], [She, took, Hugh, 's, carnations, with, her, angular], [mats, ,, saucers, of, red, fruit, ;, films], [fruit, ;, films, of, brown, 
+, cream, mask], [the, wine, and, the, coffee, (, not, 
+], [the, beauty, of, the, red, 
+, carnations, which], [of, the, red, 
+, carnations, which, Lady, Bruton], [Lady, Bruton, raised, the, carnations, ,, holding, them], [
+, have, had, their, coffee, ,, Lady, Bruton], [so, laid, the, 
+, carnations, down, beside, her], [depth, in, the, 
+, brown, of, his, eyes], [instructed, to, quicken, the, coffee, ., 
+
+, "], [", 
+
+, (, The, coffee, was, very, slow], [waiting, to, bring, the, coffee, until, Mr., Whitbread], [kept, himself, in, the, pink, of, condition, .], [all, 
+, Hugh, 's, carnations, into, the, front], [in, the, hall, taking, yellow, gloves, from, the], [and, 
+, blushed, brick, red, ,, Richard, turned], [and, about, and, the, yellow, butterflies, .,  ], [veil, hung, .,  , Yellow, awnings, trembled, .], [parted, curtains, of, 
+, green, blades, ;, moved], [sky, ;, 
+, the, blue, ,, the, steadfast], [did, n't, care, a, straw, what, became, of], [trust, his, taste, in, gold, ;, any, number], [of, 
+, flowers, ,, roses, ,, orchids, ,], [thought, ,, grasping, his, red, and, white, 
+], [red, and, white, 
+, roses, together, (, a], [thought, ,, crossing, the, Green, Park, and, observing], [as, if, 
+, a, yellow, lamp, were, moved], [out, 
+, flowers, --, roses, ,, red, and], [flowers, --, roses, ,, red, and, white, roses], [,, red, and, white, roses, .,  , (], [ , Clarissa, thought, the, roses, 
+, absolutely, lovely], [", Elizabeth, 
+, turns, pink, .,  , They], [
+, There, were, the, roses, ., 
+
+, "], [,, looking, at, his, roses, .,  , And], [much, more, for, her, roses, than, for, 
+], [but, she, loved, her, roses, (, did, n't], [ , There, were, his, roses, .,  , Her], [Peter, ;, then, these, roses, ;, it, was], [fair, -, haired, ;, blue, -, eyed, ;], [,, sheathed, in, glossy, green, ,, with, buds], [,, observing, her, small, pink, 
+, face, ,], [to, the, Army, and, Navy, Stores, ., 
+
+], [like, a, bar, of, gold, on, the, sea], [into, the, 
+, cool, brown, tobacco, department, of], [of, the, Army, and, Navy, Stores, while, she], [were, the, petticoats, ,, brown, ,, decorous, ,], [that, cake, --, the, pink, one, .,  ], [
+, inches, of, a, chocolate, clair, ., 
+
+], [
+, inches, of, the, chocolate, clair, ,, then], [hat, askew, ,, very, red, in, the, face], [,, glistening, with, 
+, red, and, yellow, varnish], [with, 
+, red, and, yellow, varnish, .,  ], [
+, the, Army, and, Navy, Stores, .,  ], [
+, bone, ,, a, blue, petal, ,, some], [-, white, 
+, or, gold, -, kindled, surface], [now, the, bananas, bright, yellow, ,, now, 
+], [made, the, omnibuses, bright, yellow, ,, seemed, 
+], [
+, watching, the, watery, gold, glow, and, fade], [live, creature, on, the, roses, ,, on, the], [laughing, hint, like, that, gold, spot, which, went], [the, gramophone, with, the, green, trumpet, .,  ], [with, the, jar, of, roses, .,  , None], [watched, Rezia, trimming, the, straw, hat, for, Mrs.], [said, ,, pinning, a, rose, to, one, side], [with, black, bulrushes, and, blue, 
+, swallows, .], [whether, by, moving, the, rose, she, had, improved], [
+, brute, with, the, red, nostrils, was, snuffing], [her, honest, light, -, blue, eyes, fixed, on], [HIM, when, she, saw, blue, 
+, hydrangeas, )], [faces, ;, her, little, pink, face, 
+, showing], [her, !,  , This, blue, envelope, ;, that], [did, n't, care, a, straw, what, people, said], [
+, among, the, hairy, red, chairs, and, ash], [placards, proclaiming, in, huge, red, letters, that, there], [
+, array, herself, in, blue, and, pearls, ,], [dressed, well, too, ;, pink, stockings, ;, pretty], [refined, them, ,, the, yellow, -, blue, evening], [,, the, yellow, -, blue, evening, light, ;], [,, 
+, with, three, purple, ostrich, feathers, in], [and, the, curtains, of, yellow, 
+, chintz, :], [of, bread, ,, 
+, lemons, ,, soup, tureens], [the, soup, ,, the, salmon, ;, the, salmon], [the, salmon, ;, the, salmon, ,, Mrs., Walker], [it, happened, ,, the, salmon, was, always, underdone], [it, was, the, 
+, salmon, that, bothered, Mrs.], [her, ;, in, her, pink, dress, ,, wearing], [., 
+
+, Gently, the, yellow, curtain, with, all], [nervously, and, bought, cheap, pink, flowers, ,, 
+], [way, ,, in, the, pink, dress, ?,  ], [,, and, the, 
+, roses, which, Richard, had], [
+, rigged, up, in, gold, lace, .,  ], [loved, dressing, up, in, gold, lace, 
+, and], [wives, .,  , An, olive, -, skinned, youth], [and, a, silver, -, green, mermaid, 's, dress], [Hutton, (, who, wore, red, socks, ,, his], [side, by, the, 
+, yellow, curtains, .,  ], [she, 
+, with, an, apricot, bloom, of, powder], [own, accord, ,, a, green, frill, ., 
+
+], [
+, deepened, ,, became, blue, ,, beheld, ,], [,, or, made, a, green, grass, mound, on], [your, friend, in, the, red, cloak, who, 
+], [grey, hair, 
+, and, blue, eyes, ,, said], [had, 
+, picked, a, rose, .,  , She], [it, still, ,, a, ruby, ring, which, Marie], [the, curtains, ,, in, red, ., 
+
+, (], [so, lovely, in, her, pink, frock, !,  ]]
+#+end_example
+
+#+BEGIN_SRC python :results output :session session_init
+
+  pd.Series(colorCount).plot(kind='bar')
+  plt.savefig('dalloway-color-cats-1.png')
+  'dalloway-color-cats-1.png'
+
+#+END_SRC
+
+** Adjectives
+Now again, but with only adjectives, so as to eliminate "carnation" and "rose" showing up as colors: 
+
+#+BEGIN_SRC python :results output :session session_init
+
+  colorCount = {color: 0 for color, lemmas in colorTree.items()}
+  foundInstances = []
+  for w in dallowayDoc: 
+    for color, lemmas in colorTree.items():
+      if w.tag_.startswith('J') and w.lemma_ in lemmas: 
+        colorCount[color] += 1 
+        foundInstances.append(getContext(dallowayDoc, w.i))
+  print(colorCount)
+  print(foundInstances)
+
+
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+{'blond': 0, 'blue': 19, 'brown': 11, 'complementary color': 0, 'green': 24, 'olive': 1, 'orange': 0, 'pastel': 0, 'pink': 19, 'purple': 2, 'red': 28, 'salmon': 0, 'yellow': 20}
+[[of, the, jay, ,, blue, -, green, ,], [jay, ,, blue, -, green, ,, light, ,], [of, the, grey, -, blue, morning, air, ,], [lovely, old, sea-, 
+, green, brooches, in, eighteenth], [,, dressed, in, a, green, mackintosh, coat, .], [dark, and, prim, the, red, carnations, ,, holding], [,, with, its, almost, blue, -, black, sky], [white, ,, violet, ,, red, ,, deep, orange], [nosed, ,, 
+, wearing, brown, shoes, and, a], [shabby, overcoat, ,, with, hazel, eyes, which, 
+], [parasols, ;, here, a, green, ,, here, a], [green, ,, here, a, red, 
+, parasol, opened], [with, her, little, 
+, pink, face, pursed, in], [
+, dust, and, the, gold, stoppings, of, innumerable], [and, thickening, 
+, from, blue, to, the, green], [,, showing, the, 
+, red, -, brown, cows], [the, 
+, red, -, brown, cows, peacefully, grazing], [like, a, length, of, green, stuff, 
+, with], [a, ceiling, cloth, of, blue, and, pink, smoke], [cloth, of, blue, and, pink, smoke, high, above], [spread, out, and, dark, brown, woods, where, 
+], [sounds, ,, of, the, green, lights, ,, of], [There, was, 
+, the, green, linoleum, and, a], [and, laid, her, feathered, yellow, hat, on, the], [be, wrapped, 
+, in, brown, paper, ), .], [and, down, in, the, pink, evening, light, ,], [
+
+, She, was, wearing, pink, gauze, --, was], [,, seeing, the, delicate, pink, face, of, the], [,, gently, detached, the, green, dress, and, carried], [By, artificial, light, the, green, shone, ,, but], [pause, ,, collected, the, green, folds, 
+, together], [knife, towards, her, 
+, green, dress, ., 
+
+], [by, side, on, the, blue, sofa, ,, challenged], [;, his, hands, are, red, ;, and, he], [very, young, ;, very, pink, ;, very, bright], [to, the, end, of, green, silk, ,, 
+], [Peter, ,, the, 
+, red, carnation, he, had], [and, making, her, lips, red, .,  , But], [damned, 
+, proprieties, ,, yellow, dressing, -, gowns], [of, those, 
+, flat, red, houses, with, hanging], [a, 
+, moment, ;, blue, ,, circular, --], [lolloping, away, on, the, green, sea, waves, ,], [room, was, bathed, in, yellow, light, and, full], [example, ,, the, vivid, green, moss, ., 
+
+], [sitting, there, on, the, green, chair, under, the], [
+, All, the, little, red, and, yellow, flowers], [the, little, red, and, yellow, flowers, were, out], [beneath, him, .,  , Red, flowers, grew, through], [--, the, thick, 
+, red, roses, which, grow], [quite, lately, about, ", blue, hydrangeas, ., "], [It, was, seeing, 
+, blue, hydrangeas, that, made], [,, with, nothing, but, red, asters, ,, he], [a, 
+, bunch, of, purple, -, heather, ,], [still, the, earth, seemed, green, and, flowery, ;], [she, no, longer, saw, brown, eyes, ,, black], [in, a, tuft, of, blue, smoke, among, the], [for, 
+, he, wore, brown, boots, ;, his], [,, eyes, merely, ;, hazel, ,, large, ;], [two, years, from, a, pink, innocent, oval, to], [heat, ,, flickering, a, red, gold, flame, 
+], [,, flickering, a, red, gold, flame, 
+, infinitely], [,, she, corrected, in, red, ink, ;, he], [,, walking, in, a, green, dress, in, a], [Isabel, Pole, in, a, green, dress, walking, in], [", a, 
+, sturdy, red, -, haired, man], [his, waxed, moustache, ,, coral, tie, -, pin], [the, 
+, blood, -, red, nostrils, .,  ], [the, brute, with, the, red, nostrils, had, won], [Clarissa, Dalloway, laid, her, green, dress, on, her], [,, on, a, 
+, pink, card, ), .], [
+, pencil, on, a, pink, card, ., 
+
+], [mats, ,, saucers, of, red, fruit, ;, films], [fruit, ;, films, of, brown, 
+, cream, mask], [the, beauty, of, the, red, 
+, carnations, which], [in, the, hall, taking, yellow, gloves, from, the], [and, about, and, the, yellow, butterflies, .,  ], [veil, hung, .,  , Yellow, awnings, trembled, .], [parted, curtains, of, 
+, green, blades, ;, moved], [thought, ,, grasping, his, red, and, white, 
+], [as, if, 
+, a, yellow, lamp, were, moved], [flowers, --, roses, ,, red, and, white, roses], [", Elizabeth, 
+, turns, pink, .,  , They], [fair, -, haired, ;, blue, -, eyed, ;], [,, observing, her, small, pink, 
+, face, ,], [into, the, 
+, cool, brown, tobacco, department, of], [were, the, petticoats, ,, brown, ,, decorous, ,], [that, cake, --, the, pink, one, .,  ], [hat, askew, ,, very, red, in, the, face], [,, glistening, with, 
+, red, and, yellow, varnish], [with, 
+, red, and, yellow, varnish, .,  ], [
+, bone, ,, a, blue, petal, ,, some], [now, the, bananas, bright, yellow, ,, now, 
+], [made, the, omnibuses, bright, yellow, ,, seemed, 
+], [laughing, hint, like, that, gold, spot, which, went], [the, gramophone, with, the, green, trumpet, .,  ], [with, black, bulrushes, and, blue, 
+, swallows, .], [
+, brute, with, the, red, nostrils, was, snuffing], [her, honest, light, -, blue, eyes, fixed, on], [faces, ;, her, little, pink, face, 
+, showing], [her, !,  , This, blue, envelope, ;, that], [
+, among, the, hairy, red, chairs, and, ash], [placards, proclaiming, in, huge, red, letters, that, there], [
+, array, herself, in, blue, and, pearls, ,], [dressed, well, too, ;, pink, stockings, ;, pretty], [refined, them, ,, the, yellow, -, blue, evening], [,, the, yellow, -, blue, evening, light, ;], [,, 
+, with, three, purple, ostrich, feathers, in], [and, the, curtains, of, yellow, 
+, chintz, :], [her, ;, in, her, pink, dress, ,, wearing], [., 
+
+, Gently, the, yellow, curtain, with, all], [nervously, and, bought, cheap, pink, flowers, ,, 
+], [way, ,, in, the, pink, dress, ?,  ], [
+, rigged, up, in, gold, lace, .,  ], [loved, dressing, up, in, gold, lace, 
+, and], [wives, .,  , An, olive, -, skinned, youth], [and, a, silver, -, green, mermaid, 's, dress], [Hutton, (, who, wore, red, socks, ,, his], [side, by, the, 
+, yellow, curtains, .,  ], [own, accord, ,, a, green, frill, ., 
+
+], [
+, deepened, ,, became, blue, ,, beheld, ,], [,, or, made, a, green, grass, mound, on], [your, friend, in, the, red, cloak, who, 
+], [grey, hair, 
+, and, blue, eyes, ,, said], [so, lovely, in, her, pink, frock, !,  ]]
+#+end_example
+
+#+BEGIN_SRC python :results file :session session_init
+
+  pd.Series(colorCount).plot(kind='bar')
+  plt.savefig('dalloway-color-cats-1.png')
+  'dalloway-color-cats-1.png'
+
+#+END_SRC
+
+#+RESULTS:
+
+** XKCD Color Mapping
+
+Create new database mapping color to name. 
+
+Color mappings from: https://xkcd.com/color/rgb.txt
+
+#+BEGIN_SRC python :results output :session session_init
+
+  xkcdMapRaw = open('data/xkcd/rgb.txt').readlines()[1:]
+  xkcdMap = {}
+  for line in xkcdMapRaw: 
+    splitLine = line.split('\t') 
+    if len(splitLine) != 3:
+      print('error on: ', splitLine) 
+    else:
+      name, val, _ = line.split('\t')
+      #print(splitLine)
+      xkcdMap[name] = val
+  #print(xkcdMap)
+
+#+END_SRC
+
+#+RESULTS:
+
+
+#+BEGIN_SRC python :results output :session session_init
+  # Borrowed from Textacy: https://chartbeat-labs.github.io/textacy/_modules/textacy/text_utils.html#keyword_in_context
+
+  def keyword_in_context(text, keyword, ignore_case=True,
+                         window_width=50, print_only=True):
+      """
+      Search for ``keyword`` in ``text`` via regular expression, return or print strings
+      spanning ``window_width`` characters before and after each occurrence of keyword.
+
+      Args:
+          text (str): text in which to search for ``keyword``
+          keyword (str): technically, any valid regular expression string should work,
+              but usually this is a single word or short phrase: "spam", "spam and eggs";
+              to account for variations, use regex: "[Ss]pam (and|&) [Ee]ggs?"
+
+              N.B. If keyword contains special characters, be sure to escape them!!!
+          ignore_case (bool): if True, ignore letter case in `keyword` matching
+          window_width (int): number of characters on either side of
+              `keyword` to include as "context"
+          print_only (bool): if True, print out all results with nice
+              formatting; if False, return all (pre, kw, post) matches as generator
+              of raw strings
+
+      Returns:
+          generator(Tuple[str, str, str]), or None
+      """
+      flags = re.IGNORECASE if ignore_case is True else 0
+      if print_only is True:
+          for match in re.finditer(keyword, text, flags=flags):
+              line = '{pre} {kw} {post}'.format(
+                  pre=text[max(0, match.start() - window_width): match.start()].rjust(window_width),
+                  kw=match.group(),
+                  post=text[match.end(): match.end() + window_width].ljust(window_width))
+              print(line)
+      else:
+          return ((text[max(0, match.start() - window_width): match.start()],
+                   match.group(),
+                   text[match.end(): match.end() + window_width])
+                  for match in re.finditer(keyword, text, flags=flags))
+
+
+  #print(keyword_in_context(dalloway, 'blue'))
+#+END_SRC
+
+Maybe will have to roll my own Key Words in Context class. 
+
+** TODO grep for color expressions; use n-grams
+:LOGBOOK:
+CLOCK: [2019-02-13 Wed 19:07]
+:END:
+
+#+BEGIN_SRC python :results output :session session_init
+
+#+END_SRC
+
+#+RESULTS:
+
+** TODO look for  
+** Other color lists
+ - [[http://chir.ag/projects/name-that-color/#B54A64][Name that Color - Chirag Mehta : chir.ag]]
+ - [[https://github.com/Margaret2/pantone-colors/blob/master/pantone-colors-variables.css][pantone-colors/pantone-colors-variables.css at master · Margaret2/pantone-colors]]
+ - Sherman Williams paint chooser can probably be scraped:  https://www.sherwin-williams.com/homeowners/color/find-and-explore-colors/paint-colors-by-family#/color/6082
+But I will not be naive to the problems of these translations of hue to words. 
+
