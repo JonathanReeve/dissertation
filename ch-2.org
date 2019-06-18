@@ -1,0 +1,73 @@
+* According to the writers themselves
+
+To see how the image is a defining element of the writing of this period, we might turn to the writers' definitions, themselves. Of course, we must not be deluded into thinking that the answers to poetry or fiction may be found in the theoretical writings of their creators. This is especially true of the imagists, about whom it has often been noted that they do not always practice what they profess.[Cite] Yet this theory will prove useful. 
+
+Nor should we make the mistake of thinking that this selection of writer-theorists is at all a fair or representative sample, only because they are the most-discussed among literary scholars today. Part of what might contribute to these writers' popularity in academe is the volume of their critical output—they are already analyzing their own works, sometimes before even writing them.  
+
+Some of the sounding-boards for this output—/The Egoist/ for the imagists, for instance—not only provided a place to publish new creative works-in-progress, but provided a forum for these writers to review each others' works, and present thought on the state of the art. The extent to which these journals are closed-circuit coterie publications, or a free marketplace of ideas, is open to debate, although the in-house advertisement in one issue, "NOTICE: the writers that appear in these pages will also appear in the next issue"—points to the former.[Cite]   
+
+** Imagists
+The most obvious examples are the imagists themselves. Brash, showy, and defiant, these young poets at times seemed equally as interested in propagandizing their movement as participating in it. One of their most well-known statements is two short notes in a 1913 issue of /Poetry/, the first by F.S. Flint, and the second by Ezra Pound (cite:flint1913). Flint's begins with the tone of an investigative journalist, hot on the trail of the latest trend: "some curiosity has been aroused concerning /Imagisme/, and as I was unable to find anything definite about it in print, I sought out an /imagiste/, with intent to discover whether the group itself knew anything about the "movement." I gleaned these facts" (198-9). The irony is strong for us, since we know Flint to be an imagist himself, but this would have been lost on most readers of the journal then.
+
+In this short note, Flint names as imagist influences "the best writers of all time,"— Sappho, Catullus, and Villon. An unusual selection, it deserves some discussion. First, the poems of Sappho, a Greek poet whose work survives only in fragments, presents a model, however unintentional, of the imagists's fragmentary brevity. Some of her fragments, if treated as intentionally short poems, would be at home in an imagist anthology. Next, Catullus, as a neoteric poet, is known for his choices of quotidian, rather than epic, subjects, similar to those chosen by imagists. His best known work, known as Catullus 64, is told in an ekphrastic mode—a description of an image—and begins with the lines, here translated by Sir Richard Francis Burton in 1894: "Pine-trees gendered whilome upon soaring Peliac summit / Swam (as the tale is told) through liquid surges of Neptune" (cite:catullus1894). Compare this with H.D.'s "Oread," which Pound cited as an exemplary imagist poem [cite]: "Whirl up, sea— / whirl your pointed pines, / splash your great pines / on our rocks" [cite]. Catullus, who was also inspired by Sappho, was also well-known for his love poems, known as the "Lesbia poems," many of which are unapologetically explicit.[fn::Richard Aldington quotes from one of these poems in the epigraph of "Daisy" (cite:1915some 13)] François Villon, a late medieval balladeer, was similarly unapologetic in his choice of subject: as a criminal, he often wrote of his exploits.
+ 
+Of course, for every similarity between these ancient poets and their 20th Century admirers, there is a dissimilarity—even those that violate the rules which the imagists lay out in their prose writings. Sappho wrote chiefly metrically, even in her works of mixed meter, and Catullus, evoking Sappho, wrote in dactylls, as well. Villon's ballads seem the opposite, in form, of what Flint goes on to describe in the next paragraph. 
+
+Flint goes on to describe, in a much-quoted passage, the "few rules, drawn up for their own satisfaction only," which the imagists had devised: "1. Direct treatment of the 'thing,' whether subjective or objective. 2. To use absolutely no word that did not contribute to the presentation. 3. As regarding rhythm: to compose in sequence of the musical phrase, not in sequence of a metronome" (cite:flint1913 199). 
+
+The first I take to mean, a distorted ekphrastic mode in which there is no permeability between the metaphor and the emotion whose traditional, abstracted designations it illustrates. [more here]
+
+The second describes not only a certain economy of language, but a prohibition of certain categories of words, namely those which have no visual component. /Presentation/ here is antecedent to re-presentation, and recalls forms of presentation in the plastic arts. It also elides agency: presentation is not fabrication, it is merely showing what is already there. This is a realist stance, which minimizes the role of the poet's imagination in the creation of the image.
+
+The third aligns the imagists with the writers of /vers libre/, however weakly or tacitly. This is despite the editor's note to this essay, which is suspiciously insistent that "/Imagism/ is not necessarily associated with Hellenistic subjects, or with /vers libre/ as a prescribed form" (cite:flint1913 198). The imagists here seem more anxious to define themselves as a /new/ movement, in contradistinction to their precursors, that they seem unable to give unqualified admissions of their influences.
+
+The essay that follows Flint's in this issue of /Poetry/ is Ezra Pound's "A Few Don'ts by an Imagiste," an imagist /via negativa,/ in which Pound largely defines the school according to what it is not—in Pound's terms, "Mosaic negative." He first, however, defines an "image" as "that which presents an intellectual and emotional complex in an instant of time." (cite:pound1913 200). This definition of image reveals a temporal component of the imagist conception of the image: an image presents not only an arrangement of objects or words, as a still-life painting might, but a frozen moment—a photograph or a film still, a dynamic scene rendered static. 
+
+Pound goes on to specify that he uses the term "complex" "rather in the technical sense employed by the newer psychologists, such as Hart" (cite:pound1913 200). The British psychologist Bernard Hart, in his work /The Psychology of Insanity/ which appeared the previous year, explains the complex as "a system of connected ideas, with a strong emotional tone, and a tendency to produce actions of a certain definite character" (cite:hart1912psychology 61). (The example Hart gives, coincidentally, is a photography hobby which is driven by a "photography complex" [62].)
+
+As elsewhere in imagist propaganda, Pound defines the movement in terms of other media, and other genres. First, he cautions poets, "don't be descriptive; remember that a painter can describe a landscape much better than you can, and that he has to know a deal more about it" (cite:pound1913 203). It is unclear here whether Pound means that a painting "describes" a landscape, metaphorically, or that a painter, having painted the landscape, can describe it in prose much better than the poet. 
+
+Of course, it is hard for writing, imagist or otherwise, to avoid description in the strict sense of the word, when one of its primary processes is the conversion of visual information into text—a process necessarily involving description. But what Pound seems to mean by "description" here is closer to verbosity, or prosaic, adjective-laden ekphrasis. Yet paradoxically, he does not eschew prose, but aligns himself with it: "Don't retell in mediocre verse what has already been done in good prose. Don't think any intelligent person is going to be deceived when you try to shirk all the difficulties of the unspeakably difficult art of good prose by chopping your composition into line lengths" (cite:pound1913 201-2). [more here] This attention to generic distinctions—and to blurring them—is one which we shall see appear again and again in the writers I discuss below.
+
+Elsewhere in Pound's essay, he repeats Flint's trio of imagist rules: linguistic precision, directness [is that different?], and irregular rhythm. The following year, after Pound's leadership in the group was replaced with Amy Lowell's, she, too, lists rules, but ones that have been modified somewhat, and to which three more have been added. Lowell repeats the goals of rhythmic innovation, and of image "presentation." To this, she adds that "we are not a school of painters, but we believe that poetry should render particulars exactly and not deal in vague generalities" (cite:1915some vii). Here again is an analogy to painting, however, strangely, it is not the modern art of Wyndham Lewis, or the impressionism that inspired early Hulme, that provides the referent, but presumably a genre which values realism.
+
+"Exactitude," to Lowell, may be both a matter of language economy, but may also speak to specificity, and to scale. First, using the exact word might mean that one has hit the target in one shot, and can therefore stop shooting. However, since Lowell goes on to explain that "exact" means not "merely decorative," we can infer that "exact" here means something closer to "utilitarian." But what would be a "decorative" word? "Exact" might also refer to specificity—the hypernym level in the lexical hierarchy: /fir/, rather than /tree/. Specificity, then, is related somewhat to scale: /bough/ instead of /tree/: a meronymic relation.
+
+*** Scale
+"We oppose the cosmic poet," Lowell says, on grounds of imprecision (cite:1915some vii). Imprecision here is a matter of scale. The astronomical scale is one which Lowell considers irrelevant to her, and the imagists' poetic interests. Several months later, in a special issue on imagism in /The Egoist/, Harold Monro accuses the poets of the school as being "so terrified at Cosmicism that they ran away into a kind of exaggerated Microcosmicism, and found their greatest emotional excitement in everything that seemed intensely small" (cite:monro1915 78).
+
+This critique is seemingly confimed by the first poem in the anthology, Richard Aldington's "Childhood," whose central simile is that of a "chrysalis in a match-box" (cite:1915some 3). 
+
+Little things. 
+
+Objects as things of a certain size. 
+ - As against locations.
+
+   
+*** Hardness 
+There are other physical, or physical-seeming properties that Lowell here uses to describe the work in the second imagists anthology. One of the goals of the imagists, she says, is "to produce poetry that is hard and clear, never blurred nor indefinite." 
+ - blurred is a visual metaphor
+ - hard? clear? 
+
+Pound on H.D.: "Hellenic hardness"  
+
+
+** Woolf
+Virginia Woolf was one such writer-critic. A prolific essayist, she published in []. Her essay "The Cinema," although ostensibly discussing the new artistic medium, ends with a discussion of what she knows best: fiction. She is interested here in the interface between the thought and the image, imaginal image and literary image.
+
+"For what characteristics does thought possess which can be rendered visible to the eye without the help of words? It has speed and slowness; dart-like directness and vaporous circumlocution. But it has also an inveterate tendency especially in moments of emotion to make images run side by side with itself, to create a likeness of the thing thought about, as if by so doing it took away its sting, or made it beautiful and comprehensible. In Shakespeare, as everybody knows, the most complex ideas, the most intense emotions form chains of images, through which we pass, however rapidly and completely they change, as up the loops and spirals of a twisting stair." (cite:woolSelectedEssays 252-3)
+
+Here, for Woolf, literary art serializes what thought presents in parallel: it transforms images that "run side by side" into "chains of images." 
+
+Her spiral staircase analogy recalls the gyres of Yeats's "The Second Coming," [timeline?] and the Vorticism of Lewis and Pound. It is at once dizzying and transporting. 
+
+Her example of image-thick writing in Shakespeare appears again in "How Should One Read a Book," of [date?]. But here she elaborates on the quality of the image: 
+
+"reading poetry often seems a state of rhapsody ... and we read on, understanding with the senses, not with the intellect, in a state of intoxication. Yet all this intoxication and intensity of delight depend upon the exactitude and truth of the image, on its being the counterpart of the reality within. Remote and extravagant as some of Shakespeare's images seem, far-fetched and etheral as some of Keats's, at the moment of reading they seem the cap and culmination of the thought; its final expression." (cite:woolSelectedEssays 131-2) 
+
+We hear the echo of the imagists' "precision" here in Woolf's "exactitude and truth." The ambiguity in /truth/, straddling an arrow's true flight and the opposite of a lie, allows Woolf to hint that the literary image should be both representationally accurate to the thought, and mimetically accurate to the real-world referent. Like Eliot's objective correlative, the image corporializes the thought, gives it body.
+
+
+** Joyce
+** H.D. 
+
