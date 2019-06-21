@@ -1,4 +1,6 @@
-* According to the writers themselves
+#+TITLE: Chapter 2: Imagisms
+
+Here, I unpack a series of hypotheses, regarding images in text, as they were conceived at the turn of the twentieth century. 
 
 To see how the image is a defining element of the writing of this period, we might turn to the writers' definitions, themselves. Of course, we must not be deluded into thinking that the answers to poetry or fiction may be found in the theoretical writings of their creators. This is especially true of the imagists, about whom it has often been noted that they do not always practice what they profess.[Cite] Yet this theory will prove useful. 
 
@@ -6,7 +8,7 @@ Nor should we make the mistake of thinking that this selection of writer-theoris
 
 Some of the sounding-boards for this output—/The Egoist/ for the imagists, for instance—not only provided a place to publish new creative works-in-progress, but provided a forum for these writers to review each others' works, and present thought on the state of the art. The extent to which these journals are closed-circuit coterie publications, or a free marketplace of ideas, is open to debate, although the in-house advertisement in one issue, "NOTICE: the writers that appear in these pages will also appear in the next issue"—points to the former.[Cite]   
 
-** Imagists
+* Imagists
 The most obvious examples are the imagists themselves. Brash, showy, and defiant, these young poets at times seemed equally as interested in propagandizing their movement as participating in it. One of their most well-known statements is two short notes in a 1913 issue of /Poetry/, the first by F.S. Flint, and the second by Ezra Pound (cite:flint1913). Flint's begins with the tone of an investigative journalist, hot on the trail of the latest trend: "some curiosity has been aroused concerning /Imagisme/, and as I was unable to find anything definite about it in print, I sought out an /imagiste/, with intent to discover whether the group itself knew anything about the "movement." I gleaned these facts" (198-9). The irony is strong for us, since we know Flint to be an imagist himself, but this would have been lost on most readers of the journal then.
 
 In this short note, Flint names as imagist influences "the best writers of all time,"— Sappho, Catullus, and Villon. An unusual selection, it deserves some discussion. First, the poems of Sappho, a Greek poet whose work survives only in fragments, presents a model, however unintentional, of the imagists's fragmentary brevity. Some of her fragments, if treated as intentionally short poems, would be at home in an imagist anthology. Next, Catullus, as a neoteric poet, is known for his choices of quotidian, rather than epic, subjects, similar to those chosen by imagists. His best known work, known as Catullus 64, is told in an ekphrastic mode—a description of an image—and begins with the lines, here translated by Sir Richard Francis Burton in 1894: "Pine-trees gendered whilome upon soaring Peliac summit / Swam (as the tale is told) through liquid surges of Neptune" (cite:catullus1894). Compare this with H.D.'s "Oread," which Pound cited as an exemplary imagist poem [cite]: "Whirl up, sea— / whirl your pointed pines, / splash your great pines / on our rocks" [cite]. Catullus, who was also inspired by Sappho, was also well-known for his love poems, known as the "Lesbia poems," many of which are unapologetically explicit.[fn::Richard Aldington quotes from one of these poems in the epigraph of "Daisy" (cite:1915some 13)] François Villon, a late medieval balladeer, was similarly unapologetic in his choice of subject: as a criminal, he often wrote of his exploits.
@@ -33,26 +35,86 @@ Elsewhere in Pound's essay, he repeats Flint's trio of imagist rules: linguistic
 
 "Exactitude," to Lowell, may be both a matter of language economy, but may also speak to specificity, and to scale. First, using the exact word might mean that one has hit the target in one shot, and can therefore stop shooting. However, since Lowell goes on to explain that "exact" means not "merely decorative," we can infer that "exact" here means something closer to "utilitarian." But what would be a "decorative" word? "Exact" might also refer to specificity—the hypernym level in the lexical hierarchy: /fir/, rather than /tree/. Specificity, then, is related somewhat to scale: /bough/ instead of /tree/: a meronymic relation.
 
-*** Scale
-"We oppose the cosmic poet," Lowell says, on grounds of imprecision (cite:1915some vii). Imprecision here is a matter of scale. The astronomical scale is one which Lowell considers irrelevant to her, and the imagists' poetic interests. Several months later, in a special issue on imagism in /The Egoist/, Harold Monro accuses the poets of the school as being "so terrified at Cosmicism that they ran away into a kind of exaggerated Microcosmicism, and found their greatest emotional excitement in everything that seemed intensely small" (cite:monro1915 78).
+** Scale
+"We oppose the cosmic poet," Lowell says, on grounds of imprecision (cite:1915some vii). Imprecision here is a matter of scale. The astronomical scale is one which Lowell considers irrelevant to her, and the imagists' poetic interests. Several months later, in a special issue on imagism in /The Egoist/, Harold Monro accuses the poets of the school as being "so terrified at Cosmicism that they ran away into a kind of exaggerated Microcosmicism, and found their greatest emotional excitement in everything that seemed intensely small" (cite:monro1915 78). This critique is seemingly confimed by the first poem in the anthology, Richard Aldington's "Childhood," whose central simile is that of a "chrysalis in a match-box" (cite:1915some 3). Yet, the same poem parodoxically begins on what one might call a cosmic scale: "the wretchedness of childhood / Put me out of love with God. / I can't believe in God's goodness; / I can believe / In many avenging gods." While, in a sense, the speaker of Aldington's poem repudiates the cosmic, he yet engages with it.
 
-This critique is seemingly confimed by the first poem in the anthology, Richard Aldington's "Childhood," whose central simile is that of a "chrysalis in a match-box" (cite:1915some 3). 
+It is an unanswered question whether Aldington, or any of the imagists, are really concerned with small things, whether they only seem so in contrast to prior poets, or whether they are in fact more concerned with the cosmos as their predecessors. An unanswered, perhaps, but not unanswerable.
 
-Little things. 
+Furthermore, we might ask: just how small is small? How do we know what a small object is, and what a big object is? Are they all relative to the size of human body? If so, which human bodies, precisely? When—under what circumstances, and at what sizes—does an object stop becoming an /thing/ and become a collection of things, or a even a /place/? 
 
-Objects as things of a certain size. 
- - As against locations.
+** Other Properties
+There are other physical or visual properties that Lowell here uses to describe the work in the second imagist anthology. One of the goals of the imagists, she says, is "to produce poetry that is hard and clear, never blurred nor indefinite." This word "hard" appears often in imagist rhetoric, and so it bears unpacking. While "hard" is obviously meant to be the opposite of "indefinite," as it is used in phrases like "hard left turn," "hard liquor," or "hard shadow," it also recalls physical properties of objects, like solidity, which Lowell might oppose to ethereality of a concept. Solidity is one of the properties which help to endow objects with objecthood: water and sand are not objects, and do not take indefinite articles, since they do not cohere enough to be handled as such. 
 
-   
-*** Hardness 
-There are other physical, or physical-seeming properties that Lowell here uses to describe the work in the second imagists anthology. One of the goals of the imagists, she says, is "to produce poetry that is hard and clear, never blurred nor indefinite." 
- - blurred is a visual metaphor
- - hard? clear? 
+In 1918, Pound publishes an article in /Poetry/ called "The Hard and Soft in French Poetry" in which he explains these terms somewhat (cite:ezra1954literary 285). I say "somewhat" because his explanation is hardly clear or satisfying: "by 'hardness' I mean a quality which is in poetry nearly always a virtue," he begins, "...by softness I mean an opposite quality which is not always a fault." He continues, puzzingly, "anyone who dislikes these textural terms may lay the blame on Théophile Gautier, who certainly suggests them in /Emaux et Camées/; it is his hardness that I had first in mind. He exorts us to cut in hard substance, the shell and the Parian." He then goes on to name who, in French or, more often, in English poetry, who is "hard" and who is "soft": "since Gautier, Corbière has been hard, not with a glaze or parian finish, but hard like weather-bit granite. ... Romains, Vildrac, Spire, Arcos, are not hard, any one of them" (288). At no point in the essay does he explain himself further. 
 
-Pound on H.D.: "Hellenic hardness"  
+Pound does, however, quote a few lines from Pierre-Joséph Bernard, an erotic poet, "praised by Voltaire," whom he explains has "clear hard little stanzas." The lines are from "l'Art d'aimer":
 
+#+BEGIN_VERSE
+J'au vu Daphné, Terpsichore légère, 
+  Sur un tapis de rose et de fougère,
+  S'abandonner à des bonds pleins d'appas,
+Voler, languir... (cite:ezra1954literary 286)
+#+END_VERSE
 
-** Woolf
+It is hard to see what Pound could identify here as "hard," especially since the form and subject matter are so /légère/. It likely is related to the density, or in Lowell's phrase, "concentration" of the verses. That is, the ratio of images or visual information carried to the syntax that carries them.
+
+Pound uses another term in this essay which Lowell also uses to describe the imagists in her anthology: "clear." The "clear"/"blurred" dichotomy bears some examination. Lowell probably means lexical specificity, but chooses a visual metaphor, where objects are visible when they're focused by the mind's eye. But "clear" can also mean "transparent," or "unclouded"—is this poetic murkiness merely abstraction? And is clarity merely a richness of visual properties which can be inferred from the specificities of certain nouns and select adjectives?
+
+Pound famously derided Edward Storer's poetry as "custard" in comparison with H.D.'s "Hellenic hardness" (quoted in cite:jones2001imagist 22). Indeed, H.D.'s first poem in the second anthology begins, "you are clear, / O rose, cut in rock, / hard as the descent of hail" (cite:1915some 22). It is not a coincidence that Pound's passage of Bernard is densely Hellenic—sculptural, even. Nor indeed that his analogies are to granite and to Parian, the marble used by the Greeks for sculptures. The solidity, hardness, of the marble is what gives it objecthood, and distinguishes it from custard. It is also what makes it an /image/, that is, a word that has definite visual properties.
+
+* In Philosophy
+
+Although Pound never admits it, except in alluding to the "forgotten school" of 1909, one of his great influences, and where precursors of many of these ideas may be found, is in the philosophical writings of T.E. Hulme. His "Notes on Language and Style" was probably written in 1907, although first published posthumously in 1925 (cite:jones2001imagist 224). Here, we find Hulme using "firm" and "solid" as descriptors for the kinds of books he promotes:
+
+#+BEGIN_QUOTE 
+"Rising disgust and impatience with the talking books, e.g. Lilly and the books about Life, Science, and Religion. All the books which seem to be the kind of talk one could do if one wished.
+
+Rather choose those in old leather, which are /solid/. Here the man did not talk, but saw solid, definite things and described them. Solidity a pleasure." (cite:hulme98_selec 39)
+#+END_QUOTE
+
+Hulme contrasts "solidity" with "talk," which seems to support a reading of "hard" as not unsoft, but terse, economical. Unlike Pound, he does not reject description, but seems to see the writing process—at least that of "the man" who writes leatherbound books—as a process which begins with visual experience, is cognitively categorized into "definite things," and ends with description.
+
+"Talk," for Hulme, is language which is abstracted, and at a remove from, sensory experience. He explains this process in mathematical terms: 
+
+#+BEGIN_QUOTE
+"...in algebra, the real things are replaced by symbols. These symbols are manipulated according to certain laws which are independent of their meaning. ... An analogous phenomenon happens in reasoning in language. We replace meaning (i.e. /vision/) by words. These words fall into well-known patterns, i.e. into certain well-known phrases which we accept without thinking of their meaning, just as we do the /x/ in algebra." (cite:hulme98_selec 37)
+#+END_QUOTE
+
+Hulme equates "meaning" with "vision," implying the primacy of visual experiences in the constructions of words. He also attributes clichés to habit and to thinking which takes place at a remove from vision. Later, he draws the distinction between /rhetoric/ and /solid vision/: 
+
+"All emotion depends on real solid vision or sound. It is physical. But in /rhetoric/ and expositional prose we get words divorced from any real vision. Rhetoric and emotion—here the connection is different. So perhaps literary expression is from /Real/ to /Real/ with all the intermediate forms keeping their /real/ value." (38)
+
+His use of "physical" is unusual, given the fantastical, and thus non-physical, nature of fairy-tale beings, but the paradox highlights the importance, for Hulme's poetics, of writing that evokes physical properties, meaning, usually, visual properties, as well: "sun" and "sweat" are not merely emblems, of happiness, hard work, or otherwise, but have discernable sizes, colors, and other visual properties.
+
+Like Pound, he finds that prose is typically more aligned with these criteria than Romantic poetry. 
+
+#+BEGIN_QUOTE 
+The contrast between (i) a firm simple prose, creating in a definite way a fairy story, a story of simple life in the country ... Here we have the microcosm of poetry. The pieces picked out from which it comes. Sun and sweat and all of them. Physical life and death fairies. And (ii) on the other hand, genteel poetry like Shelley's, which refers in elaborate analogies to the things mentioned in (i). (39)
+#+END_QUOTE
+
+In a later essay, "Romanticism and Classicism," probably written around 1911, Hulme draws the distinction between the two eponymous forces that he sees as opposing factors in cultural history. "After a hundred years of romanticism," he begins, "we are in for a classical revival." Here, he disparages the habits of "the romantic," who, "because he thinks man is infinite, must always be talking about the infinite ... The word infinite is in every other line. ... In the classical attitude you never seem to swing right along to the infinite nothing" (71-2). Hulme might object to the use of the word "infinite" on grounds that the scale is irrelevant to human concerns, or that it's difficult to visualize: it has no visual properties. 
+
+Using terms Pound would later adopt, Hulme refers to the "classical attitude" as having "dry hardness": 
+
+#+BEGIN_QUOTE 
+How many people now can lay their hands on their hearts and say they like either Horace or Pope? They feel a kind of chill when they read them. The dry hardness which you get in the classics is absolutely repugnant to them. Poetry that isn't damp isn't poetry at all. They cannot see that accurate description is a legitimate object of verse. Verse to them always means a bringing in of some of the emotions that are grouped round the word infinite. (75) 
+#+END_QUOTE
+
+The "dry" / "damp" dichotomy here introduces a new figuratively physical set of poetic properties, as Hulme sees them. "Dry," when used of writing, usually means "boring": technical manuals are "dry." The OED gives, in sense 17 for "dry,": "deficient in interest; unattractive, distasteful, insipid. (figurative from food that wants succulency.)" (cite:DryAdjAdv). Yet Hulme is certainly not suggesting that writing should be boring, or distasteful. The liquid, in his metaphor, might be emotion, or abstraction. 
+
+* Symbolism, French Influence
+
+Imagist rhetoric has its roots in a number of other poetic rhetorics. The symbolist movement is one such, well-documented influence. 
+ - Pound's insistence that "imagism is not symbolism" 
+
+"The Symbolist Manifesto," as it is now known, Jean Moréas wrote and published in /Le Figaro/ in 1886. In it, he declares symbolist poetry to be "ennemie de l'enseignement, de la déclamation, de la fausse sensibilité, de la description objective," and that it "cherche: à vêtir l'Idée d'une forme sensible qui, néanmoins, ne serait pas son but à elle-même, mais qui, tout in servant à exprimer l'Idée, demeurerait sujette." (cite:vanierPremieresArmesSymbolisme1889 33-4). 
+ - Symbolism is against "objective description" 
+ - Symbolist poetry is ideas clothed in the *sensory*
+   - This is translated otherwise elsewhere, but [[https://www.cnrtl.fr/definition/sensible][The Trésoir du langue Français informatisée]] has a philosopicial meaning: "qui peut être perçu par les senses." 
+
+* Chinese, Japanese Influence
+* Bergson
+* Woolf
 Virginia Woolf was one such writer-critic. A prolific essayist, she published in []. Her essay "The Cinema," although ostensibly discussing the new artistic medium, ends with a discussion of what she knows best: fiction. She is interested here in the interface between the thought and the image, imaginal image and literary image.
 
 "For what characteristics does thought possess which can be rendered visible to the eye without the help of words? It has speed and slowness; dart-like directness and vaporous circumlocution. But it has also an inveterate tendency especially in moments of emotion to make images run side by side with itself, to create a likeness of the thing thought about, as if by so doing it took away its sting, or made it beautiful and comprehensible. In Shakespeare, as everybody knows, the most complex ideas, the most intense emotions form chains of images, through which we pass, however rapidly and completely they change, as up the loops and spirals of a twisting stair." (cite:woolSelectedEssays 252-3)
@@ -67,7 +129,8 @@ Her example of image-thick writing in Shakespeare appears again in "How Should O
 
 We hear the echo of the imagists' "precision" here in Woolf's "exactitude and truth." The ambiguity in /truth/, straddling an arrow's true flight and the opposite of a lie, allows Woolf to hint that the literary image should be both representationally accurate to the thought, and mimetically accurate to the real-world referent. Like Eliot's objective correlative, the image corporializes the thought, gives it body.
 
-
-** Joyce
-** H.D. 
+* T.S. Eliot, Objective Correlative
+* Joyce
+* H.D. 
+* In Psychology
 
