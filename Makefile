@@ -1,5 +1,5 @@
 ch-2.pdf: ch-2.org references.bib
-	pandoc -o $@ $< --bibliography references.bib --pdf-engine=xelatex --filter pandoc-citeproc -V linestretch=1.7 -V fontsize=12p
+	pandoc -o $@ $< --bibliography references.bib --pdf-engine=xelatex --filter pandoc-citeproc -V linestretch=1.7 -V fontsize=12p --toc
 	xdg-open $@
 
 books.org: ~/Dropbox/Org/Projects/books.org

@@ -1,15 +1,13 @@
 #+TITLE: Chapter 2: Imagisms
 
-Here, I unpack a series of hypotheses, regarding images in text, as they were conceived at the turn of the twentieth century. 
+Here, I unpack a series of hypotheses, regarding images in text, as they were conceived at the turn of the twentieth century. To see how the image is a defining element of the writing of this period, and to try to understand the properties of the images, we might first turn to the writers' definitions, themselves. Of course, we must not be deluded into thinking that circumscribed explanations of poetry or fiction may be found in the theoretical writings of their creators. And this is especially true of the imagists, about whom it has often been noted that they do not always practice what they profess.[Cite] Still, theories of images, from these writers and their contemporaries, will prove useful in interpreting the results of the quantitative analyses to come.
 
-To see how the image is a defining element of the writing of this period, we might turn to the writers' definitions, themselves. Of course, we must not be deluded into thinking that the answers to poetry or fiction may be found in the theoretical writings of their creators. This is especially true of the imagists, about whom it has often been noted that they do not always practice what they profess.[Cite] Yet this theory will prove useful. 
+The selection of writers I discuss below is not an unassailably representative sample, but in addition to being concerned with the image, they are influential, and well-discussed among literary scholars today. Part of this is self-determined: the volume of their own critical output, as writer-critics, engenders more. To some degree, they are already analyzing their own works, sometimes before even writing them.  
 
-Nor should we make the mistake of thinking that this selection of writer-theorists is at all a fair or representative sample, only because they are the most-discussed among literary scholars today. Part of what might contribute to these writers' popularity in academe is the volume of their critical output—they are already analyzing their own works, sometimes before even writing them.  
+Some of the sounding-boards for this output— /The Egoist/ for the imagists, for instance—not only provided a place to publish new creative works-in-progress, but provided a forum for these writers to review each others' works, and present thought on the state of the art. The extent to which these journals are closed-circuit coterie publications, or free marketplaces of ideas, is open to debate. although the in-house advertisement in one issue, "NOTICE: the writers that appear in these pages will also appear in the next issue"—points to the former.[Cite]   
 
-Some of the sounding-boards for this output—/The Egoist/ for the imagists, for instance—not only provided a place to publish new creative works-in-progress, but provided a forum for these writers to review each others' works, and present thought on the state of the art. The extent to which these journals are closed-circuit coterie publications, or a free marketplace of ideas, is open to debate, although the in-house advertisement in one issue, "NOTICE: the writers that appear in these pages will also appear in the next issue"—points to the former.[Cite]   
-
-* Imagists
-The most obvious examples are the imagists themselves. Brash, showy, and defiant, these young poets at times seemed equally as interested in propagandizing their movement as participating in it. One of their most well-known statements is two short notes in a 1913 issue of /Poetry/, the first by F.S. Flint, and the second by Ezra Pound (cite:flint1913). Flint's begins with the tone of an investigative journalist, hot on the trail of the latest trend: "some curiosity has been aroused concerning /Imagisme/, and as I was unable to find anything definite about it in print, I sought out an /imagiste/, with intent to discover whether the group itself knew anything about the "movement." I gleaned these facts" (198-9). The irony is strong for us, since we know Flint to be an imagist himself, but this would have been lost on most readers of the journal then.
+* Imagism, according to imagists
+The most obvious examples are the imagists themselves. Brash, showy, and defiant in their rhetoric, these young poets at times seemed equally as interested in propagandizing their movement as participating in it. One of their most well-known statements is two short notes in a 1913 issue of /Poetry/, the first by F.S. Flint, and the second by Ezra Pound (cite:flint1913). Flint's begins with the tone of an investigative journalist, hot on the trail of the latest trend: "some curiosity has been aroused concerning /Imagisme/, and as I was unable to find anything definite about it in print, I sought out an /imagiste/, with intent to discover whether the group itself knew anything about the "movement." I gleaned these facts" (198-9). The irony is strong for us, since we know Flint to be an imagist himself. Contemporaneous readers might not have deduced this, however. 
 
 In this short note, Flint names as imagist influences "the best writers of all time,"— Sappho, Catullus, and Villon. An unusual selection, it deserves some discussion. First, the poems of Sappho, a Greek poet whose work survives only in fragments, presents a model, however unintentional, of the imagists's fragmentary brevity. Some of her fragments, if treated as intentionally short poems, would be at home in an imagist anthology. Next, Catullus, as a neoteric poet, is known for his choices of quotidian, rather than epic, subjects, similar to those chosen by imagists. His best known work, known as Catullus 64, is told in an ekphrastic mode—a description of an image—and begins with the lines, here translated by Sir Richard Francis Burton in 1894: "Pine-trees gendered whilome upon soaring Peliac summit / Swam (as the tale is told) through liquid surges of Neptune" (cite:catullus1894). Compare this with H.D.'s "Oread," which Pound cited as an exemplary imagist poem [cite]: "Whirl up, sea— / whirl your pointed pines, / splash your great pines / on our rocks" [cite]. Catullus, who was also inspired by Sappho, was also well-known for his love poems, known as the "Lesbia poems," many of which are unapologetically explicit.[fn::Richard Aldington quotes from one of these poems in the epigraph of "Daisy" (cite:1915some 13)] François Villon, a late medieval balladeer, was similarly unapologetic in his choice of subject: as a criminal, he often wrote of his exploits.
  
@@ -42,6 +40,10 @@ It is an unanswered question whether Aldington, or any of the imagists, are real
 
 Furthermore, we might ask: just how small is small? How do we know what a small object is, and what a big object is? Are they all relative to the size of human body? If so, which human bodies, precisely? When—under what circumstances, and at what sizes—does an object stop becoming an /thing/ and become a collection of things, or a even a /place/? 
 
+- May Sinclair's response to Monro in the next issue: (cite:sinclairTwoNotes1915 88)
+
+
+
 ** Other Properties
 There are other physical or visual properties that Lowell here uses to describe the work in the second imagist anthology. One of the goals of the imagists, she says, is "to produce poetry that is hard and clear, never blurred nor indefinite." This word "hard" appears often in imagist rhetoric, and so it bears unpacking. While "hard" is obviously meant to be the opposite of "indefinite," as it is used in phrases like "hard left turn," "hard liquor," or "hard shadow," it also recalls physical properties of objects, like solidity, which Lowell might oppose to ethereality of a concept. Solidity is one of the properties which help to endow objects with objecthood: water and sand are not objects, and do not take indefinite articles, since they do not cohere enough to be handled as such. 
 
@@ -62,7 +64,7 @@ Pound uses another term in this essay which Lowell also uses to describe the ima
 
 Pound famously derided Edward Storer's poetry as "custard" in comparison with H.D.'s "Hellenic hardness" (quoted in cite:jones2001imagist 22). Indeed, H.D.'s first poem in the second anthology begins, "you are clear, / O rose, cut in rock, / hard as the descent of hail" (cite:1915some 22). It is not a coincidence that Pound's passage of Bernard is densely Hellenic—sculptural, even. Nor indeed that his analogies are to granite and to Parian, the marble used by the Greeks for sculptures. The solidity, hardness, of the marble is what gives it objecthood, and distinguishes it from custard. It is also what makes it an /image/, that is, a word that has definite visual properties.
 
-* In Philosophy
+* Imagism's ancillary philosophers
 
 Although Pound never admits it, except in alluding to the "forgotten school" of 1909, one of his great influences, and where precursors of many of these ideas may be found, is in the philosophical writings of T.E. Hulme. His "Notes on Language and Style" was probably written in 1907, although first published posthumously in 1925 (cite:jones2001imagist 224). Here, we find Hulme using "firm" and "solid" as descriptors for the kinds of books he promotes:
 
@@ -102,7 +104,30 @@ How many people now can lay their hands on their hearts and say they like either
 
 The "dry" / "damp" dichotomy here introduces a new figuratively physical set of poetic properties, as Hulme sees them. "Dry," when used of writing, usually means "boring": technical manuals are "dry." The OED gives, in sense 17 for "dry,": "deficient in interest; unattractive, distasteful, insipid. (figurative from food that wants succulency.)" (cite:DryAdjAdv). Yet Hulme is certainly not suggesting that writing should be boring, or distasteful. The liquid, in his metaphor, might be emotion, or abstraction. 
 
-* Symbolism, French Influence
+** Bergson
+
+Hulme translates and expounds on Bergson
+ - four articles in /The New Age/, July and December 1909
+   - cite:hulme1909
+ 
+"Hulme highlights Bergson's nominalism, where words are understood as part of the conceptual ordering process that falsifies reality, and he consistently asserts the compensatory ability of visual perception." 
+
+** De Gourmont
+
+Many of Pound's conceptions of the image may also be traced to the French writer Remy de Gourmont, whose work was often featured alongside imagists in /The Egoist/. In a 1915 article in /The Fortnightly Review/, Pound praises his "intelligence" for its "limpidity and fairness and graciousness, and irony, and a sensuous charm in his decoration when he chose to make his keen thought flash out against a richly-colored background" (cite:poundSelectedProse190919651973 413-423). It is somewhat parodoxical, or at least self-contradictory, for Pound that he would praise anyone's writerly "decoration," after rejecting said decoration just previously in his writings on imagism [Cite].
+
+De Gourmont's own description of his writing, and what he thinks good writing should be, sheds some light on its  
+visual properties, and the intermedial metaphors he uses to describe them:
+
+#+BEGIN_QUOTE 
+Écrire bien, avoir du style, ... user d'un style « descriptif ou de couleur », c'est peindre. La faculté maîtresse du style, c'est donc la mémoire visuelle. Si l'écrivain ne voit pas ce qu'il décrit, ce qu'il raconte, paysages et figures, mouvements et gestes, comment aurait-il du style, c'est-à-dire, en somme, de l'originalité? Le peintre qui travaille « de chic » a devant les yeux la scène imaginaire qu'il traduit à mesure. De fort belles oeuvres ont été faites ainsi. Qui dit peintre, dit visuel. (cite:de1916problème)
+#+END_QUOTE
+
+ - cite:sherry1993ezra Describes influence of Gourmont on Pound, "primacy of vision" within Gourmont. 
+ - Egoist 1-1 features a translation of an excerpt from "The Horses of Diomedes"
+ - Dial 69 (1920) Features Pound's translation of de Gourmont's "Dust for Sparrows" 
+
+* Imagisms in France: echoes of symbolism
 
 Imagist rhetoric has its roots in a number of other poetic rhetorics. The symbolist movement is one such, well-documented influence. 
  - Pound's insistence that "imagism is not symbolism" 
@@ -112,12 +137,25 @@ Imagist rhetoric has its roots in a number of other poetic rhetorics. The symbol
  - Symbolist poetry is ideas clothed in the *sensory*
    - This is translated otherwise elsewhere, but [[https://www.cnrtl.fr/definition/sensible][The Trésoir du langue Français informatisée]] has a philosopicial meaning: "qui peut être perçu par les senses." 
 
-* Chinese, Japanese Influence
-* Bergson
-* Woolf
-Virginia Woolf was one such writer-critic. A prolific essayist, she published in []. Her essay "The Cinema," although ostensibly discussing the new artistic medium, ends with a discussion of what she knows best: fiction. She is interested here in the interface between the thought and the image, imaginal image and literary image.
+* East Asian Imagisms
+- Yoni Noguchi, "Seventeen-Syllable Hokku Poems", /The Egoist/ 1916 cite:noguchi1916
+  - Glowing Review of Noguchi's /The Spirit of Japanese Art/ (1915) in /The Little Review/ 2-4
 
-"For what characteristics does thought possess which can be rendered visible to the eye without the help of words? It has speed and slowness; dart-like directness and vaporous circumlocution. But it has also an inveterate tendency especially in moments of emotion to make images run side by side with itself, to create a likeness of the thing thought about, as if by so doing it took away its sting, or made it beautiful and comprehensible. In Shakespeare, as everybody knows, the most complex ideas, the most intense emotions form chains of images, through which we pass, however rapidly and completely they change, as up the loops and spirals of a twisting stair." (cite:woolSelectedEssays 252-3)
+Yoni Noguchi, an influential Japanese writer who often wrote in English, and published widely in little magazines ^[See cite:noguchi1916, where he introduces the "hokku" poem to readers of /The Egoist/ in 1916, and a review of his work in cite:andersonLittleReview1915 45] begins his /Art of Japanese Poetry/ with a statement about economy of words that would sound at home in Pound or Lowell:
+
+#+BEGIN_QUOTE 
+I come always to the conclusion that the English poets waste too much energy in 'words, words, words,' and make, doubtless with all good intentions, their inner meaning frustrate, at least less distinguished, simply from the reason that its full liberty to appear naked is denied. (cite:noguchi1914spirit 15).  
+#+END_QUOTE
+
+Is "naked" poetry that which is not clothed in the way that Moréas suggests, namely, at a symbolic or metaphorical remove from "the thing itself"? Is it simply poetry with fewer function words, or fewer abstractions? 
+
+* Imagists /après la lettre/
+** Woolf
+Virginia Woolf was another modernist writer-critic, involved in not only producing modern writing, but theorizing it. A prolific essayist, she published in [find these]. Her essay "The Cinema," although ostensibly discussing the new artistic medium, ends with a discussion of what she knows best: fiction. She is interested here in the interface between the thought and the image, imaginal image and literary image.
+
+#+BEGIN_QUOTE  
+For what characteristics does thought possess which can be rendered visible to the eye without the help of words? It has speed and slowness; dart-like directness and vaporous circumlocution. But it has also an inveterate tendency especially in moments of emotion to make images run side by side with itself, to create a likeness of the thing thought about, as if by so doing it took away its sting, or made it beautiful and comprehensible. In Shakespeare, as everybody knows, the most complex ideas, the most intense emotions form chains of images, through which we pass, however rapidly and completely they change, as up the loops and spirals of a twisting stair. (cite:woolf2009selected 252-3)
+#+END_QUOTE
 
 Here, for Woolf, literary art serializes what thought presents in parallel: it transforms images that "run side by side" into "chains of images." 
 
@@ -125,12 +163,26 @@ Her spiral staircase analogy recalls the gyres of Yeats's "The Second Coming," [
 
 Her example of image-thick writing in Shakespeare appears again in "How Should One Read a Book," of [date?]. But here she elaborates on the quality of the image: 
 
-"reading poetry often seems a state of rhapsody ... and we read on, understanding with the senses, not with the intellect, in a state of intoxication. Yet all this intoxication and intensity of delight depend upon the exactitude and truth of the image, on its being the counterpart of the reality within. Remote and extravagant as some of Shakespeare's images seem, far-fetched and etheral as some of Keats's, at the moment of reading they seem the cap and culmination of the thought; its final expression." (cite:woolSelectedEssays 131-2) 
+"reading poetry often seems a state of rhapsody ... and we read on, understanding with the senses, not with the intellect, in a state of intoxication. Yet all this intoxication and intensity of delight depend upon the exactitude and truth of the image, on its being the counterpart of the reality within. Remote and extravagant as some of Shakespeare's images seem, far-fetched and etheral as some of Keats's, at the moment of reading they seem the cap and culmination of the thought; its final expression." (cite:woolf2009selected 131-2) 
 
 We hear the echo of the imagists' "precision" here in Woolf's "exactitude and truth." The ambiguity in /truth/, straddling an arrow's true flight and the opposite of a lie, allows Woolf to hint that the literary image should be both representationally accurate to the thought, and mimetically accurate to the real-world referent. Like Eliot's objective correlative, the image corporializes the thought, gives it body.
 
-* T.S. Eliot, Objective Correlative
-* Joyce
-* H.D. 
-* In Psychology
+** T.S. Eliot, Objective Correlative
+
+"The Waste Land": "A heap of broken images" 
+
+
+** Joyce
+** H.D. 
+* Imagist psychologies
+** Freud  
+Interpretation of Dreams
+Freud + H.D.
+** Experimental Psychology
+* Coda: Non-Image Imaginations
+- Helen Keller, /The Story of My Life/ cite:kellerStoryMyLife1908 
+
+- "Certain people think with words, certain with, or in, objects, others realize nothing until they have pictured it; other progress by diagrams like those of the geometricians; some think, or construct in rhythm, or by rhythm in sound; others, the unfortunate, move by words disconnected from the objects to which they might correspond, or more unfortunate still in blocks and /clichés/ of words; some, favoured of Apollo, in words that hover above and cling close to the things they mean..." (54)
+  - from "I Gather the Limbs of Osiris, VI: On Virtue" /New Age/, 10 (1912), 224-5
+
 

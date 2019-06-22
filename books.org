@@ -1,4 +1,4 @@
-# Created 2019-06-21 Fri 11:41
+# Created 2019-06-21 Fri 20:18
 #+TITLE: Ch. 2: Period Imageries/Imaginations
 #+AUTHOR: Jonathan Reeve
 * Criticism
@@ -521,19 +521,7 @@ If you do read these people [Boccaccio, Rabelair, Montaigne, Sterne...] and enjo
 From summary: 
 
 #+begin_quote
-A la fin des années 1920, l’écrivaine américaine moderniste H.D. considère le cinéma comme un art
-majeur, supérieur à la littérature car plus à même de représenter le réel. En réponse à un questionnaire
-lui demandant de faire le bilan de sa carrière, elle choisit de se concentrer sur sa découverte du
-septième art et sur l’importance que prend ce nouveau mode d’expression pour elle. Spectatrice, mais
-aussi actrice, monteuse et critique, H.D. adopte une approche polyvalente. Des réalisateurs comme G.
-W. Pabst ou Sergueï Eisenstein deviennent des modèles que les écrivains devraient imiter, selon
-l’auteur. Pendant environ cinq ans, H.D. s’implique directement dans la production
-cinématographique, de par son travail avec un jeune artiste britannique, Kenneth Macpherson,
-réalisateur de Borderline, long-métrage d’avant-garde dont elle tient le rôle féminin principal. H.D.
-rédige également plusieurs critiques de films, qui paraissent dans Close Up, un magazine qu’elle co-
-dirige avec l’auteur et mécène britannique Bryher ainsi que Macpherson. Par la suite, ses activités
-cinématographiques diminuent mais nous avançons l’idée que le septième art et les théories qu’elle en
-retient influencent de façon durable son imaginaire et son mode d’écriture.
+A la fin des années 1920, l’écrivaine américaine moderniste H.D. considère le cinéma comme un art majeur, supérieur à la littérature car plus à même de représenter le réel. En réponse à un questionnaire lui demandant de faire le bilan de sa carrière, elle choisit de se concentrer sur sa découverte du septième art et sur l’importance que prend ce nouveau mode d’expression pour elle. Spectatrice, mais aussi actrice, monteuse et critique, H.D. adopte une approche polyvalente. Des réalisateurs comme G. W. Pabst ou Sergueï Eisenstein deviennent des modèles que les écrivains devraient imiter, selon l’auteur. Pendant environ cinq ans, H.D. s’implique directement dans la production cinématographique, de par son travail avec un jeune artiste britannique, Kenneth Macpherson, réalisateur de Borderline, long-métrage d’avant-garde dont elle tient le rôle féminin principal. H.D. rédige également plusieurs critiques de films, qui paraissent dans Close Up, un magazine qu’elle co- dirige avec l’auteur et mécène britannique Bryher ainsi que Macpherson. Par la suite, ses activités cinématographiques diminuent mais nous avançons l’idée que le septième art et les théories qu’elle en retient influencent de façon durable son imaginaire et son mode d’écriture. 
 #+end_quote
 
 *** TODO 2004 - Connor - H.D. and the Image
@@ -586,6 +574,8 @@ Cites as a major influence /Le livre de jade/ (Judith Gautier) (5)
 [[#kern1996orientalism][kern1996orientalism]]
 *** WAITING 1914 - Noguchi - The Spirit of Japanese Poetry
 [[#noguchi1914spirit][noguchi1914spirit]]
+
+Begins, "I come always to the conclusion that the English poets waste too much energy in 'words, words, words,' and make, doubtless with all good intentions, their inner meaning frustrate, at least less distinguished, simgly from the reason that its full liberty to appear naked is denied." 
 
 "Explanation is forbidden in the House of Poesy for Japanese, where, as in the Japanese tea-house of four mats and a half, the Abode of Imagination, only the hints tender and gray, like a ghost or Miss Resse's rain, are suffered to be dwelling." (21) 
 
@@ -663,6 +653,7 @@ Mostly on rhythm. Attributes some aspects of /vers libre/ to translations of Whi
 
 ** TODO 1967 - Inter-war English Poetry, with Special Reference to Eliot's 'objective Correlative' Theory
 [[#sen1967inter][sen1967inter]]
+
 * And Victorian/earlier literature
 ** DONE 2000 - The Victorians and the Visual Imagination
 [[#flint2000victorians][flint2000victorians]]
@@ -999,3 +990,6 @@ Summary of I. A. Richards
 
 * TODO 1912 - Hart - The Psychology of Insanity
 [[#hart1912psychology][hart1912psychology]]
+
+* TODO - Sinclair - Two {{Notes}}
+[[#sinclairTwoNotes1915][sinclairTwoNotes1915]]
