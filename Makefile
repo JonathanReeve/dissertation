@@ -1,5 +1,10 @@
-ch-2.pdf: ch-2.org references.bib
-	pandoc -o $@ $< --bibliography references.bib --pdf-engine=xelatex --filter pandoc-citeproc -V linestretch=1.7 -V fontsize=12p --toc
+ch-2.pdf: ch-2.md references.bib
+	pandoc -o $@ $< \
+	--bibliography references.bib \
+	--pdf-engine=xelatex \
+	--filter pandoc-citeproc \
+	-V linestretch=1.7 -V fontsize=12p \
+	--metadata date=`date --iso`
 	xdg-open $@
 
 books.org: ~/Dropbox/Org/Projects/books.org
