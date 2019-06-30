@@ -1,9 +1,10 @@
 ch-2.pdf: ch-2.md references.bib
 	pandoc -o $@ $< \
 	--bibliography references.bib \
+	--csl=modern-language-association.csl \
 	--pdf-engine=xelatex \
 	--filter pandoc-citeproc \
-	-V linestretch=1.7 -V fontsize=12p \
+	-V linestretch=1.8 -V fontsize=12p \
 	--metadata date=`date --iso`
 	xdg-open $@
 
