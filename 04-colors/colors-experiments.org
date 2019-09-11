@@ -2,24 +2,22 @@
 
 #+name: session_init
 #+BEGIN_SRC python :results output :session session_init
-  import spacy
+  #import spacy
   import pandas as pd
-  from nltk.corpus import wordnet as wn
+  #from nltk.corpus import wordnet as wn
   import nltk
   import matplotlib.pyplot as plt
   import re
-  nlp = spacy.load('en_core_web_lg')
-  dalloway = open('dalloway.txt', errors="ignore").read()
+  #nlp = spacy.load('en_core_web_lg')
+  #dalloway = open('dalloway.txt', errors="ignore").read()
 #+END_SRC
 
 Warning (python): Your ‘python-shell-interpreter’ doesn’t seem to support readline, yet ‘python-shell-completion-native-enable’ was t and "python" is not part of the ‘python-shell-completion-native-disabled-interpreters’ list.  Native completions have been disabled locally. 
 
 #+RESULTS: session_init
-: Traceback (most recent call last):
-:   File "<stdin>", line 1, in <module>
-:   File "/run/user/1000/babel-Bvqa8W/python-vC1e0V", line 2, in <module>
-:     import pandas as pd
-: ModuleNotFoundError: No module named 'pandas'
+: Python 3.7.3 (default, Mar 25 2019, 20:59:09) 
+: [GCC 7.4.0] on linux
+: Type "help", "copyright", "credits" or "license" for more information.
 
 ** WordNet Color Searches
 Start by creating a dictionary for color values from WordNet. This will be a simple lexical approach, but good as a first experiment.
@@ -371,7 +369,8 @@ Color mappings from: https://xkcd.com/color/rgb.txt
 
 #+BEGIN_SRC python :results output :session session_init
 
-  xkcdMapRaw = open('data/xkcd/rgb.txt').readlines()[1:]
+  dalloway = open('../data/dalloway.txt', errors='ignore').read()
+  xkcdMapRaw = open('../data/xkcd/rgb.txt').readlines()[1:]
   xkcdMap = {}
   for line in xkcdMapRaw: 
     splitLine = line.split('\t') 
@@ -387,7 +386,8 @@ Color mappings from: https://xkcd.com/color/rgb.txt
 
 #+RESULTS:
 
-
+** DONE look for keywords in context
+CLOSED: [2019-08-20 mar 16:19]
 #+BEGIN_SRC python :results output :session session_init
   # Borrowed from Textacy: https://chartbeat-labs.github.io/textacy/_modules/textacy/text_utils.html#keyword_in_context
 
@@ -429,23 +429,171 @@ Color mappings from: https://xkcd.com/color/rgb.txt
                   for match in re.finditer(keyword, text, flags=flags))
 
 
-  #print(keyword_in_context(dalloway, 'blue'))
-#+END_SRC
-
-Maybe will have to roll my own Key Words in Context class. 
-
-** TODO grep for color expressions; use n-grams
-:LOGBOOK:
-CLOCK: [2019-02-13 Wed 19:07]
-:END:
-
-#+BEGIN_SRC python :results output :session session_init
-
+  print(keyword_in_context(dalloway, 'blue'))
 #+END_SRC
 
 #+RESULTS:
+#+begin_example
+ster); a
+touch of the bird about her, of the jay,  blue -green, light,
+vivacious, though she was over fift
+ rest of it;
+wrapped in the soft mesh of the grey- blue  morning air, which, as
+the day wore on, would unw
+es after the superb
+summer's day, with its almost  blue -black sky, its delphiniums, its
+carnations, its a
+light and the colour thinning and thickening
+from  blue  to the green of a hollow wave, like plumes on hor
+fountains were part of the pattern; the white and
+ blue , barred with black branches.  Sounds made harmoni
+e a length of green stuff
+with a ceiling cloth of  blue  and pink smoke high above, and there
+was a rampar
+r Walsh and
+Clarissa, sitting side by side on the  blue  sofa, challenged each
+other.  His powers chafed a
+ings which breasted the air bravely for a
+moment;  blue , circular--I shall try and get a word alone with
 
-** TODO look for  
+en him a long,
+gushing letter quite lately about " blue  hydrangeas."  It was seeing
+blue hydrangeas that 
+te lately about "blue hydrangeas."  It was seeing
+ blue  hydrangeas that made her think of him and the old
+ing up
+clean beech trees and issuing in a tuft of  blue  smoke among the
+topmost leaves.  "And if some one
+embling globes of cow parsley to see the sky;
+the  blue , the steadfast, the blazing summer sky.
+
+Aware th
+ For the Dalloways, in general, were fair-haired;  blue -eyed;
+Elizabeth, on the contrary, was dark; had C
+ of a glacier the ice holds a splinter of
+bone, a  blue  petal, some oak trees, and rolls them on.
+
+But it
+ screen in front of him, with black bulrushes and  blue 
+swallows.  Where he had once seen mountains, wher
+r old woman who guarded
+her with her honest light- blue  eyes fixed on the door.  (They
+wouldn't bring him
+, enthusiastic goose! thought of HIM when she saw  blue 
+hydrangeas).  She had influenced him more than an
+ house. . . .
+
+Oh it was a letter from her!  This  blue  envelope; that was her
+hand.  And he would have t
+ade her rounds at dawn sniffing, peering, causing  blue -
+nosed maids to scour, for all the world as if th
+r print dress and white apron to
+array herself in  blue  and pearls, the day changed, put off stuff,
+took 
+tures.  It
+sharpened, it refined them, the yellow- blue  evening light; and on
+the leaves in the square sh
+eyes (only one was glass) slowly
+deepened, became  blue , beheld, not human beings--she had no tender
+memo
+looked very distinguished, with his grey hair
+and  blue  eyes, said yes; they had not been able to resist 
+None
+#+end_example
+
+Maybe will have to roll my own Key Words in Context class. 
+
+** TODO annotate Dalloway in TEI, use that as training data
+:LOGBOOK:
+CLOCK: [2019-08-20 mar 16:22]--[2019-08-20 mar 16:47] =>  0:25
+:END:
+** TODO grep for color expressions
+:LOGBOOK:
+CLOCK: [2019-08-20 mar 16:47]--[2019-08-20 mar 17:17] =>  0:30
+:END:
+
+#+BEGIN_SRC python :results file :session session_init
+def annotateColors(text):
+  matchLocs = {}
+  for item in xkcdMap:
+    # print(item)
+    pattern = '[\b\s]+' + item.replace(' ', '[-\s+]') + '[\b\s]+'
+    matches = re.finditer(pattern, text, flags=re.IGNORECASE)
+    matchStarts =  [match.start() for match in matches if matches is not None]
+    if matchStarts != []: 
+      matchLocs[item] = len(matchStarts)
+    # print(pattern)
+    color = xkcdMap[item]
+    replacement = ' <span class="color" style="color: {}">{}</span> '.format(color, item)
+    # print(replacement)
+
+    text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+  return text, matchLocs
+
+def chunk(text, n=10): 
+  """ Split a text into N equal parts. """
+  chunkSize = round(len(text)/n)
+  return [text[i:i + chunkSize] for i in range(0, len(text), chunkSize)][:-1]
+
+testText = "There was a color like blue and then another like red and one called light blue green."
+# print(annotateColors(dalloway)[:20000])
+dalloway = open('dalloway.html').read()
+dallowayChunks = chunk(dalloway)
+#print([len(chunk) for chunk in dallowayChunks])
+df = pd.DataFrame([annotateColors(chunk)[1] for chunk in dallowayChunks])
+subset = ['red', 'orange', 'yellow', 'green', 'blue', 'black', 'white']
+df.fillna(0).plot(kind='area')
+plt.savefig('out.png')
+# annotated, matchLocs = annotateColors(dalloway)
+#open('dalloway-annotated.html', 'w').write(annotated)
+# print(matchLocs)
+# html = '<html><body style="background-color: #34373a; color: #999">{}</body></html>'.format(annotated)
+#+END_SRC
+
+#+RESULTS:
+[[file:
+]]
+]]
+]]
+]]
+]]
+
+** TODO rewrite in Haskell? 
+:LOGBOOK:
+CLOCK: [2019-08-22 ĵaŭ 16:00]--[2019-08-22 ĵaŭ 16:55] =>  0:55
+CLOCK: [2019-08-22 ĵaŭ 00:00]--[2019-08-22 ĵaŭ 00:43] =>  0:43
+:END:
+
+Well this works a bit 
+
+#+BEGIN_SRC haskell
+import Text.Regex (subRegex, mkRegex)
+import Data.List (intercalate)
+
+s = "I have several paints. For example, red, green, and blue, and blue-green."
+replaceAllIn = foldl (\acc (k, v) -> subRegex (mkRegex k) acc v)
+
+-- replaceAllIn s [("\\bblue\\b", "XXX"), ("red", "XXX")]
+
+makeSpan color = "<span type=\"color\">" ++ color ++ "</span>"
+
+-- putStrLn "hi!"
+
+makePat color = "\\b" ++ (intercalate "[\\n -]" $ words color) ++ "\\b"
+
+makePat "blue green"
+
+colors = ["blue green", "blue", "green"]
+patSpan color = ((makePat color), (makeSpan color))
+
+pairs = map patSpan colors
+replaceAllIn s pairs
+-- show pairs
+#+END_SRC
+
+#+RESULTS:
+: Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> "I have several paints. For example, red, <span type=\"color\">green</span>, and <span type=\"color\">blue</span>, and <span type=\"color\"><span type=\"color\">blue</span> <span type=\"color\">green</span></span>."
+
 ** Other color lists
  - [[http://chir.ag/projects/name-that-color/#B54A64][Name that Color - Chirag Mehta : chir.ag]]
  - [[https://github.com/Margaret2/pantone-colors/blob/master/pantone-colors-variables.css][pantone-colors/pantone-colors-variables.css at master · Margaret2/pantone-colors]]

@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pandas = "*"
+altair = "<3" # Upgrade to 3 once Hydrogen upgrades to 2.11
+jupyterlab = "==1.0"
+matplotlib = "*"
+vega_datasets = "*"
+selenium = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
