@@ -8,6 +8,8 @@
   import nltk
   import matplotlib.pyplot as plt
   import re
+  import altair as alt
+  from matplotlib.colors import to_rgb, rgb_to_hsv
   #nlp = spacy.load('en_core_web_lg')
   #dalloway = open('dalloway.txt', errors="ignore").read()
 #+END_SRC
@@ -15,9 +17,6 @@
 Warning (python): Your ‘python-shell-interpreter’ doesn’t seem to support readline, yet ‘python-shell-completion-native-enable’ was t and "python" is not part of the ‘python-shell-completion-native-disabled-interpreters’ list.  Native completions have been disabled locally. 
 
 #+RESULTS: session_init
-: Python 3.7.3 (default, Mar 25 2019, 20:59:09) 
-: [GCC 7.4.0] on linux
-: Type "help", "copyright", "credits" or "license" for more information.
 
 ** WordNet Color Searches
 Start by creating a dictionary for color values from WordNet. This will be a simple lexical approach, but good as a first experiment.
@@ -506,9 +505,6 @@ Maybe will have to roll my own Key Words in Context class.
 ** TODO annotate Dalloway in TEI, use that as training data
 :LOGBOOK:
 CLOCK: [2019-08-20 mar 16:22]--[2019-08-20 mar 16:47] =>  0:25
-:END:
-** TODO grep for color expressions
-:LOGBOOK:
 CLOCK: [2019-08-20 mar 16:47]--[2019-08-20 mar 17:17] =>  0:30
 :END:
 
@@ -551,12 +547,73 @@ plt.savefig('out.png')
 #+END_SRC
 
 #+RESULTS:
-[[file:
-]]
-]]
-]]
-]]
-]]
+
+** TODO look for color expressions in a text
+
+#+BEGIN_SRC python :results output :session session_init
+  dalloway = open('data/dalloway.txt', errors='ignore').read()
+  xkcdMapRaw = open('data/xkcd/rgb.txt').readlines()[1:]
+  xkcdMap = {}
+  for line in xkcdMapRaw:
+      splitLine = line.split('\t')
+      if len(splitLine) != 3:
+          print('error on: ', splitLine)
+      else:
+          name, val, _ = line.split('\t')
+          xkcdMap[name] = val
+
+
+  def annotateColors(text):
+      matchLocs = {}
+      for item in xkcdMap:
+          pattern = '[\b\s]+' + item.replace(' ', '[-\s+]') + '[\b\s]+'
+          matches = re.finditer(pattern, text, flags=re.IGNORECASE)
+          matchStarts =  [match.start() for match in matches if matches is not None]
+          if matchStarts != []:
+              matchLocs[item] = len(matchStarts)
+          color = xkcdMap[item]
+          replacement = ' <span class="color" style="color: {}">{}</span> '.format(color, item)
+          text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+      return text, matchLocs
+
+  def chunk(text, n=10):
+      """ Split a text into N equal parts. """
+      chunkSize = round(len(text)/n)
+      return [text[i:i + chunkSize] for i in range(0, len(text), chunkSize)][:-1]
+
+  def count(text, nChunks=20):
+      chunks = chunk(text, nChunks)
+      df = pd.DataFrame([annotateColors(chunk)[1] for chunk in chunks])
+      return df.fillna(0)
+
+  def melt(df):
+      df['chunk']=df.index
+      return df.melt(id_vars='chunk', var_name='color', value_name='count')
+
+  def plotM(df, nColors=10):
+      """ Plots with matplotlib, via pandas. """
+      df.plot(kind='area', stacked=True, color=["xkcd:"+color for color in topColors], figsize=(12,8))
+
+  def plotA(df):
+      df['hex'] = df['color'].apply(lambda x: xkcdMap[x])
+      df['hsv'] = df['hex'].apply(lambda x: rgb_to_hsv(to_rgb(x))[0])
+      df = df.sort_values('hsv') # Sloppy alphabetical color sort
+      return alt.Chart(df, width=800, height=600).mark_area().encode(
+                       x='chunk:O', y='count:Q', color=alt.Color('hex', scale=None), tooltip='color')
+
+  def topColors(df, nColors=10):
+      topColors = list(df.sum().sort_values(ascending=False)[:nColors].index)
+      return df[topColors]
+
+  df = count(dalloway, nChunks=40)
+
+  print('heyo!')
+
+  # plotA(melt(topColors(df))).save('dalloway.html')
+#+END_SRC
+
+#+RESULTS:
+: heyo!
 
 ** TODO rewrite in Haskell? 
 :LOGBOOK:
@@ -566,7 +623,7 @@ CLOCK: [2019-08-22 ĵaŭ 00:00]--[2019-08-22 ĵaŭ 00:43] =>  0:43
 
 Well this works a bit 
 
-#+BEGIN_SRC haskell
+#+BEGIN_SRC haskell :results output :tangle yes
 import Text.Regex (subRegex, mkRegex)
 import Data.List (intercalate)
 
@@ -592,7 +649,18 @@ replaceAllIn s pairs
 #+END_SRC
 
 #+RESULTS:
-: Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> "I have several paints. For example, red, <span type=\"color\">green</span>, and <span type=\"color\">blue</span>, and <span type=\"color\"><span type=\"color\">blue</span> <span type=\"color\">green</span></span>."
+#+begin_example
+<no location info>: error:
+    Could not find module ‘Text.Regex’
+    Perhaps you meant Text.Read (from base-4.12.0.0)
+Prelude Data.List> Prelude Data.List> Prelude Data.List> 
+<interactive>:6:38-45: error:
+    Variable not in scope: subRegex :: t0 -> t1 -> t3 -> t1
+
+<interactive>:6:48-54: error:
+    Variable not in scope: mkRegex :: t2 -> t0
+Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> "\\bblue[\\n -]green\\b"
+#+end_example
 
 ** Other color lists
  - [[http://chir.ag/projects/name-that-color/#B54A64][Name that Color - Chirag Mehta : chir.ag]]

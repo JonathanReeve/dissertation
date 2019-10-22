@@ -4,12 +4,35 @@ author: Jonathan Reeve
 ---
 
 Here is a series of claims, hypotheses, and suppositions, regarding images in text, as they appeared, and were conceived, at the turn of the twentieth century. This time in literary history is unusually appropriate to the study of textual images, as it coincides with the imagist school of poetry, and, as I will argue, other concurrent *imagisms*. These other imagisms, while in some cases influenced by the imagists, are not themselves a well-defined school, but rather a set of phenomena, which is roughly coextensive with what critics call modern poetry.
+ - "roughly coextensive" might be too hedging, obscuring
+ - Opening anecdote? With actors, less abstract. 
+ - Dovetail imagism into imagisms
+   - Why these writers? What is the influence of imagism?
+   - Why is the image becoming more important? 
+   - What do these people talk about when they talk about images? 
+ - Tell the reader what the questions are more at the beginning. 
+ - Fewer caveats here, stronger arguments. Does this instill more doubt than the reader already has?  
+   - Make caveats secondary
+ - Maybe an example early on, to create more reader buy-in. 
+ - Emphasize the break from the path. 
+ - Make it more clear that we're talking about these writers' own critical writings
+ - Make it more clear that the purpose here is to create algorithms. 
+   - To create an algorithm, we look to the words of the writers themselves. 
+ - "This is our common project" 
+ - More historical perspective, esp. in the reaction to Victorian poetry
 
 The period of literary history I'll be discussing here is strongly autoexegetic: much of the theory surrounding this phenomenon comes from the writers themselves, who are famous for—and often because of—their self-theorization. Of course, we must not be deluded into thinking that circumscribed explanations of poetry or fiction may be found in the theoretical writings of their creators. And this is especially true of the imagists, about whom it has often been noted that they do not always practice what they profess.<!--TODO: cite--> Perhaps they follow the dictum of Goethe's, which Yeats was fond of quoting, that "a poet needs all philosophy, but he must keep it out of his work" [@yeatsEssaysIntroductions1961 154]. Still, theories of images and their uses, from these writers and their contemporaries, will prove useful in generating hypotheses. That will help to show the centrality of the visual in the writing of this period, but also to provide questions that the coming quantitative analysis will hope to answer.
+ - Gesture back to opening anecdote
+ - Establish stakes more here
+ - More active
 
 The selection of writers I discuss below is not an unassailably representative sample, but in addition to being concerned with the image, they are influential, and well-discussed among literary scholars today. Part of this is self-determined: the volume of their own critical output, as writer-critics, engenders more critical discussion. Some of the sounding-boards for this output---*The Egoist* for the imagists, for instance---not only provided a place to publish new creative works, or works-in-progress, but provided a forum for these writers to review each others' writing, and present thought on the state of the art. 
+ - Introduce the journal, as a little magazine, provide years of publication
+ - Make intervention clearer here
+ - Less undercutting, esp. in topic sentence—bury this further down in paragraph
 
 There exist a number of aspects to this topic which I will not consider here, either because they are beyond the scope of this brief survey, or because they are better treated in monographs devoted to the subject. One of the most crucial is intermediality. The development and popularization of photography and cinema during this period have been shown to have noticeable effects on its literature [@trotterCinemaModernism2007]. I will also not treat the mechanisms of influence at much length. Much has been made, for instance, about the influence of Chinese and Japanese poetry on Ezra Pound [@xie2015ezra; @pound2018cathay]. The influence of French symbolist poetry has also been treated at length [@taupinInfluenceFrenchSymbolism1985]. While some amount of genealogical work is necessary here, to show the flow and development of cetain ideas surrounding the image, those claims have been made most convincingly elsewhere [@levensonGenealogyModernismStudy1986 for example]. 
+ - Still feels a little on the defensive, needs a clearer claim and more upfront
 
 # Imagists: Flint, Pound, Lowell
 
@@ -27,7 +50,7 @@ The third aligns the imagists with the writers of *vers libre*, however weakly o
 
 The essay that follows Flint's in this issue of *Poetry* is Ezra Pound's "A Few Don'ts by an Imagiste," an imagist *via negativa,* in which Pound largely defines the school according to what it is not—in Pound's terms, "Mosaic negative." He first, however, defines an "image" as "that which presents an intellectual and emotional complex in an instant of time." [-@pound1913 200]. This definition of image reveals a temporal component of the imagist conception of the image: an image presents not only an arrangement of objects or words, as a still-life painting might, but a frozen moment—a photograph or a film still, a dynamic scene rendered static.
 
-Pound goes on to specify that he uses the term "complex" "rather in the technical sense employed by the newer psychologists, such as Hart" (200). The British psychologist Bernard Hart, in his work *The Psychology of Insanity* which appeared the previous year, explains the complex as "a system of connected ideas, with a strong emotional tone, and a tendency to produce actions of a certain definite character" [-@hart1912psychology 61]. The example Hart gives, tellingly, is a photography hobby which is driven by a "photography complex," (62).
+Pound goes on to specify that he uses the term "complex" "rather in the technical sense employed by the newer psychologists, such as Hart" (200). The British psychologist Bernard Hart, in his work *The Psychology of Insanity* which appeared the previous year, explains the complex as "a system of connected ideas, with a strong emotional tone, and a tendency to produce actions of a certain definite character" [-@hart1912psychology 61]. The example Hart gives, tellingly, is a photography hobby which is driven by a "photography complex" (62).
 
 As elsewhere in imagist propaganda, Pound defines the movement in terms of other media, and other genres. First, he cautions poets, "don't be descriptive; remember that a painter can describe a landscape much better than you can, and that he has to know a deal more about it" (203). It is unclear here whether Pound means that a painting "describes" a landscape, metaphorically, or that a painter, having painted the landscape, can describe it in prose much better than the poet.
 
