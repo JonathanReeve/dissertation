@@ -1,0 +1,28 @@
+GSAS LaTeX Dissretation Template. 
+
+This is a dissertation template that meets the official institute formatting requirements of GSAS.
+
+The default and most common LaTeX packages were utilized to enable many of the features in this template.
+As such, modifications of the template is easily accomplished by leveraging the capabilities of the utilized packages.
+
+However, the template is designed to require minimal modification for a standard GSAS Dissertation.
+By following these steps, the blank template can be customized to a specific individual person and thesis topic.
+Note that the percent sign "%", is the comment character for LaTeX, and any text following this symbol will
+not be read by the LaTeX compiler. Including in the template are many such comments containing
+instructions and relevant context, so be sure to read these as needed.
+
+1. Open the "titlePage.tex" file, and type your Dissertaiton Title, and your Full Name
+2. Open the "CopyrightPage.tex" file, and type your name. 
+3. Open the "Abstract.tex", "dedication.tex", etc. to type required information. 
+4. Open the "references.tex" file, and input your citations, in BiBTeX format.
+
+After these steps are complete, the main content of the thesis can be entered into the various "chapter<#>.tex" files, along with any appendices in the "appendix.tex" file.
+
+To compile the template, using your preferred TeX editor, run the following commands in sequence:
+
+1. pdflatex
+2. bibtex
+3. pdflatex
+4. pdflatex
+
+Note that occasionally this sequence will need to be run twice in order to correctly update the Table of Contents.

@@ -1,0 +1,110 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{ref1}{book}{}
+    \name{author}{2}{}{%
+      {{hash=KBW}{%
+         family={Kernighan},
+         familyi={K\bibinitperiod},
+         given={Brian\bibnamedelima W.},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=RDM}{%
+         family={Ritchie},
+         familyi={R\bibinitperiod},
+         given={Dennis\bibnamedelima M.},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Prentice-Hall, Inc.}%
+    }
+    \strng{namehash}{KBWRDM1}
+    \strng{fullhash}{KBWRDM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{The C Programming Language Second Edition}}
+    \field{year}{1988}
+  \endentry
+
+  \entry{ref2}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BGP}{%
+         family={Burdell},
+         familyi={B\bibinitperiod},
+         given={George\bibnamedelima P.},
+         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Real Books, Inc.}%
+    }
+    \strng{namehash}{BGP1}
+    \strng{fullhash}{BGP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Myths and Their Origins}}
+    \field{year}{2016}
+  \endentry
+
+  \entry{ref3}{article}{}
+    \name{author}{3}{}{%
+      {{hash=EA}{%
+         family={Einstein},
+         familyi={E\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PB}{%
+         family={Podolsky},
+         familyi={P\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=RN}{%
+         family={Rosen},
+         familyi={R\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{EAPBRN1}
+    \strng{fullhash}{EAPBRN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRev.47.777
+    \endverb
+    \field{issue}{10}
+    \field{pages}{777\bibrangedash 780}
+    \field{title}{Can Quantum-Mechanical Description of Physical Reality Be
+  Considered Complete?}
+    \verb{url}
+    \verb http://link.aps.org/doi/10.1103/PhysRev.47.777
+    \endverb
+    \field{volume}{47}
+    \field{journaltitle}{Phys. Rev.}
+    \field{year}{1935}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+\enddatalist
+\endinput
