@@ -1,8 +1,9 @@
 ---
-title: "Chapter 2: Imagisms"
+title: "Imagisms"
 author: Jonathan Reeve
 lang: en
 mainfont: Linux Libertine
+bibliography: /home/jon/Dropbox/Papers/library.bib
 ---
 
 <!-- [Note: Chapter 1 will have done the work of disambiguating these terms, but just as a quick glossary: 
@@ -26,13 +27,15 @@ Even if we were to treat the critical writings surrounding the many movements or
 
 Here I build on a method outlined by Stephen Best and Sharon Marcus, which they call "surface reading"  [@bestSurfaceReadingIntroduction2009]. The widespread success of psychoanalytic and Marxist critical methods in the 1970s and '80s, they argue, enshrined in the academy a mode of reading they call "symptomatic," and a "hermeneutics of suspicion": methods not invalid, but which risk devaluing the more direct meanings of the text. Likewise, I acknowledge the readings that see much of this theory as symptomatic of social issues, historical context, and the literary _Zeitgeist_, and acknowledge that these are inextricable facets of this subject, while at the same time seeking less interpretive interpretations—ones which may lead to greater algorithmic testability. I will take "surface" reading even more literally than they do, and direct my attention to the actual phenomena of surfaces, the  aspect of things which makes them visible, reflects light, gives them color, and makes their shapes discernible. 
 
+<!-- more on this --> 
+
 <!--[Literary Impressionism] -->
 
 Surfaces, being the first and most obvious property of an object, are the most readily overlooked, since the critical object's more hidden layers will better showcase the _τέχνη_ of the critic. Yet the surface and the eye are the two primary interfaces of the perceptive process: the textual surface is where writing ends and where reading begins; the eye is the first filter, or prism, for the information conveyed by the surface. I hope to show that this is a conception that was central to this period's writers and critics. 
 
 One of the most illustrious examples is that of I.A. Richards, a literary critic of this period before the widespread professionalization of the field, and who, along with T.S. Eliot, formed one of the members of the school of "new critics." In his *Principles of Literary Criticism* he diagrams the process of seeing, reading, and understanding a literary image, using a distinctly optical framework, as shown in Figure 1 [@richards2003principles 106]. 
 
-![Richards's Optical Process of Reading](./images/richards.png)
+![Richards's Optical Process of Reading](02-history/images/richards.png)
 
 He explains that the six distinct processes depicted vertically here are events happening one after the other, through which these lines are "streams of impulses flowing through in the mind" (113): 
 
@@ -47,9 +50,16 @@ To II, Richards adds that there are also "auditory images" associated with the v
 
 Richards's schematic gives a sense of the complexity of the cognitive and emotional processes involved with reading words that bear visual significance. Not everyone produces mental images, as the psychological works covered in Chapter 1 attest, but images that readers produce are amalgamations of memories, emotions, attitudes, and sensations. Crucially, they are optic. Consider the resemblance of Richards's diagram to an illustration of retinal nerves, shown in Figure 2.
 
-![Source: Rogers, _Perception_ [@rogersPerceptionVeryShort2017]](./images/optic-nerve.png)
+![Source: Rogers, _Perception_ [@rogersPerceptionVeryShort2017]](02-history/images/optic-nerve.png)
 
 Richards, along with the modernists and imagists he studied, understood poetry and fiction as inextricably optical. As a visual phenomenon, it is therefore shaped and even controlled foremost by the mechanisms of the eye. I hope to show the ways in which okular phenomena can be used to explain the history of ideas in this period. This relies on a number of binaries, or distinctions made by theorists of the literary image: the static and the dynamic, the fragment and the whole, the idea and its expression, the near and the distant, the specific and the general, the small and the cosmic, the hard and the soft, and the dry and the wet. These are not mutually exclusive categories, as I hope will be apparent, but are loci of ambiguities and complexities which attracted these writers to them in the first place, as they do us. Contemporary criticism has often pointed out these binaries, but almost alway uses them as a starting place for symptomatic readings: Peter Nicholls on the implications of "hard" modernism; Rachel duPlessis on gendered aspects of the "dry" and "wet" in Pound; Gibson on the "dry" and "hard" as neoclassicist [@nichollsHardSoftModernism2013; @duplessisPropoundingModernistMaleness2002; @gibsonCONTRADICTORYIMAGESCONFLICTING2011a]. Among modern critics, Jesse Schotter comes closest to examining the material membranes of the image and writing with his notion of "hieroglyphic" modernism [@schotter2018hieroglyphic]. I hope to extend their readings with surface readings, and show the utility of okular anatomies and physiologies as applied toward the understanding of the literature of this period.
+
+Claudia Olk argues that a break with realism in early 20th century writing shifts conceptions of the visual from a representational and "natural" visual epistemology, to one a more "conceptual" and less "positivist" one [@olkVaguenessVisionVeil2007 153]. 
+
+"The category of vision is not only central to many modernist texts, but also plays a key role in the unfolding paradigm of modernism itself. The received sense of a modernist break with realism, its pervasive interest in the workings of the individual mind, and its generic reclassifications of the novel also intimately affected the role of vision, which gained a conceptual rather than natural status. Whereas realist texts adhere to a visual language of representation and become legible within a positivist epistemology, modernist texts clearly depart from this positivist faith." (153) 
+
+how 
+
 
 ## Persistence of Vision: the Static and the Dynamic
 
@@ -156,7 +166,7 @@ The celebration of Chinese writing in _ABC of Reading_, besides being unfaithful
 
 One of the functions of _imagination_, that is, the willing creation of mental images, is to fill the gaps in one's sensory knowledge. Distant places, then—and to a greater degree distant and _inaccessible_ ones, become a matter of imagination, or extrapolation based on limited evidence. Whereas affluent Brits of the early 20th century routinely vacationed on the continent, the "far" East of China and Japan lived up to its name. This was not due to the raw distance itself, but to the travel time necessary. As the cartographer John Gordon Bartholemew calculated in his 1914 isochronic map, inland China was in the most inaccessible category of destinations, starting from London. (Another is the Congo of _Heart of Darkness_.) While it would take a Londoner at best, 10-20 days to reach Shanghai, the places named in Li Bai could take over 40. By invoking this obscure episteme, then, Pound carves out a space for the intervention of his artistic vision.
 
-![J. G. Bartholemew, Isochrone Map, 1914](./images/1914-isochrone-map.jpg)
+![J. G. Bartholemew, Isochrone Map, 1914](02-history/images/1914-isochrone-map.jpg)
 
 It would have been appealing for Pound, to translate poems about these distant places, since so few Europeans would have had direct experience of them. Thus, the imaginative freedom given the writer is broad, and the writing has built-in Brechtian estrangement effects: they are rich with images, since they are products of inventive imaginations. Edward Said, whose influential _Orientalism_ explicitly excludes China and Japan from the category of the oriental, nonetheless writes about this distance in an applicable manner: "imaginative geography and history help the mind to intensify its own sense of itself by dramatizing the distance and difference between what is close to it and what is far away" [@saidOrientalism2014, 55]. Pound dramatizes the distance between London and China, thereby constructing his own identity, by positioning himself as mediator. 
 

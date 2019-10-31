@@ -1,0 +1,3 @@
+[submodule "dissertation-prospectus"]
+	path = dissertation-prospectus
+	url = git@github.com:JonathanReeve/dissertation-prospectus.git
