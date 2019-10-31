@@ -10,5 +10,5 @@ Building requires Haskell and Shake. On Arch, you can get these with `pacman -S 
 To build, run: 
 
 ```
-runhaskell build.hs
+runhaskell build
 ```
