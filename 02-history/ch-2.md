@@ -54,11 +54,13 @@ Richards's schematic gives a sense of the complexity of the cognitive and emotio
 
 Richards, along with the modernists and imagists he studied, understood poetry and fiction as inextricably optical. As a visual phenomenon, it is therefore shaped and even controlled foremost by the mechanisms of the eye. I hope to show the ways in which okular phenomena can be used to explain the history of ideas in this period. This relies on a number of binaries, or distinctions made by theorists of the literary image: the static and the dynamic, the fragment and the whole, the idea and its expression, the near and the distant, the specific and the general, the small and the cosmic, the hard and the soft, and the dry and the wet. These are not mutually exclusive categories, as I hope will be apparent, but are loci of ambiguities and complexities which attracted these writers to them in the first place, as they do us. Contemporary criticism has often pointed out these binaries, but almost alway uses them as a starting place for symptomatic readings: Peter Nicholls on the implications of "hard" modernism; Rachel duPlessis on gendered aspects of the "dry" and "wet" in Pound; Gibson on the "dry" and "hard" as neoclassicist [@nichollsHardSoftModernism2013; @duplessisPropoundingModernistMaleness2002; @gibsonCONTRADICTORYIMAGESCONFLICTING2011a]. Among modern critics, Jesse Schotter comes closest to examining the material membranes of the image and writing with his notion of "hieroglyphic" modernism [@schotter2018hieroglyphic]. I hope to extend their readings with surface readings, and show the utility of okular anatomies and physiologies as applied toward the understanding of the literature of this period.
 
+<!-- TODO: fix this section 
+
 Claudia Olk argues that a break with realism in early 20th century writing shifts conceptions of the visual from a representational and "natural" visual epistemology, to one a more "conceptual" and less "positivist" one [@olkVaguenessVisionVeil2007 153]. 
 
 "The category of vision is not only central to many modernist texts, but also plays a key role in the unfolding paradigm of modernism itself. The received sense of a modernist break with realism, its pervasive interest in the workings of the individual mind, and its generic reclassifications of the novel also intimately affected the role of vision, which gained a conceptual rather than natural status. Whereas realist texts adhere to a visual language of representation and become legible within a positivist epistemology, modernist texts clearly depart from this positivist faith." (153) 
 
-how 
+--> 
 
 
 ## Persistence of Vision: the Static and the Dynamic

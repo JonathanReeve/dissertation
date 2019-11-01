@@ -23,12 +23,10 @@ main = shakeArgs opts $ do
                        "--filter", "pandoc-citeproc",
                        "--template", "templates/chapter.tex",
                        -- "--biblatex",
-                       "-V", "linestretch=1.8",
-                       "-V", "fontsize=12p",
                        "-o", f
                      ]
 
-    -- Do this using --bibtex instead? 
+    -- Or do this using --bibtex instead?
     -- "02-history/ch-2.pdf" %> \f -> do
     --     let source = "02-history/ch-2.tex"
     --     let bibliography = "references.bib"
