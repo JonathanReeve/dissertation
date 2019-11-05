@@ -23,7 +23,7 @@
 %% \usepackage{times}  %set Times New Roman as the font
 \usepackage[explicit]{titlesec}  %title control and formatting
 \usepackage[titles]{tocloft}  %table of contents control and formatting
-\usepackage[backend=bibtex, sorting=none, bibstyle=mla]{biblatex}  %reference manager
+\usepackage[style=mla-new, bibstyle=mla-new]{biblatex}  %reference manager
 \usepackage[bookmarks=true, hidelinks]{hyperref}
 \usepackage{appendix}  %for appendices
 \usepackage{rotating}  %for rotated, landscape images
@@ -51,7 +51,7 @@
 %Add your bibliography file here
 %% \bibliography{references}
 
-\addbibresource{$bibliography$}
+\addbibresource{/home/jon/Dropbox/Columbia/Dissertation/02-history/references.bib}
 
 % prevent certain fields in references from printing in bibliography
 \AtEveryBibitem{\clearfield{issn}}
@@ -222,34 +222,40 @@ $body$
 % References
 %%%%%%%%%%%%%%%%
 
-\titleformat{\chapter}[display]
-{\normalfont\bfseries\filcenter}{}{0pt}{\large\bfseries\filcenter{#1}}  % Reset title format for Reference section. (It is different from Chapter titles)
-\titlespacing*{\chapter}
-  {0pt}{0pt}{30pt}
+%% \titleformat{\chapter}[display]
+%% {\normalfont\bfseries\filcenter}{}{0pt}{\large\bfseries\filcenter{#1}}  % Reset title format for Reference section. (It is different from Chapter titles)
+%% \titlespacing*{\chapter}
+%%   {0pt}{0pt}{30pt}
 
-\begin{singlespace}  % use single-line spacing for multi-line text within a single reference
-	\setlength\bibitemsep{\baselineskip}  %manually set separataion betwen items in bibliography to double space
-	\printbibliography[title={References}]
-\end{singlespace}
+%% \begin{singlespace}  % use single-line spacing for multi-line text within a single reference
+%% 	\setlength\bibitemsep{\baselineskip}  %manually set separataion betwen items in bibliography to double space
+%% 	\printbibliography[title={References}]
+%% \end{singlespace}
 
-\addcontentsline{toc}{chapter}{References}  %add References section to Table of Contents
+%% \addcontentsline{toc}{chapter}{References}  %add References section to Table of Contents
 
 %%%%%%%%%%%%%%%%
 % Appendices
 %%%%%%%%%%%%%%%%
 
 %Readjust Title format for Appendicies
-\titleformat{\chapter}[display]
-{\normalfont\bfseries\filcenter}{}{0pt}{\large\chaptertitlename\ \large\thechapter : \large\bfseries\filcenter{#1}}  
-\titlespacing*{\chapter}
-  {0pt}{0pt}{30pt}	%controls vertical margins on title
+%% \titleformat{\chapter}[display]
+%% {\normalfont\bfseries\filcenter}{}{0pt}{\large\chaptertitlename\ \large\thechapter : \large\bfseries\filcenter{#1}}  
+%% \titlespacing*{\chapter}
+%%   {0pt}{0pt}{30pt}	%controls vertical margins on title
   
-% Adjust section title formatting
-\titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{#1}
+%% % Adjust section title formatting
+%% \titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{#1}
 
-% Adjust subsection title formatting
-\titleformat{\subsection}{\normalfont}{\thesubsection}{0em}{\hspace{1em}#1}
+%% % Adjust subsection title formatting
+%% \titleformat{\subsection}{\normalfont}{\thesubsection}{0em}{\hspace{1em}#1}
 
 %% \input{appendix.tex}
+
+\setlength{\parindent}{0pt}
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$endif$
 
 \end{document} 
