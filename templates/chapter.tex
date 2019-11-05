@@ -9,48 +9,40 @@
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
 \makeatother
+
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
 % Set default figure placement to htbp
+
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
 \usepackage[letterpaper, left=1in, right=1in, top=1in, bottom=1in]{geometry}
 \usepackage{setspace}  %use this package to set linespacing as desired
-%% \usepackage{times}  %set Times New Roman as the font
 \usepackage[explicit]{titlesec}  %title control and formatting
 \usepackage[titles]{tocloft}  %table of contents control and formatting
 \usepackage[style=mla-new, bibstyle=mla-new]{biblatex}  %reference manager
 \usepackage[bookmarks=true, hidelinks]{hyperref}
 \usepackage{appendix}  %for appendices
 \usepackage{rotating}  %for rotated, landscape images
-%% \usepackage{ulem}  %for underlined section titles
-%% \usepackage{textcomp} % for text symbols such as copyright etc. 
 \usepackage{indentfirst} % To indent the first line of every paragraph
 \usepackage{booktabs,array,arydshln} %for better table formatting. 
 \usepackage{amsmath} %for formula formatting
 \usepackage[T1]{fontenc} % improved font encoding
 \usepackage[utf8]{inputenc} % for better handling of non-ASCII characters
-%% \usepackage{newtxtext} % font choice
 \usepackage{newtxmath} 
-%% \usepackage{lmodern} % font choice 
  
 \usepackage{xeCJK} % display chinese characters
 \setmainfont{Linux Libertine}
 \setmainfont{Noto Serif}
 \setCJKmainfont{Noto Sans CJK SC}
 
-%% \usepackage{CJKutf8} 
-
-
-
 % Bibliography
-%Add your bibliography file here
-%% \bibliography{references}
-
+% FIXME: Find the best relative path for this. 
 \addbibresource{/home/jon/Dropbox/Columbia/Dissertation/02-history/references.bib}
 
 % prevent certain fields in references from printing in bibliography
@@ -71,22 +63,10 @@
     {}
     {\clearfield{urlyear}\clearfield{urlmonth}\clearfield{urlday}}}
 
-
 % Start of Dissertation Document
 
 \begin{document}
 \doublespacing  %set line spacing to double by default through out the document. This can be overwritten when necessary
-
-% Title Page (No page number)
-%% \input{titlePage.tex}
-%% \currentpdfbookmark{Title Page}{titlePage}  %add PDF bookmark for this page
-
-% Copyright  Page (No page number)
-%% \input{CopyrightPage.tex}
-
-% Abstract (No page number)
-%% \input{Abstract.tex}
-
 
 % Table of Contents
 
@@ -118,50 +98,10 @@
 
 \clearpage
 
-% List of figures and tables (Remove this if you do not have any tables or figures)
-
-%% \addcontentsline{toc}{chapter}{List of Tables}
-%% \begin{singlespace}
-%% 	\setlength\cftbeforetabskip{\baselineskip}  %manually set spacing between entries
-%% 	\listoftables
-%% \end{singlespace}
-
-%% \clearpage
-
-%% \addcontentsline{toc}{chapter}{List of Figures}
-%% \begin{singlespace}
-%% \setlength\cftbeforefigskip{\baselineskip}  %manually set spacing between entries
-%% \listoffigures
-%% \end{singlespace}
-
-%% \clearpage
-
-%% % Acknowledgments
-
-%% \addcontentsline{toc}{chapter}{Acknowledgments}
-%% \input{acknowledgements.tex}
-
-%% % Dedication
-%% \addcontentsline{toc}{chapter}{Dedication}
-%% \input{Dedication.tex}
-
-%%%%%%%
-%	            %
-% Chapters   %
-%                   %
-%%%%%%%
-
-% General formatting for chapters, appendix, etc. 
-
-
 % reset page numbering for rest of document 
 \clearpage
 \pagenumbering{arabic}
 \setcounter{page}{1} 
-
-%% % Preface %This is optional
-%% \addcontentsline{toc}{chapter}{Introduction or Preface}
-%% \input{Preface.tex}
 
 % Adjust chapter title formatting
 \titleformat{\chapter}[display]
@@ -175,87 +115,25 @@
 % Adjust subsection title formatting
 \titleformat{\subsection}{\normalfont}{\thesubsection}{0em}{\hspace{1em}#1}
 
-% Below is a subsubsection, uncomment it if you need to use it
-%\titleformat{\subsubsection}{\normalfont\itshape}{\thesubsection}{1em}{#1}
-
-%%%%%%%%%%%%%%%%
-% Chapter 1
-%%%%%%%%%%%%%%%%
-
-%% \input{chapter1.tex}
-
-%%%%%%%%%%%%%%%%
-% Chapter 2
-%%%%%%%%%%%%%%%%
-
-%% \input{chapter2.tex}
-
 \setcounter{chapter}{1}
 \chapter{$title$}
 
 $body$
 
 %%%%%%%%%%%%%%%%
-% Chapter 3
-%%%%%%%%%%%%%%%%
-
-%% \input{chapter3.tex}
-
-%% %%%%%%%%%%%%%%%%
-%% % Chapter 4
-%% %%%%%%%%%%%%%%%%
-
-%% \input{chapter4.tex}
-
-
-
-%% %%%%%%%%%%%%%%%%
-%% % Conclusion
-%% %%%%%%%%%%%%%%%%
-
-
-%% \input{Conclusion.tex}
-%% \addcontentsline{toc}{chapter}{Conclusion or Epilogue}
-
-
-%%%%%%%%%%%%%%%%
 % References
 %%%%%%%%%%%%%%%%
 
-%% \titleformat{\chapter}[display]
-%% {\normalfont\bfseries\filcenter}{}{0pt}{\large\bfseries\filcenter{#1}}  % Reset title format for Reference section. (It is different from Chapter titles)
-%% \titlespacing*{\chapter}
-%%   {0pt}{0pt}{30pt}
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\filcenter}{}{0pt}{\large\bfseries\filcenter{#1}}  % Reset title format for Reference section. (It is different from Chapter titles)
+\titlespacing*{\chapter}
+  {0pt}{0pt}{30pt}
 
-%% \begin{singlespace}  % use single-line spacing for multi-line text within a single reference
-%% 	\setlength\bibitemsep{\baselineskip}  %manually set separataion betwen items in bibliography to double space
-%% 	\printbibliography[title={References}]
-%% \end{singlespace}
+\begin{singlespace}  % use single-line spacing for multi-line text within a single reference
+	\setlength\bibitemsep{\baselineskip}  %manually set separataion betwen items in bibliography to double space
+	\printbibliography[title={Works Cited}]
+\end{singlespace}
 
-%% \addcontentsline{toc}{chapter}{References}  %add References section to Table of Contents
-
-%%%%%%%%%%%%%%%%
-% Appendices
-%%%%%%%%%%%%%%%%
-
-%Readjust Title format for Appendicies
-%% \titleformat{\chapter}[display]
-%% {\normalfont\bfseries\filcenter}{}{0pt}{\large\chaptertitlename\ \large\thechapter : \large\bfseries\filcenter{#1}}  
-%% \titlespacing*{\chapter}
-%%   {0pt}{0pt}{30pt}	%controls vertical margins on title
-  
-%% % Adjust section title formatting
-%% \titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{#1}
-
-%% % Adjust subsection title formatting
-%% \titleformat{\subsection}{\normalfont}{\thesubsection}{0em}{\hspace{1em}#1}
-
-%% \input{appendix.tex}
-
-\setlength{\parindent}{0pt}
-
-$if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
-$endif$
+\addcontentsline{toc}{chapter}{Works Cited}  %add References section to Table of Contents
 
 \end{document} 

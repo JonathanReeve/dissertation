@@ -26,16 +26,13 @@ main = shakeArgs opts $ do
         need ([ source, template, csl, bib ] ++ deps)
         contents <- readFile' source
         let replaced = replace contents
-        cmd (Stdin replaced) "pandoc" ["-f", "org",
-                                                          -- "--pdf-engine", "xelatex",
-                                                          -- "--filter", "pandoc-citeproc",
-                                                          "--template", template,
-                                                          "--standalone",
-                                                          "--biblatex",
-                                                          "--bibliography", bib,
-                                                          -- "--csl", csl,
-                                                          "-o", f
-                                                         ]
+        cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
+                                       "--template", template,
+                                       "--standalone",
+                                       "--biblatex",
+                                       "--bibliography", bib,
+                                       "-o", f
+                                       ]
 
     -- Do this using --bibtex instead
     "02-history/ch-2.pdf" %> \f -> do
@@ -43,9 +40,10 @@ main = shakeArgs opts $ do
         let source = "ch-2"
         let bibliography = "references.bib"
         need [ "02-history/ch-2.tex" ]
-        cmd_ dir "xelatex" source
-        cmd_ dir "biber" source
-        cmd_ dir "xelatex" source
-        cmd_ dir "xelatex" source
+        cmd_ dir "tectonic" "ch-2.tex"
+        -- cmd_ dir "xelatex" source
+        -- cmd_ dir "biber" source
+        -- cmd_ dir "xelatex" source
+        -- cmd_ dir "xelatex" source
 
     "clean" ~> removeFilesAfter ".shake" ["//*"]

@@ -1,22 +1,13 @@
 #+TITLE: Imagisms
 #+AUTHOR: Jonathan Reeve
 
-#+BEGIN_HTML
-  <!-- [Note: Chapter 1 will have done the work of disambiguating these terms, but just as a quick glossary: 
-   - image: a portion of poetry or prose that contains visual information: hue, shape, size, brightness, motion, and so on.] -->
-#+END_HTML
-
 How were textual images conceived at the turn of the century? What properties did they possess, measurable or unmeasurable? In the famous preface to his 1897 novella /The Nigger of the Narcissus/, Joseph Conrad announces that his project is, "by the power of the written word," "to make you hear, to make you feel, ... before all, to make you /see/. That---and no more, and it is everything." I will argue that he means "seeing" literally: not merely in the metaphorical sense of seeing as understanding, but in the physiological sense, of seeing as a neuro-okular process. Conrad explains that his task is to hold up, "before all eyes," a "passing phase of life ... to show its vibration, its colour, its form, and through its movement, its form, and its colour, reveal the substance of its truth" [cite:conradPortableConrad2007 49]. This trinity---color, form, and vibration/movement---is so important to Conrad, or so conceptually slippery, that he allows it two iterations, even in an essay that stresses the importance of verbal economy. It is tempting to read these three words figuratively, to say that "colour," when describing "a passing phase of life" refers to an affective experience, rather than a hue, and that "form" refers to a conceptual structure, rather than the visual boundaries of physical objects. That would not be wrong. In fact, these, and more esoteric readings, are among the most typical.[fn:1]  But they overlook an equally valuable surface reading: that color and form are physiologically distinguishable okular categories, corresponding to the rods and cones of retinal photoreceptors, and that they depend on light (vibrations in the visible electromagnetic spectrum) and a temporal dimension along which their movements may be perceived.
 
-The eye is more than just an adequate metaphor for the imagination of this period's writers. To understand modernism, one must first understand the image, along with its primary interface, and first image--processing neural apparatus, the eye. Images are most legible in the novels and poems of these writers, as I will show in the case--studies of chapters 4 and 5, but these creative works, like Conrad's /Narcissus/, are almost always accompanied with theoretical writings that frame, explicate, contextualize, and market them. In addition to introductions like the one above, this theory also appears alongside the literary works in their first contexts: "little magazines" that published mixtures poems, essays, criticism, chapters of novels, and reproductions of visual art.[fn:2] The critical accompaniments in these journals are not supplementary, in the Derridean sense of /external to/, the literary works they discuss, but are part of them [cite:derridaGrammatology2016 145]. This is especially true of poems like /The Waste Land/, where after the first printing, the text has rarely been unadorned with Eliot's own footnotes, but is also true of a wide range of writing at this time.
+The eye is more than just an adequate metaphor for the imagination of this period's writers. To understand modernism, one must first understand the image, along with its primary interface, and first image-processing neural apparatus, the eye. Images are most legible in the novels and poems of these writers, as I will show in the case--studies of chapters 4 and 5, but these creative works, like Conrad's /Narcissus/, are almost always accompanied with theoretical writings that frame, explicate, contextualize, and market them. In addition to introductions like the one above, this theory also appears alongside the literary works in their first contexts: "little magazines" that published mixtures poems, essays, criticism, chapters of novels, and reproductions of visual art.[fn:2] The critical accompaniments in these journals are not supplementary, in the Derridean sense of /external to/, the literary works they discuss, but are part of them [cite:derridaGrammatology2016 145]. This is especially true of poems like /The Waste Land/, where after the first printing, the text has rarely been unadorned with Eliot's own footnotes, but is also true of a wide range of writing at this time.
 
-#+BEGIN_HTML
-  <!--@brookerOxfordCriticalCultural2009
+# @brookerOxfordCriticalCultural2009
 
-  [On manifestos] 
-
-  where the genre of the work is such that it allows it to announce its independence from the envelope of discourse that creates and sustains it.  -->
-#+END_HTML
+# [On manifestos] 
 
 This period of literary history is so strongly autoexegetic that the theories of these writers deserves close examination, even when it is not reflected in the writing itself. There are frequent and often-cited contradictions between the theories of these poet-critics and their practice, and yet these theories support a way of understanding and manipulating visual language, which not only reveals the centrality of vision and the image, but which shows definite and measurable properties of those images, leading ultimately to an okular taxonomy. A study of literary images of the turn of the century, then, first requires a look at these immediate material contexts: the secondary literature written by the authors of the primary.
 
@@ -26,13 +17,9 @@ Even if we were to treat the critical writings surrounding the many movements or
 
 Here I build on a method outlined by Stephen Best and Sharon Marcus, which they call "surface reading" [cite:bestSurfaceReadingIntroduction2009]. The widespread success of psychoanalytic and Marxist critical methods in the 1970s and '80s, they argue, enshrined in the academy a mode of reading they call "symptomatic," and a "hermeneutics of suspicion": methods not invalid, but which risk devaluing the more direct meanings of the text. Likewise, I acknowledge the readings that see much of this theory as symptomatic of social issues, historical context, and the literary /Zeitgeist/, and acknowledge that these are inextricable facets of this subject, while at the same time seeking less interpretive interpretations---ones which may lead to greater algorithmic testability. I will take "surface" reading even more literally than they do, and direct my attention to the actual phenomena of surfaces, the aspect of things which makes them visible, reflects light, gives them color, and makes their shapes discernible.
 
-#+BEGIN_HTML
-  <!-- more on this -->
-#+END_HTML
+# TODO: more on this
 
-#+BEGIN_HTML
-  <!--[Literary Impressionism] -->
-#+END_HTML
+# TODO: Literary Impressionism 
 
 Surfaces, being the first and most obvious property of an object, are the most readily overlooked, since the critical object's more hidden layers will better showcase the /τέχνη/ of the critic. Yet the surface and the eye are the two primary interfaces of the perceptive process: the textual surface is where writing ends and where reading begins; the eye is the first filter, or prism, for the information conveyed by the surface. I hope to show that this is a conception that was central to this period's writers and critics.
 
@@ -44,7 +31,6 @@ One of the most illustrious examples is that of I.A. Richards, a literary critic
 He explains that the six distinct processes depicted vertically here are events happening one after the other, through which these lines are "streams of impulses flowing through in the mind" (113):
 
 #+BEGIN_QUOTE
-
   #+BEGIN_VERSE
     I. The visual sensations of the printed words.
     II. Images very closely associated with these sensations.
@@ -64,17 +50,17 @@ Richards's schematic gives a sense of the complexity of the cognitive and emotio
 
 Richards, along with the modernists and imagists he studied, understood poetry and fiction as inextricably optical. As a visual phenomenon, it is therefore shaped and even controlled foremost by the mechanisms of the eye. I hope to show the ways in which okular phenomena can be used to explain the history of ideas in this period. This relies on a number of binaries, or distinctions made by theorists of the literary image: the static and the dynamic, the fragment and the whole, the idea and its expression, the near and the distant, the specific and the general, the small and the cosmic, the hard and the soft, and the dry and the wet. These are not mutually exclusive categories, as I hope will be apparent, but are loci of ambiguities and complexities which attracted these writers to them in the first place, as they do us. Contemporary criticism has often pointed out these binaries, but almost alway uses them as a starting place for symptomatic readings: Peter Nicholls on the implications of "hard" modernism; Rachel duPlessis on gendered aspects of the "dry" and "wet" in Pound; Gibson on the "dry" and "hard" as neoclassicist [cite:nichollsHardSoftModernism2013; cite:duplessisPropoundingModernistMaleness2002; cite:gibsonCONTRADICTORYIMAGESCONFLICTING2011a]. Among modern critics, Jesse Schotter comes closest to examining the material membranes of the image and writing with his notion of "hieroglyphic" modernism [cite:schotter2018hieroglyphic]. I hope to extend their readings with surface readings, and show the utility of okular anatomies and physiologies as applied toward the understanding of the literature of this period.
 
-#+BEGIN_HTML
-  <!-- TODO: fix this section 
+# TODO: fix this section 
 
+#+BEGIN_COMMENT  
+ 
   Claudia Olk argues that a break with realism in early 20th century writing shifts conceptions of the visual from a representational and "natural" visual epistemology, to one a more "conceptual" and less "positivist" one [cite:olkVaguenessVisionVeil2007 153]. 
 
   "The category of vision is not only central to many modernist texts, but also plays a key role in the unfolding paradigm of modernism itself. The received sense of a modernist break with realism, its pervasive interest in the workings of the individual mind, and its generic reclassifications of the novel also intimately affected the role of vision, which gained a conceptual rather than natural status. Whereas realist texts adhere to a visual language of representation and become legible within a positivist epistemology, modernist texts clearly depart from this positivist faith." (153) 
 
-  -->
-#+END_HTML
+#+END_COMMENT 
 
-[fn:1] See, for example @ennsVibrationSoundBirth2013 71. Ludwig Schnauder calls this sequence a blend of "the terms and concepts of Impressionism with a Victorian insistence on the truthfulness and moral sincerity of fiction" (cite:schnauderFreeWillDeterminism2009, 98]]
+[fn:1] See, for example @ennsVibrationSoundBirth2013 71. Ludwig Schnauder calls this sequence a blend of "the terms and concepts of Impressionism with a Victorian insistence on the truthfulness and moral sincerity of fiction" [cite:schnauderFreeWillDeterminism2009, 98].
 
 [fn:2] In Britain, these included /The Freewoman/ (1911--13) and /The New Freewoman/ (1913--14), /The Egoist/ (1914--19), and /The English Review/ (1908-1937). In the United States, influential journals included /The Little Review/ (1914--29), /The Dial/ (1880--29), and /Poetry/ (1912--).
 
@@ -127,14 +113,10 @@ Wells highlights static aspects of a technology meant to depict motion ("cinemat
 
 The relation between a still image and a moving image is a subset of that between a part and its whole. As in Wells's analogy, where the defects of the lantern create static images from motion, the imagist poets, also known by their earlier Francophilic formulation, /imagistes/, conceive of images as fragments. Brash, showy, and defiant in their rhetoric, these young poets at times seemed as interested in propagandizing their movement as participating in it. Often overlooked by critics today as well as critics then, their ideas are nonetheless seen as influential, even while regarded as unoriginal. Glen Hughes, in a 1930 retrospective of imagism, argues that it "may be characterized as the best-organized and most influential 'movement' in English poetry since the activity of the pre-Raphaelites" [cite:hughes1972imagism, vii].
 
-#+BEGIN_HTML
-  <!--
-  [Influence of imagists]
+# TODO: Influence of imagists
 
-  [Part-meronymic relations]
-  [Fragments more generally]
-  -->
-#+END_HTML
+# TODO: Part-meronymic relations
+# TODO: Fragments more generally
 
 One of their earliest and most well-known statements of theirs is a sequence of two short notes in a 1913 issue of /Poetry/, the first by F.S. Flint, and the second by Ezra Pound [cite:flint1913]. Flint's begins with the tone of an investigative journalist, hot on the trail of the latest trend: "some curiosity has been aroused concerning /Imagisme/, and as I was unable to find anything definite about it in print, I sought out an /imagiste/, with intent to discover whether the group itself knew anything about the 'movement.' I gleaned these facts" (198--9). The irony is strong for us, and probably for some contemporaneous readers, since we know Flint to be a founding member of the imagists himself. Here, Flint names as imagist influences "the best writers of all time,"---Sappho, Catullus, and Villon. As an unusual selection, it deserves some discussion. First, the poems of Sappho, a Greek poet whose work survives only in fragments, presents a model, however unintentional, of the imagists's fragmentary brevity. Some of her fragments, if treated as intentionally short poems, would be at home in an imagist anthology.
 
@@ -145,7 +127,6 @@ Had Sappho's works survived intact, the imagists wouldn't have celebrated them, 
 The next of these influences, Catullus, as a neoteric poet, is known for his choices of quotidian, rather than epic, subjects, similar to those chosen by imagists. His best known work, known as Catullus 64, is told in an ekphrastic mode---a description of an image---and begins with the lines, here translated by Sir Richard Francis Burton in 1894: "
 
 #+BEGIN_QUOTE
-
   #+BEGIN_VERSE
     Pine-trees gendered whilome upon soaring Peliac summit
     Swam (as the tale is told) through liquid surges of Neptune [cite:catullusValeriusCatullusCarmina].
@@ -155,8 +136,7 @@ The next of these influences, Catullus, as a neoteric poet, is known for his cho
 This image is the one that appears in H.D.'s "Oread," which Pound cited as the exemplary imagist poem:
 
 #+BEGIN_QUOTE
-
-  #+BEGIN_VERSE
+  #+BEGIN_VERSE  
     Whirl up, sea---
     whirl your pointed pines,
     splash your great pines
@@ -194,11 +174,7 @@ Rebecca West's 1913 article on Imagism also cites "nakedness" as a feature of go
 
 West's image of words as "scattered star dust" is of words as fragments, and as material objects. All matter is star dust, but ideas, and the words that approximate them, are not always material.
 
-#+BEGIN_HTML
-  <!--
-  [Schotter, hieroglyphs] 
-  -->
-#+END_HTML
+# Schotter, hieroglyphs
 
 ** Ideograms: the Idea and its Expression
    :PROPERTIES:
@@ -231,9 +207,7 @@ One of the functions of /imagination/, that is, the willing creation of mental i
 
 It would have been appealing for Pound, to translate poems about these distant places, since so few Europeans would have had direct experience of them. Thus, the imaginative freedom given the writer is broad, and the writing has built-in Brechtian estrangement effects: they are rich with images, since they are products of inventive imaginations. Edward Said, whose influential /Orientalism/ explicitly excludes China and Japan from the category of the oriental, nonetheless writes about this distance in an applicable manner: "imaginative geography and history help the mind to intensify its own sense of itself by dramatizing the distance and difference between what is close to it and what is far away" [cite:saidOrientalism2014, 55]. Pound dramatizes the distance between London and China, thereby constructing his own identity, by positioning himself as mediator.
 
-#+BEGIN_HTML
-  <!--See thacker on Pound, orientalism: [cite:Thacker2005 31] -->
-#+END_HTML
+# See thacker on Pound, orientalism: [cite:Thacker2005 31]
 
 This exotic distance is illustrated elsewhere in the era's poetry, as well. In 1928, Pound collaborated with Mark van Doren to compile an anthology, /An Anthology of World Poetry/, with additional help from Ford Madox Ford, A.E. Housman, and other poets. This anthology's structure illustrates the imaginative distances---geographic, travel, cultural, and chronological---from its publication place. Van Doren arranges this anthology's poems seemingly in order of this distance from New York: starting with Chinese and Japanese poets, moving to Sanskrit and Persian; then Hebrew, Egyptian, Greek, and Latin; moving through modern European countries; and concluding with English, Irish, and American. Pound's translations appear throughout this anthology: from the Chinese, French, German, and Latin. Only one of his originals is printed, however, "The Garden," which, along with Eliot's "Prufrock" and H.D.'s "Oread," conclude the collection, and the "American" section, creating the illusion that they are the culmination of this tradition. A number of regions are noticeably absent from this collection, but tellingly, the countries that are included here are ones that are usually cited as influences of the imagists and modernists. One might read van Doren's anthology as retroactively validating the thematic choices of these writers, by painting a picture of the world in which they themselves are the most worldly.
 
