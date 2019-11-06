@@ -11,7 +11,7 @@ replace str = subRegex (mkRegex "cite:") str "@"
 
 main :: IO ()
 main = shakeArgs opts $ do
-    want ["02-history/ch-2.pdf"]
+    want ["02-history/ch-2.pdf", "02-history/ch-2.docx"]
 
     "02-history/references.bib" %> \f -> do
         let source = "/home/jon/Dropbox/Papers/library.bib"
@@ -40,10 +40,26 @@ main = shakeArgs opts $ do
         let source = "ch-2"
         let bibliography = "references.bib"
         need [ "02-history/ch-2.tex" ]
-        cmd_ dir "tectonic" "ch-2.tex"
-        -- cmd_ dir "xelatex" source
-        -- cmd_ dir "biber" source
-        -- cmd_ dir "xelatex" source
-        -- cmd_ dir "xelatex" source
+        -- cmd_ dir "tectonic" "ch-2.tex"
+        cmd_ dir "xelatex" source
+        cmd_ dir "biber" source
+        cmd_ dir "xelatex" source
+        cmd_ dir "xelatex" source
+
+
+    "02-history/ch-2.docx" %> \f -> do
+        let source = "ch-2.tex"
+            bib = "references.bib"
+            csl = "../templates/modern-language-association.csl"
+        need [ "02-history/ch-2.tex" ]
+        cmd_ (Cwd "02-history") "pandoc" [ source,
+                                           "-f", "latex",
+                                           "--standalone",
+                                           "--toc",
+                                           "--bibliography", bib,
+                                           "--csl", csl,
+                                           "--filter", "pandoc-citeproc",
+                                           "-o", "ch-2.docx"
+                                         ]
 
     "clean" ~> removeFilesAfter ".shake" ["//*"]
