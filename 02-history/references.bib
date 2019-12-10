@@ -994,169 +994,6 @@ together with a discussion of  the nature of  text relations. We also propose ar
 @online{douglas_duhaime_clustering_????,
   title = {Clustering {{Semantic Vectors}} with {{Python}}},
   url = {http://douglasduhaime.com/blog/clustering-semantic-vectors-with-python},
-  abstract = {Google's Word2Vec and Stanford's GloVe have recently offered two fantastic 
-open source software packages capable of transposing words into a high 
-dimension vector space. In both cases, a vector's position within the high 
-dimensional space gives a good indication of the word's semantic class 
-(among other things), and in both cases these vector positions can be used 
-in a variety of applications.~In the post below, I'll discuss one approach 
-you can take to clustering the vectors into coherent semantic groupings.~
-
-Both Word2Vec and GloVe can create vector spaces given a large training 
-corpus, but both maintain pretrained vectors as well. To get started with 
-\textasciitilde{}1GB of pretrained vectors from GloVe, one need only run the following 
-lines:
-
-wget http://www-nlp.stanford.edu/data/glove.6B.300d.txt.gz
-gunzip glove.6B.300d.txt.gz
-
-If you unzip and then glance at glove.6B.300d.txt, you'll see that it's 
-organized as follows:
-
-the 0.04656 0.21318 -0.0074364 [...] 0.053913
-, -0.25539 -0.25723 0.13169 [...] 0.35499
-. -0.12559 0.01363 0.10306 [...] 0.13684
-of -0.076947 -0.021211 0.21271 [...] -0.046533
-to -0.25756 -0.057132 -0.6719 [...] -0.070621
-[...]
-sandberger 0.429191 -0.296897 0.15011 [...] -0.0590532
-
-Each new line contains a token followed by 300 signed floats, and those 
-values appear to be organized from most to least common. Given this ready 
-format, it's fairly straightforward to get straight to clustering!
-
-There are a variety of methods for clustering vectors, including 
-density-based clustering,~hierarchical clustering, and centroid clustering. 
-One of the most intuitive and most commonly used centroid-based methods is 
-K-Means. Given a collection of points in a space, K-Means uses a Hunger 
-Games style random lottery to pick a few lucky points (colored green 
-below),~then assigns each of the non-lucky points to the lucky point to 
-which it's closest. Using these preliminary groupings, the next step is to 
-find the "centroid" (or geometric center) of each group, using the same 
-technique one would use to find the center of a square. These centroids 
-become the new lucky points, and again each non-lucky point is again 
-assigned to the lucky point to which it's closest. This process continues 
-until the centroids settle down and stop moving, after which the clustering 
-is complete. Here's a nice visual description of K-Means [source]:
-
-To cluster the GloVe vectors in a similar fashion, one can use the sklearn 
-package in Python, along with a few other packages:
-
-from \_\_future\_\_ import division
-from sklearn.cluster import KMeans 
-from numbers import Number
-from pandas import DataFrame
-import sys, codecs, numpy
-
-It will also be helpful to build a class to mimic the behavior of 
-autovivification in Perl, which is essentially the process of creating new 
-default hash values given a new key. In Python, this behavior is available 
-through collections.defaultdict(), but the latter isn't serializable,~so 
-the following class is handy. Given an input key it hasn't seen, the class 
-will create an empty list as the corresponding hash value:
-
-class autovivify\_list(dict):
-        '''Pickleable class to replicate the functionality of collections.defaultdict'''
-        def \_\_missing\_\_(self, key):
-                value = self[key] = []
-                return value
-
-        def \_\_add\_\_(self, x):
-                '''Override addition for numeric types when self is empty'''
-                if not self and isinstance(x, Number):
-                        return x
-                raise ValueError
-
-        def \_\_sub\_\_(self, x):
-                '''Also provide subtraction method'''
-                if not self and isinstance(x, Number):
-                        return -1 * x
-                raise ValueError
-
-We also want a method to read in a vector file (e.g. glove.6B.300d.txt) and 
-store each word and the position of that word within the vector space. 
-Because reading in and analyzing some of the larger GloVe files can take a 
-long time, to get going quickly one can limit the number of lines to read 
-from the input file by specifying a global value (n\_words), which is 
-defined later on:
-
-def build\_word\_vector\_matrix(vector\_file, n\_words):
-        '''Read a GloVe array from sys.argv[1] and return its vectors and labels as arrays'''
-        numpy\_arrays = []
-        labels\_array = []
-        with codecs.open(vector\_file, 'r', 'utf-8') as f:
-                for c, r in enumerate(f):
-                        sr = r.split()
-                        labels\_array.append(sr[0])
-                        numpy\_arrays.append( numpy.array([float(i) for i in sr[1:]]) )
-
-                        if c == n\_words:
-                                return numpy.array( numpy\_arrays ), labels\_array
-
-        return numpy.array( numpy\_arrays ), labels\_array
-
-Scikit-Learn's implementation of K-Means returns an object (cluster\_labels 
-in these snippets) that indicates the cluster to which each input vector 
-belongs. That object doesn't tell one which word belongs in each cluster, 
-however, so the following method takes care of this. Because all of the 
-words being analyzed are stored in labels\_array and the cluster to which 
-each word belongs is stored in cluster\_labels, the following method can 
-easily map those two sequences together:
-
-def find\_word\_clusters(labels\_array, cluster\_labels):
-        '''Read the labels array and clusters label and return the set of words in each cluster'''
-        cluster\_to\_words = autovivify\_list()
-        for c, i in enumerate(cluster\_labels):
-                cluster\_to\_words[ i ].append( labels\_array[c] )
-        return cluster\_to\_words
-
-Finally, we can call the methods above, perform K-Means clustering, and 
-print the contents of each cluster with the following block:
-
-if \_\_name\_\_ == "\_\_main\_\_":
-        input\_vector\_file = sys.argv[1] \# The Glove file to analyze (e.g. glove.6B.300d.txt)
-        n\_words           = int(sys.argv[2]) \# The number of lines to read from the input file
-        reduction\_factor  = float(sys.argv[3]) \# The desired amount of dimension reduction 
-        clusters\_to\_make  = int( n\_words * reduction\_factor ) \# The number of clusters to make
-        df, labels\_array  = build\_word\_vector\_matrix(input\_vector\_file, n\_words)
-        kmeans\_model      = KMeans(init='k-means++', n\_clusters=clusters\_to\_make, n\_init=10)
-        kmeans\_model.fit(df)
-
-        cluster\_labels    = kmeans\_model.labels\_
-        cluster\_inertia   = kmeans\_model.inertia\_
-        cluster\_to\_words  = find\_word\_clusters(labels\_array, cluster\_labels)
-
-        for c in cluster\_to\_words:
-                print cluster\_to\_words[c]
-                print "\textbackslash{}n"
-
-The full script is available here. To run it, one needs to specify the 
-vector file to be read in, the number of words one wishes to sample from 
-that file (one can of course read them all, but doing so can take some 
-time), and the "reduction factor", which determines the number of clusters 
-to be made. If one specifies a reduction factor of .1, for instance, the 
-routine will produce n*.1 clusters, where n is the number of words sampled 
-from the file. The following command reads in the first 10,000 words, and 
-produces 1,000 clusters:
-
-python cluster\_vectors.py glove.6B.300d.txt 10000 .1
-
-The output of this command is the series of clusters produced by the 
-K-Means clustering:
-
-[u'Chicago', u'Boston', u'Houston', u'Atlanta', u'Dallas', u'Denver', u'Philadelphia', u'Baltimore', u'Cleveland', u'Pittsburgh', u'Buffalo', u'Cincinnati', u'Louisville', u'Milwaukee', u'Memphis', u'Indianapolis', u'Auburn', u'Dame']
-
-[u'Product', u'Products', u'Shipping', u'Brand', u'Customer', u'Items', u'Retail', u'Manufacturer', u'Supply', u'Cart', u'SKU', u'Hardware', u'OEM', u'Warranty', u'Brands']
-
-[u'home', u'house', u'homes', u'houses', u'housing', u'offices', u'household', u'acres', u'residence']
-
-[...]
-
-[u'Night', u'Disney', u'Magic', u'Dream', u'Ultimate', u'Fantasy', u'Theme', u'Adventure', u'Cruise', u'Potter', u'Angels', u'Adventures', u'Dreams', u'Wonder', u'Romance', u'Mystery', u'Quest', u'Sonic', u'Nights']
-
-I'm currently using these word clusters for fuzzy plagiarism detection, but 
-they can serve a wide variety of purposes. If you find them helpful for a 
-project you're working on, feel free to drop me a note below!},
   urldate = {2015-09-13},
   keywords = {text analysis,python},
   author = {{Douglas Duhaime}},
@@ -1689,7 +1526,6 @@ Requested from Offsite
   date = {2013-10-30},
   editor = {Wilson, Janet and Kimber, Gerri and da Sousa Correa, Delia},
   options = {useprefix=true},
-  file = {/home/jon/Dropbox/Papers/zotero/storage/7WWB4X4Q/Colonialism$0020and$0020the$0020Need$0020for$0020Impurity.pdf}
 }
 
 @article{sorkin_katherine_1978,
@@ -5946,7 +5782,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh,History / Europe / Ireland},
   author = {Norris, Margot},
   file = {/home/jon/Dropbox/Papers/James Joyce/Dubliners/Norris_2010_Suspicious Readings of Joyce's Dubliners.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{_chapter:_2014,
@@ -6022,7 +5858,7 @@ In the second chapter, the author applies …
   keywords = {Philosophy / History & Surveys / Ancient & Classical},
   author = {Plato and Waterfield, Robin},
   file = {/home/jon/Dropbox/Papers/Form/Plato_Waterfield_2002_Phaedrus.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{plato_timaeus_2008,
@@ -6036,7 +5872,7 @@ In the second chapter, the author applies …
   keywords = {Science / Philosophy & Social Aspects,Philosophy / History & Surveys / Ancient & Classical},
   author = {Plato},
   file = {/home/jon/Dropbox/Papers/Form/Plato_2008_Timaeus and Critias.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{hegel_philosophy_1870,
@@ -6101,7 +5937,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Blamires, Harry},
   file = {/home/jon/Dropbox/Papers/James Joyce/Ulysses/Blamires_1996_The New Bloomsday Book.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gifford_ulysses_2008,
@@ -6116,7 +5952,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh,Reference / Dictionaries},
   author = {Gifford, Don and Seidman, Robert J.},
   file = {/home/jon/Dropbox/Papers/James Joyce/Ulysses/Gifford_Seidman_2008_Ulysses Annotated_2.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{ellmann_james_1982,
@@ -6129,7 +5965,7 @@ In the second chapter, the author applies …
   date = {1982},
   author = {Ellmann, Richard},
   file = {/home/jon/Dropbox/Papers/James Joyce/Ulysses/1982_James Joyce.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gifford_joyce_1981,
@@ -6144,7 +5980,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Gifford, Don},
   file = {/home/jon/Dropbox/Papers/zotero/storage/JJHVJNXE/gifford-dubliners-portrait.djvu},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gilbert_james_1955,
@@ -6154,7 +5990,7 @@ In the second chapter, the author applies …
   date = {1955},
   author = {Gilbert, Stuart},
   file = {/home/jon/Dropbox/Papers/James Joyce/Ulysses/Gilbert_1955_James Joyce's Ulysses.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{joyce_little_2015,
@@ -6168,7 +6004,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh,Fiction / Literary},
   author = {Joyce, James and Gaipa, Mark and Latham, Sean and Scholes, Robert},
   file = {/home/jon/Dropbox/Papers/James Joyce/Ulysses/Joyce et al_2015_The Little Review Ulysses.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{fargnoli_critical_2014,
@@ -6183,7 +6019,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Fargnoli, A. Nicholas and Fargnoli, Vice-President of the James Joyce Society {and} Professor of Theology {and} English A. Nicholas and Gillespie, Michael Patrick},
   file = {/home/jon/Dropbox/Papers/James Joyce/Ulysses/Fargnoli et al_2014_Critical Companion to James Joyce.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{bloom_james_2009,
@@ -6196,7 +6032,7 @@ In the second chapter, the author applies …
   date = {2009},
   author = {Bloom, Harold},
   file = {/home/jon/Dropbox/Papers/James Joyce/Ulysses/Bloom_2009_James Joyce.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{lin_critical_2016,
@@ -6873,7 +6709,7 @@ In the second chapter, the author applies …
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Manning, Christopher D. and Schütze, Hinrich},
   file = {/home/jon/Dropbox/Papers/Graphical Models/Manning_Schütze_1999_Foundations of Statistical Natural Language Processing.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{neal_probabilistic_1993,
@@ -7044,7 +6880,7 @@ In the second chapter, the author applies …
   date = {2007-12-18},
   keywords = {Literary Criticism / Semiotics & Theory},
   author = {Sedgwick, Eve Kosofsky},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{hayot_new_2016,
@@ -7057,7 +6893,7 @@ In the second chapter, the author applies …
   date = {2016-11-29},
   keywords = {Literary Criticism / Semiotics & Theory,Literary Criticism / Reference,History / World},
   author = {Hayot, Eric and Walkowitz, Rebecca L.},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{_new_2015,
@@ -7574,7 +7410,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / General,Education / General,Education / Higher},
   author = {Graff, Gerald},
   file = {/home/jon/Dropbox/Papers/Middlemarch/Graff_2008_Professing Literature.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{guillory_cultural_1993,
@@ -7588,7 +7424,7 @@ In the second chapter, the author applies …
   date = {1993-07-01},
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Guillory, John},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{_what_????-2,
@@ -7673,7 +7509,7 @@ In the second chapter, the author applies …
   date = {2015-12-08},
   keywords = {Poetry / General},
   author = {Meyer, Herman},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{moore_moment_1903,
@@ -7685,7 +7521,7 @@ In the second chapter, the author applies …
   date = {1903},
   author = {Moore, Ella Adams},
   file = {/home/jon/Dropbox/Papers/Middlemarch/1903_A Moment Each Day with George Eliot.pdf;/home/jon/Dropbox/Papers/zotero/storage/VTIT7P8N/ssd.html},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{morson_words_2010,
@@ -7743,7 +7579,7 @@ In the second chapter, the author applies …
   keywords = {Literary Criticism / Semiotics & Theory},
   author = {Eagleton, Terry},
   file = {/home/jon/Dropbox/Papers/Middlemarch/Eagleton_1996_Literary Theory.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{eliot_wise_1873,
@@ -7755,7 +7591,7 @@ In the second chapter, the author applies …
   date = {1873},
   author = {Eliot, George},
   file = {/home/jon/Dropbox/Papers/Middlemarch/Eliot_1873_Wise, Witty, and Tender Sayings in Prose and Verse.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{de_grazia_sanctioning_1991,
@@ -7796,7 +7632,7 @@ In the second chapter, the author applies …
   date = {2004},
   author = {Eliot, George},
   editor = {Maertz, Gregory},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{hammarfelt_citation_2011,
@@ -8214,7 +8050,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2000-11-07},
   keywords = {Fiction / Literary},
   author = {Conrad, Joseph},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{conrad_heart_1999,
@@ -8228,7 +8064,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1999-08-16},
   keywords = {Fiction / Literary,History / Africa / General},
   author = {Conrad, Joseph},
-  eprinttype = {googlebooks}
+  
 }
 
 @inproceedings{kolak_generating_2008,
@@ -8270,7 +8106,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2012-12-28},
   keywords = {Fiction / Literary},
   author = {Woolf, Virginia},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{meredith_girl_1903,
@@ -8280,7 +8116,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   publisher = {{Duckworth}},
   date = {1903},
   author = {Meredith, Isabel},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{coleVioletHourModernism2012,
@@ -8294,7 +8130,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2012-11-29},
   keywords = {Literary Criticism / General,Literary Criticism / Poetry,Literary Criticism / European / English; Irish; Scottish; Welsh,History / Military / World War I,History / Military / World War II,History / Europe / Great Britain,History / Europe / Spain & Portugal},
   author = {Cole, Sarah},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{conrad_secret_2009,
@@ -8321,7 +8157,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Rhetoric,Language Arts & Disciplines / Library & Information Science / Digital & Online Resources},
   author = {Ridolfo, Jim and Hart-Davidson, William},
   file = {/home/jon/Dropbox/Papers/Rhetoric/Ridolfo_Hart-Davidson_2015_Rhetoric and the Digital Humanities.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{west-puckett_making_2016,
@@ -8355,7 +8191,6 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2007},
   keywords = {Language Arts & Disciplines / Grammar & Punctuation},
   author = {Florey, Kitty Burns},
-  eprinttype = {googlebooks},
   annotation = {Popular audience, not much value}
 }
 
@@ -8430,7 +8265,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1992-01-01},
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Mann, William C. and Thompson, Sandra A.},
-  eprinttype = {googlebooks}
+  
 }
 
 @incollection{carlson_building_2003,
@@ -8481,7 +8316,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1997-11-06},
   keywords = {Literary Collections / Essays,Social Science / Folklore & Mythology},
   author = {Narvez, Peter},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{beckett_edwardian_1987,
@@ -8493,7 +8328,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1987},
   keywords = {Art / Individual Artists / General},
   author = {Beckett, Jane and Cherry, Deborah},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{davis_performing_2007,
@@ -8507,7 +8342,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2007-11-21},
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh,Literary Criticism / Modern / 19th Century,Performing Arts / Dance / Classical & Ballet,Performing Arts / Theater / General,Performing Arts / Theater / History & Criticism},
   author = {Davis, T. and Holland, P.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{tufte_visual_1983,
@@ -8520,7 +8355,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1983},
   keywords = {Mathematics / Mathematical Analysis,Mathematics / Probability & Statistics / General,Social Science / Statistics},
   author = {Tufte, Edward R.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{tukey_exploratory_1977,
@@ -8533,7 +8368,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1977-01-01},
   keywords = {Mathematics / Probability & Statistics / General},
   author = {Tukey, John Wilder},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{wilkinson_grammar_2006,
@@ -8546,7 +8381,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2006-01-28},
   keywords = {Computers / Computer Vision & Pattern Recognition,Computers / Mathematical & Statistical Software,Mathematics / Combinatorics,Mathematics / Graphic Methods,Mathematics / Probability & Statistics / Stochastic Processes},
   author = {Wilkinson, Leland},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{herdeg_graphis_1983,
@@ -8558,7 +8393,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1983},
   keywords = {Art / Graphic Arts},
   author = {Herdeg, Walter},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gonick_cartoon_1993,
@@ -8571,7 +8406,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1993-07-14},
   keywords = {Mathematics / Probability & Statistics / General,Study Aids / General},
   author = {Gonick, Larry},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{huff_how_2010,
@@ -8584,7 +8419,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2010-12-07},
   keywords = {Mathematics / Probability & Statistics / General},
   author = {Huff, Darrell},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{moretti_distant_2013,
@@ -8597,7 +8432,6 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2013-06-04},
   keywords = {Literary Criticism / Semiotics & Theory},
   author = {Moretti, Franco},
-  eprinttype = {googlebooks},
   annotation = {Has a chapter about style}
 }
 
@@ -8621,7 +8455,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2008-04-15},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / General},
   author = {Schreibman, Susan and Siemens, Ray and Unsworth, John},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{unsworth_new_2016,
@@ -8634,7 +8468,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2016-01-26},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Linguistics / Historical & Comparative},
   author = {Unsworth, John},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{siemens_companion_2013,
@@ -8648,7 +8482,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   keywords = {Social Science / Popular Culture,Social Science / Sociology / General},
   author = {Siemens, Ray and Schreibman, Susan},
   file = {/home/jon/Dropbox/Papers/Comp Style/Siemens_Schreibman_2013_A Companion to Digital Literary Studies.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{hoover_digital_2014,
@@ -8663,7 +8497,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   keywords = {Language Arts & Disciplines / General,Foreign Language Study / English as a Second Language,Language Arts & Disciplines / Literacy},
   author = {Hoover, David L. and Culpeper, Jonathan and O'Halloran, Kieran},
   file = {/home/jon/Dropbox/Papers/Comp Style/Digital Literary Studies.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gourgouris_does_2003,
@@ -8677,7 +8511,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2003},
   keywords = {Literary Criticism / Semiotics & Theory,Language Arts & Disciplines / Linguistics / General,Fiction / General},
   author = {Gourgouris, Stathis},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gourgouris_lessons_2013-1,
@@ -8690,7 +8524,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2013-08-01},
   keywords = {Literary Criticism / General,Religion / General,Philosophy / Political},
   author = {Gourgouris, Stathis},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{davidson_reading_2014,
@@ -8704,7 +8538,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2014-06-24},
   keywords = {Literary Criticism / Semiotics & Theory},
   author = {Davidson, Jenny},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{haralson_critical_2009,
@@ -8717,7 +8551,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   publisher = {{Infobase Publishing}},
   date = {2009},
   author = {Haralson, Eric L. and Johnson, Kendall},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{james_princess_2006,
@@ -8754,7 +8588,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1965-01},
   keywords = {Literary Criticism / American / General,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Miller, Joseph Hillis},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{underwood_why_2013,
@@ -8768,7 +8602,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2013-07-24},
   keywords = {Literary Criticism / General,Education / Teaching Methods & Materials / Arts & Humanities,Education / History},
   author = {Underwood, Ted},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{grus_data_????,
@@ -8792,7 +8626,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2016-09-20},
   keywords = {Language Arts & Disciplines / Publishing,Business & Economics / Industries / Media & Communications,Literary Criticism / Books & Reading},
   author = {Archer, Jodie and Jockers, Matthew L.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{ramsay_reading_2011,
@@ -8807,7 +8641,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   keywords = {Literary Criticism / General,Literary Criticism / Books & Reading,Computers / Desktop Applications / Desktop Publishing},
   author = {Ramsay, Stephen},
   file = {/home/jon/Dropbox/Papers/Comp Style/Ramsay_2011_Reading Machines.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{rockwell_hermeneutica:_2016,
@@ -8821,7 +8655,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2016-04-01},
   keywords = {Computers / Educational Software,Education / Research},
   author = {Rockwell, Geoffrey and Sinclair, Stéfan},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{van_cranenburgh_rich_2016,
@@ -8845,7 +8679,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2009-03-26},
   keywords = {Literary Collections / Essays},
   author = {Ruskin, John},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{luckhurst_mummys_2012,
@@ -8859,7 +8693,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2012-10-25},
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh,History / Europe / Great Britain,Social Science / Folklore & Mythology,History / Ancient / Egypt,Religion / Ancient},
   author = {Luckhurst, Roger},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{bown_victorian_2004,
@@ -8872,7 +8706,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2004-02-05},
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh,Literary Collections / Essays},
   author = {Bown, Nicola and Burdett, Carolyn and Thurschwell, Pamela},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{doyle_hound_2006,
@@ -9026,7 +8860,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2016-10-15},
   keywords = {Language Arts & Disciplines / Linguistics / Historical & Comparative},
   author = {Auer, Anita and González-Díaz, Victorina and Hodson, Jane and Sotirova, Violeta},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{cole_chaucers_2002,
@@ -9076,7 +8910,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   publisher = {{Macmillan}},
   date = {1919},
   author = {Taylor, Henry Osborn},
-  eprinttype = {googlebooks}
+  
 }
 
 @collection{barney_etymologies_2006,
@@ -9090,7 +8924,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   keywords = {Literary Criticism / Ancient & Classical,Language Arts & Disciplines / General,History / Ancient / General},
   editor = {Barney, Stephen A. and Lewis, W.J. and Beach, J.A. and Berghof, Oliver},
   file = {/home/jon/Dropbox/Papers/Chaucer/2006_The Etymologies of Isidore of Seville.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{voragine_golden_1900,
@@ -9101,7 +8935,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   publisher = {{J.M. Dent and Company}},
   date = {1900},
   author = {Voragine), Jacobus (de},
-  eprinttype = {googlebooks}
+  
 }
 
 @inproceedings{deMeloEtymWN2014,
@@ -9135,7 +8969,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   keywords = {Computers / Intelligence (AI) & Semantics,Computers / Computer Science},
   author = {Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
   file = {/home/jon/Dropbox/Papers/Digital Humanities/Goodfellow et al_2016_Deep Learning.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{wagner_computational_2012,
@@ -9178,7 +9012,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1971},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Linguistics / General,Style; Literary,Style; Literary - Congresses},
   author = {Chatman, Seymour Benjamin},
-  eprinttype = {googlebooks}
+  
 }
 
 @thesis{moss_corpus_2015,
@@ -9215,7 +9049,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2012-06-01},
   keywords = {Literary Criticism / General},
   author = {Gale, Robert L.},
-  eprinttype = {googlebooks}
+  
 }
 
 @inbook{james_introduction_1986,
@@ -9229,7 +9063,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   keywords = {Fiction / Classics},
   author = {Levin, Harry},
   bookauthor = {James, Henry},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{short_sentence_1946,
@@ -9341,7 +9175,6 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2014-01-01},
   keywords = {Education / Teaching Methods & Materials / Language Arts},
   author = {Hess, Amy Lynn},
-  eprinttype = {googlebooks},
   annotation = {Introduction could be useful; on google book}
 }
 
@@ -9355,7 +9188,6 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1997},
   keywords = {Education / Teaching Methods & Materials / Mathematics},
   author = {DeVincentis-Hayes, Nan and Hayes, Gianni DeVincent},
-  eprinttype = {googlebooks},
   annotation = {Not available anywhere close}
 }
 
@@ -9369,7 +9201,6 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1999-01-15},
   keywords = {Education / Teaching Methods & Materials / Mathematics},
   author = {Dressel, Mark and Carnevale, Gregg},
-  eprinttype = {googlebooks},
   annotation = {Not available anywhere close}
 }
 
@@ -9384,7 +9215,6 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {2008-11-28},
   keywords = {Language Arts & Disciplines / Grammar & Punctuation},
   author = {Vitto, Cindy},
-  eprinttype = {googlebooks},
   annotation = {Looks great, actually. Recent textbook.}
 }
 
@@ -9398,7 +9228,7 @@ Walter Benjamin (1968/2007, p. 151). This article employs citation analysis on a
   date = {1993},
   keywords = {Language Arts & Disciplines / Grammar & Punctuation,Education / Teaching Methods & Materials / Language Arts,Education / Classroom Management},
   author = {Kiester, Jane Bell},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{rosenberg_interactive_1996,
@@ -9692,7 +9522,7 @@ Modernism in both literature and the visual arts is characterized by opposing pr
   date = {2010},
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Brinton, Laurel J. and Brinton, Donna},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{fish_how_2011,
@@ -9707,7 +9537,7 @@ Modernism in both literature and the visual arts is characterized by opposing pr
   keywords = {Literary Criticism / Books & Reading},
   author = {Fish, Stanley},
   file = {/home/jon/Dropbox/Papers/zotero/storage/ZZSFRJBC/fish-sentence.epub},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{_syntax_????,
@@ -9728,7 +9558,7 @@ Modernism in both literature and the visual arts is characterized by opposing pr
   keywords = {Language Arts & Disciplines / Grammar & Punctuation},
   author = {Tufte, Virginia},
   file = {/home/jon/Dropbox/Papers/Sentence Diagramming/Tufte_2006_Artful Sentences.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{longknife_art_2002,
@@ -9742,7 +9572,7 @@ Modernism in both literature and the visual arts is characterized by opposing pr
   keywords = {Language Arts & Disciplines / Rhetoric,Language Arts & Disciplines / General,Language Arts & Disciplines / Composition & Creative Writing},
   author = {Longknife, Ann and Sullivan, K. D.},
   file = {/home/jon/Dropbox/Papers/Sentence Diagramming/Longknife_Sullivan_2002_The Art of Styling Sentences.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{stein_gertrude_2008,
@@ -9757,7 +9587,7 @@ Modernism in both literature and the visual arts is characterized by opposing pr
   keywords = {Literary Criticism / American / General,Poetry / General},
   author = {Stein, Gertrude},
   file = {/home/jon/Dropbox/Papers/Sentence Diagramming/Stein_2008_Gertrude Stein.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @collection{perl_landmark_1994,
@@ -9923,7 +9753,7 @@ Modernism in both literature and the visual arts is characterized by opposing pr
   publisher = {{American Book Company}},
   date = {1912},
   author = {Thomas, Helen},
-  eprinttype = {googlebooks}
+  
 }
 
 @collection{wallace_reforming_2000,
@@ -10005,7 +9835,7 @@ InfoWorld also celebrates people, companies, and projects.},
   journaltitle = {InfoWorld},
   date = {1981-11-23},
   author = {Green, Doug},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{davidson_american_1947,
@@ -10015,7 +9845,7 @@ InfoWorld also celebrates people, companies, and projects.},
   publisher = {{Scribner}},
   date = {1947},
   author = {Davidson, Donald and Myhr, Ivar Lou},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{del_plaine_written_1946,
@@ -10067,7 +9897,7 @@ InfoWorld also celebrates people, companies, and projects.},
   publisher = {{Barnes}},
   date = {1867},
   author = {Jewell, Frederick Swartz},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{adams_grammatical_1886,
@@ -10077,7 +9907,7 @@ InfoWorld also celebrates people, companies, and projects.},
   publisher = {{Normal Publishing House}},
   date = {1886},
   author = {Adams, Frank P.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{raub_grammatical_1885,
@@ -10087,7 +9917,7 @@ InfoWorld also celebrates people, companies, and projects.},
   publisher = {{Raub \& Company}},
   date = {1885},
   author = {Raub, Albert Newton},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{woods_evolution_1986-1,
@@ -10110,7 +9940,7 @@ InfoWorld also celebrates people, companies, and projects.},
   pagetotal = {244},
   date = {1855},
   author = {Clark, Stephen W.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{reed_work_1902,
@@ -10177,7 +10007,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {1998-07-09},
   keywords = {Language Arts & Disciplines / Composition & Creative Writing,Reference / Writing Skills},
   author = {Elbow, Peter},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{eastman_style:_1978,
@@ -10550,7 +10380,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {1995-01-01},
   keywords = {Language Arts & Disciplines / Composition & Creative Writing},
   author = {Covino, William A. and Jolliffe, David A.},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{connor_new_2002,
@@ -10589,7 +10419,6 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {2004},
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Davenport, Phyllis},
-  eprinttype = {googlebooks},
   annotation = {Not available anywhere close}
 }
 
@@ -10640,7 +10469,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {2014-03-26},
   keywords = {Poetry / European / English; Irish; Scottish; Welsh},
   author = {Tennyson, Lord, Alfred},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{arnold_culture_2015,
@@ -10652,7 +10481,7 @@ InfoWorld also celebrates people, companies, and projects.},
   publisher = {{Penguin Books, Limited}},
   date = {2015-02-05},
   author = {Arnold, Matthew},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{bronte_jane_2016,
@@ -10673,7 +10502,7 @@ InfoWorld also celebrates people, companies, and projects.},
   title = {Dracula},
   pagetotal = {496},
   publisher = {{Broadview Press}},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{stokerDracula1997,
@@ -10686,7 +10515,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {1997-12-09},
   keywords = {Fiction / Literary,Fiction / Horror},
   author = {Stoker, Bram},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{fredner_how_????,
@@ -10741,7 +10570,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {1972},
   keywords = {Literary Criticism / American / General,Language Arts & Disciplines / Style Manuals},
   author = {Chatman, Seymour Benjamin},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{burke_routledge_2014-1,
@@ -10755,7 +10584,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / Rhetoric,Language Arts & Disciplines / General,Language Arts & Disciplines / Style Manuals},
   author = {Burke, Michael},
   file = {/home/jon/Dropbox/Papers/Comp Style/Burke_2014_The Routledge Handbook of Stylistics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{hope_stylistics:_2002,
@@ -10770,7 +10599,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General},
   author = {Hope, Jonathan and Wright, Laura},
   file = {/home/jon/Dropbox/Papers/Comp Style/Hope_Wright_2002_Stylistics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{bradford_stylistics_2013,
@@ -10784,7 +10613,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Linguistics / General,Biography & Autobiography / Literary},
   author = {Bradford, Richard},
   file = {/home/jon/Dropbox/Papers/Comp Style/Bradford_2013_Stylistics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{butler_out_2008,
@@ -10810,7 +10639,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General},
   author = {Carter, Ronald and Simpson, Paul},
   file = {/home/jon/Dropbox/Papers/Comp Style/Carter_Simpson_2003_Language, Discourse and Literature.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{studer_historical_2014,
@@ -10825,7 +10654,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / Linguistics / Semantics,Computers / Natural Language Processing},
   author = {Studer, Patrick},
   file = {/home/jon/Dropbox/Papers/Comp Style/Studer_2014_Historical Corpus Stylistics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{seminoCorpusStylisticsSpeech2004,
@@ -10840,7 +10669,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Language Arts & Disciplines / Linguistics / General,Foreign Language Study / English as a Second Language},
   author = {Semino, Elena and Short, Mick},
   file = {/home/jon/Dropbox/Papers/Comp Style/Comp and Corpus Ling/Semino_Short_2004_Corpus Stylistics.pdf;/home/jon/Dropbox/Papers/Comp Style/Semino_Short_2004_Corpus Stylistics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{kyto_corpus_2009,
@@ -10942,7 +10771,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {2016-02-24},
   keywords = {Language Arts & Disciplines / Library & Information Science / General},
   author = {Archer, Dawn},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{sotirova_bloomsbury_2015,
@@ -10956,7 +10785,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / Linguistics / Semantics},
   author = {Sotirova, Violeta},
   file = {/home/jon/Dropbox/Papers/Comp Style/Sotirova_2015_The Bloomsbury Companion to Stylistics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{demjen_sylvia_2015,
@@ -11149,7 +10978,6 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Linguistics / General},
   author = {Mahlberg, Michaela},
   file = {/home/jon/Dropbox/Papers/Comp Style/Mahlberg_2013_Corpus Stylistics and Dickens's Fiction.pdf},
-  eprinttype = {googlebooks},
   annotation = {Requested from Borrow Direct
 
 ~}
@@ -11192,7 +11020,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {1999-01-01},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / Speech},
   author = {Person, Raymond F.},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{stewart_charles_2003,
@@ -11337,7 +11165,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {2009-12-07},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General},
   author = {Jeffries, Lesley},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{adolphs_introducing_2006,
@@ -11352,7 +11180,7 @@ InfoWorld also celebrates people, companies, and projects.},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General,Foreign Language Study / English as a Second Language},
   author = {Adolphs, Svenja},
   file = {/home/jon/Dropbox/Papers/Comp Style/Adolphs_2006_Introducing Electronic Text Analysis.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{freeman_linguistics_1970,
@@ -11363,7 +11191,7 @@ InfoWorld also celebrates people, companies, and projects.},
   date = {1970},
   keywords = {Literary Criticism / General,Style; Literary},
   author = {Freeman, Donald C.},
-  eprinttype = {googlebooks}
+  
 }
 
 @unpublished{mahlberg_casino_2007,
@@ -11392,7 +11220,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General,Foreign Language Study / English as a Second Language,Education / Teaching Methods & Materials / Arts & Humanities},
   author = {O'Keeffe, Anne and McCarthy, Michael},
   file = {/home/jon/Dropbox/Papers/Comp Style/Corpus Linguistics/O'Keeffe_McCarthy_2010_The Routledge Handbook of Corpus Linguistics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{stubbs_conrad_2005,
@@ -11439,7 +11267,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1998},
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Oakes, Michael P.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{bod_probabilistic_2003,
@@ -11452,7 +11280,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2003},
   keywords = {Language Arts & Disciplines / Linguistics / General,Mathematics / Probability & Statistics / General},
   author = {Bod, Rens and Hay, Jennifer and Jannedy, Stefanie},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{heine_oxford_2015,
@@ -11465,7 +11293,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2015},
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Heine, Bernd and Narrog, Heiko},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{griesStatisticsLinguisticsPractical2013,
@@ -11494,7 +11322,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Mathematics / Mathematical Analysis,Mathematics / Probability & Statistics / Bayesian Analysis,Computers / Data Processing,Mathematics / Research,Computers / Programming Languages / Python},
   author = {Downey, Allen B.},
   file = {/home/jon/Dropbox/Papers/Comp Style/Comp and Corpus Ling/Downey_2013_Think Bayes.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{fish_what_1973,
@@ -11532,7 +11360,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / General},
   author = {Fish, Stanley Eugene},
   file = {/home/jon/Dropbox/Papers/Comp Style/Stylistics Controversy/Fish_1980_What is Stylistics and Why Are They Saying Such Terrible Things About It2.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @incollection{institute_what_1973,
@@ -11684,7 +11512,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Criticism,Style; Literary,Electronic data processing},
   author = {Leed, Jacob},
   file = {/home/jon/Dropbox/Papers/Comp Style/Prehistory/Leed_1966_The computer & literary style.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{argamon_structure_2010,
@@ -11699,7 +11527,6 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Computers / Computer Vision & Pattern Recognition,Computers / Intelligence (AI) & Semantics,Computers / Computer Science,Computers / System Administration / Storage & Retrieval,Art / General,Computers / Information Technology,Computers / Optical Data Processing,History / General},
   author = {Argamon, Shlomo and Burns, Kevin and Dubnov, Shlomo},
   file = {/home/jon/Dropbox/Papers/Comp Style/Comp Style/Argamon et al_2010_The Structure of Style.pdf},
-  eprinttype = {googlebooks},
   annotation = {THis is style very broadly understood}
 }
 
@@ -11712,7 +11539,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Sigma}},
   date = {1992},
   author = {McEnery, A. M. and McEnery, Tony},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{jockers_text_2014,
@@ -11726,7 +11553,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Language Arts & Disciplines / Linguistics / General,Social Science / Statistics,Computers / Mathematical & Statistical Software,Mathematics / Probability & Statistics / Stochastic Processes,Computers / Natural Language Processing,Social Science / Research},
   author = {Jockers, Matthew},
   file = {/home/jon/Dropbox/Papers/Textbooks/Jockers_2014_Text Analysis with R for Students of Literature.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{oakes_literary_2014,
@@ -11739,7 +11566,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2014-05-15},
   keywords = {Language Arts & Disciplines / Linguistics / General,Computers / Natural Language Processing},
   author = {Oakes, Michael P.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{hammond_literature_2016,
@@ -11753,7 +11580,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2016-03-03},
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Hammond, Adam},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{moretti_graphs_2005,
@@ -11768,7 +11595,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / General},
   author = {Moretti, Franco},
   file = {/home/jon/Dropbox/Papers/Comp Style/Comp Style/Moretti_2005_Graphs, Maps, Trees.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{goodwin_reading_2011,
@@ -11783,7 +11610,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / Semiotics & Theory,Philosophy / Criticism},
   author = {Goodwin, Jonathan and Holbo, John},
   file = {/home/jon/Dropbox/Papers/Comp Style/Comp Style/Goodwin_Holbo_2011_Reading Graphs, Maps, Trees.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{silge_text_2017,
@@ -11797,7 +11624,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2017-05-25},
   keywords = {Computers / Natural Language Processing,Computers / Databases / Data Mining,Computers / Data Visualization},
   author = {Silge, Julia and Robinson, David},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{kumar_mastering_2016,
@@ -11809,7 +11636,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Packt Publishing, Limited}},
   date = {2016-12-28},
   author = {Kumar, Ashish and Paul, Avinash},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{miner_practical_2012,
@@ -11834,7 +11661,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2008},
   keywords = {Linguistics,Computational Linguistics,Corpora (Linguistics),Language Arts & Disciplines / Linguistics},
   author = {Mohanty, Panchanan and Studies, University of Hyderabad Centre for Applied Linguistics {and} Translation},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{burrows_computation_1987,
@@ -11848,7 +11675,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1987},
   keywords = {Language Arts & Disciplines / Linguistics / General,Criticism,Literary Criticism / European / English; Irish; Scottish; Welsh,Fiction,Austen; Jane - Technique,Characters and characteristics in literature,Criticism - Data processing,Criticism/ Data processing,Fiction - Technique,Love stories; English - History and criticism,Love stories; English/ History and criticism,Love stories; English,Speech in literature},
   author = {Burrows, John Frederick},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{hoover_frequent_2003,
@@ -12007,7 +11834,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2013-04-24},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General},
   author = {Clark, Alexander and Fox, Chris and Lappin, Shalom},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{mitkov_oxford_2005,
@@ -12020,7 +11847,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2005-01-13},
   keywords = {Language Arts & Disciplines / Linguistics / General,Reference / General,Computers / Intelligence (AI) & Semantics,Computers / Natural Language Processing,Computers / Social Aspects / Human-Computer Interaction},
   author = {Mitkov, Ruslan},
-  eprinttype = {googlebooks}
+  
 }
 
 @collection{stockwell_cambridge_2014,
@@ -12389,7 +12216,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Balossi, Giuseppina},
   file = {/home/jon/Dropbox/Papers/To Read/Balossi_2014_A Corpus Linguistic Approach to Literary Language and Characterization.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{simpson_stylistics:_2004,
@@ -12403,7 +12230,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2004},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Rhetoric,Language Arts & Disciplines / Composition & Creative Writing},
   author = {Simpson, Paul},
-  eprinttype = {googlebooks}
+  
 }
 
 @inproceedings{kao_computational_2012,
@@ -12452,7 +12279,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory,Literary Criticism / American / General,Literary Criticism / European / English; Irish; Scottish; Welsh,Language Arts & Disciplines / Authorship},
   author = {Love, Harold},
   file = {/home/jon/Dropbox/Papers/Comp Style/Love_2002_Attributing Authorship.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{foster_funeral_1996-1,
@@ -12558,7 +12385,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2001},
   keywords = {Literary Criticism / American / General,Literary Criticism / European / English; Irish; Scottish; Welsh,Language Arts & Disciplines / Publishing,Social Science / LGBT Studies / Lesbian Studies,Social Science / Women's Studies},
   author = {Morrisson, Mark S.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{bulsonLittleMagazineWorld2016,
@@ -12571,7 +12398,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2016-11-29},
   keywords = {Literary Criticism / Books & Reading},
   author = {Bulson, Eric},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{ardisModernismCulturalConflict2002,
@@ -12584,7 +12411,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2002-10-31},
   keywords = {Literary Criticism / Semiotics & Theory,Literary Criticism / European / English; Irish; Scottish; Welsh,Irish,Literary Criticism / European / English,Scottish,Welsh},
   author = {Ardis, Ann L.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{scholesModernismMagazinesIntroduction2010,
@@ -12598,7 +12425,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2010},
   keywords = {Literary Criticism / Books & Reading},
   author = {Scholes, Robert and Wulfman, Clifford},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{levensonGenealogyModernismStudy1986,
@@ -12612,7 +12439,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1986-06-27},
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory,Literary Criticism / European / English; Irish; Scottish; Welsh,Irish,Literary Criticism / European / English,Scottish,Welsh},
   author = {Levenson, Michael},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{_yellow_????-1,
@@ -12642,7 +12469,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1996},
   keywords = {Philosophy / Political},
   author = {Williams, Raymond},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{blaney_introduction_2017,
@@ -12665,7 +12492,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2010-10-28},
   keywords = {Language Arts & Disciplines / Linguistics / Semantics},
   author = {Fischer-Starcke, Bettina},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gries_quantitative_2009-1,
@@ -12679,7 +12506,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2009-03-04},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General,Foreign Language Study / English as a Second Language,Education / Teaching Methods & Materials / Arts & Humanities},
   author = {Gries, Stefan Th},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{martin_bayesian_2016,
@@ -12693,7 +12520,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Computers / Data Processing},
   author = {Martin, Osvaldo},
   file = {/home/jon/Dropbox/Papers/Martin_2016_Bayesian Analysis with Python.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{wells_time_2001,
@@ -12707,7 +12534,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2001-02-12},
   keywords = {Fiction / Literary,Fiction / Science Fiction / General},
   author = {Wells, H. G.},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{owen_dulce_2017,
@@ -12756,7 +12583,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Poetry / Anthologies (multiple authors),Poetry / Subjects & Themes / General},
   author = {Brooke, Rupert},
   editor = {Walter, Matthew George},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{shukla_haskell_2014,
@@ -12770,7 +12597,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Computers / Mathematical & Statistical Software,Computers / Data Processing,Computers / Programming / Open Source},
   author = {Shukla, Nishant},
   file = {/home/jon/Dropbox/Papers/Textbooks/Shukla_2014_Haskell Data Analysis Cookbook.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{church_learning_2015,
@@ -12784,7 +12611,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Computers / Databases / Data Mining,Computers / Data Visualization,Computers / Programming / General},
   author = {Church, James},
   file = {/home/jon/Dropbox/Papers/Textbooks/Church_2015_Learning Haskell Data Analysis.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{allen_haskell_2016,
@@ -12797,7 +12624,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2016-07-01},
   author = {Allen, Christopher and Moronuki, Julie},
   file = {/home/jon/Dropbox/Papers/Textbooks/Allen_Moronuki_2016_Haskell Programming from First Principles.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @incollection{dames_not_2010,
@@ -12886,7 +12713,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Mosteller, Frederick and Wallace, David L.},
   file = {/home/jon/Dropbox/Papers/Comp Style/Prehistory/Mosteller_Wallace_2007_Inference and Disputed Authorship.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{international_business_machines_corp._proceedings_1965,
@@ -12972,7 +12799,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Fiction / Literary,Mathematics / Probability & Statistics / General},
   author = {Kenny, Anthony},
   file = {/home/jon/Dropbox/Papers/Comp Style/Prehistory/Kenny_2013_The Computation of Style.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{zipf_selected_1932,
@@ -13039,7 +12866,7 @@ features in literary texts, and – at the same time – have to play a part in 
   editor = {Anderson, Margaret}
 }
 
-@collection{brookerOxfordCriticalCultural2009,
+@book{brookerOxfordCriticalCultural2009,
   location = {{Oxford ; New York}},
   title = {The {{Oxford}} Critical and Cultural History of Modernist Magazines},
   edition = {1st ed},
@@ -13061,7 +12888,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2010},
   author = {Harding, Edited by Jason},
   file = {/home/jon/Dropbox/Papers/Orals/Modernism/Little magazines/Harding_2010_Ford Madox Ford, Modernist Magazines and Editing.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{synge_playboy_1911,
@@ -13073,7 +12900,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1911},
   author = {Synge, John Millington},
   file = {/home/jon/Dropbox/Papers/Orals/Modernism/Little magazines/Synge_1911_The Playboy of the Western World.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{auden_selected_1979,
@@ -13097,7 +12924,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2006-09-26},
   keywords = {Fiction / Literary},
   author = {Barnes, Djuna},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{mansfield_katherine_2006,
@@ -13111,7 +12938,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2006},
   keywords = {Fiction / Short Stories (single author)},
   author = {Mansfield, Katherine},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{yeats_yeatss_2000,
@@ -13125,7 +12952,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2000},
   keywords = {Poetry / European / English; Irish; Scottish; Welsh,Literary Criticism / Books & Reading},
   author = {Yeats, William Butler},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{BeerbohmSevenMen1920,
@@ -13149,7 +12976,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2001},
   keywords = {Poetry / European / English; Irish; Scottish; Welsh,Poetry / American / General},
   author = {Eliot, Thomas Stearns},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{ford_good_2003,
@@ -13175,7 +13002,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1999},
   keywords = {Fiction / Classics},
   author = {Rhys, Jean and Raiskin, Judith L.},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{_lighthouse_2000,
@@ -13311,7 +13138,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2012-03-12},
   keywords = {Fiction / Classics},
   author = {Forster, E. M.},
-  eprinttype = {googlebooks}
+  
 }
 
 @incollection{brooker_ford_2009,
@@ -13338,7 +13165,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1900},
   author = {Frazer, Sir James George},
   file = {/home/jon/Dropbox/Papers/Orals/Modernism/Frazer_1900_The Golden Bough.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{freud_interpretation_2010,
@@ -13352,7 +13179,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2010},
   keywords = {Psychology / Movements / Psychoanalysis,Self-Help / Dreams},
   author = {Freud, Sigmund},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{freud_civilization_2015,
@@ -13366,7 +13193,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2015-12-16},
   keywords = {Psychology / Movements / Psychoanalysis,Philosophy / Movements / Critical Theory},
   author = {Freud, Sigmund},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{hardy_jude_2015,
@@ -13378,7 +13205,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{W. W. Norton}},
   date = {2015-11-03},
   author = {Hardy, Thomas},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{joyce_portrait_2003,
@@ -13405,7 +13232,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2006},
   keywords = {Fiction / Classics},
   author = {Joyce, James},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{kipling_kim:_2002,
@@ -13419,7 +13246,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2002},
   keywords = {Fiction / Classics},
   author = {Kipling, Rudyard},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lewis_tarr_1918,
@@ -13430,7 +13257,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1918},
   author = {Lewis, Wyndham},
   file = {/home/jon/Dropbox/Papers/Orals/Modernism/Lewis_1918_Tarr.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{loy_lost_2015,
@@ -13445,7 +13272,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2015-01-27},
   keywords = {Poetry / European / English; Irish; Scottish; Welsh},
   author = {Loy, Mina},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{poundABCReading1960,
@@ -13459,7 +13286,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Education / Teaching Methods & Materials / Reading & Phonics,Literary Criticism / General,Literary Criticism / Poetry,Poetry / American / General},
   author = {Pound, Ezra},
   file = {/home/jon/Dropbox/Papers/zotero/storage/DQFNP8NN/Pound_1960_ABC of Reading.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{pound_cantos_1996,
@@ -13472,7 +13299,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1996},
   keywords = {Poetry / American / General},
   author = {Pound, Ezra},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lawrence_sons_1913,
@@ -13482,7 +13309,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1913},
   author = {Lawrence, D. H.},
   file = {/home/jon/Dropbox/Papers/Orals/Modernism/Lawrence_1913_Sons and Lovers.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{richardson_pointed_1919,
@@ -13493,7 +13320,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1919},
   author = {Richardson, Dorothy Miller},
   file = {/home/jon/Dropbox/Papers/Orals/Modernism/Richardson_1919_Pointed Roofs.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{richardson_tunnel_1919,
@@ -13503,7 +13330,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{A. A. Knopf}},
   date = {1919},
   author = {Richardson, Dorothy Miller},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{orwellBurmeseDaysNovel1986,
@@ -13557,7 +13384,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Oxford University Press}},
   date = {2014},
   author = {Woolf, Virginia},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{woolf_between_2008,
@@ -13570,7 +13397,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2008-06-23},
   keywords = {Fiction / Classics,Literary Criticism / European / English; Irish; Scottish; Welsh,Fiction / Literary,Social Science / Women's Studies,Literary Criticism / Feminist},
   author = {Woolf, Virginia},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{west_return_2010,
@@ -13583,7 +13410,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2010-09-21},
   keywords = {Fiction / Literary},
   author = {West, Rebecca},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{woolf_mrs_2016,
@@ -13638,7 +13465,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1869},
   author = {Arnold, Matthew},
   file = {/home/jon/Dropbox/Papers/Orals/Victorians/Arnold_1869_Culture and Anarchy.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{bronte_wuthering_2007,
@@ -13651,7 +13478,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2007-04-11},
   keywords = {Fiction / Literary},
   author = {Bronte, Emily},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{shaw_george_2002,
@@ -13665,7 +13492,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2002},
   keywords = {Drama / European / English; Irish; Scottish; Welsh},
   author = {Shaw, Bernard},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{rossetti_goblin_1865,
@@ -13677,7 +13504,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Macmillan}},
   date = {1865},
   author = {Rossetti, Christina Georgina},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{stevenson_strange_2005,
@@ -13690,7 +13517,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2005-07-12},
   keywords = {Fiction / Literary,Fiction / Horror},
   author = {Stevenson, Robert Louis},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{carlyle_sartor_1872,
@@ -13702,7 +13529,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Chapman \& Hall}},
   date = {1872},
   author = {Carlyle, Thomas},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{collins_moonstone_1999,
@@ -13715,7 +13542,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1999-03-09},
   keywords = {Fiction / Literary},
   author = {Collins, Wilkie},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{dickens_bleak_1977,
@@ -13750,7 +13577,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2007-11-05},
   keywords = {Fiction / Mystery & Detective / Traditional},
   author = {Doyle, Arthur Conan},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{eliot_daniel_2009,
@@ -13763,7 +13590,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2009-01-29},
   keywords = {Fiction / Classics,Fiction / Literary},
   author = {Eliot, George},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gaskell_north_2005,
@@ -13777,7 +13604,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2005},
   keywords = {Fiction / Sagas,Fiction / Historical,Fiction / Romance / Historical / General},
   author = {Gaskell, Elizabeth Cleghorn},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{HardyTessUrbervilles2007,
@@ -13793,7 +13620,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Fiction / Literary},
   author = {Hardy, Thomas},
   file = {/home/jon/Dropbox/Papers/Orals/Victorians/Hardy_2007_Tess of the d'Urbervilles - Second Edition.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{hopkins_selected_2013,
@@ -13806,7 +13633,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2013-09-02},
   keywords = {Poetry / European / English; Irish; Scottish; Welsh},
   author = {Hopkins, Gerard Manley},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{james_turn_2010,
@@ -13819,7 +13646,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2010-05-07},
   keywords = {Fiction / Literary},
   author = {James, Henry},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{thackeray_vanity_1994,
@@ -13833,7 +13660,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1994},
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Thackeray, William Makepeace},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{trollope_barchester_1904,
@@ -13843,7 +13670,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Dodd, Mead}},
   date = {1904},
   author = {Trollope, Anthony},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{BarchesterTowersAnthony,
@@ -13909,7 +13736,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2003-02-05},
   keywords = {Fiction / Literary},
   author = {Maurier, George Du},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{beardsley_yellow_1894,
@@ -13953,7 +13780,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1996-08-29},
   keywords = {Religion / History,Social Science / Anthropology / Cultural & Social,Social Science / Folklore & Mythology,History / General,Body; Mind & Spirit / Magick Studies},
   author = {Frazer, James},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lawrence_lady_2006,
@@ -13982,7 +13809,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1984},
   keywords = {Fiction / Classics,Fiction / Literary},
   author = {Forster, Edward Morgan},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{MisogynyOnlineSAGE,
@@ -14015,7 +13842,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2017-05-25},
   keywords = {Social Science / Criminology},
   author = {Martellozzo, Elena and Jane, Emma A.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{MantillaGendertrollingHowMisogyny2015,
@@ -14029,7 +13856,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2015-08-31},
   keywords = {Social Science / Women's Studies,Social Science / Gender Studies},
   author = {Mantilla, Karla},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{CitronHateCrimesCyberspace2014,
@@ -14042,7 +13869,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2014-09-22},
   keywords = {Law / Computer & Internet,Law / Legal History,Political Science / Public Policy / General},
   author = {Citron, Danielle Keats},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{GoldingGameChangers2016,
@@ -14055,7 +13882,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2016-03-10},
   keywords = {Computers / Programming / Games,Social Science / Feminism & Feminist Theory},
   author = {Golding, Dan and van Deventer, Leena},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{PolandHatersHarassmentAbuse2016,
@@ -14069,7 +13896,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2016-11},
   keywords = {Social Science / Women's Studies,Social Science / Gender Studies,Psychology / Human Sexuality,Social Science / Media Studies},
   author = {Poland, Bailey},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{Anti-DefamationLeagueADLReportControlAltDelete2016,
@@ -14147,7 +13974,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2015-03-20},
   keywords = {Computers / Social Aspects / General,Computers / Web / Social Media},
   author = {Phillips, Whitney},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{MilnerHackingSocialInternet2013,
@@ -14295,7 +14122,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2014-12-19},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Rhetoric,Language Arts & Disciplines / General,Computers / Web / User-Generated Content,Language Arts & Disciplines / Communication Studies,Science / History,Technology & Engineering / History},
   author = {Tkacz, Nathaniel},
-  eprinttype = {googlebooks}
+  
 }
 
 @inproceedings{SiersdorferHowusefulare2010,
@@ -14775,7 +14602,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2012-12-06},
   keywords = {Computers / Intelligence (AI) & Semantics,Computers / Software Development & Engineering / General},
   author = {Gorfein, David S.},
-  eprinttype = {googlebooks}
+  
 }
 
 @inproceedings{LampeSlashdotburn2004,
@@ -15399,7 +15226,7 @@ features in literary texts, and – at the same time – have to play a part in 
   author = {Eliot, Thomas Stearns},
   file = {/home/jon/Dropbox/Papers/Digital Humanities/TEI/Eliot_1963_Collected Poems, 1909-1962.pdf},
   pagetotal = {238},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{sellers10_cambr_virgin_woolf,
@@ -15539,7 +15366,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2000-12-13},
   keywords = {Fiction / Literary},
   author = {Trollope, Anthony},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{stubbs2004conrad,
@@ -15601,7 +15428,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1957},
   keywords = {Poetry / American / General},
   author = {Pound, Ezra},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{AndersonLittleReview1914,
@@ -15793,7 +15620,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / General},
   author = {Fish, Stanley Eugene},
   file = {/home/jon/Dropbox/Papers/Comp Style/Stylistics Controversy/Fish_1980_What is Stylistics and Why Are They Saying Such Terrible Things About It.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{Graphic1891a,
@@ -15822,7 +15649,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2002},
   keywords = {Drama / European / English; Irish; Scottish; Welsh},
   author = {Shaw, Bernard},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{YardiStatisticalApproachProblem1946,
@@ -15911,7 +15738,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2016},
   keywords = {Literary Criticism / General},
   author = {Hutchinson, Ben},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{jonesLastPoemsLawrence2016,
@@ -15925,7 +15752,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2016-03-03},
   keywords = {Literary Criticism / General},
   author = {Jones, Bethan},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{CallusStyleTheoryLiterature2012,
@@ -15940,7 +15767,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / Semiotics & Theory},
   author = {Callus, Ivan and Corby, James and Lauri-Lucente, Gloria},
   file = {/home/jon/Dropbox/Papers/Callus et al_2012_Style in Theory.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @incollection{MooreGreatExpectationsMemories2014,
@@ -16013,7 +15840,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2006-08-10},
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh,Performing Arts / Theater / General},
   author = {McDonald, Russ},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{McMullanShakespeareIdeaLate2007,
@@ -16027,7 +15854,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2007-12-06},
   keywords = {Literary Criticism / General,Drama / Shakespeare,Literary Criticism / European / English; Irish; Scottish; Welsh,Language Arts & Disciplines / Publishing,Literary Criticism / Shakespeare},
   author = {McMullan, Gordon},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{MillgateTestamentaryActsBrowning1995,
@@ -16041,7 +15868,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1995},
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Millgate, Michael},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{MuirLastperiodsShakespeare1961,
@@ -16087,7 +15914,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / American / General,Literary Criticism / European / General},
   author = {Levenson, Michael},
   file = {/home/jon/Dropbox/Papers/zotero/storage/TC9XJ568/Levenson, Michael Harry - Modernism (2014,2007, Yale University Press).epub;/home/jon/Dropbox/Papers/zotero/storage/WJA6ERK6/Levenson, Michael Harry - Modernism (2014,2007, Yale University Press).epub},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{blaszczykBrightModernityColor2017,
@@ -19889,7 +19716,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1984},
   keywords = {Literary Criticism / European / General},
   author = {Balakian, Anna and Balakian, Anna Elizabeth},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{brodskaiaSymbolism2007,
@@ -19957,7 +19784,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Literary Criticism / General,Literary Collections / Essays},
   author = {Pound, Ezra},
   file = {/home/jon/Dropbox/Papers/zotero/storage/AKTMFH45/Pound_1973_Selected Prose, 1909-1965.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{noguchiSpiritJapanesePoetry1914,
@@ -19967,7 +19794,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{J. Murray}},
   date = {1914},
   author = {Noguchi, Yoné},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{andersonLittleReview1915,
@@ -19987,7 +19814,7 @@ features in literary texts, and – at the same time – have to play a part in 
   isbn = {978-0-8071-0790-4},
   shorttitle = {In the Arresting Eye},
   publisher = {{Louisiana State University Press}},
-  year = {c1981},
+  year = {1981},
   keywords = {20th century,History and criticism,English poetry,American poetry,Imagist poetry},
   author = {Gage, John T.}
 }
@@ -19999,7 +19826,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{G. P. Putnam's sons}},
   date = {1912},
   author = {Bergson, Henri},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lewisPoeticImage2011,
@@ -20012,7 +19839,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2011-09-28},
   keywords = {Literary Criticism / Poetry,Poetry / General},
   author = {Lewis, C. Day},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{brownOtherThings2015,
@@ -20036,7 +19863,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2010-12-28},
   keywords = {Literary Criticism / General,Literary Criticism / American / General},
   author = {Brown, Bill},
-  eprinttype = {googlebooks}
+  
 }
 
 @collection{brownThings2004,
@@ -20073,7 +19900,6 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2005},
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Gellner, Ernest},
-  eprinttype = {googlebooks}
 }
 
 @article{eHamletHisProblems1919,
@@ -20087,7 +19913,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1919-09-26},
   pages = {940-941},
   keywords = {ENGLISH LITERATURE - 19th Century,ENGLISH LITERATURE - 20th Century},
-  author = {E, T. S.},
+  author = {Eliot, T. S.},
   file = {/home/jon/Dropbox/Papers/zotero/storage/232WW9TS/E_1919_Hamlet and His Problems.pdf}
 }
 
@@ -20102,7 +19928,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2004},
   keywords = {Psychology / Neuropsychology},
   author = {Behrmann, Marlene and Patterson, Karalyn},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{brownWordsThings1963,
@@ -20112,7 +19938,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Free Press of Glencoe}},
   date = {1963},
   author = {Brown, Roger},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gillIdeasWordsThings1992,
@@ -20125,7 +19951,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {1992},
   keywords = {Social Science / General},
   author = {Gill, Harjeet Singh and Pottier, Bernard},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{foucaultMotsChosesArcheologie2014,
@@ -20138,7 +19964,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2014-05-01T00:00:00+02:00},
   keywords = {Literary Criticism / General,Social Science / General,Philosophy / General,Social Science / Sociology / General,History / General},
   author = {Foucault, Michel},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{barthesImageMusicText1977,
@@ -20150,7 +19976,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Fontana Press}},
   date = {1977},
   author = {Barthes, Roland},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{flintContemporaryFrenchPoetry1912,
@@ -20191,7 +20017,7 @@ features in literary texts, and – at the same time – have to play a part in 
   date = {2002},
   keywords = {Literary Criticism / General,Biography & Autobiography / Literary Figures,Biography & Autobiography / Social Scientists & Psychologists,Literary Collections / Letters,Social Science / Freemasonry & Secret Societies},
   author = {Bryher},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{h.d.hildadoolittleNotesThoughtVision1982,
@@ -20234,7 +20060,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{F Alcan}},
   date = {1903},
   author = {Philippe, Jean},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{hatfieldHumanNatureUtopianism1916,
@@ -20257,7 +20083,7 @@ features in literary texts, and – at the same time – have to play a part in 
   keywords = {Psychology / Movements / Psychoanalysis,Biography & Autobiography / Personal Memoirs},
   author = {Doolittle, Hilda},
   file = {/home/jon/Elŝutoj/[Hilda_Doolittle]_Tribute_to_Freud(z-lib.org).epub},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{tiwariImagerySymbolismEliot2001,
@@ -20269,7 +20095,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Atlantic Publishers \& Dist}},
   date = {2001-12},
   author = {Tiwari, Nidhi},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lawrenceSelectedCriticalWritings1998,
@@ -20281,7 +20107,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Oxford University Press}},
   date = {1998},
   author = {Lawrence, David Herbert},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{heffernanEkphrasisRepresentation1991,
@@ -20306,7 +20132,7 @@ features in literary texts, and – at the same time – have to play a part in 
   publisher = {{Macmillan}},
   date = {1923},
   author = {Spearman, Charles},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{trotterCinemaModernism2007,
@@ -20377,7 +20203,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / General,Language Arts & Disciplines / Linguistics / General,Literary Criticism / European / English; Irish; Scottish; Welsh,Literary Criticism / Modern / 19th Century},
   author = {Yeats, W. B.},
   file = {/home/jon/Elŝutoj/[W._B._Yeats_(auth.)]_Essays_and_Introductions(z-lib.org).pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{taupinInfluenceFrenchSymbolism1985,
@@ -20389,7 +20215,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1985},
   keywords = {Literary Criticism / Poetry,Poetry / General,Poetry / American / General,French poetry,American poetry,Imagist poetry,American poetry - 20th century - History and criticism,American poetry - French influences,American poetry 20th century History and criticism,American poetry French influences,American poetry/ 20th century/ History and criticism,French poetry - 19th century - History and criticism,French poetry 19th century History and criticism,Imagist poetry History and criticism,Imagist poetry; American,Imagist poetry; American - History and criticism,Symbolism (Literary movement),Symbolism (Literary movement) - France,Symbolism (Literary movement) - United States,Symbolism (Literary movement)/ France,Symbolism (Literary movement)/ United States,Symbolism in literature},
   author = {Taupin, René and Pratt, William},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{joyceCriticalWritings2018,
@@ -20402,7 +20228,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2018-06-13},
   keywords = {Literary Collections / General},
   author = {Joyce, James},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gilliesHenriBergsonBritish1996,
@@ -20415,7 +20241,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1996-09-18},
   keywords = {Philosophy / Metaphysics},
   author = {Gillies, Mary Ann},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{catullusValeriusCatullusCarmina,
@@ -21027,7 +20853,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Psychology / General},
   author = {Kouwer, Benjamin Jan},
   file = {/home/jon/Dropbox/Papers/zotero/storage/EUHA4DZ2/Kouwer_2013_Colors and Their Character.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{birrenColorPsychologyColor1961,
@@ -21067,7 +20893,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh,Fiction / General,Body; Mind & Spirit / Occultism,Occult sciences,Occultism,Occultism - Ireland,Yeats; W. B - Knowledge - Occultism},
   author = {Yeats, William Butler and Harper, George Mills and Hood, Walter Kelly},
   file = {/home/jon/Dropbox/Papers/zotero/storage/MEF7QLX9/Yeats et al_1925_A critical edition of Yeats's A vision (1925).pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @collection{semrauImageModernIst2015,
@@ -21149,7 +20975,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2013-12-23},
   keywords = {Literary Criticism / General,Art / General,Art / Criticism & Theory},
   author = {Mitchell, W. J. T.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{mitchellIconologyImageText2013,
@@ -21163,7 +20989,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2013-05-03},
   keywords = {Literary Criticism / Semiotics & Theory,Philosophy / General,Art / General},
   author = {Mitchell, W. J. T.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{mitchellImageScienceIconology2018,
@@ -21177,7 +21003,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2018-01-30},
   keywords = {Literary Criticism / General,Art / General,Art / Criticism & Theory},
   author = {Mitchell, W. J. T.},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{vonhallbergLibertarianImagism1995,
@@ -21252,7 +21078,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1999},
   keywords = {Literary Criticism / General,epiphany},
   author = {Tigges, Wim},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{morettiModernEpicWorldsystem1996,
@@ -21276,7 +21102,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2019-04},
   keywords = {Language Arts & Disciplines / Linguistics / General},
   author = {Romagnino, Roberto},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{smithLiteraryRealismEkphrastic2010,
@@ -21289,7 +21115,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2010-11-01},
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory,Literary Criticism / Subjects & Themes / General},
   author = {Smith, Mack},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{lossInteriorExteriorImagery1980,
@@ -21318,7 +21144,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / General},
   author = {Frye, Northrop},
   file = {/home/jon/Dropbox/Papers/zotero/storage/RDL74HLV/Frye_2006_Anatomy of Criticism.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{olsonModernismOrdinaryElectronic2009,
@@ -21437,7 +21263,7 @@ dc.title: The Literary Studies And Reviews},
   publisher = {{Narr}},
   date = {2011},
   author = {Madsen, Deborah L. and Klarer, Mario},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{brainPulseModernismExperimental2008,
@@ -21611,18 +21437,17 @@ dc.title: The Literary Studies And Reviews},
 }
 
 @article{gibsonCONTRADICTORYIMAGESCONFLICTING2011a,
-  title = {{{CONTRADICTORY IMAGES}}: {{THE CONFLICTING INFLUENCES OF HENRI BERGSON AND WILLIAM JAMES ON T}}. {{E}}. {{HULME}}, {{AND THE CONSEQUENCES FOR IMAGISM}}},
-  volume = {62},
-  issn = {0034-6551},
-  url = {https://www.jstor.org/stable/23016466},
-  shorttitle = {{{CONTRADICTORY IMAGES}}},
-  abstract = {This article considers the evolution of Hulme's thought from his 'Lecture on Modern Poetry' to 'Romanticism and Classicism', including the development of his belief in poetry as a visual language, why he defines the 'aesthetic emotion' in such a limited way, and why he links these ideas to the Classicism of Action Française. What it demonstrates is that William James's description of the distinction between Romantic and Classical art in Principles of Psychology played a part in helping Hulme to reduce Bergson's concept of 'aesthetic emotion' to sensation, and to see such effects as pertaining to Classical, rather than Romantic art. However, Hulme failed to realise that Bergson's ideas on art were in fact incompatible with William James's. This incompatibility caused tensions between the theory and practice of the Imagist movement inspired by Hulme's ideas. The conflict was caused partly by James's denial of the uniqueness of aesthetic emotion, and partly because, in reducing the aesthetic emotion to sensation, he negates the importance of memory and association to the image's aesthetic effect, which is by its very nature temporal in manifestation. The piece concludes by demonstrating how the poem 'Hermes of the Ways', by H.D., does not concord with Pound's doctrine of image as an 'intellectual and emotional complex in an instant of time', and needs memory and association to unravel if the image is to work. This critique demonstrates the divergence between genuine Imagist practice and William James's prioritisation of immediate sensation, which Hulme had communicated to Imagist theory.},
-  number = {254},
+  title =        {Contradictory Images: The Conflicting Influences of Henri Bergson and William James on T. E. Hulme, and the Consequences for Imagism},
+  volume =       {62},
+  issn =         {0034-6551},
+  url =          {https://www.jstor.org/stable/23016466},
+  shorttitle =   {Contradictory Images},
+  number =       {254},
   journaltitle = {The Review of English Studies},
-  urldate = {2019-10-02},
-  date = {2011},
-  pages = {275-295},
-  author = {GIBSON, MATTHEW},
+  urldate =      {2019-10-02},
+  date =         {2011},
+  pages =        {275-295},
+  author =       {GIBSON, MATTHEW},
   file = {/home/jon/Dropbox/Papers/zotero/storage/MLLJQPVW/GIBSON_2011_CONTRADICTORY IMAGES.pdf}
 }
 
@@ -21743,7 +21568,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1998},
   keywords = {Literary Criticism / American / General,Literary Criticism / Poetry},
   author = {Rainey, Lawrence S. and Rainey, Professor Lawrence},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{wagnerSunAlsoRises1972,
@@ -21823,7 +21648,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2014-08-24},
   keywords = {Philosophy / Aesthetics,Art / History / General,Art / General,Art / Criticism & Theory,Psychology / Mental Health,SOCIAL SCIENCE / Folklore & Mythology},
   author = {Pastoureau, Michel},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{mavorBlueMythologiesReflections2019,
@@ -21836,7 +21661,7 @@ dc.title: The Literary Studies And Reviews},
   publisher = {{Reaktion Books, Limited}},
   date = {2019-06-10},
   author = {Mavor, Carol},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gassBeingBluePhilosophical2014,
@@ -21850,7 +21675,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2014-03-18},
   keywords = {Literary Criticism / American / General,Literary Collections / Essays,Philosophy / Essays},
   author = {Gass, William H.},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{bloomsbury.comCultureYellow,
@@ -21949,7 +21774,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / Semiotics & Theory,Literary Criticism / American / General,Literary Criticism / Poetry,Literary Criticism / Women Authors},
   author = {Barnsley, Sarah},
   file = {/home/jon/Dropbox/Papers/zotero/storage/VXW9GM8A/[Barnard,_Mary\;_Barnsley,_Sarah]_Mary_Barnard,_Ame(z-lib.org).pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{conradPortableConrad2007,
@@ -21962,7 +21787,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2007},
   keywords = {Literary Collections / European / English; Irish; Scottish; Welsh,Fiction / Literary},
   author = {Conrad, Joseph},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{ennsVibratoryModernism2013,
@@ -21975,7 +21800,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2013-07-19},
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory,Literary Criticism / European / English; Irish; Scottish; Welsh,Social Science / General,Social Science / Anthropology / Cultural & Social,Performing Arts / Theater / General,Performing Arts / Theater / History & Criticism,Art / General},
   author = {Enns, A. and Trower, S.},
-  eprinttype = {googlebooks}
+  
 }
 
 @incollection{ennsVibrationSoundBirth2013,
@@ -21988,7 +21813,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2013-07-19},
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory,Literary Criticism / European / English; Irish; Scottish; Welsh,Social Science / General,Social Science / Anthropology / Cultural & Social,Performing Arts / Theater / General,Performing Arts / Theater / History & Criticism,Art / General},
   author = {Enns, A. and Trower, S.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{dowdenJosephConradImaged1970,
@@ -22001,7 +21826,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1970},
   keywords = {20th century,English language,Style,Literary Criticism / European / English; Irish; Scottish; Welsh,Language Arts & Disciplines / Rhetoric,Literary style,Conrad; Joseph,English language/ 20th century/ Style,Figures of speech},
   author = {Dowden, Wilfred Sellars},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{schnauderFreeWillDeterminism2009,
@@ -22014,7 +21839,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2009},
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Schnauder, Ludwig},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{towneIndexguideLibraryWorld1899,
@@ -22024,7 +21849,7 @@ dc.title: The Literary Studies And Reviews},
   publisher = {{R.S. Peale and J.A. Hill}},
   date = {1899},
   author = {Towne, Edward Cornelius},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{LiteraryImpressionismModernist,
@@ -22075,7 +21900,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / General},
   author = {Wilson, Janet and Kimber, Gerri and Reid, Susan},
   file = {/home/jon/Dropbox/Papers/zotero/storage/ITYJ4I5F/Wilson et al_2014_Katherine Mansfield and Literary Modernism.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{kimberCelebratingKatherineMansfield2011,
@@ -22090,7 +21915,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory,Language Arts & Disciplines / Linguistics / Historical & Comparative,Literary Criticism / European / English; Irish; Scottish; Welsh,Fiction / General,Social Science / General,Social Science / Anthropology / Cultural & Social,Literary Criticism / Modern / 20th Century,Social Science / Gender Studies},
   author = {Kimber, G.},
   file = {/home/jon/Dropbox/Papers/zotero/storage/F8CAIUV2/Kimber_2011_Celebrating Katherine Mansfield.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{petersJosephConradCritical2013,
@@ -22103,7 +21928,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2013-04-29},
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Peters, John G.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{geryImagismEssaysIts2013,
@@ -22130,7 +21955,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Fiction / Classics,Fiction / Short Stories (single author)},
   author = {Henry, James},
   file = {/home/jon/Dropbox/Papers/zotero/storage/H2X6GZZC/[James_Henry]_Selected_Tales(z-lib.org).epub},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{jamesArtNovelCritical1934,
@@ -22143,7 +21968,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1934},
   author = {James, Henry},
   file = {/home/jon/Dropbox/Papers/zotero/storage/69UPU6PP/James_1934_The Art of the Novel.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{jamesTerminations1895,
@@ -22169,7 +21994,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Senses and sensation},
   author = {Mach, Ernst},
   file = {/home/jon/Dropbox/Papers/zotero/storage/36U8NLDV/Mach_1914_The Analysis of Sensations, and the Relation of the Physical to the Psychical.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{flochPetitesMythologieOeil,
@@ -22299,7 +22124,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / General,Literary Criticism / Semiotics & Theory},
   author = {Diepeveen, Leonard},
   file = {/home/jon/Dropbox/Papers/zotero/storage/Q5Y5LILX/[Leonard_Diepeveen]_The_Difficulties_of_Modernism(z-lib.org).epub},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lakoffWomenFireDangerous2008,
@@ -22313,7 +22138,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General},
   author = {Lakoff, George},
   file = {/home/jon/Dropbox/Papers/zotero/storage/TE3L55UD/Lakoff_2008_Women, Fire, and Dangerous Things.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lakoffMetaphorsWeLive2008,
@@ -22326,7 +22151,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2008-12-19},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General,Philosophy / Mind & Body,Science / Cognitive Science},
   author = {Lakoff, George and Johnson, Mark},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{kovecsesMetaphorCultureUniversality2005,
@@ -22341,7 +22166,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Language Arts & Disciplines / Linguistics / General,Social Science / Anthropology / General,Psychology / General,Psychology / Ethnopsychology},
   author = {Kövecses, Zoltán},
   file = {/home/jon/Dropbox/Papers/zotero/storage/MK83VSI4/Kövecses_2005_Metaphor in Culture.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{lakoffMoreCoolReason2009,
@@ -22355,7 +22180,7 @@ dc.title: The Literary Studies And Reviews},
   date = {2009-07-27},
   keywords = {Language Arts & Disciplines / Linguistics / General,Language Arts & Disciplines / General},
   author = {Lakoff, George and Turner, Mark},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{NetsModernismHenry,
@@ -22418,7 +22243,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1992},
   keywords = {Literary Criticism / Poetry,English-speaking countries,English poetry,American poetry,Imagist poetry,American poetry - 20th century - History and criticism,American poetry/ 20th century/ History and criticism,English poetry - 20th century - History and criticism,English poetry/ 20th century/ History and criticism,English-speaking countries - Intellectual life - 20th century,Imagist poetry - History and criticism,Imagist poetry/ History and criticism,Poetry / English; Irish; Scottish; Welsh},
   author = {Pratt, William and Richardson, Robert},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{dowdenJosephConradImaged1970a,
@@ -22431,7 +22256,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1970},
   keywords = {20th century,English language,Style,Literary Criticism / European / English; Irish; Scottish; Welsh,Language Arts & Disciplines / Rhetoric,Literary style,Conrad; Joseph,English language/ 20th century/ Style,Figures of speech},
   author = {Dowden, Wilfred Sellars},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{fordJosephConradPersonal1965,
@@ -22443,7 +22268,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1965},
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Ford, Ford Madox},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{maoSolidObjectsModernism1998,
@@ -22458,7 +22283,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / General,Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Mao, Douglas},
   file = {/home/jon/Dropbox/Papers/zotero/storage/8GLRDXSX/Mao_1998_Solid Objects.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{jamesonModernistPapers2016,
@@ -22472,7 +22297,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / Semiotics & Theory,Literary Criticism / European / General,Literary Criticism / Comparative Literature},
   author = {Jameson, Fredric},
   file = {/home/jon/Dropbox/Papers/zotero/storage/SARTGBT9/Jameson_2016_The Modernist Papers.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{matzLiteraryImpressionismModernist2001,
@@ -22486,7 +22311,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / Semiotics & Theory,Literary Criticism / European / English; Irish; Scottish; Welsh,Literary Collections / Ancient & Classical},
   author = {Matz, Jesse and Matz, Chair Department of English Jesse},
   file = {/home/jon/Dropbox/Papers/zotero/storage/MIQVDDZH/Matz_Matz_2001_Literary Impressionism and Modernist Aesthetics.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{saidJosephConradFiction2008,
@@ -22500,7 +22325,7 @@ dc.title: The Literary Studies And Reviews},
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh,Literary Collections / Letters,Literary Criticism / European / Eastern},
   author = {Said, Edward W.},
   file = {/home/jon/Dropbox/Papers/zotero/storage/D2PB35A4/[Edward_Said\;_Andrew_N._Rubin_(ed.)]_Joseph_Conrad(z-lib.org).epub},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{gunsterenKatherineMansfieldLiterary1990,
@@ -22512,7 +22337,7 @@ dc.title: The Literary Studies And Reviews},
   date = {1990},
   keywords = {Social Science / Sociology / General},
   author = {van Gunsteren, Julia},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{aubryJosephConradLife1927,
@@ -22524,39 +22349,7 @@ dc.title: The Literary Studies And Reviews},
   publisher = {{Doubleday, Page, Garden City}},
   date = {1927},
   author = {Aubry, Georges Jean},
-  eprinttype = {googlebooks}
-}
-
-@book{g.jean-aubryJosephConradLife1927,
-  langid = {english},
-  title = {Joseph {{Conrad Life Amp Letters Vol}} - {{II}}},
-  url = {http://archive.org/details/in.ernet.dli.2015.150927},
-  abstract = {Book Source: Digital Library of India Item 2015.150927
-
-dc.contributor.author: G. Jean - Aubry
-dc.date.accessioned: 2015-07-06T18:25:54Z
-dc.date.available: 2015-07-06T18:25:54Z
-dc.date.digitalpublicationdate: 2003-09-26
-dc.date.citation: 1927
-dc.identifier: RMSC, IIIT-H
-dc.identifier.barcode: 2999990016422
-dc.identifier.origpath: /data/upload/0016/427
-dc.identifier.copyno: 1
-dc.identifier.uri: http://www.new.dli.ernet.in/handle/2015/150927
-dc.description.scanningcentre: RMSC, IIIT-H
-dc.description.main: 1
-dc.description.tagged: 0
-dc.description.totalpages: 406
-dc.format.mimetype: application/pdf
-dc.language.iso: English
-dc.publisher.digitalrepublisher: Universal Digital Library
-dc.publisher: William Heinemann, Ltd
-dc.rights: Copyright Protected
-dc.title: Joseph Conrad Life Amp Letters Vol - Ii},
-  urldate = {2019-10-16},
-  date = {1927},
-  keywords = {RMSC},
-  author = {{G. Jean - Aubry}}
+  
 }
 
 @book{joyceChamberMusic1918,
@@ -22566,7 +22359,7 @@ dc.title: Joseph Conrad Life Amp Letters Vol - Ii},
   publisher = {{B.W. Huebsch, Incorporated}},
   date = {1918},
   author = {Joyce, James},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{derridaGrammatology2016,
@@ -22580,7 +22373,7 @@ dc.title: Joseph Conrad Life Amp Letters Vol - Ii},
   keywords = {Literary Criticism / Semiotics & Theory,Philosophy / Movements / Deconstruction},
   author = {Derrida, Jacques and Butler, Judith},
   file = {/home/jon/Dropbox/Papers/zotero/storage/G5GFN556/Derrida_Butler_2016_Of Grammatology.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{brookerGeographiesModernism2007,
@@ -22631,7 +22424,7 @@ dc.title: Joseph Conrad Life Amp Letters Vol - Ii},
   date = {2017},
   keywords = {PSYCHOLOGY / Cognitive Psychology & Cognition},
   author = {Rogers, Brian J.},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{dhaenRoutledgeConciseHistory2013,
@@ -22658,7 +22451,7 @@ dc.title: Joseph Conrad Life Amp Letters Vol - Ii},
   keywords = {Political Science / Colonialism & Post-Colonialism,Social Science / Ethnic Studies / General,Social Science / Regional Studies},
   author = {Said, Edward W.},
   file = {/home/jon/Dropbox/Papers/zotero/storage/V7NWQ2HE/Said_2014_Orientalism.pdf},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{shihBookChinesePoetry1891,
@@ -22677,7 +22470,7 @@ dc.title: Joseph Conrad Life Amp Letters Vol - Ii},
   publisher = {{Herbert von Halem Verlag}},
   date = {2007},
   author = {Olk, Claudia},
-  eprinttype = {googlebooks}
+  url = {https://books.google.com/books?hl=en&lr=&id=YZoJRCsePY0C&oi=fnd&pg=PA153}
 }
 
 @book{olkVirginiaWoolfAesthetics2014,
@@ -22690,7 +22483,7 @@ dc.title: Joseph Conrad Life Amp Letters Vol - Ii},
   date = {2014-08-19},
   keywords = {Language Arts & Disciplines / Linguistics / General,Literary Criticism / European / English; Irish; Scottish; Welsh,Literary Criticism / General,Literary Criticism / Semiotics & Theory},
   author = {Olk, Claudia},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{clarkeSuffragismImagismCosmic2016,
@@ -22746,7 +22539,7 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   date = {1995},
   keywords = {Poetry / American / General},
   author = {Qian, Zhaoming},
-  eprinttype = {googlebooks}
+  
 }
 
 @online{TimeTravel2015,
@@ -22789,7 +22582,7 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   date = {2008-11-18},
   keywords = {Literary Collections / General,Literary Criticism / General},
   author = {Nicholls, Peter},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{rossNiggerNarcissusModernist2011,
@@ -22822,7 +22615,7 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   journaltitle = {Journal of the Royal Society of Arts},
   date = {1898},
   author = {Bruce, Eric Stuart},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{neumeyerOxfordHandbookFilm2014,
@@ -22835,7 +22628,7 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   date = {2014},
   keywords = {Music / History & Criticism,Music / Instruction & Study / Theory,Music / Printed Music / Opera & Classical Scores,Performing Arts / Film / Direction & Production,Performing Arts / Film / History & Criticism},
   author = {Neumeyer, David},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{herbartHerbartSenseperceptionMinor1896,
@@ -22846,7 +22639,7 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   publisher = {{D. Appleton}},
   date = {1896},
   author = {Herbart, Johann Friedrich},
-  eprinttype = {googlebooks}
+  
 }
 
 @article{baronFlaubertJoyceVision2008,
@@ -22877,7 +22670,7 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   date = {2012-03-13},
   keywords = {Poetry / European / English; Irish; Scottish; Welsh,Poetry / General},
   author = {Yeats, William Butler},
-  eprinttype = {googlebooks}
+  
 }
 
 @book{joyceOccasionalCriticalPolitical2000,
@@ -22890,7 +22683,7 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   date = {2000},
   keywords = {Literary Criticism / European / English; Irish; Scottish; Welsh},
   author = {Joyce, James},
-  eprinttype = {googlebooks}
+  
 }
 
 @inreference{Cathay,
@@ -22936,8 +22729,261 @@ Freewoman, The New Freewoman, and The Egoist-function as a kind of critical},
   date = {2004},
   keywords = {Literary Criticism / Women Authors,Performing Arts / Film / History & Criticism},
   author = {Connor, Rachel},
-  eprinttype = {googlebooks}
+  
 }
 
-@preamble{ "\ifdefined\DeclarePrefChars\DeclarePrefChars{'’-}\else\fi " }
+@Book{bowler16_liter,
+  author =       {Bowler, Rebecca},
+  title =        {Literary impressionism : vision and memory in Dorothy Richardson, Ford Madox Ford, H.D., and May Sinclair},
+  year =         2016,
+  publisher =    {Bloomsbury Academic, an imprint of Bloomsbury Publishing Plc},
+  address =      {London New York},
+  isbn =         1474269060,
+}
 
+@Book{matz01_liter,
+  author =       {Matz, Jesse},
+  title =        {Literary impressionism and modernist aesthetics},
+  year =         2001,
+  publisher =    {Cambridge University Press},
+  address =      {Cambridge, U.K. New York},
+  isbn =         0521803527,
+}
+
+@Book{gunsteren90_kather_mansf,
+  author =       {Gunsteren, Julia},
+  title =        {Katherine Mansfield and literary impressionism},
+  year =         1990,
+  publisher =    {Rodopi},
+  address =      {Amsterdam},
+  isbn =         9051831994,
+}
+
+@inbook{symons74_from_impres_writin,
+  DATE_ADDED =   {Sat Nov 9 16:23:35 2019},
+  author =       {Arthur Symons},
+  booktitle =    {Arthur Symons: Selected Writings},
+  doi =          {10.1093/oseo/instance.00249576},
+  pages =        {nil},
+  publisher =    {Oxford University Press},
+  series =       {Arthur Symons: Selected Writings},
+  title =        {From 'Impressionistic Writing'},
+  url =          {https://doi.org/10.1093/oseo/instance.00249576},
+  year =         {1974},
+}
+
+@book{ford1939march,
+  title={The March of Literature: From Confucius to Modern Times},
+  author={Ford, F.M.},
+  url={https://books.google.com/books?id=v46FvwEACAAJ},
+  year={1939},
+  publisher={G. Allen and Unwin, Limited}
+}
+
+@article{10.1093/llc/fqz072,
+    author = {Sula, Chris Alen and Hill, Heather V},
+    title = "{The early history of digital humanities: An analysis of Computers and the Humanities (1966–2004) and Literary and Linguistic Computing (1986–2004)}",
+    journal = {Digital Scholarship in the Humanities},
+    year = {2019},
+    month = {11},
+    abstract = "{Most commentators locate the origin of digital humanities (DH) in computational text analysis of the mid-twentieth century, beginning in 1946 with Roberto Busa’s plans for the Index Thomisticus, a massive attempt to encode nearly 11 million words of Thomas Aquinas’ writings on IBM punch cards. This event (and the narrative that follows) is found throughout the literature, leading some to believe that early DH work ‘concentrated, perhaps somewhat narrowly, on text analysis (such as classification systems, mark-up, text encoding, and scholarly editing)’ (Presner, 2010, p. 6). Others seem convinced that DH is still only text analysis or too dominated by it (Meeks, 2013)—and misguided in its approach (Fish, 2012). Meanwhile, Underwood (2017) has recently made a case for disentangling distant reading methods from DH generally, noting that the former predates and does not depend on digital technology.This article presents an empirical perspective on the early history of DH by tracing publications in two foundational journals (Computers and the Humanities (CHum), established in 1966, and Literary and Linguistic Computing (LLC), established in 1986), with particular emphasis on media types, authors’ disciplines and locations, and teaching and learning. In doing so, we examine the extent to which early DH work focused on text analysis as well as broader trends in the early history of the field.}",
+    issn = {2055-7671},
+    doi = {10.1093/llc/fqz072},
+    url = {https://doi.org/10.1093/llc/fqz072},
+    note = {fqz072},
+    eprint = {http://oup.prod.sis.lan/dsh/advance-article-pdf/doi/10.1093/llc/fqz072/30383075/fqz072.pdf},
+}
+
+
+@article{gius19_forew_to_special_issue_ae,
+  author =       {Evelyn Gius and Nils Reiter and Marcus Willand},
+  title =        {Foreword To the Special Issue "A Shared Task for the Digital
+                  Humanities: Annotating Narrative Levels"},
+  journal =      {Journal of Cultural Analytics},
+  volume =       {nil},
+  number =       {nil},
+  pages =        {nil},
+  year =         2019,
+  doi =          {10.22148/16.047},
+  url =          {https://doi.org/10.22148/16.047},
+  DATE_ADDED =   {Mon Nov 11 12:29:17 2019},
+}
+
+@book{fielding2005history,
+  title={The History of Tom Jones},
+  author={Fielding, H. and Wakely, A. and Keymer, T.},
+  isbn={9780141907680},
+  series={Penguin classics},
+  url={https://books.google.com/books?id=iz70ULmzbOUC},
+  year={2005},
+  publisher={Penguin Books Limited}
+}
+
+@Book{parsons07_theor,
+  author =       {Parsons, Deborah},
+  title =        {Theorists of the modernist novel : James Joyce, Dorothy
+  Richardson and Viriginia Woolf},
+  year =         2007,
+  publisher =    {Routledge},
+  address =      {London},
+  isbn =         1134451326,
+}
+
+@Book{williams96,
+  author =       {Williams, Raymond},
+  title =        {The politics of modernism : against the new conformists},
+  year =         1996,
+  publisher =    {Verso},
+  address =      {London England New York},
+  isbn =         1859841619,
+}
+
+
+@book{wittgenstein1922tractatus,
+  title={Tractatus Logico-philosophicus},
+  author={Wittgenstein, L.},
+  lccn={23006615},
+  series={International library of psychology, philosophy, and scientific method},
+  url={https://books.google.com/books?id=w-PWAAAAMAAJ},
+  year={1922},
+  publisher={Harcourt, Brace, Incorporated}
+}
+
+@book{ogden1972meaning,
+  title={The Meaning of Meaning: A Study of the Influence of Language Upon Thought and of the Science of Symbolism},
+  author={Ogden, C.K. and Richards, I.A.},
+  series={Harvest book},
+  url={https://books.google.com/books?id=3zdrxgEACAAJ},
+  year={1972},
+  publisher={Harcourt, \& Brace}
+}
+
+@Book{james86,
+  author =       {James, Henry},
+  title =        {The art of criticism : Henry James on the theory and the
+  practice of fiction},
+  year =         1986,
+  publisher =    {University of Chicago Press},
+  address =      {Chicago},
+  isbn =         0226391973,
+}
+
+@Book{james04_henry_james,
+  author =       {James, Henry},
+  title =        {The portable Henry James},
+  year =         2004,
+  publisher =    {Penguin Books},
+  address =      {New York},
+  isbn =         0142437670,
+  file = {/home/jon/Dropbox/Papers/james04_henry_james.epub},
+}
+
+@Book{banfield00,
+  author =       {Banfield, Ann},
+  title =        {The phantom table : Woolf, Fry, Russell, and the epistemology
+  of modernism},
+  year =         2000,
+  publisher =    {Cambridge University Press},
+  address =      {Cambridge, U.K. New York},
+  isbn =         0521034035,
+}
+
+@Book{israel15_spiral,
+  author =       {Israel, Nico},
+  title =        {Spirals : the whirled image in twentieth-century literature
+  and art},
+  year =         2015,
+  publisher =    {Columbia University Press},
+  address =      {New York},
+  isbn =         0231526687,
+}
+
+@Book{mccabe04_cinem,
+  author =       {McCabe, Susan},
+  title =        {Cinematic modernism : modernist poetry and film},
+  year =         2004,
+  publisher =    {Cambridge University Press},
+  address =      {Cambridge, U.K. New York},
+  isbn =         0521846218,
+}
+
+@Article{hueffer_poetry_drama,
+  author =       {Ford Madox Hueffer},
+  title =        {On Impressionism},
+  journal =      {Poetry and Drama},
+  year =         {1914},
+  volume =    {1},
+  number =    {2},
+  pages =     {167-175},
+  url = {https://babel.hathitrust.org/cgi/pt?id=umn.31951002792749y&view=1up&seq=714},
+}
+
+@Book{tennyson1833,
+  author =    {Alfred Tennyson},
+  title =        {Poems},
+  publisher =    {Edward Moxon},
+  year =         {1833},
+  url = {https://play.google.com/books/reader?id=R_NHAQAAMAAJ&hl=en&pg=GBS.PA60}
+}
+
+@Book{moran96_word,
+  author =       {Moran, Patricia},
+  title =        {Word of mouth : body language in Katherine Mansfield and Virginia Woolf},
+  year =         1996,
+  publisher =    {University Press of Virginia},
+  address =      {Charlottesville Va},
+  isbn =         0813916755,
+}
+
+@InCollection{boscagli2018,
+  author =       {Maaurizia Boscagli},
+  title =        {The Art of Work: Katherine Mansfield's Servant and Perception},
+  booktitle =    {Re-forming World Literature: Katherine Mansfield and the Modernist Short Story},
+  publisher = {ibidem-Verlag},
+  year =      {2018},
+  editor =    {Gerri Kimber, Janet Wilson},
+  pages =     {71-90},
+}
+
+
+@InCollection{boscagli2018,
+  author =       {Janet Wilson},
+  title =        {"Kew Gardens" and "Miss Brill": Virginia Woolf and Katherine Mansfield as Short Story Writers},
+  booktitle =    {Re-forming World Literature: Katherine Mansfield and the Modernist Short Story},
+  publisher = {ibidem-Verlag},
+  year =      {2018},
+  editor =    {Gerri Kimber, Janet Wilson},
+  pages =     {113-137},
+}
+
+@article{jay88_rise,
+  author =       {Martin Jay},
+  title =        {The Rise of Hermeneutics and the Crisis of Ocularcentrism},
+  journal =      {Poetics Today},
+  volume =       9,
+  number =       2,
+  pages =        307,
+  year =         1988,
+  doi =          {10.2307/1772691},
+  url =          {https://doi.org/10.2307/1772691},
+  DATE_ADDED =   {Mon Dec 9 15:35:19 2019},
+}
+
+@book{perkins1976history,
+  title={A History of Modern Poetry: From the 1890s to the High Modernist Mode},
+  author={Perkins, D.},
+  isbn={9780674399457},
+  lccn={gb82028624},
+  series={A History of Modern Poetry},
+  url={https://books.google.com/books?id=lCU7r07Nb-UC},
+  year={1976},
+  publisher={Belknap Press of Harvard University Press}
+}
+
+@article{haslam2018fragmenting,
+  title={Fragmenting Modernism: Ford Madox Ford, the novel and the great war},
+  author={Haslam, Sara},
+  year={2018},
+  publisher={Manchester University Press}
+
+}
