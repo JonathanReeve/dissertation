@@ -12,6 +12,7 @@ jupyterlab = "==1.0"
 matplotlib = "*"
 vega_datasets = "*"
 selenium = "*"
+plotly = "*"
 
 [requires]
 python_version = "3.7"

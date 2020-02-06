@@ -2,6 +2,7 @@
 
 #+name: session_init
 #+BEGIN_SRC python :results output :session session_init
+
   #import spacy
   import pandas as pd
   #from nltk.corpus import wordnet as wn
@@ -17,6 +18,9 @@
 Warning (python): Your ‘python-shell-interpreter’ doesn’t seem to support readline, yet ‘python-shell-completion-native-enable’ was t and "python" is not part of the ‘python-shell-completion-native-disabled-interpreters’ list.  Native completions have been disabled locally. 
 
 #+RESULTS: session_init
+: Python 3.7.5 (default, Oct 14 2019, 23:08:55) 
+: [GCC 8.3.0] on linux
+: Type "help", "copyright", "credits" or "license" for more information.
 
 ** WordNet Color Searches
 Start by creating a dictionary for color values from WordNet. This will be a simple lexical approach, but good as a first experiment.
@@ -368,8 +372,8 @@ Color mappings from: https://xkcd.com/color/rgb.txt
 
 #+BEGIN_SRC python :results output :session session_init
 
-  dalloway = open('../data/dalloway.txt', errors='ignore').read()
-  xkcdMapRaw = open('../data/xkcd/rgb.txt').readlines()[1:]
+  dalloway = open('data/dalloway.txt', errors='ignore').read()
+  xkcdMapRaw = open('data/xkcd/rgb.txt').readlines()[1:]
   xkcdMap = {}
   for line in xkcdMapRaw: 
     splitLine = line.split('\t') 
@@ -384,6 +388,12 @@ Color mappings from: https://xkcd.com/color/rgb.txt
 #+END_SRC
 
 #+RESULTS:
+
+** Other color lists
+ - [[http://chir.ag/projects/name-that-color/#B54A64][Name that Color - Chirag Mehta : chir.ag]]
+ - [[https://github.com/Margaret2/pantone-colors/blob/master/pantone-colors-variables.css][pantone-colors/pantone-colors-variables.css at master · Margaret2/pantone-colors]]
+ - Sherman Williams paint chooser can probably be scraped:  https://www.sherwin-williams.com/homeowners/color/find-and-explore-colors/paint-colors-by-family#/color/6082
+But I will not be naive to the problems of these translations of hue to words. 
 
 ** DONE look for keywords in context
 CLOSED: [2019-08-20 mar 16:19]
@@ -607,23 +617,28 @@ plt.savefig('out.png')
 
   df = count(dalloway, nChunks=40)
 
-  print('heyo!')
+  #print('heyo!')
 
-  # plotA(melt(topColors(df))).save('dalloway.html')
+  plotA(melt(topColors(df))).save('dalloway.html')
 #+END_SRC
 
 #+RESULTS:
-: heyo!
+: __main__:37: SettingWithCopyWarning: 
+: A value is trying to be set on a copy of a slice from a DataFrame.
+: Try using .loc[row_indexer,col_indexer] = value instead
+: 
+: See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
 ** TODO rewrite in Haskell? 
 :LOGBOOK:
+CLOCK: [2019-09-25 mer 16:01]--[2019-09-25 mer 17:01] =>  1:00
 CLOCK: [2019-08-22 ĵaŭ 16:00]--[2019-08-22 ĵaŭ 16:55] =>  0:55
 CLOCK: [2019-08-22 ĵaŭ 00:00]--[2019-08-22 ĵaŭ 00:43] =>  0:43
 :END:
 
-Well this works a bit 
+Well this works a bit. Needs library: regex-compat
 
-#+BEGIN_SRC haskell :results output :tangle yes
+#+BEGIN_SRC haskell :results output :session session_init
 import Text.Regex (subRegex, mkRegex)
 import Data.List (intercalate)
 
@@ -634,7 +649,7 @@ replaceAllIn = foldl (\acc (k, v) -> subRegex (mkRegex k) acc v)
 
 makeSpan color = "<span type=\"color\">" ++ color ++ "</span>"
 
--- putStrLn "hi!"
+putStrLn "hi!"
 
 makePat color = "\\b" ++ (intercalate "[\\n -]" $ words color) ++ "\\b"
 
@@ -645,26 +660,48 @@ patSpan color = ((makePat color), (makeSpan color))
 
 pairs = map patSpan colors
 replaceAllIn s pairs
--- show pairs
+show pairs
 #+END_SRC
 
 #+RESULTS:
-#+begin_example
-<no location info>: error:
-    Could not find module ‘Text.Regex’
-    Perhaps you meant Text.Read (from base-4.12.0.0)
-Prelude Data.List> Prelude Data.List> Prelude Data.List> 
-<interactive>:6:38-45: error:
-    Variable not in scope: subRegex :: t0 -> t1 -> t3 -> t1
+: 
+: Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> hi!
+: Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> "\\bblue[\\n -]green\\b"
+: Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> "I have several paints. For example, red, <span type=\"color\">green</span>, and <span type=\"color\">blue</span>, and <span type=\"color\"><span type=\"color\">blue</span> <span type=\"color\">green</span></span>."
 
-<interactive>:6:48-54: error:
-    Variable not in scope: mkRegex :: t2 -> t0
-Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> Prelude Data.List> "\\bblue[\\n -]green\\b"
-#+end_example
+** TODO write web app
 
-** Other color lists
- - [[http://chir.ag/projects/name-that-color/#B54A64][Name that Color - Chirag Mehta : chir.ag]]
- - [[https://github.com/Margaret2/pantone-colors/blob/master/pantone-colors-variables.css][pantone-colors/pantone-colors-variables.css at master · Margaret2/pantone-colors]]
- - Sherman Williams paint chooser can probably be scraped:  https://www.sherwin-williams.com/homeowners/color/find-and-explore-colors/paint-colors-by-family#/color/6082
-But I will not be naive to the problems of these translations of hue to words. 
+#+BEGIN_SRC elisp :session venv
+(pyvenv-workon "Projects-Pkl0VwTn")
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session venv
+  # import plotly.plotly as py
+  import plotly.graph_objs as go
+  import plotly.offline as po
+
+  trace = go.Sunburst(
+      labels=["Steve", "Carl", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+      parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+      values=[10, 14, 12, 10, 2, 6, 6, 4, 4],
+      outsidetextfont = {"size": 20, "color": "#377eb8"},
+      marker = {"line": {"width": 2}},
+  )
+
+  layout = go.Layout(
+      margin = go.layout.Margin(t=0, l=0, r=0, b=0)
+  )
+
+  po.plot(go.Figure([trace], layout), filename='basic_sunburst_chart.html')
+  print('heyo!')
+#+END_SRC
+
+#+RESULTS:
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+:   File "/tmp/babel-hwqqDb/python-T9acqS", line 2, in <module>
+:     import plotly.graph_objs as go
+: ModuleNotFoundError: No module named 'plotly'
 
