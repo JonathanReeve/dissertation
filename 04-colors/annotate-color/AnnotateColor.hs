@@ -18,17 +18,6 @@ import Control.Applicative ((<|>))
 s :: T.Text
 s = "I have several paints. For example, red, green, and blue, and blue-green."
 
--- Colors like "blue-green" may be hyphenated, or be space-separated,
--- or be separated by a line break.
-
--- variations :: T.Text -> Parser T.Text
--- variations colorExpr = choice [ asciiCI colorExpr -- The whole expr.
---                               , parseColorGen colorExpr
---                               ]
-
--- legalSep :: Parser Char
--- legalSep = AT.space <|> satisfy (char '-')
-
 -- | Words can be separated by spaces, hyphens, or line breaks
 -- Got some help from https://stackoverflow.com/q/60085733/584121
 legalSep :: Parser T.Text
@@ -37,8 +26,6 @@ legalSep = T.pack . pure <$> satisfy (inClass "- \n\r")
 variations :: T.Text -> Parser [T.Text]
 variations = sequence . intersperse (mempty <$ many1 legalSep) . 
                    fmap string . T.words
-
-splitColor colorExpr = T.words
 
 colorParser :: [(ColorWord, Hex)] -> Parser [T.Text]
 colorParser colormap = choice $ map (variations . fst) $ colormap
@@ -70,10 +57,10 @@ lookupColor colorExpr cm = M.lookup colorExpr (M.fromAscList cm)
 
 annotate :: [(ColorWord, Hex)] -> Either T.Text T.Text -> Html ()
 annotate cm item = case item of
-  Left item -> toHtml item -- Not a color expression. Pass through.
-  Right item -> case lookupColor item cm of  -- Look up the word. FIXME
-    Nothing -> toHtml item
-    Just hex -> makeSpan hex item
+  Left expr -> toHtml expr -- Not a color expression. Pass through.
+  Right expr -> case lookupColor (expr::ColorWord) cm of  -- Look up the word. FIXME
+    Nothing -> toHtml expr
+    Just hex -> makeSpan hex expr
 
 main :: IO ()
 main = do
