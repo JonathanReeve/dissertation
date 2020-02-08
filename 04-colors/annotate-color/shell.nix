@@ -2,7 +2,7 @@
 let
   inherit (nixpkgs) pkgs;
   ghc = pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
-    regex-compat lucid replace-attoparsec hspec cabal-install
+    regex-compat lucid replace-attoparsec hspec cabal-install text-regex-replace optparse-generic
   ]);
 in
 pkgs.stdenv.mkDerivation {
