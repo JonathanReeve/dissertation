@@ -558,78 +558,127 @@ plt.savefig('out.png')
 
 #+RESULTS:
 
-** TODO look for color expressions in a text
+** Virtualenv setup
+#+begin_src sh
+echo $VIRTUAL_ENV
+#+end_src
 
-#+BEGIN_SRC python :results output :session session_init
-  dalloway = open('data/dalloway.txt', errors='ignore').read()
-  xkcdMapRaw = open('data/xkcd/rgb.txt').readlines()[1:]
-  xkcdMap = {}
-  for line in xkcdMapRaw:
-      splitLine = line.split('\t')
-      if len(splitLine) != 3:
-          print('error on: ', splitLine)
-      else:
-          name, val, _ = line.split('\t')
-          xkcdMap[name] = val
+#+RESULTS:
+: /home/jon/.local/share/virtualenvs/04-colors-ZEWMFy_F
 
+#+BEGIN_SRC elisp :session venv
+(pyvenv-workon "04-colors-ZEWMFy_F")
+#+END_SRC
 
-  def annotateColors(text):
-      matchLocs = {}
-      for item in xkcdMap:
-          pattern = '[\b\s]+' + item.replace(' ', '[-\s+]') + '[\b\s]+'
-          matches = re.finditer(pattern, text, flags=re.IGNORECASE)
-          matchStarts =  [match.start() for match in matches if matches is not None]
-          if matchStarts != []:
-              matchLocs[item] = len(matchStarts)
-          color = xkcdMap[item]
-          replacement = ' <span class="color" style="color: {}">{}</span> '.format(color, item)
-          text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
-      return text, matchLocs
-
-  def chunk(text, n=10):
-      """ Split a text into N equal parts. """
-      chunkSize = round(len(text)/n)
-      return [text[i:i + chunkSize] for i in range(0, len(text), chunkSize)][:-1]
-
-  def count(text, nChunks=20):
-      chunks = chunk(text, nChunks)
-      df = pd.DataFrame([annotateColors(chunk)[1] for chunk in chunks])
-      return df.fillna(0)
-
-  def melt(df):
-      df['chunk']=df.index
-      return df.melt(id_vars='chunk', var_name='color', value_name='count')
-
-  def plotM(df, nColors=10):
-      """ Plots with matplotlib, via pandas. """
-      df.plot(kind='area', stacked=True, color=["xkcd:"+color for color in topColors], figsize=(12,8))
-
-  def plotA(df):
-      df['hex'] = df['color'].apply(lambda x: xkcdMap[x])
-      df['hsv'] = df['hex'].apply(lambda x: rgb_to_hsv(to_rgb(x))[0])
-      df = df.sort_values('hsv') # Sloppy alphabetical color sort
-      return alt.Chart(df, width=800, height=600).mark_area().encode(
-                       x='chunk:O', y='count:Q', color=alt.Color('hex', scale=None), tooltip='color')
-
-  def topColors(df, nColors=10):
-      topColors = list(df.sum().sort_values(ascending=False)[:nColors].index)
-      return df[topColors]
-
-  df = count(dalloway, nChunks=40)
-
-  #print('heyo!')
-
-  plotA(melt(topColors(df))).save('dalloway.html')
+#+BEGIN_SRC elisp :session venv
+(setq evil-auto-indent nil) ; prevent weirdness with `o` and `O`
 #+END_SRC
 
 #+RESULTS:
-: __main__:37: SettingWithCopyWarning: 
-: A value is trying to be set on a copy of a slice from a DataFrame.
-: Try using .loc[row_indexer,col_indexer] = value instead
-: 
-: See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-** TODO rewrite in Haskell? 
+** TODO make color annotator in python
+#+BEGIN_SRC python :results output :session session_init2
+import pandas as pd
+import matplotlib.pyplot as plt
+import re
+import altair as alt
+from matplotlib.colors import to_rgb, rgb_to_hsv
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+dalloway = open('data/text/dalloway.txt', errors='ignore').read()
+xkcdMapRaw = open('data/maps/xkcd/rgb.txt').readlines()[1:]
+
+def makeXkcdMap(xkcdMapRaw):
+    """
+    Makes a color dictionary, e.g. {"blue": "#0000ff"}
+    from the XKCD data set.
+    """
+    xkcdMap = {}
+    for line in xkcdMapRaw:
+        splitLine = line.split('\t')
+        if len(splitLine) != 3:
+            print('error on: ', splitLine)
+        else:
+            name, val, _ = line.split('\t')
+            xkcdMap[name] = val
+    return xkcdMap
+
+xkcdMap = makeXkcdMap(xkcdMapRaw)
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+def annotateColors(text):
+    matchLocs = {}
+    for item in xkcdMap:
+        wordBoundary = '[\b\s\W]+'
+        pattern = wordBoundary + item.replace(' ', '[-\s+]') + wordBoundary
+        matches = re.finditer(pattern, text, flags=re.IGNORECASE)
+        matchStarts =  [match.start() for match in matches if matches is not None]
+        if matchStarts != []:
+            matchLocs[item] = (len(matchStarts), matchStarts)
+            color = xkcdMap[item]
+            replacement = ' <span class="color" style="color: {}">{}</span> '.format(color, item)
+            text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+    return text, matchLocs
+
+def chunk(text, n=10):
+    """ Split a text into N equal parts. """
+    chunkSize = round(len(text)/n)
+    return [text[i:i + chunkSize] for i in range(0, len(text), chunkSize)][:-1]
+
+def count(text, nChunks=20):
+    chunks = chunk(text, nChunks)
+    df = pd.DataFrame([annotateColors(chunk)[1] for chunk in chunks])
+    return df.fillna(0)
+
+def melt(df):
+    df['chunk']=df.index
+    return df.melt(id_vars='chunk', var_name='color', value_name='count')
+
+def plotM(df, nColors=10):
+    """ Plots with matplotlib, via pandas. """
+    df.plot(kind='area', stacked=True, color=["xkcd:"+color for color in topColors], figsize=(12,8))
+
+def plotA(df):
+    df['hex'] = df['color'].apply(lambda x: xkcdMap[x])
+    df['hsv'] = df['hex'].apply(lambda x: rgb_to_hsv(to_rgb(x))[0])
+    df = df.sort_values('hsv') # Sloppy alphabetical color sort
+    return alt.Chart(df, width=800, height=600).mark_area().encode(
+        x='chunk:O', y='count:Q', color=alt.Color('hex', scale=None), tooltip='color')
+
+def topColors(df, nColors=10):
+    topColors = list(df.sum().sort_values(ascending=False)[:nColors].index)
+    return df[topColors]
+
+df = count(dalloway, nChunks=40)
+
+    #print('heyo!')
+
+# plotA(melt(topColors(df))).save('dalloway.html')
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+text, matches = annotateColors(dalloway) 
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+print(matches)
+#+END_SRC
+#+RESULTS:
+: {'dust': (3, [25615, 82641, 299399]), 'tea': (16, [105629, 106487, 154024, 160982, 164471, 165110, 169532, 193173, 205242, 238450, 239636, 239704, 240907, 242048, 243089, 327154]), 'spruce': (1, [95804]), 'desert': (6, [104178, 127305, 127418, 164349, 164404, 179639]), 'swamp': (2, [148381, 183481]), 'fern': (1, [119925]), 'straw': (9, [15531, 15564, 89425, 89438, 139995, 152345, 209712, 265295, 293501]), 'leather': (5, [13934, 47628, 48126, 157300, 164064]), 'hazel': (2, [22053, 154182]), 'ice': (4, [95687, 149593, 257784, 309062]), 'ruby': (2, [56968, 352562]), 'dark': (20, [13882, 19349, 25090, 39333, 47094, 56619, 78936, 79024, 83344, 102941, 107931, 227900, 280946, 282995, 292644, 292840, 294330, 296581, 318634, 348975]), 'twilight': (1, [102589]), 'royal': (2, [4847, 133351]), 'leaf': (8, [7308, 17972, 75120, 119901, 119938, 127013, 127284, 212309]), 'carnation': (2, [86627, 95779]), 'pale': (10, [19731, 22229, 28376, 29575, 98221, 104192, 145865, 165101, 229164, 349878]), 'heather': (1, [151288]), 'dusk': (2, [289642, 297316]), 'vivid green': (1, [117733]), 'sandy': (2, [257327, 257548]), 'sea': (19, [4207, 10401, 47171, 52371, 70410, 81647, 104351, 105049, 126778, 152302, 239571, 264292, 267960, 276814, 281971, 282200, 305212, 326273, 343812]), 'fawn': (2, [254911, 255183]), 'pea': (1, [14458]), 'stone': (11, [44978, 48004, 52140, 62779, 171156, 185208, 204019, 257164, 257173, 278815, 307330]), 'deep orange': (1, [20271]), 'earth': (12, [94367, 105389, 126351, 150851, 151930, 152343, 152440, 218772, 262394, 317981, 324607, 342587]), 'golden': (1, [261961]), 'cherry': (1, [20474]), 'midnight': (2, [40860, 355521]), 'blood': (8, [17834, 58061, 173434, 174286, 188505, 191423, 217800, 342612]), 'rouge': (3, [133527, 317069, 317168]), 'mulberry': (4, [18866, 21400, 23117, 26724]), 'copper': (2, [309248, 309328]), 'coffee': (5, [196907, 198755, 202346, 203157, 203893]), 'silver': (20, [68064, 68088, 68250, 68494, 68539, 68929, 74482, 78467, 78480, 84314, 154091, 177767, 196729, 206973, 213380, 312719, 314113, 315578, 331369, 347245]), 'bronze': (2, [33234, 357470]), 'ocean': (1, [179068]), 'blush': (1, [56295]), 'lemon': (1, [28958]), 'apricot': (1, [339015]), 'forest': (2, [18285, 106647]), 'reddish': (1, [292463]), 'bright yellow': (2, [265076, 265140]), 'mud': (2, [131111, 188664]), 'sky': (28, [20231, 33690, 33916, 34167, 34328, 34400, 34796, 34892, 36768, 39039, 87028, 104944, 105549, 106876, 125222, 129854, 157644, 214384, 214433, 232368, 308689, 355194, 355395, 355405, 355582, 355607, 355648, 365515]), 'red brown': (1, [41535]), 'chocolate': (2, [251162, 251330]), 'grass': (13, [8236, 26613, 81876, 85582, 124645, 131099, 134086, 153500, 170083, 212823, 221900, 230003, 346661]), 'moss': (1, [120659]), 'wine': (2, [199308, 306684]), 'bright red': (1, [19153]), 'greenish': (1, [322084]), 'coral': (1, [171138]), 'cream': (3, [196228, 199299, 318095]), 'brick': (2, [191482, 212345]), 'white': (58, [1746, 12515, 18049, 20119, 20546, 20727, 28391, 29952, 29988, 30262, 30840, 34059, 34412, 34995, 35978, 39022, 40667, 41593, 43297, 50999, 55439, 63008, 66247, 92142, 98279, 99877, 102186, 102206, 108627, 114417, 117753, 131847, 171202, 190783, 198917, 220228, 224020, 224430, 226347, 243896, 247186, 251492, 257063, 260477, 266076, 266819, 286855, 291735, 300927, 310142, 312863, 316531, 326530, 333014, 344636, 355695, 364067, 364945]), 'crimson': (1, [119297]), 'grey blue': (1, [3698]), 'bright pink': (1, [112531]), 'blue green': (1, [1673]), 'gold': (13, [27357, 133066, 163770, 182398, 182460, 221876, 247164, 269302, 270034, 270702, 334557, 335314, 338659]), 'navy': (3, [245768, 250583, 262806]), 'rose': (21, [35062, 39465, 52942, 55724, 70058, 78112, 79938, 80175, 88832, 125084, 130837, 134813, 144957, 145031, 213641, 241921, 257966, 277930, 282961, 361215, 364601]), 'black': (17, [18214, 20619, 23930, 40091, 97250, 99594, 104059, 116750, 135326, 137498, 159001, 269642, 275252, 282818, 330176, 344918, 351143]), 'lilac': (3, [19626, 20001, 20926]), 'salmon': (8, [15625, 192467, 192539, 195714, 324218, 324230, 324363, 324576]), 'olive': (1, [339381]), 'violet': (3, [20551, 21191, 142425]), 'grey': (38, [3788, 21457, 22630, 22738, 30250, 43235, 50704, 86070, 106717, 108060, 108159, 126195, 135388, 135635, 136837, 161694, 183273, 183410, 183593, 183629, 183696, 185636, 196706, 210081, 210378, 226196, 261726, 266382, 266485, 272219, 272325, 304896, 317820, 341120, 345273, 354789, 357373, 357837]), 'yellow': (15, [57537, 102508, 113570, 128463, 217367, 218449, 220905, 228290, 264261, 273774, 273936, 318547, 324959, 331845, 349339]), 'orange': (1, [21398]), 'light blue': (1, [296127]), 'red': (31, [19598, 20504, 21345, 24653, 43697, 85088, 101500, 101667, 103834, 128653, 132598, 133421, 158941, 166485, 166788, 169153, 180749, 181976, 204663, 205147, 217938, 225856, 232221, 261401, 264699, 289706, 316464, 317485, 348911, 358717, 372698]), 'brown': (10, [24127, 43947, 51488, 62779, 161456, 164685, 205621, 210492, 255285, 255842]), 'pink': (22, [8512, 25036, 46130, 65449, 65872, 69807, 73753, 86023, 115142, 166598, 188821, 192974, 213778, 235565, 246767, 257114, 304709, 320955, 329930, 335799, 336485, 385171]), 'blue': (23, [1715, 3842, 21057, 40488, 41151, 46219, 84607, 109115, 142208, 142242, 163387, 223876, 243122, 274869, 288671, 298748, 304468, 306684, 307582, 320568, 322018, 355559, 363595]), 'green': (28, [1769, 4554, 17619, 25030, 38654, 40696, 46428, 55097, 58202, 71519, 71708, 75630, 78249, 86862, 111750, 125828, 129230, 161390, 168915, 170534, 186345, 224297, 230843, 244185, 282919, 347647, 355286, 360659]), 'purple': (2, [161899, 328406])}
+
+
+** DONE rewrite in Haskell? 
+CLOSED: [2020-02-11 mar 12:24]
 :LOGBOOK:
 CLOCK: [2019-09-25 mer 16:01]--[2019-09-25 mer 17:01] =>  1:00
 CLOCK: [2019-08-22 ĵaŭ 16:00]--[2019-08-22 ĵaŭ 16:55] =>  0:55
@@ -705,3 +754,342 @@ show pairs
 :     import plotly.graph_objs as go
 : ModuleNotFoundError: No module named 'plotly'
 
+** TODO write color categorizer
+
+Example from [[http://hanzratech.in/2015/01/16/color-difference-between-2-colors-using-python.html][this blog post on how to calculate color difference]]
+
+#+BEGIN_SRC python :results output :session session_init2
+from colormath.color_objects import sRGBColor, LabColor
+from colormath.color_conversions import convert_color
+from colormath.color_diff import delta_e_cie2000
+
+# Red Color
+color1_rgb = sRGBColor(1.0, 0.0, 0.0);
+
+# Blue Color
+color2_rgb = sRGBColor(0.0, 0.0, 1.0);
+
+# Convert from RGB to Lab Color Space
+color1_lab = convert_color(color1_rgb, LabColor);
+
+# Convert from RGB to Lab Color Space
+color2_lab = convert_color(color2_rgb, LabColor);
+
+# Find the color difference
+delta_e = delta_e_cie2000(color1_lab, color2_lab);
+
+print("The difference between the 2 color = ", delta_e)
+
+#+END_SRC
+
+#+RESULTS:
+: Python 3.7.5 (default, Oct 14 2019, 23:08:55) 
+: [GCC 8.3.0] on linux
+: Type "help", "copyright", "credits" or "license" for more information.
+: The difference between the 2 color =  52.88009898346556
+
+#+BEGIN_SRC python :results output :session session_init2
+from colormath.color_objects import sRGBColor, LabColor
+from colormath.color_conversions import convert_color
+from colormath.color_diff import delta_e_cie2000
+
+def colorDelta(colorAHex, colorBHex):
+    """ Compute delta-E measure of color difference,
+    using the CIE Lab color space.
+    """
+    srgbA = sRGBColor.new_from_rgb_hex(colorAHex)
+    srgbB = sRGBColor.new_from_rgb_hex(colorBHex)
+
+    colorAlab = convert_color(srgbA, LabColor);
+    colorBlab = convert_color(srgbB, LabColor);
+
+    return delta_e_cie2000(colorAlab, colorBlab)
+
+# print(colorDelta('#ff0000', '#00ff00'))
+
+baseColors = ["red", "orange", "yellow", "green", "blue",
+              "violet", "grey", "brown", "black", "white"]
+
+baseColorMap = {"red": "#FF0000", "orange": "#FFA500", 
+                "yellow": "#FFFF00", "green": "#00FF00", 
+                "blue": "#0000FF", "violet": "#EE82EE",
+                "grey": "#BEBEBE", "brown": "#A52A2A",
+                "black": "#000000", "white": "#FFFFFF"}
+
+def closestColor(colorHex, baseColorMap): 
+    scores = {colorDelta(colorHex, baseHex): word
+              for word, baseHex in baseColorMap.items()}
+    return scores[min(scores)]
+
+# Indian red. Should return red. 
+print(closestColor('#CD5C5C', baseColorMap))
+
+# Dark orange
+print(closestColor('#FF8C00', baseColorMap))
+
+# Olive drab. 
+print(closestColor('#6B8E23', baseColorMap))
+#+END_SRC
+
+#+RESULTS:
+: red
+: orange
+: green
+
+Colors from [[data/maps/dilumr-color-names/wikipedia_x11_colors.csv]]
+Privileging mathematically simple colors here (#FF0000) 
+
+#+BEGIN_SRC csv
+"Red !Red","#FF0000",255,0,0,0.0,100.0,50.0
+"Orange !Orange","#FFA500",255,165,0,39.0,100.0,50.0
+"Yellow !Yellow","#FFFF00",255,255,0,60.0,100.0,50.0
+"Green !Green","#00FF00",0,255,0,120.0,100.0,50.0
+"Blue !Blue","#0000FF",0,0,255,240.0,100.0,50.0
+"Violet !Violet","#EE82EE",238,130,238,300.0,76.0,72.0
+"Gray !Gray","#BEBEBE",190,190,190,0.0,0.0,75.0
+"Brown !Brown","#A52A2A",165,42,42,0.0,59.0,41.0
+"Black !Black","#000000",0,0,0,0.0,0.0,0.0
+"White !White","#FFFFFF",255,255,255,0.0,0.0,100.0
+#+END_SRC
+
+#+RESULTS:
+: 86.60838088768512
+
+** Categorize matches from color annotator above
+
+Matches are now in the form ~{"blue": (3, [45, 67, 235123])}~
+where ~3~ is the number of matches, and the following list is the locations. 
+
+Make a table like this: 
+
+| color      | parent | hex     | parentHex | n | locations       |
+|------------+--------+---------+-----------+---+-----------------|
+| light blue | blue   | #0000FF | #0000FF   | 3 | [45, 36, 34534] |
+
+
+
+#+BEGIN_SRC python :results output :session session_init2
+df = pd.DataFrame(matches).T
+print(df)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+0                                                  1
+dust     3                             [25615, 82641, 299399]
+tea     16  [105629, 106487, 154024, 160982, 164471, 16511...
+spruce   1                                            [95804]
+desert   6   [104178, 127305, 127418, 164349, 164404, 179639]
+swamp    2                                   [148381, 183481]
+..                                                ...
+brown   10  [24127, 43947, 51488, 62779, 161456, 164685, 2...
+pink    22  [8512, 25036, 46130, 65449, 65872, 69807, 7375...
+blue    23  [1715, 3842, 21057, 40488, 41151, 46219, 84607...
+green   28  [1769, 4554, 17619, 25030, 38654, 40696, 46428...
+purple   2                                   [161899, 328406]
+
+[79 rows x 2 columns]
+#+end_example
+
+#+BEGIN_SRC python :results output :session session_init2
+df['name'] = df.index
+
+#+END_SRC
+
+#+RESULTS:
+
+Look up the name in the map. 
+
+#+BEGIN_SRC python :results output :session session_init2
+df['hex'] = df['name'].apply(xkcdMap.get)
+print(df)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+0  ...      hex
+dust     3  ...  #b2996e
+tea     16  ...  #65ab7c
+spruce   1  ...  #0a5f38
+desert   6  ...  #ccad60
+swamp    2  ...  #698339
+..  ...      ...
+brown   10  ...  #653700
+pink    22  ...  #ff81c0
+blue    23  ...  #0343df
+green   28  ...  #15b01a
+purple   2  ...  #7e1e9c
+
+[79 rows x 4 columns]
+#+end_example
+
+#+BEGIN_SRC python :results output :session session_init2
+df['parent'] = df['hex'].apply(lambda hex: closestColor(hex, baseColorMap))
+print(df)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+0  ...  parent
+dust     3  ...  orange
+tea     16  ...    grey
+spruce   1  ...   black
+desert   6  ...  orange
+swamp    2  ...    grey
+..  ...     ...
+brown   10  ...   brown
+pink    22  ...  violet
+blue    23  ...    blue
+green   28  ...   green
+purple   2  ...    blue
+
+[79 rows x 5 columns]
+#+end_example
+
+#+BEGIN_SRC python :results output :session session_init2
+df['parentHex'] = df['parent'].apply(baseColorMap.get)
+print(df)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+0  ... parentHex
+dust     3  ...   #FFA500
+tea     16  ...   #BEBEBE
+spruce   1  ...   #000000
+desert   6  ...   #FFA500
+swamp    2  ...   #BEBEBE
+..  ...       ...
+brown   10  ...   #A52A2A
+pink    22  ...   #EE82EE
+blue    23  ...   #0000FF
+green   28  ...   #00FF00
+purple   2  ...   #0000FF
+
+[79 rows x 6 columns]
+#+end_example
+
+#+BEGIN_SRC python :results output :session session_init2
+df.to_csv('dalloway-colors.csv')
+#+END_SRC
+
+#+RESULTS:
+
+** Make sunburst chart from data
+
+This example from [[https://plot.ly/python/sunburst-charts/][the Plotly documentation]] doesn't seem to work. Maybe I need a newer version? 
+
+#+BEGIN_SRC elisp
+(setq org-babel-python-command "nix-shell --run python") 
+#+END_SRC
+
+#+RESULTS:
+: nix-shell --run python
+
+#+BEGIN_SRC python :results output :session session_init2
+import plotly.express as px
+data = dict(
+    character=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+    parent=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+    value=[10, 14, 12, 10, 2, 6, 6, 4, 4])
+
+fig =px.sunburst(
+    data,
+    names='character',
+    parents='parent',
+    values='value',
+)
+fig.show()
+#+END_SRC
+
+#+RESULTS:
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+:   File "/tmp/babel-1fRqPd/python-8Tihr5", line 1, in <module>
+:     import plotly.express as px
+: ModuleNotFoundError: No module named 'plotly'
+
+But this one does: 
+And the chart opens in the browser: 
+
+#+BEGIN_SRC python :results output :session session_init2
+import plotly.graph_objects as go
+
+fig =go.Figure(go.Sunburst(
+    # labels = ['coffee', 'silver', 'bronze', 'orange', 'grey', 'orange'],
+    # parents = ['orange', 'grey', 'orange', '', '', ''] ,
+    # values = [5, 20, 2, 5, 20, 2]
+    labels=["Eveline", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+    parents=["", "Eveline", "Eveline", "Seth", "Seth", "Eveline", "Eveline", "Awan", "Eveline" ],
+    values=[10, 14, 12, 10, 2, 6, 6, 4, 4],
+))
+# Update layout for tight margin
+# See https://plot.ly/python/creating-and-updating-figures/
+fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
+
+fig.show()
+#+END_SRC
+
+#+RESULTS:
+: 16:00:28 ERROR: Error while loading config.py
+: Traceback (most recent call last):
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
+:     configfiles.read_config_py(config_file)
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
+:     raise configexc.ConfigFileErrors('config.py', api.errors)
+: qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
+:   While setting 'fonts.monospace': No option 'fonts.monospace'
+: 16:00:28 INFO: Opening in existing instance
+
+#+BEGIN_SRC python :results output :session session_init2
+import plotly.graph_objects as go
+
+dfSubset = df.iloc[34:37]
+
+print(dfSubset)
+
+labels = list(dfSubset['name'])
+parents = list(dfSubset['parent'])
+values= list(dfSubset[0])
+
+# Parents are colors too
+labels += parents
+parents += [""]*len(parents)
+
+
+# Parents need counts, too. Use their parents' counts
+values = values + values
+
+print(labels, parents, values)
+
+fig =go.Figure(go.Sunburst(
+    labels = labels,
+    parents = parents,
+    values= values
+))
+# Update layout for tight margin
+# See https://plot.ly/python/creating-and-updating-figures/
+fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
+
+fig.show()
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+0  ... parentHex
+coffee   5  ...   #FFA500
+silver  20  ...   #BEBEBE
+bronze   2  ...   #FFA500
+
+[3 rows x 6 columns]
+['coffee', 'silver', 'bronze', 'orange', 'grey', 'orange'] ['orange', 'grey', 'orange', '', '', ''] [5, 20, 2, 5, 20, 2]
+15:56:46 ERROR: Error while loading config.py
+Traceback (most recent call last):
+  File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
+    configfiles.read_config_py(config_file)
+  File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
+    raise configexc.ConfigFileErrors('config.py', api.errors)
+qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
+  While setting 'fonts.monospace': No option 'fonts.monospace'
+15:56:46 INFO: Opening in existing instance
+#+end_example
