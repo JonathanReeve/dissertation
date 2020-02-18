@@ -1,5 +1,6 @@
 * Colors Experiments
 
+** Init
 #+name: session_init
 #+BEGIN_SRC python :results output :session session_init
 
@@ -372,8 +373,8 @@ Color mappings from: https://xkcd.com/color/rgb.txt
 
 #+BEGIN_SRC python :results output :session session_init
 
-  dalloway = open('data/dalloway.txt', errors='ignore').read()
-  xkcdMapRaw = open('data/xkcd/rgb.txt').readlines()[1:]
+  # dalloway = open('data/dalloway.txt', errors='ignore').read()
+  xkcdMapRaw = open('data/maps/xkcd/rgb.txt').readlines()[1:]
   xkcdMap = {}
   for line in xkcdMapRaw: 
     splitLine = line.split('\t') 
@@ -718,7 +719,8 @@ show pairs
 : Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> "\\bblue[\\n -]green\\b"
 : Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> Prelude Text.Regex Data.List> "I have several paints. For example, red, <span type=\"color\">green</span>, and <span type=\"color\">blue</span>, and <span type=\"color\"><span type=\"color\">blue</span> <span type=\"color\">green</span></span>."
 
-** TODO write web app
+** DONE write web app
+CLOSED: [2020-02-17 lun 18:11]
 
 #+BEGIN_SRC elisp :session venv
 (pyvenv-workon "Projects-Pkl0VwTn")
@@ -754,7 +756,8 @@ show pairs
 :     import plotly.graph_objs as go
 : ModuleNotFoundError: No module named 'plotly'
 
-** TODO write color categorizer
+** DONE write color categorizer
+CLOSED: [2020-02-17 lun 19:49]
 
 Example from [[http://hanzratech.in/2015/01/16/color-difference-between-2-colors-using-python.html][this blog post on how to calculate color difference]]
 
@@ -816,6 +819,8 @@ baseColorMap = {"red": "#FF0000", "orange": "#FFA500",
                 "grey": "#BEBEBE", "brown": "#A52A2A",
                 "black": "#000000", "white": "#FFFFFF"}
 
+baseColorMap = {color: xkcdMap.get(color) for color in baseColorMap.keys()}
+
 def closestColor(colorHex, baseColorMap): 
     scores = {colorDelta(colorHex, baseHex): word
               for word, baseHex in baseColorMap.items()}
@@ -869,34 +874,42 @@ Make a table like this:
 
 
 #+BEGIN_SRC python :results output :session session_init2
-df = pd.DataFrame(matches).T
-print(df)
+def matchesToDf(matches):
+    occurrences = [val[0] for val in matches.values()]
+    locations = [val[1] for val in matches.values()]
+    names = matches.keys()
+    df = pd.DataFrame([names, occurrences, locations], index = ['name', 'n', 'locs']).T
+    #print(df)
+    return df
+
+df = matchesToDf(matches)
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+print(df) 
+
 #+END_SRC
 
 #+RESULTS:
 #+begin_example
-0                                                  1
-dust     3                             [25615, 82641, 299399]
-tea     16  [105629, 106487, 154024, 160982, 164471, 16511...
-spruce   1                                            [95804]
-desert   6   [104178, 127305, 127418, 164349, 164404, 179639]
-swamp    2                                   [148381, 183481]
-..                                                ...
-brown   10  [24127, 43947, 51488, 62779, 161456, 164685, 2...
-pink    22  [8512, 25036, 46130, 65449, 65872, 69807, 7375...
-blue    23  [1715, 3842, 21057, 40488, 41151, 46219, 84607...
-green   28  [1769, 4554, 17619, 25030, 38654, 40696, 46428...
-purple   2                                   [161899, 328406]
+name   n                                               locs
+0     dust   3                             [25615, 82641, 299399]
+1      tea  16  [105629, 106487, 154024, 160982, 164471, 16511...
+2   spruce   1                                            [95804]
+3   desert   6   [104178, 127305, 127418, 164349, 164404, 179639]
+4    swamp   2                                   [148381, 183481]
+..     ...  ..                                                ...
+74   brown  10  [24127, 43947, 51488, 62779, 161456, 164685, 2...
+75    pink  22  [8512, 25036, 46130, 65449, 65872, 69807, 7375...
+76    blue  23  [1715, 3842, 21057, 40488, 41151, 46219, 84607...
+77   green  28  [1769, 4554, 17619, 25030, 38654, 40696, 46428...
+78  purple   2                                   [161899, 328406]
 
-[79 rows x 2 columns]
+[79 rows x 3 columns]
 #+end_example
 
-#+BEGIN_SRC python :results output :session session_init2
-df['name'] = df.index
-
-#+END_SRC
-
-#+RESULTS:
 
 Look up the name in the map. 
 
@@ -907,18 +920,18 @@ print(df)
 
 #+RESULTS:
 #+begin_example
-0  ...      hex
-dust     3  ...  #b2996e
-tea     16  ...  #65ab7c
-spruce   1  ...  #0a5f38
-desert   6  ...  #ccad60
-swamp    2  ...  #698339
-..  ...      ...
-brown   10  ...  #653700
-pink    22  ...  #ff81c0
-blue    23  ...  #0343df
-green   28  ...  #15b01a
-purple   2  ...  #7e1e9c
+name   n                                               locs      hex
+0     dust   3                             [25615, 82641, 299399]  #b2996e
+1      tea  16  [105629, 106487, 154024, 160982, 164471, 16511...  #65ab7c
+2   spruce   1                                            [95804]  #0a5f38
+3   desert   6   [104178, 127305, 127418, 164349, 164404, 179639]  #ccad60
+4    swamp   2                                   [148381, 183481]  #698339
+..     ...  ..                                                ...      ...
+74   brown  10  [24127, 43947, 51488, 62779, 161456, 164685, 2...  #653700
+75    pink  22  [8512, 25036, 46130, 65449, 65872, 69807, 7375...  #ff81c0
+76    blue  23  [1715, 3842, 21057, 40488, 41151, 46219, 84607...  #0343df
+77   green  28  [1769, 4554, 17619, 25030, 38654, 40696, 46428...  #15b01a
+78  purple   2                                   [161899, 328406]  #7e1e9c
 
 [79 rows x 4 columns]
 #+end_example
@@ -930,18 +943,18 @@ print(df)
 
 #+RESULTS:
 #+begin_example
-0  ...  parent
-dust     3  ...  orange
-tea     16  ...    grey
-spruce   1  ...   black
-desert   6  ...  orange
-swamp    2  ...    grey
-..  ...     ...
-brown   10  ...   brown
-pink    22  ...  violet
-blue    23  ...    blue
-green   28  ...   green
-purple   2  ...    blue
+name   n                                               locs      hex  parent
+0     dust   3                             [25615, 82641, 299399]  #b2996e    grey
+1      tea  16  [105629, 106487, 154024, 160982, 164471, 16511...  #65ab7c   green
+2   spruce   1                                            [95804]  #0a5f38   green
+3   desert   6   [104178, 127305, 127418, 164349, 164404, 179639]  #ccad60    grey
+4    swamp   2                                   [148381, 183481]  #698339   green
+..     ...  ..                                                ...      ...     ...
+74   brown  10  [24127, 43947, 51488, 62779, 161456, 164685, 2...  #653700   brown
+75    pink  22  [8512, 25036, 46130, 65449, 65872, 69807, 7375...  #ff81c0    grey
+76    blue  23  [1715, 3842, 21057, 40488, 41151, 46219, 84607...  #0343df    blue
+77   green  28  [1769, 4554, 17619, 25030, 38654, 40696, 46428...  #15b01a   green
+78  purple   2                                   [161899, 328406]  #7e1e9c  violet
 
 [79 rows x 5 columns]
 #+end_example
@@ -953,18 +966,18 @@ print(df)
 
 #+RESULTS:
 #+begin_example
-0  ... parentHex
-dust     3  ...   #FFA500
-tea     16  ...   #BEBEBE
-spruce   1  ...   #000000
-desert   6  ...   #FFA500
-swamp    2  ...   #BEBEBE
-..  ...       ...
-brown   10  ...   #A52A2A
-pink    22  ...   #EE82EE
-blue    23  ...   #0000FF
-green   28  ...   #00FF00
-purple   2  ...   #0000FF
+name   n  ...  parent parentHex
+0     dust   3  ...    grey   #929591
+1      tea  16  ...   green   #15b01a
+2   spruce   1  ...   green   #15b01a
+3   desert   6  ...    grey   #929591
+4    swamp   2  ...   green   #15b01a
+..     ...  ..  ...     ...       ...
+74   brown  10  ...   brown   #653700
+75    pink  22  ...    grey   #929591
+76    blue  23  ...    blue   #0343df
+77   green  28  ...   green   #15b01a
+78  purple   2  ...  violet   #9a0eea
 
 [79 rows x 6 columns]
 #+end_example
@@ -975,23 +988,102 @@ df.to_csv('dalloway-colors.csv')
 
 #+RESULTS:
 
-** Make sunburst chart from data
+*** Append parents so that they show up as nodes, too. 
 
-This example from [[https://plot.ly/python/sunburst-charts/][the Plotly documentation]] doesn't seem to work. Maybe I need a newer version? 
-
-#+BEGIN_SRC elisp
-(setq org-babel-python-command "nix-shell --run python") 
+#+BEGIN_SRC python :results output :session session_init2
+print(baseColorMap)
 #+END_SRC
 
 #+RESULTS:
-: nix-shell --run python
+: {'red': '#e50000', 'orange': '#f97306', 'yellow': '#ffff14', 'green': '#15b01a', 'blue': '#0343df', 'violet': '#9a0eea', 'grey': '#929591', 'brown': '#653700', 'black': '#000000', 'white': '#ffffff'}
 
 #+BEGIN_SRC python :results output :session session_init2
+baseDf = pd.DataFrame(baseColorMap.items(), columns=['name', 'hex'])
+baseDf['parent'] = "colors" # Ur-color
+baseDf['parentHex'] = baseDf['hex']
+baseDf['locs'] = ""
+print(baseDf)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+name      hex  parent parentHex locs
+0     red  #e50000  colors   #e50000     
+1  orange  #f97306  colors   #f97306     
+2  yellow  #ffff14  colors   #ffff14     
+3   green  #15b01a  colors   #15b01a     
+4    blue  #0343df  colors   #0343df     
+5  violet  #9a0eea  colors   #9a0eea     
+6    grey  #929591  colors   #929591     
+7   brown  #653700  colors   #653700     
+8   black  #000000  colors   #000000     
+9   white  #ffffff  colors   #ffffff
+#+end_example
+
+Get the totals for all the parent colors.
+
+#+BEGIN_SRC python :results output :session session_init2
+totals = df.groupby(['parent'])['n'].sum()
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+dict(totals)
+#+END_SRC
+
+#+RESULTS:
+: {'black': 44, 'blue': 28, 'brown': 25, 'green': 74, 'grey': 108, 'orange': 25, 'red': 79, 'violet': 12, 'white': 121, 'yellow': 46}
+
+#+BEGIN_SRC python :results output :session session_init2
+baseDf['n'] = baseDf['name'].apply(dict(totals).get)
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+baseDf
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+name      hex  parent parentHex locs    n
+0     red  #FF0000  colors   #FF0000        44
+1  orange  #FFA500  colors   #FFA500        42
+2  yellow  #FFFF00  colors   #FFFF00        33
+3   green  #00FF00  colors   #00FF00        52
+4    blue  #0000FF  colors   #0000FF        34
+5  violet  #EE82EE  colors   #EE82EE        29
+6    grey  #BEBEBE  colors   #BEBEBE       139
+7   brown  #A52A2A  colors   #A52A2A        70
+8   black  #000000  colors   #000000        47
+9   white  #FFFFFF  colors   #FFFFFF        72
+#+end_example
+
+#+BEGIN_SRC python :results output :session session_init2
+dfAll = df.append(baseDf)
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init2
+dfAll.to_csv('dalloway-colors.csv')
+#+END_SRC
+
+#+RESULTS:
+
+** DONE Make sunburst chart from data
+CLOSED: [2020-02-17 lun 19:50]
+
+*** Example 1: PX
+This example from [[https://plot.ly/python/sunburst-charts/][the Plotly documentation]] doesn't seem to work. Maybe I need a newer version? 
+
+#+BEGIN_SRC python :results output :session session_init
 import plotly.express as px
 data = dict(
     character=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
     parent=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
-    value=[10, 14, 12, 10, 2, 6, 6, 4, 4])
+    value=[15, 8 , 6, 4, 0, 2,11, 4,11])
 
 fig =px.sunburst(
     data,
@@ -1005,10 +1097,11 @@ fig.show()
 #+RESULTS:
 : Traceback (most recent call last):
 :   File "<stdin>", line 1, in <module>
-:   File "/tmp/babel-1fRqPd/python-8Tihr5", line 1, in <module>
+:   File "/tmp/babel-DFGiVW/python-LHOYbH", line 1, in <module>
 :     import plotly.express as px
 : ModuleNotFoundError: No module named 'plotly'
 
+*** Example 2: GO
 But this one does: 
 And the chart opens in the browser: 
 
@@ -1031,31 +1124,39 @@ fig.show()
 #+END_SRC
 
 #+RESULTS:
-: 16:00:28 ERROR: Error while loading config.py
-: Traceback (most recent call last):
-:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
-:     configfiles.read_config_py(config_file)
-:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
-:     raise configexc.ConfigFileErrors('config.py', api.errors)
-: qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
-:   While setting 'fonts.monospace': No option 'fonts.monospace'
-: 16:00:28 INFO: Opening in existing instance
+#+begin_example
+Python 3.7.5 (default, Oct 14 2019, 23:08:55) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+11:53:10 ERROR: Error while loading config.py
+Traceback (most recent call last):
+  File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
+    configfiles.read_config_py(config_file)
+  File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
+    raise configexc.ConfigFileErrors('config.py', api.errors)
+qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
+  While setting 'fonts.monospace': No option 'fonts.monospace'
+11:53:10 INFO: Opening in existing instance
+#+end_example
 
-#+BEGIN_SRC python :results output :session session_init2
+*** Attempt 1: GO. NG
+#+BEGIN_SRC python :results output :session session_init2 :tangle
 import plotly.graph_objects as go
+import pandas as pd
 
+df = pd.read_csv('dalloway-colors.csv')
 dfSubset = df.iloc[34:37]
-
-print(dfSubset)
 
 labels = list(dfSubset['name'])
 parents = list(dfSubset['parent'])
-values= list(dfSubset[0])
+values= list(dfSubset['0'])
 
-# Parents are colors too
-labels += parents
-parents += [""]*len(parents)
+print(labels, parents, values)
 
+urNode = ["colors"]
+# Parents are nodes too
+labels = urNode + parents + labels
+parents = [""] + ["colors"]*len(parents) + parents
 
 # Parents need counts, too. Use their parents' counts
 values = values + values
@@ -1076,20 +1177,318 @@ fig.show()
 
 #+RESULTS:
 #+begin_example
-0  ... parentHex
-coffee   5  ...   #FFA500
-silver  20  ...   #BEBEBE
-bronze   2  ...   #FFA500
-
-[3 rows x 6 columns]
-['coffee', 'silver', 'bronze', 'orange', 'grey', 'orange'] ['orange', 'grey', 'orange', '', '', ''] [5, 20, 2, 5, 20, 2]
-15:56:46 ERROR: Error while loading config.py
+Python 3.7.5 (default, Oct 14 2019, 23:08:55) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+['coffee', 'silver', 'bronze'] ['orange', 'grey', 'orange'] [5, 20, 2]
+['colors', 'orange', 'grey', 'orange', 'coffee', 'silver', 'bronze'] ['', 'colors', 'colors', 'colors', 'orange', 'grey', 'orange'] [5, 20, 2, 5, 20, 2]
 Traceback (most recent call last):
-  File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
-    configfiles.read_config_py(config_file)
-  File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
-    raise configexc.ConfigFileErrors('config.py', api.errors)
-qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
-  While setting 'fonts.monospace': No option 'fonts.monospace'
-15:56:46 INFO: Opening in existing instance
+  File "<stdin>", line 1, in <module>
+  File "/tmp/babel-d4zWHP/python-Xoh394", line 32, in <module>
+    fig.save('out.html')
+AttributeError: 'Figure' object has no attribute 'save'
+>>> >>> >>> 'org_babel_python_eoe'
 #+end_example
+
+*** Read CSV
+#+BEGIN_SRC python :results output :session session_init
+import plotly.graph_objects as go
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv('dalloway-colors.csv')
+df.fillna("")
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init
+print(df)
+#+END_SRC
+
+Make ids
+
+#+BEGIN_SRC python :results output :session session_init
+df['ids'] = df['parent'] + '-' + df['name']
+#+END_SRC
+
+#+RESULTS:
+
+*** DONE Attempt 2: PX
+CLOSED: [2020-02-17 lun 19:50]
+
+
+#+BEGIN_SRC python :results output :session session_init
+dfSubset = df.iloc[:10]
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init
+print(dfSubset[['name', 'hex', 'n', 'parent', 'parentHex']].to_csv())
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+,name,hex,n,parent,parentHex
+0,dust,#b2996e,3,orange,#FFA500
+1,tea,#65ab7c,16,grey,#BEBEBE
+2,spruce,#0a5f38,1,black,#000000
+3,desert,#ccad60,6,orange,#FFA500
+4,swamp,#698339,2,grey,#BEBEBE
+5,fern,#63a950,1,green,#00FF00
+6,straw,#fcf679,9,yellow,#FFFF00
+7,leather,#ac7434,5,orange,#FFA500
+8,hazel,#8e7618,2,orange,#FFA500
+9,ice,#d6fffa,4,white,#FFFFFF
+#+end_example
+
+#+BEGIN_SRC python :results output :session session_init
+colorMapSubset = {row['name']: row['hex'] for i, row in dfSubset.iterrows()}
+print(colorMapSubset)
+#+END_SRC
+
+#+RESULTS:
+: {'dust': '#b2996e', 'tea': '#65ab7c', 'spruce': '#0a5f38', 'desert': '#ccad60', 'swamp': '#698339', 'fern': '#63a950', 'straw': '#fcf679', 'leather': '#ac7434', 'hazel': '#8e7618', 'ice': '#d6fffa'}
+
+#+begin_src python :results output :session session_init
+fig = px.sunburst(dfSubset, path=['parent', 'name'], values='n', color='name', color_discrete_map=colorMapSubset)
+fig.show()
+#+end_src
+
+#+RESULTS:
+: 16:06:43 ERROR: Error while loading config.py
+: Traceback (most recent call last):
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
+:     configfiles.read_config_py(config_file)
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
+:     raise configexc.ConfigFileErrors('config.py', api.errors)
+: qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
+:   While setting 'fonts.monospace': No option 'fonts.monospace'
+: 16:06:43 INFO: Opening in existing instance
+
+#+begin_src python :results output :session session_init
+print(help(px.sunburst))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+0     #b2996e
+1     #65ab7c
+2     #0a5f38
+3     #ccad60
+4     #698339
+       ...   
+74    #653700
+75    #ff81c0
+76    #0343df
+77    #15b01a
+78    #7e1e9c
+Name: hex, Length: 79, dtype: object
+#+end_example
+*** Try again with IDs and Graph Objects
+
+Ok, that seems to have worked 
+
+#+begin_src python :results output :session session_init
+import plotly.graph_objects as go
+import pandas as pd
+
+df = pd.read_csv('coffee-flavors.csv')
+
+print(df)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+ids        labels         parents
+0         Enzymatic-Flowery       Flowery             NaN
+1          Enzymatic-Fruity        Fruity             NaN
+2           Enzymatic-Herby         Herby             NaN
+3      Sugar Browning-Nutty         Nutty             NaN
+4   Sugar Browning-Carmelly      Carmelly             NaN
+..                      ...           ...             ...
+82            Pungent-Thyme         Thyme   Spicy-Pungent
+83             Smokey-Tarry         Tarry  Carbony-Smokey
+84      Smokey-Pipe Tobacco  Pipe Tobacco  Carbony-Smokey
+85               Ashy-Burnt         Burnt    Carbony-Ashy
+86             Ashy-Charred       Charred    Carbony-Ashy
+
+[87 rows x 3 columns]
+#+end_example
+
+#+begin_src python :results output :session session_init
+  fig = go.Figure()
+
+  fig.add_trace(go.Sunburst(
+      ids=df.ids,
+      labels=df.labels,
+      parents=df.parents,
+      domain=dict(column=1),
+      #maxdepth=2,
+      insidetextorientation='radial',
+      marker = {"colors": ['#f00', '#003', '#00f']}
+  ))
+
+  fig.update_layout(
+      margin = dict(t=10, l=10, r=10, b=10)
+  )
+
+  fig.show()
+#+end_src
+
+#+RESULTS:
+: 16:53:15 ERROR: Error while loading config.py
+: Traceback (most recent call last):
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
+:     configfiles.read_config_py(config_file)
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
+:     raise configexc.ConfigFileErrors('config.py', api.errors)
+: qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
+:   While setting 'fonts.monospace': No option 'fonts.monospace'
+: 16:53:15 INFO: Opening in existing instance
+
+#+begin_src python :results output :session session_init
+print(help(go.Sunburst))
+#+end_src
+*** Now with my own data
+
+#+begin_src python :results output :session session_init
+import plotly.graph_objects as go
+import pandas as pd
+
+df = pd.read_csv('dalloway-colors.csv')
+
+df['id'] = df['parent'] + '-' + df['name']
+
+# df['parent'] = df['parent'] + '-' + df['parent']
+
+print(df)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Unnamed: 0    name   n  ...  parent parentHex             id
+0            0    dust   3  ...    grey   #929591      grey-dust
+1            1     tea  16  ...   green   #15b01a      green-tea
+2            2  spruce   1  ...   green   #15b01a   green-spruce
+3            3  desert   6  ...    grey   #929591    grey-desert
+4            4   swamp   2  ...   green   #15b01a    green-swamp
+..         ...     ...  ..  ...     ...       ...            ...
+74          74   brown  10  ...   brown   #653700    brown-brown
+75          75    pink  22  ...    grey   #929591      grey-pink
+76          76    blue  23  ...    blue   #0343df      blue-blue
+77          77   green  28  ...   green   #15b01a    green-green
+78          78  purple   2  ...  violet   #9a0eea  violet-purple
+
+[79 rows x 8 columns]
+#+end_example
+
+
+#+RESULTS:
+: 16:58:08 ERROR: Error while loading config.py
+: Traceback (most recent call last):
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
+:     configfiles.read_config_py(config_file)
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
+:     raise configexc.ConfigFileErrors('config.py', api.errors)
+: qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
+:   While setting 'fonts.monospace': No option 'fonts.monospace'
+: 16:58:08 INFO: Opening in existing instance
+
+#+begin_src python :results output :session session_init
+baseColorMap = {"red": "#FF0000", "orange": "#FFA500", 
+                "yellow": "#FFFF00", "green": "#00FF00", 
+                "blue": "#0000FF", "violet": "#EE82EE",
+                "grey": "#BEBEBE", "brown": "#A52A2A",
+                "black": "#000000", "white": "#FFFFFF"}
+# Actually, nevermind. Use the XKCD colors for the base colors, too. 
+baseColorMap = {color: xkcdMap.get(color) for color in baseColorMap.keys()}
+# print(baseColorMap)
+baseDf = pd.DataFrame(baseColorMap.items(), columns=['name', 'hex'])
+baseDf['parent'] = "color" # Ur-color
+baseDf['parentHex'] = baseDf['hex']
+baseDf['locs'] = ""
+baseDf['id'] = baseDf['name']
+totals = df.groupby(['parent'])['n'].sum()
+baseDf['n'] = baseDf['name'].apply(dict(totals).get)
+baseDf = baseDf.append({'name': 'color', 'hex': '#FFFFFF', 
+                        'parent': '', 'parentHex': '', 'n': 100}, ignore_index=True)
+# print(baseDf)
+#+END_SRC
+
+#+RESULTS:
+
+#+begin_src python :results output :session session_init
+dfAll = df.append(baseDf)
+print(dfAll)
+
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+/nix/store/dyxmcff9gk03qnc5xlsg1rh99ziyx86k-python3-3.7.5-env/lib/python3.7/site-packages/pandas/core/frame.py:7138: FutureWarning:
+
+Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass 'sort=False'.
+
+To retain the current behavior and silence the warning, pass 'sort=True'.
+
+
+    Unnamed: 0      hex            id  ...    name  parent parentHex
+0          0.0  #b2996e     grey-dust  ...    dust    grey   #929591
+1          1.0  #65ab7c     green-tea  ...     tea   green   #15b01a
+2          2.0  #0a5f38  green-spruce  ...  spruce   green   #15b01a
+3          3.0  #ccad60   grey-desert  ...  desert    grey   #929591
+4          4.0  #698339   green-swamp  ...   swamp   green   #15b01a
+..         ...      ...           ...  ...     ...     ...       ...
+6          NaN  #929591          grey  ...    grey   color   #929591
+7          NaN  #653700         brown  ...   brown   color   #653700
+8          NaN  #000000         black  ...   black   color   #000000
+9          NaN  #ffffff         white  ...   white   color   #ffffff
+10         NaN  #FFFFFF           NaN  ...   color                  
+
+[90 rows x 8 columns]
+#+end_example
+
+#+begin_src python :results output :session session_init
+dfAll.to_csv('dalloway-colors-formatted.csv')
+
+#+END_SRC
+
+#+RESULTS:
+
+#+begin_src python :results output :session session_init
+  fig = go.Figure()
+
+  fig.add_trace(go.Sunburst(
+      ids=dfAll['id'],
+      labels=dfAll['name'],
+      parents=dfAll['parent'],
+      values=dfAll['n'],
+      # domain=dict(column=1),
+      #maxdepth=2,
+      insidetextorientation='radial',
+      marker = {"colors": dfAll['hex']},  
+      branchvalues='total'
+  ))
+
+  # fig.update_layout(
+  #     margin = dict(t=10, l=10, r=10, b=10)
+  # )
+
+  fig.show()
+#+end_src
+
+#+RESULTS:
+: 17:32:19 ERROR: Error while loading config.py
+: Traceback (most recent call last):
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configinit.py", line 67, in early_init
+:     configfiles.read_config_py(config_file)
+:   File "/nix/store/w2jvkmmykaidfz4xpc7vc4w40gffqza0-qutebrowser-1.10.0/lib/python3.7/site-packages/qutebrowser/config/configfiles.py", line 743, in read_config_py
+:     raise configexc.ConfigFileErrors('config.py', api.errors)
+: qutebrowser.config.configexc.ConfigFileErrors: Errors occurred while reading config.py:
+:   While setting 'fonts.monospace': No option 'fonts.monospace'
+: 17:32:19 INFO: Opening in existing instance
