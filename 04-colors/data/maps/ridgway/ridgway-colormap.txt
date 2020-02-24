@@ -1,0 +1,1113 @@
+rgb(244,193,206)	Hermosa Pink
+rgb(246,188,202)	La France Pink
+rgb(245,208,198)	Shrimp Pink
+rgb(247,83,107)	Eosine Pink
+rgb(246,103,114)	Geranium Pink
+rgb(246,107,66)	Strawberry Pink
+rgb(245,32,45)	Begonia Rose
+rgb(244,36,35)	Rose Doree
+rgb(245,78,41)	Peach Red
+rgb(158,3,4)	Spectrum Red
+rgb(217,4,4)	Scarlet-Red
+rgb(237,11,4)	Scarlet
+rgb(111,2,3) 	Carmine
+rgb(172,4,4)	Nopal Red
+rgb(152,5,4)	Brazil Red
+rgb(35,2,3) 	Ox-blood Red
+rgb(43,2,4)	Garnet Brown
+rgb(56,3,2)	Morocco Red
+rgb(16,2,2)	Victoria Lake
+rgb(9,3,0)	Maroon
+rgb(21,4,4)	Claret Brown
+rgb(243,193,173)	Safrano Pink
+rgb(245,194,167)	Orient Pink
+rgb(244,198,154)	Orange-Pink
+rgb(247,121,81)	Grenadine Pink
+rgb(244,129,74)	Bittersweet Pink
+rgb(245,159,79)	Light Salmon-Orange
+rgb(246,71,24)	Grenadine
+rgb(246,79,13)	Bittersweet Orange
+rgb(244,112,17)	Salmon-Orange
+rgb(240,18,3)	Grenadine Red
+rgb(242,41,3)	Flame Scarlet
+rgb(243,68,6)	Orange Chrome
+rgb(159,6,2)	English Red
+rgb(164,9,4)	Mars Orange
+rgb(190,29,6)	Orange Rufous
+rgb(44,4,3)	Mahogany Red
+rgb(81,4,1)	Burnt Sienna
+rgb(110,12,6)	Sanford's Brown
+rgb(29,4,2)	Bay
+rgb(30,3,2)	Chestnut
+rgb(43,11,8)	Auburn
+rgb(243,199,123)	Capuchine Buff
+rgb(244,209,133)	Pale Yellow-Orange
+rgb(240,215,115)	Pale Orange-Yellow
+rgb(244,162,24)	Capuchine Orange
+rgb(245,186,33)	Orange-Buff
+rgb(241,212,37)	Light Orange-Yellow
+rgb(245,112,7)	Mikado Orange
+rgb(245,157,8)	Capuchine Yellow
+rgb(240,171,13)	Deep Chrome
+rgb(244,73,3)	Cadmium Orange
+rgb(245,100,3)	Orange
+rgb(237,158,7)	Cadmium Yellow
+rgb(194,32,3)	Xanthine Orange
+rgb(182,49,3)	Mars Yellow
+rgb(185,80,8)	Raw Sienna
+rgb(94,11,3)	Amber Brown
+rgb(76,13,3)	Sudan Brown
+rgb(88,30,8)	Antique Brown
+rgb(28,5,3)	Argus Brown
+rgb(37,7,4)	Brussels Brown
+rgb(28,14,9)	Raw Umber
+rgb(240,224,127)	Maize Yellow
+rgb(222,215,111)	Baryta Yellow
+rgb(241,240,125)	Martius Yellow
+rgb(235,208,59)	Buff-Yellow
+rgb(240,230,65)	Pinard Yellow
+rgb(236,235,61)	Picnic Yellow
+rgb(225,189,22)	Apricot Yellow
+rgb(176,164,20)	Empire Yellow
+rgb(241,237,41)	Pale Lemon Yellow
+rgb(216,178,8)	Light Cadmium
+rgb(234,218,6)	Lemon Chrome
+rgb(214,212,18)	Lemon Yellow
+rgb(185,131,4)	Aniline Yellow
+rgb(162,133,8)	Sulphine Yellow
+rgb(150,135,7)	Pyrite Yellow
+rgb(77,39,3)	Orange-Citrine
+rgb(77,54,5)	Citrine
+rgb(74,73,6)	Warbler Green
+rgb(32,13,4)	Medal Bronze
+rgb(31,20,3)	Dark Citrine
+rgb(24,27,5)	Olive-Green
+rgb(239,237,163) Sulphur Yellow
+rgb(233,239,150)	Pale Green-Yellow
+rgb(233,240,166)	Pale Viridine Yellow
+rgb(192,192,59)	Pale Greenish Yellow
+rgb(230,240,117) Light Green-Yellow
+rgb(192,200,65)	Light Viridine Yellow
+rgb(171,174,32)	Light Greenish Yellow
+rgb(217,233,49)	Green-Yellow
+rgb(167,216,37)	Viridine Yellow
+rgb(210,222,17)	Greenish Yellow
+rgb(183,210,17)	Bright Green-Yellow
+rgb(136,204,30)	Neva Green
+rgb(152,157,8)	Oil Yellow
+rgb(147,168,8)	Javel Green
+rgb(125,164,13)	Cosse Green
+rgb(68,74,7)	Yellowish Oil Green
+rgb(55,78,7)	Oil Green
+rgb(72,101,13)	Lettuce Green
+rgb(28,38,4)	Calla Green
+rgb(26,39,4)	Cerro Green
+rgb(35,55,12)	Spinach Green
+rgb(214,231,161)	Pale Yellow-Green
+rgb(230,237,167)	Light Viridine Green
+rgb(231,239,191)	Pale Cendre Green
+rgb(222,232,73)	Light Yellow-Green
+rgb(209,233,111)	Viridine Green
+rgb(138,221,131)	Light Cendre Green
+rgb(211,225,41)	Clear Yellow-Green
+rgb(74,179,56)	Vanderpoel's Green
+rgb(62,200,95)	Cendre Green
+rgb(199,217,9)	Yellow-Green
+rgb(172,228,30)	Night Green
+rgb(105,215,75)	Emerald Green
+rgb(147,169,13)	Calliste Green
+rgb(125,164,23)	Scheele's Green
+rgb(70,130,38)	Peacock Green
+rgb(53,69,7)	Parrot Green
+rgb(38,57,11)	Grass Green
+rgb(9,46,20)	Meadow Green
+rgb(19,30,6)	Cedar Green
+rgb(6,24,6)	Cossak Green
+rgb(5,16,6)	Antique Green
+rgb(217,234,198)	Opaline Green
+rgb(213,236,208)	Pale Blue-Green
+rgb(200,236,228)	Pale Turquoise Green
+rgb(179,224,148)	Neuviden Green	??
+rgb(99,211,179)	Light Blue-Green
+rgb(135,224,207)	Turquoise Green
+rgb(116,213,102)	Chrysoprase Green
+rgb(30,159,121)	Tyrolite Green
+rgb(63,207,181)	Venice Green
+rgb(8,144,58)	Vivid Green
+rgb(5,93,69)	Skobeloff Green
+rgb(5,107,142)	Benzol Green
+rgb(5,75,34)	Viridian Green
+rgb(4,44,42)	Guinea Green
+rgb(4,46,65)	Ethyl Green
+rgb(4,43,24)	Dark Viridian Green
+rgb(4,35,29)	Wall Green
+rgb(3,28,38)	Sorrento Green
+rgb(5,28,14)	Diamine Green
+rgb(5,30,26)	Anthracene Green
+rgb(3,14,20)	Myrtle Green
+rgb(185,223,229)	Beryl Blue
+rgb(187,218,226)	Pale Blue (Ethyl Blue)
+rgb(199,216,226)	Pallid Methyl Blue
+rgb(126,201,212)	Calamine Blue
+rgb(147,195,225)	Pale Cerulean Blue
+rgb(135,187,217)	Pale Methyl Blue
+rgb(64,167,199)	Cendre Blue
+rgb(67,158,223)	Light Cerulean Blue
+rgb(64,127,220)	Light Methyl Blue
+rgb(13,99,160)	Italian Blue
+rgb(18,73,191)	Cerulean Blue
+rgb(20,49,194)	Methyl Blue
+rgb(7,28,90)	Peacock Blue
+rgb(10,33,140)	Oxide Blue
+rgb(20,28,130)	Leitch's Blue
+rgb(3,7,30)	Patent Blue
+rgb(3,7,71)	Antwerp Blue
+rgb(5,10,88)	Paris Blue
+rgb(3,6,28)	Blackish-Green-Blue
+rgb(3,7,46)	Marine Blue
+rgb(4,5,36)	Berlin Blue
+rgb(198,209,234)	Pale Mazarine Blue
+rgb(199,204,234)	Pale Amparo Blue
+rgb(195,198,224)	Pallid Violet-Blue
+rgb(122,152,229)	Mazarine Blue
+rgb(130,150,227)	Light Amparo Blue
+rgb(153,161,219)	Pale Violet-Blue
+rgb(62,83,228)	Salvia Blue
+rgb(83,89,231)	Amparo Blue
+rgb(103,109,216)	Light Violet-Blue
+rgb(10,26,199)	Spectrum Blue
+rgb(20,26,206)	Bradley's Blue
+rgb(32,26,192)	Phenyl Blue
+rgb(8,14,175)	Ultramarine Blue
+rgb(9,8,175)	Lyons Blue
+rgb(29,23,150)	Smalt Blue
+rgb(5,8,116)	Rood's Blue
+rgb(8,6,111)	Helvetia Blue
+rgb(20,16,97)	Hay's Blue
+rgb(6,5,48)	Prussian Blue
+rgb(4,5,62)	Cyanine Blue
+rgb(21,19,47)	Azurite Blue
+rgb(202,200,236)	Pallid Blue-Violet
+rgb(204,197,239)	Pallid Bluish Violet
+rgb(207,197,235)	Pallid Violet
+rgb(157,158,227)	Pale Blue-Violet
+rgb(163,156,225)	Pale Bluish Violet
+rgb(159,141,216)	Pale Violet
+rgb(99,92,221)	Light Blue-Violet
+rgb(103,86,221)	Light Bluish Violet
+rgb(114,89,217)	Light Violet
+rgb(25,6,185)	Blue-Violet
+rgb(30,5,180)	Bluish Violet
+rgb(33,7,129)	Spectrum Violet
+rgb(16,8,116)	Deep Blue-Violet
+rgb(28,10,135)	Violet Ultramarine
+rgb(21,9,105)	Royal Purple
+rgb(7,4,59)	Hyacinth Blue
+rgb(6,4,47)	Roslyn Blue
+rgb(16,12,59)	Dark Violet
+rgb(4,3,8)	Dark Aniline Blue
+rgb(4,2,13)	Dark Bluish Violet
+rgb(5,3,11)	Blackish Violet
+rgb(219,177,238)	Pale Hortense Violet
+rgb(230,160,240)	Pale Amparo Purple
+rgb(238,183,236)	Phlox Pink
+rgb(180,58,209)	Light Hortense Violet
+rgb(205,101,219)	Light Amparo Purple
+rgb(217,101,225)	Light Phlox Purple
+rgb(134,36,194)	Hortense violet
+rgb(158,44,200)	Amparo Purple
+rgb(186,25,163)	Phlox Purple
+rgb(60,3,143)	Amethyst Violet
+rgb(104,4,133)	Violet-Purple
+rgb(177,5,146)	Purple. (True)
+rgb(35,3,67)	Hyacinth Violet
+rgb(42,3,37)	Pansy Violet
+rgb(59,4,21)	Rood's Violet
+rgb(13,3,23)	Mulberry Purple
+rgb(19,2,18)	Cotinga PUrple
+rgb(36,4,16)	Raisin PUrple
+rgb(7,2,8)	Fluorite Violet
+rgb(7,2,8)	Prune Purple
+rgb(11,6,7)	Blackish Purple
+rgb(236,155,226)	Mallow Pink
+rgb(237,181,228)	Pale Amaranth Pink
+rgb(236,191,216)	Rose Pink
+rgb(225,89,204)	Light Mallow Purple
+rgb(232,102,202)	Amaranth Pink 
+rgb(232,111,172)	Deep Rose Pink
+rgb(211,39,165)	Mallow Purple 
+rgb(225,36,135)	Tyrian Pink
+rgb(231,33,109)	Rose Color
+rgb(197,9,109)	Rhodamine Purple
+rgb(203,14,38)	Tyrian Rose
+rgb(199,14,17)	Rose Red
+rgb(86,9,23)	Aster Purple
+rgb(105,8,14)	Amaranth Purple
+rgb(159,12,14)	Pomegranate Purple
+rgb(24,2,5)	Dahlia Purple 
+rgb(49,2,7)	Pansy Purple 
+rgb(38,3,5)	Bordeaux
+rgb(7,3,4)	Blackish Red-Purple 
+rgb(8,2,3)	Violet Carmine
+rgb(17,3,3)	Burnt Lake
+rgb(230,185,187)	Venetian Pink 
+rgb(230,186,180)	Chatenay Pink
+rgb(223,188,174)	Flesh-Pink	!!
+rgb(222,106,124)	Alazine Pink
+rgb(225,102,104)	Jasper Pink
+rgb(218,117,94)	Coral Pink
+rgb(211,34,40)	Old Rose
+rgb(224,38,39)	Light Jasper Red
+rgb(227,72,39)	Light Coral Red
+rgb(184,15,23)	Eugenia Red
+rgb(198,16,13)	Jasper Red
+rgb(214,38,19)	Coral Red
+rgb(98,7,8)	Acajou Red
+rgb(120,11,10)	Pompeian Red
+rgb(170,26,18)	Dragon's-blood Red
+rgb(44,4,6)	Vandyke Red
+rgb(50,4,5)	Madder Brown
+rgb(79,16,14)	Brick Red
+rgb(12,3,1)	Hay's Maroon
+rgb(13,3,2)	Diamine Brown
+rgb(25,15,11)	Hessian Brown
+rgb(235,201,181)	Pale Flesh Color
+rgb(237,211,189)	Pale Salmon Color
+rgb(228,209,181)	Seashell Pink
+rgb(235,150,103)	Flesh Color
+rgb(230,154,95)	Salmon Color
+rgb(233,189,131)	Salmon-Buff
+rgb(228,66,34)	Carrot Red
+rgb(234,110,48)	Flesh-Ocher
+rgb(226,125,47)	Apricot Buff
+rgb(223,48,13)	Carnelian Red
+rgb(222,65,19)	Rufous
+rgb(230,89,18)	Apricot Orange
+rgb(144,10,5)	Vinaceous-Rufous
+rgb(160,23,7)	Ferruginous
+rgb(160,43,13)	Cinnamon-Rufous
+rgb(62,5,4)	Hay's Russet
+rgb(78,6,4)	Kaiser Brown
+rgb(115,30,11)	Hazel
+rgb(15,4,3)	Liver Brown
+rgb(26,4,6)	Carob Brown
+rgb(32,16,13)	Chestnut-Brown
+rgb(240,217,178)	Pale Ochraceous-Salmon
+rgb(240,217,172)	Pale Ochraceous-Buff
+rgb(241,227,184)	Light Buff
+rgb(228,171,109)	Light Ochraceous-Salmon
+rgb(238,196,109)	Light Ochraceous-Buff
+rgb(231,200,99)	Warm Buff
+rgb(237,139,47)	Ochraceous-Salmon	
+rgb(229,158,40)	Ochraceous-Buff
+rgb(235,186,41)	Antimony Yellow
+rgb(217,87,7)	Zinc Orange
+rgb(228,110,7)	Ochraceous-Orange
+rgb(212,126,8)	Yellow Ocher
+rgb(155,44,6)	Tawny
+rgb(176,68,6)	Ochraceous-Tawny
+rgb(159,77,7)	Buckthown Brown
+rgb(84,16,6)	Russet
+rgb(73,22,6)	Cinnamon-Brown
+rgb(72,31,7)	Dresden Brown
+rgb(34,6,5)	Mars Brown
+rgb(30,8,5)	Prout's Brown
+rgb(24,10,5)	Mummy Brown
+rgb(235,222,145)	Cream Color
+rgb(234,228,148)	Massicot Yellow
+rgb(238,235,162)	Napthalene Yellow
+rgb(226,209,90)	Naples Yellow
+rgb(237,230,116)	Straw Yellow
+rgb(234,234,110)	Barium Yellow
+rgb(230,201,35)	Mustard Yellow
+rgb(228,215,37)	Amber Yellow
+rgb(231,229,57)	Citron Yellow
+rgb(223,180,7)	Primuline Yellow
+rgb(221,198,9)	Wax Yellow
+rgb(228,218,17)	Strontian Yellow
+rgb(141,100,8)	Old Gold
+rgb(111,89,9)	Olive Lake
+rgb(124,121,11)	Yellowish Citrine
+rgb(84,61,8)	Buffy Citrine
+rgb(77,71,10)	Dull Citrine
+rgb(73,78,9)	Serpentine Green
+rgb(46,33,6)	Scacardo's Olive
+rgb(29,27,5)	Olive-Citrine
+rgb(26,29,6)	Roman Green
+rgb(229,230,172)	Pale Chalcedony Yellow
+rgb(227,232,168)	Pale Dull Green-Yellow
+rgb(224,233,178)	Pale Lumiere Green
+rgb(228,231,135)	Light Chalcedony Yellow
+rgb(216,227,123)	Light Dull Green-Yellow
+rgb(209,229,134)	Light Lumiere Green
+rgb(219,225,72)	Chalcedony Yellow
+rgb(208,222,68)	Clear Dull Green-Yellow
+rgb(191,220,75)	Lumiere Green
+rgb(201,208,42)	Bright Chalcedony Yellow
+rgb(181,203,43)	Dull Green-Yellow
+rgb(145,191,41)	Apple Green
+rgb(117,131,33)	Courge Green
+rgb(76,99,23)	Biscay Green
+rgb(79,113,33)	Light Bice Green
+rgb(51,62,20)	Light Hellebore Green
+rgb(54,72,20)	Light Elm Green
+rgb(59,92,31)	Bice Green
+rgb(22,31,6)	Hellebore Green
+rgb(17,27,6)	Elm Green
+rgb(21,43,5)	Forest Green
+rgb(214,227,173)	Pale Veronese Green  
+rgb(214,229,170) 	Pale Tiber Green
+rgb(208,226,188)	Oural Green	
+rgb(191,218,114)	Veronese Green	
+rgb(184,220,133)	Tiber Green
+rgb(162,208,130)	Light Paris Green
+rgb(144,202,65)	Rivage Green	
+rgb(78,172,84)	Light Oriental Green	
+rgb(73,167,83)	Paris Green	
+rgb(105,175,24)	Mineral Green	
+rgb(53,150,52)	Oriental Green	
+rgb(38,133,59)	Motmot Green
+rgb(47,91,25)	Rinnemann's Green	
+rgb(32,87,30)	Winter Green	
+rgb(31,98,40)	Killarney Green	
+rgb(22,48,10)	Civette Green	
+rgb(19,56,13)	Hay's Green	
+rgb(15,57,22)	Ackermann's Green
+rgb(6,18,4)	Varley's Green	
+rgb(8,23,7)	Dark Yellowish Green	
+rgb(8,22,7)	Dark Green
+rgb(198,224,198)	Dull Opaline Green
+rgb(191,225,208)	Microline Green
+rgb(187,221,212)	Pale Nile Blue
+rgb(134,209,158)	Variscite Green	
+rgb(140,214,193)	Pale Sulphate Green
+rgb(117,202,190)	Nile Blue	place?
+rgb(86,185,104)	Cobalt Green	substance
+rgb(69,196,158)	Light Sulphate Green
+rgb(62,187,177)	Beryl Green
+rgb(20,107,51)	Verdigris Green	mixed etymologies?
+rgb(16,125,85)	Sulphate Green	
+rgb(17,108,106)	Methyl Green	
+rgb(22,66,31)	Zinc Green	
+rgb(16,60,33)	Dark Sulphate Green
+rgb(10,67,61)	Sea Green
+rgb(7,30,12)	Dark Zinc Green	
+rgb(5,38,22)	Dark Cinnabar Green
+rgb(11,50,40)	Prussian Green
+rgb(4,11,4)	Bottle Green 	
+rgb(3,7,6)	Duck Green 	
+rgb(5,11,8)	Invisible Green 	so dark it's invisible?
+rgb(179,199,190)	Etain Blue	
+rgb(194,211,230)	Prusian Blue 
+rgb(195,212,234)	Light Sky Blue 
+rgb(132,191,185)	Lumiere Blue 
+rgb(137,189,223)	Light Squill Blue 
+rgb(136,183,227)	Sky Blue 
+rgb(62,177,192)	Bremen Blue 
+rgb(84,149,211)	Squill Blue 
+rgb(102,146,218)	Yale Blue
+rgb(17,106,134)	Motmot Blue 
+rgb(33,92,184)	Mathews' Blue 
+rgb(54,95,206)	Olympic Blue 
+rgb(7,67,87)	Capri Blue 
+rgb(23,72,134)	China Blue 
+rgb(33,69,162)	Vanperpoel's Blue 
+rgb(4,34,42)	Jouvence Blue 
+rgb(7,38,94)	Chessylite Blue 
+rgb(7,26,101)	Blanc's Blue 
+rgb(2,6,9)	Dusky Green-Blue (1)
+rgb(4,6,20)	Dark Chessylite Blue 
+rgb(4,10,40)	Dusky Greenish Blue 
+rgb(195,201,234)	Pale Grayish Blue	
+rgb(192,197,242)	Wedgewood Blue 
+rgb(195,192,240)	Light Lavender-Blue
+rgb(148,169,228)	Pale Cadet Blue
+rgb(161,164,237)	Deep Wedgewood Blue
+rgb(157,154,235)	Lavender-Blue
+rgb(105,127,221)	Light Cadet Blue 
+rgb(110,118,228)	Flax-flower Blue	flower
+rgb(130,121,228)	Deep Lavender-Blue	flower
+rgb(56,77,198)	Clear Cadet Blue
+rgb(51,51,208)	Commelina Blue
+rgb(63,50,204)	Cornflower Blue	flower
+rgb(30,43,148)	Cadet Blue	military?
+rgb(29,29,159)	Diva Blue	
+rgb(38,30,160)	Gentian Blue 
+rgb(14,22,94)	Deep Cadet Blue	
+rgb(13,14,106)	Dark Diva Blue	
+rgb(17,13,97)	Sailor Blue	military?
+rgb(6,9,46)	Dark Cadet Blue 
+rgb(6,6,40)	Alizarine Blue
+rgb(9,7,46)	Navy Blue	military?
+rgb(191,201,210)	Pale King's Blue  
+rgb(194,202,214)	Pale Neropalin Blue 	
+rgb(192,199,213)	Pale Forget-me-not Blue	flower
+rgb(147,174,197)	Light King's Blue 	
+rgb(159,182,206)	Light Neropalin Blue 	
+rgb(167,182,214)	Light Forget-me-not Blue	
+rgb(75,126,192)	King's Blue	
+rgb(87,121,192)	Neropalin Blue 	
+rgb(114,139,198)	Forget-me-not Blue 	
+rgb(45,79,176)	Venetian Blue 	
+rgb(42,58,171)	Ultramarine Ash
+rgb(51,61,176)	Dull Violaceous Blue 
+rgb(25,45,107)	Jay Blue 
+rgb(36,55,135)	Chapman's Blue 
+rgb(37,44,124)	Grayish Violaceous Blue 
+rgb(8,25,79)	Gendarme Blue	military
+rgb(11,25,95)	Eton Blue	educational
+rgb(14,19,78)	Deep Dull Violaceous Blue 
+rgb(3,5,25)	Hortense Blue
+rgb(4,5,25)	Dusky Blue 
+rgb(9,10,16)	Indulin Blue
+rgb(191,182,232)	Pallid Soft Blue-Violet
+rgb(194,181,234)	Pale Wistaria Blue 	flower
+rgb(199,185,235)	Pale Wistaria Violet 	flower
+rgb(154,140,227)	Pale Soft Blue-Violet 	
+rgb(162,140,230)	Light Wistaria Blue 	flower
+rgb(175,145,231)	Light Wistaria Violet 	flower
+rgb(107,90,220)	Light Soft Blue-Violet	flower
+rgb(112,84,214)	Wistaria Blue 	flower
+rgb(135,92,216)	Wistaria Violet 
+rgb(51,32,164)	Soft Blue-Violet	flower
+rgb(62,27,154)	Soft Bluish Violet 	flower
+rgb(59,19,119)	Bradley's Violet	flower
+rgb(28,18,104)	Deep Soft Blue-Violet
+rgb(36,17,102)	Deep Soft Bluish Violet
+rgb(45,16,94)	Dauphin's Violet
+rgb(13,6,71)	Dark Soft Blue-Violet
+rgb(16,6,68)	Dark Soft Bluish Violet
+rgb(26,10,73)	Blanc's Violet
+rgb(5,3,14)	Dusky Violet-Blue (1)
+rgb(5,5,24)	Dusky Blue-Violet (1)
+rgb(10,7,20)	Dusky Violet
+rgb(182,184,207)	Pallid Grayish Violet-Blue
+rgb(206,203,223)	Pale Campanula Blue 
+rgb(194,193,220)	Light Chicory Blue	flower
+rgb(141,150,213)	Pale Grayish Violet-Blue
+rgb(165,167,218)	Light Campanula Blue 
+rgb(151,149,212)	Chicory Blue	flower	
+rgb(85,99,202)	Light Grayish Violet-Blue
+rgb(114,122,214)	Campanula Blue
+rgb(96,88,205)	Deep Chicory Blue
+rgb(29,30,145)	Dull Violet-Blue
+rgb(41,31,166)	Dull Blue-Violet (1)
+rgb(48,28,143)	Dull Bluish Violet (1)
+rgb(32,29,105)	Grayish Violet-Blue
+rgb(43,34,128)	Grayish Blue-Violet (1)
+rgb(46,34,101)	Deep Dull Bluish Violet (1)
+rgb(11,10,52)	Dark Dull Violet-Blue
+rgb(16,12,61)	Dark Grayish Blue-Violet
+rgb(23,16,58)	Dark Dull Bluish Violet
+rgb(4,3,9)	Urania Blue
+rgb(4,2,12)	Dusky Blue-Violet (2)
+rgb(17,15,19)	Plum Purple 	fruit
+rgb(213,186,217)	Pale Lavender-Violet
+rgb(212,183,230)	Pale Mauve
+rgb(225,194,222)	Mauvette
+rgb(178,120,224)	Light Lavender-Violet
+rgb(184,126,212)	Light Mauve
+rgb(208,152,211)	Lilac	flower
+rgb(135,66,209)	Lavender-Violet
+rgb(148,68,200)	Mauve
+rgb(164,73,193)	Chinese Violet
+rgb(61,11,115)	Pleroma Violet
+rgb(74,15,111)	Manganese Violet
+rgb(120,22,113)	Matthews' Purple	person
+rgb(30,5,64)	Haematoxylin Violet
+rgb(46,9,77)	Litho Purple
+rgb(63,17,93)	Petunia Violet	flower
+rgb(11,3,27)	Anthracene Violet 
+rgb(13,4,23)	Madder Violet 
+rgb(23,9,25)	Nigrosin Violet 	
+rgb(4,3,8)	Dark Anthracene Violet 	
+rgb(5,4,10)	Dark Madder Violet 
+rgb(13,11,14)	Dark Nigrosin Violet 
+rgb(219,182,210)	Pale Rose-Purple
+rgb(231,193,212)	Rosolane Pink
+rgb(231,200,206)	Cameo Pink
+rgb(218,118,220)	Rose-Purple
+rgb(225,136,201)	Pale Rosolane Purple
+rgb(223,139,174)	Thulite PInk
+rgb(204,78,191)	Liseran Purple
+rgb(219,72,172)	Light Rosolane Purple
+rgb(219,62,128)	Spinel Pink
+rgb(126,8,65)	Magenta
+rgb(164,10,59)	Rosolane Purple
+rgb(187,18,37)	Spinel Red
+rgb(69,5,37)	Dull Magenta Purple
+rgb(84,5,32)	Shoenfeld's Purple	person
+rgb(80,14,26)	Indian Lake
+rgb(37,5,31)	Dull Dark Purple
+rgb(35,4,20)	Auricula Purple
+rgb(39,9,12)	Dahlia Carmine	flower
+rgb(8,3,9)	Dull Dusky Purple
+rgb(9,3,5)	Dusky Auricula Purple
+rgb(20,12,12)	Dark Maroon-Purple
+rgb(212,167,174)	Pale Vinaceous
+rgb(230,193,198)	Livid Pink	emotion?
+rgb(217,187,176)	Hydrangea Pink	flower
+rgb(192,96,108)	Vinaceous
+rgb(203,122,128)	Corinthian Pink	place?
+rgb(200,126,123)	Pinkish Vinaceous
+rgb(191,79,76)	Deep Vinaceous
+rgb(207,91,73)	Light Corinthian Red
+rgb(190,85,67)	Orange-Vinaceous
+rgb(119,22,23)	Dark Vinaceous
+rgb(135,28,30)	Corinthian Red
+rgb(162,33,25)	Etruscan Red
+rgb(86,13,10)	Hydrangea Red	flower
+rgb(98,17,14)	Deep Corinthian Red
+rgb(119,23,14)	Ocher Red
+rgb(48,6,8)	Mineral Red
+rgb(53,7,8)	Indian Red
+rgb(65,13,9)	Prussian Red
+rgb(20,5,5)	Dark Mineral Red
+rgb(23,5,6)	Dark Indian Red
+rgb(27,7,7)	Haematite Red
+rgb(227,189,176)	Pale Congo Pink 
+rgb(230,201,190)	Pale Vinaceous-Pink 
+rgb(225,203,180)	Shell Pink	 
+rgb(220,160,128)	Light Congo Pink 
+rgb(226,166,129)	Vinaceous Pink 
+rgb(214,158,111)	Buff-Pink
+rgb(206,93,56)	Congo Pink 	place
+rgb(211,97,53)	Japan Rose
+rgb(201,112,61)	Onion-skin Pink	food
+rgb(171,46,21)	Terra Cotta
+rgb(177,56,26)	Testaceous
+rgb(178,70,28)	Vinaceous-Tawny
+rgb(111,32,14)	Vinaceous-Russet
+rgb(135,39,16)	Cacao Brown	food
+rgb(137,58,28)	Pecan Brown	food
+rgb(57,18,10)	Cameo Brown	??
+rgb(66,19,6)	Walnut Brown	food
+rgb(81,43,22)	Rood's Brown	person
+rgb(22,11,9)	Chocolate	food
+rgb(21,6,5)	Burnt Umber
+rgb(36,24,17)	Vandyke Brown
+rgb(229,201,178)	Pale Cinnamon-Pink
+rgb(234,209,187)	Pale Pinkish Cinnamon
+rgb(227,211,181)	Pale Pinkish Buff
+rgb(220,158,94)	Light Vinaceous-Cinnamon
+rgb(227,183,120)	Light Pinkish Cinnamon
+rgb(219,184,115)	Pinkish Buff
+rgb(207,111,46)	Vinaceous-Cinnamon
+rgb(220,136,55)	Pinkish Cinnamon
+rgb(208,149,58)	Cinnamon-Buff
+rgb(180,70,14)	Orange-Cinnamon
+rgb(190,95,23)	Cinnamon
+rgb(175,103,23)	Clay Color
+rgb(106,37,10)	Mikado Brown	??
+rgb(131,58,14)	Sayal Brown
+rgb(134,83,29)	Tawny-Olive
+rgb(65,22,6)	Verona Brown
+rgb(66,27,7)	Snuff Brown
+rgb(71,43,16)	Saccardo's Umber
+rgb(21,6,5)	Warm Sepia
+rgb(20,6,5)	Bister
+rgb(35,25,18)	Sepia
+rgb(226,212,171)	Cartridge Buff	??
+rgb(229,219,180)	Ivory Yellow	commodity
+rgb(232,226,181)	Marguerite Yellow
+rgb(213,189,101)	Cream-Buff	food
+rgb(218,204,109)	Colonial Buff
+rgb(218,212,125)	Primrose Yellow	flower
+rgb(202,158,48)	Chemois
+rgb(213,192,68)	Deep Colonial Buff
+rgb(211,205,82)	Reed Yellow
+rgb(160,112,19)	Honey Yellow	food
+rgb(176,136,13)	Olive-Ocher	food
+rgb(176,171,16)	Olive-Yellow	food
+rgb(122,74,12)	Isabella Color	person?
+rgb(117,95,16)	Ecru-Olive	food
+rgb(119,104,28)	Light Yellowish Olive
+rgb(57,34,8)	Light Brownish Olive	food
+rgb(66,48,9)	Buffy Olive	person?
+rgb(41,38,7)	Yellowish Olive
+rgb(14,9,5)	Brownish Olive
+rgb(16,13,4)	Olive
+rgb(11,12,6)	Dark Greenish Olive
+rgb(223,222,177)	Sea-foam Yellow
+rgb(225,226,178)	Sea-foam Green 	
+rgb(219,221,173)	Pale Glass Green 
+rgb(213,211,116)	Chartreuse Yellow
+rgb(208,210,114)	Deep Sea-foam Green 
+rgb(206,212,129)	Glass Green
+rgb(188,191,48)	Citron Green
+rgb(182,194,69)	Chrysolite Green
+rgb(162,187,85)	Kildare Green
+rgb(157,168,33)	Lime Green
+rgb(137,169,38)	Deep Chrysolite Green
+rgb(131,174,44)	Absinthe Green
+rgb(114,113,25)	Mignonette Green
+rgb(97,105,24)	Rainette Green
+rgb(93,110,29)	Light Cress Green 
+rgb(44,46,9)	Krönberg's Green 	
+rgb(35,46,7)	Jade Green	
+rgb(34,50,9)	Cress Green 
+rgb(8,13,5)	Ivy Green 
+rgb(7,13,5)	Yew Green 	
+rgb(9,17,4)	Dark Cress Green 
+rgb(207,211,161)	Pale Turtle Green 
+rgb(213,222,187)	Pale Fluorite Green 
+rgb(193,204,167)	Pale Olivine	
+rgb(180,190,103)	Light Turtle Green 
+rgb(190,205,140)	Lgiht Fluorite Green 
+rgb(175,195,130)	Olivine
+rgb(145,183,69)	Turtle Green
+rgb(136,188,86)	Clear Fluorite Green 
+rgb(124,174,88)	Malachite Green 
+rgb(80,144,47)	Deep Turtle Green
+rgb(54,130,56)	Fluorite Green
+rgb(69,134,76)	Deep Malachite Green 
+rgb(67,92,27)	Chromium Green 
+rgb(51,103,33)	Shamrock Green 	flower
+rgb(43,89,48)	French Green	place
+rgb(29,47,10)	Deep Dull Yellow-Green (1)
+rgb(24,50,18)	Deep Dull Yellow-Green (2)
+rgb(19,44,25) 	Light Danube Green
+rgb(5,10,4)	Dark Dull Yellow-Green
+rgb(6,17,6)	Empire Green
+rgb(19,29,13)	Danube Green	place?
+rgb(190,207,194)	Lichen Green   
+rgb(207,215,197)	Pale Glaucous-Green
+rgb(194,206,191)	Pale Niagara Green 	place
+rgb(159,180,124)	Deep Lichen Green 		
+rgb(170,189,160)	Glaucous-Green
+rgb(160,187,163)	Light Niagara Green
+rgb(127,174,101)	Rejane Green 
+rgb(117,163,107)	Deep Glaucous-Green
+rgb(120,168,137)	Niagara Green 
+rgb(38,92,69)	Montpellier Green 	place
+rgb(40,98,83)	Light Porcelain Green 
+rgb(49,99,90)	Light Teer Verte	bilingual?
+rgb(17,54,39)	Jasper Green 
+rgb(34,74,62)	Porcelain Green 
+rgb(32,72,51)	Terre Verte
+rgb(11,27,11)	Nickel Green	substance
+rgb(11,32,20)	Dark Porcelain Green 
+rgb(21,39,24)	Dark Teere Verte
+rgb(5,6,6)	Dusky Green 
+rgb(5,11,6)	Dusky Blue-Green
+rgb(19,22,17)	Dusky Bluish Green
+rgb(166,185,183)	Pale Glaucous-Blue
+rgb(173,183,199)	Sky Gray
+rgb(161,166,196)	Burn Blue
+rgb(137,172,168)	Light Glaucous-Blue 
+rgb(146,162,182)	Light Alice Blue
+rgb(128,146,180)	Light Columbia Blue
+rgb(77,126,130)	Glaucous-Blue
+rgb(93,124,159)	Alice Blue
+rgb(99,123,169)	Columbia Blue 
+rgb(46,93,106)	Porcelain Blue
+rgb(40,75,125)	Orient Blue
+rgb(60,73,123)	Light Tyrian Blue
+rgb(32,58,64)	Gobelin Blue
+rgb(37,54,88)	Deep Orient Blue
+rgb(43,54,102)	Tyrian Blue
+rgb(8,26,26)	Dark Dobilin Blue
+rgb(11,24,45)	Dark Orient Blue
+rgb(15,21,59)	Dark Tyrian Blue
+rgb(3,6,10)	Dusky Green Blue
+rgb(4,6,19)	Dusky Orient Blue
+rgb(6,7,29)	Indigo Blue
+rgb(174,170,189)	Pearl Blue   
+rgb(190,181,202)	Pale Grayish Blue-Violet
+rgb(187,177,196)	Pale Aniline Lilac	flower
+rgb(130,138,174)	Pale Windsor Blue 	
+rgb(148,151,193)	Light Grayish Blue-Violet
+rgb(166,158,189)	Aniline Lilac
+rgb(70,83,150)	Light Windsor Blue
+rgb(96,104,170)	Grayish Blue-Violet (2)
+rgb(105,111,186)	Deep Aniline Lilac
+rgb(40,43,107)	Clear Windsor Blue
+rgb(52,44,121)	Dull Bluish Violet (2)
+rgb(58,46,126)	Dull Violet-Blue
+rgb(31,31,92)	Windsor Blue
+rgb(32,27,83)	Deep Dull Bluish Violet (2)
+rgb(47,37,86)	Deep Dull Violet-Blue
+rgb(8,8,39)	Acetin Blue
+rgb(10,8,38)	Dark Dull Bluish Violet (2)
+rgb(15,8,35)	Dark Dull Violet-Blue
+rgb(5,6,20)	Nigrosin Blue
+rgb(7,5,19)	Diamin-Azo Blue
+rgb(6,4,14)	Dusky Dull Violet-Blue
+rgb(196,187,205)	Pale Verbena Violet 
+rgb(208,198,213)	Pale Bluish Lavender
+rgb(209,196,208)	Lavender
+rgb(138,124,181)	Verbena Violet 
+rgb(151,125,197)	Bluish Lavender
+rgb(174,138,192)	Deep Lavender
+rgb(87,86,164)	Ontario Violet 
+rgb(111,99,171)	Light Dull Bluish Violet 
+rgb(122,97,166)	Light Hyssop Violet
+rgb(43,30,102)	Vanderpoel's Violet
+rgb(58,35,109)	Dull Bluish Violet (3)
+rgb(73,41,101)	Hyssop Violet	flower? spice?
+rgb(25,12,52)	Dull Blue Violet
+rgb(30,10,54)	Deep Dull Bluish Violet (3)
+rgb(46,21,61)	Deep Hyssop Violet
+rgb(10,5,23)	Yvette Violet
+rgb(17,6,32)	Dark Dull Bluish Violet (3)
+rgb(30,14,29)	Dark Hyssop Violet
+rgb(4,4,7)	Dark Yvette Violet
+rgb(5,4,9)	Dusky Dull Violet (1)
+rgb(14,12,14)	Dusky Dull Violet (2)
+rgb(205,184,197)	Pale Lobelia Violet 
+rgb(210,187,201)	Pale Lilac 
+rgb(211,187,194)	Light Pinkish Lilac
+rgb(157,109,162)	Light Lobelia Violet 
+rgb(158,101,168)	Hay's Lilac 	person 
+rgb(174,112,146)	Purplish Lilac
+rgb(105,66,124)	Lobelia Violet 
+rgb(117,66,123)	Ageratum Violet 
+rgb(143,69,115)	Argyle Purple
+rgb(75,29,91)	Saccardo's Violet 
+rgb(71,18,78)	Aconite Violet
+rgb(108,31,82)	Bishop's Violet 
+rgb(36,8,36)	Livid Violet
+rgb(52,9,40)	Livid Purple
+rgb(93,27,51)	Light Perilia Purple
+rgb(23,4,11)	Napthalene Violet 
+rgb(35,4,13)	Deep Livid Purple
+rgb(48,11,15)	Perilla Purple
+rgb(7,3,4)	Dark Napthalene Violet 
+rgb(10,3,5)	Dark Livid Purple
+rgb(16,9,7)	Dark Perilia Purple
+rgb(212,165,186)	Pale Laelia Pink
+rgb(221,178,196)	Pale Persian Lilac
+rgb(228,192,198)	Pale Rhodonite Pink
+rgb(188,96,132)	Paelia Pink
+rgb(203,95,131)	Persian Lilac
+rgb(211,119,140)	Rhodonite Pink
+rgb(153,48,87)	Tourmaline Pink
+rgb(178,56,92)	Daphne Pink
+rgb(191,66,86)	Rocellin Purple
+rgb(119,31,82)	Eupatorium PUrple
+rgb(127,21,59)	Daphne Red
+rgb(170,45,74)	Hellebore Red
+rgb(75,9,25)	Vinaceous Purple
+rgb(80,9,22)	Veronia Purple
+rgb(110,18,27)	Deep Hellebore Red
+rgb(34,3,8)	Dark Vinaceous Purple
+rgb(45,4,7)	Corinthian Purple
+rgb(53,9,10)	Neutral Red
+rgb(13,3,2)	Indian Purple
+rgb(18,4,4)	Dark Corinthian Purple
+rgb(22,9,7)	Mars Violet
+rgb(207,177,176)	Pale Purplish Vinaceous 
+rgb(215,185,177)	Pale Brownish Vinaceous 	
+rgb(212,192,178)	Pale Grayish Vinaceous   
+rgb(188,129,137)	Light Purplish Vinaceous 
+rgb(194,148,146)	Light Brownish Vinaceous 
+rgb(199,159,145)	Light Grayish Vinaceous 
+rgb(167,80,86)	Purplish Vinaceous 
+rgb(174,87,79)	Brownish Vinaceous 
+rgb(184,112,93)	Light Russet-Vinaceous 
+rgb(102,37,38)	Livid Brown
+rgb(131,49,39)	Deep Brownish Vinaceous
+rgb(146,56,37)	Russet-Vinaceous 
+rgb(56,16,16)	Deep Livid Brown
+rgb(77,26,18)	Vinaceous-Brown
+rgb(87,34,20)	Sorghum Brown
+rgb(22,6,6)	Dark Livid Brown
+rgb(32,6,6)	Dark Vinaceous Brown
+rgb(34,11,7)	Hay's Brown
+rgb(6,4,5)	Warm Blackish Brown
+rgb(8,4,1)	Seal Brown
+rgb(8,4,1)	Light Seal Brown
+rgb(205,187,166) 	Pale Vinaceous Fawn
+rgb(217,201,174)	Tilleul-Buff
+rgb(216,208,176)	Pale Olive-Buff
+rgb(195,154,128)	Light Vinaceous Fawn
+rgb(196,157,114)	Vinaceous Buff
+rgb(200,189,134)	Olive Buff
+rgb(168,94,61)	Vinaceous Fawn
+rgb(173,115,70)	Avellaneous
+rgb(183,163,89)	Deep Olive-Buff
+rgb(127,60,28)	Fawn Color
+rgb(135,83,38)	Wood Brown
+rgb(139,117,33)	Dark Olive-Buff
+rgb(76,28,12)	Army Brown
+rgb(82,44,15)	Buffy Brown
+rgb(67,51,18)	Citrine-Drab
+rgb(31,10,6)	Natal Brown
+rgb(28,13,6)	Olive Brown
+rgb(30,23,6)	Deep Olive
+rgb(8,4,1)	Bone Brown
+rgb(9,6,2)	Clove Brown
+rgb(6,7,2)	Dark Olive
+rgb(195,200,169)	Yellowish Glaucous
+rgb(190,206,182)	Glaucous
+rgb(179,196,170)	Greenish Glaucous
+rgb(169,182,122)	Water Green
+rgb(170,189,137)	Corydalis Green
+rgb(140,184,139)	Deep Greenish Glaucous
+rgb(138,158,73)	Light Grape Green
+rgb(116,159,87)	Mytho Green	??
+rgb(119,173,110)	Dark Greenish Glaucous
+rgb(102,112,22)	Grape Green
+rgb(92,116,37)	Asphodel Green
+rgb(67,111,59)	Pistachio Green
+rgb(60,70,25)	Deep Grape Green
+rgb(50,64,24)	Pols Green
+rgb(44,78,39)	American Green
+rgb(19,26,7)	Lincoln Green
+rgb(15,28,10)	Leaf Green
+rgb(12,29,12)	Dark American Green
+rgb(5,6,1)	Dusky Olive-Green
+rgb(4,6,1)	Dusky Yellowish Green
+rgb(8,11,8)	Dull Blackish Green
+rgb(167,197,186)	Bluish Glaucous 
+rgb(181,200,199)	Pale Dull Glaucous-Blue
+rgb(188,202,210)	Pale Russian Blue
+rgb(131,177,162)	Deep Bluish Glaucous 
+rgb(111,158,160)	Light Dull Glaucous Blue
+rgb(122,147,167)	Russian Blue
+rgb(107,149,113)	Dark Bluish Glaucous 
+rgb(114,149,137)	Greenish Glaucous Blue
+rgb(102,119,149)	Cadet Gray
+rgb(39,90,48)	Stone Green
+rgb(57,103,84)	Bluish Gray-Green
+rgb(57,87,124)	Parula Blue
+rgb(33,54,32)	Russian Green	place
+rgb(35,56,49)	Deep Bluish Gray-Green
+rgb(30,46,71)	Delft Blue
+rgb(7,20,11)	Dark Russian Green
+rgb(8,19,21)	Dark Bluish Gray-Green
+rgb(5,8,22)	Deep Delft Blue
+rgb(4,5,4)	Dusky Dull Green
+rgb(1,5,8)	Dusky Dull Bluish Green
+rgb(5,4,9)	Dark Delft Blue
+rgb(170,167,183)	Lavender Gray
+rgb(176,167,189)	Plumbago Blue
+rgb(180,166,179)	Grayish Lavender
+rgb(117,115,144)	Endive Blue
+rgb(133,122,169)	Deep Plumbago Blue
+rgb(137,115,150)	Deep Grayish Lavender
+rgb(87,90,130)	Dutch Blue 	place
+rgb(99,88,147)	Dark Plumbago Blue
+rgb(111,91,138)	Dark Grayish Lavender
+rgb(58,62,106)	Deep Dutch Blue
+rgb(55,46,102)	Madder Blue
+rgb(62,53,84)	Ramier Blue
+rgb(26,27,54)	Slate Blue
+rgb(28,26,57)	Deep Madder Blue
+rgb(32,26,45)	Slate-Violet (1)
+rgb(5,6,24)	Deep Slate-Blue
+rgb(10,9,25)	Dark Madder Blue
+rgb(16,12,22)	Dark Slate-Violet (1)
+rgb(4,3,8)	Dusky Slate-Blue
+rgb(4,4,4)	Dusky Violet-Blue
+rgb(13,12,10)	Dusky Slate-Violet
+rgb(187,156,179)	Dull Lavender
+rgb(201,175,192)	Vinaceous Lavender
+rgb(217,190,197)	Pale Vinaceous Lilac
+rgb(150,114,155)	Deep Dull Lavender
+rgb(164,121,155)	Deep Vinaceous Lavender
+rgb(185,135,154)	Light Vinaceous Lilac
+rgb(106,72,122)	Dark Lavender
+rgb(127,68,109)	Light Vinaceous Purple
+rgb(158,83,112)	Vinaceous-Lilac
+rgb(56,33,62)	Slate-Violet
+rgb(73,38,64)	Vinaceous Purple
+rgb(99,36,47)	Deep Purplish Vinaceous
+rgb(27,13,33)	Deep Slate Violet
+rgb(44,18,37)	Slate Purple
+rgb(56,19,30)	Dull Indian Purple
+rgb(10,5,11)	Dark Slate Violet
+rgb(20,6,16)	Dark Slate Purple
+rgb(20,8,7)	Anthracene Purple
+rgb(4,4,4)	Dull Violet-Black (1)
+rgb(4,4,4)	Raisin Black
+rgb(8,5,5)	Taupe Brown
+rgb(183,168,166)	Pallid Purple Drab 
+rgb(200,185,179)	Pallid Vinaceous Drab
+rgb(198,188,178)	Pallid Brownish Drab 
+rgb(144,114,110)	Pale Purple Drab 
+rgb(160,129,121)	Pale Vinaceous Drab 
+rgb(166,144,133)	Pale Brownish Drab 
+rgb(108,74,74)	Light Purple Drab 
+rgb(114,82,76)	Light Vinaceous Drab 
+rgb(123,88,76)	Light Brownish Drab 
+rgb(78,38,39)	Purple Drab 
+rgb(80,40,36)	Vinaceous Drab 
+rgb(95,58,48)	Brownish Drab 
+rgb(27,11,11)	Dark Purple Drab 
+rgb(35,18,14)	Drab Vinaceous Drab 
+rgb(45,26,19)	Deep Brownish Drab
+rgb(9,5,5)	Dusky Brown
+rgb(15,10,7)	Dark Grayish Brown
+rgb(22,16,10)	Dusky Drab
+rgb(4,4,4)	Blackish Brown (1)
+rgb(4,4,4)	Blackish Brown (2)
+rgb(9,9,6)	Blackish Brown (3)
+rgb(187,170,155) 	Pale Ecru-Drab
+rgb(190,179,166)	Pale Drab Dray
+rgb(177,174,153)	Pale Smoke Gray
+rgb(157,131,108)	Ecru Drab
+rgb(167,145,116)	Drab Gray
+rgb(147,136,104)	Smoke Gray
+rgb(139,95,64)	Light Cinnamon Drab 
+rgb(134,107,70)	Light Drab 
+rgb(117,107,70)	Light Grayish Olive
+rgb(111,63,35)	Cinnamon Drab 
+rgb(93,67,36)	Drab
+rgb(80,70,32)	Grayish Olive
+rgb(50,32,18)	Benzo Brown
+rgb(48,36,20)	Hair Brown
+rgb(46,44,23)	Deep Grayish Olive
+rgb(12,7,4)	Fuscous
+rgb(10,9,4)	Chaetura Drab
+rgb(13,14,7)	Dark Grayish Olive
+rgb(4,4,4)	Fuscous-Black
+rgb(4,4,4)	Chaetura Black
+rgb(5,6,1)	Olivaceous Black (1)
+rgb(168,170,151)	Light Mineral Gray 	
+rgb(164,174,160)	Court Gray 
+rgb(143,156,147)	Puritan Gray 
+rgb(144,148,127)	Mineral Gray 
+rgb(120,138,114)	Gnaphalium Gray 
+rgb(118,137,130)	Light Celandine Gray 
+rgb(108,116,73)	Tea Green
+rgb(98,125,85)	Pea Green
+rgb(95,129,94)	Celandine Green 
+rgb(96,102,43)	Vetiver Green 
+rgb(60,86,48)	Sage Green 
+rgb(61,88,69)	Artemisia Green 
+rgb(34,42,19)	Andover Green 
+rgb(27,35,23)	Slate-Olive
+rgb(29,40,33)	Lily Green
+rgb(6,9,4)	Dark Ivy Green
+rgb(5,10,4)	Deep Slate-Olive
+rgb(15,19,11)	Deep Slate Green 
+rgb(4,4,4)	Olivaceous Black (2)
+rgb(5,5,5)	Dull Greenish Black (1)
+rgb(15,15,12)	Dull Greenish Black (2)
+rgb(145,154,152)	Glaucous-Gray
+rgb(141,150,158)	Pale Medici Blue
+rgb(144,154,163)	Pale Green Blue Gray
+rgb(94,114,114)	Deep Glaucous-Gray
+rgb(91,110,122)	Light Medici Blue
+rgb(103,120,131)	Clear Green-Blue Gray
+rgb(58,92,80)	Dark Glaucous-Gray
+rgb(71,100,103)	Medici Blue
+rgb(59,76,88)	Deep Green-Blue Gray
+rgb(42,66,61)	Grayish Blue-Green
+rgb(39,54,62)	Deep Medici Blue
+rgb(45,56,70)	Dark Green-Blue Gray
+rgb(24,35,35)	Deep Grayish Blue-Green
+rgb(24,38,45)	Dark Medici Blue
+rgb(28,35,47)	Green-Blue Slate
+rgb(3,6,5)	Dark Grayish Blue-Green
+rgb(4,7,12)	Saccardo's Slate
+rgb(5,4,9)	Dark Green-Blue Slate
+rgb(4,4,4)	Greenish Slate-Black
+rgb(3,5,4)	Dull Blue-Green Black
+rgb(7,7,8)	Bluish Slate-Black
+rgb(122,125,140)	Pale Payne's Gray
+rgb(154,151,168)	Pale Violet Plumbeous 
+rgb(145,141,153)	Rood's Lavender
+rgb(94,101,119)	Light Payne's Gray
+rgb(109,108,127)	Light Violet Plumbeous
+rgb(114,109,123)	Pale Varley's Gray
+rgb(55,63,82)	Clear Payne's Gray
+rgb(76,77,110)	Violet Plumbeous
+rgb(76,70,87)	Light Varley's Gray
+rgb(44,46,69)	Payne's Gray
+rgb(53,49,76)	Deep Violet Plumbeous
+rgb(61,52,74)	Varley's Gray
+rgb(17,21,32)	Deep Payne's Gray
+rgb(24,22,35)	Violet Slate
+rgb(37,34,42)	Deep Varley's Gray
+rgb(5,5,9)	Dark Payne's Gray
+rgb(7,6,12)	Dark Violet Slate
+rgb(18,16,17)	Dark Varley's Gray
+rgb(4,4,4)	Bluish Black
+rgb(4,4,4)	Dull Violet-Black (2)
+rgb(18,17,13)	Blue-Violet Black
+rgb(147,133,151)	Light Plumbago Gray 
+rgb(143,123,142)	Light Heliotrope Gray 
+rgb(181,155,166)	Light Vinaceous Gray 
+rgb(100,86,106)	Plumbago Gray 
+rgb(125,102,123)	Huliotrope Gray 
+rgb(133,107,119)	Vinaceous Gray 
+rgb(65,56,74)	Deep Plumbago Gray 
+rgb(83,65,86)	Deep Heliotrope Gray 
+rgb(91,66,77)	Deep Vinaceous Gray
+rgb(50,41,65)	Dark Plumbago Gray 
+rgb(56,39,51)	Dark Heliotrope Gray 
+rgb(63,41,50)	Dark Vinaceous Gray 
+rgb(20,15,29)	Plumbago-Slate
+rgb(20,12,23)	Heliotrope-Slate
+rgb(27,15,19)	Vinaceous Slate
+rgb(5,5,5)	Dark Plumbago-Slate
+rgb(6,6,6)	Dark Heliotrope-Slate
+rgb(11,10,9)	Deep Slaty Brown
+rgb(4,4,4)	Dull Violet Black
+rgb(4,4,4)	Dull Purplish Black
+rgb(8,8,7)	Aniline Black
+rgb(174,161,155)	Pallid Quaker Drab 
+rgb(179,173,164)	Pallid Mouse Gray 
+rgb(178,176,158)	Pale Olive-Gray
+rgb(125,116,117)	Pale Quaker Drab 
+rgb(143,134,130)	Pale Mouse Gray 
+rgb(147,146,125)	Light Olive Gray
+rgb(88,79,85)	Light Quaker Drab 
+rgb(115,101,100)	Light Mouse Gray 
+rgb(106,108,86)	Olive-Gray
+rgb(58,53,49)	Quaker Drab 
+rgb(60,51,42)	Mouse Gray 
+rgb(82,84,62)	Deep Olive-Gray
+rgb(28,28,24)	Deep Quaker Drab 
+rgb(25,26,21)	Deep Mouse Gray 
+rgb(33,34,22)	Dark Olive-Gray
+rgb(5,5,5)	Dark Quaker Drab 
+rgb(7,7,7)	Dark Mouse Gray 
+rgb(8,8,7)	Iron Gray
+rgb(4,4,4)	Sooty Black
+rgb(4,4,4)	Blackish Mouse Gray 
+rgb(6,6,6)	Olivaceous Black (3)
+rgb(166,164,152)	Pearl Gray 
+rgb(177,172,170)	French Gray 
+rgb(183,178,169)	Lilac Gray 
+rgb(133,139,130)	Dawn Gray 
+rgb(147,145,152)	Cinereous
+rgb(145,139,140)	Pale Violet-Gray
+rgb(104,115,104)	Hathi Gray
+rgb(100,99,116)		Plumbeous
+rgb(106,101,106)	Light Violet Gray 
+rgb(63,75,59)	Storm Gray 
+rgb(70,69,85)	Deep Plumbeous
+rgb(78,71,77)	Violet Gray
+rgb(30,35,31)	Castor Gray
+rgb(22,22,29)	Dark Plumbeous
+rgb(42,40,38)	Deep Violet-Gray
+rgb(13,13,11)	Dusky Green-Gray
+rgb(5,5,5)	Blackish Plumbeous
+rgb(28,25,23)	Dark Violet-Gray
+rgb(9,9,8)	Blackish Green-Gray
+rgb(4,4,4)	Plumbeous-Black
+rgb(25,24,17)	Blackish Violet-Gray
+rgb(174,166,151)	Pallid Purplish Gray 
+rgb(172,169,153)	Pallid Neutral Gray
+rgb(168,168,157)	Gray (Pale Gull Gray)
+rgb(123,117,112)	Pallid Purplish Gray	
+rgb(122,120,113)	Pallid Neutral Gray
+rgb(144,143,135)	Gray (Light Gulf Gray)
+rgb(76,67,68)	Pale Purplish Gray
+rgb(113,113,112)	Pale Neutral Gray
+rgb(101,103,101)	Gray (Gull Gray)	animal
+rgb(51,42,45)	Light Purplish Gray
+rgb(75,71,67)	Light Neutral Gray
+rgb(80,81,79)	Gray (Deep Gulf Gray)
+rgb(26,24,26)	Purplish Gray
+rgb(25,25,25)	Neutral Gray
+rgb(49,50,52)	Gray (Dark Gull Gray)
+rgb(7,7,7)	Deep Purplish Gray
+rgb(7,7,7)	Deep Neutral Gray
+rgb(20,21,22)	Slate Gray
+rgb(4,4,4)	Dark Purplish Gray
+rgb(4,4,4)	Dark Neutral Gray
+rgb(19,18,14)	Slate Color
