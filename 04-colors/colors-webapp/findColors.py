@@ -10,13 +10,16 @@ import argparse
 import colorMaps
 import plotly.graph_objects as go
 import categorizeColors
+import logging
 
 class ColorText():
-    def __init__(self, filename, colorMap, nChunks, nColors):
+    def __init__(self, filename, fileContents, label, colorMap, nChunks, nColors):
         self.filename = filename
-        self.text = self.getText(filename)
+        self.label = label
         self.colorMap = colorMap
+        self.text = fileContents
         self.annotatedText, self.matchLocs = self.annotateColors(self.text, colorMap)
+        # self.contexts = self.getMatchContexts(self.text, self.matchLocs)
         self.chunkedPlot = self.getChunkedPlot(self.text, colorMap, nChunks, nColors)
         self.df = self.matchesToDf(self.matchLocs)
         self.dfWithBase = self.df.append(self.baseColorDf)
@@ -27,17 +30,44 @@ class ColorText():
             text = f.read()
         return text
 
+    def getMatchContexts(self, text, matchLocs, context=10):
+        """
+        Returns a dictionary with colorwords and a list of their contexts.
+        Ex: {"red": ["she wore a <b>red</b> dress", ...] ... }
+        Context is number of characters of context to be included before and after.
+
+        MatchLocs should look like {'grey blue': (3, [(3694, 3705), ...])}
+        """
+        contexts = {color: [] for color in matchLocs}
+        for color, data in matchLocs.items():
+            print(f"Color: {color} data: {data}")
+            n, spanList = data
+            for span in spanList:
+                # print(f"Spanlist: {spanList}")
+                start, end = span
+                # beforeIdx = (start - context) if (start - context > 0) else 0
+                # afterIdx = (end + context) if ((end + context) < len(text)) else len(text)
+                # textWithContext = text[beforeIdx:afterIdx]
+                textWithContext = text[span[0]:span[1]] # .replace('\n', ' ') # Debugging
+                print(f"TextWithContext: {textWithContext}")
+                contexts[color].append(textWithContext)
+        return contexts
+
     def annotateColors(self, text, colorMap):
         matchLocs = {}
         for item in colorMap:
             wordBoundary = '[\b\s\W]+'
-            pattern = wordBoundary + item.replace(' ', '[-\s+]') + wordBoundary
-            matches = re.finditer(pattern, text, flags=re.IGNORECASE)
-            matchStarts =  [match.start() for match in matches if matches is not None]
-            if matchStarts != []:
-                matchLocs[item] = (len(matchStarts), matchStarts)
+            pattern = wordBoundary + '(' + item.replace(' ', '[-\s+]') + ')' + wordBoundary
+            matches = re.finditer(pattern, text, flags=re.IGNORECASE | re.MULTILINE)
+            if matches is not None:
+                matchSpans =  [match.span(1) for match in matches]
+            else:
+                matchSpans = []
+            if matchSpans != []:
+                # matchTexts = [match.group(0) for match in matches]
+                matchLocs[item] = (len(matchSpans), matchSpans)
                 color = colorMap[item]
-                replacement = f' <span class="color" style="color: {color}">{item}</span> '
+                replacement = f' <span class="color" style="color: {color}">\\1</span> '
                 text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
         return text, matchLocs
 
@@ -101,7 +131,7 @@ class ColorText():
         meltedDf = self.melt(topColorsOnlyDf)
         return self.plotA(meltedDf, colorMap)
 
-    def writeChunkedPlot():
+    def writeChunkedPlot(self):
         self.chunkedPlot.save(self.filename + '-chunked.html')
 
     @property
@@ -119,15 +149,17 @@ class ColorText():
     def baseColorDf(self):
         # print(baseColorMap)
         baseDf = pd.DataFrame(self.baseColorMap.items(), columns=['name', 'hex'])
-        baseDf['parent'] = "color" # Ur-color
+        rootColorName = self.label
+        baseDf['parent'] = rootColorName
         baseDf['parentHex'] = baseDf['hex']
         baseDf['locs'] = ""
         baseDf['id'] = baseDf['name']
         totals = self.df.groupby(['parent'])['n'].sum()
         baseDf['n'] = baseDf['name'].apply(dict(totals).get)
         # Add one root color
-        baseDf = baseDf.append({'name': 'color', 'hex': '#FFFFFF', 'id': 'color'
-                                'parent': '', 'parentHex': '', 'n': 100}, ignore_index=True)
+        grandTotal = baseDf['n'].sum()
+        baseDf = baseDf.append({'name': rootColorName, 'hex': '#FFFFFF', 'id': rootColorName,
+                                'parent': '', 'parentHex': '', 'n': grandTotal}, ignore_index=True)
         return baseDf
 
     def getSunburstPlot(self, df):
@@ -136,8 +168,6 @@ class ColorText():
         synchronically. Needs to be passed the data frame including
         the base colors.
         """
-        # We need IDs, since we will probably have repeating names for things,
-        # and this throws off Plotly
 
         fig = go.Figure()
         fig.add_trace(go.Sunburst(
@@ -148,8 +178,9 @@ class ColorText():
             # domain=dict(column=1),
             #maxdepth=2,
             insidetextorientation='radial',
-            marker = {"colors": df['hex']},  
-            branchvalues='total'
+            marker = {"colors": df['hex']},
+            branchvalues='total',
+            hovertemplate=''
         ))
 
         # fig.update_layout(
@@ -159,8 +190,24 @@ class ColorText():
         # fig.show()
         return fig
 
+    def getSunburstHtml(self):
+        outFilename = self.filename + '-sunburst.html'
+        logging.info(f"Wrote to {outFilename}")
+        plot = self.sunburstPlot.to_html(outFilename, full_html=False)
+        # print("---sunburstPlot---", self.sunburstPlot)
+        # print("---PLOT---", plot)
+        return plot
+
     def writeSunburstPlot(self):
-        self.sunburstPlot.write_html(self.filename + '-sunburst.html')
+        outFilename = self.filename + '-sunburst.html'
+        self.sunburstPlot.write_html(outFilename)
+        logging.info(f"Wrote to {outFilename}")
+
+    def writeCSV(self):
+        outFilename = self.filename + '-colors.csv'
+        self.dfWithBase.to_csv(outFilename)
+        logging.info(f"Wrote to {outFilename}")
+
 
 if __name__ == "__main__":
     # Make plot
@@ -168,17 +215,24 @@ if __name__ == "__main__":
     # print(pride[:200])
     parser = argparse.ArgumentParser()
     parser.add_argument("filename")
+    parser.add_argument("label")
     args = parser.parse_args()
     filename = args.filename
+    label = args.label
     print('Analyzing file: ', filename)
 
     # Default colormap
     colorMap = colorMaps.xkcdMap
 
     # Initialize object
-    colorText = ColorText(filename, colorMap, nChunks=40, nColors=20)
+    with open(filename) as f:
+        fileContents = filename.read(f)
 
-    colorText.dfWithBase.to_html(open(filename + '-df.html', 'w'))
+    colorText = ColorText(filename, fileContents, label, colorMap, nChunks=40, nColors=20)
 
-    # colorText.writeChunkedPlot()
+    # colorText.writeCSV()
+
+    # print(colorText.annotatedText)
+
+    colorText.writeChunkedPlot()
     colorText.writeSunburstPlot()
