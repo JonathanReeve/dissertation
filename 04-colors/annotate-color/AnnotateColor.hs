@@ -1,5 +1,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- AnnotateColor: a module and CLI for
+-- extracting color word data from text.
+-- Part of my dissertation,
+-- https://github.com/JonathanReeve/dissertation
+-- All code licensed under the GPLv3. 
+
 module AnnotateColor where
 
 import qualified Clay as C
@@ -11,6 +17,7 @@ import Data.Char
 import Data.Either
 import Data.Function (on)
 import Data.List (intersperse, sort, sortBy)
+import Data.Maybe
 import Lucid
 import Options.Generic
 import Replace.Attoparsec.Text
@@ -22,13 +29,12 @@ import qualified Data.Text.IO as TIO
 import qualified Data.Text.Lazy as TL
 import qualified Data.Text.Encoding as TE
 
--- | Just some useful aliases here
+-- | Just some useful type aliases here
 type ColorWord = T.Text
 type Hex = T.Text
 type ColorMap = M.Map ColorWord Hex
 
-wordBoundary :: Parser Char
-wordBoundary = space <|> satisfy isPunctuation
+-- * Parsing the colors
 
 -- | Takes a list of words like "light green blue" and makes a
 -- parser which will find "light green blue" and also "light green-blue",
@@ -44,6 +50,9 @@ wordListParser (w:ws) = do  -- Multi-word case
   -- Parse to space-separated.
   return (a `T.append` (T.singleton ' ') `T.append` c) -- singleton :: Char -> Text
 
+-- | Parse word boundaries.
+wordBoundary :: Parser Char
+wordBoundary = space <|> satisfy isPunctuation
 
 -- | Don't just parse the word, parse it with word boundaries
 -- on either side.
@@ -71,6 +80,7 @@ makeSpan colorWord hex = TL.concat [" ", t, " "] where
 mapTuple :: (a -> b) -> (a, a) -> (b, b)
 mapTuple f (a1, a2) = (f a1, f a2)
 
+-- * Text-to-color maps
 
 -- | Processes the plain text (TSV) color map from XKCD,
 -- and converts it to the list of tuples we'll be using for
@@ -81,6 +91,7 @@ xkcdMap rawMap = reverse $ sortBy (compare `on` T.length . fst) unsorted
     textLines = tail $ T.lines rawMap
     unsorted = [ mapTuple T.strip ( T.breakOn "\t" ln ) | ln <- textLines ]
 
+-- * Annotate color words in text, using HTML
 annotate :: ColorMap -> [Either T.Text (T.Text, T.Text)] -> T.Text
 annotate colorMapMap results = T.concat $ map processBlock results where
   processBlock :: Either T.Text (T.Text, T.Text) -> T.Text
@@ -89,26 +100,21 @@ annotate colorMapMap results = T.concat $ map processBlock results where
     -- textFormat is the way the color expression is formatted in the text;
     -- stdFormat is the way it is formatted in the standardized way that it appears in the
     -- color map.
-    Right (textFormat, stdFormat) -> case (colorMapMap M.!? stdFormat) of
+    Right (textFormat, stdFormat) -> case (colorMapMap M.!? (T.toLower stdFormat)) of
       Nothing -> T.concat ["CANTFIND", stdFormat]
       Just hex -> TL.toStrict $ makeSpan textFormat hex
 
-testString = [Left "hey here are some words",Right "blue",Left "and some other words"]
+-- | Takes the parser output and makes spans
+-- (start, end) for their locations
+getLocations :: [Either Text (Text, Text)] -> [(Int, Int)]
+getLocations xs = zip <*> tail $ 0:(scanl1 (+) (getLengths xs)) where
+  getLengths :: [Either T.Text (T.Text, T.Text)] -> [Int]
+  getLengths xs = fmap getLength xs
+  getLength x = case x of
+    Left text -> T.length text
+    Right (txtFormat, stdFormat) -> T.length txtFormat
 
--- | Takes a processed list of Eithers after parsing
--- And returns a list of tuples (IsColor?, theText, (start, end))
--- getIndices :: [Either T.Text (T.Text, T.Text)] -> [(Bool, T.Text, (Int, Int)]
--- getIndices xs =
-
-
--- getIndices :: (Foldable t) => [Either (t a) (t a, (Int, Int))] -> [Either (Int, Int) (Int, Int)]
-getIndices list = zipWith (\a b -> fmapEither (const a) b) (eitherSpans list) list where
-  eitherSpans list = zip <*> tail $ scanl (\acc x -> acc + either length length x) 0 list
-
-fmapEither :: (a -> b) -> Either a (a, b) -> Either b b
-fmapEither f (Left a) = Left $ f a
-fmapEither f (Right (a, b)) = Right $ f a
-
+-- | Actually do the replacement in the text. 
 findReplace :: Parser T.Text -> T.Text -> [Either T.Text (T.Text, T.Text)]
 findReplace parser sourceText = fromRight [] $ parseOnly (findAllCap parser) sourceText
 
@@ -121,11 +127,26 @@ scaffold text = TL.toStrict $ renderText $
       style_ [type_ "text/css"] $ C.render css
     body_ [] $ toHtmlRaw text
 
+-- | The styling for the result web page
 css :: C.Css
 css = "body" C.? do
          C.backgroundColor "#333"
          C.color "#ddd"
 
+-- Utility for making printable data sets of the color name locations
+-- so that they can be used in analysis later.
+getZipData :: ((Int, Int), Either T.Text (T.Text, T.Text)) -> 
+              Maybe ((Int, Int), T.Text, T.Text)
+getZipData (locs, parsed) = case parsed of
+  Left _ -> Nothing
+  Right (txtFormat, stdFormat) -> Just (locs, txtFormat, stdFormat)
+
+-- Utility to convert a list [("a", 2), ("a", 3), ("b", 2)] to a Map
+listToMap l = M.fromListWith (++) [(stdFormat, [(loc1, loc2)]) |
+                                   ((loc1, loc2), txtFormat, stdFormat) <- l]
+
+-- | CLI to annotate colors in text.
+-- Usage: runhaskell AnnotateColor my-text-file.txt > out.html
 main :: IO ()
 main = do
    -- Load color map. (Data from https://xkcd.com/color/rgb.txt )
@@ -146,14 +167,18 @@ main = do
                   Left err -> TE.decodeLatin1 rawByteStr
                   Right text -> text
 
-   let firstReplaced = findReplace (colorParser colorMap) inFile
+   -- Parse out the colors, get their locations
+   let parsed = findReplace (colorParser colorMap) inFile
+   let locations = getLocations parsed
+   let zipData = map getZipData (zip locations parsed)
+   let onlyMatches = map fromJust $ filter isJust zipData
+   let map = listToMap onlyMatches
 
-   -- print firstReplaced
-   let indices = getIndices firstReplaced
+   -- Output just the data.
+   -- print map
 
-   print indices
-   -- let annotated = annotate colorMapMap firstReplaced
-   -- let scaffolded = scaffold annotated
+   let annotated = annotate colorMapMap parsed
+   let scaffolded = scaffold annotated
 
-   -- TIO.putStr $ scaffolded
-
+   -- Print the annotated version
+   TIO.putStr $ scaffolded
