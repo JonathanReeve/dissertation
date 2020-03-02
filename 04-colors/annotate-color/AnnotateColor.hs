@@ -25,6 +25,7 @@ import qualified Data.Text.Encoding as TE
 -- | Just some useful aliases here
 type ColorWord = T.Text
 type Hex = T.Text
+type ColorMap = M.Map ColorWord Hex
 
 wordBoundary :: Parser Char
 wordBoundary = space <|> satisfy isPunctuation
@@ -73,21 +74,40 @@ mapTuple f (a1, a2) = (f a1, f a2)
 
 -- | Processes the plain text (TSV) color map from XKCD,
 -- and converts it to the list of tuples we'll be using for
--- a color map. 
+-- a color map.
 xkcdMap :: T.Text -> [(T.Text, T.Text)]
 xkcdMap rawMap = reverse $ sortBy (compare `on` T.length . fst) unsorted
   where
     textLines = tail $ T.lines rawMap
     unsorted = [ mapTuple T.strip ( T.breakOn "\t" ln ) | ln <- textLines ]
 
-annotate :: M.Map ColorWord Hex -> [Either T.Text (T.Text, T.Text)] -> T.Text
+annotate :: ColorMap -> [Either T.Text (T.Text, T.Text)] -> T.Text
 annotate colorMapMap results = T.concat $ map processBlock results where
   processBlock :: Either T.Text (T.Text, T.Text) -> T.Text
   processBlock block = case block of
     Left txt -> txt
+    -- textFormat is the way the color expression is formatted in the text;
+    -- stdFormat is the way it is formatted in the standardized way that it appears in the
+    -- color map.
     Right (textFormat, stdFormat) -> case (colorMapMap M.!? stdFormat) of
       Nothing -> T.concat ["CANTFIND", stdFormat]
       Just hex -> TL.toStrict $ makeSpan textFormat hex
+
+testString = [Left "hey here are some words",Right "blue",Left "and some other words"]
+
+-- | Takes a processed list of Eithers after parsing
+-- And returns a list of tuples (IsColor?, theText, (start, end))
+-- getIndices :: [Either T.Text (T.Text, T.Text)] -> [(Bool, T.Text, (Int, Int)]
+-- getIndices xs =
+
+
+-- getIndices :: (Foldable t) => [Either (t a) (t a, (Int, Int))] -> [Either (Int, Int) (Int, Int)]
+getIndices list = zipWith (\a b -> fmapEither (const a) b) (eitherSpans list) list where
+  eitherSpans list = zip <*> tail $ scanl (\acc x -> acc + either length length x) 0 list
+
+fmapEither :: (a -> b) -> Either a (a, b) -> Either b b
+fmapEither f (Left a) = Left $ f a
+fmapEither f (Right (a, b)) = Right $ f a
 
 findReplace :: Parser T.Text -> T.Text -> [Either T.Text (T.Text, T.Text)]
 findReplace parser sourceText = fromRight [] $ parseOnly (findAllCap parser) sourceText
@@ -109,7 +129,7 @@ css = "body" C.? do
 main :: IO ()
 main = do
    -- Load color map. (Data from https://xkcd.com/color/rgb.txt )
-   rawText <- TIO.readFile "../data/xkcd/rgb.txt"
+   rawText <- TIO.readFile "../data/maps/xkcd/rgb.txt"
    -- Process color map
    let colorMap = xkcdMap rawText
    -- Make Data.Map map out of it
@@ -129,7 +149,11 @@ main = do
    let firstReplaced = findReplace (colorParser colorMap) inFile
 
    -- print firstReplaced
-   let annotated = annotate colorMapMap firstReplaced
-   let scaffolded = scaffold annotated
+   let indices = getIndices firstReplaced
 
-   TIO.putStr $ scaffolded
+   print indices
+   -- let annotated = annotate colorMapMap firstReplaced
+   -- let scaffolded = scaffold annotated
+
+   -- TIO.putStr $ scaffolded
+
