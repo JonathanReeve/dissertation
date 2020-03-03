@@ -175,10 +175,12 @@ main = do
    let map = listToMap onlyMatches
 
    -- Output just the data.
-   -- print map
+   print map
 
-   let annotated = annotate colorMapMap parsed
-   let scaffolded = scaffold annotated
+   
 
-   -- Print the annotated version
-   TIO.putStr $ scaffolded
+   -- let annotated = annotate colorMapMap parsed
+   -- let scaffolded = scaffold annotated
+
+   -- -- Print the annotated version
+   -- TIO.putStr $ scaffolded
