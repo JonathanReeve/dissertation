@@ -4,6 +4,8 @@ let
   ghc = pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
     regex-compat lucid replace-attoparsec hspec cabal-install
     text-regex-replace optparse-generic clay charsetdetect
+    # Frames  # Broken?
+    plotlyhs microlens
   ]);
 in
 pkgs.stdenv.mkDerivation {
