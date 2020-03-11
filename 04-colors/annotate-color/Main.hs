@@ -234,9 +234,9 @@ sortColors selectionFunction colorStats = sortOn sortFunction colorStats where
   -- convert to HSL and get the hue to sort on.
   sortFunction (_, hex, _, _, _) = selectionFunction $ readColor hex
 
-plotlyChart :: [ColorStatsMap] -> Html ()
-plotlyChart colorData = mapM_ makeChart colorData where
-  makeChart someData = toHtml $ plotly "div7" (mkHBarTraces someData)
+plotlyChart :: (ColorStatsMap -> [Trace]) -> [ColorStatsMap] -> Html ()
+plotlyChart tracesFn colorData = mapM_ makeChart colorData where
+  makeChart someData = toHtml $ plotly "div7" (tracesFn someData)
                        & layout . margin ?~ thinMargins
                        & layout . height ?~ 300
                        & layout . width ?~ 800
@@ -257,14 +257,26 @@ plotlyScaffold contents = doctypehtml_ $ do
 mkHBarTraces :: ColorStatsMap -> [Trace]
 mkHBarTraces = Prelude.concatMap makeTraces where
   makeTraces :: (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])]) -> [Trace]
-  makeTraces (textName, colorMapName, colorData) = map (makeTrace textName) colorData where
-    makeTrace :: TextName -> (ColorWord, Hex, Parent, Int, [Span]) -> Trace
-    makeTrace textName (colorWord, hex, _, n, _) = bars & P.y ?~ [toJSON textName]
-                                                   & P.x ?~ [toJSON n]
-                                                   & name ?~ colorWord
-                                                   & orientation ?~ Horizontal
-                                                   & marker ?~
-                                                   (defMarker & markercolor ?~ P.All (toJSON hex))
+  makeTraces (textName, colorMapName, colorData) = map (makeTrace textName) colorData
+
+mkHBarParentTraces :: ColorMap -> ColorStatsMap -> [Trace]
+mkHBarParentTraces colorMap colorStatsMap = Prelude.concatMap makeTraces colorStatsMap where
+  makeTraces :: (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])]) -> [Trace]
+  makeTraces (textName, colorMapName, colorData) = map (makeTrace textName) colorData' where
+    colorData' = map parentToColor colorData
+    parentToColor (colorWord, hex, parent, n, spans) = (parent, colorMap M.! parent, "NAN", n, spans)
+
+makeTrace :: TextName -> (ColorWord, Hex, Parent, Int, [Span]) -> Trace
+makeTrace textName (colorWord, hex, _, n, _) = bars & P.y ?~ [toJSON textName]
+                                                & P.x ?~ [toJSON n]
+                                                & name ?~ colorWord
+                                                & orientation ?~ Horizontal
+                                                & marker ?~
+                                                (defMarker & markercolor ?~ P.All (toJSON hex))
+
+-- -- | Make parent data for feeding to mkHBarTraces
+-- -- mkParentData ::
+-- mkParentData colorData colorMap = 
 
 -- | CLI to annotate colors in text.
 -- Usage: runhaskell AnnotateColor my-text-file.txt > out.html
@@ -297,10 +309,12 @@ main = do
    let stats = [(makeStats (T.pack label) mapName (listToMap onlyMatches) colorMapMap)]
    print stats
 
-
-   -- let outFileName = label ++ "-bar.html"
-   -- -- [stats] for now, since we're making room for more of these later
-   -- renderToFile outFileName $ plotlyScaffold $ plotlyChart [stats]
+   let outFileName = label ++ "-bar.html"
+   -- [stats] for now, since we're making room for more of these later
+   renderToFile outFileName $ plotlyScaffold $
+     mconcat [ plotlyChart mkHBarTraces [stats]
+             , plotlyChart (mkHBarParentTraces colorMapMap) [stats]
+             ]
 
    -- Output just the data.
    -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats
