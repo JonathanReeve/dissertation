@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 pandas = "*"
-altair = "<3" # Upgrade to 3 once Hydrogen upgrades to 2.11
+altair = "*"
 jupyterlab = "==1.0"
 matplotlib = "*"
 vega_datasets = "*"

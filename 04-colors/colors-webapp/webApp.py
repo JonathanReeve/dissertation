@@ -108,6 +108,7 @@ class AnalysisOutput():
         colortext = findColors.ColorText(filename, fileContents, label, colorMap, nChunks, nColors)
 
         sunburst = colortext.getSunburstHtml()
+        chunked = colortext.getChunkedPlotHtml()
 
         # cherrypy.log("Sunburst: %s" % sunburst)
 
@@ -118,6 +119,10 @@ class AnalysisOutput():
                         raw(sunburst),
                         class_="sunburst"
                     )
+                    div(
+                        raw(chunked),
+                        class_="chunked"
+                        )
                 )
               ).render()
         return doc

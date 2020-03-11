@@ -2,6 +2,8 @@
 Handle importing and processing of various color maps.
 """
 
+import re
+
 def makeXkcdMap(xkcdMapRaw):
     """
     Makes a color dictionary, e.g. {"blue": "#0000ff"}
@@ -20,3 +22,22 @@ def makeXkcdMap(xkcdMapRaw):
 
 xkcdMapRaw = open('../data/maps/xkcd/rgb.txt')
 xkcdMap = makeXkcdMap(xkcdMapRaw)
+
+# Ridgway, via Jaffer
+# <tr><td width="175*" nowrap>absinthe green<td title="120" style="background-color:#8A9A5B">120
+
+
+def makeRidgwayMap(ridgwayRaw):
+    """
+    Makes a color dictionary, e.g. {"blue": "#0000ff"}
+    from the XKCD data set.
+    """
+    ridgwayMap = {}
+    for line in ridgwayRaw:
+        if line.startswith('<tr><td'):
+            color, colorHex = re.match('.*?nowrap>(.*?)<.*?color:(.*?)[";]', line).groups()
+            ridgwayMap[color] = colorHex
+    return ridgwayMap
+
+ridgwayRaw = open('../data/maps/jaffer/ridgway.html')
+ridgwayMap = makeRidgwayMap(ridgwayRaw)

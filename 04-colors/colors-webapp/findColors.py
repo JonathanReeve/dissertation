@@ -190,6 +190,9 @@ class ColorText():
         # fig.show()
         return fig
 
+    def getChunkedPlotHtml(self):
+        return self.plotA.to_html(fullhtml=False)
+
     def getSunburstHtml(self):
         outFilename = self.filename + '-sunburst.html'
         logging.info(f"Wrote to {outFilename}")
@@ -226,7 +229,7 @@ if __name__ == "__main__":
 
     # Initialize object
     with open(filename) as f:
-        fileContents = filename.read(f)
+        fileContents = f.read()
 
     colorText = ColorText(filename, fileContents, label, colorMap, nChunks=40, nColors=20)
 
@@ -234,5 +237,5 @@ if __name__ == "__main__":
 
     # print(colorText.annotatedText)
 
-    colorText.writeChunkedPlot()
-    colorText.writeSunburstPlot()
+    # colorText.writeChunkedPlot()
+    # colorText.writeSunburstPlot()
