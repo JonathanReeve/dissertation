@@ -1,33 +1,51 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE DeriveGeneric #-}
 
 -- AnnotateColor: a module and CLI for
 -- extracting color word data from text.
 -- Part of my dissertation,
 -- https://github.com/JonathanReeve/dissertation
--- All code licensed under the GPLv3. 
+-- All code licensed under the GPLv3.
 
-module AnnotateColor where
+module Main where
 
-import qualified Clay as C
 import Codec.Text.Detect (detectEncoding)
 import Control.Applicative ((<|>), empty)
 import Control.Monad (forM_)
+import Data.Aeson
 import Data.Attoparsec.Text as AT
 import Data.Char
 import Data.Either
 import Data.Function (on)
-import Data.List (intersperse, sort, sortBy)
+import Data.List (intersperse, sort, sortBy, sortOn, minimumBy)
+import Data.Ord (comparing)
 import Data.Maybe
+import GHC.Generics
+import Graphics.Plotly
+import Graphics.Plotly.Lucid
+import Lens.Micro
 import Lucid
 import Options.Generic
 import Replace.Attoparsec.Text
-import qualified Data.Map.Strict as M
+import System.FilePath
+import qualified Clay as C
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Lazy as BL
+import qualified Data.Map.Strict as M
 import qualified Data.Text as T
+import qualified Data.Text.Encoding as TE
 import qualified Data.Text.IO as TIO
 import qualified Data.Text.Lazy as TL
-import qualified Data.Text.Encoding as TE
+import qualified Graphics.Plotly.Base as P
+
+import Data.Colour.SRGB
+import Data.Colour.CIE
+import Data.Colour.RGBSpace.HSV
+import Data.Colour.CIE
+import Data.Colour.CIE.Illuminant (d65)
+import Graphics.Color.Adaptation
+import Graphics.Color.Model
 
 -- import Frames
 -- import Frames.CSV (readTableOpt, rowGen, RowGen(..))
@@ -35,6 +53,7 @@ import qualified Data.Text.Encoding as TE
 -- | Just some useful type aliases here
 type ColorWord = T.Text
 type Hex = T.Text
+type Parent = T.Text -- Category
 type ColorMap = M.Map ColorWord Hex
 
 type ColorOrNot = Either Unmatched (ColorFound, ColorStandardized)
@@ -45,6 +64,13 @@ type ColorStandardized = T.Text
 type Span = (Start, End)
 type Start = Int
 type End = Int
+
+type ColorStatsMap = [(TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])]
+type TextName = T.Text
+type ColorMapName = T.Text
+
+data ColorStats = ColorStatsMap deriving (Generic, ToJSON, FromJSON)
+
 
 -- * Parsing the colors
 
@@ -148,16 +174,99 @@ css = "body" C.? do
          C.backgroundColor "#333"
          C.color "#ddd"
 
--- Utility for making printable data sets of the color name locations
+-- | Utility for making printable data sets of the color name locations
 -- so that they can be used in analysis later.
-getZipData :: (Span, ColorOrNot) -> Maybe (Span, T.Text, T.Text)
+getZipData :: (Span, ColorOrNot) -> Maybe (Span, ColorFound, ColorStandardized)
 getZipData (locs, parsed) = case parsed of
   Left _ -> Nothing
   Right (txtFormat, stdFormat) -> Just (locs, txtFormat, stdFormat)
 
--- Utility to convert a list [("a", 2), ("a", 3), ("b", 2)] to a Map
+-- | Utility to convert a list [("a", 2), ("a", 3), ("b", 2)] to a Map
+-- like [("a", [2, 3]), "b", [2])]
+listToMap :: [(Span, b, Text)] -> M.Map ColorWord [Span]
 listToMap l = M.fromListWith (++) [(T.toLower stdFormat, [(loc1, loc2)]) |
                                    ((loc1, loc2), txtFormat, stdFormat) <- l]
+
+makeStats :: TextName -> ColorMapName -> M.Map ColorWord [Span] -> ColorMap ->
+  (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])
+makeStats fileName mapName locs colorMap = (fileName, mapName, stats ) where
+  -- TODO: add more sort functions than just luminance.
+  stats = (sortColors luminance) $ map makeStat (M.toList locs)
+  makeStat (colorWord, spans) = (colorWord, hex, parent, length spans, spans) where
+    hex = case colorMap M.!? colorWord of
+      Nothing -> "UNDEFINED"
+      Just hex -> hex
+    parent = categorizeColor hex colorMap
+
+--  Calculate the distance to each base color, and find the
+-- one with the smallest distance.
+categorizeColor :: Hex -> ColorMap -> ColorWord
+categorizeColor color colorMap = argMin deltas where
+  -- TODO: maybe use Maybe here instead, just in case the base color isn't found in the map
+  baseColorMap = [ (baseColor, colorMap M.! baseColor) | baseColor <- baseColors ]
+  -- Make Colour objects for each hex
+  baseColours :: [ (ColorWord, Colour Double) ]
+  baseColours = map (\(cWord, cHex) -> (cWord, readColor cHex)) baseColorMap
+  deltas :: [ (ColorWord, Double) ]
+  deltas = [ (fst baseColor, deltaE76 (readColor color) (snd baseColor)) | baseColor <- baseColours ]
+  argMin xs = fst $ minimumBy (comparing snd) xs
+
+readColor :: Hex -> Colour Double
+readColor hex = fst $ head $ sRGB24reads $ T.unpack hex
+
+-- Given two colors in CIELAB color space, \( {L^*_1},{a^*_1},{b^*_1}) \)
+-- and \( {L^*_2},{a^*_2},{b^*_2} \), the CIE76 color difference formula is defined as:
+-- \[ \Delta E_{ab}^* = \sqrt{ (L^*_2-L^*_1)^2+(a^*_2-a^*_1)^2 + (b^*_2-b^*_1)^2 } \]
+-- https://en.wikipedia.org/wiki/Color_difference
+deltaE76 :: Colour Double -> Colour Double -> Double
+deltaE76 color1 color2 = sqrt $ dL**2 + da**2 + db**2 where
+  (l1, a1, b1) = cieLABView d65 color1
+  (l2, a2, b2) = cieLABView d65 color2
+  dL = l2-l1
+  da = a2-a1
+  db = b2-b1
+
+baseColors :: [ColorWord]
+baseColors = ["black", "white", "grey", "red", "orange", "yellow", "green", "blue", "purple"]
+
+sortColors :: (Colour Double -> Double) -> [(ColorWord, Hex, Parent, Int, [Span])] -> [(ColorWord, Hex, Parent, Int, [Span])]
+sortColors selectionFunction colorStats = sortOn sortFunction colorStats where
+  -- convert to HSL and get the hue to sort on.
+  sortFunction (_, hex, _, _, _) = selectionFunction $ readColor hex
+
+plotlyChart :: [ColorStatsMap] -> Bool -> ColorMap -> Html ()
+plotlyChart colorData isParent colorMap = mapM_ makeChart colorData where
+  makeChart someData = toHtml $ plotly "div7" (mkHBarTraces someData isParent colorMap)
+                       & layout . margin ?~ thinMargins
+                       & layout . height ?~ 300
+                       & layout . width ?~ 800
+                       & layout . barmode ?~ Stack
+
+plotlyScaffold :: Html () -> Html ()
+plotlyScaffold contents = doctypehtml_ $ do
+  head_ $ do
+    meta_ [charset_ "utf-8"]
+    plotlyCDN
+  body_ $ contents
+
+-- | Make traces from color data.
+-- We need three traces here. Y is the same in all:
+-- the name of the text.
+-- X is a list with one value each [x]
+-- name is the color name.
+mkHBarTraces :: ColorStatsMap -> Bool -> ColorMap -> [Trace]
+mkHBarTraces colorStats isParent colorMap = Prelude.concatMap makeTraces colorStats where
+  makeTraces :: (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])]) -> [Trace]
+  makeTraces (textName, colorMapName, colorData) = map (makeTrace textName isParent) colorData where
+    makeTrace :: TextName -> Bool -> (ColorWord, Hex, Parent, Int, [Span]) -> Trace
+    makeTrace textName isParent (colorWord, hex, parent, n, _) = bars & P.y ?~ [toJSON textName]
+                                                                 & P.x ?~ [toJSON n]
+                                                                 & name ?~ colorWord'
+                                                                 & orientation ?~ Horizontal
+                                                                 & marker ?~
+                                                                 (defMarker & markercolor ?~ P.All (toJSON hex)) where
+      hex = if isParent then colorMap M.! parent else hex
+      colorWord' = if isParent then parent else colorWord
 
 -- | CLI to annotate colors in text.
 -- Usage: runhaskell AnnotateColor my-text-file.txt > out.html
@@ -183,15 +292,21 @@ main = do
 
    -- Parse out the colors, get their locations
    let parsed = findReplace (colorParser colorMap) inFile
-   let locations = getLocations parsed
-   let zipData = map getZipData (zip locations parsed)
+   let zipData = map getZipData (zip (getLocations parsed) parsed)
    let onlyMatches = map fromJust $ filter isJust zipData
-   let map = listToMap onlyMatches
+   let mapName = "XKCD" :: Text
+   let label = takeBaseName fileName
+   let stats = [(makeStats (T.pack label) mapName (listToMap onlyMatches) colorMapMap)]
+   -- print stats
+
+
+   let outFileName = label ++ "-bar.html"
+   -- -- [stats] for now, since we're making room for more of these later
+   renderToFile outFileName $ plotlyScaffold $
+     mconcat [plotlyChart [stats] False colorMapMap, plotlyChart [stats] True colorMapMap]
 
    -- Output just the data.
-   print map
-
-
+   -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats
 
    -- let annotated = annotate colorMapMap parsed
    -- let scaffolded = scaffold annotated
