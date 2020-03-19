@@ -239,6 +239,14 @@ plotlyChart tracesFn colorData divName = mapM_ makeChart colorData where
                        & layout . width ?~ 800
                        & layout . barmode ?~ Stack
 
+-- | Let's do that again, but just take traces.
+plotlyChart' :: [Trace] -> T.Text -> Html ()
+plotlyChart' traces divName = toHtml $ plotly divName traces
+                              & layout . margin ?~ thinMargins
+                              & layout . height ?~ 300
+                              & layout . width ?~ 800
+                              & layout . barmode ?~ Stack
+
 plotlyScaffold :: Html () -> Html ()
 plotlyScaffold contents = doctypehtml_ $ do
   head_ $ do
@@ -310,8 +318,10 @@ main = do
    let outFileName = label ++ "-bar.html"
    -- [stats] for now, since we're making room for more of these later
    renderToFile outFileName $ plotlyScaffold $ do
-     plotlyChart (mkHBarParentTraces colorMapMap) [stats] "div1"
-     plotlyChart mkHBarTraces [stats] "div2"
+     let childTraces = mkHBarTraces stats
+     let parentTraces = (mkHBarParentTraces colorMapMap) stats
+     let traces = concat [childTraces, parentTraces]
+     plotlyChart' traces "div1"
 
    -- Output just the data.
    -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats
