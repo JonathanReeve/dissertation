@@ -115,10 +115,10 @@ class AnalysisOutput():
         doc = html(
                 body(
                     h1("test text"),
-                    div(
-                        raw(sunburst),
-                        class_="sunburst"
-                    )
+                    # div(
+                    #     raw(sunburst),
+                    #     class_="sunburst"
+                    # ),
                     div(
                         raw(chunked),
                         class_="chunked"

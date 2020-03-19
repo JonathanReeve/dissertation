@@ -191,7 +191,7 @@ class ColorText():
         return fig
 
     def getChunkedPlotHtml(self):
-        return self.plotA.to_html(fullhtml=False)
+        return self.plotA(self.df, self.colorMap).to_html(fullhtml=False)
 
     def getSunburstHtml(self):
         outFilename = self.filename + '-sunburst.html'
