@@ -1,0 +1,878 @@
+;; From: "John Foster"
+;; Date: Wed, 21 Nov 2007 13:48:54 -0600
+;; querying "An On-Line Color Thesaurus":
+;; http://h20325.www2.hp.com/blogs/color/archive/2007/10/29/4914.html,
+;; which derives data from the "Color Naming Experiment":
+;; http://www.hpl.hp.com/personal/Nathan_Moroney/color-name-hpl.html
+
+jet black; red=1, green=13, blue=1; hex=010d01; rarely used.
+primary blue; red=1, green=17, blue=221; hex=0111dd; rarely used.
+reflex blue; red=1, green=21, blue=214; hex=0115d6; rarely used.
+deep blue ocean; red=1, green=26, blue=127; hex=011a7f; rarely used.
+deep royal blue; red=1, green=26, blue=187; hex=011abb; rarely used.
+very dark green; red=1, green=68, blue=34; hex=014422; rarely used.
+dark bluish green; red=1, green=76, blue=76; hex=014c4c; rarely used.
+medium dark blue; red=1, green=76, blue=178; hex=014cb2; rarely used.
+skipper blue; red=1, green=102, blue=229; hex=0166e5; rarely used.
+marine green; red=1, green=153, blue=119; hex=019977; rarely used.
+dark grass green; red=1, green=170, blue=34; hex=01aa22; rarely used.
+new leaf green; red=1, green=178, blue=1; hex=01b201; rarely used.
+soft lime green; red=1, green=178, blue=127; hex=01b27f; rarely used.
+sour apple green; red=1, green=204, blue=1; hex=01cc01; rarely used.
+bright sea green; red=1, green=255, blue=153; hex=01ff99; rarely used.
+fluorescent blue; red=1, green=255, blue=221; hex=01ffdd; rarely used.
+dark forest green; red=9, green=59, blue=42; hex=093b2a; rarely used.
+peacock blue; red=13, green=102, blue=242; hex=0d66f2; rarely used.
+delft blue; red=17, green=68, blue=187; hex=1144bb; rarely used.
+evening sky blue; red=17, green=102, blue=187; hex=1166bb; rarely used.
+dark aqua; red=17, green=153, blue=144; hex=119990; rarely used.
+dark chocolate brown; red=26, green=1, blue=26; hex=1a011a; rarely used.
+midnight black; red=26, green=1, blue=51; hex=1a0133; rarely used.
+ebony; red=26, green=26, blue=38; hex=1a1a26; rarely used.
+cellar black; red=26, green=51, blue=76; hex=1a334c; rarely used.
+solid blue; red=26, green=51, blue=229; hex=1a33e5; rarely used.
+deep forest green; red=26, green=76, blue=76; hex=1a4c4c; rarely used.
+deep sky blue; red=26, green=93, blue=229; hex=1a5de5; rarely used.
+spruce green; red=26, green=102, blue=51; hex=1a6633; rarely used.
+bronco blue; red=26, green=102, blue=229; hex=1a66e5; rarely used.
+dark sea green; red=26, green=102, blue=102; hex=1a6666; rarely used.
+battleship blue; red=26, green=102, blue=153; hex=1a6699; rarely used.
+bronco blue; red=26, green=102, blue=229; hex=1a66e5; rarely used.
+dark aquamarine; red=26, green=127, blue=76; hex=1a7f4c; rarely used.
+permanent green; red=26, green=153, blue=51; hex=1a9933; rarely used.
+rainforest green; red=26, green=178, blue=76; hex=1ab24c; rarely used.
+malachite; red=26, green=178, blue=127; hex=1ab27f; rarely used.
+slime green; red=26, green=204, blue=1; hex=1acc01; rarely used.
+bold green; red=26, green=204, blue=26; hex=1acc1a; rarely used.
+bright grass green; red=26, green=229, blue=26; hex=1ae51a; rarely used.
+tropical green; red=26, green=229, blue=26; hex=1ae51a; rarely used.
+navy blue; red=27, green=33, blue=131; hex=1b2183; widely used.
+dark blue; red=27, green=37, blue=150; hex=1b2596; widely used.
+navy; red=28, green=33, blue=130; hex=1c2182; widely used.
+dark navy blue; red=29, green=29, blue=102; hex=1d1d66; rarely used.
+midnight blue; red=29, green=30, blue=135; hex=1d1e87; less commonly used.
+black; red=30, green=30, blue=32; hex=1e1e20; widely used.
+true blue; red=31, green=71, blue=215; hex=1f47d7; less commonly used.
+caribbean blue; red=31, green=173, blue=255; hex=1fadff; rarely used.
+granny smith apple; red=31, green=204, blue=31; hex=1fcc1f; rarely used.
+sour apple; red=31, green=214, blue=61; hex=1fd63d; rarely used.
+dark navy; red=32, green=28, blue=106; hex=201c6a; rarely used.
+bright blue; red=32, green=82, blue=243; hex=2052f3; less commonly used.
+midnight; red=33, green=30, blue=122; hex=211e7a; rarely used.
+pitch black; red=34, green=1, blue=1; hex=220101; rarely used.
+onyx; red=34, green=17, blue=68; hex=221144; rarely used.
+real blue; red=34, green=17, blue=221; hex=2211dd; rarely used.
+british racing green; red=34, green=85, blue=34; hex=225522; rarely used.
+deep sea blue; red=34, green=102, blue=187; hex=2266bb; rarely used.
+clear sky; red=34, green=102, blue=238; hex=2266ee; rarely used.
+cool blue; red=34, green=136, blue=238; hex=2288ee; rarely used.
+chalk blue; red=34, green=153, blue=221; hex=2299dd; rarely used.
+foliage green; red=34, green=170, blue=68; hex=22aa44; rarely used.
+medium sky blue; red=34, green=170, blue=238; hex=22aaee; rarely used.
+bright teal; red=34, green=204, blue=221; hex=22ccdd; rarely used.
+racing green; red=36, green=94, blue=44; hex=245e2c; rarely used.
+spruce; red=36, green=102, blue=73; hex=246649; rarely used.
+forest green; red=36, green=117, blue=50; hex=247532; widely used.
+jungle green; red=36, green=174, blue=98; hex=24ae62; less commonly used.
+kelly; red=36, green=187, blue=60; hex=24bb3c; rarely used.
+dark green; red=37, green=112, blue=43; hex=25702b; widely used.
+kelly green; red=37, green=189, blue=56; hex=25bd38; less commonly used.
+blue black; red=38, green=38, blue=102; hex=262666; rarely used.
+electric blue; red=38, green=70, blue=234; hex=2646ea; less commonly used.
+hunter; red=38, green=111, blue=52; hex=266f34; rarely used.
+bluebell; red=38, green=114, blue=216; hex=2672d8; rarely used.
+forest; red=38, green=118, blue=49; hex=267631; less commonly used.
+evergreen; red=38, green=121, blue=51; hex=267933; less commonly used.
+acid green; red=38, green=216, blue=64; hex=26d840; rarely used.
+royal blue; red=39, green=41, blue=212; hex=2729d4; widely used.
+hunter green; red=39, green=110, blue=51; hex=276e33; less commonly used.
+cerulean; red=41, green=117, blue=241; hex=2975f1; less commonly used.
+green blue; red=41, green=183, blue=149; hex=29b795; less commonly used.
+bright baby blue; red=41, green=224, blue=255; hex=29e0ff; rarely used.
+deep blue; red=42, green=34, blue=189; hex=2a22bd; less commonly used.
+marine blue; red=42, green=107, blue=204; hex=2a6bcc; less commonly used.
+turquoise green; red=43, green=195, blue=153; hex=2bc399; rarely used.
+bright aqua; red=43, green=246, blue=238; hex=2bf6ee; rarely used.
+jade green; red=44, green=196, blue=138; hex=2cc48a; rarely used.
+turquoise blue; red=44, green=196, blue=218; hex=2cc4da; rarely used.
+cobalt blue; red=45, green=58, blue=213; hex=2d3ad5; less commonly used.
+deep green; red=45, green=136, blue=45; hex=2d882d; rarely used.
+dusty blue; red=45, green=136, blue=181; hex=2d88b5; rarely used.
+royal; red=46, green=40, blue=209; hex=2e28d1; rarely used.
+teal blue; red=47, green=123, blue=172; hex=2f7bac; less commonly used.
+emerald; red=48, green=184, blue=83; hex=30b853; less commonly used.
+marine; red=49, green=175, blue=200; hex=31afc8; rarely used.
+blue green; red=49, green=180, blue=158; hex=31b49e; less commonly used.
+aquamarine; red=49, green=211, blue=199; hex=31d3c7; less commonly used.
+navy purple; red=51, green=1, blue=153; hex=330199; rarely used.
+midnight purple; red=51, green=11, blue=91; hex=330b5b; rarely used.
+deep ocean; red=51, green=13, blue=178; hex=330db2; rarely used.
+very dark purple; red=51, green=17, blue=68; hex=331144; rarely used.
+licorice; red=51, green=26, blue=26; hex=331a1a; rarely used.
+deep ocean blue; red=51, green=26, blue=127; hex=331a7f; rarely used.
+indigo blue; red=51, green=26, blue=204; hex=331acc; rarely used.
+light royal blue; red=51, green=26, blue=255; hex=331aff; rarely used.
+ultramarine blue; red=51, green=38, blue=165; hex=3326a5; rarely used.
+cobalt; red=51, green=49, blue=213; hex=3331d5; less commonly used.
+airforce blue; red=51, green=51, blue=127; hex=33337f; rarely used.
+deep navy blue; red=51, green=51, blue=153; hex=333399; rarely used.
+solferino violet; red=51, green=51, blue=153; hex=333399; rarely used.
+bluish grey; red=51, green=76, blue=127; hex=334c7f; rarely used.
+charcoal gray; red=51, green=76, blue=51; hex=334c33; rarely used.
+light navy blue; red=51, green=76, blue=153; hex=334c99; rarely used.
+pure blue; red=51, green=85, blue=255; hex=3355ff; rarely used.
+dark sage; red=51, green=102, blue=26; hex=33661a; rarely used.
+navy green; red=51, green=102, blue=51; hex=336633; rarely used.
+storm blue; red=51, green=102, blue=153; hex=336699; rarely used.
+berry blue; red=51, green=102, blue=178; hex=3366b2; rarely used.
+brilliant blue; red=51, green=102, blue=238; hex=3366ee; rarely used.
+flat blue; red=51, green=102, blue=178; hex=3366b2; rarely used.
+dutch blue; red=51, green=119, blue=204; hex=3377cc; rarely used.
+asparagus; red=51, green=127, blue=26; hex=337f1a; rarely used.
+tan green; red=51, green=127, blue=51; hex=337f33; rarely used.
+lake blue; red=51, green=127, blue=178; hex=337fb2; rarely used.
+cerulean blue; red=51, green=129, blue=245; hex=3381f5; less commonly used.
+creamy blue; red=51, green=136, blue=204; hex=3388cc; rarely used.
+mediterranean blue; red=51, green=140, blue=229; hex=338ce5; rarely used.
+turf; red=51, green=153, blue=51; hex=339933; rarely used.
+teal green; red=51, green=183, blue=137; hex=33b789; rarely used.
+shamrock green; red=51, green=191, blue=76; hex=33bf4c; rarely used.
+rah rah green; red=51, green=204, blue=26; hex=33cc1a; rarely used.
+robin's egg blue; red=51, green=197, blue=235; hex=33c5eb; rarely used.
+granny smith apple green; red=51, green=204, blue=34; hex=33cc22; rarely used.
+cyan green; red=51, green=204, blue=178; hex=33ccb2; rarely used.
+torquise; red=51, green=204, blue=187; hex=33ccbb; rarely used.
+bright light blue; red=51, green=204, blue=255; hex=33ccff; rarely used.
+popsicle green; red=51, green=238, blue=34; hex=33ee22; rarely used.
+fluorescent lime green; red=51, green=255, blue=13; hex=33ff0d; rarely used.
+fluorescent lime; red=51, green=255, blue=22; hex=33ff16; rarely used.
+phosphor green; red=51, green=255, blue=51; hex=33ff33; rarely used.
+sherbet green; red=51, green=255, blue=178; hex=33ffb2; rarely used.
+neon mint; red=51, green=255, blue=153; hex=33ff99; rarely used.
+bright turquoise; red=51, green=255, blue=255; hex=33ffff; rarely used.
+pine; red=53, green=127, blue=57; hex=357f39; less commonly used.
+ocean; red=53, green=138, blue=192; hex=358ac0; rarely used.
+coal; red=55, green=67, blue=65; hex=374341; rarely used.
+pine green; red=55, green=125, blue=47; hex=377d2f; less commonly used.
+medium green; red=55, green=176, blue=66; hex=37b042; less commonly used.
+bluish green; red=55, green=176, blue=131; hex=37b083; rarely used.
+electric green; red=55, green=250, blue=51; hex=37fa33; less commonly used.
+dark gray; red=56, green=81, blue=81; hex=385151; rarely used.
+steel blue; red=56, green=97, blue=158; hex=38619e; less commonly used.
+blue; red=56, green=101, blue=210; hex=3865d2; widely used.
+dark cyan; red=56, green=132, blue=175; hex=3884af; less commonly used.
+aqua green; red=56, green=218, blue=174; hex=38daae; less commonly used.
+medium blue; red=57, green=87, blue=219; hex=3957db; less commonly used.
+ocean blue; red=57, green=135, blue=201; hex=3987c9; less commonly used.
+grass green; red=57, green=184, blue=45; hex=39b82d; widely used.
+bright lime green; red=57, green=248, blue=45; hex=39f82d; rarely used.
+prussian blue; red=58, green=58, blue=182; hex=3a3ab6; rarely used.
+sea blue; red=58, green=142, blue=208; hex=3a8ed0; less commonly used.
+dark turquoise; red=58, green=167, blue=174; hex=3aa7ae; rarely used.
+teal; red=58, green=175, blue=169; hex=3aafa9; widely used.
+dull green; red=58, green=182, blue=116; hex=3ab674; rarely used.
+mid green; red=58, green=189, blue=51; hex=3abd33; rarely used.
+ocean green; red=58, green=189, blue=160; hex=3abda0; rarely used.
+sapphire; red=59, green=9, blue=229; hex=3b09e5; rarely used.
+ultramarine; red=59, green=59, blue=200; hex=3b3bc8; rarely used.
+charcoal; red=59, green=68, blue=69; hex=3b4445; less commonly used.
+emerald green; red=59, green=188, blue=70; hex=3bbc46; less commonly used.
+turquoise; red=59, green=210, blue=206; hex=3bd2ce; widely used.
+bright green; red=59, green=239, blue=55; hex=3bef37; widely used.
+tree green; red=60, green=180, blue=56; hex=3cb438; rarely used.
+azure blue; red=61, green=82, blue=214; hex=3d52d6; rarely used.
+leaf green; red=61, green=184, blue=59; hex=3db83b; less commonly used.
+key lime green; red=61, green=214, blue=41; hex=3dd629; rarely used.
+dark teal; red=62, green=124, blue=119; hex=3e7c77; rarely used.
+azure; red=62, green=142, blue=244; hex=3e8ef4; less commonly used.
+loden; red=63, green=114, blue=51; hex=3f7233; rarely used.
+cadet blue; red=63, green=114, blue=174; hex=3f72ae; less commonly used.
+dull blue; red=63, green=127, blue=159; hex=3f7f9f; rarely used.
+twilight; red=64, green=76, blue=178; hex=404cb2; rarely used.
+stormy; red=64, green=114, blue=153; hex=407299; rarely used.
+swamp green; red=64, green=165, blue=76; hex=40a54c; rarely used.
+grass; red=64, green=187, blue=48; hex=40bb30; less commonly used.
+jade; red=65, green=189, blue=133; hex=41bd85; less commonly used.
+dark grey; red=66, green=76, blue=76; hex=424c4c; less commonly used.
+bottle green; red=66, green=158, blue=51; hex=429e33; less commonly used.
+leaf; red=66, green=186, blue=59; hex=42ba3b; rarely used.
+aqua marine; red=66, green=215, blue=211; hex=42d7d3; less commonly used.
+aqua; red=66, green=218, blue=211; hex=42dad3; widely used.
+walnut; red=68, green=34, blue=51; hex=442233; rarely used.
+mid blue; red=68, green=110, blue=212; hex=446ed4; rarely used.
+pacific blue; red=68, green=136, blue=238; hex=4488ee; rarely used.
+blue sky; red=68, green=141, blue=238; hex=448dee; rarely used.
+country blue; red=68, green=153, blue=187; hex=4499bb; rarely used.
+frog green; red=68, green=170, blue=1; hex=44aa01; rarely used.
+sap green; red=68, green=170, blue=68; hex=44aa44; rarely used.
+algae; red=68, green=195, blue=102; hex=44c366; rarely used.
+robin's egg; red=68, green=208, blue=233; hex=44d0e9; rarely used.
+parrot green; red=68, green=212, blue=59; hex=44d43b; rarely used.
+green apple; red=68, green=215, blue=51; hex=44d733; rarely used.
+summer green; red=68, green=221, blue=34; hex=44dd22; rarely used.
+medium aqua; red=68, green=221, blue=187; hex=44ddbb; rarely used.
+poly green; red=68, green=238, blue=34; hex=44ee22; rarely used.
+hot lime; red=68, green=255, blue=68; hex=44ff44; rarely used.
+slate blue; red=69, green=125, blue=160; hex=457da0; less commonly used.
+sea green; red=71, green=216, blue=154; hex=47d89a; widely used.
+vibrant green; red=71, green=234, blue=21; hex=47ea15; rarely used.
+fluorescent green; red=72, green=251, blue=71; hex=48fb47; less commonly used.
+electric lime; red=72, green=255, blue=58; hex=48ff3a; rarely used.
+blueberry; red=73, green=65, blue=204; hex=4941cc; rarely used.
+cyan; red=73, green=214, blue=231; hex=49d6e7; widely used.
+neon green; red=73, green=251, blue=53; hex=49fb35; widely used.
+aqua blue; red=74, green=207, blue=238; hex=4acfee; less commonly used.
+luminous green; red=74, green=226, blue=74; hex=4ae24a; rarely used.
+dark olive; red=75, green=97, blue=36; hex=4b6124; less commonly used.
+dark royal blue; red=76, green=1, blue=204; hex=4c01cc; rarely used.
+brownish black; red=76, green=26, blue=51; hex=4c1a33; rarely used.
+very dark blue; red=76, green=26, blue=76; hex=4c1a4c; rarely used.
+darker purple; red=76, green=26, blue=102; hex=4c1a66; rarely used.
+flat black; red=76, green=51, blue=51; hex=4c3333; rarely used.
+denim; red=76, green=76, blue=172; hex=4c4cac; rarely used.
+dark moss green; red=76, green=102, blue=51; hex=4c6633; rarely used.
+federal blue; red=76, green=102, blue=153; hex=4c6699; rarely used.
+soft blue; red=76, green=102, blue=178; hex=4c66b2; rarely used.
+gray blue; red=76, green=113, blue=160; hex=4c71a0; less commonly used.
+blue smoke; red=76, green=127, blue=153; hex=4c7f99; rarely used.
+smoky blue; red=76, green=127, blue=178; hex=4c7fb2; rarely used.
+luminous aqua; red=76, green=128, blue=178; hex=4c80b2; rarely used.
+70's green; red=76, green=153, blue=1; hex=4c9901; rarely used.
+mountain green; red=76, green=153, blue=127; hex=4c997f; rarely used.
+christmas green; red=76, green=153, blue=26; hex=4c991a; rarely used.
+vivid blue; red=76, green=153, blue=255; hex=4c99ff; rarely used.
+lawn; red=76, green=161, blue=51; hex=4ca133; rarely used.
+garden green; red=76, green=178, blue=51; hex=4cb233; rarely used.
+light medium green; red=76, green=178, blue=51; hex=4cb233; rarely used.
+spring leaf; red=76, green=204, blue=26; hex=4ccc1a; rarely used.
+muted green; red=76, green=204, blue=153; hex=4ccc99; rarely used.
+spearmint; red=76, green=223, blue=121; hex=4cdf79; rarely used.
+algae green; red=76, green=229, blue=114; hex=4ce572; rarely used.
+bright lime; red=76, green=247, blue=40; hex=4cf728; rarely used.
+neon lime; red=76, green=255, blue=56; hex=4cff38; rarely used.
+bright sea foam; red=76, green=255, blue=165; hex=4cffa5; rarely used.
+olive khaki; red=77, green=127, blue=26; hex=4d7f1a; rarely used.
+sky blue; red=77, green=175, blue=241; hex=4daff1; widely used.
+carolina blue; red=77, green=178, blue=255; hex=4db2ff; rarely used.
+willow tree green; red=77, green=255, blue=204; hex=4dffcc; rarely used.
+blue grey; red=78, green=137, blue=164; hex=4e89a4; less commonly used.
+gray green; red=79, green=139, blue=120; hex=4f8b78; less commonly used.
+grey green; red=79, green=158, blue=130; hex=4f9e82; rarely used.
+sky; red=79, green=170, blue=238; hex=4faaee; less commonly used.
+green; red=79, green=197, blue=74; hex=4fc54a; widely used.
+sea; red=79, green=213, blue=164; hex=4fd5a4; rarely used.
+greyish blue; red=80, green=116, blue=167; hex=5074a7; rarely used.
+cornflower blue; red=80, green=116, blue=218; hex=5074da; less commonly used.
+highlighter green; red=80, green=247, blue=51; hex=50f733; rarely used.
+dark sky blue; red=81, green=132, blue=204; hex=5184cc; rarely used.
+slate green; red=81, green=142, blue=132; hex=518e84; rarely used.
+hot green; red=81, green=255, blue=21; hex=51ff15; rarely used.
+wedgewood blue; red=83, green=114, blue=197; hex=5372c5; rarely used.
+deep burgundy; red=85, green=17, blue=17; hex=551111; rarely used.
+sapphire blue; red=85, green=17, blue=221; hex=5511dd; rarely used.
+deep purple; red=85, green=21, blue=119; hex=551577; less commonly used.
+dark brown; red=85, green=28, blue=26; hex=551c1a; less commonly used.
+noir; red=85, green=34, blue=34; hex=552222; rarely used.
+dusty purple; red=85, green=68, blue=119; hex=554477; rarely used.
+denim blue; red=85, green=102, blue=204; hex=5566cc; rarely used.
+green olive; red=85, green=136, blue=17; hex=558811; rarely used.
+colonial blue; red=85, green=153, blue=221; hex=5599dd; rarely used.
+golf course green; red=85, green=204, blue=68; hex=55cc44; rarely used.
+robin egg blue; red=85, green=204, blue=229; hex=55cce5; rarely used.
+indigo; red=86, green=43, blue=178; hex=562bb2; less commonly used.
+moss green; red=87, green=146, blue=68; hex=579244; less commonly used.
+apple green; red=88, green=226, blue=74; hex=58e24a; less commonly used.
+purplish blue; red=89, green=51, blue=199; hex=5933c7; rarely used.
+hazel; red=89, green=76, blue=38; hex=594c26; rarely used.
+murky green; red=89, green=127, blue=38; hex=597f26; rarely used.
+drab green; red=89, green=140, blue=38; hex=598c26; rarely used.
+summer sky; red=89, green=197, blue=235; hex=59c5eb; rarely used.
+sea foam; red=89, green=235, blue=173; hex=59ebad; less commonly used.
+bright light green; red=89, green=242, blue=38; hex=59f226; rarely used.
+vivid green; red=89, green=255, blue=64; hex=59ff40; rarely used.
+grey blue; red=90, green=147, blue=177; hex=5a93b1; less commonly used.
+fern; red=90, green=164, blue=62; hex=5aa43e; rarely used.
+neon; red=90, green=231, blue=72; hex=5ae748; rarely used.
+sea foam green; red=90, green=235, blue=173; hex=5aebad; less commonly used.
+dark olive green; red=91, green=112, blue=36; hex=5b7024; rarely used.
+eggplant; red=92, green=32, blue=104; hex=5c2068; less commonly used.
+purple blue; red=92, green=46, blue=208; hex=5c2ed0; less commonly used.
+light blue; red=92, green=185, blue=243; hex=5cb9f3; widely used.
+seafoam green; red=92, green=234, blue=169; hex=5ceaa9; less commonly used.
+neon lime green; red=92, green=255, blue=71; hex=5cff47; rarely used.
+slate; red=93, green=126, blue=154; hex=5d7e9a; less commonly used.
+spring green; red=93, green=229, blue=73; hex=5de549; less commonly used.
+fresh green; red=93, green=229, blue=102; hex=5de566; rarely used.
+dark maroon; red=94, green=29, blue=58; hex=5e1d3a; rarely used.
+moss; red=94, green=152, blue=70; hex=5e9846; less commonly used.
+mint; red=94, green=236, blue=161; hex=5eeca1; less commonly used.
+blue violet; red=95, green=38, blue=200; hex=5f26c8; less commonly used.
+light sky blue; red=95, green=223, blue=235; hex=5fdfeb; rarely used.
+blue gray; red=97, green=146, blue=181; hex=6192b5; less commonly used.
+spring; red=97, green=222, blue=81; hex=61de51; rarely used.
+seafoam; red=97, green=231, blue=170; hex=61e7aa; less commonly used.
+cornflower; red=98, green=126, blue=222; hex=627ede; less commonly used.
+mint green; red=98, green=236, blue=162; hex=62eca2; widely used.
+dark purple; red=99, green=24, blue=125; hex=63187d; less commonly used.
+bluish purple; red=99, green=39, blue=201; hex=6327c9; less commonly used.
+light turquoise; red=99, green=239, blue=223; hex=63efdf; less commonly used.
+army green; red=100, green=127, blue=35; hex=647f23; less commonly used.
+lime green; red=100, green=238, blue=56; hex=64ee38; widely used.
+velvet night; red=102, green=1, blue=204; hex=6601cc; rarely used.
+dark violet; red=102, green=36, blue=142; hex=66248e; less commonly used.
+forest brown; red=102, green=51, blue=26; hex=66331a; rarely used.
+dusky blue; red=102, green=51, blue=178; hex=6633b2; rarely used.
+dirty brown; red=102, green=85, blue=51; hex=665533; rarely used.
+greyish purple; red=102, green=85, blue=119; hex=665577; rarely used.
+slate gray; red=102, green=89, blue=140; hex=66598c; rarely used.
+charcoal grey; red=102, green=102, blue=102; hex=666666; rarely used.
+grey purple; red=102, green=102, blue=153; hex=666699; rarely used.
+stellar blue; red=102, green=102, blue=255; hex=6666ff; rarely used.
+faded blue; red=102, green=115, blue=229; hex=6673e5; rarely used.
+olive brown; red=102, green=119, blue=42; hex=66772a; rarely used.
+camo green; red=102, green=127, blue=26; hex=667f1a; rarely used.
+french blue; red=102, green=136, blue=221; hex=6688dd; rarely used.
+dark yellow green; red=102, green=153, blue=13; hex=66990d; rarely used.
+dark pea green; red=102, green=153, blue=51; hex=669933; rarely used.
+muted sage; red=102, green=153, blue=102; hex=669966; rarely used.
+grayish green; red=102, green=153, blue=127; hex=66997f; rarely used.
+fog; red=102, green=153, blue=160; hex=6699a0; rarely used.
+blue slate; red=102, green=153, blue=187; hex=6699bb; rarely used.
+celadon; red=102, green=153, blue=204; hex=6699cc; rarely used.
+medium grey blue; red=102, green=153, blue=191; hex=6699bf; rarely used.
+neon blue; red=102, green=153, blue=246; hex=6699f6; rarely used.
+milky blue; red=102, green=153, blue=255; hex=6699ff; rarely used.
+dusty green; red=102, green=165, blue=114; hex=66a572; rarely used.
+green grey; red=102, green=165, blue=140; hex=66a58c; rarely used.
+ocean blue green; red=102, green=178, blue=153; hex=66b299; rarely used.
+pale blue; red=102, green=188, blue=232; hex=66bce8; less commonly used.
+light teal; red=102, green=198, blue=188; hex=66c6bc; less commonly used.
+poison green; red=102, green=204, blue=26; hex=66cc1a; rarely used.
+soft green; red=102, green=204, blue=145; hex=66cc91; rarely used.
+seafoam blue; red=102, green=204, blue=204; hex=66cccc; rarely used.
+summer sky blue; red=102, green=204, blue=221; hex=66ccdd; rarely used.
+easter egg blue; red=102, green=204, blue=238; hex=66ccee; rarely used.
+dark lime green; red=102, green=216, blue=1; hex=66d801; rarely used.
+limeade; red=102, green=216, blue=51; hex=66d833; rarely used.
+light blue green; red=102, green=216, blue=208; hex=66d8d0; rarely used.
+turtle green; red=102, green=229, blue=51; hex=66e533; rarely used.
+light green blue; red=102, green=229, blue=204; hex=66e5cc; rarely used.
+key lime; red=102, green=238, blue=78; hex=66ee4e; less commonly used.
+shocking green; red=102, green=255, blue=1; hex=66ff01; rarely used.
+may green; red=102, green=255, blue=51; hex=66ff33; rarely used.
+matte green; red=102, green=255, blue=102; hex=66ff66; rarely used.
+agua; red=102, green=255, blue=229; hex=66ffe5; rarely used.
+bahama blue; red=102, green=255, blue=238; hex=66ffee; rarely used.
+pastel green; red=105, green=228, blue=158; hex=69e49e; less commonly used.
+light green; red=105, green=234, blue=101; hex=69ea65; widely used.
+apple; red=106, green=189, blue=65; hex=6abd41; rarely used.
+lime; red=106, green=239, blue=59; hex=6aef3b; widely used.
+sage green; red=107, green=174, blue=99; hex=6bae63; less commonly used.
+fern green; red=109, green=174, blue=73; hex=6dae49; rarely used.
+dirty green; red=110, green=136, blue=51; hex=6e8833; rarely used.
+lemon lime green; red=110, green=195, blue=85; hex=6ec355; rarely used.
+dark lime; red=110, green=221, blue=1; hex=6edd01; rarely used.
+dark lavender; red=111, green=69, blue=171; hex=6f45ab; less commonly used.
+clear; red=111, green=97, blue=222; hex=6f61de; rarely used.
+chocolate brown; red=113, green=51, blue=31; hex=71331f; less commonly used.
+plum purple; red=114, green=38, blue=114; hex=722672; rarely used.
+violet blue; red=114, green=48, blue=216; hex=7230d8; less commonly used.
+clear blue; red=114, green=51, blue=255; hex=7233ff; rarely used.
+bark; red=114, green=63, blue=38; hex=723f26; rarely used.
+mid grey; red=114, green=127, blue=114; hex=727f72; rarely used.
+olive drab; red=114, green=133, blue=32; hex=728520; rarely used.
+baby blue; red=114, green=197, blue=247; hex=72c5f7; less commonly used.
+bright spring green; red=114, green=229, blue=51; hex=72e533; rarely used.
+light bright green; red=114, green=242, blue=64; hex=72f240; rarely used.
+royal purple; red=115, green=34, blue=179; hex=7322b3; less commonly used.
+olive green; red=115, green=146, blue=43; hex=73922b; widely used.
+chocolate; red=116, green=53, blue=33; hex=743521; less commonly used.
+dark periwinkle; red=116, green=116, blue=204; hex=7474cc; rarely used.
+corn; red=116, green=137, blue=207; hex=7489cf; rarely used.
+blue purple; red=117, green=54, blue=226; hex=7536e2; less commonly used.
+dusk; red=117, green=89, blue=155; hex=75599b; rarely used.
+drab; red=119, green=135, blue=58; hex=77873a; rarely used.
+olive; red=119, green=145, blue=44; hex=77912c; widely used.
+cloudy blue; red=119, green=153, blue=187; hex=7799bb; rarely used.
+sage; red=119, green=181, blue=117; hex=77b575; less commonly used.
+lichen green; red=119, green=187, blue=136; hex=77bb88; rarely used.
+bright sky blue; red=119, green=204, blue=221; hex=77ccdd; rarely used.
+melon green; red=119, green=221, blue=153; hex=77dd99; rarely used.
+citron; red=119, green=238, blue=34; hex=77ee22; rarely used.
+velvet; red=121, green=32, blue=146; hex=792092; rarely used.
+mud brown; red=121, green=76, blue=19; hex=794c13; rarely used.
+aubergine; red=122, green=27, blue=112; hex=7a1b70; less commonly used.
+brownish green; red=122, green=132, blue=11; hex=7a840b; rarely used.
+green brown; red=122, green=132, blue=21; hex=7a8415; rarely used.
+grey; red=122, green=142, blue=148; hex=7a8e94; widely used.
+medium grey; red=123, green=153, blue=174; hex=7b99ae; rarely used.
+light aqua; red=125, green=251, blue=227; hex=7dfbe3; rarely used.
+periwinkle blue; red=126, green=111, blue=243; hex=7e6ff3; less commonly used.
+gray; red=126, green=143, blue=149; hex=7e8f95; less commonly used.
+ripe grape; red=127, green=1, blue=77; hex=7f014d; rarely used.
+purple dark; red=127, green=1, blue=153; hex=7f0199; rarely used.
+auburn; red=127, green=13, blue=1; hex=7f0d01; rarely used.
+wine red; red=127, green=26, blue=26; hex=7f1a1a; rarely used.
+bordeaux; red=127, green=26, blue=127; hex=7f1a7f; rarely used.
+ultraviolet; red=127, green=26, blue=229; hex=7f1ae5; rarely used.
+deep periwinkle; red=127, green=51, blue=204; hex=7f33cc; rarely used.
+bark brown; red=127, green=76, blue=26; hex=7f4c1a; rarely used.
+clear blue sky; red=127, green=102, blue=255; hex=7f66ff; rarely used.
+dark khaki; red=127, green=114, blue=26; hex=7f721a; rarely used.
+military green; red=127, green=127, blue=38; hex=7f7f26; rarely used.
+grey brown; red=127, green=127, blue=76; hex=7f7f4c; rarely used.
+battleship grey; red=127, green=127, blue=136; hex=7f7f88; rarely used.
+grayish blue; red=127, green=153, blue=178; hex=7f99b2; rarely used.
+seaweed green; red=127, green=170, blue=68; hex=7faa44; rarely used.
+avocado; red=127, green=172, blue=43; hex=7fac2b; less commonly used.
+sea grey blue; red=127, green=178, blue=153; hex=7fb299; rarely used.
+pastel blue; red=127, green=197, blue=235; hex=7fc5eb; rarely used.
+slime; red=127, green=204, blue=9; hex=7fcc09; rarely used.
+celestial blue; red=127, green=204, blue=255; hex=7fccff; rarely used.
+green yellow; red=127, green=226, blue=46; hex=7fe22e; less commonly used.
+easter green; red=127, green=229, blue=153; hex=7fe599; both rarely used.
+light sea green; red=127, green=229, blue=153; hex=7fe599; both rarely used.
+pale teal; red=127, green=229, blue=204; hex=7fe5cc; rarely used.
+pistachio; red=127, green=239, blue=118; hex=7fef76; less commonly used.
+kiwi; red=127, green=246, blue=123; hex=7ff67b; rarely used.
+green light; red=127, green=255, blue=102; hex=7fff66; rarely used.
+kiwi green; red=127, green=255, blue=114; hex=7fff72; rarely used.
+lime sherbet; red=127, green=255, blue=178; hex=7fffb2; rarely used.
+pale turquoise; red=127, green=255, blue=204; hex=7fffcc; rarely used.
+light aqua blue; red=127, green=255, blue=255; hex=7fffff; both rarely used.
+watery blue; red=127, green=255, blue=255; hex=7fffff; both rarely used.
+periwinkle; red=128, green=119, blue=231; hex=8077e7; widely used.
+mahogany; red=130, green=62, blue=40; hex=823e28; rarely used.
+chestnut; red=131, green=22, blue=1; hex=831601; rarely used.
+baby green; red=132, green=224, blue=122; hex=84e07a; rarely used.
+mud; red=134, green=94, blue=43; hex=865e2b; rarely used.
+plum; red=135, green=44, blue=130; hex=872c82; less commonly used.
+powder blue; red=135, green=177, blue=241; hex=87b1f1; less commonly used.
+rust brown; red=136, green=17, blue=17; hex=881111; rarely used.
+deep violet; red=136, green=17, blue=136; hex=881188; rarely used.
+chestnut brown; red=136, green=34, blue=1; hex=882201; rarely used.
+raw sienna; red=136, green=68, blue=34; hex=884422; rarely used.
+sepia; red=136, green=85, blue=17; hex=885511; rarely used.
+muddy green; red=136, green=136, blue=17; hex=888811; rarely used.
+greenish grey; red=136, green=136, blue=102; hex=888866; rarely used.
+slate grey; red=136, green=144, blue=161; hex=8890a1; rarely used.
+pea green; red=136, green=192, blue=57; hex=88c039; less commonly used.
+off green; red=136, green=204, blue=51; hex=88cc33; rarely used.
+brown; red=137, green=76, blue=36; hex=894c24; widely used.
+seaweed; red=137, green=178, blue=81; hex=89b251; rarely used.
+heather; red=138, green=116, blue=182; hex=8a74b6; rarely used.
+pale green; red=138, green=228, blue=146; hex=8ae492; less commonly used.
+brownish red; red=140, green=13, blue=38; hex=8c0d26; rarely used.
+burgundy; red=140, green=25, blue=50; hex=8c1932; widely used.
+maroon; red=140, green=28, blue=61; hex=8c1c3d; widely used.
+wine; red=140, green=32, blue=92; hex=8c205c; less commonly used.
+deep lilac; red=140, green=63, blue=178; hex=8c3fb2; rarely used.
+deep lavender; red=140, green=89, blue=191; hex=8c59bf; rarely used.
+greenish brown; red=140, green=127, blue=38; hex=8c7f26; rarely used.
+faded green; red=140, green=208, blue=89; hex=8cd059; rarely used.
+earth; red=141, green=82, blue=31; hex=8d521f; rarely used.
+merlot; red=142, green=31, blue=102; hex=8e1f66; rarely used.
+mocha; red=142, green=69, blue=47; hex=8e452f; less commonly used.
+medium gray; red=142, green=153, blue=163; hex=8e99a3; rarely used.
+yellowish green; red=142, green=217, blue=62; hex=8ed93e; less commonly used.
+light cyan; red=142, green=255, blue=247; hex=8efff7; less commonly used.
+khaki; red=143, green=150, blue=69; hex=8f9645; less commonly used.
+iris; red=144, green=26, blue=221; hex=901add; rarely used.
+grape; red=144, green=48, blue=147; hex=903093; less commonly used.
+military; red=144, green=153, blue=59; hex=90993b; rarely used.
+avocado green; red=145, green=167, blue=22; hex=91a716; rarely used.
+purple; red=147, green=48, blue=188; hex=9330bc; widely used.
+coffee; red=148, green=102, blue=47; hex=94662f; rarely used.
+yellow green; red=150, green=220, blue=48; hex=96dc30; widely used.
+dirt; red=151, green=131, blue=74; hex=97834a; rarely used.
+violet; red=152, green=59, blue=205; hex=983bcd; widely used.
+warm brown; red=153, green=1, blue=1; hex=990101; rarely used.
+cranberry; red=153, green=10, blue=74; hex=990a4a; rarely used.
+firebrick; red=153, green=26, blue=1; hex=991a01; rarely used.
+fire red; red=153, green=26, blue=26; hex=991a1a; rarely used.
+root beer; red=153, green=26, blue=102; hex=991a66; rarely used.
+royal violet; red=153, green=26, blue=204; hex=991acc; rarely used.
+grandma; red=153, green=26, blue=255; hex=991aff; rarely used.
+rusty brown; red=153, green=34, blue=17; hex=992211; rarely used.
+indian red; red=153, green=34, blue=51; hex=992233; rarely used.
+vibrant purple; red=153, green=34, blue=204; hex=9922cc; rarely used.
+dark brick; red=153, green=51, blue=68; hex=993344; rarely used.
+bruised purple; red=153, green=51, blue=102; hex=993366; rarely used.
+purple maroon; red=153, green=51, blue=102; hex=993366; rarely used.
+grape purple; red=153, green=51, blue=110; hex=99336e; rarely used.
+dusky purple; red=153, green=51, blue=153; hex=993399; rarely used.
+purple passion; red=153, green=51, blue=204; hex=9933cc; rarely used.
+amethyst; red=153, green=51, blue=229; hex=9933e5; rarely used.
+red brown; red=153, green=60, blue=39; hex=993c27; less commonly used.
+light grape; red=153, green=68, blue=204; hex=9944cc; rarely used.
+deep rust; red=153, green=76, blue=76; hex=994c4c; rarely used.
+purple mountain majesty; red=153, green=76, blue=229; hex=994ce5; rarely used.
+coffee brown; red=153, green=85, blue=51; hex=995533; rarely used.
+milk chocolate; red=153, green=93, blue=51; hex=995d33; rarely used.
+cocoa; red=153, green=102, blue=51; hex=996633; rarely used.
+toffee; red=153, green=102, blue=68; hex=996644; rarely used.
+dull purple; red=153, green=102, blue=170; hex=9966aa; rarely used.
+plum violet; red=153, green=102, blue=204; hex=9966cc; rarely used.
+concord grape; red=153, green=127, blue=204; hex=997fcc; rarely used.
+primrose; red=153, green=144, blue=204; hex=9990cc; rarely used.
+khaki green; red=153, green=153, blue=58; hex=99993a; rarely used.
+yellowish brown; red=153, green=153, blue=76; hex=99994c; rarely used.
+putty; red=153, green=153, blue=85; hex=999955; rarely used.
+warm gray; red=153, green=153, blue=127; hex=99997f; rarely used.
+soft lavender; red=153, green=153, blue=229; hex=9999e5; rarely used.
+cool gray; red=153, green=153, blue=153; hex=999999; rarely used.
+baby purple; red=153, green=153, blue=255; hex=9999ff; rarely used.
+pewter; red=153, green=170, blue=187; hex=99aabb; rarely used.
+pale olive green; red=153, green=178, blue=26; hex=99b21a; rarely used.
+beige green; red=153, green=178, blue=127; hex=99b27f; rarely used.
+bright olive green; red=153, green=204, blue=26; hex=99cc1a; rarely used.
+yellow lime; red=153, green=204, blue=26; hex=99cc1a; rarely used.
+chartreuse; red=153, green=227, blue=38; hex=99e326; less commonly used.
+spring grass; red=153, green=229, blue=102; hex=99e566; rarely used.
+icy green; red=153, green=229, blue=110; hex=99e56e; rarely used.
+pistachio green; red=153, green=229, blue=127; hex=99e57f; rarely used.
+salad; red=153, green=255, blue=1; hex=99ff01; rarely used.
+light neon green; red=153, green=255, blue=51; hex=99ff33; rarely used.
+new grass; red=153, green=255, blue=76; hex=99ff4c; rarely used.
+light mint green; red=153, green=255, blue=204; hex=99ffcc; rarely used.
+lemon lime; red=155, green=228, blue=72; hex=9be448; less commonly used.
+reddish brown; red=156, green=51, blue=33; hex=9c3321; less commonly used.
+medium brown; red=157, green=97, blue=42; hex=9d612a; less commonly used.
+duck egg blue; red=158, green=238, blue=238; hex=9eeeee; rarely used.
+light lime green; red=158, green=255, blue=96; hex=9eff60; rarely used.
+ice; red=159, green=172, blue=129; hex=9fac81; rarely used.
+light olive; red=159, green=204, blue=45; hex=9fcc2d; rarely used.
+mulberry; red=160, green=22, blue=109; hex=a0166d; rarely used.
+dark mauve; red=160, green=94, blue=153; hex=a05e99; rarely used.
+bronze; red=160, green=116, blue=15; hex=a0740f; rarely used.
+medium purple; red=161, green=59, blue=204; hex=a13bcc; rarely used.
+dark gold; red=161, green=127, blue=26; hex=a17f1a; rarely used.
+dark lilac; red=163, green=41, blue=224; hex=a329e0; rarely used.
+indian; red=163, green=51, blue=61; hex=a3333d; rarely used.
+pale olive; red=163, green=183, blue=71; hex=a3b747; rarely used.
+light olive green; red=163, green=214, blue=61; hex=a3d63d; rarely used.
+rust red; red=165, green=13, blue=13; hex=a50d0d; rarely used.
+purple haze; red=165, green=89, blue=204; hex=a559cc; rarely used.
+pea soup; red=165, green=178, blue=70; hex=a5b246; rarely used.
+light lime; red=165, green=251, blue=105; hex=a5fb69; rarely used.
+berry; red=167, green=44, blue=130; hex=a72c82; rarely used.
+purple red; red=167, green=44, blue=160; hex=a72ca0; rarely used.
+red brick; red=170, green=51, blue=17; hex=aa3311; rarely used.
+reddish purple; red=170, green=51, blue=170; hex=aa33aa; rarely used.
+muddy brown; red=170, green=119, blue=34; hex=aa7722; rarely used.
+dark sand; red=170, green=136, blue=68; hex=aa8844; rarely used.
+drab olive; red=170, green=170, blue=102; hex=aaaa66; rarely used.
+ice blue; red=170, green=212, blue=229; hex=aad4e5; rarely used.
+sweet pea; red=170, green=221, blue=85; hex=aadd55; rarely used.
+pastel lime; red=170, green=255, blue=136; hex=aaff88; rarely used.
+brick; red=171, green=38, blue=32; hex=ab2620; less commonly used.
+puce; red=171, green=134, blue=55; hex=ab8637; less commonly used.
+taupe; red=171, green=147, blue=113; hex=ab9371; less commonly used.
+umber; red=172, green=116, blue=45; hex=ac742d; rarely used.
+russet; red=173, green=81, blue=51; hex=ad5133; rarely used.
+dirt brown; red=173, green=91, blue=71; hex=ad5b47; rarely used.
+pink purple; red=173, green=92, blue=142; hex=ad5c8e; rarely used.
+lemon green; red=173, green=255, blue=41; hex=adff29; rarely used.
+bright purple; red=174, green=45, blue=227; hex=ae2de3; less commonly used.
+red violet; red=175, green=16, blue=164; hex=af10a4; rarely used.
+blood red; red=175, green=17, blue=28; hex=af111c; rarely used.
+dark red; red=175, green=19, blue=43; hex=af132b; less commonly used.
+brick red; red=175, green=34, blue=28; hex=af221c; less commonly used.
+magenta purple; red=178, green=1, blue=178; hex=b201b2; rarely used.
+blood; red=178, green=26, blue=41; hex=b21a29; rarely used.
+light plum; red=178, green=26, blue=102; hex=b21a66; rarely used.
+dark magenta; red=178, green=26, blue=156; hex=b21a9c; less commonly used.
+hot purple; red=178, green=26, blue=229; hex=b21ae5; rarely used.
+vivid violet; red=178, green=26, blue=255; hex=b21aff; rarely used.
+burnt red; red=178, green=38, blue=19; hex=b22613; rarely used.
+bright lavender; red=178, green=43, blue=238; hex=b22bee; rarely used.
+purple pride; red=178, green=51, blue=204; hex=b233cc; rarely used.
+electric purple; red=178, green=59, blue=221; hex=b23bdd; rarely used.
+cinnamon brown; red=178, green=76, blue=26; hex=b24c1a; rarely used.
+brick brown; red=178, green=76, blue=102; hex=b24c66; rarely used.
+wisteria; red=178, green=76, blue=204; hex=b24ccc; rarely used.
+pale red; red=178, green=77, blue=102; hex=b24d66; rarely used.
+sienna; red=178, green=82, blue=29; hex=b2521d; less commonly used.
+light purple; red=178, green=95, blue=220; hex=b25fdc; less commonly used.
+purplish brown; red=178, green=127, blue=127; hex=b27f7f; rarely used.
+dark beige; red=178, green=153, blue=102; hex=b29966; rarely used.
+icy blue; red=178, green=229, blue=229; hex=b2e5e5; rarely used.
+pale lime green; red=178, green=255, blue=102; hex=b2ff66; rarely used.
+green mist; red=178, green=255, blue=178; hex=b2ffb2; rarely used.
+light brown; red=179, green=120, blue=57; hex=b37839; less commonly used.
+cinnamon; red=180, green=69, blue=46; hex=b4452e; rarely used.
+mauve; red=180, green=95, blue=160; hex=b45fa0; widely used.
+silver; red=180, green=190, blue=176; hex=b4beb0; rarely used.
+rust; red=181, green=64, blue=32; hex=b54020; less commonly used.
+golden brown; red=181, green=127, blue=26; hex=b57f1a; rarely used.
+dark yellow; red=181, green=184, blue=32; hex=b5b820; less commonly used.
+burnt umber; red=182, green=65, blue=51; hex=b64133; rarely used.
+copper; red=182, green=80, blue=8; hex=b65008; rarely used.
+lavender; red=182, green=119, blue=224; hex=b677e0; widely used.
+bright violet; red=183, green=41, blue=244; hex=b729f4; less commonly used.
+camel; red=183, green=127, blue=76; hex=b77f4c; rarely used.
+happy; red=183, green=132, blue=163; hex=b784a3; rarely used.
+clay; red=184, green=114, blue=79; hex=b8724f; rarely used.
+lilac; red=186, green=119, blue=226; hex=ba77e2; widely used.
+dark fuchsia; red=187, green=17, blue=136; hex=bb1188; rarely used.
+deep rose; red=187, green=34, blue=102; hex=bb2266; rarely used.
+muted fuchsia; red=187, green=51, blue=153; hex=bb3399; rarely used.
+dark cream; red=187, green=170, blue=153; hex=bbaa99; rarely used.
+pale lavender; red=187, green=187, blue=238; hex=bbbbee; rarely used.
+lemongrass; red=187, green=204, blue=68; hex=bbcc44; rarely used.
+lime ice; red=187, green=238, blue=85; hex=bbee55; rarely used.
+caramel; red=188, green=122, blue=61; hex=bc7a3d; rarely used.
+paprika; red=191, green=38, blue=26; hex=bf261a; rarely used.
+yellow brown; red=191, green=153, blue=38; hex=bf9926; rarely used.
+celery; red=191, green=242, blue=114; hex=bff272; rarely used.
+burnt sienna; red=192, green=86, blue=31; hex=c0561f; less commonly used.
+deep red; red=193, green=21, blue=21; hex=c11515; rarely used.
+crimson; red=193, green=24, blue=68; hex=c11844; less commonly used.
+light violet; red=193, green=115, blue=221; hex=c173dd; less commonly used.
+pale purple; red=193, green=122, blue=224; hex=c17ae0; rarely used.
+neon purple; red=195, green=42, blue=255; hex=c32aff; rarely used.
+pea; red=195, green=180, blue=100; hex=c3b464; rarely used.
+dark tan; red=196, green=145, blue=73; hex=c49149; rarely used.
+fruit punch; red=229, green=26, blue=51; hex=e51a33; rarely used.
+light grey; red=197, green=197, blue=197; hex=c5c5c5; less commonly used.
+greenish yellow; red=199, green=219, blue=37; hex=c7db25; less commonly used.
+apple red; red=232, green=12, blue=34; hex=e80c22; rarely used.
+light gray; red=200, green=204, blue=198; hex=c8ccc6; rarely used.
+orchid; red=201, green=102, blue=212; hex=c966d4; less commonly used.
+deep magenta; red=204, green=1, blue=119; hex=cc0177; rarely used.
+violet red; red=204, green=1, blue=127; hex=cc017f; rarely used.
+fluorescent purple; red=204, green=1, blue=229; hex=cc01e5; rarely used.
+crimson red; red=204, green=17, blue=34; hex=cc1122; rarely used.
+mardi gras purple; red=204, green=17, blue=255; hex=cc11ff; rarely used.
+violent violet; red=204, green=26, blue=255; hex=cc1aff; rarely used.
+light crimson; red=204, green=38, blue=127; hex=cc267f; rarely used.
+muddy red; red=204, green=51, blue=51; hex=cc3333; rarely used.
+rusty red; red=204, green=51, blue=102; hex=cc3366; rarely used.
+barn red; red=204, green=64, blue=51; hex=cc4033; rarely used.
+scarlet red; red=204, green=68, blue=85; hex=cc4455; rarely used.
+light burgundy; red=204, green=68, blue=119; hex=cc4477; rarely used.
+vivid purple; red=204, green=76, blue=255; hex=cc4cff; rarely used.
+pinkish purple; red=204, green=89, blue=165; hex=cc59a5; rarely used.
+pumpkin pie; red=204, green=102, blue=26; hex=cc661a; rarely used.
+burnt amber; red=204, green=102, blue=34; hex=cc6622; rarely used.
+hippy purple; red=204, green=102, blue=204; hex=cc66cc; rarely used.
+old rose; red=204, green=102, blue=127; hex=cc667f; rarely used.
+orangish brown; red=204, green=119, blue=17; hex=cc7711; rarely used.
+light chocolate; red=204, green=127, blue=51; hex=cc7f33; rarely used.
+tawny; red=204, green=127, blue=59; hex=cc7f3b; rarely used.
+pastel purple; red=204, green=131, blue=240; hex=cc83f0; rarely used.
+sand brown; red=204, green=153, blue=43; hex=cc992b; rarely used.
+dusky pink; red=204, green=153, blue=153; hex=cc9999; rarely used.
+yellow ochre; red=204, green=170, blue=43; hex=ccaa2b; rarely used.
+light lavender; red=204, green=174, blue=255; hex=ccaeff; rarely used.
+old gold; red=204, green=178, blue=76; hex=ccb24c; rarely used.
+pastel lilac; red=204, green=178, blue=255; hex=ccb2ff; rarely used.
+dijon; red=204, green=187, blue=34; hex=ccbb22; rarely used.
+mustard seed yellow; red=204, green=204, blue=1; hex=cccc01; rarely used.
+sophisticated yuk; red=204, green=204, blue=77; hex=cccc4d; rarely used.
+pea soup green; red=204, green=204, blue=85; hex=cccc55; rarely used.
+light beige; red=204, green=204, blue=119; hex=cccc77; rarely used.
+silver grey; red=204, green=204, blue=204; hex=cccccc; rarely used.
+neon yellow; red=204, green=255, blue=21; hex=ccff15; rarely used.
+light baby blue; red=204, green=255, blue=255; hex=ccffff; rarely used.
+raspberry; red=205, green=46, blue=122; hex=cd2e7a; less commonly used.
+brownish orange; red=206, green=102, blue=22; hex=ce6616; rarely used.
+dusty rose; red=206, green=117, blue=139; hex=ce758b; less commonly used.
+tan; red=209, green=156, blue=82; hex=d19c52; widely used.
+ochre; red=209, green=163, blue=41; hex=d1a329; less commonly used.
+fawn; red=209, green=170, blue=119; hex=d1aa77; rarely used.
+purple pink; red=211, green=80, blue=211; hex=d350d3; rarely used.
+rouge; red=212, green=34, blue=51; hex=d42233; rarely used.
+orange brown; red=212, green=119, blue=26; hex=d4771a; rarely used.
+mustard; red=212, green=185, blue=39; hex=d4b927; less commonly used.
+terracotta; red=213, green=96, blue=60; hex=d5603c; less commonly used.
+beige; red=213, green=195, blue=131; hex=d5c383; less commonly used.
+lemon; red=213, green=241, blue=75; hex=d5f14b; less commonly used.
+cherry; red=214, green=28, blue=48; hex=d61c30; rarely used.
+dark orange; red=214, green=98, blue=25; hex=d66219; less commonly used.
+burnt orange; red=214, green=103, blue=21; hex=d66715; less commonly used.
+bright lilac; red=214, green=112, blue=255; hex=d670ff; rarely used.
+light mauve; red=214, green=146, blue=156; hex=d6929c; rarely used.
+sand; red=214, green=181, blue=95; hex=d6b55f; less commonly used.
+amber; red=215, green=147, blue=40; hex=d79328; rarely used.
+princess; red=216, green=26, blue=140; hex=d81a8c; rarely used.
+red; red=216, green=35, blue=44; hex=d8232c; widely used.
+adobe; red=216, green=115, blue=89; hex=d87359; rarely used.
+bittersweet; red=216, green=127, blue=13; hex=d87f0d; rarely used.
+harvest gold; red=216, green=191, blue=63; hex=d8bf3f; rarely used.
+wheat; red=216, green=216, blue=114; hex=d8d872; rarely used.
+gold; red=217, green=179, blue=36; hex=d9b324; less commonly used.
+melon; red=218, green=131, blue=115; hex=da8373; rarely used.
+magenta; red=219, green=33, blue=173; hex=db21ad; widely used.
+dark pink; red=220, green=61, blue=150; hex=dc3d96; less commonly used.
+spice; red=221, green=34, blue=17; hex=dd2211; rarely used.
+ruby red; red=221, green=34, blue=51; hex=dd2233; rarely used.
+dull red; red=221, green=51, blue=85; hex=dd3355; rarely used.
+purplish pink; red=221, green=68, blue=187; hex=dd44bb; rarely used.
+dull magenta; red=221, green=85, blue=170; hex=dd55aa; rarely used.
+rose; red=221, green=99, blue=152; hex=dd6398; less commonly used.
+rustic; red=221, green=119, blue=17; hex=dd7711; rarely used.
+orange yellow; red=221, green=153, blue=1; hex=dd9901; rarely used.
+yellow; red=221, green=232, blue=64; hex=dde840; widely used.
+mustard yellow; red=223, green=193, blue=42; hex=dfc12a; less commonly used.
+dark rose; red=224, green=61, blue=173; hex=e03dad; rarely used.
+pinkish; red=225, green=94, blue=155; hex=e15e9b; rarely used.
+cream; red=225, green=220, blue=170; hex=e1dcaa; less commonly used.
+cherry red; red=226, green=17, blue=6; hex=e21106; rarely used.
+butterscotch; red=226, green=175, blue=56; hex=e2af38; rarely used.
+lips; red=227, green=33, blue=83; hex=e32153; rarely used.
+coral red; red=229, green=26, blue=76; hex=e51a4c; rarely used.
+rose red; red=229, green=26, blue=102; hex=e51a66; rarely used.
+soft red; red=229, green=26, blue=102; hex=e51a66; rarely used.
+deep pink; red=229, green=44, blue=133; hex=e52c85; rarely used.
+faded red; red=229, green=51, blue=102; hex=e53366; rarely used.
+reddish pink; red=229, green=76, blue=153; hex=e54c99; rarely used.
+lighter purple; red=229, green=76, blue=204; hex=e54ccc; rarely used.
+hazy pink; red=229, green=102, blue=178; hex=e566b2; rarely used.
+strawberry pink; red=229, green=127, blue=153; hex=e57f99; rarely used.
+old pink; red=229, green=127, blue=204; hex=e57fcc; rarely used.
+pale rose; red=229, green=127, blue=204; hex=e57fcc; rarely used.
+dusty pink; red=229, green=146, blue=172; hex=e592ac; rarely used.
+blush; red=229, green=147, blue=173; hex=e593ad; rarely used.
+honey mustard; red=229, green=178, blue=26; hex=e5b21a; rarely used.
+nude; red=229, green=178, blue=146; hex=e5b292; rarely used.
+lavender pink; red=229, green=178, blue=204; hex=e5b2cc; rarely used.
+buff; red=229, green=191, blue=140; hex=e5bf8c; rarely used.
+light mustard; red=229, green=204, blue=102; hex=e5cc66; rarely used.
+dirty yellow; red=229, green=229, blue=77; hex=e5e54d; rarely used.
+sand stone; red=229, green=229, blue=178; hex=e5e5b2; rarely used.
+hot yellow; red=229, green=255, blue=51; hex=e5ff33; rarely used.
+fuchsia; red=230, green=44, blue=189; hex=e62cbd; widely used.
+cerise; red=231, green=43, blue=160; hex=e72ba0; less commonly used.
+orangish red; red=231, green=63, blue=26; hex=e73f1a; rarely used.
+skin; red=232, green=169, blue=130; hex=e8a982; rarely used.
+fire engine red; red=233, green=36, blue=29; hex=e9241d; rarely used.
+scarlet; red=233, green=38, blue=75; hex=e9264b; less commonly used.
+maize; red=233, green=182, blue=51; hex=e9b633; rarely used.
+golden; red=233, green=187, blue=36; hex=e9bb24; rarely used.
+candy apple red; red=234, green=11, blue=41; hex=ea0b29; rarely used.
+lipstick red; red=234, green=21, blue=71; hex=ea1547; rarely used.
+fluorescent pink; red=234, green=51, blue=163; hex=ea33a3; rarely used.
+watermelon; red=234, green=81, blue=105; hex=ea5169; less commonly used.
+orange red; red=237, green=66, blue=23; hex=ed4217; less commonly used.
+rose pink; red=237, green=86, blue=160; hex=ed56a0; less commonly used.
+electric pink; red=238, green=1, blue=170; hex=ee01aa; rarely used.
+rust orange; red=238, green=102, blue=1; hex=ee6601; rarely used.
+dull orange; red=238, green=136, blue=17; hex=ee8811; rarely used.
+pumpkin; red=238, green=138, blue=33; hex=ee8a21; less commonly used.
+saffron; red=238, green=170, blue=17; hex=eeaa11; rarely used.
+dirty orange; red=238, green=170, blue=68; hex=eeaa44; rarely used.
+skin tone; red=238, green=187, blue=153; hex=eebb99; rarely used.
+eggshell; red=238, green=246, blue=195; hex=eef6c3; rarely used.
+light red; red=239, green=61, blue=71; hex=ef3d47; rarely used.
+fuchsia pink; red=240, green=51, blue=211; hex=f033d3; rarely used.
+pumpkin orange; red=240, green=145, blue=29; hex=f0911d; rarely used.
+orange; red=241, green=120, blue=32; hex=f17820; widely used.
+canary; red=241, green=248, blue=74; hex=f1f84a; rarely used.
+bright magenta; red=242, green=13, blue=216; hex=f20dd8; rarely used.
+carmine; red=242, green=38, blue=89; hex=f22659; rarely used.
+thistle; red=242, green=165, blue=229; hex=f2a5e5; rarely used.
+marigold; red=242, green=191, blue=51; hex=f2bf33; rarely used.
+bright yellow; red=242, green=247, blue=53; hex=f2f735; less commonly used.
+off white; red=242, green=255, blue=165; hex=f2ffa5; rarely used.
+bright red; red=243, green=23, blue=45; hex=f3172d; less commonly used.
+flesh; red=243, green=183, blue=145; hex=f3b791; less commonly used.
+red pink; red=244, green=31, blue=102; hex=f41f66; rarely used.
+pinkish red; red=244, green=31, blue=112; hex=f41f70; rarely used.
+punch; red=244, green=41, blue=81; hex=f42951; rarely used.
+red orange; red=244, green=72, blue=29; hex=f4481d; less commonly used.
+pink; red=244, green=91, blue=183; hex=f45bb7; widely used.
+light magenta; red=244, green=102, blue=204; hex=f466cc; rarely used.
+goldenrod; red=244, green=194, blue=32; hex=f4c220; less commonly used.
+butter; red=244, green=228, blue=112; hex=f4e470; rarely used.
+coral; red=245, green=89, blue=99; hex=f55963; less commonly used.
+salmon; red=245, green=117, blue=118; hex=f57576; less commonly used.
+pale pink; red=247, green=184, blue=184; hex=f7b8b8; less commonly used.
+salmon pink; red=248, green=137, blue=137; hex=f88989; less commonly used.
+candy pink; red=249, green=142, blue=214; hex=f98ed6; rarely used.
+pastel pink; red=249, green=153, blue=219; hex=f999db; less commonly used.
+light orange; red=249, green=168, blue=51; hex=f9a833; less commonly used.
+white; red=249, green=253, blue=243; hex=f9fdf3; less commonly used.
+hot pink; red=250, green=39, blue=182; hex=fa27b6; widely used.
+canary yellow; red=250, green=255, blue=69; hex=faff45; less commonly used.
+light yellow; red=250, green=255, blue=145; hex=faff91; less commonly used.
+tomato; red=252, green=69, blue=35; hex=fc4523; rarely used.
+peach; red=252, green=170, blue=123; hex=fcaa7b; widely used.
+light pink; red=252, green=179, blue=211; hex=fcb3d3; less commonly used.
+lemon yellow; red=252, green=252, blue=62; hex=fcfc3e; less commonly used.
+tangerine; red=253, green=127, blue=42; hex=fd7f2a; less commonly used.
+pale yellow; red=253, green=255, blue=160; hex=fdffa0; less commonly used.
+neon red; red=255, green=1, blue=1; hex=ff0101; rarely used.
+pink red; red=255, green=1, blue=102; hex=ff0166; rarely used.
+bright fuchsia; red=255, green=1, blue=153; hex=ff0199; rarely used.
+fluorescent magenta; red=255, green=1, blue=255; hex=ff01ff; rarely used.
+neon pink; red=255, green=13, blue=191; hex=ff0dbf; rarely used.
+poppy red; red=255, green=26, blue=26; hex=ff1a1a; rarely used.
+true red; red=255, green=26, blue=38; hex=ff1a26; rarely used.
+mexican pink; red=255, green=34, blue=187; hex=ff22bb; rarely used.
+bright pink; red=255, green=35, blue=182; hex=ff23b6; less commonly used.
+shocking pink; red=255, green=38, blue=210; hex=ff26d2; rarely used.
+vermillion; red=255, green=51, blue=34; hex=ff3322; rarely used.
+pimento; red=255, green=51, blue=51; hex=ff3333; rarely used.
+reddish orange; red=255, green=51, blue=59; hex=ff333b; rarely used.
+hot red; red=255, green=61, blue=61; hex=ff3d3d; rarely used.
+tomato red; red=255, green=68, blue=34; hex=ff4422; rarely used.
+pretty pink; red=255, green=77, blue=204; hex=ff4dcc; rarely used.
+bubblegum; red=255, green=93, blue=178; hex=ff5db2; rarely used.
+deep orange; red=255, green=102, blue=1; hex=ff6601; rarely used.
+grapefruit; red=255, green=102, blue=119; hex=ff6677; rarely used.
+coral pink; red=255, green=102, blue=127; hex=ff667f; rarely used.
+dull pink; red=255, green=102, blue=178; hex=ff66b2; rarely used.
+flamingo pink; red=255, green=102, blue=187; hex=ff66bb; rarely used.
+bubblegum pink; red=255, green=102, blue=191; hex=ff66bf; rarely used.
+bubble gum; red=255, green=119, blue=212; hex=ff77d4; rarely used.
+bubble gum pink; red=255, green=122, blue=214; hex=ff7ad6; rarely used.
+tangerine orange; red=255, green=127, blue=26; hex=ff7f1a; rarely used.
+orange juice; red=255, green=127, blue=51; hex=ff7f33; rarely used.
+persimmon; red=255, green=127, blue=76; hex=ff7f4c; rarely used.
+dark peach; red=255, green=127, blue=89; hex=ff7f59; rarely used.
+mandarin; red=255, green=153, blue=1; hex=ff9901; rarely used.
+sunburst; red=255, green=153, blue=51; hex=ff9933; rarely used.
+melon orange; red=255, green=153, blue=76; hex=ff994c; rarely used.
+carnation pink; red=255, green=153, blue=204; hex=ff99cc; rarely used.
+cotton candy; red=255, green=158, blue=229; hex=ff9ee5; rarely used.
+cotton candy pink; red=255, green=161, blue=238; hex=ffa1ee; rarely used.
+mango; red=255, green=164, blue=57; hex=ffa439; rarely used.
+bisque; red=255, green=165, blue=114; hex=ffa572; rarely used.
+apricot; red=255, green=168, blue=99; hex=ffa863; less commonly used.
+pale orange; red=255, green=170, blue=102; hex=ffaa66; rarely used.
+baby pink; red=255, green=173, blue=204; hex=ffadcc; rarely used.
+medium pink; red=255, green=178, blue=178; hex=ffb2b2; rarely used.
+soft pink; red=255, green=187, blue=221; hex=ffbbdd; rarely used.
+flesh pink; red=255, green=191, blue=140; hex=ffbf8c; rarely used.
+yellow orange; red=255, green=198, blue=41; hex=ffc629; less commonly used.
+baby doll pink; red=255, green=204, blue=204; hex=ffcccc; rarely used.
+pink lemonade; red=255, green=204, blue=204; hex=ffcccc; rarely used.
+golden yellow; red=255, green=209, blue=56; hex=ffd138; less commonly used.
+sunflower yellow; red=255, green=221, blue=34; hex=ffdd22; rarely used.
+sand yellow; red=255, green=221, blue=102; hex=ffdd66; rarely used.
+creme; red=255, green=221, blue=136; hex=ffdd88; rarely used.
+sunflower; red=255, green=223, blue=32; hex=ffdf20; rarely used.
+buttercup yellow; red=255, green=229, blue=51; hex=ffe533; rarely used.
+banana yellow; red=255, green=229, blue=64; hex=ffe540; rarely used.
+medium yellow; red=255, green=229, blue=76; hex=ffe54c; rarely used.
+true yellow; red=255, green=229, blue=76; hex=ffe54c; rarely used.
+egg yolk yellow; red=255, green=229, blue=77; hex=ffe54d; rarely used.
+baby yellow; red=255, green=229, blue=127; hex=ffe57f; rarely used.
+flesh color; red=255, green=229, blue=178; hex=ffe5b2; rarely used.
+banana; red=255, green=234, blue=66; hex=ffea42; rarely used.
+sunny yellow; red=255, green=238, blue=51; hex=ffee33; rarely used.
+buttercup; red=255, green=246, blue=102; hex=fff666; rarely used.
+daffodil; red=255, green=255, blue=119; hex=ffff77; rarely used.
+lemon chiffon; red=255, green=255, blue=127; hex=ffff7f; rarely used.
+butter yellow; red=255, green=255, blue=145; hex=ffff91; rarely used.
+buttercream; red=255, green=255, blue=153; hex=ffff99; rarely used.
+buttermilk; red=255, green=255, blue=153; hex=ffff99; rarely used.
+soft yellow; red=255, green=255, blue=153; hex=ffff99; rarely used.
+pastel yellow; red=255, green=255, blue=165; hex=ffffa5; rarely used.
+vanilla; red=255, green=246, blue=170; hex=fff6aa; rarely used.
+sunshine yellow; red=255, green=249, blue=46; hex=fff92e; less commonly used.
+sunshine; red=255, green=251, blue=73; hex=fffb49; rarely used.
+ivory; red=255, green=255, blue=196; hex=ffffc4; rarely used.
+buff yellow; red=255, green=255, blue=204; hex=ffffcc; rarely used.
+transparent; red=255, green=255, blue=255; hex=ffffff; rarely used.
