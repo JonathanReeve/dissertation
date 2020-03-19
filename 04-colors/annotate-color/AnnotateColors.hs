@@ -1,3 +1,4 @@
+module AnnotateColors where
 
 -- import Main
 import qualified Data.Text as T
@@ -9,6 +10,7 @@ import Lucid
 import Data.Either
 
 import Types
+import CategorizeColor
 
 -- * Annotate color words in text, using HTML
 annotate :: ColorMap -> [ColorOrNot] -> T.Text

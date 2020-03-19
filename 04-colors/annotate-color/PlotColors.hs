@@ -1,17 +1,13 @@
+module PlotColors where
 
 import Graphics.Plotly
 import Graphics.Plotly.Lucid
 import Lens.Micro
 import Lucid
 
+import Types
 
 -- | Just some useful type aliases here
-type ColorWord = T.Text
-type Hex = T.Text
-type Parent = T.Text -- Category
-type ColorMap = M.Map ColorWord Hex
-
-data ColorStats = ColorStatsMap deriving (Generic, ToJSON, FromJSON)
 
 plotlyChart :: (ColorStatsMap -> [Trace]) -> [ColorStatsMap] -> T.Text -> Html ()
 plotlyChart tracesFn colorData divName = mapM_ makeChart colorData where

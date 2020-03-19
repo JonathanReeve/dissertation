@@ -1,6 +1,12 @@
 -- import Main
 
-import qualified Data.Text as T 
+module FindColors where
+
+import qualified Data.Text as T
+import Data.Attoparsec.Text as AT
+import Replace.Attoparsec.Text
+import Control.Applicative ((<|>), empty)
+import Data.Char (isPunctuation)
 
 import Types
 

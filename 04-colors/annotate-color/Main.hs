@@ -1,6 +1,4 @@
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE DeriveAnyClass #-}
-{-# LANGUAGE DeriveGeneric #-}
 
 -- AnnotateColor: a module and CLI for
 -- extracting color word data from text.
@@ -11,17 +9,13 @@
 module Main where
 
 import Codec.Text.Detect (detectEncoding)
-import Control.Applicative ((<|>), empty)
 import Control.Monad (forM_)
-import Data.Aeson
 import Data.Attoparsec.Text as AT
-import Data.Char
 import Data.Function (on)
 import Data.List (intersperse, sort, sortBy, sortOn, minimumBy)
 import Data.Ord (comparing)
 import Data.Maybe
-import GHC.Generics
-import Options.Generic
+import Options.Generic -- Command-line
 import System.FilePath
 import qualified Clay as C
 import qualified Data.ByteString as B
@@ -42,10 +36,7 @@ import Graphics.Color.Adaptation
 import Graphics.Color.Model
 
 import qualified ColorMaps as CM
-
--- import Frames
--- import Frames.CSV (readTableOpt, rowGen, RowGen(..))
-
+import FindColors
 
 -- | Make a standard HTML page from the results,
 -- by scaffolding it with an HTML template.
@@ -77,16 +68,10 @@ css = "div.annotated" C.? do
          C.backgroundColor "#555"
          C.color "#ddd"
 
-
--- -- | Make parent data for feeding to mkHBarTraces
--- -- mkParentData ::
--- mkParentData colorData colorMap = 
-
 -- | CLI to annotate colors in text.
 -- Usage: runhaskell AnnotateColor my-text-file.txt > out.html
 main :: IO ()
 main = do
-
    -- Process color map
    let mapName = CM.name CM.xkcd
    colorMap <- CM.assoc CM.xkcd

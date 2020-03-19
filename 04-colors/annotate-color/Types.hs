@@ -1,8 +1,11 @@
+{-# LANGUAGE DeriveGeneric, DeriveAnyClass #-}
 
 module Types where
 
 import qualified Data.Text as T
 import qualified Data.Map.Strict as M
+import Data.Aeson (ToJSON, FromJSON)
+import GHC.Generics
 
 type Span = (Start, End)
 type Start = Int
@@ -21,3 +24,5 @@ type Parent = T.Text -- Category
 type ColorStatsMap = [(TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])]
 type TextName = T.Text
 type ColorMapName = T.Text
+
+data ColorStats = ColorStatsMap deriving (Generic, ToJSON, FromJSON)
