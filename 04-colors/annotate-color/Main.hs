@@ -70,6 +70,7 @@ css = "div.annotated" C.? do
 main :: IO ()
 main = do
    -- Process color map
+   let colorMapObj = CM.ridgway
    let mapName = CM.name CM.xkcd
    colorMap <- CM.assoc CM.xkcd
    -- Make Data.Map map out of it
@@ -88,20 +89,18 @@ main = do
 
    -- Parse out the colors, get their locations
    let parsed = findReplace (colorParser colorMap) inFile
+   -- Hlint suggests this the following, but I'm not so sure it's clearer.
+   -- let zipData = zipWith (curry getZipData) (getLocations parsed) parsed
    let zipData = map getZipData (zip (getLocations parsed) parsed)
    -- let onlyMatches = map fromJust $ filter isJust zipData
-   -- let zipData = zipWith (curry getZipData) (getLocations parsed) parsed
    let onlyMatches = catMaybes zipData
    let label = takeBaseName fileName
-   let stats = [makeStats (T.pack label) mapName (listToMap onlyMatches) colorMapMap]
+   let stats = [makeStats (T.pack label) (CM.name colorMapObj) (listToMap onlyMatches) colorMapMap]
    print stats
 
    let outFileName = label ++ "-bar.html"
-   -- [stats] for now, since we're making room for more of these later
    renderToFile outFileName $ scaffold $ do
-     let childTraces = mkHBarTraces stats
-     let parentTraces = mkHBarParentTraces colorMapMap stats
-     let traces = childTraces ++ parentTraces
+     let traces = (mkHBarTraces stats) ++ (mkHBarParentTraces colorMapMap stats)
      let annotated = annotate colorMapMap parsed
      h1_ [] "Color Words in Aggregate"
      plotlyChart' traces "div1"

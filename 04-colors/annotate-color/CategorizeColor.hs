@@ -8,12 +8,9 @@ import Data.List (sortBy, sortOn, minimumBy)
 import Data.Ord (comparing)
 
 import Data.Colour.SRGB
-import Data.Colour.CIE
+import Data.Colour.CIE (luminance, cieLABView)
 import Data.Colour.RGBSpace.HSV
-import Data.Colour.CIE
 import Data.Colour.CIE.Illuminant (d65)
-import Graphics.Color.Adaptation
-import Graphics.Color.Model
 
 import Types
 

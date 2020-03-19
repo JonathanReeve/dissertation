@@ -15,20 +15,17 @@ import Types
 
 -- | Just some useful type aliases here
 
-plotlyChart :: (ColorStatsMap -> [Trace]) -> [ColorStatsMap] -> T.Text -> Html ()
-plotlyChart tracesFn colorData divName = mapM_ makeChart colorData where
-  makeChart someData = toHtml $ plotly divName (tracesFn someData)
-                       & layout . margin ?~ thinMargins
-                       & layout . height ?~ 300
-                       & layout . width ?~ 800
-                       & layout . barmode ?~ Stack
+-- plotlyChart :: (ColorStatsMap -> [Trace]) -> [ColorStatsMap] -> T.Text -> Html ()
+-- plotlyChart tracesFn colorData divName = mapM_ makeChart colorData where
+--   makeChart someData = toHtml $ plotly divName (tracesFn someData)
+--                        & layout . margin ?~ thinMargins
+--                        & layout . height ?~ 300
+--                        & layout . width ?~ 800
+--                        & layout . barmode ?~ Stack
 
 -- | Let's do that again, but just take traces.
 plotlyChart' :: [Trace] -> T.Text -> Html ()
 plotlyChart' traces divName = toHtml $ plotly divName traces
-                              -- & layout . margin ?~ thinMargins
-                              -- & layout . height ?~ 300
-                              -- & layout . width ?~ 800
                               & layout . barmode ?~ Stack
 
 -- | Make traces from color data.
