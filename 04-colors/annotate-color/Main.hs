@@ -219,12 +219,9 @@ readColor hex = fst $ head $ sRGB24reads $ T.unpack hex
 -- \[ \Delta E_{ab}^* = \sqrt{ (L^*_2-L^*_1)^2+(a^*_2-a^*_1)^2 + (b^*_2-b^*_1)^2 } \]
 -- https://en.wikipedia.org/wiki/Color_difference
 deltaE76 :: Colour Double -> Colour Double -> Double
-deltaE76 color1 color2 = sqrt $ dL**2 + da**2 + db**2 where
+deltaE76 color1 color2 = sqrt $ (l2-l1)**2 + (a2-a1)**2 + (b2-b1)**2 where
   (l1, a1, b1) = cieLABView d65 color1
   (l2, a2, b2) = cieLABView d65 color2
-  dL = l2-l1
-  da = a2-a1
-  db = b2-b1
 
 baseColors :: [ColorWord]
 baseColors = ["black", "white", "grey", "red", "orange", "yellow", "green", "blue", "purple"]
@@ -234,9 +231,9 @@ sortColors selectionFunction colorStats = sortOn sortFunction colorStats where
   -- convert to HSL and get the hue to sort on.
   sortFunction (_, hex, _, _, _) = selectionFunction $ readColor hex
 
-plotlyChart :: (ColorStatsMap -> [Trace]) -> [ColorStatsMap] -> Html ()
-plotlyChart tracesFn colorData = mapM_ makeChart colorData where
-  makeChart someData = toHtml $ plotly "div7" (tracesFn someData)
+plotlyChart :: (ColorStatsMap -> [Trace]) -> [ColorStatsMap] -> T.Text -> Html ()
+plotlyChart tracesFn colorData divName = mapM_ makeChart colorData where
+  makeChart someData = toHtml $ plotly divName (tracesFn someData)
                        & layout . margin ?~ thinMargins
                        & layout . height ?~ 300
                        & layout . width ?~ 800
@@ -262,7 +259,8 @@ mkHBarTraces = Prelude.concatMap makeTraces where
 mkHBarParentTraces :: ColorMap -> ColorStatsMap -> [Trace]
 mkHBarParentTraces colorMap colorStatsMap = Prelude.concatMap makeTraces colorStatsMap where
   makeTraces :: (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])]) -> [Trace]
-  makeTraces (textName, colorMapName, colorData) = map (makeTrace textName) colorData' where
+  makeTraces (textName, colorMapName, colorData) = map (makeTrace textName') colorData' where
+    textName' = T.concat [textName, "-cats"]
     colorData' = map parentToColor colorData
     parentToColor (colorWord, hex, parent, n, spans) = (parent, colorMap M.! parent, "NAN", n, spans)
 
@@ -311,10 +309,9 @@ main = do
 
    let outFileName = label ++ "-bar.html"
    -- [stats] for now, since we're making room for more of these later
-   renderToFile outFileName $ plotlyScaffold $
-     mconcat [ plotlyChart mkHBarTraces [stats]
-             , plotlyChart (mkHBarParentTraces colorMapMap) [stats]
-             ]
+   renderToFile outFileName $ plotlyScaffold $ do
+     plotlyChart (mkHBarParentTraces colorMapMap) [stats] "div1"
+     plotlyChart mkHBarTraces [stats] "div2"
 
    -- Output just the data.
    -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats
