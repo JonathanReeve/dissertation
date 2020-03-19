@@ -6,6 +6,7 @@ import qualified Data.Map.Strict as M
 import qualified Data.Text as T
 import Data.List (sortBy, sortOn, minimumBy)
 import Data.Ord (comparing)
+import Data.Maybe (fromMaybe)
 
 import Data.Colour.SRGB
 import Data.Colour.CIE (luminance, cieLABView)
@@ -19,7 +20,7 @@ import Types
 categorizeColor :: Hex -> ColorMap -> ColorWord
 categorizeColor color colorMap = argMin deltas where
   -- TODO: maybe use Maybe here instead, just in case the base color isn't found in the map
-  baseColorMap = [ (baseColor, colorMap M.! baseColor) | baseColor <- baseColors ]
+  baseColorMap = [ (baseColor, fromMaybe "#ffffff" (colorMap M.!? baseColor)) | baseColor <- baseColors ]
   -- Make Colour objects for each hex
   baseColours :: [ (ColorWord, Colour Double) ]
   baseColours = map (\(cWord, cHex) -> (cWord, readColor cHex)) baseColorMap

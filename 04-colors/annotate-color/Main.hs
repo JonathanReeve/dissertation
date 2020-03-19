@@ -70,10 +70,9 @@ css = "div.annotated" C.? do
 main :: IO ()
 main = do
    -- Process color map
-   let colorMapObj = CM.ridgway
-   let mapName = CM.name CM.xkcd
-   colorMap <- CM.assoc CM.xkcd
-   -- Make Data.Map map out of it
+   let cm = CM.ridgway
+
+   colorMap <- CM.assoc cm
    let colorMapMap = M.fromList colorMap
 
    -- Parse command-line argument, and read the filename given
@@ -95,10 +94,11 @@ main = do
    -- let onlyMatches = map fromJust $ filter isJust zipData
    let onlyMatches = catMaybes zipData
    let label = takeBaseName fileName
-   let stats = [makeStats (T.pack label) (CM.name colorMapObj) (listToMap onlyMatches) colorMapMap]
+   let stats = [makeStats (T.pack label) (CM.name cm) (listToMap onlyMatches) colorMapMap]
    print stats
 
    let outFileName = label ++ "-bar.html"
+
    renderToFile outFileName $ scaffold $ do
      let traces = (mkHBarTraces stats) ++ (mkHBarParentTraces colorMapMap stats)
      let annotated = annotate colorMapMap parsed
