@@ -16,15 +16,13 @@ import Types
 -- parser which will find "light green blue" and also "light green-blue",
 -- "light green\nblue" and so on.
 wordListParser :: [T.Text] -> Parser T.Text
-wordListParser [w] = do -- One word case
-  word <- asciiCI w
-  return word
+wordListParser [w] = asciiCI w -- One word case
 wordListParser (w:ws) = do  -- Multi-word case
   a <- asciiCI w    -- single word
   b <- space <|> char '-' -- followed by a separator
   c <- wordListParser ws          -- and more words
   -- Parse to space-separated.
-  return (a `T.append` (T.singleton ' ') `T.append` c) -- singleton :: Char -> Text
+  return (a `T.append` T.singleton ' ' `T.append` c) -- singleton :: Char -> Text
 
 -- | Parse word boundaries.
 wordBoundary :: Parser Char
@@ -43,4 +41,4 @@ withBoundaries word = do
 -- generated from wordListParser.
 colorParser :: [(ColorWord, Hex)] -> Parser T.Text
 colorParser colorMap = choice $ map withBoundaries parsers where
-  parsers = map (wordListParser . T.words . fst) $ colorMap
+  parsers = map (wordListParser . T.words . fst) colorMap

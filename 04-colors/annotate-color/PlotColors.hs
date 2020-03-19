@@ -42,7 +42,7 @@ mkHBarTraces = Prelude.concatMap makeTraces where
   makeTraces (textName, colorMapName, colorData) = map (makeTrace textName) colorData
 
 mkHBarParentTraces :: ColorMap -> ColorStatsMap -> [Trace]
-mkHBarParentTraces colorMap colorStatsMap = Prelude.concatMap makeTraces colorStatsMap where
+mkHBarParentTraces colorMap = Prelude.concatMap makeTraces where
   makeTraces :: (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])]) -> [Trace]
   makeTraces (textName, colorMapName, colorData) = map (makeTrace textName') colorData' where
     textName' = T.concat [textName, "-cats"]

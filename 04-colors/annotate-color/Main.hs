@@ -88,7 +88,9 @@ main = do
 
    -- Parse out the colors, get their locations
    let parsed = findReplace (colorParser colorMap) inFile
-   let zipData = zipWith (curry getZipData) $ getLocations parsed
+   let zipData = map getZipData (zip (getLocations parsed) parsed)
+   -- let onlyMatches = map fromJust $ filter isJust zipData
+   -- let zipData = zipWith (curry getZipData) (getLocations parsed) parsed
    let onlyMatches = catMaybes zipData
    let label = takeBaseName fileName
    let stats = [makeStats (T.pack label) mapName (listToMap onlyMatches) colorMapMap]
