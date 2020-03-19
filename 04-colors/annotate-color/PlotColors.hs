@@ -1,5 +1,11 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module PlotColors where
 
+import Data.Aeson
+import qualified Data.Text as T
+import qualified Data.Map.Strict as M
+import qualified Graphics.Plotly.Base as P
 import Graphics.Plotly
 import Graphics.Plotly.Lucid
 import Lens.Micro

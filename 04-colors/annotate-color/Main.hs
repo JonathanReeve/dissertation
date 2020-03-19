@@ -12,12 +12,12 @@ import Codec.Text.Detect (detectEncoding)
 import Control.Monad (forM_)
 import Data.Attoparsec.Text as AT
 import Data.Function (on)
-import Data.List (intersperse, sort, sortBy, sortOn, minimumBy)
-import Data.Ord (comparing)
+import Data.List (intersperse, sort, sortBy, sortOn)
 import Data.Maybe
 import Options.Generic -- Command-line
 import System.FilePath
 import qualified Clay as C
+
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Lazy as BL
 import qualified Data.Map.Strict as M
@@ -25,18 +25,16 @@ import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import qualified Data.Text.IO as TIO
 import qualified Data.Text.Lazy as TL
-import qualified Graphics.Plotly.Base as P
+import Lucid
 
-import Data.Colour.SRGB
-import Data.Colour.CIE
-import Data.Colour.RGBSpace.HSV
-import Data.Colour.CIE
-import Data.Colour.CIE.Illuminant (d65)
-import Graphics.Color.Adaptation
-import Graphics.Color.Model
+import Graphics.Plotly.Lucid (plotlyCDN)
 
+-- My own modules
 import qualified ColorMaps as CM
 import FindColors
+import PlotColors
+import AnnotateColors
+
 
 -- | Make a standard HTML page from the results,
 -- by scaffolding it with an HTML template.
@@ -51,9 +49,8 @@ scaffold contents =
       link_ [ rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" ]
       link_ [ rel_ "stylesheet", href_ "https://fonts.googleapis.com/icon?family=Material+Icons" ]
     body_ $ do
-      div_ [ class_ "container" ] $ do
-        section_ [ class_ "section" ] $ do
-          contents
+      div_ [ class_ "container" ] $
+        section_ [ class_ "section" ] contents
       scripts
 
 scripts :: Html ()
@@ -91,24 +88,23 @@ main = do
 
    -- Parse out the colors, get their locations
    let parsed = findReplace (colorParser colorMap) inFile
-   let zipData = map getZipData (zip (getLocations parsed) parsed)
-   let onlyMatches = map fromJust $ filter isJust zipData
+   let zipData = zipWith (curry getZipData) $ getLocations parsed
+   let onlyMatches = catMaybes zipData
    let label = takeBaseName fileName
-   let stats = [(makeStats (T.pack label) mapName (listToMap onlyMatches) colorMapMap)]
+   let stats = [makeStats (T.pack label) mapName (listToMap onlyMatches) colorMapMap]
    print stats
 
    let outFileName = label ++ "-bar.html"
    -- [stats] for now, since we're making room for more of these later
    renderToFile outFileName $ scaffold $ do
      let childTraces = mkHBarTraces stats
-     let parentTraces = (mkHBarParentTraces colorMapMap) stats
-     let traces = concat [childTraces, parentTraces]
+     let parentTraces = mkHBarParentTraces colorMapMap stats
+     let traces = childTraces ++ parentTraces
      let annotated = annotate colorMapMap parsed
      h1_ [] "Color Words in Aggregate"
      plotlyChart' traces "div1"
      h1_ [] "Annotated Text"
-     div_ [ class_ "annotated" ] $ do
-       toHtmlRaw annotated
+     div_ [ class_ "annotated" ] $ toHtmlRaw annotated
 
    -- Output just the data.
    -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats

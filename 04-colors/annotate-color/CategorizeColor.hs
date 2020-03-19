@@ -1,4 +1,19 @@
--- import Main
+{-# LANGUAGE OverloadedStrings #-}
+
+module CategorizeColor where
+
+import qualified Data.Map.Strict as M
+import qualified Data.Text as T
+import Data.List (sortBy, sortOn, minimumBy)
+import Data.Ord (comparing)
+
+import Data.Colour.SRGB
+import Data.Colour.CIE
+import Data.Colour.RGBSpace.HSV
+import Data.Colour.CIE
+import Data.Colour.CIE.Illuminant (d65)
+import Graphics.Color.Adaptation
+import Graphics.Color.Model
 
 import Types
 
