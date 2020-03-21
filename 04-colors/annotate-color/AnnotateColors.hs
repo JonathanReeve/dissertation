@@ -19,6 +19,9 @@ import CategorizeColor
 import Data.Colour.SRGB
 import Data.Colour.CIE
 
+import qualified Statistics.Sample.Histogram as S
+import qualified Data.Vector as V
+
 -- * Annotate color words in text, using HTML
 annotate :: ColorMap -> [ColorOrNot] -> T.Text
 annotate colorMapMap results = T.concat $ map processBlock results where
@@ -78,3 +81,33 @@ makeStats fileName mapName locs colorMap = (fileName, mapName, stats ) where
 listToMap :: [(Span, b, T.Text)] -> M.Map ColorWord [Span]
 listToMap l = M.fromListWith (++) [(T.toLower stdFormat, [(loc1, loc2)]) |
                                    ((loc1, loc2), txtFormat, stdFormat) <- l]
+
+type ChunkIndex = Int
+
+chunkStats :: (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])]) ->
+             Int -> -- Text length
+             (TextName, ColorMapName, [(ChunkIndex, ColorWord, Hex, Parent)])
+chunkStats (tName, mapName, statsList) len = (tName, mapName, concatMap byChunk statsList) where
+  byChunk :: (ColorWord, Hex, Parent, Int, [Span]) -> [(ChunkIndex, ColorWord, Hex, Parent)]
+  byChunk (cw, hex, par, count, spans) = map process spans where
+    textDivisions = [len `div` 10, (len `div` 10)*2 .. len]
+    -- Make indices
+    divisionsWithCounts = zip [1..] textDivisions
+    -- Get matching chunk
+    process :: Span -> (ChunkIndex, ColorWord, Hex, Parent)
+    process (start, end) = (index, cw, hex, par) where
+      -- TODO: look up index in
+      index = whichBin start divisionsWithCounts
+      whichBin x [y] = fst y
+      whichBin x (y:ys) = if x < snd y then fst y else whichBin x ys
+      -- end < snd (head divs) ->
+      -- then fst (head xs) else process span (tail xs)
+
+
+-- Break 
+-- hist n = do
+--   let xs = V.fromList [1, 2, 9, 9, 9, 9, 10, 11, 20]
+--       bins = 4
+--       (lowerbounds, sizes) = S.histogram bins xs
+--   print $ V.toList lowerbounds
+--   print $ V.toList sizes

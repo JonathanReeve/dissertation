@@ -37,6 +37,10 @@ executable annotate-color
                      , filepath
                      , colour
                      , Color
-                     , Frames
+                     -- , Frames
+                     -- , numhask-space
+                     -- , histogram-fill
+                     , vector
+                     , statistics
   -- hs-source-dirs:
   default-language:    Haskell2010

@@ -1,4 +1,3 @@
-# default.nix
 let
   pkgs = import <nixpkgs> { };
 in
@@ -9,4 +8,7 @@ in
         [ cabal-install
           ghcid
         ]);
+    source-overrides = {
+      # numhask-space = pkgs.haskell.lib.dontCheck pkgs.haskellPackages.numhask-space;
+        };
   }

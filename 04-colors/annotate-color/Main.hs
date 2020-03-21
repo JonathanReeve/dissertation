@@ -65,14 +65,16 @@ css = "div.annotated" C.? do
          C.backgroundColor "#555"
          C.color "#ddd"
 
+
 -- | CLI to annotate colors in text.
 -- Usage: runhaskell AnnotateColor my-text-file.txt > out.html
 main :: IO ()
 main = do
    -- Process color map
-   let cm = CM.ridgway
+   let cm = CM.ridgwayExtendedXkcd
 
    colorMap <- CM.assoc cm
+   -- let colorMap' = CM.extendMap colorMap
    let colorMapMap = M.fromList colorMap
 
    -- Parse command-line argument, and read the filename given
@@ -94,18 +96,21 @@ main = do
    -- let onlyMatches = map fromJust $ filter isJust zipData
    let onlyMatches = catMaybes zipData
    let label = takeBaseName fileName
-   let stats = [makeStats (T.pack label) (CM.name cm) (listToMap onlyMatches) colorMapMap]
-   print stats
+   let stats = makeStats (T.pack label) (CM.name cm) (listToMap onlyMatches) colorMapMap
+   -- Now take stats and produced chunked output for narrative time
+   let chunked = chunkStats stats (T.length inFile)
 
-   let outFileName = label ++ "-bar.html"
+   print chunked
 
-   renderToFile outFileName $ scaffold $ do
-     let traces = (mkHBarTraces stats) ++ (mkHBarParentTraces colorMapMap stats)
-     let annotated = annotate colorMapMap parsed
-     h1_ [] "Color Words in Aggregate"
-     plotlyChart' traces "div1"
-     h1_ [] "Annotated Text"
-     div_ [ class_ "annotated" ] $ toHtmlRaw annotated
+   -- let outFileName = label ++ "-bar.html"
+
+   -- renderToFile outFileName $ scaffold $ do
+   --   let traces = (mkHBarTraces stats) ++ (mkHBarParentTraces colorMapMap stats)
+   --   let annotated = annotate colorMapMap parsed
+   --   h1_ [] "Color Words in Aggregate"
+   --   plotlyChart' traces "div1"
+   --   h1_ [] "Annotated Text"
+   --   div_ [ class_ "annotated" ] $ toHtmlRaw annotated
 
    -- Output just the data.
    -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats

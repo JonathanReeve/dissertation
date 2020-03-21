@@ -19,7 +19,7 @@ import Types
 -- one with the smallest distance.
 categorizeColor :: Hex -> ColorMap -> ColorWord
 categorizeColor color colorMap = argMin deltas where
-  -- TODO: maybe use Maybe here instead, just in case the base color isn't found in the map
+  -- Default to white if we can't find the base color
   baseColorMap = [ (baseColor, fromMaybe "#ffffff" (colorMap M.!? baseColor)) | baseColor <- baseColors ]
   -- Make Colour objects for each hex
   baseColours :: [ (ColorWord, Colour Double) ]
