@@ -98,7 +98,7 @@ main = do
    let label = takeBaseName fileName
    let stats = makeStats (T.pack label) (CM.name cm) (listToMap onlyMatches) colorMapMap
    -- Now take stats and produced chunked output for narrative time
-   let chunked = chunkStats stats (T.length inFile)
+   let chunked = groupChunks $ chunkStats stats (T.length inFile)
 
    print chunked
 

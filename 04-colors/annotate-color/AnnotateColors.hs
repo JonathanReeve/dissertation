@@ -5,6 +5,7 @@ module AnnotateColors where
 
 -- import Main
 import Data.Maybe (fromMaybe)
+import Data.List as L
 import qualified Data.Text as T
 import qualified Data.Map.Strict as M
 import qualified Data.Text.Lazy as TL
@@ -12,19 +13,15 @@ import Data.Attoparsec.Text as AT
 import Replace.Attoparsec.Text
 import Lucid
 import Data.Either
+import Data.Colour.SRGB
+import Data.Colour.CIE
 
 import Types
 import CategorizeColor
 
-import Data.Colour.SRGB
-import Data.Colour.CIE
-
-import qualified Statistics.Sample.Histogram as S
-import qualified Data.Vector as V
-
 -- * Annotate color words in text, using HTML
 annotate :: ColorMap -> [ColorOrNot] -> T.Text
-annotate colorMapMap results = T.concat $ map processBlock results where
+annotate colorMapMap results = T.concat $ Prelude.map processBlock results where
   processBlock :: ColorOrNot -> T.Text
   processBlock block = case block of
     Left txt -> txt
@@ -71,7 +68,7 @@ makeStats :: TextName -> ColorMapName -> M.Map ColorWord [Span] -> ColorMap ->
   (TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])
 makeStats fileName mapName locs colorMap = (fileName, mapName, stats ) where
   -- TODO: add more sort functions than just luminance.
-  stats = sortColors luminance $ map makeStat (M.toList locs)
+  stats = sortColors luminance $ Prelude.map makeStat (M.toList locs)
   makeStat (colorWord, spans) = (colorWord, hex, parent, length spans, spans) where
     hex = fromMaybe "UNDEFINED" (colorMap M.!? colorWord)
     parent = categorizeColor hex colorMap
@@ -103,11 +100,15 @@ chunkStats (tName, mapName, statsList) len = (tName, mapName, concatMap byChunk 
       -- end < snd (head divs) ->
       -- then fst (head xs) else process span (tail xs)
 
+-- Now group together and count those chunks
 
--- Break 
--- hist n = do
---   let xs = V.fromList [1, 2, 9, 9, 9, 9, 10, 11, 20]
---       bins = 4
---       (lowerbounds, sizes) = S.histogram bins xs
---   print $ V.toList lowerbounds
---   print $ V.toList sizes
+type Count = Int
+groupChunks :: (TextName, ColorMapName, [(ChunkIndex, ColorWord, Hex, Parent)]) ->
+              (TextName, ColorMapName, [M.Map (ChunkIndex, (ColorWord, Hex, Parent)) Count])
+groupChunks (tname, mapName, statsList) = (tname, mapName, countedGroups) where
+  mkColor (chunkN, name, hex, par) = (chunkN, (name, hex, par))
+  colors = Prelude.map mkColor statsList
+  groups = groupBy (\x y -> fst x == fst y) (sort colors)
+  count x xs = length $ filter (== x) xs
+  counter xs = M.fromList $ Prelude.map (\x -> (x, count x xs)) xs
+  countedGroups = Prelude.map counter groups
