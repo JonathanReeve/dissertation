@@ -81,11 +81,13 @@ class AnalysisOutput():
         by checking the cache folder for a file with that hash.
         If we haven't, make a new analysis.
         """
-        try:
-            cherrypy.log(f"Looking to see if we've already analyzed {self.outFile}")
+
+        cherrypy.log(f"Looking to see if we've already analyzed {self.outFile}")
+        if os.path.isfile(self.outFile):
             with open(self.outFile) as f:
                 html = f.read()
-        except FileNotFoundError:
+                return html
+        else:
             cherrypy.log(f"Looks like we haven't already analyzed {self.outFile}")
             html = self.makeHtml(filename, fileContents)
             # Save it for later
@@ -105,24 +107,36 @@ class AnalysisOutput():
         nChunks = 40
         nColors = 10
         colorMap = colorMaps.xkcdMap
-        colortext = findColors.ColorText(filename, fileContents, label, colorMap, nChunks, nColors)
-
-        sunburst = colortext.getSunburstHtml()
-        chunked = colortext.getChunkedPlotHtml()
-
-        # cherrypy.log("Sunburst: %s" % sunburst)
+        text = findColors.ColorText(filename, fileContents, label, colorMap, nChunks, nColors)
 
         doc = html(
+                # head(
+                #     ) 
                 body(
-                    h1("test text"),
-                    # div(
-                    #     raw(sunburst),
-                    #     class_="sunburst"
-                    # ),
                     div(
-                        raw(chunked),
-                        class_="chunked"
-                        )
+                        h1(text.label),
+                        section(
+                            h2('Overview'),
+                            div(
+                                raw(text.sunburstPlotHtml),
+                                class_="sunburst"
+                            )
+                        ),
+                        section(
+                            h2('Narrative Timeseries'),
+                            div(
+                                raw(text.chunkedPlotHtml),
+                                class_="chunked"
+                                )
+                        ),
+                        section(
+                            h2('Annotated Text'),
+                            div(
+                                raw(text.annotatedText),
+                                class_="annotated"
+                                ),
+                        ),
+                    class_="container")
                 )
               ).render()
         return doc

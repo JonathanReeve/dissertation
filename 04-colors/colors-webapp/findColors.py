@@ -19,11 +19,15 @@ class ColorText():
         self.colorMap = colorMap
         self.text = fileContents
         self.annotatedText, self.matchLocs = self.annotateColors(self.text, colorMap)
-        # self.contexts = self.getMatchContexts(self.text, self.matchLocs)
-        self.chunkedPlot = self.getChunkedPlot(self.text, colorMap, nChunks, nColors)
         self.df = self.matchesToDf(self.matchLocs)
         self.dfWithBase = self.df.append(self.baseColorDf)
+
+        # self.contexts = self.getMatchContexts(self.text, self.matchLocs)
+        self.chunkedPlot = self.getChunkedPlot(self.text, colorMap, nChunks, nColors)
+        self.chunkedPlotHtml = self.chunkedPlot.to_html(fullhtml=False)
+
         self.sunburstPlot = self.getSunburstPlot(self.dfWithBase)
+        self.sunburstPlotHtml = self.getSunburstHtml()
 
     def getText(self, filename):
         with open(filename) as f:
@@ -190,16 +194,13 @@ class ColorText():
         # fig.show()
         return fig
 
-    def getChunkedPlotHtml(self):
-        return self.plotA(self.df, self.colorMap).to_html(fullhtml=False)
-
     def getSunburstHtml(self):
         outFilename = self.filename + '-sunburst.html'
         logging.info(f"Wrote to {outFilename}")
-        plot = self.sunburstPlot.to_html(outFilename, full_html=False)
+        html = self.sunburstPlot.to_html(outFilename, full_html=False)
         # print("---sunburstPlot---", self.sunburstPlot)
         # print("---PLOT---", plot)
-        return plot
+        return html
 
     def writeSunburstPlot(self):
         outFilename = self.filename + '-sunburst.html'
