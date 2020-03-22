@@ -71,7 +71,8 @@ css = "div.annotated" C.? do
 main :: IO ()
 main = do
    -- Process color map
-   let cm = CM.ridgwayExtendedXkcd
+   -- let cm = CM.ridgwayExtendedXkcd
+   let cm = CM.xkcd
 
    colorMap <- CM.assoc cm
    -- let colorMap' = CM.extendMap colorMap
@@ -100,17 +101,22 @@ main = do
    -- Now take stats and produced chunked output for narrative time
    let chunked = groupChunks $ chunkStats stats (T.length inFile)
 
-   print chunked
+   print stats
+   -- print chunked
 
-   -- let outFileName = label ++ "-bar.html"
+   let outFileName = label ++ "-bar.html"
 
-   -- renderToFile outFileName $ scaffold $ do
-   --   let traces = (mkHBarTraces stats) ++ (mkHBarParentTraces colorMapMap stats)
-   --   let annotated = annotate colorMapMap parsed
-   --   h1_ [] "Color Words in Aggregate"
-   --   plotlyChart' traces "div1"
-   --   h1_ [] "Annotated Text"
-   --   div_ [ class_ "annotated" ] $ toHtmlRaw annotated
+   renderToFile outFileName $ scaffold $ do
+     let traces = mkChunkedTraces [stats] (T.length inFile) 10
+     h1_ [] "Color Words in Aggregate"
+     let barTraces = (mkHBarTraces [stats]) ++ (mkHBarParentTraces colorMapMap [stats])
+     plotlyChart' barTraces "div1"
+     h1_ [] "Color Words in Narrative Timeseries"
+     let lineTraces = mkChunkedTraces [stats] (T.length inFile) 10
+     plotlyChart' lineTraces "div2"
+     h1_ [] "Annotated Text"
+     let annotated = annotate colorMapMap parsed
+     div_ [ class_ "annotated" ] $ toHtmlRaw annotated
 
    -- Output just the data.
    -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats

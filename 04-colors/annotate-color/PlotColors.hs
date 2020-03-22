@@ -10,6 +10,8 @@ import Graphics.Plotly
 import Graphics.Plotly.Lucid
 import Lens.Micro
 import Lucid
+import qualified Statistics.Sample.Histogram as S
+import qualified Data.Vector as V
 
 import Types
 
@@ -72,6 +74,42 @@ makeTrace textName (colorWord, hex, _, n, _) = bars & P.y ?~ [toJSON textName]
 --   * Xs will be chunk indices (e.g. 1-10) and
 --   * Ys will be a color and its values (name, color, y-value)
 
+-- So we need to query for each color in each chunk, and return zero otherwise
+-- [M.Map (ChunkIndex, (ColorWord, Hex, Parent)) Count]
+
+-- Go through each color in the main stats list,
+-- Query that color in the chunked list.
+
+-- Since the chunked list is a list of maps, query (1, ("army", "#6F4E37", "grey)) and
+-- we should get "1" or "3" or nothing.
+
+
+-- type ColorStatsMap = [(TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])]
+-- takes Stats, goes through each, returns list of traces
+-- where each trace is a color, its Xs chunkNs, (1-10) and its Ys, values, a hex, and so on. 
+
+-- type ColorStatsMap = [(TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])]
+mkChunkedTraces :: ColorStatsMap -> -- | Color statistics
+                    Int ->  -- | Length of text
+                    Int ->  -- | Number of desired chunks
+                    [Trace]
+mkChunkedTraces stats len nChunks = concatMap makeStat stats where
+  makeStat (textName, cm, statsList) = map mkTrace statsList where
+    mkTrace :: (ColorWord, Hex, Parent, Int, [Span]) -> Trace
+    mkTrace (colorWord, hex, parent, count, spanList) =
+      scatter & P.x     ?~ fmap toJSON [1..nChunks]
+              & P.y     ?~ fmap toJSON yVals
+              & name    ?~ colorWord
+              & mode    ?~ [Lines]
+              & marker ?~ (defMarker & markercolor ?~ P.All (toJSON hex))
+              & stackgroup ?~ "one"
+      where
+      -- Make Y values, which are the number of times a color appears in a chunk.
+      -- Ex: 0 1 2 0 0 0 10 2 0
+      yVals = V.toList $ snd (S.histogram nChunks spanVec) :: [Int]
+      starts = map (fromIntegral . fst) spanList :: [Double]
+      spanVec = V.fromList starts :: V.Vector Double
+
 -- This is how PlotlyHS does a line chart:
 
 -- Plotly.newPlot('myDiv', traces, {title: 'stacked and filled line chart'});
@@ -88,4 +126,3 @@ makeTrace textName (colorWord, hex, _, n, _) = bars & P.y ?~ [toJSON textName]
 
 -- So we should augment it like this:
 --     & stackgroup ?~ "one"
-
