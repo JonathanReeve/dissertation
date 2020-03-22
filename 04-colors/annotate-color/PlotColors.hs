@@ -15,16 +15,6 @@ import qualified Data.Vector as V
 
 import Types
 
--- | Just some useful type aliases here
-
--- plotlyChart :: (ColorStatsMap -> [Trace]) -> [ColorStatsMap] -> T.Text -> Html ()
--- plotlyChart tracesFn colorData divName = mapM_ makeChart colorData where
---   makeChart someData = toHtml $ plotly divName (tracesFn someData)
---                        & layout . margin ?~ thinMargins
---                        & layout . height ?~ 300
---                        & layout . width ?~ 800
---                        & layout . barmode ?~ Stack
-
 -- | Let's do that again, but just take traces.
 plotlyChart' :: [Trace] -> T.Text -> Html ()
 plotlyChart' traces divName = toHtml $ plotly divName traces
@@ -56,12 +46,8 @@ makeTrace textName (colorWord, hex, _, n, _) = bars & P.y ?~ [toJSON textName]
                                                 & marker ?~
                                                 (defMarker & markercolor ?~ P.All (toJSON hex))
 
--- Grouped data now looks like:
--- (TextName, ColorMapName, [M.Map (ChunkIndex, (ColorWord, Hex, Parent)) Count])
--- And we want to make it into something like this:
 
-
--- Plotly stacked and filled area plot
+-- Plotly stacked and filled area plot. Let's make this JavaScript:
 -- var plotDiv = document.getElementById('plot');
 -- var traces = [
 -- 	{x: [1,2,3], y: [2,1,4], stackgroup: 'one'},
@@ -73,20 +59,6 @@ makeTrace textName (colorWord, hex, _, n, _) = bars & P.y ?~ [toJSON textName]
 -- For each trace:
 --   * Xs will be chunk indices (e.g. 1-10) and
 --   * Ys will be a color and its values (name, color, y-value)
-
--- So we need to query for each color in each chunk, and return zero otherwise
--- [M.Map (ChunkIndex, (ColorWord, Hex, Parent)) Count]
-
--- Go through each color in the main stats list,
--- Query that color in the chunked list.
-
--- Since the chunked list is a list of maps, query (1, ("army", "#6F4E37", "grey)) and
--- we should get "1" or "3" or nothing.
-
-
--- type ColorStatsMap = [(TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])]
--- takes Stats, goes through each, returns list of traces
--- where each trace is a color, its Xs chunkNs, (1-10) and its Ys, values, a hex, and so on. 
 
 -- type ColorStatsMap = [(TextName, ColorMapName, [(ColorWord, Hex, Parent, Int, [Span])])]
 mkChunkedTraces :: ColorStatsMap -> -- | Color statistics
@@ -109,20 +81,3 @@ mkChunkedTraces stats len nChunks = concatMap makeStat stats where
       yVals = V.toList $ snd (S.histogram nChunks spanVec) :: [Int]
       starts = map (fromIntegral . fst) spanList :: [Double]
       spanVec = V.fromList starts :: V.Vector Double
-
--- This is how PlotlyHS does a line chart:
-
--- Plotly.newPlot('myDiv', traces, {title: 'stacked and filled line chart'});
-
--- From: https://hackage.haskell.org/package/plotlyhs-0.2.1/docs/src/Graphics.Plotly.Simple.html#linePlot
--- |Generate a line plot from pairs
-
--- linePlot :: (ToJSON a, ToJSON b) => [(a, b)] -> Trace
--- linePlot xys = scatter
---     & P.x     ?~ fmap (toJSON . fst) xys
---     & P.y     ?~ fmap (toJSON . snd) xys
---     & mode  ?~ [Lines]
-
-
--- So we should augment it like this:
---     & stackgroup ?~ "one"

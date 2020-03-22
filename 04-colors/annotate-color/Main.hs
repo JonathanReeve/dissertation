@@ -98,10 +98,8 @@ main = do
    let onlyMatches = catMaybes zipData
    let label = takeBaseName fileName
    let stats = makeStats (T.pack label) (CM.name cm) (listToMap onlyMatches) colorMapMap
-   -- Now take stats and produced chunked output for narrative time
-   let chunked = groupChunks $ chunkStats stats (T.length inFile)
 
-   print stats
+   -- print stats
    -- print chunked
 
    let outFileName = label ++ "-bar.html"
