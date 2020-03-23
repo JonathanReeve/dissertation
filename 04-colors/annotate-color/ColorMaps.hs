@@ -55,3 +55,8 @@ ridgwayExtendedXkcd = ColorMap { name = "RidgwayExtendedXKCD"
                                }
 
 colorMaps = [xkcd, ridgway, ridgwayExtendedXkcd]
+
+getColorMap cm = case cm of
+  "XKCD" -> xkcd
+  "Ridgway" -> ridgway
+  "RidgwayExtendedXKCD" -> ridgwayExtendedXkcd

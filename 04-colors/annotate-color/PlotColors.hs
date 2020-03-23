@@ -81,3 +81,4 @@ mkChunkedTraces stats len nChunks = concatMap makeStat stats where
       yVals = V.toList $ snd (S.histogram nChunks spanVec) :: [Int]
       starts = map (fromIntegral . fst) spanList :: [Double]
       spanVec = V.fromList starts :: V.Vector Double
+

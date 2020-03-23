@@ -4,7 +4,7 @@
 module AnnotateColors where
 
 -- import Main
-import Data.Maybe (fromMaybe)
+import Data.Maybe (fromMaybe, catMaybes)
 import Data.List as L
 import qualified Data.Text as T
 import qualified Data.Map.Strict as M
@@ -18,6 +18,7 @@ import Data.Colour.CIE
 
 import Types
 import CategorizeColor
+import FindColors
 
 -- * Annotate color words in text, using HTML
 annotate :: ColorMap -> [ColorOrNot] -> T.Text
@@ -78,3 +79,4 @@ makeStats fileName mapName locs colorMap = (fileName, mapName, stats ) where
 listToMap :: [(Span, b, T.Text)] -> M.Map ColorWord [Span]
 listToMap l = M.fromListWith (++) [(T.toLower stdFormat, [(loc1, loc2)]) |
                                    ((loc1, loc2), txtFormat, stdFormat) <- l]
+
