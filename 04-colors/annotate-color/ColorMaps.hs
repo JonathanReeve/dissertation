@@ -53,3 +53,5 @@ ridgwayXkcdMap = do
 ridgwayExtendedXkcd = ColorMap { name = "RidgwayExtendedXKCD"
                                , assoc = M.toList <$> ridgwayXkcdMap
                                }
+
+colorMaps = [xkcd, ridgway, ridgwayExtendedXkcd]

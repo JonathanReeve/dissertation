@@ -34,7 +34,7 @@ import qualified ColorMaps as CM
 import FindColors
 import PlotColors
 import AnnotateColors
-
+import Types
 
 -- | Make a standard HTML page from the results,
 -- by scaffolding it with an HTML template.
@@ -70,13 +70,6 @@ css = "div.annotated" C.? do
 -- Usage: runhaskell AnnotateColor my-text-file.txt > out.html
 main :: IO ()
 main = do
-   -- Process color map
-   -- let cm = CM.ridgwayExtendedXkcd
-   let cm = CM.xkcd
-
-   colorMap <- CM.assoc cm
-   -- let colorMap' = CM.extendMap colorMap
-   let colorMapMap = M.fromList colorMap
 
    -- Parse command-line argument, and read the filename given
    -- by the first argument.
@@ -89,32 +82,43 @@ main = do
                   Left err -> TE.decodeLatin1 rawByteStr
                   Right text -> text
 
-   -- Parse out the colors, get their locations
-   let parsed = findReplace (colorParser colorMap) inFile
-   -- Hlint suggests this the following, but I'm not so sure it's clearer.
-   -- let zipData = zipWith (curry getZipData) (getLocations parsed) parsed
-   let zipData = map getZipData (zip (getLocations parsed) parsed)
-   -- let onlyMatches = map fromJust $ filter isJust zipData
-   let onlyMatches = catMaybes zipData
    let label = takeBaseName fileName
-   let stats = makeStats (T.pack label) (CM.name cm) (listToMap onlyMatches) colorMapMap
 
-   -- print stats
-   -- print chunked
+   let cm = CM.xkcd
+   colorMap <- CM.assoc cm
+   let html = doAnalysis inFile label colorMap (CM.name cm)
 
-   let outFileName = label ++ "-bar.html"
-
-   renderToFile outFileName $ scaffold $ do
-     let traces = mkChunkedTraces [stats] (T.length inFile) 10
-     h1_ [] "Color Words in Aggregate"
-     let barTraces = (mkHBarTraces [stats]) ++ (mkHBarParentTraces colorMapMap [stats])
-     plotlyChart' barTraces "div1"
-     h1_ [] "Color Words in Narrative Timeseries"
-     let lineTraces = mkChunkedTraces [stats] (T.length inFile) 10
-     plotlyChart' lineTraces "div2"
-     h1_ [] "Annotated Text"
-     let annotated = annotate colorMapMap parsed
-     div_ [ class_ "annotated" ] $ toHtmlRaw annotated
+   -- Write to a file.
+   let outFileName = label ++ "-out.html"
+   renderToFile outFileName html
 
    -- Output just the data.
    -- TIO.putStrLn . TE.decodeUtf8 . BL.toStrict . encode $ stats
+
+doAnalysis :: T.Text -> -- | Input file
+             String -> -- | Input file label
+             [(ColorWord, Hex)] -> -- | Color mapping
+             T.Text -> -- | Color mapping label
+             Html () -- | Resulting HTML
+doAnalysis inFile label colorMap colorMapLabel = do
+  -- let colorMap' = CM.extendMap colorMap
+  let colorMapMap = M.fromList colorMap
+
+  let parsed = findReplace (colorParser colorMap) inFile
+  let zipData = map getZipData (zip (getLocations parsed) parsed)
+  -- let onlyMatches = map fromJust $ filter isJust zipData
+  let onlyMatches = catMaybes zipData
+  let stats = makeStats (T.pack label) colorMapLabel (listToMap onlyMatches) colorMapMap
+  mkHtml colorMapMap [stats] parsed (T.length inFile)
+
+mkHtml :: ColorMap -> ColorStatsMap -> [ColorOrNot] -> Int -> Html ()
+mkHtml colorMap stats parsed len = scaffold $ do
+  h1_ [] "Color Words in Aggregate"
+  let barTraces = (mkHBarTraces stats) ++ (mkHBarParentTraces colorMap stats)
+  plotlyChart' barTraces "div1"
+  h1_ [] "Color Words in Narrative Timeseries"
+  let lineTraces = mkChunkedTraces stats len 10
+  plotlyChart' lineTraces "div2"
+  h1_ [] "Annotated Text"
+  let annotated = annotate colorMap parsed
+  div_ [ class_ "annotated" ] $ toHtmlRaw annotated
