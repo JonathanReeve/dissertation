@@ -118,14 +118,16 @@ main = do
       liftIO $ B.writeFile ("uploads" </> fn) fc
       -- generate list of links to the files just uploaded
 
-      liftIO $ readInfile fc
-
 
       colorMap <- liftIO $ CM.assoc $ CM.getColorMap cm
 
-      let label = takeBaseName fn
-      html $ renderText $ doAnalysis fc label colorMap (CM.name (CM.getColorMap cm))
+      let contents = readInfile $ B.toStrict fc
 
+ 
+      let label = takeBaseName fn
+      html $ renderText $ doAnalysis contents label colorMap (CM.name (CM.getColorMap cm))
+
+readInfile :: BS.ByteString -> T.Text
 readInfile fc = case TE.decodeUtf8' fc of
                Left err -> TE.decodeLatin1 fc
                Right text -> text
