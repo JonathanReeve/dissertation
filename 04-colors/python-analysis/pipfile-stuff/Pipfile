@@ -10,6 +10,7 @@ cherrypy = "*"
 dominate = "*"
 plotly = "<4.0"
 spacy = ">2.0"
+altair = "*"
 
 [requires]
 python_version = "3.7"

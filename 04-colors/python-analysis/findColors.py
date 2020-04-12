@@ -18,16 +18,18 @@ class ColorText():
         self.label = label
         self.colorMap = colorMap
         self.text = fileContents
+        self.textLength = len(fileContents)
         self.annotatedText, self.matchLocs = self.annotateColors(self.text, colorMap)
         self.df = self.matchesToDf(self.matchLocs)
         self.dfWithBase = self.df.append(self.baseColorDf)
+        self.parentDist = self.getParentDist(self.df)
 
         # self.contexts = self.getMatchContexts(self.text, self.matchLocs)
-        self.chunkedPlot = self.getChunkedPlot(self.text, colorMap, nChunks, nColors)
-        self.chunkedPlotHtml = self.chunkedPlot.to_html(fullhtml=False)
+        # self.chunkedPlot = self.getChunkedPlot(self.text, colorMap, nChunks, nColors)
+        # self.chunkedPlotHtml = self.chunkedPlot.to_html(fullhtml=False)
 
-        self.sunburstPlot = self.getSunburstPlot(self.dfWithBase)
-        self.sunburstPlotHtml = self.getSunburstHtml()
+        # self.sunburstPlot = self.getSunburstPlot(self.dfWithBase)
+        # self.sunburstPlotHtml = self.getSunburstHtml()
 
     def getText(self, filename):
         with open(filename) as f:
@@ -91,8 +93,12 @@ class ColorText():
         return df.fillna(0)
 
     def melt(self, df):
-        df['chunk']=df.index
+        df.loc[:, 'chunk'] = df.index
         return df.melt(id_vars='chunk', var_name='color', value_name='count')
+
+    def getParentDist(self, df):
+        """ Get the distribution of parent colors for this text. """
+        return self.df.groupby('parent').sum()['n']
 
     def plotM(self, df, nColors):
         """ Plots with matplotlib, via pandas. """
@@ -100,8 +106,8 @@ class ColorText():
 
     def plotA(self, df, colorMap):
         """ Plots with Altair """
-        df['hex'] = df['color'].apply(lambda x: colorMap[x])
-        df['hsv'] = df['hex'].apply(lambda x: rgb_to_hsv(to_rgb(x))[0])
+        df.loc[:, 'hex'] = df['color'].apply(lambda x: colorMap[x])
+        df.loc[:, 'hsv'] = df['hex'].apply(lambda x: rgb_to_hsv(to_rgb(x))[0])
         df = df.sort_values('hsv') # Sloppy alphabetical color sort
         return alt.Chart(df, width=800, height=600).mark_area().encode(
             x='chunk:O', y='count:Q', color=alt.Color('hex', scale=None), tooltip='color')
@@ -118,10 +124,10 @@ class ColorText():
         #print(df)
         # More stuff here
 
-        df['hex'] = df['name'].apply(self.colorMap.get)
-        df['parent'] = df['hex'].apply(lambda hex: categorizeColors.closestColor(hex, self.baseColorMap))
-        df['parentHex'] = df['parent'].apply(self.baseColorMap.get)
-        df['id'] = df['parent'] + '-' + df['name']
+        df.loc[:,'hex'] = df['name'].apply(self.colorMap.get)
+        df.loc[:,'parent'] = df['hex'].apply(lambda hex: categorizeColors.closestColor(hex, self.baseColorMap))
+        df.loc[:,'parentHex'] = df['parent'].apply(self.baseColorMap.get)
+        df.loc[:,'id'] = df['parent'] + '-' + df['name']
         return df
 
     def getChunkedPlot(self, text, colorMap, nChunks=20, nColors=10):
@@ -218,22 +224,27 @@ if __name__ == "__main__":
     # pride = open('../data/text/pride.html').read()
     # print(pride[:200])
     parser = argparse.ArgumentParser()
-    parser.add_argument("filename")
-    parser.add_argument("label")
+    parser.add_argument("--label", type=str)
+    parser.add_argument("--colorMap", type=str)
+    parser.add_argument("filenames", action="append")
     args = parser.parse_args()
-    filename = args.filename
+    filenames = args.filenames
     label = args.label
-    print('Analyzing file: ', filename)
+    print('Analyzing files: ', filenames)
 
     # Default colormap
     colorMap = colorMaps.xkcdMap
 
-    # Initialize object
-    with open(filename) as f:
-        fileContents = f.read()
+    # Initialize objects
+    allParentDists = {}
+    for filename in filenames:
+        with open(filename) as f:
+            fileContents = f.read()
+            colorText = ColorText(filename, fileContents, label, colorMap, nChunks=40, nColors=20)
+            allParentDists[filename] = colorText.parentDist
 
-    colorText = ColorText(filename, fileContents, label, colorMap, nChunks=40, nColors=20)
-
+            # print(colorText.parentDist)
+    
     # colorText.writeCSV()
 
     # print(colorText.annotatedText)

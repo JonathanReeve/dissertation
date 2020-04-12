@@ -1537,4 +1537,55 @@ nlp = spacy.load('en_core_web_lg')
 :   File "/tmp/babel-GE4s8p/python-LguuqY", line 1, in <module>
 :     import spacy
 : ModuleNotFoundError: No module named 'spacy'
-** Color Maps
+** Compute distribution of parent colors
+
+#+BEGIN_SRC sh
+echo $PWD
+#+END_SRC
+
+#+RESULTS:
+: /home/jon/Dropbox/Columbia/Dissertation/04-colors/python-analysis
+
+#+BEGIN_SRC elisp :session session_init
+(setq org-babel-python-command "nix-shell --run python")
+#+END_SRC
+
+#+RESULTS:
+: nix-shell --run python
+
+#+BEGIN_SRC python :results output :session session_init
+import pandas as pd
+import altair as alt
+import findColors # My own module
+from colorMaps import xkcdMap
+import plotly.express as px
+#+END_SRC
+
+#+RESULTS:
+
+
+#+BEGIN_SRC python :results output :session session_init
+fileName = "../data/text/lighthouse-small.txt"
+with open(fileName) as f:
+  fileContents = f.read()
+
+colorText = findColors.ColorText(fileName, fileContents, 'lighthouse', xkcdMap, 20, 10)  
+
+# cf.set_config_file(offline=True)
+#+END_SRC
+
+#+RESULTS:
+
+
+#+BEGIN_SRC python :results output :session session_init
+parentDist = colorText.df.groupby('parent').sum()['n']
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results file :session session_init
+fig = px.bar(colorText.df)
+fig.to_html('out.html')
+#+END_SRC
+
+#+RESULTS:

@@ -347,14 +347,6 @@ azulin	#536878
 azure blue	#8791BF
 azurite blue	#536878
 azurite blue	#4E5180
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- B -</th></tr>
-</thead>
-<tbody>
 baby blue	#81878B
 baby blue	#A1CAF1
 baby blue	#BCD4E6
@@ -599,7 +591,6 @@ blue lotus	#70A3CC
 blue mist	#91A3B0
 blue ochre	#536878
 blue orchid	#536878
-<tr><td>blue pass&eacute; ?? -</td><td title="185" style="background-color:#91A3B0">185-</td><td title="186" style="background-color:#536878; color:#FFF">186-</td><td title="191" style="background-color:#81878B">191-</td></tr>
 blue plum	#50404D
 blue prose	#9CD1DC
 blue ridge	#B3BCE2
@@ -933,14 +924,6 @@ butter yellow	#F8DE7E
 byron	#483C32
 byzantine	#CE4676
 byzantium	#5D3954
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- C -</th></tr>
-</thead>
-<tbody>
 cabaret	#6AAB8E
 cabbage	#C7E6D7
 cabbage green	#7D8984
@@ -1179,7 +1162,6 @@ cerulean blue	#00A1C2
 cerulean blue	#0067A5
 cerulean blue	#436B95
 cerulein Blue	#0067A5
-<tr><td>c&eacute;ruse</td><td title="112" style="background-color:#8A8776">112</td></tr>
 ceylon blue	#004958
 ceylon blue	#536878
 chaetura black	#222222
@@ -1289,7 +1271,6 @@ chinese red	#9E4732
 chinese red	#882D17
 chinese red	#9E4732
 chinese rouge	#BE0032
-</tr>
 chinese vermilion	#BE0032
 chinese violet	#86608E
 chinese yellow	#FADA5E
@@ -1466,8 +1447,7 @@ colonial buff	#F3E5AB
 colonial buff	#F8DE7E
 colonial cream	#F3E5AB
 colonial exterior green	#3B7861
-colonial rose + 	#905D5D
-<tr><td>colonial rose +</td><td title="3" style="background-color:#E4717A">3</td><td title="15" style="background-color:#AB4E52; color:#FFF">15</td></tr>
+colonial rose 	#905D5D
 colonial yellow	#C9AE5D
 colonial yellow	#F8DE7E
 columbia	#0067A5
@@ -1697,14 +1677,6 @@ cypress green	#83D37D
 cypress green	#44944A
 cypress green	#3A4B47
 cyprus umber	#4B3621
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- D -</th></tr>
-</thead>
-<tbody>
 daffodil	#FADA5E
 daffodile 	#E3A857
 daffodil yellow	#E3A857
@@ -1725,7 +1697,6 @@ dandelion	#FADA5E
 dandelion	#F3C300
 dante	#673147
 danube green	#3A4B47
-<tr><td>danube green</td><td title="145" style="background-color:#3B7861">145</td><td title="146" style="background-color:#1B4D3E; color:#FFF">146</td><td title="150" style="background-color:#5E716A; color:#FFF">150</td><td title="151" style="background-color:#3A4B47; color:#FFF">151</td></tr>
 daphne	#436B95
 daphne pink	#915F6D
 daphne pink	#C17E91
@@ -2247,7 +2218,6 @@ dusky dull green	#4E5755
 dusky dull violet 	#563C5C
 dusky dull violet 	#796878
 dusky dull violet-blue	#554C69
-<td title="229" style="background-color:#50404D; color:#FFF">229</td></tr>
 dusky green	#8F9779
 dusky green	#3A4B47
 dusky green	#1B4D3E
@@ -2312,14 +2282,6 @@ dyer's broom	#B9B459
 dyer's greenwood	#B9B459
 dyer's saffron	#BE0032
 dynasty green	#007A74
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- E -</th></tr>
-</thead>
-<tbody>
 eagle	#5B504F
 earth brown	#6F4E37
 earth brown	#635147
@@ -2482,14 +2444,6 @@ evergreen	#3A4B47
 evergreen	#173620
 exterior green #14 or exterior green no. fourteen	#2B3D26
 exterior green #15 or exterior green no. fifteen	#8A9A5B
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- F -</th></tr>
-</thead>
-<tbody>
 fable	#E8E3E5
 faded rose	#905D5D
 faience	#367588
@@ -2650,7 +2604,6 @@ forget-me-not 	#536878
 forget-me-not blue	#6C79B8
 forget-me-not blue	#BCD4E6
 formosa	#A67B5B
-<tr><td>forn lane - ?</td><td title="148" style="background-color:#C7E6D7">148-</td></tr>
 forsythia	#E3A857
 forsythia	#FADA5E
 fortune	#7E73B8
@@ -2717,14 +2670,6 @@ fuscous-black	#555555
 fuscus	#5D555B
 fustet	#D4AF37
 fustic	#C2B280
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- G -</th></tr>
-</thead>
-<tbody>
 gage green	#8F9779
 gaiety	#E4717A
 gale cloud	#51585E
@@ -3047,7 +2992,6 @@ green tint	#C7E6D7
 green tint	#DADFB7
 green-yellow	#E9E450
 green zinc yellow primer	#8A9A5B
-<tr><td>gr&egrave;ge</td><td title="113" style="background-color:#57554C; color:#FFF">113</td></tr>
 greige	#8F9779
 grenadine	#D9603B
 grenadine pink	#F88379
@@ -3095,14 +3039,6 @@ gunmetal	#555555
 gun metal	#5B504F
 gypsy	#80461B
 gypsy red	#AB4E52
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- H -</th></tr>
-</thead>
-<tbody>
 haematite red	#543D3F
 haematite red	#674C47
 haematoxylin violet	#86608E
@@ -3258,14 +3194,6 @@ hydro	#536878
 hypermic red	#BE0032
 hyssop violet	#796878
 hyssop violet	#86608E
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- I -</th></tr>
-</thead>
-<tbody>
 ibis pink	#D9A6A9
 ibis red	#43302E
 iceberg	#536878
@@ -3411,14 +3339,6 @@ ivy green	#31362B
 ivy 	#5B5842
 ivy green	#5B5842
 ivy green	#31362B
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- J -</th></tr>
-</thead>
-<tbody>
 jacaranda brown	#483C32
 jacinthe	#D99058
 jack rabbit	#555555
@@ -3481,14 +3401,6 @@ jungle green	#1A2421
 jungle green	#004B49
 juniper	#3A4B47
 juniper	#3A4B47
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- K -</th></tr>
-</thead>
-<tbody>
 kabistan	#3A4B47
 kaffa	#674C47
 kaiser brown	#80461B
@@ -3536,14 +3448,6 @@ kronberg's green	#4A5D23
 kronberg's green	#665D1E
 kurdistan	#242124
 kyoto	#D99058
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- L -</th></tr>
-</thead>
-<tbody>
 labrador	#36454F
 lac lake	#A8516E
 lacquer	#9E4732
@@ -3868,7 +3772,6 @@ light rosolane purple	#DE6FA1
 light russet-vinaceous	#A87C6D
 light sage green	#8DA399
 light salmon	#D9A6A9
-<tr><td>light salmon-orange(R)</td><td title="53" style="backgrfound-color:#D99058">53</td></tr>
 light seal brown	#5C504F
 light sky blue	#91A3B0
 light sky blue	#C0C8E1
@@ -3892,7 +3795,6 @@ light vinaceous-drab	#905D5D
 light vinaceous-fawn	#C2AC99
 light vinaceous-gray	#C3A6B1
 light vinaceous-lilac	#C3A6B1
-<tr><td>light vinaceous-lilac -</td><td title="251" style="background-color:#C17E91">251-</td><td title="262" style="background-color:#915F6D; color:#FFF">262-</td></tr>
 light vinaceous-purple	#836479
 light violet	#86608E
 light violet	#7E73B8
@@ -4037,14 +3939,6 @@ lyons blue	#0067A5
 lyons blue	#545AA7
 lyons blue	#0067A5
 lyre blue	#367588
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- M -</th></tr>
-</thead>
-<tbody>
 macaroon	#C19A6B
 machinery green	#5E716A
 madder	#CB6D51
@@ -4137,7 +4031,6 @@ marguerite yellow	#F3E5AB
 marie antoinette	#905D5D
 marigold	#EAA221
 marigold orange	#ED872D
-<tr><td>marigold  +</td><td title="50" style="background-color:#ED872D">50+</td></tr>
 marine 	#252440
 marine blue	#004958
 marine blue	#436B95
@@ -4271,7 +4164,6 @@ melodious	#91A3B0
 melon	#F88379
 melon pink	#FFB7A5
 melon yellow	#E3A857
-<tr><td>COLORS ON PAGE 126 and 127 ADDED</td></tr>
 memory lane	#DFEDE8
 mephisto	#AB4E52
 merida	#826644
@@ -4543,14 +4435,6 @@ mystic white	#E9E9ED
 myth	#D6CADD
 myth blue	#51585E
 mytho green	#8F9779
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- N -</th></tr>
-</thead>
-<tbody>
 nabob	#51585E
 nacarat	#BE0032
 nacarine	#BE0032
@@ -4639,7 +4523,6 @@ nice	#536878
 nickel	#848482
 nickel green	#3A4B47
 nickel green	#5E716A
-<tr><td>nickle +</td><td title="265" style="background-color:#848482">265+</td></tr>
 nickle green + 	#3A4B47
 niger	#222222
 night blue	#004958
@@ -4694,14 +4577,6 @@ nymphea	#86608E
 nymph green	#C9DC89
 nymph 	#DEA5A4
 nymph pink	#D597AE
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- O -</th></tr>
-</thead>
-<tbody>
 oad	#536878
 oak 	#6F4E37
 oak brown	#6F4E37
@@ -4974,14 +4849,6 @@ oyster gray	#B9B8B5
 oyster grey	#DADFB7
 oyster 	#DADFB7
 oyster white	#B9B8B5
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- P -</th></tr>
-</thead>
-<tbody>
 pablo	#C19A6B
 pacific	#66ADA4
 paddock	#004B49
@@ -5660,14 +5527,6 @@ pygmalion	#826644
 pyrethrum yellow	#C9AE5D
 pyrite yellow	#AB9144
 pyrite yellow	#98943E
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- Q -</th></tr>
-</thead>
-<tbody>
 quail	#555555
 quail	#8E8279
 quaker	#848482
@@ -5691,15 +5550,6 @@ quercitron lake	#E3A857
 quiet	#DFEDE8
 quimper	#536878
 quince yellow	#36454F
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<colgroup span="45">
-<thead>
-<tr><th>- R -</th></tr>
-</thead>
-<tbody>
 rabbit	#5B504F
 racquet	#7E6D5A
 raddle	#79443B
@@ -6065,14 +5915,6 @@ rustic drab	#967117
 rust rose	#AB4E52
 rust tan	#80461B
 rut ochre	#996515
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- S -</th></tr>
-</thead>
-<tbody>
 sable	#7E6D5A
 sable	#6F4E37
 saccardo's olive	#6C541E
@@ -6579,7 +6421,6 @@ sterling blue	#B4BCC0
 stil de grain brown	#996515
 stil de grain yellow	#C9AE5D
 stoic	#222222
-<tr><td>stone -</td><td title="94" style="background-color:#967117">94-</td></tr>
 stone blue	#436B95
 stone blue	#536878
 stone green	#679267
@@ -6710,14 +6551,6 @@ swiss rose	#AB4E52
 swiss rose	#905D5D
 sylvan	#DADFB7
 syrup	#6C541E
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- T -</th></tr>
-</thead>
-<tbody>
 tabu	#536878
 taffy	#C19A6B
 talavera	#AE6938
@@ -6852,7 +6685,6 @@ tomato red	#882D17
 tommy red	BC3F4A
 topaz	#C19A6B
 topaz	#996515
-</td></tr>
 topaz	#BE8A3D
 topaz amber	#D99058
 toquet	#C7ADA3
@@ -6947,14 +6779,6 @@ tyrolese green	#679267
 tyrolian	#1A2421
 tyrolite green	#66ADA4
 tzarine	#1E2321
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- U -</th></tr>
-</thead>
-<tbody>
 ultramarine	#30267A
 ultramarine	#8C82B6
 ultramarine	#30267A
@@ -6971,14 +6795,6 @@ universal	#36454F
 urania blue	#2F2140
 urania blue	#50404D
 uranium green	#BDDA57
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- V -</th></tr>
-</thead>
-<tbody>
 vagabond	#317873
 vagabond green	#004B49
 valencia	#DE6FA1
@@ -7129,7 +6945,6 @@ vinoso-griseus	#796878
 vinoso-lividus	#915F6D
 vinoso-purpureus	#836479
 vinosus	#F88379
-<tr><td>vin ros&eacute;</td><td title="16" style="background-color:#722F37; color:#FFF">16</td><td title="259" style="background-color:#673147; color:#FFF">259</td></tr>
 viola	#86608E
 viola	#B695C0
 violaceo-ardesiacus	#5D555B
@@ -7187,14 +7002,6 @@ vivid peacock blue	#007791
 vivid turquoise	#007A74
 vivid turquoise blue	#367588
 vivid turquoise green	#007A74
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- W -</th></tr>
-</thead>
-<tbody>
 wad	#536878
 wafted feather	#BFB9BD
 wald	#B9B459
@@ -7335,23 +7142,7 @@ wood rose	#958070
 wood violet	#602F6B
 wren	#57554C
 wrought iron	#555555
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- X -</th></tr>
-</thead>
-<tbody>
 xanthine orange	#BE6516
-</tbody>
-</table>
-<table width="100%">
-<colgroup span="45">
-<thead>
-<tr><th>- Y -</th></tr>
-</thead>
-<tbody>
 yacht	#0067A5
 yale blue	#00416A
 yale blue	#4E5180
