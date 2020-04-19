@@ -3,6 +3,7 @@ Handle importing and processing of various color maps.
 """
 
 import re
+import pandas as pd
 
 def makeXkcdMap(xkcdMapRaw):
     """
@@ -41,3 +42,17 @@ def makeRidgwayMap(ridgwayRaw):
 
 ridgwayRaw = open('../data/maps/jaffer/ridgway.html')
 ridgwayMap = makeRidgwayMap(ridgwayRaw)
+
+def makeMasterMap(raw):
+    masterMap = {}
+    for line in raw:
+        splitLine = line.split('\t')
+        if len(splitLine) != 2:
+            print('error on: ', splitLine)
+            continue
+        name, val = line.split('\t')
+        masterMap[name] = val.strip()
+    return masterMap
+
+masterRaw = open('../data/maps/jaffer/master.tsv')
+masterMap = makeMasterMap(masterRaw)

@@ -1589,3 +1589,49 @@ fig.to_html('out.html')
 #+END_SRC
 
 #+RESULTS:
+** Use new NER model to identify colors
+
+#+BEGIN_SRC elisp :session session_init
+(setq org-babel-python-command "nix-shell --run python")
+#+END_SRC
+
+#+RESULTS:
+: nix-shell --run python
+
+#+BEGIN_SRC python :results output :session session_init
+import pandas as pd
+# import altair as alt
+# import findColors # My own module
+# from colorMaps import xkcdMap
+# import plotly.express as px
+import spacy
+#+END_SRC
+
+: #+RESULTS:Python 3.7.6 (default, Dec 18 2019, 19:23:55) 
+: [GCC 9.2.0] on linux
+: Type "help", "copyright", "credits" or "license" for more information.
+
+#+BEGIN_SRC python :results output :session session_init
+nlp = spacy.load('/home/jon/Code/prodigy/colorModel2')
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init
+lighthouse = open('../data/text/lighthouse-small.md').read()
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init
+doc = nlp(lighthouse)
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session_init
+doc.ents
+#+END_SRC
+
+#+RESULTS:
+: (cloud, leaves, rain, rooks, brooms, secret, blue, red, secret, blue, brown, tobacco, sea, grey, mud, sea, sun, straw, seaweed, gritty, sand, blood, yellow, tobacco, grey, green, white, black, blues, go\, winter, blue, green, yellow, red, green, pink, green, grey, pink, tea, blue, buds, sun)
