@@ -1,4 +1,0 @@
-{
-    "nixEnvSelector.nixShellConfig": "${workspaceRoot}/shell.nix",
-    "git.ignoreLimitWarning": true
-}
