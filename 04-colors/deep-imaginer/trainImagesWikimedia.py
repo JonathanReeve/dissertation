@@ -35,7 +35,7 @@ def train(fn, langModel, model=None):
         textDoc = nlp(textPart)
         logging.info(f"Part has {len(textDoc)} words.")
         nouns = list(set([str(w.lemma_) for w in textDoc if w.tag_ == "NN" and w.is_alpha]))
-        logging.info(f"About to query Colorize for these nouns: {nouns}")
+        logging.info(f"About to query Wikimedia Commons for these nouns: {nouns}")
         # exit()
         existingWords = glob('commons-img/*')
         for noun in nouns:

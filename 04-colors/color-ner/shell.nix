@@ -48,7 +48,7 @@ in pkgs.python3.buildEnv.override rec {
 	    matplotlib
       spacy
       pandas
-      spacy_models.en_core_web_md
+      spacy_models.en_core_web_lg
       jupyter
       scikitlearn
       nltk

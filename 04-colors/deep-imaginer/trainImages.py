@@ -9,11 +9,12 @@ import argparse
 from time import sleep
 from glob import glob
 
-import unsplashImages
+import downloadImages
 import processImages
 
 def train(fn, langModel):
     nlp = langModel
+    model = {}
     logging.info(f'Reading text {fn}')
     with open(fn) as f:
         rawText = f.read()
@@ -27,15 +28,15 @@ def train(fn, langModel):
         logging.info(f"Processing part {textParts.index(textPart) + 1} of {len(textParts)}") 
         textDoc = nlp(textPart)
         logging.info(f"Part has {len(textDoc)} words.")
-        nouns = list(set([str(w.lemma_) for w in textDoc if w.tag_ == "NN" and w.is_alpha]))[200:300]
+        nouns = list(set([str(w.lemma_) for w in textDoc if w.tag_ == "NN" and w.is_alpha]))[:200]
         logging.info(f"About to query unsplash for these nouns: {nouns}")
         # exit()
         alreadyHaveIt = glob('img/*')
         for noun in nouns:
             if noun in alreadyHaveIt:
                 continue
-            logging.info(f"Quering Unsplash for word: {noun}")
-            result = unsplashImages.main(noun)
+            logging.info(f"Quering image service for word: {noun}")
+            result = downloadImages.main(noun)
             if result is not None:
               sleep(1)
               processImages.main(noun, 3)
@@ -62,3 +63,18 @@ if __name__ == '__main__':
 
     for f in args.files:
         train(f, nlp)
+
+    # if not args.model:
+    #     model = "model.json"
+    # else:
+    #     model = args.model
+
+    # logging.info(f'Updating model {model}')
+
+    # with open(model) as f:
+    #     decodedModel = json.load(f)
+
+
+    # with open(model, 'wb') as f:
+    #     json.dump(updatedModel, f)
+

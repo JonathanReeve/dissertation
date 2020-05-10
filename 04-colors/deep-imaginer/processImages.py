@@ -2,13 +2,18 @@ import colorgram
 import argparse
 from glob import glob
 import json
+import logging
+import os
 
 # My own module
 import queryModel
 
-def main(word, n): 
+def main(word, n):
 
-    files = glob(f"img/{word}/{word}-*.jpg")
+
+    files = glob(f"img/{word}/*")
+
+    logging.info(f"Processing {len(files)} images for word {word}")
 
     colorGrams = [colorgram.extract(f, n) for f in files]
 
@@ -19,7 +24,7 @@ def main(word, n):
 
     hexes = [[(rgbToHex(color), color.proportion) for color in colors] for colors in colorGrams]
 
-    # print(hexes)
+    logging.info(f"Hexes: {hexes}")
 
     def dominantColors(hexes):
         """
@@ -44,11 +49,16 @@ def main(word, n):
 
     mixed = mixColors(hexes)
     dominant = dominantColors(hexes)
-    secondary = secondColors(hexes)
+    try:
+        secondary = secondColors(hexes)
+    except IndexError:
+        # Fall back on dominant colors if secondary
+        # is not working. 
+        secondary = dominant
 
     def bigBlock(processed):
         """
-        We now have ten hexes, and we want to mix them all into one big block.
+        We now have ten hexes, maybe, and we want to mix them all into one big block.
         """
         combined = queryModel.combineHexes({hexCode: 1/len(processed) for hexCode in processed})
         return combined
@@ -94,9 +104,12 @@ def main(word, n):
         f.write(json.dumps(jsonData))
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
+
     parser = argparse.ArgumentParser(description='Process photos and get the dominant color(s) for them.')
     parser.add_argument('--n', help='number of dominant colors to extract')
-    parser.add_argument('word', help='the word to query')
+    parser.add_argument('--all', action='store_true', help='Whether to process all the color directories.')
+    parser.add_argument('word', nargs='*', help='the word to query, if not all')
     args = parser.parse_args()
 
     if not args.n:
@@ -104,4 +117,11 @@ if __name__ == '__main__':
     else:
         n = int(args.n)
 
-    main(args.word, n)
+    if args.all:
+        allImgDirs = os.listdir('img')
+        logging.info(f'Processing all {len(allImgDirs)} image directories.')
+        for imgDir in allImgDirs:
+            logging.info(f'Processing images in dir {imgDir}')
+            main(imgDir, n)
+    else:
+        main(args.word, n)

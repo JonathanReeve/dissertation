@@ -6,10 +6,66 @@ import json
 
 logging.basicConfig(level=logging.INFO)
 
+def main(modelFn='dictionaryModel.json'):
 
-nutallRaw = open('../data/dict/pg12342.txt').read()
+    baseColors = loadBaseColors()
 
-baseColors = ['black', 'grey', 'brown', 'white', 'red', 'orange', 'yellow', 'green', 'blue']
+    model = loadModel()
+
+    logging.info('Processing Nutall...')
+    with open('../data/dict/pg12342.txt') as f:
+        nutallRaw = f.read()
+    nutallDict = processNutall(nutallRaw)
+
+    logging.info('Loading language model...')
+    nlp = spacy.load('en_core_web_lg')
+    logging.info('done.')
+
+    logging.info('Vectorizing Nutall...')
+    nutallModel = vectorizeDict(nutallDict, langModel=nlp, baseColors=baseColors)
+    logging.info(f'Nutall model preview: {str(nutallModel)[:30]}')
+
+    logging.info('Vectorizing Chambers...')
+    chambersIds = [ 37683, 38538, 38699, 38700 ]
+    chambersTexts = [ open(f'../data/dict/pg{fn}.txt').read() for fn in chambersIds ]
+    chambersModel = {}
+    for chambersText in chambersTexts:
+        logging.info(f'Processing chambers text number {chambersTexts.index(chambersText)}')
+        processed = processNutall(chambersText)
+        chambersVecs = vectorizeDict(processed, langModel=nlp, baseColors=baseColors)
+        chambersModel = mergeModels(chambersModel, chambersVecs)
+
+    logging.info(f'Chambers model preview: {str(chambersModel)[:30]}')
+    masterModel = mergeModels(nutallModel, chambersModel)
+    logging.info(f'Merged model preview: {str(chambersModel)[:30]}')
+
+    # Sort again
+    model = {color: {k: v for k, v in
+                    sorted(stats.items(),
+                            key=lambda item: item[1], reverse=True)}
+            for color, stats in masterModel.items()}
+
+    with open(modelFn, 'w') as f:
+        json.dump(model, f, ensure_ascii=False, indent=4)
+
+def loadBaseColors():
+    with open('../data/maps/xkcd/rgb-termsonly.txt') as f:
+        xkcdColors = f.readlines()
+        xkcdColors = [line.strip() for line in xkcdColors]
+    return xkcdColors
+
+def loadModel(modelFn='dictionaryModel.json'):
+    try:
+        with open(modelFn) as f:
+            try:
+                model = json.load(f)
+            except json.decoder.JSONDecodeError:
+                # Make an empty model
+                model = {}
+    except FileNotFoundError:
+        # Create the file, since it doesn't exist
+        open(modelFn, 'a').close()
+    return model
 
 def processNutall(text):
     paras = text.split('\n\n')
@@ -22,11 +78,6 @@ def processNutall(text):
             definition = result.group(2)
             definitions[word] = definition
     return definitions
-
-nutallDict = processNutall(nutallRaw)
-
-with open('../data/dict/pg29765.txt') as f:
-    websterRaw = f.read()
 
 def processWebster(websterRaw):
     splitString = re.compile("\n([A-Z-]+)\n").split(websterRaw)
@@ -41,13 +92,7 @@ def processWebster(websterRaw):
                 websterDict[item.lower()] = definition.strip().replace('\n', ' ')
     return websterDict
 
-# websterDict = processWebster(websterRaw)
-
-logging.info('Loading language model...')
-nlp = spacy.load('en_core_web_lg')
-logging.info('done.')
-
-def vectorizeDict(nutallDict):
+def vectorizeDict(nutallDict, langModel, baseColors):
     """
     Given a dictionary of word: definition,
     score words for color content by giving a point whenever a color word
@@ -56,15 +101,20 @@ def vectorizeDict(nutallDict):
     colorWords = {}
     for word, definition in nutallDict.items():
         #print(word, definition)
-        defDoc = nlp(definition)
+        word = word.lower()
+        defDoc = langModel(definition)
         for w in defDoc:
             wStr = str(w.lemma_)
             if wStr in baseColors:
                 #print(wStr)
-                if wStr in colorWords:
-                    colorWords[wStr].append(word)
+                color = wStr
+                if color in colorWords:
+                    if word in colorWords[color]:
+                        colorWords[color][word] += 1
+                    else:
+                        colorWords[color][word] = 1
                 else:
-                    colorWords[wStr] = [word]
+                    colorWords[color] = {word: 1}
     return colorWords
 
 def processDictionaryWord(word):
@@ -76,54 +126,24 @@ def processDictionaryWord(word):
     # Lowercase it
     return word.lower().strip()
 
-newModel = vectorizeDict(nutallDict)
-
-# Should now be { 'blue': ['arthur seat', 'canopus', ...] }
-
-# Merge with existing model.
-
-# websterModel = vectorizeDict(websterDict)
-
-chambersIds = [ 37683, 38538, 38699, 38700 ]
-chambersTexts = [ open(f'../data/dict/pg{fn}.txt').read()
-                for fn in chambersIds ]
-
-chambersModels = []
-for chambersText in chambersTexts:
-    processed = processNutall(chambersText)
-    chambersModel = vectorizeDict(processed)
-    chambersModels.append(chambersModel)
-
-with open('model.json') as f:
-    model = json.load(f)
-
 def mergeModels(model, newModel):
-  for color, wordList in newModel.items():
-      for word in wordList:
-          word = processDictionaryWord(word)
-          if color in model:
-              if word in model[color]:
-                  # Add one to the score
-                  model[color][word] += 1
-              else:
-                  model[color][word] = 1
-          else:
-              model[color] = {word: 1}
+    logging.info('Merging models.')
+    logging.info(f'Model type: {type(model)}, newModel type: {type(newModel)}')
+    for color, wordList in newModel.items():
+        for word in wordList:
+            word = processDictionaryWord(word)
+            try:
+                if color in model:
+                    if word in model[color]:
+                        # Add one to the score
+                        model[color][word] += 1
+                    else:
+                        model[color][word] = 1
+                else:
+                    model[color] = {word: 1}
+            except:
+                continue
+    return model
 
-mergeModels(model, newModel)
-
-# mergeModels(model, websterModel)
-
-for chambersModel in chambersModels:
-    mergeModels(model, chambersModel)
-
-
-# Sort again
-model = {color: {k: v for k, v in
-                 sorted(stats.items(),
-                        key=lambda item: item[1], reverse=True)}
-         for color, stats in model.items()}
-
-with open('model.json', 'w') as f:
-    json.dump(model, f, ensure_ascii=False, indent=4)
-
+if __name__ == '__main__':
+    main()
