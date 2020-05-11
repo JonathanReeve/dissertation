@@ -1,105 +1,20 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="generator" content="pandoc" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-        $for(author-meta)$
-        <meta name="author" content="$author-meta$" />
-        $endfor$
-        $if(date-meta)$
-        <meta name="dcterms.date" content="$date-meta$" />
-        $endif$
-        $if(keywords)$
-        <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
-        $endif$
-        <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-        <style>
-         code{white-space: pre-wrap;}
-         span.smallcaps{font-variant: small-caps;}
-         span.underline{text-decoration: underline;}
-         div.column{display: inline-block; vertical-align: top; width: 50%;}
-         body {
-             max-width: 40em;
-             font-family: 'Libre Baskerville', serif;
-             font-size: 1.2rem;
-             -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-             -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-             font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-             margin: auto;
-         }
-         header, header p {
-             text-align: center;
-         } 
-         main p {
-             hyphens: auto;
-             -moz-hyphens: auto;
-             text-align: justify;
-             line-height: 2;
-             text-indent: 4em;
-             margin: 0;
-         }
-         img {
-             max-width: 100%;
-         }
-         $if(quotes)$ q { quotes: "“" "”" "‘" "’"; } $endif$
-         @page {
-             margin: 2.5cm;
-             @bottom-center {
-                 content: counter(page);
-             }
-         }
-         @page :first {
-             margin-top: 3in;
-         }
-        </style>
-        $if(highlighting-css)$
-        <style>
-         $highlighting-css$
-        </style>
-        $endif$
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i&display=swap&subset=latin-ext" rel="stylesheet">
-        $for(css)$
-        <link rel="stylesheet" href="$css$" />
-        $endfor$
-        $if(math)$
-        $math$
-        $endif$
-        <!--[if lt IE 9]>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-        <![endif]-->
-        $for(header-includes)$
-        $header-includes$
-        $endfor$
-    </head>
-    <body>
-        $for(include-before)$
-        $include-before$
-        $endfor$
-        $if(title)$
-        <header id="title-block-header">
-            <h1 class="title">$title$</h1>
-            $if(subtitle)$
-            <p class="subtitle">$subtitle$</p>
-            $endif$
-            $for(author)$
-            <p class="author">$author$</p>
-            $endfor$
-            $if(date)$
-            <p class="date">$date$</p>
-            $endif$
-        </header>
-        <main>
-        $endif$
-        $if(toc)$
-        <nav id="$idprefix$TOC" role="doc-toc">
-            $table-of-contents$
-        </nav>
-        $endif$
-        $body$
-        $for(include-after)$
-        $include-after$
-        $endfor$
-        </main>
-    </body>
-</html>
+<html><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"><meta content="Jonathan Reeve" name="author"><meta content="$date-meta$" name="dcterms.date"><title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title><style type="text/css">
+p
+{
+  line-height : 2;
+  color       : #ff0000;
+}
+
+
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page { margin: 3cm; @bottom-center { content: counter(page); } }</style><link href="../templates/tufte-css/tufte.css" rel="stylesheet"><link href="../templates/tufte-css/latex.css" rel="stylesheet"></head><body>
+ $for(include-before)$ 
+ $include-before$ 
+ $endfor$ 
+<header><h1 class="title">$title$</h1><p class="author">$author$</p><p class="date">$date$</p></header><main>$if(toc)$ 
+<nav role="doc-toc" id="$idprefix$TOC">$table-of-contents$ 
+</nav>$endif$ 
+ $body$ 
+ $for(include-after)$ 
+ $include-after$ 
+ $endfor$ 
+</main></body></html>

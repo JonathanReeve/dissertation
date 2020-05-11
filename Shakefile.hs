@@ -1,13 +1,19 @@
--- Shakefile
 
+-- Shakefile Stuff
 import Development.Shake
 import Text.Regex
+import Data.Text.Lazy as TL
+
+import Lucid (renderToFile)
+
+import Template
 
 opts = shakeOptions { shakeFiles    = ".shake/" }
 
 images = getDirectoryFiles "" [ "02-history/images/*" ]
 
-replace str = subRegex (mkRegex "cite:") str "@"
+-- ReplaceCites org style citation syntax with @-syntax for Pandoc
+replaceCites str = Text.Regex.subRegex (mkRegex "cite:") str "@"
 
 main :: IO ()
 main = shakeArgs opts $ do
@@ -38,7 +44,7 @@ main = shakeArgs opts $ do
             csl = "templates/modern-language-association.csl"
         need ([ source, template, csl, bib ] ++ deps)
         contents <- readFile' source
-        let replaced = replace contents
+        let replaced = replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
@@ -59,7 +65,6 @@ main = shakeArgs opts $ do
         cmd_ dir "xelatex" source
         cmd_ dir "xelatex" source
 
-
     "02-history/ch-2.docx" %> \f -> do
         let source = "ch-2.tex"
             bib = "02-history/references.bib"
@@ -74,3 +79,24 @@ main = shakeArgs opts $ do
                                            "--filter", "pandoc-citeproc",
                                            "-o", "ch-2.docx"
                                          ]
+
+    "04-colors/ch-4.html" %> \f -> do
+        deps <- images
+        let source = "04-colors/ch-4.org"
+            template = "templates/template.html"
+            bib = "references.bib"
+            csl = "templates/modern-language-association.csl"
+        need ([ source, template, csl, bib ] ++ deps)
+        -- need ([ source ] ++ deps)
+        contents <- readFile' source
+        let replaced = replaceCites contents
+        cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
+                                       "--template", template,
+                                       "--standalone",
+                                       -- "--bibliography", bib,
+                                       "-o", f
+                                       ]
+
+    "templates/template.html" %> \f -> do
+        need ["templates/template.hs"]
+        liftIO $ renderToFile f pageHtml
