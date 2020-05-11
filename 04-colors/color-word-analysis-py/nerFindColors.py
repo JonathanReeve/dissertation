@@ -80,6 +80,6 @@ for bookId in idList:
                      }
             }
 
-    results.write(json.dumps(data))
+    results.write('\n' + json.dumps(data))
 
 results.close()
