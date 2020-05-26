@@ -25,21 +25,21 @@ with import <nixpkgs> {};
       buildInputs = [ pkgs.python3Packages.pillow pkgs.python3Packages.networkx ];
     };
 
-    CommonsDownloader = pkgs.python3Packages.buildPythonPackage rec {
-      pname = "CommonsDownloader";
-      version = "0.5.3";
-      src = pkgs.fetchFromGitHub {
-        owner = "JonathanReeve";
-        repo = "CommonsDownloader";
-        rev = "0.5.5";
-        sha256 = "0qi4068q74vj894cwnh6ki9w04293vzkqbd6dz67jllynph3wnw9";
-      };
-      postPatch = ''
-        # Prevent errors that complain about missing argparse
-        rm requirements.txt '';
-      buildInputs = [ pkgs.python3Packages.mwclient ];
-      doCheck = false;
-    };
+    # CommonsDownloader = pkgs.python3Packages.buildPythonPackage rec {
+    #   pname = "CommonsDownloader";
+    #   version = "0.5.3";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "JonathanReeve";
+    #     repo = "CommonsDownloader";
+    #     rev = "0.5.5";
+    #     sha256 = "0qi4068q74vj894cwnh6ki9w04293vzkqbd6dz67jllynph3wnw9";
+    #   };
+    #   postPatch = ''
+    #     # Prevent errors that complain about missing argparse
+    #     rm requirements.txt '';
+    #   buildInputs = [ pkgs.python3Packages.mwclient ];
+    #   doCheck = false;
+    # };
 
     newPlotly = pkgs.python3Packages.buildPythonPackage rec {
       pname = "plotly";

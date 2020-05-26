@@ -1,0 +1,190 @@
+#+TITLE: Ch. 4: Colors
+#+AUTHOR: Jonathan Reeve
+#+NOCITE: cite:ridgway1886nomenclature, cite:ridgway1912color 
+
+Here is a chapter about colors.
+
+* Presenting the Problem: Color in Modernist Studies
+** Poetry/prose
+** Literary Description
+
+* First Considerations
+
+Maerz and Paul note that there is a doubly fleeting quality to colors: "the confused ideas on color nomenclature are found due to two factors, one material, the other intellectual. The first has been the ability of color makers, in the past, to produce color substances that were both brilliant and permanent ... the second is the difference of opinion as to the exact color indicated by any name, and the lack of any authority by which an individual opinion can be upheld." [cite:maerz1930dictionary 1]
+  - Later: "the name Lemon Yellow would seem sufficiently accurate as a descriptive term, yet the color of lemons varies slightly and the memory for exact color sensations, when the original is not at hand, is often faulty." (1)
+
+In /Ulysses/, lemons and lemon-yellow is a leitmotif that appears at intervals throughout the novel. First appearing as the "Paris fad" for tea which Buck Mulligan rejects in favor of "Sandycove milk" (Stephen has just recently returned from Paris, and had aquired some of its habits), the color appears in "Proteus," as Stephen muses about the effects of sunlight on the color of the houses: "Gold light on sea, on sand, on boulders. The sun is there, the slender trees, the lemon houses. ¶ Paris rawly waking, crude sunlight on her lemon streets" [cite:joyce_ulysses_1986 10, 35]. Neither the Sandymount houses nor the Paris cobblestones are painted lemon-yellow, of course, or appear so at all other times of day, but they appear so under the reflection of the early morning light. Stephen, a poet, is more interested in the /phenomenon/ of the visual experience than the /categorical/ one which would describe the houses by the name of their paint, or the stones as gray.  
+
+Bloom, too, imagines the skin of his naked body in the bath, as "lemonyellow," not because he is jaundiced, or of olive-toned Mediterranean complexion, but because he imagines the light catching his body, "oiled by scented melting soap," the lemon-scented and lemon-colored soap he'd just bought [cite:joyce_ulysses_1986 71]. When Bloom later notices the scent of "citronlemon" in his handkerchief, he conflates the /citron/, an ancestor of the lemon and the French word for lemon, with Israel Citron, a real Dubliner about whom he had been thinking two paragraphs earlier  [cite:gifford_ulysses_1988 74, 133]. Don Gifford suggests that Bloom "associates the soap with the citron (/Ethrog/) central in the ritual of the Jewish Feast of Tabernacles (Sukkoth) (133). In the surreal dream of the Circe episode, this soap reifies, "diffusing light and perfume," and speaks in terms of light and reflections: "we're a capital couple are Bloom and I. He brightens the earth. I polish the sky" [cite:joyce_ulysses_1986 340].  
+
+To these problems, Maerz and Paul add that the color of /lemons themselves/ varies. In fact, lemons themselves are green before they ripen, and green in certain varieties. In French, a language Stephen often daydreams in, lemons and limes are /citron/ and /citron vert,/ ("green lemons") most commonly, meaning that lemons can be both yellow and green, in that language's taxonomy. However, the /color/ lemon, in English and in French, invariably refers to a bright yellow, despite any variation in its actual color. This is a problem in in color categorization, which I will discuss below: everyone knows that lemons are yellow, blood is red, and so on. But lemons are also green, and blood is usually brownish.
+
+- Berlin and Kay goes here? 
+
+
+** The eye thinks
+- Eye of the beholder
+- The eye "thinks" - Feynman
+- Goethe "we naturally place these colours first, because they belong altogether, or in a great degree, to the /subject/—to the eye itself. ... Thus they are called /colores adventicii/ by Boyle; /imaginarii/ and /phantastici/ by Rizetti; by Buffon, /couleurs accidentelles/; by Sherfer, /scheinfarben/ (apparent colours); /ocular illusions/ and /deceptions of sight/ by many; by Hamberger, /vitia fugitiva/; by Darwin, /ocular spectra/" [cite:von1840goethe 1-2]. 
+
+
+** Gladstone and the wine-dark sea
+
+
+
+** On the Impossibility of a Bluish Yellow
+
+Ludwig Wittgenstein, in his late work /Remarks on Color/, [/Bemerkugen über die Farben/, written in 1950], asks whether it is possible to imagine a "bluish yellow": 
+
+#+BEGIN_QUOTE
+If you call green an intermediary colour between blue and yellow, then you must also be able to say, for example, what a slightly bluish yellow is, or an only somewhat yellowish blue. And to me these expressions don't mean anything at all. But mightn't they mean something to someone else? [cite:wittgenstein1978remarks 20e] 
+#+END_QUOTE
+
+Wittgenstein then asks whether a "reddish green" or other color combinations might be difficult to imagine, and why. He posits that the category of green is what prevents him from imagining "bluish yellow," since, he says, "for me, green is one special way-station on the coloured path from blue to yellow..." [cite:wittgenstein1978remarks 22e]. This is an important question. Written more abstractly, we might ask: why do linguistic categories—color words and their currency in our language—transform our ability to imagine? I say "our" here with some hesitation, since I suppose an affinity with others who might experience color terminology in the same way, but recognize that a painter, with years of experience mixing colors, might imagine these terms differently, as would, most likely, a speaker of a language very different from English.  
+
+Determined to test Wittgenstein's thought experiment, I constructed a matrix of color expressionions from the XKCD color map, where one word ends in /-ish,/ shown here in [fig:ishMatrix]. 
+
+#+CAPTION: XKCD "-ish" Word Matrix
+#+NAME: fig:ishMatrix
+#+BEGIN_HTML
+<table><thead><th>color</th><th style="background-color: #94568c;">purplish</th><th style="background-color: #40a368;">greenish</th><th style="background-color: #2976bb;">bluish</th><th style="background-color: #a8a495;">greyish</th><th style="background-color: #24bca8;">tealish</th><th style="background-color: #c44240;">reddish</th><th style="background-color: #d46a7e;">pinkish</th><th >lightish</th><th style="background-color: #9c6d57;">brownish</th><th >darkish</th><th style="background-color: #8756e4;">purpley</th><th >yellowy</th><th >bluey</th><th style="background-color: #faee66;">yellowish</th><th style="background-color: #98568d;">purpleish</th><th style="background-color: #fc824a;">orangish</th><th >light</th><th style="background-color: #fd8d49;">orangeish</th></thead><tbody><tr><td style="background-color: #e50000;">red</td><td class="purplish" style="background-color: #b0054b;">purplish red</td><td class="greenish" >nan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" style="background-color: #f10c45;">pinkish red</td><td class="lightish" style="background-color: #fe2f4a;">lightish red</td><td class="brownish" style="background-color: #9e3623;">brownish red</td><td class="darkish" style="background-color: #a90308;">darkish red</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" style="background-color: #f43605;">orangish red</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #0343df;">blue</td><td class="purplish" style="background-color: #601ef9;">purplish blue</td><td class="greenish" style="background-color: #0b8b87;">greenish blue</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #5e819d;">greyish blue</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" style="background-color: #3d7afd;">lightish blue</td><td class="brownish" >nan</td><td class="darkish" style="background-color: #014182;">darkish blue</td><td class="purpley" style="background-color: #5f34e7;">purpley blue</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" style="background-color: #6140ef;">purpleish blue</td><td class="orangish" >nan</td><td class="light" style="background-color: #63f7b4;">light greenish blue</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #653700;">brown</td><td class="purplish" style="background-color: #6b4247;">purplish brown</td><td class="greenish" style="background-color: #696112;">greenish brown</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #7a6a4f;">greyish brown</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #7f2b0a;">reddish brown</td><td class="pinkish" style="background-color: #b17261;">pinkish brown</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" style="background-color: #ae8b0c;">yellowy brown</td><td class="bluey" >nan</td><td class="yellowish" style="background-color: #9b7a01;">yellowish brown</td><td class="purpleish" >nan</td><td class="orangish" style="background-color: #b25f03;">orangish brown</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #ff81c0;">pink</td><td class="purplish" style="background-color: #ce5dae;">purplish pink</td><td class="greenish" >nan</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #c88d94;">greyish pink</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #fe2c54;">reddish pink</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #c27e79;">brownish pink</td><td class="darkish" style="background-color: #da467d;">darkish pink</td><td class="purpley" style="background-color: #c83cb9;">purpley pink</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" style="background-color: #df4ec8;">purpleish pink</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #929591;">grey</td><td class="purplish" style="background-color: #7a687f;">purplish grey</td><td class="greenish" style="background-color: #96ae8d;">greenish grey</td><td class="bluish" style="background-color: #748b97;">bluish grey</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #997570;">reddish grey</td><td class="pinkish" style="background-color: #c8aca9;">pinkish grey</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #86775f;">brownish grey</td><td class="darkish" >nan</td><td class="purpley" style="background-color: #947e94;">purpley grey</td><td class="yellowy" >nan</td><td class="bluey" style="background-color: #89a0b0;">bluey grey</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #ffff14;">yellow</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #cdfd02;">greenish yellow</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #c9b003;">brownish yellow</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #029386;">teal</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #32bf84;">greenish teal</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #719f91;">greyish teal</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #d1b26f;">tan</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #bccb7a;">greenish tan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" style="background-color: #d99b82;">pinkish tan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" style="background-color: #fcfc81;">yellowish tan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #06c2ac;">turquoise</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #00fbb0;">greenish turquoise</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #e6daa6;">beige</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #c9d179;">greenish beige</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #00ffff;">cyan</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #2afeb7;">greenish cyan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #7e1e9c;">purple</td><td class="purplish" >nan</td><td class="greenish" >nan</td><td class="bluish" style="background-color: #703be7;">bluish purple</td><td class="greyish" style="background-color: #887191;">greyish purple</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #910951;">reddish purple</td><td class="pinkish" style="background-color: #d648d7;">pinkish purple</td><td class="lightish" style="background-color: #a552e6;">lightish purple</td><td class="brownish" style="background-color: #76424e;">brownish purple</td><td class="darkish" style="background-color: #751973;">darkish purple</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" style="background-color: #6241c7;">bluey purple</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #15b01a;">green</td><td class="purplish" >nan</td><td class="greenish" >nan</td><td class="bluish" style="background-color: #10a674;">bluish green</td><td class="greyish" style="background-color: #82a67d;">greyish green</td><td class="tealish" style="background-color: #0cdc73;">tealish green</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" style="background-color: #61e160;">lightish green</td><td class="brownish" style="background-color: #6a6e09;">brownish green</td><td class="darkish" style="background-color: #287c37;">darkish green</td><td class="purpley" >nan</td><td class="yellowy" style="background-color: #bff128;">yellowy green</td><td class="bluey" style="background-color: #2bb179;">bluey green</td><td class="yellowish" style="background-color: #b0dd16;">yellowish green</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" style="background-color: #76fda8;">light bluish green</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #f97306;">orange</td><td class="purplish" >nan</td><td class="greenish" >nan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #f8481c;">reddish orange</td><td class="pinkish" style="background-color: #ff724c;">pinkish orange</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #cb7723;">brownish orange</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" style="background-color: #ffab0f;">yellowish orange</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr></tbody></table>
+#+END_HTML
+
+Not only are there no entries for /bluish yellow/ or /reddish green/ here, but a few other patterns are apparent. 
+ 1. /Yellowish green/ is not the same as /greenish/ yellow, indicating that the first adjective indicates a lesser amount of the color mixed with a greater amount of the second. 
+ 2. Those colors that take /-ish/ adjectives are common colors. However common a color like /maroon/ might be, /reddish maroon/ does not appear in this list, potentially because it's not considered a basic color with the ability to be mixed. However, some colors which are common in marketing, like /beige/ and /teal,/ but which are less common in paint names, are present here.
+ 3. /Orangeish/ and /orangish/, variant spellings of the word, have different average colors here.
+ 4. /Orangish/ is used as a modifier half as much as /orange/ is modified by an /-ish/. 
+ 5. /Pink/ has many variations here, despite being simply a shade of red.
+ 6. /Greenish/ and /brownish/ are much more versatile as modifiers than others. 
+ 7. Similarly, /green/ is much more easily /-ish/ed than other colors. 
+
+
+** "The Dress"
+
+
+* Imagining Words: Mapping Words to Colors
+
+What we need in a good color mapping: 
+ - Consensus. Color names should not be too subjective, since we want language that can be evocative with some degree of reliability. To this end, word/color pairs that appear in more than one map should be weighted higher than those that only appear in one. 
+ - Synchronic. The color names should not be anachronistic to the texts we are trying to understand. So a color like /cyberspace blue/ is not very irrelevant to an understanding of a Virginia Woolf novel. However there is a sense in which it does: the imagination of a contemporary reader applies to his or her understanding of a literary work. 
+ - Syntopic. /Army green/ and /navy blue/ refer to the uniforms of their respective countries. However, the proliferation of these colors between militaries makes this difference small.
+ - Objectivity. We need to mitigate the influence of marketing on color naming. Paint manufacturers and similar organizations have a way of describing colors that are meant to sell paint: they skew towards pleasant color names. Yet not all colors are pleasant ones.
+   - However colors on the whole do skew pleasant. They show attention, since they're only available in the center of one's field of vision.
+ - Size. It would be best not to exclude colors simply because they don't appear in a pack of Crayola crayons. Yet the more colors one includes, the more chances there are of metaphors that are more subjective, and farther afield.
+  
+A related issue is the algorithm by which color words are matched in a text.
+ - Fuzziness. /blue-green/ and /blue green/ should be categorized together as the same color. Yet /blue! Green,/ that is, at the end of one sentence and the beginning of another, should not be categorized together.
+ - /absinthe green/ should match /absinthe/ as well as /absinthe green./
+ - "Green" and "greenness" are in the same family, but are not necessarily synonyms, since "greenness" connotes something more abstract. There needs to be a way to collapse these.
+
+** Heuristic Mappings
+*** Summary and Statistics
+
+Table of color mappings
+
+| Shortform name | Longform name                          | Number of Color/Word Pairs | Year |   |
+|----------------+----------------------------------------+----------------------------+------+---|
+| Ridgway        | Color Standards and Color Nomenclature |                       1113 | 1912 |   |
+| XKCD           | XKCD Color Survey                      |                        954 |      |   |
+| Maerz and Paul |                                        |                            |      |   |
+|                |                                        |                            |      |   |
+|                |                                        |                            |      |   |
+|                |                                        |                            |      |   |
+|                |                                        |                            |      |   |
+
+*** Historical
+
+Some of the most ambitious attempts at mapping colors to their names, or naming colors, came from the natural sciences. American ornithologist Robert Ridgway (1850-1929), for example, authored two influential works of color naming systems: /A Nomenclature of Colors for Naturalists/ in 1886 , and /Color Standards and Color Nomenclature/ in 1912. In the preface of the earlier work, Ridgway names as his problem that "the author has in collection considerably over three hundred water-colors, each bearing a different name." 
+
+Another influential work of color naming is the ambitious and polyglot volume from Italian botanist Pier Andrea Saccardo bearing the formidable Latin title, /Chromotaxia Seu Nomenclator Colorum, Polyglottus, Additis Specimibus Coloratis ad Usam Botanicorum et Zoologorum/ (1894). Although containing only fifty colors, it features an index of several hundred "synonyms" for these colors in Latin, Italian, French, English, and German. While some of these are recognizable to modern readers, others seem strangely specific, such as /Murinus/ (mousey) or /Fuligineus/ ("sooty"). Saccardo provides two supplementary colors: /achrous/, or colorless, glassy; and /sordidus/, or "sordid," "dirty," which he describes as a modifier rather than a color. [fn:"/non est color definitus sed indicat inquinamentum aliorum colorum. Exempla: sordide albus, luride ruber/" [cite:saccardo1891chromotaxia 16].]
+
+# TODO: make these less of a list, more of a continuation of an argument. 
+
+
+*** Pantone and paint problems
+- Mercantile
+- Food-related
+
+*** Jaffer
+
+*** XKCD
+:PROPERTIES:
+:ID:       2aae2496-fed6-49a2-8e63-755369cbb382
+:END:
+Among the more useful color mappings is one from Russell Monroe, an American author, former NASA engineer, and cartoonist best known for his webcomic XKCD. Monroe surveyed his wide readership, asking them to name colors they were shown at random on his website. He also took demographic data from them, logged their locations via their computers' addresses, and asked them whether they were colorblind, or used a cathode ray tube monitor. The survey results, which represent the five million color mappings from 220,500 users, show a consensus for many color names, as shown in .
+
+#+CAPTION: XKCD Color Mappings
+#+NAME: fig:xkcdBlocks
+[[./images/xkcd-blocks.png]]
+
+This mapping presents a useful counterpoint to commercial mappings such as that of Munsell and Pantone, or to more systematic mappings like Ridgway's. In the sample presented in [fig:xkcdBlocks], we see a mix of naming metaphors. The usual food metaphors (/melon,/ /mocha,/ /coffee/) appear next to animal metaphors (/camel,/ /canary yellow/) and creative compounds indicating a small amount of one color mixed into another (/purplish, bluey, purply, preyish/). The informality of the "-ish" suffix suggests extemporaneous description, as if colors are mixing in the imaginations of these survey respondants, in the absence of a ready-made metaphor. For comparison, /greyish pink/ in this color map is /blush/ in Pantone, and /darkish green/ translates to /online lime./ And of course, one would expect that /sickly green/ would not be an easily marketable name for a commodity, especially if it were food, so in Pantone the color is /lime green./ [fn:1]
+
+[fn:1] If an exact match for a hex value does not exist  in a color map, I find the closest color to it using $\Delta E^{*}_{ab}-76$. This is described in more detail in the next section on categorization.
+
+** Categorization
+First questions:
+
+How do we categorize certain visual experiences with categories like /red/, /blue/, and so on? Where do the boundaries of these categories begin and end?
+
+We might consider /light blue/ to be a subcategory of /blue,/ since the word /blue/ is contained within it. However, is /light pink/ a subcategory of /pink/ or of /red/? 
+
+The accepted standard colorspace, and associated color difference functions, were produced by the /Commission Internationale de l'Eclairage/ [International Commission on Illumination], or CIE, an organization formed in 1913 to solve problems of chromaticity standardization, among others. A 1973 meeting of the CIE Colorimetry Committee, having evaluated a number of previously used color difference formulae, produced the first iteration of a formula they called $\Delta E$. [cite:robertson1990historical 167]. 
+
+$$\Delta E = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}$$
+
+
+*** Is blood red?
+
+While categorizing colors using CIE LAB $\Delta E$, the category for the XKCD color word /blood/ (#770001) gets categorized as brown, instead of red, as one might have predicted. Incidentally, /blood red/ (#980002) is a different color in the XKCD map, which is redder (i.e., contains a higher R value in its RGB representation) than /blood/. And /Dried blood/ (#4b0101) also exists, and is mapped to a darker red.
+
+My initial feeling was that /blood/ was miscategorized as a brown, and should instead be categorized as red. We all know blood is red–the term /blood red/ itself proves it, right? But to look through images of blood, we may, in fact, discover that it is not red, but at best, a reddish brown. This is seemingly confirmed by the deep imaginer's image-based imagined color (described below), which is #915b47. An image search at a stock photo provider like [[https://unsplash.com/][Unsplash]] or [[https://www.pexels.com/][Pexels]] seems to confirm this, as well. However, crucially, the same searches for illustrations, rather than photos, depict blood as a bright red, instead of reddish brown—this seems to show that the linguistic-cognitive /concept/ of blood is aligned with the /concept/ of red, even though they aren't visually equivalent. So when the OED editors, however meticulously they document theusages of /blood-red/, which date back to early Old English, gloss the term disappointingly literally as "red like blood; blood-coloured," (/OED/, "blood-red"), [TODO: add to bibliography] they do not account for the discrepancy between the color of "blood-red" and the actual color of blood.
+
+In British literature of this period, /blood-red/ is often used to evoke other qualities of blood, although not necessarily its true color. In the hell-sermon that is the pivotal scene in Joyce's /A Portrait of the Artist as a Young Man/, it is used to underscore the apocalyptic scene that Father Arnall is trying to describe: "the doomsday was at hand. The stars of heaven were falling upon the earth ... The sun, ... had become as sackcloth of hair. The moon was bloodred" [TODO: cite 99]. Lunar eclipses, in which the sun's light on the moon is eclipsed, leaving only the earth's light, make the moon appear dark red. These have long been described in English as a /blood moon/, but this is not just a color comparison: it is a metaphor which anthropomorphizes the moon in this state, comparing the moon's face to one whose face has filled with blood, out of anger or another heightened emotional state. Father Arnall's use of this metaphor, along with his simile for the sun, anthropomorphize heaven as a way to dramatize the wrath of God.
+
+In Thomas Hardy's 1892 /Tess of the d'Urbervilles/, Tess is described, in an early foreshadowing scene, as "not divining" that Alec d'Urberville, "one who stood fair to be the blood-red ray in the spectrum of her young life," would come to be "the tragic mischief of her drama" [TODO: Broadview 73]. As in Joyce, "blood-red" allows for polysemy. First, it is "red in the spectrum of her life": red is the first, highest-frequency, and longest-wavelength band of a prismatic or spectrographic projection of Tess's life, implying that Alec will be for her among the first and most striking bands of her life. (Spectroscopy—a kind of scientific "divining" of the material composition of matter, based on the spectral composition of its light—had come of age as a science in the 1870s and 80s, only a decade or two before /Tess/'s publication.) Second, "blood red" here implies a more literal red which comes from blood: a blushing which is seen in human faces, as well as, by extension of the metaphor, flowers, and fruit. This is the culmination of a chapter's worth of red imagery, since Tess and Alec have just been picking strawberries and roses, and it is intertwined with imagery of Tess's coming-of-age, or /blossoming/ as the floral metaphor often has it.
+
+# On rosy breasts (Hardy: roses in her "bosom") see [cite:clarke2003imagery 135] on Catallus
+
+When /blood-red/ is understood as blushing, however, this is not the color of external, disembodied blood, which we have already established is more akin to brown, but refers to pinkish, blood-rich skin. In the Hungarian language, to choose one cross-cultural example, there are famously two words for red, /vörös/, derived from the word for /blood/, and /piros/, of similar etymology, but referring instead to, as linguist Anna Wierzbicka posits, "the color of blood inside a person's body (visible sometimes in an open wound and in a person's 'red' face)" [cite:wiezbicka2006semantics].
+
+A /red face,/ Wierzbica suggests, is not an attempt at accurately describing the color of someone's face, but only that it has become more pink, i.e., taken on a more reddish hue than before. The red in question, then, is more of a reference to the /concept/ of red, via /blood/ and /blood-red/, than to the color phenomenon itself.
+
+This red—again, not really the color red, but the concept—is the same red of rouge, the cosmetic used to emulate blushing, and whose name is derived from the French word for /red/. Rouge itself is often not red, but a somewhat reddish, pinkish, or purplish tint of another color. Max Beerbohm famously sings the praises of rouge, as a symbol of colorfulness and artifice, in an 1894 polemic in the short-lived by influential aestheticist journal bearing the name of another bright color: /The Yellow Book/. "The Pervasion of Rouge," originally titled "A Defence of Cosmetics," declares the end of the Victorian era, and thus "sancta simplicitas," which we might interpret as a restricted color palette [TODO: cite]. Queen Victoria would not die, taking her eponymous era with her, for another seven years, but this declaration is an important herald of the "bright modernity" to come, as Blasszczyk and Spiekermann term it. 
+
+# TODO: Bright modernity
+
+P. A. Saccardo's taxonomy does not place the color of blood with /red/ at all, however, but with purple: he gives /sanguineus/ as a Latin synonym of /purpureus/, along with the Greco-latin /hæmatochrous, hæmatinus,/ and /hæmatites/ [cite:saccardo1891chromotaxia 8]. This is the traditional categorization of classical antiquity: the mapping appears in Homer, where in the /Iliad/, the earth is wet with purple blood. A. T. Murray's English translation of Homer gives "thus mighty Aias charged them, and the earth grew wet with dark blood," [αἵματι δὲ χθὼν δεύετο πορφυρέῳ] although /πορφυρέῳ/, which is translated as /dark/, is an etymological ancestor of /purple/ [TODO: cite [[http://data.perseus.org/citations/urn:cts:greekLit:tlg0012.tlg001.perseus-eng1:17.319-17.365][Perseus project here]]]. This categorization continues through Vergil, Ovid, and Horace. In fact, as Jacquiline Clarke points out, Horace plays with the traditional Homeric association of /πορφύρεος/ with the sea and with death (/πορφύρεος θάνατος/, purple death or dark death, appears thrice in the /Iliad/), by juxtaposing the two in a purple blood-stained sea [cite:clarke2003imagery 132]. However, Liddell and Scott are quick to warn that "Homer seems not to have known the πορφύρα, [a purple fish, or purple dye] so that the word does not imply any definite colour." [TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=porfu%2Freos&la=greek&can=porfu%2Freos0&prior=e)/llabe&d=Perseus:text:1999.01.0133:book%3D5:card%3D43&i=1#lexicon][this purseus page]]]. 
+
+To further complicate matters, saccardo's /purpureus/, while certainly on a spectrum that seems to range from red, to purple, and finally to brown, has a color of #8D0202,  at least as it appears in the scanned edition from [[https://archive.org][archive.org]], however faded its original pigments may be. Some may rightly call this color red.
+
+# Great segue into wine-dark sea would go here
+
+*** On base colors
+- Berlin and Kay 1969
+
+** Deep Imagining
+*** Image-based
+**** Saturation notes
+*** Dictionary-based
+**** No white sheep problem
+*** Proximity-based
+
+** NER
+
+* Imagining Texts: Aggregating Color Mappings
+
+** Big Data and Literary History
+- Making the corpus
+- Problems with the corpus
+** Literary Description
+
+** In narrative time
+** Genre, canonicity
+
+* Case Studies
+** Wells
+** Woolf
+** Color compound words in /Portrait/
+** Lord Dunsany?
+* Works Cited

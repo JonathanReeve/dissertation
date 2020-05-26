@@ -1,8 +1,13 @@
-
 -- Shakefile Stuff
 import Development.Shake
 import Text.Regex
-import Data.Text.Lazy as TL
+import qualified Data.Text as T
+import Data.Text.ICU (regex)
+-- import Data.Text.Lazy as TL
+import qualified Data.Text.IO as TIO
+import qualified Data.Text.ICU.Replace as TR
+
+import Main.Utf8 (withUtf8)
 
 import Lucid (renderToFile)
 
@@ -12,11 +17,14 @@ opts = shakeOptions { shakeFiles    = ".shake/" }
 
 images = getDirectoryFiles "" [ "02-history/images/*" ]
 
--- ReplaceCites org style citation syntax with @-syntax for Pandoc
-replaceCites str = Text.Regex.subRegex (mkRegex "cite:") str "@"
+-- Replace org style citation syntax with @-syntax for Pandoc
+replaceCites :: T.Text -> T.Text
+replaceCites text = TR.replaceAll (regex [] (T.pack "cite:")) (TR.rstring "@") text
+
+readFileText text = need [text] >> liftIO (TIO.readFile text)
 
 main :: IO ()
-main = shakeArgs opts $ do
+main = withUtf8 $ shakeArgs opts $ do
     want ["02-history/ch-2.pdf" ]
    -- , "02-history/ch-2.docx"]
 
@@ -32,7 +40,7 @@ main = shakeArgs opts $ do
                                       "/*.blg",
                                       "/references.bib"]
 
-    "02-history/references.bib" %> \f -> do
+    "//references.bib" %> \f -> do
         let source = "/home/jon/Dropbox/Papers/library.bib"
         cmd "cp" source f
 
@@ -43,8 +51,8 @@ main = shakeArgs opts $ do
             bib = "references.bib"
             csl = "templates/modern-language-association.csl"
         need ([ source, template, csl, bib ] ++ deps)
-        contents <- readFile' source
-        let replaced = replaceCites contents
+        contents <- readFileText source
+        let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
@@ -88,15 +96,20 @@ main = shakeArgs opts $ do
             csl = "templates/modern-language-association.csl"
         need ([ source, template, csl, bib ] ++ deps)
         -- need ([ source ] ++ deps)
-        contents <- readFile' source
-        let replaced = replaceCites contents
+        contents <- readFileText source
+        let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
-                                       -- "--bibliography", bib,
+                                       "--reference-location=block",
+                                       "--section-divs",
+                                       "--csl=" ++ csl,
+                                       "--filter=pandoc-citeproc",
+                                       "--mathjax",
+                                       "--bibliography", bib,
                                        "-o", f
                                        ]
 
     "templates/template.html" %> \f -> do
-        need ["templates/template.hs"]
+        need ["Template.hs"]
         liftIO $ renderToFile f pageHtml
