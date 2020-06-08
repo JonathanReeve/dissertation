@@ -122,15 +122,11 @@ def train(model, langModel, colorList, files):
 
     logging.info(f'Training {model} using language model {langModel}, color list {colorList}, and files {files}')
 
-
-
     if not colorList:
         baseColors = ['black', 'grey', 'brown', 'white', 'red', 'orange', 'yellow', 'green', 'blue']
     else:
         baseColors = open(colorList).readlines()
         baseColors = [color.strip() for color in baseColors]
-
-    # print(baseColors)
 
     texts = files
 
