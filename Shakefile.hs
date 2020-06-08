@@ -102,6 +102,7 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "--template", template,
                                        "--standalone",
                                        "--reference-location=block",
+                                       "--toc",
                                        "--section-divs",
                                        "--csl=" ++ csl,
                                        "--filter=pandoc-citeproc",

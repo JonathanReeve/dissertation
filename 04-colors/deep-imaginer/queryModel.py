@@ -2,7 +2,7 @@ import json
 import argparse
 import logging
 
-with open('model.json') as f:
+with open('models/model.json') as f:
     model = json.load(f)
 
 # This should now be a dictionary with color words as keys,

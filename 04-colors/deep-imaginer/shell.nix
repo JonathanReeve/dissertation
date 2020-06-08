@@ -103,7 +103,7 @@ in pkgs.python3.buildEnv.override rec {
       seaborn
       statsmodels
       beautifulsoup4
-      CommonsDownloader
+      #CommonsDownloader
       mwclient
     ];
   }).env
