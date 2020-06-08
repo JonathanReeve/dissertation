@@ -1,0 +1,178 @@
+{
+    "blue": {
+        "eye": 6.0,
+        "picture": 5.166666666666667,
+        "leg": 5,
+        "plateful": 4.333333333333333,
+        "hoop": 4,
+        "forehead": 3.25,
+        "horse": 3.2,
+        "water": 3.0,
+        "ribbon": 3.0,
+        "red": 2.5,
+        "fierce": 1.0,
+        "little": 1.0,
+        "smooth": 0.3333333333333333,
+        "candid": 0.25,
+        "great": 0.25,
+        "high": 0.2,
+        "back": 0.2,
+        "horizon": 0.2,
+        "pure": 0.16666666666666666,
+        "half": 0.16666666666666666
+    },
+    "reddish": {
+        "twist": 4.333333333333333,
+        "stocking": 2.5,
+        "brown": 1.0,
+        "little": 0.25
+    },
+    "brown": {
+        "twist": 4.25,
+        "stocking": 3.0,
+        "reddish": 1.0,
+        "little": 0.2
+    },
+    "sea": {
+        "able": 8,
+        "fear": 5.166666666666667,
+        "bird": 3.0,
+        "butterfly": 0.3333333333333333,
+        "people": 0.2
+    },
+    "mud": {
+        "severity": 6,
+        "courtesy": 5,
+        "raising": 3.3333333333333335,
+        "queen": 0.2,
+        "beggar": 0.2
+    },
+    "straw": {
+        "bat": 4.25,
+        "flannel": 3.5,
+        "hat": 3.0,
+        "ink": 0.3333333333333333,
+        "pot": 0.2
+    },
+    "seaweed": {
+        "strip": 3.3333333333333335,
+        "wall": 0.25,
+        "smell": 0.16666666666666666
+    },
+    "sand": {
+        "smell": 5,
+        "gritty": 3.5,
+        "dune": 3.0,
+        "grass": 3,
+        "green": 1.0,
+        "bathing": 0.5,
+        "pleat": 0.25,
+        "wild": 0.25,
+        "towel": 0.2,
+        "strife": 0.2,
+        "low": 0.2,
+        "soft": 0.16666666666666666
+    },
+    "yellow": {
+        "eye": 3.3333333333333335,
+        "hat": 3.3333333333333335,
+        "streak": 3.25,
+        "cat": 3.0,
+        "boot": 3.0,
+        "canary": 0.5,
+        "moustache": 0.5,
+        "beard": 0.25,
+        "vivid": 0.16666666666666666
+    },
+    "grey": {
+        "blandishment": 8,
+        "green": 5.0,
+        "somnolence": 3.25,
+        "hair": 1.0,
+        "cheek": 0.3333333333333333,
+        "lemon": 0.3333333333333333,
+        "coloured": 0.2,
+        "glass": 0.16666666666666666,
+        "sailing": 0.16666666666666666
+    },
+    "green": {
+        "face": 8,
+        "blandishment": 7,
+        "brush": 5.166666666666667,
+        "mound": 3.5,
+        "grass": 3,
+        "somnolence": 2.5,
+        "dune": 2.5,
+        "grey": 1.0,
+        "sand": 1.0,
+        "soft": 0.5333333333333333,
+        "pink": 0.5,
+        "pleat": 0.3333333333333333,
+        "low": 0.25,
+        "wild": 0.2,
+        "lemon": 0.2
+    },
+    "canary": {
+        "streak": 4.5,
+        "yellow": 2.5,
+        "vivid": 0.25,
+        "moustache": 0.25,
+        "beard": 0.16666666666666666
+    },
+    "white": {
+        "streak": 4,
+        "milk": 2.5,
+        "nothing": 0.25,
+        "beard": 0.16666666666666666
+    },
+    "black": {
+        "parasol": 3.0,
+        "marriage": 0.25,
+        "unfortunate": 0.16666666666666666
+    },
+    "red": {
+        "face": 6.5,
+        "air": 5,
+        "leg": 4,
+        "contentment": 3.25,
+        "hoop": 3.2,
+        "horse": 2.3333333333333335,
+        "round": 1.0,
+        "ermine": 0.5,
+        "blue": 0.5,
+        "smooth": 0.2,
+        "profound": 0.2,
+        "refrigerator": 0.16666666666666666
+    },
+    "pink": {
+        "face": 9,
+        "brush": 6,
+        "mound": 4.25,
+        "woman": 3.0,
+        "green": 2.5,
+        "boat": 0.3333333333333333,
+        "soft": 0.2,
+        "sailing": 0.2,
+        "beach": 0.2,
+        "coloured": 0.16666666666666666
+    },
+    "lemon": {
+        "boat": 3.2,
+        "coloured": 2.5,
+        "grey": 0.3333333333333333,
+        "sailing": 0.3333333333333333,
+        "green": 0.2
+    },
+    "tea": {
+        "caddie": 2.5,
+        "mat": 0.5,
+        "glass": 0.25,
+        "shade": 0.2
+    },
+    "violet": {
+        "wind": 3,
+        "wild": 0.5,
+        "nonsense": 0.3333333333333333,
+        "cyclamen": 0.25
+    }
+}
