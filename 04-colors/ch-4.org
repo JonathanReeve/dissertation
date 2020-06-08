@@ -4,7 +4,6 @@
 
 Here is a chapter about colors.
 
-
 * Presenting the Problem: Color in Modernist Studies
 ** Literary Description
 ** Poetry/prose
@@ -60,7 +59,6 @@ Not only are there no entries for /bluish yellow/ or /reddish green/ here, but a
 
 ** "The Dress"
 
-
 * Imagining Words: Mapping Words to Colors
 
 What we need in a good color mapping: 
@@ -79,31 +77,24 @@ A related issue is the algorithm by which color words are matched in a text.
 ** Heuristic Mappings
 *** Summary and Statistics
 
-Table of color mappings
 
-| Abbreviation | Name                                   | Number of Color/Word Pairs | Year | Weight |   |
-|--------------+----------------------------------------+----------------------------+------+--------+---|
-| $CM_S$       | Chromotaxia Seu Nomenclator Colorum    |                        500 | 1894 |      2 |   |
-| $CM_R$       | Color Standards and Color Nomenclature |                       1113 | 1912 |      2 |   |
-| $CM_M$       |                                        |                            |      |      2 |   |
-| $CM_X$       | XKCD Color Survey                      |                        954 | 2012 |      4 |   |
-|              |                                        |                            |      |        |   |
-|              |                                        |                            |      |        |   |
-|              |                                        |                            |      |        |   |
+I abbreviate these as $CM$ for "color map."
 
 *** Historical
+**** $CM_R$, Ridgway
+Some of the most ambitious attempts at mapping colors to their names, or naming colors, came from the natural sciences. American ornithologist Robert Ridgway (1850-1929), for example, authored two influential works of color naming systems: /A Nomenclature of Colors for Naturalists/ in 1886 , and /Color Standards and Color Nomenclature/ in 1912. In the preface of the earlier work, Ridgway names as his problem that "the author has in collection considerably over three hundred water-colors, each bearing a different name" [cite:ridgway1886nomenclature X].
 
-**** Ridgway
-Some of the most ambitious attempts at mapping colors to their names, or naming colors, came from the natural sciences. American ornithologist Robert Ridgway (1850-1929), for example, authored two influential works of color naming systems: /A Nomenclature of Colors for Naturalists/ in 1886 , and /Color Standards and Color Nomenclature/ in 1912. In the preface of the earlier work, Ridgway names as his problem that "the author has in collection considerably over three hundred water-colors, each bearing a different name." 
+# TODO: get this page number
 
-**** Saccardo
+
+**** $CM_S$, Saccardo
 Another influential work of color naming is the ambitious and polyglot volume from Italian botanist Pier Andrea Saccardo bearing the formidable Latin title, /Chromotaxia Seu Nomenclator Colorum, Polyglottus, Additis Specimibus Coloratis ad Usam Botanicorum et Zoologorum/ (1894). Although containing only fifty colors, it features an index of several hundred "synonyms" for these colors in Latin, Italian, French, English, and German. While some of these are recognizable to modern readers, others seem strangely specific, such as /Murinus/ (mousey) or /Fuligineus/ ("sooty"). Saccardo provides two supplementary colors: /achrous/, or colorless, glassy; and /sordidus/, or "sordid," "dirty," which he describes as a modifier rather than a color. [fn:"/non est color definitus sed indicat inquinamentum aliorum colorum. Exempla: sordide albus, luride ruber/" [cite:saccardo1891chromotaxia 16].]
 
 # TODO: make these less of a list, more of a continuation of an argument. 
 
-**** Maerz and Paul 
+**** $CM_M$, Maerz and Paul
 - From Jaffer
-**** XKCD
+**** $CM_X$, XKCD
 :PROPERTIES:
 :ID:       2aae2496-fed6-49a2-8e63-755369cbb382
 :END:
@@ -117,19 +108,102 @@ This mapping presents a useful counterpoint to commercial mappings such as that 
 
 [fn:1] If an exact match for a hex value does not exist  in a color map, I find the closest color to it using $\Delta E^{*}_{ab}-76$. This is described in more detail in the next section on categorization.
 
-**** Pantone 
+**** $CM_P$ Pantone
 - Mercantile
 - Food-related
 
-**** Jaffer?
+**** $CM_J$ Jaffer
 
-** Deep Imagining
+**** Summary and Comparison
+
+#+NAME Table of color mappings
+| Abbreviation | Name                                              | # Color/Word Pairs |  Year | Weight |
+|--------------+---------------------------------------------------+--------------------+-------+--------|
+| $CM_S$       | Saccardo, /Chromotaxia Seu Nomenclator Colorum/   |                500 |  1894 |      2 |
+| $CM_R$       | Ridgway, /Color Standards and Color Nomenclature/ |               1113 |  1912 |      2 |
+| $CM_M$       | Maerz and Paul, /Dictionary of Color/             |               3224 |  1930 |      2 |
+| $CM_P$       | Pantone Colors                                    |               2310 | 2010? |      1 |
+| $CM_X$       | XKCD Color Survey                                 |                954 |  2012 |      3 |
+
+
+To compare the tendencies, or biases, of these color maps, and to better know how to balance them, I calculated the average of their 300-dimensional GloVe vectors (Stanford's Global vectors for word representation, trained on English-language websites), and derived the cosine similarity to the vectors of a number of seed words, defined as:
+
+$$similarity(\vec{A}, \vec{B}) = \frac{ \vec{A} \cdot \vec{B} }{\|\vec{A}\| \times \| \vec{B} \|}$$
+
+Or, the dot product of the two vectors, normalized by the product of their two $L_2$ (Euclidean) norms.
+
+#+NAME cm-vecs
+#+CAPTION Color map vector comparison
+[[./images/cm-vec-comparison.png]]
+The $CM_P$, the Pantone map, has a higher similarity to positive, marketable-sounding words, and words evoking leisure, whereas the $CM_X$ has a higher similarity for /snot/, a decidedly unmarketable word, discussed later, and Jaffer's aggregation of $CM_S, CM_R, and CM_M$ shows a slighly higher similarity for /blood/, also not a decidedly marketable term, and which I discuss later, as well.
+
+
+** Deep Imagining: Color Inference
+
+Mapping color expressions to hex values is only the beginning. Since explicit color words are not the only words that suggest color in the mind of the reader, and since broadly imagining a text will allow us to understand it more than narrowly, it would help to imagine those aspects of a text that are more difficult to imagine.
+
+But this is a difficult problem: how can we derive the color of an object, or an adjective, where that color is known to a human reader, but not to a computer? For example, the words /Statue of Liberty/ would recall the pale greenish color of copper oxide to those familiar with the statue, even from images, although this mapping isn't readily available in a database.
+
+If a poet or novelist presents us with imagery which is all of a single color, we want to be able to see that.
+
+One of the tasks of a literary critic, after all, is to be sensitive to the arrangements of the writer, so as to point out their resonances.
+
+Take Katherine Mansfield's 1922 story "The Garden Party," for instance, an inspiration for Woolf's /Mrs Dalloway/, and a classic of modernist short story. Set on a fine day in early summer, in New Zealand, it is resplindent in greenery, which is to say, flora. But besides the grass, the lawn, the green bushes, the karaka-trees, and the leaves and stems of the flowers, there is an unusual abundance of other green things, as well. Laura's sister Meg is wearing a "green turban" when she arrives for breakfast [cite:mansfield_katherine_2006 287]. A band plays music from a tennis court, which we might assume is green, since it's compared to a pond, and tennis courts are usually green (ibid.). The band itself are wearing green, which makes Kitty compare them to frogs (294). Green baize doors separate the servants' rooms from the rest of the house (289). Some of this is explicitly labeled as green, but some, like frogs and tennis courts, we are just expected to know are green things. While /frog green/ does appear in one of the sources of $CM_J$ sources, and /tennis court green/ appears in some responses of the original $CM_X$ survey, the value does not appear in the final mapping.
+
+So to computationally imagine not just /green/ itself, but things which are very likely to appear green, we need to find a way to imagine colors from any given word.
+
+*** Word Proximity-based
+One of the simplest methods of color inference is to calculate the distance, in a syntax dependency tree, from a known color word to an object or other word. While this is a somewhat brute-force method with a lot of potential for false positives, given a large enough corpus, it is quite likely that, for example, /green/ will appear within several words of /grass/.
+
+Another example might be inferring the color of a gull. Anyone who has visited the north Atlantic shore knows gulls to be white and gray. Of the 170 times that the word /gull/ appears in $C_PG$, we see /white/ appear within about ten words of it nineteen times. The lemma /grey/ appears six times. /Red/, however, appears not once. Of course, both /green/ and /yellow/ appear twice, although not with the same relations in the dependency graph. Given this collocation data, we can write a model that guesses that /gull/ is mostly white, a little gray, and with hints of green and yellow. This is reasonably accurate.
+
+In numeric terms, it looks like this:
+
+#+BEGIN_SRC json
+{
+  "gull": {
+    "colors": {
+      "sea": 4.791666666666667,
+      "white": 1.3333333333333333,
+      "sky": 0.7499999999999999,
+      "blue": 0.3333333333333333,
+      "black": 0.2,
+      "coral": 0.2,
+      "sand": 0.16666666666666666,
+      "brownish": 0.16666666666666666
+    },
+    "mixed": "69a5aa"
+  }
+}
+#+END_SRC
+
+The numbers represent the average distance, in number of words, from the word /gull/ to those color words.
+
+However, we encounter a number of interesting issues here. Another is one I'll call the "no white sheep problem," which is that, although sheep are typically white, and black sheep comparatively rare, the probability of encountering the phrase /black sheep/ in British fiction is about five times greater than that of encountering /white sheep/, according to the Google Ngrams dataset.
+
+But the converse of that phenomenon is also present. We shouldn't expect to see /white/ and /gray/ occur so often close to /gull/, yet we do. When a writer wants to underscore the visual properties of an object that already has well-known color properties, this contributes to the impressionism of the piece: it allows the reader to see through the writer's eyes.
+
+
+# /Silver/ gets mapped to #dbb40c, a very gold-like color, since the word appears next to /gold/ so often. So color words themselves are often distorted: if the word itself contains the color information, attempting to reading that information from the surrounding colors will likely cause it to be inaccurate. Another example of this is that /red/ is modeled as #770001, which seems to me to be more of a /blood red/, whereas /blood/ is actually #e50000, a canonical red, since this model is only seeing the surrounding words.
+
+# Cut the above? It seems to me now the solution is just to include the word itself, if a color word, as position zero.
+
+
+
+
+
+*** Dictionary-based inference engine
+One method is to turn to definitions in dictionaries and encyclopedias.
+
+Project Gutenberg provides [[http://www.gutenberg.org/cache/epub/38538/pg38538.txt][a copy of Chambers's Twentieth Century Dictionary of the English Language]], published in London in 1908. If we did not already have a color mappings for /grass/ ($CM_X$: /grassy green/, #419c03; /grass/, #5cac2d;
+/grass green/, #3f9b0b), we would find this entry for /grassy/: "covered with or resembling grass, green." Since words and their definitions are regularly formatted in this dictionary, it becomes possible to parse the dictionary entry into word/definition pair, and load them into a lookup table. From there, I construct an graph, where nodes are dictionary words and their colors, and edges gain weights each time a color word from the color maps appears in the definition of one of the defined words. Thus, if we see /grassy/ appear on the left of the page, and /green/ in its definition, we give it a score of one. If /green/ were to appear twice in its definition, we'd give it a score of two, and so forth.
+
+
+
+
+
 *** Image-based
 **** Saturation notes
-*** Dictionary-based
-**** No white sheep problem
-*** Word Proximity-based
-- Words and their proximity to color words
 
 ** Named Entity Recognition NER
 ** Categorization
@@ -139,7 +213,7 @@ If we aim to quantify the occurences of certain color concepts, and not just the
 
 For instance, we might consider /light blue/ to be a subcategory of /blue,/ since the word /blue/ is contained within it. However, is /pink/ necessarily its own category, or is it simply a shade of red? And if so, is /light pink/ a subcategory of /pink/ or of /red/? We might categorize these colors differently if we were to use the hues rather than their written expressions. 
 
-We might look to other languages to see how these concepts are expressed, and learn about our own by comparison. Some languages lack a monolexemic term for /pink/, and others still have additional /pink/-like lexemes in other hue spectra. The Russian language, for instance, has the color-categories, or monolexemic color terms, /синий/, usually translated as "blue" or "dark blue," and /Голубо́й/ which we might gloss as "light blue," or "sky blue." The image-based color mapping model, described in section TODO below, predicts similar, but not identical colors for these English and Russian words, as well as their most common French translations:
+We might look to other languages to see how these concepts are expressed, and learn about our own by comparison. Some languages lack a monolexemic term for /pink/, and others still have additional /pink/-like lexemes in other hue spectra. The Russian language, for instance, has the color-categories, or monolexemic color terms, /синий/ [sínij], usually translated as "blue" or "dark blue," and /Голубо́й/ [golubój] which we might gloss as "light blue," or "sky blue." The image-based color mapping model, described in section TODO below, predicts similar, but not identical colors for these English and Russian words, as well as their most common French translations:
 
 | Russian | Ru.RGB  | English    | En.RGB  | French      | Fr.RGB  |
 |---------+---------+------------+---------+-------------+---------|
@@ -175,7 +249,6 @@ Berlin and Kay see this sequence as a linguistic evolution in more than one sens
 
 While the /contrasts/ might have so physical basis, their linguistic categories do not map evenly to them, as Berlin and Kay themselves show. And as one might predicted, since 1969, their arguments of universal categories—and to a larger extent those of language evolution—have been either denounced as Anglocentric, or at least treated with a healthy skepticism. For instance, in 2006, Anna Wiezbicka argues that even the notion of color itself is not universal. Citing decades of research within the subfield of Natural Semantic Metalanguage, Wiezbicka argues that, "while many languages do not have a word for 'colour,' all languages have a word for seeing,'" and that "it makes more sense to ask about the universals of seeing rather than any putative 'universals of colour'" [cite:wierzbicka2006semantics 3]. 
 
-
 *** Color Spaces and Color Difference
 
 We now move from categorical description of color to quantitative. Unfortunately, this presents its own set of problems, as there are a multitude of ways to quantify color properties, and to organize colors by those properties.
@@ -190,7 +263,7 @@ Relations between colors may then be calculated with respect to this coordinate 
 
 $$\Delta E = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}$$
 
-Since LAB space best represents human perception of color, I'll use it whereever possible, and calculate color distances using $\Delta E$.[fn::I implement this function [[https://github.com/JonathanReeve/color-word-analyzer/blob/ffab10147d71ce7b76144c9d96ccb0e5b81e8b47/src/CategorizeColor.hs#L35][here, in the color categorization module of my color analyzer.]]] However, I have to translate frequently between LAB space and RGB space, since most of the color maps I've derived, are either scanned using digital photography, or, in the case of the XKCD map, produced using computer monitors.
+Since CIELAB space best represents human perception of color, I'll use it whereever possible, and calculate color distances using $\Delta E$.[fn::I implement this function [[https://github.com/JonathanReeve/color-word-analyzer/blob/ffab10147d71ce7b76144c9d96ccb0e5b81e8b47/src/CategorizeColor.hs#L35][here, in the color categorization module of my color analyzer.]]] However, I have to translate frequently between LAB space and RGB space, since most of the color maps I've derived, are either scanned using digital photography, or, in the case of the XKCD map, produced using computer monitors.
 
 *** Is blood red?
 
@@ -245,7 +318,7 @@ And this list does not even include the many /seafoam/ and /seaweed/ variations.
 
 For comparison, the image-based color model predicts #98B8B3 for /irish sea/—a somewhat snot-green color.
 
-/Epi oinopa ponton/, according to Don Gifford, is Homeric Greek for "upon the wine-dark sea," a classic Homeric epithet that occurs throughout /The Odyssey/ [cite:gifford_ulysses_2008 15]. It has long been a puzzle of Homeric scholarship as to why the sea is not blue, or green, but "wine-dark." We should remember, however, that "dark" is an artifact of this translation convention, for in the Greek, which Mulligan advisedly does not gloss, "ἐπὶ οἴνοπα πόντον" might also be rendered "over the vinaceous sea" or "over the wine-/like/ sea," since οἴνοπα itself, despite clearly being used as a visual metaphor elsewhere in Homer, does not explicitly contain a signifier for /dark/, which would be closer to /μέλας/ in Homeric Greek—in fact, elsewhere in Homer, wine itself is described as /μέλας/, although not here [cite:gladstone_studies_1858 472; TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=oi%29%2Fnopa&la=greek&can=oi%29%2Fnopa0&prior=e)pi%5C&d=Perseus:text:1999.01.0135:book%3D1:card%3D178&i=1#lexicon][LSJ]]].
+/Epi oinopa ponton/, according to Don Gifford's notes for /Ulysses/, is Homeric Greek for "upon the wine-dark sea," a classic Homeric epithet that occurs throughout /The Odyssey/ [cite:gifford_ulysses_2008 15]. It has long been a puzzle of Homeric scholarship as to why the sea is not blue, or green, but "wine-dark." We should remember, however, that "dark" is an artifact of this translation convention, for in the Greek, which Mulligan advisedly does not gloss, "ἐπὶ οἴνοπα πόντον" might also be rendered "over the vinaceous sea" or "over the wine-/like/ sea," since οἴνοπα itself, despite clearly being used as a visual metaphor elsewhere in Homer, does not explicitly contain a signifier for /dark/, which would be closer to /μέλας/ in Homeric Greek—in fact, elsewhere in Homer, wine itself is described as /μέλας/, although not here [cite:gladstone_studies_1858 472; TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=oi%29%2Fnopa&la=greek&can=oi%29%2Fnopa0&prior=e)pi%5C&d=Perseus:text:1999.01.0135:book%3D1:card%3D178&i=1#lexicon][LSJ]]].
 
 One of the more well-known works of scholarship on this topic, however dated it may be considered now, is that put forth in William Gladstone's 1858 /Studies on Homer and the Homeric Age/. Athough better known as the four-term prime minister of the United Kingdom, discontinuously from 1868 to 1894, Gladstone was a Homeric scholar of some distinction, and among the more interesting theses of this work is his catalog and interpretation of color words in the Homeric epics.
 
@@ -269,11 +342,16 @@ Here, Stephen's poetically free-associating imagination conjures a nighttime sea
 
 What's important here is to recognize that this purple is closer to how it /appears/ than how it is /categorized/. Again, conventional associations have it that the sea is blue, and that blood is red, and that red wine is of course red, but to read Homeric descriptions of the sea and blood and wine as purple, we are more reminded of the perceptual phemomenon than the linguistic category. And that is the project of modernism.
 
-
 * Imagining Texts: Aggregating Color Mappings
 
 ** Literary History
 - Making the corpus
+
+Corpora
+
+$C_PG$
+
+
 - Problems with the corpus
 
 
@@ -392,7 +470,6 @@ By Genre Poetry and Prose
 #+CAPTION: Base Color Proportions by LCSH
 #+NAME: fig:lcsh
 [[./images/lcsh.png]]
-
 
 * Case Studies
 ** Wells
