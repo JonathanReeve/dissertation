@@ -70,6 +70,27 @@ with import <nixpkgs> {};
       doCheck = false;
 
     };
+
+    newAltair = pkgs.python3Packages.buildPythonPackage rec {
+      pname = "altair";
+      version = "4.1.0";
+
+      src = pkgs.python3Packages.fetchPypi{
+        inherit version; inherit pname;
+        sha256 = "0c99q5dy6f275yg1f137ird08wmwc1z8wmvjickkf2mvyka31p9y";
+      };
+
+      buildInputs = with pkgs.python3Packages; [
+        entrypoints
+        jinja2
+        jsonschema
+        numpy
+        toolz
+        pandas
+      ];
+      doCheck = false;
+
+    };
 in pkgs.python3.buildEnv.override rec {
     extraLibs = with pkgs.python3Packages; [
 	    matplotlib
@@ -80,7 +101,7 @@ in pkgs.python3.buildEnv.override rec {
       jupyter
       scikitlearn
       nltk
-      altair
+      newAltair
       vega_datasets
       cherrypy
       dominate

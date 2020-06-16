@@ -13,7 +13,7 @@ import spacy
 # My own module
 import train
 
-dataLocation = '/run/media/jon/Sekurkopioj/Corpora'
+dataLocation = '/home/jon/Corpora'
 
 logging.basicConfig(format='%(asctime)s %(message)s', level=logging.DEBUG)
 
@@ -48,7 +48,7 @@ c.execute(
         or gr_pubDate like "190%"
         or gr_pubDate like "191%"
         or gr_pubDate like "192%"
-    ) order by gr_pubDate;""")
+    ) order by id;""")
 idList = [item[0] for item in c.fetchall()]
 
 chunkSize = 2

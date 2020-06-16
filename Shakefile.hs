@@ -41,7 +41,7 @@ main = withUtf8 $ shakeArgs opts $ do
                                       "/references.bib"]
 
     "//references.bib" %> \f -> do
-        let source = "/home/jon/Dropbox/Papers/library.bib"
+        let source = "/home/jon/Dokumentujo/Papers/library.bib"
         cmd "cp" source f
 
     "02-history/ch-2.tex" %> \f -> do
@@ -106,6 +106,7 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "--section-divs",
                                        "--csl=" ++ csl,
                                        "--filter=pandoc-citeproc",
+                                       "--filter=hex-filter.hs",
                                        "--mathjax",
                                        "--bibliography", bib,
                                        "-o", f

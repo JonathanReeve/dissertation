@@ -21,7 +21,7 @@ pageHtml = do
       style_ [ L.type_ "text/css" ] $ C.render css
       -- Print styling argh
       link_ [ rel_ "stylesheet", href_ "../templates/tufte-css/latex.css" ]
-      -- link_ [ rel_ "stylesheet", href_ "../templates/tufte-css/tufte.css" ]
+      link_ [ rel_ "stylesheet", href_ "../templates/tufte-css/tufte.css" ]
       script_ [ id_ "MathJax-script", async_ "",  src_ "../templates/js/mathjax.js" ] T.empty
       style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
     body_ $ do
@@ -41,5 +41,7 @@ css :: Css
 css = do
   p ? do
     lineHeight (unitless 2)
+  ".colorBlock" ? paddingAll (em 0.2)
 
 marginAll m = margin m m m m
+paddingAll p = padding p p p p

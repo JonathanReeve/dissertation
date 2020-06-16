@@ -137,7 +137,6 @@ Or, the dot product of the two vectors, normalized by the product of their two $
 [[./images/cm-vec-comparison.png]]
 The $CM_P$, the Pantone map, has a higher similarity to positive, marketable-sounding words, and words evoking leisure, whereas the $CM_X$ has a higher similarity for /snot/, a decidedly unmarketable word, discussed later, and Jaffer's aggregation of $CM_S, CM_R, and CM_M$ shows a slighly higher similarity for /blood/, also not a decidedly marketable term, and which I discuss later, as well.
 
-
 ** Deep Imagining: Color Inference
 
 Mapping color expressions to hex values is only the beginning. Since explicit color words are not the only words that suggest color in the mind of the reader, and since broadly imagining a text will allow us to understand it more than narrowly, it would help to imagine those aspects of a text that are more difficult to imagine.
@@ -152,53 +151,139 @@ Take Katherine Mansfield's 1922 story "The Garden Party," for instance, an inspi
 
 So to computationally imagine not just /green/ itself, but things which are very likely to appear green, we need to find a way to imagine colors from any given word.
 
-*** Word Proximity-based
-One of the simplest methods of color inference is to calculate the distance, in a syntax dependency tree, from a known color word to an object or other word. While this is a somewhat brute-force method with a lot of potential for false positives, given a large enough corpus, it is quite likely that, for example, /green/ will appear within several words of /grass/.
+*** Word Proximity-based, $M_P$
+One of the simplest methods of color inference is to calculate the syntactic distance from a known color word to a target word. Given a large enough corpus, it is quite likely that, for example, /green/ will appear within several words of /grass/, and so by measuring the distances from /green/ to /grass/, and noticing that these distances are much shorter than for the pair /red/ and /grass/, we might infer that /grass/ is green: that is, the literary imagination of /grass/ has the color category /green/.
 
-Another example might be inferring the color of a gull. Anyone who has visited the north Atlantic shore knows gulls to be white and gray. Of the 170 times that the word /gull/ appears in $C_PG$, we see /white/ appear within about ten words of it nineteen times. The lemma /grey/ appears six times. /Red/, however, appears not once. Of course, both /green/ and /yellow/ appear twice, although not with the same relations in the dependency graph. Given this collocation data, we can write a model that guesses that /gull/ is mostly white, a little gray, and with hints of green and yellow. This is reasonably accurate.
+Another example might be inferring the color of a gull. Anyone who has visited the north Atlantic shore knows that gulls tend to be white and gray. Of the 170 times that the word /gull/ appears in $C_PG$, we see /white/ appear within about ten words of it nineteen times. The lemma /grey/ appears six times. /Red/, however, appears not once. Of course, both /green/ and /yellow/ appear twice, although not with the same relations in the dependency graph. Given this collocation data, we can write a model that guesses that /gull/ is mostly white, a little gray, and with hints of green and yellow.
 
-In numeric terms, it looks like this:
+However, syntactic proximity is preferable to raw proximity itself, and so I developed an algorithm to score relations between two neighboring words, which uses both linear word distances and syntactic distances. I calculate syntactic distances by traversing the dependency trees of their containing sentences. By way of illustration, take these lines from Arthur Conan Doyle's 1908 novel /Sir Nigel/:
+
+#+BEGIN_QUOTE
+Next morning they found themselves in a dangerous rock studded sea with a small island upon their starboard quarter. It was girdled with high granite cliffs of a reddish hue, and slopes of bright green grassland lay above them. [cite:doyle1906sir 250]
+#+END_QUOTE
+
+The syntax dependency graph of the clause, "slopes of bright green grassland lay above them" is parsed like this:
+
+[TODO: redo this chart using a proper visualization library]
+
+#+BEGIN_SRC
+                     /-bright
+   /Slopes-of/grassland
+-lay                 \-green
+  |
+   \above-them
+#+END_SRC
+
+Here, /bright/ and /green/ are descendants—syntactic dependents—of /grassland/. This might even more accurately be parsed with /bright/ and /green/ together as one semantic unit.
+
+This model infers color associations $W_C$ from target words, $W_T$, by traversing the syntax tree, and calculating weights accordingly.
+
+However, modifiers are not always direct descendants of their modified words, since they might cross sentences. (Imagine a passage that were to read: "The slopes of grassland. How bright green they were!".) So to account for these types, I also compute weights based on the raw distances of these words from each other. The full algorithm is this:
+
+1. It begins by identifying a color word, $W_C$ from color map $CM_X$ in the target text.
+2. It then parses the containing sentence, and determines its syntactic dependencies.
+3. Starting from $W_C$, it navigates through parent words and parent noun chunks $W_T$ to the root of the sentence.
+4. If $W_T$ is a noun or adjective, it is assigned a score: 2 if it is a direct parent of $W_C$, or 1 if it is a grandparent of $W_C$, at two steps' removal in the syntactic tree.
+5. All other words nouns and adjectives are now candidate $W_T$s, and are assigned a score: $1/i$ where $i$ is the distance, in number of tokens, from $W_C$. Thus, it gets a score of 1 if it is a directly adjacent word, or 0.5 if it is two tokens away.
+6. These scores are then averaged for each token that shares the same lemma.
+
+The resulting data structure looks like this, for /grass/:
 
 #+BEGIN_SRC json
 {
-  "gull": {
+  "grass": {
     "colors": {
-      "sea": 4.791666666666667,
-      "white": 1.3333333333333333,
-      "sky": 0.7499999999999999,
-      "blue": 0.3333333333333333,
-      "black": 0.2,
-      "coral": 0.2,
-      "sand": 0.16666666666666666,
-      "brownish": 0.16666666666666666
-    },
-    "mixed": "69a5aa"
+      "green": 380.1666666666666,
+      "white": 71.58333333333333,
+      "sea": 63.31666666666667,
+      "stone": 49.166666666666686,
+      "sky": 41.083333333333336,
+      "yellow": 39.416666666666664,
+      "grey": 36.38333333333333,
+      "blue": 33.21666666666667
+      [ ... ]
+    }
   }
 }
 #+END_SRC
 
-The numbers represent the average distance, in number of words, from the word /gull/ to those color words.
+There are plenty of colors, like /blue/, which are uncommon for grass (except for the Appalachain style of music). Yet these other colors represent only a small proportion of that for /green/. So by blending these colors proportionally, we get
 
-However, we encounter a number of interesting issues here. Another is one I'll call the "no white sheep problem," which is that, although sheep are typically white, and black sheep comparatively rare, the probability of encountering the phrase /black sheep/ in British fiction is about five times greater than that of encountering /white sheep/, according to the Google Ngrams dataset.
+I blend these colors by finding their hex values in $CM_X$, and then averaging their RGB values, after weighting them, so given RGB values $R_i ... R_j$, $G_i$, and $B_i$, and weights $W_i$, averaging them proportionally:
 
-But the converse of that phenomenon is also present. We shouldn't expect to see /white/ and /gray/ occur so often close to /gull/, yet we do. When a writer wants to underscore the visual properties of an object that already has well-known color properties, this contributes to the impressionism of the piece: it allows the reader to see through the writer's eyes.
+$$blended RGB =  \frac{ W \sum_{R_i}^{R_j} }{ \sum_{i}^{j} W } , \frac{ W \sum_{G_i}^{G_j} }{ \sum_{i}^{j} W} , \frac{ W \sum_{B_i}^{B_j} }{\sum_{i}^{j} W}$$
 
+Or, for all colors, weighting and summing each component of RGB space, and then dividing by the total sum of all weights. For /grass/ above, we get #6b9c56, a pleasantly grassy color.
+
+This model works reasonably well—that is, meets our modern English-speaking expectations of the stereotypical colors of many nouns. But there are quite a few notable differences. One I'll call the "no white sheep problem," which is that, although sheep are typically white, and black sheep comparatively rare, the probability of encountering the phrase /black sheep/ in British fiction is about five times greater than that of encountering /white sheep/, according to the Google Ngrams dataset.
+
+Here's a portion of the model's inferences for /sheep/:
+
+#+BEGIN_SRC json
+{
+  "sheep": {
+    "colors": {
+      "black": 163.25,
+      "white": 30.3499,
+      "grass": 24.833,
+      "heather": 17.9166,
+      "stone": 13.766
+      [ ... ]
+    }
+  }
+}
+#+END_SRC
+
+The blended color from $CM_X$ is #5B5441, a dark greenish, and hardly the color one would expect of a sheep. Part of this is because, as you can see from the inferences above, $CM_X$ contains many metaphoric colors like /grass/, /heather/, and /stone/. Although these are almost certainly not used as color words in their original contexts, this model counts them as colors. This is perhaps not a bug, however, but a feature of the program: by picking up on elements like /stone/ and /grass/, we might fail to imagine the sheep itself, but we succeed in imagining the hue of its context, and in a sense, this is more information than we would get from simply imagining a sheep. And after all, when we ourselves imagine a sheep, we might very likely imagine it in its pastoral context, among grass and stones, rather than floating in a colorless void, away from everything else.
+
+But the converse of that phenomenon is also present. We might not expect to see /white/ and /gray/ occur so often close to /gull/, because these are obvious descriptors, yet we do. When a writer wants to underscore the visual properties of an object that already has well-known color properties, this contributes to the impressionism of the piece: it allows the reader to see through the writer's eyes.
 
 # /Silver/ gets mapped to #dbb40c, a very gold-like color, since the word appears next to /gold/ so often. So color words themselves are often distorted: if the word itself contains the color information, attempting to reading that information from the surrounding colors will likely cause it to be inaccurate. Another example of this is that /red/ is modeled as #770001, which seems to me to be more of a /blood red/, whereas /blood/ is actually #e50000, a canonical red, since this model is only seeing the surrounding words.
 
 # Cut the above? It seems to me now the solution is just to include the word itself, if a color word, as position zero.
 
+This phenomenon is brilliantly at play in another Katherine Mansfield story, "Bliss," written two years earlier in 1918. It is even more colorful than "The Garden Party," and its colors much more variegated. This reflects the mood of its protagonist, Bertha, who is so happy that she is almost manic. Her attentions are everywhere, and glittering, reflecting off of everything.
 
+There is a very particular quality of light in this story: it is not a categorical color, but a phenomenological one, describing not what Bertha knows the color to be, but how it seems. Bertha sees and feels bright sparks. The narrator tells us that "in her bosom there was still that bright glowing place—that shower of little sparks coming from it" [cite:mansfield_katherine_2006 145]. This moment is mirrored in a description of a fruit bowl which Mary at that moment brings in, and she perceives as "a glass bowl, and a blue dish, very lovely, with a strange sheen on it as though it had been dipped in milk." Here, Mansfield contrasts the color category of the dish—it /is/ blue—with its percepual reality: it appears white.
 
+Bertha sees the fruit in this bowl also with an acute sense of newness: not quite estrangement, /остранение/, in Shklovsky's formulation, but a newly intimate familiarization. "There were tangerines and apples stained with strawberry pink. Some yellow pears, smooth as silk; some white grapes covered with a silver bloom and a bug cluster of purple ones. These last she had bought to tone in with the new dining-room carpet" (146).
 
+"Apples stained with strawberry pink," is an uncommon metaphor for apples, which $M_P$ models as:
+
+#+BEGIN_SRC json
+{
+  "apple": {
+    "colors": {
+      "golden": 75.55,
+      "green": 60.56666666666667,
+      "red": 46.93333333333334,
+      "wine": 29.166666666666664,
+      "gold": 26.15,
+      "white": 23.749999999999996,
+      "custard": 19.833333333333332,
+      "apple": 16.7,
+      "plum": 15.583333333333334,
+      "orange": 14.583333333333334,
+      "pear": 14.533333333333335,
+      [ ... ]
+    }
+  }
+}
+#+END_SRC
+
+And for which the blended color is #AC883B. In other words, apples are usually /golden, green, red, gold,/ or /yellow/, but rarely /strawberry pink/. (There is an apple cultivar called the "pink lady," but it wasn't cultivated until 1976.) As with /milk/, this is a food metaphor, one which uses these colors, as the foods themselves seem to do, as a marker for something delicious to come.
+
+Grapes, too, typically belong to the categories /red/ or /white/, much like their wine. Yet white grapes, and white wine, are not white at all, but a pale green. Red grapes and red wine are not red, either, but are usually a deep purple.
+
+Mansfield would have been aware of the categories of grapes, but has Bertha call them "purple" to show that she is attune to the phenomenon of their hue, and further underscores this by showing the chromatic harmony Bertha expected, and sees, between the grapes and the carpet.
+
+So by modeling imagination in this way, we're able to take advantage of the ways writers show us the perceptual experience of words, rather than just their categories. But this model is only one component of a larger system.
 
 *** Dictionary-based inference engine
-One method is to turn to definitions in dictionaries and encyclopedias.
 
-Project Gutenberg provides [[http://www.gutenberg.org/cache/epub/38538/pg38538.txt][a copy of Chambers's Twentieth Century Dictionary of the English Language]], published in London in 1908. If we did not already have a color mappings for /grass/ ($CM_X$: /grassy green/, #419c03; /grass/, #5cac2d;
-/grass green/, #3f9b0b), we would find this entry for /grassy/: "covered with or resembling grass, green." Since words and their definitions are regularly formatted in this dictionary, it becomes possible to parse the dictionary entry into word/definition pair, and load them into a lookup table. From there, I construct an graph, where nodes are dictionary words and their colors, and edges gain weights each time a color word from the color maps appears in the definition of one of the defined words. Thus, if we see /grassy/ appear on the left of the page, and /green/ in its definition, we give it a score of one. If /green/ were to appear twice in its definition, we'd give it a score of two, and so forth.
+We might also mine data useful for color inference from more straightforward definitions, like those found in dictionaries and encyclopedias. Project Gutenberg provides [[http://www.gutenberg.org/cache/epub/38538/pg38538.txt][a copy of Chambers's Twentieth Century Dictionary of the English Language]], published in London in 1908. If we did not already have a color mappings for /grass/ ($CM_X$: /grassy green/, #419c03; /grass/, #5cac2d; /grass green/, #3f9b0b), we would find this entry for /grassy/: "covered with or resembling grass, green." Since words and their definitions are regularly formatted in this dictionary, it becomes possible to parse the dictionary entry into word/definition pair, and load them into a lookup table. From there, I construct an graph, where nodes are dictionary words and their colors, and edges accrue weight each time a color word from the color maps appears in the definition of one of the defined words. Thus, if we see /grassy/ appear on the left of the page, and /green/ in its definition, we give it a score of one. If /green/ were to appear twice in its definition, we'd give it a score of two, and so forth.
 
-
+I repeat this process with
 
 
 
@@ -343,17 +428,18 @@ Here, Stephen's poetically free-associating imagination conjures a nighttime sea
 What's important here is to recognize that this purple is closer to how it /appears/ than how it is /categorized/. Again, conventional associations have it that the sea is blue, and that blood is red, and that red wine is of course red, but to read Homeric descriptions of the sea and blood and wine as purple, we are more reminded of the perceptual phemomenon than the linguistic category. And that is the project of modernism.
 
 * Imagining Texts: Aggregating Color Mappings
-
-** Literary History
-- Making the corpus
+** Corpora
 
 Corpora
 
-$C_PG$
+*** $C_PG$
+*** $C_BL$
+*** $C_PGA$
+*** Corpus-DB and Metadata Augmentation
 
-
+** Literary History
+- Making the corpus
 - Problems with the corpus
-
 
 #+CAPTION: Base Color Proportions By Genre
 #+NAME: fig:genres
@@ -362,10 +448,6 @@ $C_PG$
 TODO: Scale this image so that the regression line is somewhat visible
 
 Using an author's date of birth as a proxy for date of publication is not ideal. This picture doesn't change much, however, when using what few publication dates are available: a linear regression of those points still shows an upward trend.  
-
-#+CAPTION: Base Color Proportions By Genre
-#+NAME: fig:genres
-[[./images/regression.png]]
 
 *** Colorfulness
  Define colorfulness as the number of color colums which are not NAN.
@@ -400,8 +482,9 @@ Noticeable here is that color roughly follows the Berlin and Kay hierarchy. Whit
 #+NAME: fig:genres
 [[./images/color-box.png]]
 
-
 *** Most Colorful Texts
+
+# TODO: redo this
 
 These are total proportions of color expressions, if the text is more than two standard deviations away from the mean. 
 
@@ -455,7 +538,6 @@ Authors for above texts:
 ** Literary Description
 
 ** Across narrative time
-
 ** Genre, canonicity
 
 By Genre Poetry and Prose

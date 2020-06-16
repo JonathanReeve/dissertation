@@ -48,6 +48,8 @@ def getAllParents(w):
                 words.append((grandparent, 1))
     return words
 
+# TODO: ignore parent and grandparent words while computing raw distances,
+# so that we don't double-count parents and neighbors
 
 def computeDependentDistances(textDoc, baseColors, posList):
     colorNeighbors = {}
@@ -104,10 +106,14 @@ def computeRawDistances(textDoc, baseColors, posList):
 def mergeNeighbors(dictA, dictB):
     """
     Merge two dictionaries that look like:
-    {"colorWord": [("word", score)]}
+    {"colorWord": [("word", score)]} ...
+    Which means concatenating the two lists. 
     """
     for key in dictA:
-        dictA[key] += dictB[key]
+        if key in dictB: 
+            dictA[key] += dictB[key]
+        else:
+            continue
     return dictA
 
 
