@@ -22,7 +22,6 @@ pageHtml = do
       -- Print styling argh
       link_ [ rel_ "stylesheet", href_ "../templates/tufte-css/latex.css" ]
       link_ [ rel_ "stylesheet", href_ "../templates/tufte-css/tufte.css" ]
-      script_ [ id_ "MathJax-script", async_ "",  src_ "../templates/js/mathjax.js" ] T.empty
       style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
     body_ $ do
       article_ $ do
@@ -36,6 +35,18 @@ pageHtml = do
           "$if(toc)$ \n"
           nav_ [ id_ "$idprefix$TOC", role_ "doc-toc" ] "$table-of-contents$ \n"
           "$endif$ \n $body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
+      footer_ $ do
+        script_ [ src_ "includes/plotly-latest.min.js" ] T.empty
+        script_ [ id_ "MathJax-script", async_ "",  src_ "includes/MathJax/es5/tex-chtml.js" ] T.empty
+        -- Flowcharts
+        script_ [ src_ "includes/mermaid.min.js" ] T.empty
+        -- Required for jquery-lazy
+        script_ [ src_ "includes/zepto.min.js" ] T.empty
+        -- Try to lazy-load stuff
+        script_ [ src_ "includes/jquery.lazy.min.js" ] T.empty
+        script_ [ src_ "includes/custom.js" ] T.empty
+
+    
 
 css :: Css
 css = do

@@ -11,5 +11,6 @@ in
 pkgs.stdenv.mkDerivation {
   name = "my-haskell-env-0";
   buildInputs = [ ghc ];
+  propagatedBuildInputs = with pkgs; [ graphviz ];
   shellHook = "eval $(egrep ^export ${ghc}/bin/ghc)";
 }
