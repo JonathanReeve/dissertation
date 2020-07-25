@@ -16,6 +16,7 @@ def makeXkcdMap(xkcdMapRaw):
             splitLine = line.split('\t')
             if len(splitLine) != 3:
                 print('error on: ', splitLine)
+                continue
             else:
                 name, val, _ = line.split('\t')
                 xkcdMap[name] = val

@@ -25,10 +25,10 @@ class ColorText():
         self.parentDist = self.getParentDist(self.df)
 
         # self.contexts = self.getMatchContexts(self.text, self.matchLocs)
-        # self.chunkedPlot = self.getChunkedPlot(self.text, colorMap, nChunks, nColors)
-        # self.chunkedPlotHtml = self.chunkedPlot.to_html(fullhtml=False)
+        self.chunkedPlot = self.getChunkedPlot(self.text, colorMap, nChunks, nColors)
+        self.chunkedPlotHtml = self.chunkedPlot.to_html(fullhtml=False)
 
-        # self.sunburstPlot = self.getSunburstPlot(self.dfWithBase)
+        self.sunburstPlot = self.getSunburstPlot(self.dfWithBase)
         # self.sunburstPlotHtml = self.getSunburstHtml()
 
     def getText(self, filename):
@@ -99,10 +99,6 @@ class ColorText():
     def getParentDist(self, df):
         """ Get the distribution of parent colors for this text. """
         return self.df.groupby('parent').sum()['n']
-
-    def plotM(self, df, nColors):
-        """ Plots with matplotlib, via pandas. """
-        df.plot(kind='area', stacked=True, color=["xkcd:"+color for color in topColors], figsize=(12,8))
 
     def plotA(self, df, colorMap):
         """ Plots with Altair """
@@ -193,19 +189,12 @@ class ColorText():
             hovertemplate=''
         ))
 
-        # fig.update_layout(
-        #     margin = dict(t=10, l=10, r=10, b=10)
-        # )
-
-        # fig.show()
         return fig
 
     def getSunburstHtml(self):
         outFilename = self.filename + '-sunburst.html'
         logging.info(f"Wrote to {outFilename}")
         html = self.sunburstPlot.to_html(outFilename, full_html=False)
-        # print("---sunburstPlot---", self.sunburstPlot)
-        # print("---PLOT---", plot)
         return html
 
     def writeSunburstPlot(self):
@@ -221,8 +210,6 @@ class ColorText():
 
 if __name__ == "__main__":
     # Make plot
-    # pride = open('../data/text/pride.html').read()
-    # print(pride[:200])
     parser = argparse.ArgumentParser()
     parser.add_argument("--label", type=str)
     parser.add_argument("--colorMap", type=str)
@@ -249,5 +236,5 @@ if __name__ == "__main__":
 
     # print(colorText.annotatedText)
 
-    # colorText.writeChunkedPlot()
-    # colorText.writeSunburstPlot()
+    colorText.writeChunkedPlot()
+    colorText.writeSunburstPlot()
