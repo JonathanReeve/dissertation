@@ -24,11 +24,20 @@ def readModel(technique="downloaded", algo="secondary"):
 
     return model
 
-def visualizeModel(model, technique="downloaded", algo="secondary"):
+def visualizeModel(model, technique="downloaded", algo="secondary", compact=True):
     """
     Create an HTML file visualizing the mappings.
     """
 
+    colorBlocksCompact = '\n'.join([ f"""
+          <div class="colorBlock" style="display: inline-block;
+                                         text-align: center;
+                                         width: 100px; height: 100px;
+                                         background-color: {hexCode};">
+            {word}
+          </div>
+        """
+                        for word, hexCode in model.items() ])
     colorBlocksHtml = '\n'.join([ f"""
         <div style="display: flex;">
           <div class="colorBlock" style="display: inline-block;
@@ -47,10 +56,16 @@ def visualizeModel(model, technique="downloaded", algo="secondary"):
         </div>
         """
                         for word, hexCode in model.items() ])
-    html = f"<html><body>{colorBlocksHtml}</body></html>"
+    if compact:
+        html =  f"<html><body>{colorBlocksCompact}</body></html>"
+    else:
+        html =  f"<html><body>{colorBlocksHtml}</body></html>"
 
-    with open(f'{technique}-{algo}-colorblocks.html', 'w') as f:
+    # isCompact = "compact" if compact else ""
+
+    with open(f'{technique}-{algo}-colorblocks{"-compact" if compact else ""}.html', 'w') as f:
         f.write(html)
+
 
 def updateModel(newModel, oldModelFn='model.json', combinedModelFn='combinedModel.json'):
     """
@@ -205,5 +220,7 @@ def jsonToHs():
 if __name__ == "__main__":
     # processImageModel()
     # cascadeModels()
-    jsonToHs()
-
+    # jsonToHs()
+    with open('models/downloaded-images-model.json') as f:
+        downloadedModel = json.load(f)
+    visualizeModel(downloadedModel)

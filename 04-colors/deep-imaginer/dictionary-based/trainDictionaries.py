@@ -12,8 +12,15 @@ def main(modelFn='dictionaryModel.json'):
 
     model = loadModel()
 
+    with open('../../data/dict/pg')
+    websterDict =
+
+    logging.info('Vectorizing Webster...')
+    websterModel = vectorizeDict(websterDict, langModel=nlp, baseColors=baseColors)
+    logging.info(f'Webster model preview: {str(websterModel)[:30]}')
+
     logging.info('Processing Nutall...')
-    with open('../data/dict/pg12342.txt') as f:
+    with open('../../data/dict/pg12342.txt') as f:
         nutallRaw = f.read()
     nutallDict = processNutall(nutallRaw)
 
@@ -25,9 +32,13 @@ def main(modelFn='dictionaryModel.json'):
     nutallModel = vectorizeDict(nutallDict, langModel=nlp, baseColors=baseColors)
     logging.info(f'Nutall model preview: {str(nutallModel)[:30]}')
 
+    logging.info('Vectorizing Nutall...')
+    nutallModel = vectorizeDict(nutallDict, langModel=nlp, baseColors=baseColors)
+    logging.info(f'Nutall model preview: {str(nutallModel)[:30]}')
+
     logging.info('Vectorizing Chambers...')
     chambersIds = [ 37683, 38538, 38699, 38700 ]
-    chambersTexts = [ open(f'../data/dict/pg{fn}.txt').read() for fn in chambersIds ]
+    chambersTexts = [ open(f'../../data/dict/pg{fn}.txt').read() for fn in chambersIds ]
     chambersModel = {}
     for chambersText in chambersTexts:
         logging.info(f'Processing chambers text number {chambersTexts.index(chambersText)}')
@@ -49,7 +60,7 @@ def main(modelFn='dictionaryModel.json'):
         json.dump(model, f, ensure_ascii=False, indent=4)
 
 def loadBaseColors():
-    with open('../data/maps/xkcd/rgb-termsonly.txt') as f:
+    with open('../../data/maps/xkcd/rgb-termsonly.txt') as f:
         xkcdColors = f.readlines()
         xkcdColors = [line.strip() for line in xkcdColors]
     return xkcdColors
@@ -59,13 +70,15 @@ def loadModel(modelFn='dictionaryModel.json'):
         with open(modelFn) as f:
             try:
                 model = json.load(f)
+                return model
             except json.decoder.JSONDecodeError:
                 # Make an empty model
                 model = {}
+                return model
     except FileNotFoundError:
         # Create the file, since it doesn't exist
         open(modelFn, 'a').close()
-    return model
+    return {}
 
 def processNutall(text):
     paras = text.split('\n\n')

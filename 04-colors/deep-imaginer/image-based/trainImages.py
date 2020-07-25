@@ -6,11 +6,14 @@ using images.
 import logging
 import spacy
 import argparse
+import json
 from time import sleep
 from glob import glob
 
 import downloadImages
 import processImages
+
+imgLocation = "../models/img"
 
 def train(fn, langModel):
     nlp = langModel
@@ -29,17 +32,18 @@ def train(fn, langModel):
         textDoc = nlp(textPart)
         logging.info(f"Part has {len(textDoc)} words.")
         nouns = list(set([str(w.lemma_) for w in textDoc if w.tag_ == "NN" and w.is_alpha]))[:200]
-        logging.info(f"About to query unsplash for these nouns: {nouns}")
+        logging.info(f"About to query image service for these nouns: {nouns}")
         # exit()
-        alreadyHaveIt = glob('img/*')
+        alreadyHaveIt = [fn.split('/')[-1] for fn in glob(f'{imgLocation}/*')]
         for noun in nouns:
             if noun in alreadyHaveIt:
                 continue
-            logging.info(f"Quering image service for word: {noun}")
+            logging.info(f"Quering image service for word: {noun} number {nouns.index(noun)} of {len(nouns)}")
             result = downloadImages.main(noun)
             if result is not None:
               sleep(1)
               processImages.main(noun, 3)
+    return nouns # I could use this later
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
@@ -59,16 +63,33 @@ if __name__ == '__main__':
     else:
         nlp = args.langModel
 
-    logging.info(f'Training model {args.model} using language model {nlp} and files {args.files}')
+    if not args.model:
+        model = "model.json"
+    else:
+        model = args.model
+
+    logging.info(f'Training model {model} using language model {nlp} and files {args.files}')
 
     for f in args.files:
-        train(f, nlp)
+        # Grab the most recent nouns just so we can make an example
+        nouns = train(f, nlp)
 
-    # if not args.model:
-    #     model = "model.json"
-    # else:
-    #     model = args.model
+    # Write out example
+    wordDict = {}
+    jsonFiles = glob(f'../models/json/*.json')
+    for noun in nouns:
+        try:
+            with open(f'../models/json/{noun}.json') as f:
+                nounJson = json.load(f)
+                wordDict[noun] = nounJson[noun]['secondary-mixed']
+        except FileNotFoundError:
+            logging.info(f'{noun} not in ../models/json')
 
+    with open(model, 'w') as f:
+        json.dump(wordDict, f)
+
+
+    
     # logging.info(f'Updating model {model}')
 
     # with open(model) as f:

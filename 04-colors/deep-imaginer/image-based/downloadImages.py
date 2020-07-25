@@ -5,11 +5,13 @@ import argparse
 import logging
 import os
 
+imgLocation = "../models/img"
 def main(word, service='pixabay'):
     logging.basicConfig(level=logging.INFO)
 
     # Load secrets.
-    apikey = subprocess.getoutput(f"pass {service}-api-key")
+    apikey = subprocess.run(["pass", f"{service}-api-key"], capture_output=True).stdout.strip()
+    logging.info(f'Using API key: {apikey}')
 
     if service == 'unsplash':
         params = {"client_id": apikey, "query": word }
@@ -26,6 +28,7 @@ def main(word, service='pixabay'):
                 print("Couldn't find small URL")
                 continue
         else:
+            logging.info(f"Response: {response.text}")
             exit('Response not OK')
 
         if len(urls) == 0:
@@ -45,6 +48,7 @@ def main(word, service='pixabay'):
                   print("Couldn't find URL")
                   continue
         else:
+            logging.info(f"Response: {response.text}")
             exit('Response not OK')
 
         print(urls)
@@ -54,12 +58,12 @@ def main(word, service='pixabay'):
 
     logging.info(f"Downloading {len(urls)} images.")
 
-    os.system(f"mkdir -p 'img/{word}'")
+    os.system(f"mkdir -p '{imgLocation}/{word}'")
 
     for url in urls:
         response = requests.get(url)
         if response.ok:
-            file = open(f'img/{word}/{service}-{word}-{urls.index(url)}.jpg', 'wb')
+            file = open(f'{imgLocation}/{word}/{service}-{word}-{urls.index(url)}.jpg', 'wb')
             file.write(response.content)
             file.close()
 

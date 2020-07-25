@@ -11,7 +11,7 @@ import queryModel
 def main(word, n):
 
 
-    files = glob(f"img/{word}/*")
+    files = glob(f"../models/img/{word}/*")
 
     logging.info(f"Processing {len(files)} images for word {word}")
 
@@ -97,10 +97,10 @@ def main(word, n):
 
     html = f"<html><body><h1>{word}</h1>{blocksHtml}</body></html>"
 
-    with open(f'html/{word}.html', 'w') as f:
+    with open(f'../models/html/{word}.html', 'w') as f:
         f.write(html)
 
-    with open(f'json/{word}.json', 'w') as f:
+    with open(f'../models/json/{word}.json', 'w') as f:
         f.write(json.dumps(jsonData))
 
 if __name__ == '__main__':
