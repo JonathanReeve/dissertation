@@ -1,6 +1,6 @@
 [submodule "dissertation-prospectus"]
 	path = dissertation-prospectus
-	url = https://github.com:JonathanReeve/dissertation-prospectus.git
+	url = https://github.com/JonathanReeve/dissertation-prospectus.git
 [submodule "04-colors/color-word-analyzer"]
 	path = 04-colors/color-word-analyzer
-	url = https://github.com:JonathanReeve/color-word-analyzer.git
+	url = https://github.com/JonathanReeve/color-word-analyzer.git
