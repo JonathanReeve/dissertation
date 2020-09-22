@@ -4,6 +4,3 @@
 [submodule "04-colors/color-word-analyzer"]
 	path = 04-colors/color-word-analyzer
 	url = https://github.com:JonathanReeve/color-word-analyzer.git
-[submodule "04-colors/includes/MathJax"]
-	path = 04-colors/includes/MathJax
-	url = https://github.com/mathjax/MathJax.git
