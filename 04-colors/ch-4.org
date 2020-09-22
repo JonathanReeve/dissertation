@@ -1,122 +1,197 @@
-#+TITLE: Ch. 4: Colors
+#+TITLE: Chapter 4: Hue
 #+AUTHOR: Jonathan Reeve
-#+NOCITE: cite:ridgway1886nomenclature, cite:ridgway1912color 
+#+NOCITE: cite:ridgway1886nomenclature, cite:ridgway1912color
+# -*- eval: (org-hide-block-all)
 
-Here is a chapter about colors.
+* Background
 
-* Presenting the Problem: Color in Modernist Studies
-** Literary Description
-** Poetry/prose
+The dissertation from which this chapter is excerpted deals with ocularities and imaginations of British literature, from about 1880–1940.
 
-* First Considerations
+In Chapter 1, I introduce key terms in the theoretical framework I'm using, and the sense in which I use them, which is narrower than usual:
 
-Maerz and Paul note that there is a doubly fleeting quality to colors: "the confused ideas on color nomenclature are found due to two factors, one material, the other intellectual. The first has been the ability of color makers, in the past, to produce color substances that were both brilliant and permanent ... the second is the difference of opinion as to the exact color indicated by any name, and the lack of any authority by which an individual opinion can be upheld." [cite:maerz1930dictionary 1]
-  - Later: "the name Lemon Yellow would seem sufficiently accurate as a descriptive term, yet the color of lemons varies slightly and the memory for exact color sensations, when the original is not at hand, is often faulty." (1)
+ - imagination :: a cognitive process that translates text to mental images
+ - image :: a group of words that causes or prompts imagination, and therefore mental images
 
-In /Ulysses/, lemons and lemon-yellow is a leitmotif that appears at intervals throughout the novel. First appearing in the Telemachus episode as the "Paris fad" for tea which Buck Mulligan rejects in favor of "Sandycove milk" (Stephen has just recently returned from Paris, and had aquired some of its habits), the color appears in "Proteus," as Stephen muses about the effects of sunlight on the color of the houses: "Gold light on sea, on sand, on boulders. The sun is there, the slender trees, the lemon houses. ¶ Paris rawly waking, crude sunlight on her lemon streets" [cite:joyce_ulysses_1986 10, 35]. Neither the Sandymount houses nor the Paris cobblestones are painted lemon-yellow, of course, or appear so at all other times of day, but they look this way under the reflection of the early morning light. Stephen, a poet, is more interested in the /phenomenon/ of the visual experience than the /categorical/ one which would describe the houses by the name of their paint, or the stones as gray.  
+Chapter 2 examines literary theory and science contemporary to this period, to begin to build the case for how the eye is an apt metaphor for understanding this literature.
 
-Bloom, too, imagines the skin of his naked body in the bath, as "lemonyellow," not because he is jaundiced, or of olive-toned Mediterranean complexion, but because he imagines the light catching his body, "oiled by scented melting soap," the lemon-scented and lemon-colored soap he'd just bought [cite:joyce_ulysses_1986 71]. When Bloom later notices the scent of "citronlemon" in his handkerchief, he conflates the /citron/, an ancestor of the lemon and the French word for lemon, with Israel Citron, a real Dubliner about whom he had been thinking two paragraphs earlier  [cite:gifford_ulysses_1988 74, 133]. Don Gifford suggests that Bloom "associates the soap with the citron (/Ethrog/) central in the ritual of the Jewish Feast of Tabernacles (Sukkoth) (133). In the surreal dream of the Circe episode, this soap reifies, "diffusing light and perfume," and speaks in terms of light and reflections: "we're a capital couple are Bloom and I. He brightens the earth. I polish the sky" [cite:joyce_ulysses_1986 340].  
+Chapter 3 deals with methodology, and answers questions such as:
 
-To these problems, Maerz and Paul add that the color of /lemons themselves/ varies. In fact, lemons themselves are green before they ripen, and green in certain varieties. In French, a language Stephen often daydreams in, lemons and limes are /citron/ and /citron vert,/ ("green lemons") most commonly, meaning that lemons can be both yellow and green, in that language's taxonomy. However, the /color/ lemon, in English and in French, invariably refers to a bright yellow, despite any variation in its actual color. This is a problem in in color categorization, which I will discuss below: everyone knows that lemons are yellow, blood is red, and so on. But lemons are also green, and blood is usually brownish.
+ - Why computational analysis?
+ - How does computational/quantiative analysis fit in with other critical traditions?
+ - Isn't this all an oversimplification? (It isn't.)
 
-- Gilbert and Linati schemata both give "gold/white" as the colors for "Telemachus"; "Proteus" however has a corresponding color of green.
-  - Gilbert just mentions this in passing: "Certain episodes have also their appropriate colour (a reference, as M. Larbaud has pointed out, to Catholic liturgy)" [cite:gilbert_james_1955 29]. 
+Chapters 4-6 each deal with an aspect of vision:
+
+ - Chapter 4 treats hue, photopic vision, (retinal cones)
+ - Chapter 5 treats shape, scotopic vision, (retinal rods)
+ - Ch. 6. treats space, proprioception (I might end up cutting this one)
+
+This is Chapter 4.
+
+* Introduction
+
+Among the most striking ocularities of literary description, and more broadly of any narrative, are pauses to convey the hue of that what is before the describer's imagination. /Pauses/ because description is a dilation of extradiegetic time. /Before/ in that the described, if it has hue, is in focus, in the center of the describer's field of vision. To describe is to settle one's gaze in a field, and at the same time, to move it linearly and programmatically across that field. It is always selective, and it always refracts. Description of hue is among the most concentrated subprocesses of that process, since the creation of textual color from a mental image involves digitization: approximative translation from an analog, linear system (a spectrum) to a digital, discrete system (a word). This process is so deeply involved with our language/thought apparatus, and so bound with epistemological problems, that it is the perennial subject of linguistics, neuroscience, and psychology. But rather than explore the phenomenon of textual color theoretically, and by example, I will take the opposite approach, and model the imaginative process in reverse, and in aggregate.
+
+Modeling is a statistical mimesis. Given observable qualities of a subject—in our case, a text, or a corpus of texts—a model imitates those qualities, in order to study the subject's behavior under unobserved circumstances. In modeling a hurricane, a meterologist not only becomes capable of predicting that hurricane's path, albeit with some margin of error, but, by studying the model's error, learns further nuances of the system he or she is studying. To model literature is not to discover how Virginia Woolf would have written about the 2020 coronavirus epidemic—although that sort of prediction is possible. It's to understand the small swirls of rainwater that compose the greater phenomenon we know as the hurricane.
+
+I am motivated here, both by large questions about literary history, and smaller, more specialized ones about individual texts. Big ones include: Does literary writing get more colorful with time? (It does.) What are the dominant colors of this period's literature? (White and black.) and, Which genres are the most colorful? (Love stories.) But smaller questions have to do with the way color words operate syntactically, how they operate within description, and how their semiologies warp the reader's imagination. When Woolf describes a set of curtains as "mustard-coloured," or when Joyce describes a man's eyes as "nocoloured," how and why do those color choices do more work than their superficial significations? How, precisely, are color words used differently in poetry and fiction? (And is there any real difference between the two, line breaks aside?)
+
+#+BEGIN_COMMENT
+This movement takes place in a time that is more commensurate with the subjective aesthetic experience of seeing than the objective time elapsed.
+
+/durée/ in Bergson's /Time and Free Will/ [cite this].
+
+Ekphrasis: out - speak
+ - who shows that this doesn't necessarily have anything to do with describing works of art?
+
+ Thinking literally about visuality, and ocularity, leads us to a new conception of description.
+  - There is no narration/description dichotomy: almost everything is description.
+  - It is description if it can be imagined.
+  - Yet this is not to say that /what those critics see as description and narration don't exist/.
+    - It's just that it is a spectrum. As with the color spectrum, one may point to a given region and call it "blue." But one may not say with very much certainty where the lines are that separate "blue" from other categories.
+      - As in Mr. Ramsey's piano keyboard of the mind, or letters of the alphabet. There is no A 1/2.
+
+I bring back what I discussed in Chapter 3, about persistence of vision, and the development of cinema in this period.
+ - Eye movements and camera movements have been likened to each other since the early days of cinema.
+ - [[file:../../../Org/Roam/doty2014art.org][Doty]]'s reading of E. Bishop's poem has it that "the 'camera' roves, pans, lingers, moves in for an extreme close-up, fixes a moment on the pulsing of the gills" (27)"
+ - Ulysses Judge
+ - [[file:../../../Org/Roam/nicolson1928art.org][nicolson1928art: The art of description]] notes these kinds of 'dynamic' movements of the eye, as well.
+
+When we are practical, our attention does not take in the visual.
+  Doty: "There is another sort of temporality, too, which is timelessness. In this lyric time we cease to be aware of forward movement; lyric is concerned neither with the impingement of the past nor with anticipation of events to come. It represents instead a slipping out of story and into something still more fluid, less linear: the interior landscape of reverie."
+  - Doors of Perception
+#+END_COMMENT
+
+These questions are inseparable from the way they are modeled. In many cases. modeling them is what generates the questions to begin with. And in others, the model is, at least partially, the answer to these questions. It is with that in mind that I invite you to join me in my process of creating this model of imagination—an imagination machine—where each decision in the algorithmic design, however mathematical, probes at the workings of color in text.
 
 
-** The eye thinks
-- Eye of the beholder
-- The eye "thinks" - Feynman
-- Goethe "we naturally place these colours first, because they belong altogether, or in a great degree, to the /subject/—to the eye itself. ... Thus they are called /colores adventicii/ by Boyle; /imaginarii/ and /phantastici/ by Rizetti; by Buffon, /couleurs accidentelles/; by Sherfer, /scheinfarben/ (apparent colours); /ocular illusions/ and /deceptions of sight/ by many; by Hamberger, /vitia fugitiva/; by Darwin, /ocular spectra/" [cite:von1840goethe 1-2]. 
+** Color's Superstructure: Description
 
+Before we begin our experiment, it is necessary to discuss the textual structure in which representations of hue are typically found: literary description. Although textual color has its own behaviors and properties, the conditions of description shape how color operates in text. By /description/ here I am discussing a very particular writerly process which linearizes and descretizes visual information: that which transforms imaginable material into words, and arranges those words into lines.
+
+Exactly what may be identified as description, along with its role and import in literature, has been a matter of some debate. One of the more hotly contested works is an essay by Georg Lukács, titled "Narrate or Describe?", the central dichotomy of which is apparent from the title [cite:lukacs2005]. Lukács contrasts writers such as Flaubert and Zola, whom he calls "descriptive," with writers like Tolstoy whom he claims use a more "narrative," action-oriented style. The descriptive style Lukács is quick to dismiss. Of descriptive details in Flaubert's /Madame Bovary/, he writes:
+
+#+BEGIN_QUOTE
+to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization." (115)
+#+END_QUOTE
+
+He later asserts that description "lacks humanity," in that "its transformation of men into still lives is only the artistic manifestation of its inhumanity." (140). I join the many later critics wro have written about Lukács's essay in disagreeing with him, but since they critics have done this so thoroughly, I won't bother to do so here [cite:love2010close; cite:marcus2016building]. My refutation is much more radical: I question the distinction between narrative and description at the root of Lukács's argument.
+
+There do exist some aspects of fiction that have no descriptive function, of course—they may not be imagined, and thus they convey no images. But nearly everything else in fiction does describe. The opposite is nearly true, as well: there exist very few elements in a story that are purely descriptive, and serve no role in furthering the plot, fleshing out the characters, or providing a scene which is inextricable from, and indespensible to, plot and character.
+
+In other words, to narrate is to describe. Any text may be description if it contains a visual component (strong description) or may be imagined (weak description). Including the "epic artistry" Lukács sees in Tolstoy, and his "recounting of the vicissitudes of human beings" (111). Since, is not the visual experience one such vicissitude? This is about more than just a distinction between the stylistic pastoral and epic, though, where description recounts in minute detail because it has the bourgeois leisure of a shepherd, and narration practically presents the facts, with military precision. Description is not essentially static, even though it often is. The proof is simply that action can, and is, imagined in the same way as a still-life. Furthermore, description's linearity makes it /a priori/ dynamic.
+
+To explain this further, I'll use a well-known metaphor from physics: the color spectrum. Although there do exist areas on a color spectrum where we could identify certain colors—spots at which one could point, and nine out of ten English speakers would call it /red/–if these same people were asked to draw a line that definitively separates red from pink, or red from blue, there would be ten very different answers. The same is true of description and narration: they exist along a spectrum, and overlap with each other considerably. It is in that sense that we could say that the distinction isn't real at all.
+
+* Problems and First Considerations
+
+The first of many color-related epistemological problems may be found among color metaphors like /lemon-yellow/. Lemons themselves are—paradoxically?—not lemon-colored. But neither is /lemon-yellow/ a Platonic ideal to which all lemons, or paintings of lemons, should aspire. Instead, the term exists somewhere between lemons, our memory of them, our visual experience of them, and what we read about them.[fn::Heather Love's 2016 theoretical article, "Shimmering Description" characterizes literary description as oscillating, or shimmering, between its lexemic and communicated significance. Beginning with Love's idea, I look to see in how many dimensions this oscillation may take place.]
+
+Aloys Maerz and Morris Paul's 1930 reference manual /A Dictionary of Color/, one of the more ambitious works of its kind, acknowledes this problem as one they hope to solve with their manual. They see this as a part of the "material" and "intellectual" confusions of color names:
+
+#+BEGIN_QUOTE
+"the confused ideas on color nomenclature are found due to two factors, one material, the other intellectual. The first has been the ability of color makers, in the past, to produce color substances that were both brilliant and permanent ... the second is the difference of opinion as to the exact color indicated by any name, and the lack of any authority by which an individual opinion can be upheld. ... the name Lemon Yellow would seem sufficiently accurate as a descriptive term, yet the color of lemons varies slightly and the memory for exact color sensations, when the original is not at hand, is often faulty." [cite:maerz1930dictionary 1]
+#+END_QUOTE
+
+Readers of James Joyce's /Ulysses/ may recognize the color lemon-yellow here. Lemons and lemon-yellow are leitmotive that appears at intervals throughout the novel. First appearing in the Telemachus episode as the "Paris fad" for tea which Buck Mulligan rejects in favor of "Sandycove milk" (Stephen has just recently returned from Paris, and had aquired some of its habits), the color appears in "Proteus," as Stephen muses about the effects of sunlight on the color of the houses: "Gold light on sea, on sand, on boulders. The sun is there, the slender trees, the lemon houses. ¶ Paris rawly waking, crude sunlight on her lemon streets" [cite:joyce_ulysses_1986 10, 35]. Neither the Sandymount houses nor the Paris cobblestones are painted lemon-yellow, of course, or appear so at all other times of day, but they look this way under the reflection of the early morning light. Stephen, a poet, is more interested in the /phenomena/ of the visual experience than the /categorical/ one which would describe the houses by the name of their paint, or the stones as gray.
+
+Leopold Bloom, too, the hero of /Ulysses/, imagines the skin of his naked body in the bath, as "lemonyellow," not because he is jaundiced, or of olive-toned Mediterranean complexion, but because he imagines the light catching his body, "oiled by scented melting soap," the lemon-scented and lemon-colored soap he'd just bought [cite:joyce_ulysses_1986 71]. When Bloom later notices the scent of "citronlemon" in his handkerchief, he conflates the /citron/, an ancestor of the lemon and the French word for lemon, with Israel Citron, a real Dubliner about whom he had been thinking two paragraphs earlier [cite:gifford_ulysses_1988 74, 133].
+Don Gifford suggests that Bloom "associates the soap with the citron (/Ethrog/) central in the ritual of the Jewish Feast of Tabernacles (Sukkoth) (133). In the surreal dream of the Circe episode, this soap reifies, "diffusing light and perfume," and speaks in terms of light and reflections: "we're a capital couple are Bloom and I. He brightens the earth. I polish the sky" [cite:joyce_ulysses_1986 340]. For Bloom, colors like /lemonyellow/ are a crucible where visual experience, other sensory experiences, and memory are melted together.
+
+But not only are these textual perceptions problematic, but, as Maerz and Paul remend us, the color of /lemons themselves/ varies. In fact, lemons themselves are green before they ripen, and green in certain varieties. In French, a language Stephen often daydreams in, lemons and limes are /citron/ and /citron vert,/ ("green lemons") most commonly, meaning that lemons can be both yellow and green, in that language's taxonomy. However, the /color/ lemon, in English and in French, invariably refers to a bright yellow, despite any variation in its actual color. This is a theoretically problem now, but will become a practical problem, in the section below, on modeling color categorization. Everyone knows that lemons are yellow, blood is red, and so on. But lemons are also green, and blood is usually brownish. So description, then, whether literary description or otherwise, is both a representation and a social contract.  will be called "yellow."
 
 ** On the Impossibility of a Bluish Yellow
 
-Ludwig Wittgenstein, in his late work /Remarks on Color/, [/Bemerkugen über die Farben/, written in 1950], asks whether it is possible to imagine a "bluish yellow": 
+A second, more troubling, and more deeply epistemological problem is articulated by Ludwig Wittgenstein, in his late work /Remarks on Color/. He asks, quite simply, whether it is possible to imagine a "bluish yellow":
 
 #+BEGIN_QUOTE
 If you call green an intermediary colour between blue and yellow, then you must also be able to say, for example, what a slightly bluish yellow is, or an only somewhat yellowish blue. And to me these expressions don't mean anything at all. But mightn't they mean something to someone else? [cite:wittgenstein1978remarks 20e] 
 #+END_QUOTE
+Wittgenstein then asks whether a "reddish green" or other color combinations might be difficult to imagine, and why. He posits that the category of green is what prevents him from imagining "bluish yellow," since, he says, "for me, green is one special way-station on the coloured path from blue to yellow..." [cite:wittgenstein1978remarks 22e]. This is an important question, with many implications. First, what colors are there which have greater primacy among speakers of English? And more generally: why do linguistic categories—color words and their weights in our language—transform our ability to imagine?
 
-Wittgenstein then asks whether a "reddish green" or other color combinations might be difficult to imagine, and why. He posits that the category of green is what prevents him from imagining "bluish yellow," since, he says, "for me, green is one special way-station on the coloured path from blue to yellow..." [cite:wittgenstein1978remarks 22e]. This is an important question. Written more abstractly, we might ask: why do linguistic categories—color words and their currency in our language—transform our ability to imagine? I say "our" here with some hesitation, since I suppose an affinity with others who might experience color terminology in the same way, but recognize that a painter, with years of experience mixing colors, might imagine these terms differently, as would, most likely, a speaker of a language very different from English.  
+I say "our" here with some hesitation, since I suppose an affinity with others who might experience color terminology in the same way, but recognize that a painter, with years of experience mixing colors, might imagine these terms differently, as would, most likely, a speaker of a language very different from English. Still differently would a blind person imagine these colors.
 
-Determined to test Wittgenstein's thought experiment, I constructed a matrix of color expressionions from the XKCD color map, where one word ends in /-ish,/ shown here in [fig:ishMatrix]. 
+This question of Wittgenstein's is testable, to some degree, by examining patterns in literary data. To test this, I constructed a matrix of color expressionions from the $CM_X$ color map,[fn::Described in more detail below.] where one word ends in /-ish,/ shown here in [@fig:ishMatrix].
 
-#+CAPTION: XKCD "-ish" Word Matrix
-#+NAME: fig:ishMatrix
-#+BEGIN_HTML
-<table><thead><th>color</th><th style="background-color: #94568c;">purplish</th><th style="background-color: #40a368;">greenish</th><th style="background-color: #2976bb;">bluish</th><th style="background-color: #a8a495;">greyish</th><th style="background-color: #24bca8;">tealish</th><th style="background-color: #c44240;">reddish</th><th style="background-color: #d46a7e;">pinkish</th><th >lightish</th><th style="background-color: #9c6d57;">brownish</th><th >darkish</th><th style="background-color: #8756e4;">purpley</th><th >yellowy</th><th >bluey</th><th style="background-color: #faee66;">yellowish</th><th style="background-color: #98568d;">purpleish</th><th style="background-color: #fc824a;">orangish</th><th >light</th><th style="background-color: #fd8d49;">orangeish</th></thead><tbody><tr><td style="background-color: #e50000;">red</td><td class="purplish" style="background-color: #b0054b;">purplish red</td><td class="greenish" >nan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" style="background-color: #f10c45;">pinkish red</td><td class="lightish" style="background-color: #fe2f4a;">lightish red</td><td class="brownish" style="background-color: #9e3623;">brownish red</td><td class="darkish" style="background-color: #a90308;">darkish red</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" style="background-color: #f43605;">orangish red</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #0343df;">blue</td><td class="purplish" style="background-color: #601ef9;">purplish blue</td><td class="greenish" style="background-color: #0b8b87;">greenish blue</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #5e819d;">greyish blue</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" style="background-color: #3d7afd;">lightish blue</td><td class="brownish" >nan</td><td class="darkish" style="background-color: #014182;">darkish blue</td><td class="purpley" style="background-color: #5f34e7;">purpley blue</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" style="background-color: #6140ef;">purpleish blue</td><td class="orangish" >nan</td><td class="light" style="background-color: #63f7b4;">light greenish blue</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #653700;">brown</td><td class="purplish" style="background-color: #6b4247;">purplish brown</td><td class="greenish" style="background-color: #696112;">greenish brown</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #7a6a4f;">greyish brown</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #7f2b0a;">reddish brown</td><td class="pinkish" style="background-color: #b17261;">pinkish brown</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" style="background-color: #ae8b0c;">yellowy brown</td><td class="bluey" >nan</td><td class="yellowish" style="background-color: #9b7a01;">yellowish brown</td><td class="purpleish" >nan</td><td class="orangish" style="background-color: #b25f03;">orangish brown</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #ff81c0;">pink</td><td class="purplish" style="background-color: #ce5dae;">purplish pink</td><td class="greenish" >nan</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #c88d94;">greyish pink</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #fe2c54;">reddish pink</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #c27e79;">brownish pink</td><td class="darkish" style="background-color: #da467d;">darkish pink</td><td class="purpley" style="background-color: #c83cb9;">purpley pink</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" style="background-color: #df4ec8;">purpleish pink</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #929591;">grey</td><td class="purplish" style="background-color: #7a687f;">purplish grey</td><td class="greenish" style="background-color: #96ae8d;">greenish grey</td><td class="bluish" style="background-color: #748b97;">bluish grey</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #997570;">reddish grey</td><td class="pinkish" style="background-color: #c8aca9;">pinkish grey</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #86775f;">brownish grey</td><td class="darkish" >nan</td><td class="purpley" style="background-color: #947e94;">purpley grey</td><td class="yellowy" >nan</td><td class="bluey" style="background-color: #89a0b0;">bluey grey</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #ffff14;">yellow</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #cdfd02;">greenish yellow</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #c9b003;">brownish yellow</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #029386;">teal</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #32bf84;">greenish teal</td><td class="bluish" >nan</td><td class="greyish" style="background-color: #719f91;">greyish teal</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #d1b26f;">tan</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #bccb7a;">greenish tan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" style="background-color: #d99b82;">pinkish tan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" style="background-color: #fcfc81;">yellowish tan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #06c2ac;">turquoise</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #00fbb0;">greenish turquoise</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #e6daa6;">beige</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #c9d179;">greenish beige</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #00ffff;">cyan</td><td class="purplish" >nan</td><td class="greenish" style="background-color: #2afeb7;">greenish cyan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" >nan</td><td class="brownish" >nan</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #7e1e9c;">purple</td><td class="purplish" >nan</td><td class="greenish" >nan</td><td class="bluish" style="background-color: #703be7;">bluish purple</td><td class="greyish" style="background-color: #887191;">greyish purple</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #910951;">reddish purple</td><td class="pinkish" style="background-color: #d648d7;">pinkish purple</td><td class="lightish" style="background-color: #a552e6;">lightish purple</td><td class="brownish" style="background-color: #76424e;">brownish purple</td><td class="darkish" style="background-color: #751973;">darkish purple</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" style="background-color: #6241c7;">bluey purple</td><td class="yellowish" >nan</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #15b01a;">green</td><td class="purplish" >nan</td><td class="greenish" >nan</td><td class="bluish" style="background-color: #10a674;">bluish green</td><td class="greyish" style="background-color: #82a67d;">greyish green</td><td class="tealish" style="background-color: #0cdc73;">tealish green</td><td class="reddish" >nan</td><td class="pinkish" >nan</td><td class="lightish" style="background-color: #61e160;">lightish green</td><td class="brownish" style="background-color: #6a6e09;">brownish green</td><td class="darkish" style="background-color: #287c37;">darkish green</td><td class="purpley" >nan</td><td class="yellowy" style="background-color: #bff128;">yellowy green</td><td class="bluey" style="background-color: #2bb179;">bluey green</td><td class="yellowish" style="background-color: #b0dd16;">yellowish green</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" style="background-color: #76fda8;">light bluish green</td><td class="orangeish" >nan</td></tr><tr><td style="background-color: #f97306;">orange</td><td class="purplish" >nan</td><td class="greenish" >nan</td><td class="bluish" >nan</td><td class="greyish" >nan</td><td class="tealish" >nan</td><td class="reddish" style="background-color: #f8481c;">reddish orange</td><td class="pinkish" style="background-color: #ff724c;">pinkish orange</td><td class="lightish" >nan</td><td class="brownish" style="background-color: #cb7723;">brownish orange</td><td class="darkish" >nan</td><td class="purpley" >nan</td><td class="yellowy" >nan</td><td class="bluey" >nan</td><td class="yellowish" style="background-color: #ffab0f;">yellowish orange</td><td class="purpleish" >nan</td><td class="orangish" >nan</td><td class="light" >nan</td><td class="orangeish" >nan</td></tr></tbody></table>
-#+END_HTML
+#+INCLUDE: "04-colors/includes/ishMatrix.html" export html
 
-Not only are there no entries for /bluish yellow/ or /reddish green/ here, but a few other patterns are apparent. 
- 1. /Yellowish green/ is not the same as /greenish/ yellow, indicating that the first adjective indicates a lesser amount of the color mixed with a greater amount of the second. 
- 2. Those colors that take /-ish/ adjectives are common colors. However common a color like /maroon/ might be, /reddish maroon/ does not appear in this list, potentially because it's not considered a basic color with the ability to be mixed. However, some colors which are common in marketing, like /beige/ and /teal,/ but which are less common in paint names, are present here.
- 3. /Orangeish/ and /orangish/, variant spellings of the word, have different average colors here.
- 4. /Orangish/ is used as a modifier half as much as /orange/ is modified by an /-ish/. 
- 5. /Pink/ has many variations here, despite being simply a shade of red.
- 6. /Greenish/ and /brownish/ are much more versatile as modifiers than others. 
- 7. Similarly, /green/ is much more easily /-ish/ed than other colors. 
+#+CAPTION: $CM_X$ "-ish" Word Matrix
+#+LABEL: fig:ishMatrix
+[[./images/dummy.png]]
 
+Not only are there no entries for /bluish yellow/ or /reddish green/ here, but a few other patterns are apparent. First, /Yellowish green/ is not mapped to the same color as /greenish yellow/, indicating that the first adjective indicates a lesser amount of the color mixed with a greater amount of the second. Second, those colors that take /-ish/ adjectives are common colors. However common a color like /maroon/ might be, /reddish maroon/ does not appear in this list, potentially because it's not considered a basic color with the ability to be mixed. However, some colors which are common in marketing, like /beige/ and /teal,/ but which are less common in paint names, are present here.
 
-** "The Dress"
+Also note that /orangeish/ and /orangish/, variant spellings of the word, have different average colors here, and /orangish/ is used as a modifier half as much as /orange/ is modified by an /-ish/. We might say, that /orange/ can /-ish/, but it is not very -ishable. /Greenish/ and /brownish/ are much more versatile as modifiers than others: they are good -ishers. But /green/ is much more easily /-ish/ed than other colors. So does green take a first place in our cognitive pantheon, despite being a secondary color?
+
+/Pink/ has many variations here, despite being simply a shade of red. We don't see these same patterns with an analog of pink in other hues, like light blue or light green. This leads one to believe that /pink's/ monolexemic and monosyllabic advantage over analogues like /light blue/ give it more cognitive-categorical weight.
+
+There are many, many more puzzles to be found by exploring the semi-permeable membrane of the color/word divide. But these should be enough for us to remember before proceeding to the algorithmic design of this computational model, where we will encounter more of these problems.
 
 * Imagining Words: Mapping Words to Colors
 
-What we need in a good color mapping: 
- - Consensus. Color names should not be too subjective, since we want language that can be evocative with some degree of reliability. To this end, word/color pairs that appear in more than one map should be weighted higher than those that only appear in one. 
- - Synchronic. The color names should not be anachronistic to the texts we are trying to understand. So a color like /cyberspace blue/ is not very irrelevant to an understanding of a Virginia Woolf novel. However there is a sense in which it does: the imagination of a contemporary reader applies to his or her understanding of a literary work. 
- - Syntopic. /Army green/ and /navy blue/ refer to the uniforms of their respective countries. However, the proliferation of these colors between militaries makes this difference small.
- - Objectivity. We need to mitigate the influence of marketing on color naming. Paint manufacturers and similar organizations have a way of describing colors that are meant to sell paint: they skew towards pleasant color names. Yet not all colors are pleasant ones.
-   - However colors on the whole do skew pleasant. They show attention, since they're only available in the center of one's field of vision.
+To model imagination, we start by working backwards, by creating an engine to generate a color from a word or phrase. We can either conceive of this as modeling the writer's imagination in reverse, or modeling a reader's imagination. Of course, the question then becomes: which reader's imagination do we attempt to model? One approach would be to model as many imaginations as we can, by averaging several mappings, from several different sources. But these sources vary greatly. So factors we would look for in a color/word mapping would include:
+
+ - Consensus. Color names should not be too subjective, since we want language that can be evocative with some degree of reliability. To this end, word/color pairs that appear in more than one map should be weighted higher than those that only appear in one.
+ - Synchronicity. The color names should not be anachronistic to the texts we are trying to understand. So a color like /cyberspace blue/ is not very irrelevant to an understanding of a Virginia Woolf novel. However there is a sense in which it does: the imagination of a contemporary reader applies to his or her understanding of a literary work.
+ - Syntopicity. /Army green/ and /navy blue/ refer to the uniforms of their respective countries. However, the proliferation of these colors between militaries makes this difference small.
+ - Objectivity. We need to mitigate the influence of marketing on color naming. Paint manufacturers and similar organizations have a way of describing colors that are meant to sell paint: they skew towards pleasant color names. Yet not all colors are pleasant ones.[fn::However, colors on the whole do skew towards pleasant ones. Since colors are only perceptible in one's central vision, and not peripheral vision, color perception betrays attention.]
  - Size. It would be best not to exclude colors simply because they don't appear in a pack of Crayola crayons. Yet the more colors one includes, the more chances there are of metaphors that are more subjective, and farther afield.
-  
-A related issue is the algorithm by which color words are matched in a text.
- - Fuzziness. /blue-green/ and /blue green/ should be categorized together as the same color. Yet /blue! Green,/ that is, at the end of one sentence and the beginning of another, should not be categorized together.
- - /absinthe green/ should match /absinthe/ as well as /absinthe green./
- - "Green" and "greenness" are in the same family, but are not necessarily synonyms, since "greenness" connotes something more abstract. There needs to be a way to collapse these.
 
-** Heuristic Mappings
-*** Summary and Statistics
+A related issue is the algorithm by which we decide to collapse color word orthographies:
+ - Fuzziness. /Blue-green/ and /blue green/ should be categorized together as the same color. Yet /blue! Green,/ that is, at the end of one sentence and the beginning of another, should not be categorized together.
+ - /Absinthe green/ should match /absinthe/ as well as /absinthe green./
+ - /Green/ and /greenness/ should be in the same family, but not necessarily as synonyms, since /greenness/ connotes something more abstract.
 
+With these principles in mind, I chose several books, and several databases containing color/word mappings, and combined them into one master map, although I will occasionally use individual databases when appropriate.
 
-I abbreviate these as $CM$ for "color map."
+** Heuristic Maps
 
-*** Historical
-**** $CM_R$, Ridgway
-Some of the most ambitious attempts at mapping colors to their names, or naming colors, came from the natural sciences. American ornithologist Robert Ridgway (1850-1929), for example, authored two influential works of color naming systems: /A Nomenclature of Colors for Naturalists/ in 1886 , and /Color Standards and Color Nomenclature/ in 1912. In the preface of the earlier work, Ridgway names as his problem that "the author has in collection considerably over three hundred water-colors, each bearing a different name" [cite:ridgway1886nomenclature X].
+The breadth of the text/color translation problem is suggested even in at a glance at its bibliography: dictionaries of color, or manuals of color nomenclature, were essential reference books for centuries, not only among visual artists, designers, and others that work with pigment, but among botanists, ornithologists, and anyone else in need of a standardized way to describe visual phenomena. These manuals invariably contained color plates—some hand-painted, even—intended to be concrete mappings between color words and their associated hues. I chose just a few of these, based on their proximity to the period, the availability their electonic editions, and/or the number of colors they contained.
+
+*** $CM_R$, Ridgway
+Some of the most ambitious attempts at mapping colors to their names, or naming colors, came from the natural sciences. American ornithologist Robert Ridgway (1850-1929), for example, authored two influential works of color naming systems: /A Nomenclature of Colors for Naturalists/ in 1886, and /Color Standards and Color Nomenclature/ in 1912. In the preface of the earlier work, Ridgway names as his problem that "the author has in collection considerably over three hundred water-colors, each bearing a different name" [cite:ridgway1886nomenclature X]. This volume contains over a thousand colors, but the color names are less metaphorical (/lemon-yellow/), and more descriptive (/bright yellow/).
 
 # TODO: get this page number
 
-
-**** $CM_S$, Saccardo
+*** $CM_S$, Saccardo
 Another influential work of color naming is the ambitious and polyglot volume from Italian botanist Pier Andrea Saccardo bearing the formidable Latin title, /Chromotaxia Seu Nomenclator Colorum, Polyglottus, Additis Specimibus Coloratis ad Usam Botanicorum et Zoologorum/ (1894). Although containing only fifty colors, it features an index of several hundred "synonyms" for these colors in Latin, Italian, French, English, and German. While some of these are recognizable to modern readers, others seem strangely specific, such as /Murinus/ (mousey) or /Fuligineus/ ("sooty"). Saccardo provides two supplementary colors: /achrous/, or colorless, glassy; and /sordidus/, or "sordid," "dirty," which he describes as a modifier rather than a color. [fn:"/non est color definitus sed indicat inquinamentum aliorum colorum. Exempla: sordide albus, luride ruber/" [cite:saccardo1891chromotaxia 16].]
 
 # TODO: make these less of a list, more of a continuation of an argument. 
 
-**** $CM_M$, Maerz and Paul
-- From Jaffer
-**** $CM_X$, XKCD
-:PROPERTIES:
-:ID:       2aae2496-fed6-49a2-8e63-755369cbb382
-:END:
-Among the more useful color mappings is one from Russell Monroe, an American author, former NASA engineer, and cartoonist best known for his webcomic XKCD. Monroe surveyed his wide readership, asking them to name colors they were shown at random on his website. He also took demographic data from them, logged their locations via their computers' addresses, and asked them whether they were colorblind, or used a cathode ray tube monitor. The survey results, which represent the five million color mappings from 220,500 users, show a consensus for many color names, as shown in .
+*** $CM_M$, Maerz and Paul
+
+Maerz and Paul's 1930 /A Dictionary of Color/ provides the largest number of colors, and was itself meticulously compiled from a number of prior manuals. This volume contributes over three thousand colors.
+
+*** $CM_P$ Pantone
+
+The Pantone set, one of the most common among designers and artists today, contains over two thousand colors, but they have names which are much more mercantile than others. Thus, these are biased towards food-related words, flower-related words, or anything else that would seem like a pleasant marketing term.
+
+*** $CM_X$, XKCD
+
+The antidote to the Pantone set is one from Russell Monroe, an American author, former NASA engineer, and cartoonist best known for his webcomic XKCD. Monroe surveyed his wide readership, asking them to name colors they were shown at random on his website. He also took demographic data from them, logged their locations via their computers' addresses, and asked them whether they were colorblind, or used a cathode ray tube monitor. The survey results, which represent the five million color mappings from 220,500 users, show a consensus for many color names, as shown in [@tbl:xkcdBlocks].[fn::I've represented these hex values in RGB space using a script which displays them in the browser, overlaid on the hex value itself, to account for color differences in monitors, pages, and other media.]
 
 #+CAPTION: XKCD Color Mappings
-#+NAME: fig:xkcdBlocks
-[[./images/xkcd-blocks.png]]
+#+LABEL: tbl:xkcdBlocks
+| Color Name    | RGB Hex Value |
+|---------------+---------------|
+| purply blue   | #661aee       |
+| silver        | #c5c9c7       |
+| sickly green  | #94b21c       |
+| melon         | #ff7855       |
+| mocha         | #9d7651       |
+| coffee        | #a6814c       |
+| canary yellow | #fffe40       |
+| purpleish     | #98568d       |
+| bluey purple  | #6241c7       |
 
-This mapping presents a useful counterpoint to commercial mappings such as that of Munsell and Pantone, or to more systematic mappings like Ridgway's. In the sample presented in [fig:xkcdBlocks], we see a mix of naming metaphors. The usual food metaphors (/melon,/ /mocha,/ /coffee/) appear next to animal metaphors (/camel,/ /canary yellow/) and creative compounds indicating a small amount of one color mixed into another (/purplish, bluey, purply, preyish/). The informality of the "-ish" suffix suggests extemporaneous description, as if colors are mixing in the imaginations of these survey respondants, in the absence of a ready-made metaphor. For comparison, /greyish pink/ in this color map is /blush/ in Pantone, and /darkish green/ translates to /online lime./ And of course, one would expect that /sickly green/ would not be an easily marketable name for a commodity, especially if it were food, so in Pantone the color is /lime green./ [fn:1]
+This mapping presents a useful counterpoint to commercial mappings such as that of Pantone, or to more systematic mappings like Ridgway's. In the sample presented in [fig:xkcdBlocks], we see a mix of naming metaphors. The usual food metaphors (/melon,/ /mocha,/ /coffee/) appear next to animal metaphors (/camel,/ /canary yellow/) and creative compounds indicating a small amount of one color mixed into another (/purplish, bluey, purply, preyish/). The informality of the "-ish" suffix suggests extemporaneous description, as if colors are mixing in the imaginations of these survey respondants, in the absence of a ready-made metaphor. For comparison, /greyish pink/ in this color map is /blush/ in Pantone, and /darkish green/ translates to /online lime./ And of course, one would expect that /sickly green/ would not be an easily marketable name for a commodity, especially if it were food, so in Pantone the color is /lime green./ [fn:1]
 
-[fn:1] If an exact match for a hex value does not exist  in a color map, I find the closest color to it using $\Delta E^{*}_{ab}-76$. This is described in more detail in the next section on categorization.
+[fn:1] If an exact match for a hex value does not exist  in a color map, I find the closest color to it using $\Delta E^{*}_{ab}-76$. This is described in more detail in [[Categorization]].
 
-**** $CM_P$ Pantone
-- Mercantile
-- Food-related
+*** Summary and Comparison
 
-**** $CM_J$ Jaffer
-
-**** Summary and Comparison
-
-#+NAME Table of color mappings
+#+CAPTION: Table of color mappings
+#+LABEL: tbl:color-mappings
 | Abbreviation | Name                                              | # Color/Word Pairs |  Year | Weight |
 |--------------+---------------------------------------------------+--------------------+-------+--------|
 | $CM_S$       | Saccardo, /Chromotaxia Seu Nomenclator Colorum/   |                500 |  1894 |      2 |
@@ -126,16 +201,17 @@ This mapping presents a useful counterpoint to commercial mappings such as that 
 | $CM_X$       | XKCD Color Survey                                 |                954 |  2012 |      3 |
 
 
-To compare the tendencies, or biases, of these color maps, and to better know how to balance them, I calculated the average of their 300-dimensional GloVe vectors (Stanford's Global vectors for word representation, trained on English-language websites), and derived the cosine similarity to the vectors of a number of seed words, defined as:
+To compare the tendencies, or biases, of these color maps, and to better know how to balance them, I calculate the average of their 300-dimensional GloVe vectors (Stanford's Global vectors for word representation, trained on English-language websites), and derived the cosine similarity to the vectors of a number of seed words:
 
 $$similarity(\vec{A}, \vec{B}) = \frac{ \vec{A} \cdot \vec{B} }{\|\vec{A}\| \times \| \vec{B} \|}$$
 
 Or, the dot product of the two vectors, normalized by the product of their two $L_2$ (Euclidean) norms.
 
-#+NAME cm-vecs
-#+CAPTION Color map vector comparison
+#+CAPTION: Color map average vector similarity with selected words
+#+LABEL: fig:cm-vecs
 [[./images/cm-vec-comparison.png]]
-The $CM_P$, the Pantone map, has a higher similarity to positive, marketable-sounding words, and words evoking leisure, whereas the $CM_X$ has a higher similarity for /snot/, a decidedly unmarketable word, discussed later, and Jaffer's aggregation of $CM_S, CM_R, and CM_M$ shows a slighly higher similarity for /blood/, also not a decidedly marketable term, and which I discuss later, as well.
+
+[@Fig:cm-vecs] shows a series of word vectors chosen to illustrate the vector similarity with the average vectors of each color map. $CM_P$, the Pantone map, has a higher similarity to positive, marketable-sounding words, and words evoking leisure, whereas $CM_X$ has a higher similarity for /snot/, a decidedly unmarketable word, discussed later, and Jaffer's aggregation of $CM_S, CM_R, and CM_M$ shows a slighly higher similarity for /blood/, also not a decidedly marketable term.
 
 ** Deep Imagining: Color Inference
 
@@ -143,9 +219,7 @@ Mapping color expressions to hex values is only the beginning. Since explicit co
 
 But this is a difficult problem: how can we derive the color of an object, or an adjective, where that color is known to a human reader, but not to a computer? For example, the words /Statue of Liberty/ would recall the pale greenish color of copper oxide to those familiar with the statue, even from images, although this mapping isn't readily available in a database.
 
-If a poet or novelist presents us with imagery which is all of a single color, we want to be able to see that.
-
-One of the tasks of a literary critic, after all, is to be sensitive to the arrangements of the writer, so as to point out their resonances.
+If a poet or novelist presents us with imagery which is all of a single color, we want to be able to see that. One of the tasks of a literary critic, after all, is to be sensitive to the arrangements of the writer, so as to point out their resonances.
 
 Take Katherine Mansfield's 1922 story "The Garden Party," for instance, an inspiration for Woolf's /Mrs Dalloway/, and a classic of modernist short story. Set on a fine day in early summer, in New Zealand, it is resplindent in greenery, which is to say, flora. But besides the grass, the lawn, the green bushes, the karaka-trees, and the leaves and stems of the flowers, there is an unusual abundance of other green things, as well. Laura's sister Meg is wearing a "green turban" when she arrives for breakfast [cite:mansfield_katherine_2006 287]. A band plays music from a tennis court, which we might assume is green, since it's compared to a pond, and tennis courts are usually green (ibid.). The band itself are wearing green, which makes Kitty compare them to frogs (294). Green baize doors separate the servants' rooms from the rest of the house (289). Some of this is explicitly labeled as green, but some, like frogs and tennis courts, we are just expected to know are green things. While /frog green/ does appear in one of the sources of $CM_J$ sources, and /tennis court green/ appears in some responses of the original $CM_X$ survey, the value does not appear in the final mapping.
 
@@ -154,25 +228,29 @@ So to computationally imagine not just /green/ itself, but things which are very
 *** Word Proximity-based, $M_P$
 One of the simplest methods of color inference is to calculate the syntactic distance from a known color word to a target word. Given a large enough corpus, it is quite likely that, for example, /green/ will appear within several words of /grass/, and so by measuring the distances from /green/ to /grass/, and noticing that these distances are much shorter than for the pair /red/ and /grass/, we might infer that /grass/ is green: that is, the literary imagination of /grass/ has the color category /green/.
 
-Another example might be inferring the color of a gull. Anyone who has visited the north Atlantic shore knows that gulls tend to be white and gray. Of the 170 times that the word /gull/ appears in $C_PG$, we see /white/ appear within about ten words of it nineteen times. The lemma /grey/ appears six times. /Red/, however, appears not once. Of course, both /green/ and /yellow/ appear twice, although not with the same relations in the dependency graph. Given this collocation data, we can write a model that guesses that /gull/ is mostly white, a little gray, and with hints of green and yellow.
+Another example might be inferring the color of a gull. Anyone who has visited the north Atlantic shore knows that gulls tend to be white and gray. Of the 170 times that the word /gull/ appears in $C_{PG}$, we see /white/ appear within about ten words of it nineteen times. The lemma /grey/ appears six times. /Red/, however, appears not once. Of course, both /green/ and /yellow/ appear twice, although not with the same relations in the dependency graph. Given this collocation data, we can write a model that guesses that /gull/ is mostly white, a little gray, and with hints of green and yellow.
 
 However, syntactic proximity is preferable to raw proximity itself, and so I developed an algorithm to score relations between two neighboring words, which uses both linear word distances and syntactic distances. I calculate syntactic distances by traversing the dependency trees of their containing sentences. By way of illustration, take these lines from Arthur Conan Doyle's 1908 novel /Sir Nigel/:
 
 #+BEGIN_QUOTE
 Next morning they found themselves in a dangerous rock studded sea with a small island upon their starboard quarter. It was girdled with high granite cliffs of a reddish hue, and slopes of bright green grassland lay above them. [cite:doyle1906sir 250]
 #+END_QUOTE
+The syntax dependency graph of the clause, "slopes of bright green grassland lay above them" is parsed as shown in [@fig:grassland]
 
-The syntax dependency graph of the clause, "slopes of bright green grassland lay above them" is parsed like this:
+#+CAPTION: Syntax dependency parse of "slopes of bright green grassland lay above them"
+#+LABEL: fig:grassland
+[[./images/dummy.png]]
 
-[TODO: redo this chart using a proper visualization library]
-
-#+BEGIN_SRC
-                     /-bright
-   /Slopes-of/grassland
--lay                 \-green
-  |
-   \above-them
-#+END_SRC
+#+BEGIN_HTML
+  <div class="mermaid">
+  graph LR
+      lay --- S[slopes of]
+      S --- grassland
+      grassland --- bright
+      grassland --- green
+      lay --- A[above them]
+  </div>
+#+END_HTML
 
 Here, /bright/ and /green/ are descendants—syntactic dependents—of /grassland/. This might even more accurately be parsed with /bright/ and /green/ together as one semantic unit.
 
@@ -207,10 +285,9 @@ The resulting data structure looks like this, for /grass/:
 }
 #+END_SRC
 
-There are plenty of colors, like /blue/, which are uncommon for grass (except for the Appalachain style of music). Yet these other colors represent only a small proportion of that for /green/. So by blending these colors proportionally, we get
+There are plenty of colors, like /blue/, which are uncommon for grass (except for the Appalachain style of music). Yet these other colors represent only a small proportion of that for /green/. I blend these colors together, by finding their hex values in $CM_X$, and then averaging their RGB values, after weighting them, so given RGB values $R_i ... R_j$, $G_i$, and $B_i$, and weights $W_i$, averaging them proportionally:
 
-I blend these colors by finding their hex values in $CM_X$, and then averaging their RGB values, after weighting them, so given RGB values $R_i ... R_j$, $G_i$, and $B_i$, and weights $W_i$, averaging them proportionally:
-
+#+LABEL: eq:blendingAlgorithm
 $$blended RGB =  \frac{ W \sum_{R_i}^{R_j} }{ \sum_{i}^{j} W } , \frac{ W \sum_{G_i}^{G_j} }{ \sum_{i}^{j} W} , \frac{ W \sum_{B_i}^{B_j} }{\sum_{i}^{j} W}$$
 
 Or, for all colors, weighting and summing each component of RGB space, and then dividing by the total sum of all weights. For /grass/ above, we get #6b9c56, a pleasantly grassy color.
@@ -246,7 +323,7 @@ This phenomenon is brilliantly at play in another Katherine Mansfield story, "Bl
 
 There is a very particular quality of light in this story: it is not a categorical color, but a phenomenological one, describing not what Bertha knows the color to be, but how it seems. Bertha sees and feels bright sparks. The narrator tells us that "in her bosom there was still that bright glowing place—that shower of little sparks coming from it" [cite:mansfield_katherine_2006 145]. This moment is mirrored in a description of a fruit bowl which Mary at that moment brings in, and she perceives as "a glass bowl, and a blue dish, very lovely, with a strange sheen on it as though it had been dipped in milk." Here, Mansfield contrasts the color category of the dish—it /is/ blue—with its percepual reality: it appears white.
 
-Bertha sees the fruit in this bowl also with an acute sense of newness: not quite estrangement, /остранение/, in Shklovsky's formulation, but a newly intimate familiarization. "There were tangerines and apples stained with strawberry pink. Some yellow pears, smooth as silk; some white grapes covered with a silver bloom and a bug cluster of purple ones. These last she had bought to tone in with the new dining-room carpet" (146).
+Bertha sees the fruit in this bowl also with an acute sense of newness: not quite estrangement, in Shklovsky's formulation, but a newly intimate familiarization. "There were tangerines and apples stained with strawberry pink. Some yellow pears, smooth as silk; some white grapes covered with a silver bloom and a bug cluster of purple ones. These last she had bought to tone in with the new dining-room carpet" (146).
 
 "Apples stained with strawberry pink," is an uncommon metaphor for apples, which $M_P$ models as:
 
@@ -259,12 +336,6 @@ Bertha sees the fruit in this bowl also with an acute sense of newness: not quit
       "red": 46.93333333333334,
       "wine": 29.166666666666664,
       "gold": 26.15,
-      "white": 23.749999999999996,
-      "custard": 19.833333333333332,
-      "apple": 16.7,
-      "plum": 15.583333333333334,
-      "orange": 14.583333333333334,
-      "pear": 14.533333333333335,
       [ ... ]
     }
   }
@@ -279,26 +350,140 @@ Mansfield would have been aware of the categories of grapes, but has Bertha call
 
 So by modeling imagination in this way, we're able to take advantage of the ways writers show us the perceptual experience of words, rather than just their categories. But this model is only one component of a larger system.
 
-*** Dictionary-based inference engine
+*** Dictionary-based inference, $M_D$
 
-We might also mine data useful for color inference from more straightforward definitions, like those found in dictionaries and encyclopedias. Project Gutenberg provides [[http://www.gutenberg.org/cache/epub/38538/pg38538.txt][a copy of Chambers's Twentieth Century Dictionary of the English Language]], published in London in 1908. If we did not already have a color mappings for /grass/ ($CM_X$: /grassy green/, #419c03; /grass/, #5cac2d; /grass green/, #3f9b0b), we would find this entry for /grassy/: "covered with or resembling grass, green." Since words and their definitions are regularly formatted in this dictionary, it becomes possible to parse the dictionary entry into word/definition pair, and load them into a lookup table. From there, I construct an graph, where nodes are dictionary words and their colors, and edges accrue weight each time a color word from the color maps appears in the definition of one of the defined words. Thus, if we see /grassy/ appear on the left of the page, and /green/ in its definition, we give it a score of one. If /green/ were to appear twice in its definition, we'd give it a score of two, and so forth.
+I also mine data useful for color inference from more straightforward definitions, like those found in dictionaries and encyclopedias. Project Gutenberg provides [[http://www.gutenberg.org/cache/epub/38538/pg38538.txt][a copy of Chambers's Twentieth Century Dictionary of the English Language]], published in London in 1908. If I did not already have color mappings for /grass/ ($CM_X$: /grassy green/, #419c03; /grass/, #5cac2d; /grass green/, #3f9b0b), we would find this entry for /grassy/: "covered with or resembling grass, green." Since words and their definitions are regularly formatted in this dictionary, it becomes possible to parse the dictionary entry into word/definition pair, and load them into a lookup table. From there, I construct an graph, where nodes are dictionary words and their colors, and edges accrue weight each time a color word from the color maps appears in the definition of one of the defined words. Thus, if we see /grassy/ appear on the left of the page, and /green/ in its definition, we give it a score of one. If /green/ were to appear twice in its definition, we'd give it a score of two, and so forth. I repeat this process an encyclopedia: /The Nuttall Encyclopædia/, first published in London in 1900, and still in print by 1966.
 
-I repeat this process with
+Other dictionary and encyclopedia-like works are available in the usual plain-text sources, but few meet the criteria of (a) British, (b) out-of-copyright, (c) in plain-text, and (d) in an easily parsable format.
+
+# Model evaluation
+
+This model does not seem to perform as well as $M_P$, however. Here is an entry for /grass/, for example.
+
+#+BEGIN_SRC json
+{
+  "grass": {
+    "colors": {
+      "sea": 1,
+      "desert": 1,
+      "green": 1,
+      "ice": 1,
+      "wheat": 1,
+      "asparagus": 1
+    },
+    "mixed": "89bc6e"
+  }
+}
+#+END_SRC
+
+The model triangulates between the color word and entry/definition pairs, but only finds a few single instances each. Possibly as a happy coincidence, however, the resulting aggregate here is #89bc6e, a very grassy color.
+
+When merging these models, I weight $M_D$ the lowest, since with a lack of data (dictionaries), and an inconsistent level of descriptive detail, I don't trust it as well as less declarative models.
+
+*** Image-based: $M_I$
+
+A third solution mitigates some of the problems described above, such as the "no white sheep" issue, by escaping comparison between colors and objects, and looking to images as a source of color information.
+
+Given a database of images that are correctly labeled, it should be possible to extract color values from those images, and build a pipeline that infers a color given a word. Lucily, two somewhat newly-created web services provide such a database: [[https://unsplash.com/s/photos/sand][Unsplash]] and [[https://www.pexels.com/][Pexels]] are stores of open-licensed stock photos and illustrations, which provide open APIs [Application Programming Interfaces] which allow users to retrieve images based on a given keyword.
+
+However, one problem that arises here is that an image of a given object, such as a sheep, rarely contains only sheep. There is almost always a background to the image which is of a different color. I try to control for this difficulty by disregarding the most frequent color of these images, and only working with the second and lesser frequent colors. From there, I average the resulting colors of all the images, to retreive an imagined (inferred) hue for the lemma.
+
+The resulting algorithm may be summarized as follows:
+
+1. Scan through the text, looking for nouns, adjectives, or similar words (words with potential visual content).
+2. For each matching word, find its lemma.
+3. Query the Pexels API, giving the lemma as a search term, and ask for ten image addresses. Download them.
+4. For each downloaded image, find the second to Nth most frequent color.
+5. Average all these colors proportionally, using the algorithm described above.
+6. Return a pairing of a word with a corresponding RGB hex value.
+
+Here is a sample of the model's inferences for three fairly concrete words, /wheat/, /butterfly/, and /tennis/, and with three more abstract words, /deposit/, /pure/, and /travelling./ I've included a few images used in the creation of each color, to allow for some model introspection.
+
+#+LABEL: fig:imageBasedColorBlock
+#+INCLUDE: "04-colors/includes/imageBasedColorBlocks.html" export html
+
+/Wheat/ the model predicts reasonably well: the resulting color is a golden brown. /Butterfly/ is a little more uncertain, in part because there are many species of butterfly—tens of thousands—and there is an incredible diversity of color patterns between them. /Tennis/ one might have expected to be more greenish, since most tennis courts are green. The averaged color here reflects the inclusion of the image where the court is red, and the image of the racket alone. /Deposit/ is curious: probably because it would be a rare word to use to tag a photo, the first four images are likely from the same photographer and shoot. The last is an image of bars of gold, however. This is interesting, since it is not a stack of paper money, but of an archetypal idea of money—the gold standard—which is no longer in widespread use. The inferred color for /pure/, interestingly, is anything but—it is a dirty grayish. Even though most of these images are water-related, one is of honey. This seems to show one of the pitfalls of computationally imagining an abstract concept. /Travelling/, on the other hand, is a very distinct blue, owing to the color of the beach scenes that have become emblematic of travel today. Coincidentally, however, blue seas would have been a common feature of international travel in the early twentieth century.
+
+A broader view of this model, shown below, gives one a sense of a few trends. First, almost all of these colors are very desaturated: they appear as if they began as pure pigments, and were mixed with a titanium white. This is owing to the way each of these is by nature an average of several colors: they are mixed. At a glance, the legal-sounding words /power/ and /possession/ appear darkest. The two words dealing with negative emotion, /rudeness/ and /objection/, appear redder than the others. And words that evoke comfort, /reliance/, /liberty/, and /amusement/, appear bluish. /Neighbour/ and /neighbourhood/, meanwhile, appear green, probably owing to stock images that involve green lawns.
+
+#+INCLUDE: "04-colors/includes/colorBlocks.html" export html
 
 
+# 3d visualization here
 
-*** Image-based
-**** Saturation notes
+When projected in HSL space, certain patterns emerge, as well, as shown in [@fig:lighthouseHSL].
 
-** Named Entity Recognition NER
+#+CAPTION: HSL Projection of /To the Lighthouse/ Nouns. [[./deep-imaginer/image-based/lighthouse-hsl-visualization.html][(Interactive version here. Due to the size of the data contained, it could take up to 30 seconds to load.)]]
+#+LABEL: fig:lighthouseHSL
+[[./images/lighthouse-hsl.png]]
+
+For the problems cited above, I weigh this model higher than $M_D$ but still lower than $M_P$. In the absence of an evaluation metric—and I doubt one is possible—I feel like our intuition as readers, and imaginers, is enough to evaluate and weigh these methods of imagining.
+
+*** Comparison
+
+#+CAPTION: Model Weights
+#+LABEL: tbl:weights
+| Model | Inference Basis      | Weight |
+|-------+----------------------+--------|
+| $M_P$ | Literary Proximity   |      1 |
+| $M_D$ | Dictionary Proximity |    0.6 |
+| $M_I$ | Image Aggregation    |    0.8 |
+
+I combine these three models according the weights given in [@tbl:weights], and produce a master mapping I'm calling a /deep imaginer/. This I then integrate with the shallow color maps described above, cascading all the models together.
+
+** Named Entity Recognition (NER)
+*** The Rose Problem
+
+Early iterations of this engine found a staggering incidence of the color word /rose/ in the literature of this period. It didn't take much introspection to determine that this was not exclusively the color /rose/, but either a woman's given name, /Rose/ (my parser is case-insensitive), an equivalent surname, or the past tense of the verb /rise/. One could remove all tokens where the first letter is capitalized, but then that would also eliminate the color rose which appears at the beginning of a sentence. One could run a part-of-speech tagger over the text, and throw out all the verbs, but this only solves half the problem.
+
+A method exists which, if properly extended, mitigates this problem. Named Entity Recognition, or NER, is a sub-field of natural language processing which computes the probability that a string of words is a named entity. Usually, these are people, places, organizations, languages, ethnicities, and so on, and detecting them has been useful in commercial applications of text analysis, where a corporation might be interested in finding all instances of Apple, the computer company, but ignore all instances of /apple/, the fruit.
+
+NER has been practiced, in one form or another, since at least Lisa Rau's 1991 paper, /Extracting Company Names from Text/ [cite:rau1991]. But whereas early techniques like Rau's were heuristic, modern methods use computational neural networks to achieve this end. Among the most accurate NER engines now is Explosion AI's SpaCy library, which uses residual convolutional neural networks along with specialized word embeddings to achieve reasonably accurate predictions of entities like personal names, organization names, as well as disambiguate numeric tokens into quantities, cardinal numbers, and so on [cite:spacy2020].
+
+NER becomes useful to my study in two ways: first, it allows me to discard those entities like "Rose," (a given name), as well as "Mrs. Brown," and "Mr. Green." (Although there is a case to be made that the writer's choices of these names, where they are fictional, are as deliberate as choice as a visual descriptor.) Second, since this general-purpose NER doesn't detect color expressions, descriptions, or any literary features, I train it to do so.
+
+I train two NER models, which I'll use to detect text with visual properties: a shallow model, $NER_S$, and a deep model $NER_D$. The seed data set for the more restricted model, $NER_S$, is trained on raw color entities from $CM_X$, while that for $NER_D$ is trained on the set of more general visual expressions spans generated from the deep imaginer.
+
+# TODO: DisplaCy display of entity detection
+
+*** The Beret Test
+
+# Maybe cut this
+
+These are not the only training data sets I feed to the model, however. I use SpaCy's Prodigy tool to dynamically correct the model's most uncertain guesses, across a corpus of edge-cases. In training $NER_S$, I aim for a more restricted definition of a color: one which is parsable as a color without much context. For example, in the famous hook from the Prince song, "Raspberry Beret," we understand that in the words "she wore a raspberry beret," "raspberry" is the color of her beret, which is made of cloth, and not of one or more raspberries. But if we replace /raspberry/ with a more uncommon color, say, /electric,/ or /cyberspace/ (color names from $CM_P$), it is not still clear that the word is a color description, and does not describe some other attribute.
+
+The process of training this model was instructive. $NER_S$ found instances of the word /salmon/ often, and since the word appears in nearly every color map (e.g., $CM_R$: #D9A6A9; $CM_X$: #FF796C), it identifies any use of /salmon/, regardless of whether it refers to a color. It is important to note here that /salmon/, the color, refers to the color of salmon /meat/, rather than the color of the fish itself. In other words, the color refers to the inside of the fish, rather than the outside. Disambiguating between these two senses of the word is a non-trivial task for this model. Nonetheless, given a large number of training examples, the model is able to perform better than chance.
+
+What we are left with, after training, are probabilistic models capable of identifying explicit color expressions, in the case of $NER_S$, and /anything that may be imagined/, in the case of $NER_D$. So, to employ Mansfield again, $NER_S$ finds instances of /green baize/, and assigns it an RGB value, whereas $NER_D$ finds instances of /tennis lawn/, and also assigns it a green value (following color inference, described below).
+
+But first, we would need a way of categorizing the color values generated by these models. Much in the same way that a text analysis project needs a lemmatization system to group together words like /sky/ and /skies/, /go/ and /went/, we need a way to bring together variations, shades, and other common properties of colors.
+
 ** Categorization
 
-*** Debates on Color Categories and Nomenclature
+*** Color Spaces and Color Difference
+
+We now move from categorical description of color to quantitative—i.e., from /that is blue/ to /that is 80% blue/. Now that we've mapped color words and other color-containing text to the model's guesses of their mappings, we need a way to organize them, in relation to one another, and in relation to our perception of them. This is problematic, since we are dealing with two ontological domains: a linguistic domain, and an analogous psycho-physical. Furthermore, there are a multitude of ways to quantify color properties, and to organize colors by those properties.
+
+Relations between colors—color difference—is a long-standing problem. Colors are typically categorized in relation to one another by embedding them in a color /space/: a vector space in which each color is a point in its coordinate system. These spaces are very precisely described in technical literature [cite:fairchild13_color_appear_model, for instance]. The biggest problem they attempt to solve is that hues themselves, due to the anatomy of the eye, do not have linear relationships—this is why three-dimensional projections of these color spaces are often conical, or even asymmetrical. Furthermore, each color space must account for ocular physiology across individuals; differences in ambient reflectors, illuminants, and other lighting conditions; and differences in reference points (white values used as anchors for other color properties). We will not need all of these details, but a summary of these color spaces is necessary, since I will be using many of them below.
+
+It is useful to pause for a moment, however, and consider that color spaces are themselves /descriptions/, in the literary sense, of color—they can approximate their object, but only asymptotically. And yet so much of our modern world is made up of these approximations. Every screen we use—including the one I'm using to type this now, and the one you're using to read it—is composed of millions of tiny picture elements—pixels—each with three lights: a red, a green, and a blue. The more specific colors, and the images, that we see on these screens are only mixtures of those elements.
+
+The most common color spaces in use today include RGB, which stands for red, green, and blue; CMYK, or cyan, magenta, yellow, and white; HSL, or hue, saturation, and luminosity; and CIELAB, the newest and most accurate of these spaces. RGB is most common among light-producing devices like computer monitors, and generates colors additively, by mixing red, green, and blue light. These values are often expressed in hexidecimal, with the marker /#/, such that #ff0000, red, indicates the highest value for red (ff), along with the lowest value for green (00), and the lowest value for blue (00). CMYK is the most common for print media, on the other hand, since it describes colors subtractively, combining cyan, magenta, and yellow. HSL is a useful derivative of RGB, meanwhile, which allows for numeric manipulation of colors according to these values of hue, saturation, and luminosity.
+
+The current standard colorspace, CIE $L^* a^* b^*$, usually abbreviated CIELAB, is a product of a century's long effort by the /Commission Internationale de l'Eclairage/ [International Commission on Illumination], or CIE, an organization formed in 1913 to solve problems of chromaticity standardization, among others. A 1973 meeting of the CIE Colorimetry Committee, having evaluated a number of previously used color difference formulae, produced the first iteration of the LAB colorspace, intended to model human color perception. Here, $L^*$ represents luminosity, $a^*$ represents a spectrum of hues between green and magenta, and $b^*$ represents hues between blue and yellow.
+
+Relations between colors may then be calculated with respect to this coordinate system. The Euclidean distance between two colors in a LAB vector is therefore the square root of the differences of each of its components. The CIE calls this formula $\Delta E$ [cite:robertson1990historical 167].
+
+$$\Delta E = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}$$
+
+Since CIELAB space best represents human perception of color, I'll use it whereever possible, and calculate color distances using $\Delta E$.[fn::I implement this function [[https://github.com/JonathanReeve/color-word-analyzer/blob/ffab10147d71ce7b76144c9d96ccb0e5b81e8b47/src/CategorizeColor.hs#L35][here, in the color categorization module of my color analyzer.]]] However, I have to translate frequently between LAB space and RGB space, since most of the color maps I've derived, are either scanned using digital photography, or, in the case of the XKCD map, produced using computer monitors.
+
+*** Debates in Color Categories and Nomenclature
 If we aim to quantify the occurences of certain color concepts, and not just the color words, then there must be a way to categorize visual experiences. For instance, if we encounter the expression /light blue,/ we must be able to categorize this as a variety of /blue,/ or else we will need to process and compare thousands of variables, instead of just a few. Yet the epistemological problems of the color/word interchange make this a difficult task. To begin with, since we are dealing with spectra, the boundaries of these categories are not well-defined. But the very existence of the categories themselves should not be assumed, either. While, to a painter or interior designer, the differences between /ecru/ and /eggshell/ may be crucial, these words may not be in the working vocabularies of some novelists. I say "working" here because they might be recognizable, and even familiar, to a writer, but they might not be the operative metaphors he or she chooses when describing a scene, or allowing a literary persona to describe it. So the color spectrum of a writer's idiolect is always a subset of his or her dialect. 
 
 For instance, we might consider /light blue/ to be a subcategory of /blue,/ since the word /blue/ is contained within it. However, is /pink/ necessarily its own category, or is it simply a shade of red? And if so, is /light pink/ a subcategory of /pink/ or of /red/? We might categorize these colors differently if we were to use the hues rather than their written expressions. 
 
-We might look to other languages to see how these concepts are expressed, and learn about our own by comparison. Some languages lack a monolexemic term for /pink/, and others still have additional /pink/-like lexemes in other hue spectra. The Russian language, for instance, has the color-categories, or monolexemic color terms, /синий/ [sínij], usually translated as "blue" or "dark blue," and /Голубо́й/ [golubój] which we might gloss as "light blue," or "sky blue." The image-based color mapping model, described in section TODO below, predicts similar, but not identical colors for these English and Russian words, as well as their most common French translations:
+We might look to other languages to see how these concepts are expressed, and learn about our own by comparison. Some languages lack a monolexemic term for /pink/, and others still have additional /pink/-like lexemes in other hue spectra. The Russian language, for instance, has the color-categories, or monolexemic color terms, /синий/ [sínij], usually translated as "blue" or "dark blue," and /Голубо́й/ [golubój] which we might gloss as "light blue," or "sky blue." The image-based color mapping model, described below, predicts similar, but not identical colors for these English and Russian words, as well as their most common French translations:
 
 | Russian | Ru.RGB  | English    | En.RGB  | French      | Fr.RGB  |
 |---------+---------+------------+---------+-------------+---------|
@@ -307,23 +492,17 @@ We might look to other languages to see how these concepts are expressed, and le
 
 Semantically and chromatically, these color categories are not synonymous. Just in the way that every translation requires some compromise, some reshaping, colors do not always cleanly map across languages. Some do: English /blue/ and French /bleu/, as etymological kin, are not only morphologically closer than the English/Russian pair, but semantically, as well, and the model predicts this kinship.
 
-The differences in color terminology between languages are important for us to bear in mind, even when the primary analysis below deals only with texts in English, because these differences are analogs for the gaps, and communications, between language and vision. 
+The differences in color terminology between languages are important for us to bear in mind, even when the primary analysis below deals only with texts in English, because these differences are analogs for the gaps, and communications, between language and vision. Furthermore, most of the writers I'll be discussing here speak more than one language: either from birth, as with Conrad and his native Polish, or through study, as with James Joyce, who was fluent at least five languages. And there have been some experiments in psychology that show semantic shifts in color categorization among speakers of more than one language [cite:ervin1961semantic; cite:caskey1977semantic; cite:athanasopoulos2010perceptual].
 
-Furthermore, most of the writers I'll be discussing here speak more than one language: either from birth, as with Conrad and his native Polish, or through study, as with James Joyce, who was fluent at least five languages. And there have been some experiments in psychology that show semantic shifts in color categorization among speakers of more than one language [cite:ervin1961semantic; cite:caskey1977semantic; cite:athanasopoulos2010perceptual].
+More importantly, however, in order to categorize color words, we must first decide what our base color categories will be. This is no easy matter, and has long been the subject of debate. By comparing languages, linguists have often tried to ascertain what fundamental colors are, irrespective of their respective cultures.
 
-In order to categorize color words, we must first decide what our base color categories will be. This is no easy matter, and has long been the subject of debate. By comparing languages, linguists have often tried to ascertain what fundamental colors are.
-
-One side of this debate calls into quesion the basis of fundamental colors, instead positing that color nomenclature, along with other phenomena, is in fact a cultural or linguistic construct. Probably the most well-known of these theories of linguistic relativism is that independently promoted, starting around the 1930s, by linguists Edward Sapir and Benjamin Whorf.
-
-Whorf's 1940 summary of this view puts it succinctly: "the categories and types that we isolate from the world of phenomena we do not find there because they stare every observer in the face. On the contrary the world is presented in a kaleidoscopic flux of impressions which have to be organized in our minds. This means, largely, by the linguistic system in our minds" [cite:whorf1940 212].
-
-# More on Sapir-Whorf hypothesis
-#  McWhorter, /The Language Hoax/
+One side of this debate calls into quesion the basis of fundamental colors, instead positing that color nomenclature, along with other phenomena, is in fact a cultural or linguistic construct. Probably the most well-known of these theories of linguistic relativism is that independently promoted, starting around the 1930s, by linguists Edward Sapir and Benjamin Whorf. Whorf's 1940 summary of this view puts it succinctly: "the categories and types that we isolate from the world of phenomena we do not find there because they stare every observer in the face. On the contrary the world is presented in a kaleidoscopic flux of impressions which have to be organized in our minds. This means, largely, by the linguistic system in our minds" [cite:whorf1940 212].
 
 On the other side of the debate, usually termed universalism, is an influential study of cross-linguistic color terminology, in a 1969 monograph of Brent Berlin and Paul Kay, /Basic Color Terms: Their Universality and Evolution/ [cite:berlin1991basic 2]. In particular, they name eleven categories: "/white, black, red, green, yellow, blue, brown, purple, pink, orange, and grey/," and suggest that these categories develop in roughly that order—that all languages have words for white and black, that if they have a third, it is red, and so on.
 
 Graphically, Berlin and Kay present this sequence as in the following diagram, where languages that have /red/ must have both /white/ and /black/, and so on. There is no order between /yellow/ and /green/, but languages that develop a word for green would then develop a word for yellow, and vice-versa. 
 
+#+LABEL: eq:berlinKay
 $$[\substack{white \\ black }] < [red] < [\substack{green \\ yellow}] < [blue] < [brown] < [\substack{purple \\ pink \\ orange \\ grey}]$$
 
 Berlin and Kay see this sequence as a linguistic evolution in more than one sense—a dangerous term, in that it suggests a linear progression of simple to complex languages. The reasons they give for this are "increasing technological and cultural advancement" among the languages they compare. By way of explanation, they suppose that, 
@@ -334,58 +513,55 @@ Berlin and Kay see this sequence as a linguistic evolution in more than one sens
 
 While the /contrasts/ might have so physical basis, their linguistic categories do not map evenly to them, as Berlin and Kay themselves show. And as one might predicted, since 1969, their arguments of universal categories—and to a larger extent those of language evolution—have been either denounced as Anglocentric, or at least treated with a healthy skepticism. For instance, in 2006, Anna Wiezbicka argues that even the notion of color itself is not universal. Citing decades of research within the subfield of Natural Semantic Metalanguage, Wiezbicka argues that, "while many languages do not have a word for 'colour,' all languages have a word for seeing,'" and that "it makes more sense to ask about the universals of seeing rather than any putative 'universals of colour'" [cite:wierzbicka2006semantics 3]. 
 
-*** Color Spaces and Color Difference
-
-We now move from categorical description of color to quantitative. Unfortunately, this presents its own set of problems, as there are a multitude of ways to quantify color properties, and to organize colors by those properties.
-
-There are a number of admirable works which describe in very precise detail the differences between the most common contemporary color spaces [cite:fairchild13_color_appear_model, for instance]. This is a problem which has been extant since antiquity, and is still not considered solved, now. The biggest problem is that hues themselves, due to the anatomy of the eye, do not have linear properties. Furthermore, difficulties involved in color quantification include differences in ocular physiology across individuals; differences in ambient reflectors, illuminants, and other lighting conditions; and differences in reference points (white values used as anchors for other color properties). We will not need these details, but a summary of these color spaces is necessary, since I will be using many of them below.
-
-The most common color spaces in use today include RGB, which stands for red, green, and blue; CMYK, or cyan, magenta, yellow, and white; HSL, or hue, saturation, and luminosity; and CIELAB, a newer color space which I will discuss below. RGB is the most common color space in computer monitors, and generates colors additively, by mixing red, green, and blue light. These values are often expressed in hexidecimal, with the marker /#/, such that #ff0000, red, indicates the highest value for red (ff), along with the lowest value for green (00), and the lowest value for blue (00). CMYK is the most common for print media, on the other hand, and describes colors subtractively, combining cyan, magenta, and yellow. HSL is a useful derivative of RGB, meanwhile which allows for numeric manipulation of colors according to these values of hue, saturation, and luminosity.
-
-The current standard colorspace, CIE $L^* a^* b^*$, usually abbreviated CIELAB, is a product of a century's long effort by the /Commission Internationale de l'Eclairage/ [International Commission on Illumination], or CIE, an organization formed in 1913 to solve problems of chromaticity standardization, among others. A 1973 meeting of the CIE Colorimetry Committee, having evaluated a number of previously used color difference formulae, produced the first iteration of the LAB colorspace, intended to model human color perception. Here, $L^*$ represents luminosity, $a^*$ represents a spectrum of hues between green and magenta, and $b^*$ represents hues between blue and yellow.
-
-Relations between colors may then be calculated with respect to this coordinate system. The Euclidean distance between two colors in a LAB vector is therefore the square root of the differences of each of its components. The CIE calls this formula $\Delta E$ [cite:robertson1990historical 167].
-
-$$\Delta E = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}$$
-
-Since CIELAB space best represents human perception of color, I'll use it whereever possible, and calculate color distances using $\Delta E$.[fn::I implement this function [[https://github.com/JonathanReeve/color-word-analyzer/blob/ffab10147d71ce7b76144c9d96ccb0e5b81e8b47/src/CategorizeColor.hs#L35][here, in the color categorization module of my color analyzer.]]] However, I have to translate frequently between LAB space and RGB space, since most of the color maps I've derived, are either scanned using digital photography, or, in the case of the XKCD map, produced using computer monitors.
+I take no sides in this debate, but present it as evidence of the bond between language and perception. While there are few hard-line Whorfians remaining in linguistics, or universalists, both camps seem to agree that there are exceptions pulling at their theoretical sweaters, and colors are frequently the axis along which that pulling happens.
 
 *** Is blood red?
+:LOGBOOK:
+CLOCK: [2020-09-21 lun 14:59]--[2020-09-21 lun 14:59] =>  0:00
+:END:
 
-While categorizing colors using CIELAB $\Delta E$, I came across some unexpected results. The category for the XKCD color word /blood/ (#770001) gets categorized as brown, instead of red, as one might have predicted. Incidentally, /blood red/ (#980002) is an entirely different color in the XKCD map, which is redder (i.e., contains a higher R value in its RGB representation) than /blood/. And /dried blood/ (#4b0101) also exists, and is mapped to a darker red.
+To further complicate our conception of color/word translation, let's return to the discussion of color word conventionality begun in the section on /lemon-yellow/ above. As I have argued, although /red/ is the conventional color of blood, blood itself is rarely red. This phenomenon presents itself in process of computational color categorization attempted here. While categorizing colors using CIELAB $\Delta E$, which model human perception, I find that the category for the $CM_X$ color word /blood/ (#770001) gets categorized as brown, instead of red, as one might have predicted. Incidentally, /blood red/ (#980002) is an entirely different color in the $CM_X$, which is redder (i.e., contains a higher R value in its RGB representation) than /blood/. And /dried blood/ (#4b0101) also exists, and is mapped to a darker red.
 
-My initial feeling was that /blood/ was miscategorized as a brown, and should instead be categorized as red. We all know blood is red–the term /blood red/ itself proves it, right? But to look through images of blood, we may, in fact, discover that it is not red, but at best, a reddish brown. This is seemingly confirmed by the deep imaginer's image-based imagined color (described below), which is #915b47. An image search at a stock photo provider like [[https://unsplash.com/][Unsplash]] or [[https://www.pexels.com/][Pexels]] seems to confirm this, as well. However, crucially, the same searches for illustrations, rather than photos, depict blood as a bright red, instead of reddish brown—this seems to show that the linguistic-cognitive /concept/ of blood is aligned with the /concept/ of red, even though they aren't visually equivalent. So when the OED editors, however meticulously they document theusages of /blood-red/, which date back to early Old English, gloss the term disappointingly literally as "red like blood; blood-coloured," (/OED/, "blood-red"), [TODO: add to bibliography] they do not account for the discrepancy between the color of "blood-red" and the actual color of blood.
+My initial feeling was that /blood/ was miscategorized as a brown, and should instead be categorized as red. We all know blood is red–the term /blood red/ itself proves it, right? But to look through images of blood, we may, in fact, discover that it is not red, but at best, a reddish brown. This is seemingly confirmed by the deep imaginer's image-based imagined color (described below), which is #915b47. An image search at a stock photo provider like [[https://unsplash.com/][Unsplash]] or [[https://www.pexels.com/][Pexels]] seems to confirm this, as well. However, crucially, the same searches for illustrations, rather than photos, depict blood as a bright red, instead of reddish brown—this seems to show that the linguistic-cognitive /concept/ of blood is aligned with the /concept/ of red, even though they aren't visually equivalent. So when the OED editors, however meticulously they document the usages of /blood-red/, which date back to early Old English, gloss the term disappointingly literally as "red like blood; blood-coloured," (/OED/, "blood-red"), [TODO: cite] they do not account for the discrepancy between the color of "blood-red" and the actual color of blood.
 
-In British literature of this period, /blood-red/ is often used to evoke other qualities of blood, although not necessarily its true color. In the hell-sermon that is the pivotal scene in Joyce's /A Portrait of the Artist as a Young Man/, it is used to underscore the apocalyptic scene that Father Arnall is trying to describe: "the doomsday was at hand. The stars of heaven were falling upon the earth ... The sun, ... had become as sackcloth of hair. The moon was bloodred" [TODO: cite 99]. Lunar eclipses, in which the sun's light on the moon is eclipsed, leaving only the earth's light, make the moon appear dark red. These have long been described in English as a /blood moon/, but this is not just a color comparison: it is a metaphor which anthropomorphizes the moon in this state, comparing the moon's face to one whose face has filled with blood, out of anger or another heightened emotional state. Father Arnall's use of this metaphor, along with his simile for the sun, anthropomorphize heaven as a way to dramatize the wrath of God.
+In British literature of this period, /blood-red/ is often used to evoke other qualities of blood itself, although not necessarily its true color. In the hell-sermon that is the pivotal scene in Joyce's /A Portrait of the Artist as a Young Man/, it is used to underscore the apocalyptic scene that Father Arnall is trying to describe: "the doomsday was at hand. The stars of heaven were falling upon the earth ... The sun, ... had become as sackcloth of hair. The moon was bloodred" [TODO: cite 99]. Lunar eclipses, in which the sun's light on the moon is eclipsed, leaving only the earth's light, make the moon appear dark red. These have long been described in English as a /blood moon/, but this is not just a color comparison: it is a metaphor which anthropomorphizes the moon in this state, comparing the moon's face to one whose face has filled with blood, out of anger or another heightened emotional state. Father Arnall's use of this metaphor, along with his simile for the sun, anthropomorphize heaven as a way to dramatize the wrath of God.
 
-In Thomas Hardy's 1892 /Tess of the d'Urbervilles/, Tess is described, in an early foreshadowing scene, as "not divining" that Alec d'Urberville, "one who stood fair to be the blood-red ray in the spectrum of her young life," would come to be "the tragic mischief of her drama" [TODO: Broadview 73]. As in Joyce, "blood-red" allows for polysemy. First, it is "red in the spectrum of her life": red is the first, highest-frequency, and longest-wavelength band of a prismatic or spectrographic projection of Tess's life, implying that Alec will be for her among the first and most striking bands of her life. (Spectroscopy—a kind of scientific "divining" of the material composition of matter, based on the spectral composition of its light—had come of age as a science in the 1870s and 80s, only a decade or two before /Tess/'s publication.) Second, "blood red" here implies a more literal red which comes from blood: a blushing which is seen in human faces, as well as, by extension of the metaphor, flowers, and fruit. This is the culmination of a chapter's worth of red imagery, since Tess and Alec have just been picking strawberries and roses, and it is intertwined with imagery of Tess's coming-of-age, or /blossoming/ as the floral metaphor often has it.
+In Thomas Hardy's /Tess of the d'Urbervilles/, Tess is described, in an early foreshadowing scene, as "not divining" that Alec d'Urberville, "one who stood fair to be the blood-red ray in the spectrum of her young life," would come to be "the tragic mischief of her drama" [TODO: Broadview 73]. As in Joyce, "blood-red" allows for polysemy. First, it is "red ... in the spectrum of her life": red is the first, highest-frequency, and longest-wavelength band of a prismatic or spectrographic projection of Tess's life, which implies that Alec will be for her among the first and most striking bands of her life. [fn::Spectroscopy—a kind of scientific "divining" of the material composition of matter, based on the spectral composition of its light—had come of age as a science in the 1870s and 80s, only a decade or two before /Tess/'s publication.] Second, "blood red" here implies a more literal red which comes from blood: a blushing which is seen in human faces, as well as, by extension of the metaphor, flowers, and fruit. This is the culmination of a chapter's worth of red imagery, since Tess and Alec have just been picking strawberries and roses, and it is intertwined with imagery of Tess's coming-of-age, or /blossoming/ as the floral metaphor often has it.
 
 # On rosy breasts (Hardy: roses in her "bosom") see [cite:clarke2003imagery 135] on Catallus
 
-When /blood-red/ is understood as blushing, however, this is not the color of external, disembodied blood, which we have already established is more akin to brown, but refers to pinkish, blood-rich skin. In the Hungarian language, to choose one cross-cultural example, there are famously two words for red, /vörös/, derived from the word for /blood/, and /piros/, of similar etymology, but referring instead to, as linguist Anna Wierzbicka posits, "the color of blood inside a person's body (visible sometimes in an open wound and in a person's 'red' face)" [cite:wiezbicka2006semantics].
+When /blood-red/ is understood as blushing, however, this is not the color of external, disembodied blood, which we have already established is more akin to brown, but refers to pinkish, blood-rich skin. In the Hungarian language, to choose one cross-cultural example, there are famously two words for red, /vörös/, derived from the word for /blood/, and /piros/, of similar etymology, but referring instead to, as linguist Anna Wierzbicka posits, "the color of blood inside a person's body (visible sometimes in an open wound and in a person's 'red' face)" [cite:wiezbicka2006semantics]. In fact, Berlin and Kay note that many words for red are derived from blood [cite:berlin1991basic 38].
 
 A /red face,/ Wierzbica suggests, is not an attempt at accurately describing the color of someone's face, but only that it has become more pink, i.e., taken on a more reddish hue than before. The red in question, then, is more of a reference to the /concept/ of red, via /blood/ and /blood-red/, than to the color phenomenon itself.
 
-This red—again, not really the color red, but the concept—is the same red of rouge, the cosmetic used to emulate blushing, and whose name is derived from the French word for /red/. Rouge itself is often not red, but a somewhat reddish, pinkish, or purplish tint of another color. Max Beerbohm famously sings the praises of rouge, as a symbol of colorfulness and artifice, in an 1894 polemic in the short-lived by influential aestheticist journal bearing the name of another bright color: /The Yellow Book/. "The Pervasion of Rouge," originally titled "A Defence of Cosmetics," declares the end of the Victorian era, and thus "sancta simplicitas," which we might interpret as a restricted color palette [TODO: cite]. Queen Victoria would not die, taking her eponymous era with her, for another seven years, but this declaration is an important herald of the "bright modernity" to come, as Blasszczyk and Spiekermann term it. 
+This red—again, not really the color red, but the concept—is the same red of rouge, the cosmetic used to emulate blushing, and whose name is derived from the French word for /red/. Rouge itself is often not red, but a somewhat reddish, pinkish, or purplish tint of another color. Max Beerbohm famously sings the praises of rouge, as a symbol of colorfulness and artifice, in an 1894 polemic in the short-lived by influential aestheticist journal bearing the name of another bright color: /The Yellow Book/. "The Pervasion of Rouge," originally titled "A Defence of Cosmetics," declares the end of the Victorian era, and thus "sancta simplicitas," which we might interpret as a restricted color palette [TODO: cite]. Queen Victoria would not die, taking her eponymous era with her, for another seven years, but this declaration is an important herald of the "bright modernity" to come, as Blasszczyk and Spiekermann term it [cite:blaszczykBrightModernityColor2017].
 
 # TODO: Bright modernity
 
-P. A. Saccardo's taxonomy does not place the color of blood with /red/ at all, however, but with purple: he gives /sanguineus/ as a Latin synonym of /purpureus/, along with the Greco-latin /hæmatochrous, hæmatinus,/ and /hæmatites/ [cite:saccardo1891chromotaxia 8]. This is the traditional categorization of classical antiquity: the mapping appears in Homer, where in the /Iliad/, the earth is wet with purple blood. A. T. Murray's English translation of Homer gives "thus mighty Aias charged them, and the earth grew wet with dark blood," [αἵματι δὲ χθὼν δεύετο πορφυρέῳ] although /πορφυρέῳ/, which is translated as /dark/, is an etymological ancestor of /purple/ [TODO: cite [[http://data.perseus.org/citations/urn:cts:greekLit:tlg0012.tlg001.perseus-eng1:17.319-17.365][Perseus project here]]]. This categorization continues through Vergil, Ovid, and Horace. In fact, as Jacquiline Clarke points out, Horace plays with the traditional Homeric association of /πορφύρεος/ with the sea and with death (/πορφύρεος θάνατος/, purple death or dark death, appears thrice in the /Iliad/), by juxtaposing the two in a purple blood-stained sea [cite:clarke2003imagery 132]. However, Liddell and Scott are quick to warn that "Homer seems not to have known the πορφύρα, [a purple fish, or purple dye] so that the word does not imply any definite colour." [TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=porfu%2Freos&la=greek&can=porfu%2Freos0&prior=e)/llabe&d=Perseus:text:1999.01.0133:book%3D5:card%3D43&i=1#lexicon][this purseus page]]]. 
+P. A. Saccardo's taxonomy does not place the color of blood with /red/ at all, however, but with purple: he gives /sanguineus/ as a Latin synonym of /purpureus/, along with the Greco-latin /hæmatochrous, hæmatinus,/ and /hæmatites/ [cite:saccardo1891chromotaxia 8]. This is the traditional categorization of classical antiquity: the mapping appears in Homer, where in the /Iliad/, the earth is wet with purple blood. A. T. Murray's English translation of Homer gives "thus mighty Aias charged them, and the earth grew wet with dark blood," [αἵματι δὲ χθὼν δεύετο πορφυρέῳ] although /πορφυρέῳ/, which is translated as /dark/, is an etymological ancestor of /purple/ [TODO: cite [[http://data.perseus.org/citations/urn:cts:greekLit:tlg0012.tlg001.perseus-eng1:17.319-17.365][Perseus project here]]]. This categorization continues through Vergil, Ovid, and Horace. In fact, as Jacquiline Clarke points out, Horace plays with the traditional Homeric association of /πορφύρεος/ with the sea and with death (/πορφύρεος θάνατος/, purple death or dark death, appears thrice in the /Iliad/), by juxtaposing the two in a purple blood-stained sea [cite:clarke2003imagery 132]. However, Liddell and Scott are quick to warn that "Homer seems not to have known the πορφύρα, [a purple fish, or purple dye] so that the word does not imply any definite colour." [TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=porfu%2Freos&la=greek&can=porfu%2Freos0&prior=e)/llabe&d=Perseus:text:1999.01.0133:book%3D5:card%3D43&i=1#lexicon][this purseus page]]].
 
-To further complicate matters, saccardo's /purpureus/, while certainly on a spectrum that seems to range from red, to purple, and finally to brown, has a color of #8D0202,  at least as it appears in the scanned edition from [[https://archive.org][archive.org]], however faded its original pigments may be. Some may rightly call this color red.
+To further complicate matters, saccardo's /purpureus/, while certainly on a spectrum that seems to range from red, to purple, and finally to brown, has a color of #8D0202, at least as it appears in the scanned edition from [[https://archive.org][archive.org]], however faded its original pigments may be. Some may rightly call this color red. So blood is not really red; it's purple. But purple is red.
 
-Words for red are often derived from blood. [cite:berlin1991basic 38] 
+We may add blood to the long list of things called red which aren't: the Red Sea (it's blue), red wine and red grapes (they're purple), red hair, red pandas, and Mars, the red planet (they're orange). It comes as no surprise to report that /red hair/ appears close to 900 times in $C_{PG}$, but that /orange hair/, /ginger hair/, and /copper hair/ are used only thrice each. Or that /red wine/ appears 160 times, but /purple wine/ only thrice. These are simply English-language conventions. But they prove that we must be especially careful while modeling our imagination of these terms. When we read /red wine/, do we imagine something red, or purple?
+
+Similarly, when we read /red hair/, are we imagining red? The persistence of the villanous red-haired minor character trope in sensational literature of this period is evidence that the associations we've so far catalogued for /red/---blood, violence, ferocity, and so on—seep subconsciously into the characters' depictions in fiction.[fn::Depictions of red-haired people in fiction could easily be the subject of another chapter, but are a little too far afield for this one. [[./includes/red-hair.html][A concordance of $C_{PG}$ for ~red-haired~ and similar terms]], however, shows a multitude of unflattering accompanying personal descriptions.] We do not see those same stereotyped character attributes among more conscious and nuanced descriptions of hair color.
+
+# Red hair here
+
+I want to reiterate here that these difficulties of textual color are not, as they may seem, merely background linguistic components of a literary art that is unconscious of them. Rather, they are fundamental to the process of literary description. Some writers are more explicit about these optical mechanics, and others are more implicit about them. But the modernist writers I choose to study the deepest in this chapter foreground color epistemologies in a way that, while it may not be a /new/ literary device, is stronger, and brighter, and more variegated than before.
 
 *** The wine-dark sea
 
-The first scene of /Ulysses/ introduces a motif that recurs throughout the novel: the color of the sea. Here, Buck Mulligan is gazing out onto the Irish sea from the crenellated parapets of Martello tower, in Sandycove, south of Dublin, and musing at once irreverently and reverently:
+Among the writers that deal most explicitly with color is James Joyce, an author I return to frequently. The first scene of /Ulysses/ introduces a motif that recurs throughout the novel: the color of the sea. There, Buck Mulligan is gazing out onto the Irish sea from the crenellated parapets of Martello tower, in Sandycove, south of Dublin, and musing at once irreverently and reverently:
 
 #+BEGIN_QUOTE
 God! he said quietly. Isn’t the sea what Algy calls it: a great sweet mother? The snotgreen sea. The scrotumtightening sea. /Epi oinopa ponton/. Ah, Dedalus, the Greeks! I must teach you. You must read them in the original. Thalatta! Thalatta! She is our great sweet mother. Come and look. [cite:joyce_ulysses_1986-1 2]
 #+END_QUOTE
 
-Is the sea "snotgreen"? $CM_X$ contains several colors for /sea/, as shown in the table below, as well as two mappings for /snot/. (/Snot/ is not present in other color maps—unsurprisingly, since it would not very likely be a marketable name for a paint.)
+How is the sea "snotgreen"? $CM_X$ contains several colors for /sea/, as shown in [@tbl:snotgreen] below, as well as two mappings for /snot/. (/Snot/ is not present in other color maps—unsurprisingly, since it would not very likely be a marketable name for a paint.)
 
+#+CAPTION: Sea Colors in $CM_X$
+#+LABEL: tbl:snotgreen
 | $CM_X$ Name      | RGB Hex |
 |------------------+---------|
 | bright sea green | #05ffa6 |
@@ -399,9 +575,7 @@ Is the sea "snotgreen"? $CM_X$ contains several colors for /sea/, as shown in th
 | snot             | #acbb0d |
 | snot green       | #9dc100 |
 
-And this list does not even include the many /seafoam/ and /seaweed/ variations. The variety of sea-like colors is an interesting problem, because seas themselves have a very wide range of colors among them, and even within any given sea. As suggested here in the name /deep sea blue/, the depth of the sea changes its apparent color.
-
-For comparison, the image-based color model predicts #98B8B3 for /irish sea/—a somewhat snot-green color.
+And this list does not even include the many /seafoam/ and /seaweed/ variations. The variety of sea-like colors is an interesting problem, because seas themselves have a very wide range of colors among them, and even within any given sea. As suggested here in the name /deep sea blue/, the depth of the sea changes its apparent color. For comparison, the image-based color model predicts #98B8B3 for /irish sea/ —a somewhat snot-green color.
 
 /Epi oinopa ponton/, according to Don Gifford's notes for /Ulysses/, is Homeric Greek for "upon the wine-dark sea," a classic Homeric epithet that occurs throughout /The Odyssey/ [cite:gifford_ulysses_2008 15]. It has long been a puzzle of Homeric scholarship as to why the sea is not blue, or green, but "wine-dark." We should remember, however, that "dark" is an artifact of this translation convention, for in the Greek, which Mulligan advisedly does not gloss, "ἐπὶ οἴνοπα πόντον" might also be rendered "over the vinaceous sea" or "over the wine-/like/ sea," since οἴνοπα itself, despite clearly being used as a visual metaphor elsewhere in Homer, does not explicitly contain a signifier for /dark/, which would be closer to /μέλας/ in Homeric Greek—in fact, elsewhere in Homer, wine itself is described as /μέλας/, although not here [cite:gladstone_studies_1858 472; TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=oi%29%2Fnopa&la=greek&can=oi%29%2Fnopa0&prior=e)pi%5C&d=Perseus:text:1999.01.0135:book%3D1:card%3D178&i=1#lexicon][LSJ]]].
 
@@ -415,7 +589,7 @@ Gladstone notes that Homer applies οἴνοψ to only two objects, oxen and the
 "there is no small difficulty in combining these two uses by reference to the idea of a common colour. The sea is blue, grey, or green. Oxen are black, bay, or brown. ... It is remarkable that, among colours properly so called, Homer has none whatever, derived from the name of an object, that are light, unless it be in the case of the rose" [cite:gladstone_studies_1858 472].
 #+END_QUOTE
 
-My personal feeling is that οἴνοπα functions just as πορφύρεος does as a visual descriptor of the sea, in the sense of "blood-red": by comparing the sea to wine, it is not just the color that is compared, but other aspects, as well. We might imagine a tumultuous sea, for instance, which causes the ships upon it to sway as if drunken, as in Arthur Rimbaud's poem "Le bateau ivre." This same motion of the sea might also cause sailors on it to vomit as if they'd had too much wine.
+οἴνοπα functions just as πορφύρεος does: as a visual descriptor of the sea, in the sense of "blood-red": by comparing the sea to wine, it is not just the color that is compared, but other aspects, as well. We might imagine a tumultuous sea, for instance, which causes the ships upon it to sway as if drunken, as in Arthur Rimbaud's poem "Le bateau ivre." This same motion of the sea might also cause sailors on it to vomit as if they'd had too much wine.
 
 The blood/wine/sea metaphoric trinity was not lost on Joyce, either: in the "Proteus" episode of /Ulysses/, we see Stephen daydream the following, looking again out at the Irish sea:
 
@@ -425,137 +599,219 @@ A tide westering, moondrawn, in her wake. Tides, myriadislanded, within her, blo
 
 Here, Stephen's poetically free-associating imagination conjures a nighttime sea as "the handmaid of the moon," because it is "pulled" by it in its tides. He extends this feminine analogy, via the conventional euphemism for menstruation, to a series of blood-soaked bedsheets, with their analogue in the bloodied sea, and a recollection of a sexual episode with a prostitute that Stephen will remember more fully later. A common connection in this stream—or sea?—of consciousness is the purple color.
 
-What's important here is to recognize that this purple is closer to how it /appears/ than how it is /categorized/. Again, conventional associations have it that the sea is blue, and that blood is red, and that red wine is of course red, but to read Homeric descriptions of the sea and blood and wine as purple, we are more reminded of the perceptual phemomenon than the linguistic category. And that is the project of modernism.
+What's important here is to recognize that this purple is closer to how it /appears/ than how it is /categorized/. Again, conventional associations have it that the sea is blue, and that blood is red, and that red wine is of course red, but to read Homeric descriptions of the sea and blood and wine as purple, we are more reminded of the perceptual phemomenon than the linguistic category. And that, I argue, is one of the primary projects of the modernist movement.
 
 * Imagining Texts: Aggregating Color Mappings
+
+So far, we have encoded color mappings $CM$, which feed into color inference models $M$, which in turn feed into named entity recognition models $NER$, as illustrated in [@fig:flowchart] below.
+
+#+BEGIN_HTML
+  <div class="mermaid">
+  graph LR
+      CMX[CM<sub>X</sub>] --> M
+      CMJ[CM<sub>J</sub>] --> M
+      M --> NERD[NER<sub>D</sub>]
+      CMX --> NERS[NER<sub>S</sub>]
+  </div>
+#+END_HTML
+
+#+CAPTION: Data Flow Chart for Imagination Model
+#+LABEL: fig:flowchart
+[[./images/dummy.png]]
+
+
+I now derive the model's best guesses for color spans in a number of corpora, while collecting metadata: the title and author of the text, its publication date, its category or library subject heading, and a number of other data. I then use these models to infer color information about large collections of texts, according to groups of that metadata.
+
 ** Corpora
 
-Corpora
+[This section will probably go in an appendix.]
 
-*** $C_PG$
-*** $C_BL$
-*** $C_PGA$
+- Making the corpus
+- Problems with each corpus
+
+*** $C_{PG}$: Project Gutenberg
+*** $C_{BL}$: British Library
+*** $C_{PGA}$: Project Gutenberg Australia
 *** Corpus-DB and Metadata Augmentation
 
-** Literary History
-- Making the corpus
-- Problems with the corpus
+** How does color change across literary history?
 
-#+CAPTION: Base Color Proportions By Genre
-#+NAME: fig:genres
+This first analysis infers colors from $C_{PG}$, in order to answer the question of whether twentieth century writers are more colorful, or more descriptive, than their predecessors—in a sense, testing some of the hypotheses of Blaszcyk and Spiekermann, who in /Bright Modernity/ show how, owing to various material factors including the newly widespread availability of synthetic pigments, early twentieth century culture was much more colorful—literally—than that of the previous century [cite:blaszczykBrightModernityColor2017]. Pigments aside, however, my hypothesis is that the period in which we see the most works of literary modernism will also show the greatest proportions of color words. This could be attributed in part to technological developments, but I attribute them mainly to a renewed interest in the visual experience /as such/ (renewed, since many writers cite ancient Greek writers like Homer as their stylistic ancestors).
+
+To test this, it would be best to compare the dates of original publication for each text with the total proportions of color spans found in each. But even though I was able to fill in much of this data, by querying several book metadata APIs, much of it remained missing. The author's date of birth is present in $C_{PG}$, however, and so [@fig:proportionsByDOB] shows the correlation between the author's date of birth and the total proportions of detected color expressions in that author's text.
+
+#+CAPTION: Base Color Proportions By Author Date of Birth
+#+LABEL: fig:proportionsByDOB
 [[./images/year-dob-smooth5.png]]
 
-TODO: Scale this image so that the regression line is somewhat visible
+Using an author's date of birth as a proxy for date of publication is not ideal, but this picture doesn't change much, however, when using what few publication dates are available: a linear regression of those points—even though this represents a subset of the total corpus—still shows an upward trend, however weaker: see [@fig:pubdateRegression]. In this case, each point represents a single novel or collection of poems.
 
-Using an author's date of birth as a proxy for date of publication is not ideal. This picture doesn't change much, however, when using what few publication dates are available: a linear regression of those points still shows an upward trend.  
+#+CAPTION: Base Color Proportions By Genre,
+#+LABEL: fig:pubdateRegression
+[[./images/year-pubdate-linear-regression.png]]
 
-*** Colorfulness
- Define colorfulness as the number of color colums which are not NAN.
 
-Fiction                                                          265
-Love stories                                                     264
-Short stories, English                                           215
-Psychological fiction                                            206
-Detective and mystery stories                                    206
-London (England) -- Fiction                                      203
-Adventure stories                                                203
-England -- Fiction                                               196
-World War, 1914-1918 -- Fiction                                  193
-Domestic fiction                                                 192
-Short stories                                                    187
-Man-woman relationships -- Fiction                               185
-Science fiction                                                  180
-Fantasy fiction                                                  176
-Historical fiction                                               174
-England -- Social life and customs -- 19th century -- Fiction    171
-Sea stories                                                      166
-Young women -- Fiction                                           152
-English fiction -- 19th century                                  149
-Private investigators -- England -- Fiction                      118
-dtype: int64
+In both cases, we can see an obvious trend: British fiction and poetry become more colorful over the period of literary modernism.
 
-*** Which Colors Win? 
+** Which subjects and genres are most colorful?
 
-Noticeable here is that color roughly follows the Berlin and Kay hierarchy. White the biggest, then black, then red, and so on. 
+It would make quick work of this study if it turned out that almost all highly colorful works in this corpus come from a single genre, like /painters' romances/. [fn::This is made up, but I'm not sure that it doesn't exist.] So by grouping these text by subject or genre, I can begin to see trends among colorful texts. I first examine correlations between texts' Library of Congress Subject Headings, which are metadata values present across $C_{PG}$, and the number of different unique colors the model detects. This is not measuring the number of colors, but their breadth: the creativity with which writers relate their visual domains. [@Tbl:lcsh-colors] below shows this correlation.
+
+#+CAPTION: Unique Colors by LCSH
+#+LABEL: tbl:lcsh-colors
+| Library of Congress Subject Heading                           | # Unique Colors |
+|---------------------------------------------------------------+-----------------|
+| Love stories                                                  |             264 |
+| Short stories, English                                        |             215 |
+| Psychological fiction                                         |             206 |
+| Detective and mystery stories                                 |             206 |
+| London (England) -- Fiction                                   |             203 |
+| Adventure stories                                             |             203 |
+| England -- Fiction                                            |             196 |
+| World War, 1914-1918 -- Fiction                               |             193 |
+| Domestic fiction                                              |             192 |
+| Short stories                                                 |             187 |
+| Man-woman relationships -- Fiction                            |             185 |
+| Science fiction                                               |             180 |
+| Fantasy fiction                                               |             176 |
+| Historical fiction                                            |             174 |
+| England -- Social life and customs -- 19th century -- Fiction |             171 |
+| Sea stories                                                   |             166 |
+| Young women -- Fiction                                        |             152 |
+| English fiction -- 19th century                               |             149 |
+| Private investigators -- England -- Fiction                   |             118 |
+
+The LCSH /love stories/ has the highest number of unique colors in this corpus, by far. This is a large category of mostly novels, containing a number of well-known works. Among these are three novels by D.H. Lawrence, three by Wells (/Marriage/, /Ann Veronica/ and /Love and Mr. Lewisham/), and two by Woolf (/The Voyage Out/ and /Night and Day/).
+
+I suspect that love stories are colorful because time is slower in a love story. The French literary theorist Philippe Hamon observes that literary descriptions tend to happen when the describing character is "'absorbed', 'fascinated', 'loses track of time', because of what he is looking at," traits that would apply equally as well to lovers [cite:hamon1982 149]. The describer, "has been able to abstract himself for a while from the plot; the 'delay' in the text is justified by a 'delay' invoked by the text: an 'idle period' in an activity, a 'breather', a 'pause'" (ibid.). This is why love stories among stock brokers or auctioneers are not as common as those among cowboys, or gardeners, since love, like description, is something that grows in ease and leisure—with care, rather than hurry; with the rhythm of the daydream. There are fast-paced sections of /Ann Veronica/, without a doubt, but it is the slower ones, the ones that deal with the couple's European vacation, in which descriptions are allowed the freedom to polychromatically shimmer, as in the excerpt shown in [@fig:avExcerpt].
+
+#+INCLUDE: "04-colors/includes/av-excerpt.html" export html
+
+#+CAPTION: Excerpt from /Ann Veronica/, with color words highlighted as they are imagined by the model.
+#+LABEL: fig:avExcerpt
+[[./images/dummy.png]]
+
+It is ironic that Wells's slightly caricatured portrait of Peter, Ann Veronica's father, describes him reading "chiefly healthy light fiction with chromatic titles, The Red Sword, The Black Helmet, The Purple Robe, ... in order 'to distract his mind.'" [TODO: cite], given that the novel is otherwise so colorful. In one scene, Manning professes his love to Ann Veronica by saying: "I want my life to be beaten gold just in order to make it a fitting setting for yours. ... Forgive me if a certain warmth creeps into my words! The Park is green and gray to-day, but I am glowing pink and gold. It is difficult to express these things" [TODO: cite]. Wells paints a very bright, colorful scene, in which the lover's pink skin is glowing with excitement, and his feelings—as shiny and as valuable as gold—emanate from him as if they were colors, and he were a source of light. This all contrasts with the "green and gray" of the inert vegetation against which it is set. Manning's apology that "it is difficult to express" this shows how this kind of color description is so often rooted in reaching for fresh, unconventional ways of relating one's visual experience.
+
+But we should remember that love stories are not disproporately /bright/---that is, they don't have more numbers of colors, simply more unique colors. If we quantify the total proportions of colors, we see a different story. [@Fig:lcsh] shows a subset of base color proportions for each LCSH. Here, /psychological fiction/ is the most prominent, overall, although largely due to the incidence of /black/ and /white/. The subject heading /Psychological fiction/ contains no fewer than ten works from Conrad, two each from Wells, Stevenson, Sinclair, Lawrence, Gissing, and individual novels from Woolf, West, and Maugham. James Joyce's /Ulysses/ is also notably present here. [fn::Conrad's novels in this category are /Heart of Darkness/, /The Secret Sharer/, /An Outcast of the Islands,/ /Almayer's Folly,/ /Chance/, /Lord Jim/, /Victory/, and /The Nigger of the Narcissus/. Gissing's are /New Grub Street/ and /The Odd Women/. Lawrence's are /Women in Love/ and /The Lost Girl/, Stevenson's are /The Strange Case of Dr. Jekyll and Mr. Hyde/ and /The Master of Ballantrae/. Wells's are /The Secret Places of the Heart/ and /The Invisible Man/. Sinclair's are /Life and Death of Harriett Frean/ and /The Three Sisters/. Also included are Joyce's /Ulysses/, David Lindsay's /A Voyage to Arcturus/, Lucas Malet's /The History of Sir Richard Calmady/, Maugham's /The Moon and Sixpense/, Neil Monro's /Bud: a Novel/, Wests's /The Return of the Soldier/, and Woolf's /Jacob's Room/.]
+
+#+CAPTION: Base Color Proportions by LCSH
+#+LABEL: fig:lcsh
+[[./images/lcsh-stacked.png]]
+
+# One of the most recognizable works in this group is Conrad's /Heart of Darkness/, which has a color word in its title.
+
+
+[@Tbl:lcsh-colors] shows that the LCSH is somewhat hierarchical: double hyphens separate time periods (19th century), locations (England), and genres (Fiction). Genres also include "drama," "poetry," and "juvenile fiction." I split out these commonly-occuring genre designations, programmatically, to form a new metadata column called "genre". Then, I compute the same proportions of base colors, and group by these genres. [@Fig:genres] shows the result of the grouping based on this genre inference.
+
+#+CAPTION: Base Color Proportions By Genre
+#+LABEL: fig:genres
+[[./images/genres.png]]
+
+While fiction and drama have roughly the same proportions of colors, juvenile texts and poetry show nearly twice those numbers. This leads me to a theory that the most colorful fiction actually shows something we might call prose poetry. Alternatively, colorful fiction could be evidence of a childlike perceptual state on the part of the narrator.
+
+Mark Doty, poet and author of /The Art of Description/, writes about what he calls "lyric time," as a temporal element of the descriptive mode. Here, he notes how it's a childlike state, in that it evokes a state in which causality and responsibility have not yet been eroded:
+
+#+BEGIN_QUOTE
+"lyric is concerned neither with the impingement of the past nor with anticipation of events to come. It represents instead a slipping out of story and into something still more fluid, less linear: the interior landscape of reverie. This sense of time originates in childhood, before the conception of causality and the solidifying of our temporal sense into an orderly sort of progression. [cite:doty2014art 30]
+#+END_QUOTE
+
+Of course, writers of juvenile literature are not themselves children, but are writing to, and from, this state of mind. This is a state which attempts to convey the awe of early visual experiences. Before the names, purposes, and dangers of our immediate surroundings are known to us, they are first colors, sensations.
+
+** Which texts are the most colorful?
+
+This observation about juvenile literature becomes apparent, too, at the level of the individual work. [@Tbl:positiveOutliers] below shows the total proportions of color expressions, if the text is more than two standard deviations away from the mean. I've annotated this list with some genres, where they are unambiguous. Many of these are childrens' stories, and are full of bright colors and unfiltered perceptions. Many are collections of folk tales, some of which are for children. Padraic Colum's are adapted from Irish folk tales, along with many of Lord Dunsany's, and those alone account for five of the works on this list: both of these Irish writers were in some way involved in the Irish literary revival. Those works, and many others here, also belong, bibliographically, to the /fanasy/ genre, in which highly imaginative, fantastic creatures or settings would need to be described. Many other works in this list involve travel of some sort (although that is perhaps an unsurprising trait of British literature of the early twentieth century). Travel to especially distant places overseas, whether real or imaginary, would also require thick description. Some of Katherine Mansfield's stories are travel narratives in a different sense: although she writes about New Zealand as a native, she writes about it from England, and from a position of imagining something fictional happening in a very distant place.
+
+
+#+CAPTION: Color Proportions, Fiction: Positive Outliers
+#+LABEL: tbl:positiveOutliers
+| Filename                                     | Author                 | Genres                   |   totals |
+|----------------------------------------------+------------------------+--------------------------+----------|
+| 1918-TheBoyWhoKnewWhatTheBirdsSaid-24493     | Colum, Padraic         | Juvenile fantasy stories | 0.007085 |
+| 1910-ADreamersTales-8129                     | Dunsany, Lord          | Fantasy Stories          | 0.006036 |
+| 192156-MondayorTuesday-29220                 | Woolf, Virginia        | Stories                  | 0.005861 |
+| 1915-FiftyOneTales-7838                      | Dunsany, Lord          |                          | 0.005699 |
+| 1922-JacobsRoom-5670                         | Woolf, Virginia        | Novel, character study   | 0.005434 |
+| 1908-TheSwordofWelleranandOtherStories-10806 | Dunsany, Lord          | Fantasy Stories          | 0.005222 |
+| 1919-TalesofThreeHemispheres-11440           | Dunsany, Lord          |                          | 0.004885 |
+| 1880-GreeneFerneFarm-37046                   | Jefferies, Richard     |                          | 0.004771 |
+| 1922-CaptainBlood-1965                       | Sabatini, Rafael       |                          | 0.004699 |
+| 1898212-TheTragedyoftheKorosko-12555         | Doyle, Arthur Conan    | Travel novel, colonial   | 0.004673 |
+| 1895-TheSecondJungleBook-1937                | Kipling, Rudyard       | Stories set in India     | 0.004575 |
+| 1922-TheWindBloweth-21999                    | Byrne, Donn            | Sea romance novel        | 0.004568 |
+| 191911-MaryOlivieraLife-9366                 | Sinclair, May          | Autobiog. novel          | 0.004566 |
+| 1922-TheGardenPartyandOtherStories-1429      | Mansfield, Katherine   | Stories                  | 0.004558 |
+| 1919-LivingAlone-14907                       | Benson, Stella         |                          | 0.004509 |
+| 1922-TheHawkofEgypt-15721                    | Conquest, Joan         |                          | 0.004494 |
+| 1887-TheFrozenPirate-22215                   | Russell, William Clark |                          | 0.004362 |
+| 1899-Findelkind-1367                         | Ouida                  |                          | 0.004227 |
+| 1918-TheReturnoftheSoldier-37189             | West, Rebecca          | Novel                    | 0.004213 |
+| 1892-TheNewMistressATale-32924               | Fenn, George Manville  |                          | 0.004028 |
+
+Note that most of these are post 1910, and in fact, the mean year is 1910. Put differently, of the four decades' of fiction seen here, from the 1880s to the early 1920s (where this corpus, for copyright reasons, stops), the last full decade is the one which contains the most positive outliers.
+
+** Which colors are the most prominent?
+
+One of the first questions I asked of this data set was simply: what is the most common color in British literature of this period? This was, surprisingly, one of the most difficult questions to calculate, and necessitated the color categorizaton engine described above, since colors like /light green/ needed to be counted as /green/, and colors like /sky/ needed to be counted as /blue/. I hypothesized that the most common color here would be red, for its brightness, or green, for its ubiquity in flora. But I was very surprised to see that the most common colors are actually /black/ and /white/. This is especially true once you keep in mind that not many other colors are descendants of the /black/ and /white/ categories: /off-white/ is not very common in fiction, and neither are various other blacks. Grays belong to their own categories. So what could be causing this literary /chiaroscuro/?
 
 #+CAPTION: Box Plot of Individual Color Words
 #+NAME: fig:genres
 [[./images/color-box.png]]
 
-*** Most Colorful Texts
+Astoundingly, the color ranking shown below in [@fig:genres] follows the Berlin and Kay hierarchy from [@eq:berlinKay]: white is the foremost, then black, then red, and so on. This adds some evidence to the universalist view of the primacy of certain colors. But again, my object here is not to settle any linguistic debates, but to understand more of how color operates in literature.
 
-# TODO: redo this
+# TODO: across narrative time
 
-These are total proportions of color expressions, if the text is more than two standard deviations away from the mean. 
+** Imagining the average color of a text
 
-Most of these are post 1910.
+To combine all the colors of a text, using [@eq:blendingAlgorithm], is to imagine it at a distance. It is to imagine everything a reader would imagine, but blurred, impressionistically. It is a strange way of reading a text, no doubt, but it is a kind of reading, however distant. Affinities between these colors show us, in many cases, unpredicted affinities in the texts, as they show us ways in which their habits of visual description align.
 
-fictionPositiveOutliers
-1880-GreeneFerneFarm-37046                      0.002385
-1887-TheFrozenPirate-22215                      0.002181
-1892-TheNewMistressATale-32924                  0.002014
-1895-TheSecondJungleBook-1937                   0.002288
-1898212-TheTragedyoftheKorosko-12555            0.002337
-1899-Findelkind-1367                            0.002114
-1908-TheSwordofWelleranandOtherStories-10806    0.002611
-1910-ADreamersTales-8129                        0.003018
-1915-FiftyOneTales-7838                         0.002849
-1918-TheBoyWhoKnewWhatTheBirdsSaid-24493        0.003542
-1918-TheReturnoftheSoldier-37189                0.002107
-1919-LivingAlone-14907                          0.002255
-1919-TalesofThreeHemispheres-11440              0.002442
-191911-MaryOlivieraLife-9366                    0.002283
-192156-MondayorTuesday-29220                    0.002931
-1922-CaptainBlood-1965                          0.002350
-1922-JacobsRoom-5670                            0.002717
-1922-TheGardenPartyandOtherStories-1429         0.002279
-1922-TheHawkofEgypt-15721                       0.002247
-1922-TheWindBloweth-21999                       0.002284
+[This section is a work in progress.]
 
-Authors for above texts: 
+#+INCLUDE: "04-colors/pg-analysis-py/colorAverages-colorblocks.html" export html
 
-[[('Jefferies, Richard',)],
- [('Russell, William Clark',)],
- [('Fenn, George Manville',)],
- [('Kipling, Rudyard',)],
- [('Doyle, Arthur Conan',)],
- [('Ouida',)],
- [('Dunsany, Lord',)],
- [('Dunsany, Lord',)],
- [('Dunsany, Lord',)],
- [('Colum, Padraic',)],
- [('West, Rebecca',)],
- [('Benson, Stella',)],
- [('Dunsany, Lord',)],
- [('Sinclair, May',)],
- [('Woolf, Virginia',)],
- [('Sabatini, Rafael',)],
- [('Woolf, Virginia',)],
- [('Mansfield, Katherine',)],
- [('Conquest, Joan',)],
- [('Byrne, Donn',)]]
- 
-** Literary Description
+#+CAPTION: Average colors of books
+#+LABEL: fig:colorAverages
+[[./images/dummy.png]]
 
-** Across narrative time
-** Genre, canonicity
+** Imagining individual texts
 
-By Genre Poetry and Prose
+If the distance is too great, at which an entire book is blurred into a single six-digit hexadecimal, then we must zoom in to the level of a single text. Virginia Woolf's /To the Lighthouse/, while not included in the study above, is a perfect text for examining the role of color.[fn::For a more complete set of results of this analysis, see [[file:includes/lighthouse.html][this result page.]]] This is a novel that treats raw color perception, and raw sensation—as opposed to conventionally linguistic color writing—as transformative. On one of the first pages, we hear Mrs. Ramsay muse that "any turn in the wheel of sensation has the power to crystallise and transfix the moment upon which its gloom or radiance rests" [cite:woolfLighthouse 3]. On the one hand, as a novel that deals with an artist and painting, this is an extreme example of the phenomenon I'm outlining in this chapter, but on the other, this is also the best example. Let's start with how the novel treats painting, and its relation to its subject:
 
-#+CAPTION: Base Color Proportions By Genre
-#+NAME: fig:genres
-[[./images/genres.png]]
+#+BEGIN_QUOTE
+#+BEGIN_HTML
+Mrs. Ramsay could not help exclaiming, "Oh, how beautiful!" For the great plateful of <span style="color: #0343df" class="color">
+blue </span> water was before her; the hoary Lighthouse, distant, austere, in the midst; and on the right, as far as the eye could see, fading and falling, in soft low pleats, the <span style="color: #15b01a" class="color"> green </span> sand dunes with the wild flowing grasses on them, which always seemed to be running away into some moon country, uninhabited of men.
 
+That was the view, she said, stopping, growing greyer-eyed, that her husband loved.
 
-- Woolf on play-poems and other genre-bending
+She paused a moment. But now, she said, artists had come here. There indeed, only a few paces off, stood one of them, in Panama hat and <span style="color: #ffff14" class="color"> yellow </span> boots, seriously, softly, absorbedly, for all that he was watched by ten little boys, with an air of profound contentment on his round <span style="color: #e50000" class="color"> red </span> face gazing, and then, when he had gazed, dipping; imbuing the tip of his brush in some soft mound of <span style="color: #15b01a" class="color"> green </span> or <span style="color: #ff81c0" class="color"> pink.</span>  Since Mr. Paunceforte had been there, three years before, all the pictures were like that, she said, <span style="color: #15b01a" class="color"> green </span> and <span style="color: #929591" class="color"> grey,</span>  with <span style="color: #fdff52" class="color"> lemon-</span> coloured sailing-boats, and <span style="color: #ff81c0" class="color"> pink </span> women on the beach.
+#+END_HTML
+#+END_QUOTE
 
-#+CAPTION: Base Color Proportions by LCSH
-#+NAME: fig:lcsh
-[[./images/lcsh.png]]
+There are many phenomena of note in this colorful passage. Although we are not in painter Lily Briscoe's mind, in this descriptive narration, we nonetheless see this scene painted with many simple, primary colors: unmixed colors, straight from the tube. First, the water is so flat, or so blue, as to resemble a plate. Then, the green grasses, and the implied sand-color of the dunes. So far, this seems like a stereotypical seaside landscape. But even though this is a tableau, constructed precisely to resemble a painting, it is not at all static: the dunes are "fading and falling," the grasses are "flowing," and "running away." Both the lighthouse and the grasses are anthropomorphized, to some degree. It is only when the painter Mr. Paunceforte approaches it that it is reduced to simple "grey," "lemon-colour," and "pink": subdued, secondary colors. These are the colors against which Lily Briscoe rebels, in her own painting of the scenes:
 
-* Case Studies
-** Wells
-** Woolf
-** Color compound words in /Portrait/
-** Lord Dunsany?
+#+BEGIN_QUOTE
+#+BEGIN_HTML
+The jacmanna was <span style="color: #ad0afd" class="color"> bright violet;</span>  the wall staring <span style="color: #ffffff" class="color"> white.</span>  She would not have considered it honest to tamper with the <span style="color: #ad0afd" class="color"> bright violet </span> and the staring <span style="color: #ffffff" class="color"> white,</span>  since she saw them like that, fashionable though it was, since Mr. Paunceforte's visit, to see everything <span style="color: #fff9d0" class="color"> pale,</span>  elegant, semitransparent. Then beneath the colour there was the shape. She could see it all so clearly, so commandingly, when she looked: it was when she took her brush in hand that the whole thing changed.
+#+END_HTML
+#+END_QUOTE
+
+In contrast to Mr. Paunceforte, who paints to create a pleasant, "elegant" painting, Lily pledges fidelity to the bright violet of the jacmanna, and thus to her own perception of the color, no matter how inelegant it might be. We see these same colors appear moments earlier, when Lily, "with all her senses quickened as they were," was "looking, straining, till the colour of the wall and the jacmanna beyond burnt into her eyes." Lily is so devoted to faithfully conveying the color of this scene that she has allowed her eyes to unfocus, and her vision to blur, impressionistically, which softens the edges of the scene, and reduces it to just its colors. 
+
+Textual colors are also the vectors along which visual associations take place: transitions from one thought to the next. They enact a persistence of vision in prose. When Mrs. Ramsay imagines her son "all red and ermine on the Bench,"[fn::The court dress of Lord Justice Clerks, among other judges, is red and ermine.] that color is repeated in, or prompted by, the reddish-brown stockings that she knits for her son, only a paragraph later. Woolf suggests, then, through this chromatic association, that she knits him these stockings as an unconscious way of preparing him for a future career that she imagines for him. But the key is that she imagines /him/ red, not his clothes, suggesting that this color impressionistically overtakes the image. It is a blur, a composite image, as in a dream.
+
+When we examine the incidence of colors along the narrative time of the novel, as in [@fig:lighthouseNarrativeTime] with the x-axis representing ten sections from the novel's beginning to its end, we see an overview of its narrative-descriptive arc.
+
+#+CAPTION: Colors in /To the Lighthouse/, plotted in narrative time. For an interactive plot, see [[./includes/lighthouse.html]].
+#+LABEL: fig:lighthouseNarrativeTime
+[[./images/lighthouse-narrative-time.png]]
+
+The parts of the novel with the most color are undoubtedly the beginning and the end. But a close contender is the middle section 7, which, as readers of this novel have no doubt already guessed, aligns perfectly with the "Time Passes" section. This is a strikingly poetic segment of the novel, full of abstract language, nature imagery, and few people. As in poems, and poetic description, time is allowed to run wild: narrative, plot, and character become subservient to vision and perception. Again, although these images at times painting-like perceptions, they are extremely dynamic, as if a film is being played at four times its recorded speed.
+
+The novel ends just as colorfully as it started, and with an appropriate image. Lili Briscoe finishes her painting, and looks at her canvas: "it was blurred," we are told. Finally, Lily says, "I have had my vision."
+
+/Vision/ is a curious word, since it is almost always used metaphorically. The times we encounter a phrase like /20/20 vision/ in literature of this period are far outnumbered by the times we see /vision/ used in the sense of imagination, prediction, plan, or clairvoyance. These are all, paradoxically, modes of thinking, or of intuition, that /don't/ involve actual sight. But yet the superficial meaning of this term /is/ seeing. This is more than a chance ambiguity, but a testament to the way the visual experience and thought are so intricately interconnected.
+
+** TODO: Color compounds in /Portrait/
 * Works Cited

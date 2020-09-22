@@ -52,7 +52,7 @@ in pkgs.python3.buildEnv.override rec {
       jupyter
       scikitlearn
       nltk
-      altair
+      # altair
       vega_datasets
       cherrypy
       dominate

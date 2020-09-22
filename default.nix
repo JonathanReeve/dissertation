@@ -5,7 +5,7 @@ let
   # pandoc-sidenote = 
   ghc = pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
           lucid clay shake regex-compat text-regex-replace with-utf8
-          pandoc pandoc-citeproc #pandoc-sidenote
+          pandoc pandoc-citeproc pandoc-crossref #pandoc-sidenote
         ]);
 in
 pkgs.stdenv.mkDerivation {
