@@ -5,7 +5,7 @@
 
 * Background
 
-The dissertation from which this chapter is excerpted deals with ocularities and imaginations of British literature, from about 1880–1940.
+The dissertation from which this chapter is excerpted deals explores ocularities and imaginations of British literature, from about 1880 to about 1940.
 
 In Chapter 1, I introduce key terms in the theoretical framework I'm using, and the sense in which I use them, which is narrower than usual:
 
@@ -30,58 +30,33 @@ This is Chapter 4.
 
 * Introduction
 
-Among the most striking ocularities of literary description, and more broadly of any narrative, are pauses to convey the hue of that what is before the describer's imagination. /Pauses/ because description is a dilation of extradiegetic time. /Before/ in that the described, if it has hue, is in focus, in the center of the describer's field of vision. To describe is to settle one's gaze in a field, and at the same time, to move it linearly and programmatically across that field. It is always selective, and it always refracts. Description of hue is among the most concentrated subprocesses of that process, since the creation of textual color from a mental image involves digitization: approximative translation from an analog, linear system (a spectrum) to a digital, discrete system (a word). This process is so deeply involved with our language/thought apparatus, and so bound with epistemological problems, that it is the perennial subject of linguistics, neuroscience, and psychology. But rather than explore the phenomenon of textual color theoretically, and by example, I will take the opposite approach, and model the imaginative process in reverse, and in aggregate.
+Among the most striking ocularities of literary description, and more broadly of any narrative, are pauses to convey the hue of that what is before the describer's imagination. /Pauses/ because description is a dilation of extradiegetic time. /Before/ in that the described, if it has hue, is in focus, in the center of the describer's field of vision. To describe is to settle one's gaze in a field, and at the same time, to move it linearly and programmatically across that field. It is always selective, and it always refracts. Description of hue is among the most concentrated subroutines of that process, since the creation of textual color from a mental image involves digitization: approximative translation from an analog, linear system (a spectrum) to a digital, discrete system (a word). This process is so deeply involved with our language/thought apparatus, and so charged with epistemological problems, that it is the perennial subject of linguistics, neuroscience, and psychology. But rather than explore the phenomenon of textual color theoretically, and by example, I will take the opposite approach, and model the imaginative process in reverse, and in aggregate.
 
-Modeling is a statistical mimesis. Given observable qualities of a subject—in our case, a text, or a corpus of texts—a model imitates those qualities, in order to study the subject's behavior under unobserved circumstances. In modeling a hurricane, a meterologist not only becomes capable of predicting that hurricane's path, albeit with some margin of error, but, by studying the model's error, learns further nuances of the system he or she is studying. To model literature is not to discover how Virginia Woolf would have written about the 2020 coronavirus epidemic—although that sort of prediction is possible. It's to understand the small swirls of rainwater that compose the greater phenomenon we know as the hurricane.
+Modeling is a statistical mimesis. Given observable qualities of a subject—in our case, a text, or a corpus of texts—a model imitates those qualities, in order to study the subject's behavior under unobserved circumstances. In modeling a hurricane, a meterologist not only becomes capable of predicting that hurricane's path, albeit with some margin of error, but, by studying the model's error, learns further nuances of the system he or she is studying. To model literature is not to discover how Virginia Woolf would have written about the 2020 coronavirus epidemic—although that sort of prediction is possible—it's to understand the small swirls of rainwater that compose the greater phenomenon we know as the hurricane.
 
-I am motivated here, both by large questions about literary history, and smaller, more specialized ones about individual texts. Big ones include: Does literary writing get more colorful with time? (It does.) What are the dominant colors of this period's literature? (White and black.) and, Which genres are the most colorful? (Love stories.) But smaller questions have to do with the way color words operate syntactically, how they operate within description, and how their semiologies warp the reader's imagination. When Woolf describes a set of curtains as "mustard-coloured," or when Joyce describes a man's eyes as "nocoloured," how and why do those color choices do more work than their superficial significations? How, precisely, are color words used differently in poetry and fiction? (And is there any real difference between the two, line breaks aside?)
-
-#+BEGIN_COMMENT
-This movement takes place in a time that is more commensurate with the subjective aesthetic experience of seeing than the objective time elapsed.
-
-/durée/ in Bergson's /Time and Free Will/ [cite this].
-
-Ekphrasis: out - speak
- - who shows that this doesn't necessarily have anything to do with describing works of art?
-
- Thinking literally about visuality, and ocularity, leads us to a new conception of description.
-  - There is no narration/description dichotomy: almost everything is description.
-  - It is description if it can be imagined.
-  - Yet this is not to say that /what those critics see as description and narration don't exist/.
-    - It's just that it is a spectrum. As with the color spectrum, one may point to a given region and call it "blue." But one may not say with very much certainty where the lines are that separate "blue" from other categories.
-      - As in Mr. Ramsey's piano keyboard of the mind, or letters of the alphabet. There is no A 1/2.
-
-I bring back what I discussed in Chapter 3, about persistence of vision, and the development of cinema in this period.
- - Eye movements and camera movements have been likened to each other since the early days of cinema.
- - [[file:../../../Org/Roam/doty2014art.org][Doty]]'s reading of E. Bishop's poem has it that "the 'camera' roves, pans, lingers, moves in for an extreme close-up, fixes a moment on the pulsing of the gills" (27)"
- - Ulysses Judge
- - [[file:../../../Org/Roam/nicolson1928art.org][nicolson1928art: The art of description]] notes these kinds of 'dynamic' movements of the eye, as well.
-
-When we are practical, our attention does not take in the visual.
-  Doty: "There is another sort of temporality, too, which is timelessness. In this lyric time we cease to be aware of forward movement; lyric is concerned neither with the impingement of the past nor with anticipation of events to come. It represents instead a slipping out of story and into something still more fluid, less linear: the interior landscape of reverie."
-  - Doors of Perception
-#+END_COMMENT
+I am motivated here, both by large questions about literary history, and smaller, more specialized ones about individual texts. Big ones include: Does literary writing get more colorful with time? (It does.) What are the dominant colors of this period's literature? (White and black.) and, Which genres are the most colorful? (Love stories.) But smaller questions have to do with the way color words operate syntactically, how they operate within description, and how their semiologies warp the reader's imagination. When Woolf describes a set of curtains as "mustard-coloured," or when Joyce describes a man's eyes as "nocoloured," how and why do those color choices do more work than their superficial significations? How, precisely, are color words used differently in poetry and fiction?
 
 These questions are inseparable from the way they are modeled. In many cases. modeling them is what generates the questions to begin with. And in others, the model is, at least partially, the answer to these questions. It is with that in mind that I invite you to join me in my process of creating this model of imagination—an imagination machine—where each decision in the algorithmic design, however mathematical, probes at the workings of color in text.
-
 
 ** Color's Superstructure: Description
 
 Before we begin our experiment, it is necessary to discuss the textual structure in which representations of hue are typically found: literary description. Although textual color has its own behaviors and properties, the conditions of description shape how color operates in text. By /description/ here I am discussing a very particular writerly process which linearizes and descretizes visual information: that which transforms imaginable material into words, and arranges those words into lines.
 
-Exactly what may be identified as description, along with its role and import in literature, has been a matter of some debate. One of the more hotly contested works is an essay by Georg Lukács, titled "Narrate or Describe?", the central dichotomy of which is apparent from the title [cite:lukacs2005]. Lukács contrasts writers such as Flaubert and Zola, whom he calls "descriptive," with writers like Tolstoy whom he claims use a more "narrative," action-oriented style. The descriptive style Lukács is quick to dismiss. Of descriptive details in Flaubert's /Madame Bovary/, he writes:
+Exactly what may be identified as description, and what its role and import in literature may be, has been a matter of some debate. One of the more hotly contested works is an essay by Georg Lukács, titled "Narrate or Describe?", the central dichotomy of which is apparent from the title [cite:lukacs2005]. Lukács contrasts writers such as Flaubert and Zola, whom he calls "descriptive," with writers like Tolstoy whom he claims use a more "narrative," action-oriented style. The descriptive style Lukács is quick to dismiss. Of descriptive details in Flaubert's /Madame Bovary/, he writes:
 
 #+BEGIN_QUOTE
 to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization." (115)
 #+END_QUOTE
 
-He later asserts that description "lacks humanity," in that "its transformation of men into still lives is only the artistic manifestation of its inhumanity." (140). I join the many later critics wro have written about Lukács's essay in disagreeing with him, but since they critics have done this so thoroughly, I won't bother to do so here [cite:love2010close; cite:marcus2016building]. My refutation is much more radical: I question the distinction between narrative and description at the root of Lukács's argument.
+He later asserts that description "lacks humanity," in that "its transformation of men into still lives is only the artistic manifestation of its inhumanity." (140). I join the many later critics who have written about Lukács's essay in disagreeing with him, but since they critics have done this so thoroughly, I won't bother to do so here [cite:love2010close; cite:marcus2016building]. My refutation is much more radical: I question the distinction between narrative and description at the root of Lukács's argument.
 
 There do exist some aspects of fiction that have no descriptive function, of course—they may not be imagined, and thus they convey no images. But nearly everything else in fiction does describe. The opposite is nearly true, as well: there exist very few elements in a story that are purely descriptive, and serve no role in furthering the plot, fleshing out the characters, or providing a scene which is inextricable from, and indespensible to, plot and character.
 
-In other words, to narrate is to describe. Any text may be description if it contains a visual component (strong description) or may be imagined (weak description). Including the "epic artistry" Lukács sees in Tolstoy, and his "recounting of the vicissitudes of human beings" (111). Since, is not the visual experience one such vicissitude? This is about more than just a distinction between the stylistic pastoral and epic, though, where description recounts in minute detail because it has the bourgeois leisure of a shepherd, and narration practically presents the facts, with military precision. Description is not essentially static, even though it often is. The proof is simply that action can, and is, imagined in the same way as a still-life. Furthermore, description's linearity makes it /a priori/ dynamic.
+In other words, to narrate is to describe. Any text may be description if it contains a visual component (strong description) or may be imagined (weak description). Including the "epic artistry" Lukács sees in Tolstoy, and his "recounting of the vicissitudes of human beings" (111). Since, is not the visual experience one such vicissitude? This is about more than just a distinction between the stylistic pastoral and epic, though, where description recounts in minute detail because it has the bourgeois leisure of a shepherd, and narration practically presents the facts, with military precision. Description is not essentially static, even though it often is. The proof is simply that action can be, and is, imagined in the same way as a still-life. Furthermore, description's linearity makes it /a priori/ dynamic.
 
 To explain this further, I'll use a well-known metaphor from physics: the color spectrum. Although there do exist areas on a color spectrum where we could identify certain colors—spots at which one could point, and nine out of ten English speakers would call it /red/–if these same people were asked to draw a line that definitively separates red from pink, or red from blue, there would be ten very different answers. The same is true of description and narration: they exist along a spectrum, and overlap with each other considerably. It is in that sense that we could say that the distinction isn't real at all.
+
+This is a crucial context for understanding textual color. At first glance, and according to Lukács's followers, color is probably the one element of fiction most superfluous to the story, and thus the work's reason for being. But what I hope to argue is that colors in text are not simply signifiers of their position on the visible spectrum, but are the material out of which the text is created.
 
 * Problems and First Considerations
 
