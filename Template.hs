@@ -39,6 +39,7 @@ pageHtml = do
       footer_ $ do
         script_ [ id_ "MathJax-script", async_ "",  src_ "includes/MathJax/es5/tex-chtml.js" ] T.empty
         -- Flowcharts
+        script_ [src_ "https://hypothes.is/embed.js"] T.empty
         script_ [ src_ "includes/mermaid.min.js" ] T.empty
         -- Required for jquery-lazy
         script_ [ src_ "includes/zepto.min.js" ] T.empty
