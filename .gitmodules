@@ -3,7 +3,7 @@
 	url = git@github.com:JonathanReeve/dissertation-prospectus.git
 [submodule "04-colors/color-word-analyzer"]
 	path = 04-colors/color-word-analyzer
-	url = git@github.com:JonathanReeve/color-word-analyzer.git
+	url = https://github.com/JonathanReeve/color-word-analyzer.git
 [submodule "templates/tufte-css"]
 	path = templates/tufte-css
 	url = https://github.com/edwardtufte/tufte-css
@@ -14,3 +14,5 @@
 	url = https://github.com/edwardtufte/tufte-css.git
 [submodule "04-colors/includes/MathJax/"]
 	url = https://github.com/mathjax/MathJax.git
+[submodule "dissertation-prospectus/"]
+	url = https://github.com/JonathanReeve/dissertation-prospectus.git
