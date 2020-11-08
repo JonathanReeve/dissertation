@@ -1,0 +1,10 @@
+#+TITLE: Index
+
+This preview represents the current state of my *very much work-in-progress* dissertation, tentatively titled, "Visual imaginations of British literature, 1880-1930."
+
+* Chapter 1: Cognitive Criticism and Reading Psychology
+* [[./02-history/02.html][Chapter 2: Imagisms (History)]]
+* Chapter 3: Procedures, Formalisms (Methods)
+* [[./04-colors/ch-4.html][Chapter 4: Descriptions of Color]]
+* Chapter 5: Descriptions of Shapes, Bodies, Objects
+* Chapter 6: Descriptions of Spaces

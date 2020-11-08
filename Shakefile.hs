@@ -88,6 +88,19 @@ main = withUtf8 $ shakeArgs opts $ do
                                            "-o", "ch-2.docx"
                                          ]
 
+    "index.html" %> \f -> do
+        let source = "index.org"
+            template = "templates/template.html"
+        need ([ source, template ])
+        contents <- liftIO $ readFile source
+        cmd (Stdin contents) "pandoc" ["-f", "org+smart",
+                                       "--template", template,
+                                       "--standalone",
+                                       "--section-divs",
+                                       "--variable=autoSectionLabels:true",
+                                       "-o", f
+                                       ]
+
     "04-colors/ch-4.html" %> \f -> do
         deps <- images
         let source = "04-colors/ch-4.org"
