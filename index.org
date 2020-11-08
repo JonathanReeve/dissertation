@@ -1,10 +1,12 @@
-#+TITLE: Index
+#+title: Visual imaginations of British literature, 1880-1930
+#+author: Jonathan Reeve
 
-This preview represents the current state of my *very much work-in-progress* dissertation, tentatively titled, "Visual imaginations of British literature, 1880-1930."
+**WARNING**: This is a preview of my dissertation, and represents its current state, which is very much a work-in-progress.
 
-* Chapter 1: Cognitive Criticism and Reading Psychology
-* [[./02-history/02.html][Chapter 2: Imagisms (History)]]
-* Chapter 3: Procedures, Formalisms (Methods)
-* [[./04-colors/ch-4.html][Chapter 4: Descriptions of Color]]
-* Chapter 5: Descriptions of Shapes, Bodies, Objects
-* Chapter 6: Descriptions of Spaces
+- Introduction
+- Chapter 1: Cognitive Criticism and Reading Psychology
+- [[./02-history/02.html][Chapter 2: Imagisms (History)]]
+- Chapter 3: Procedures, Formalisms (Methods)
+- [[./04-colors/ch-4.html][Chapter 4: Descriptions of Color]]
+- Chapter 5: Descriptions of Shapes, Bodies, Objects
+- Chapter 6: Descriptions of Spaces

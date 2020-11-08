@@ -38,6 +38,7 @@ pageHtml = do
           "$endif$ \n $body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
       footer_ $ do
         script_ [ id_ "MathJax-script", async_ "",  src_ "includes/MathJax/es5/tex-chtml.js" ] T.empty
+        script_ [src_ "https://hypothes.is/embed.js"] T.empty
         -- Flowcharts
         script_ [ src_ "includes/mermaid.min.js" ] T.empty
         -- Required for jquery-lazy
