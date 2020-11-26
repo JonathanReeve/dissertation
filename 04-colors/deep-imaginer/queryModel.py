@@ -1,6 +1,8 @@
 import json
 import argparse
 import logging
+import plotly.express as px
+import pandas as pd
 
 # This should now be a dictionary with color words as keys,
 # e.g. {"blue": {"word": score ...} ... }
@@ -57,12 +59,37 @@ def xkcdMap(xkcdRaw):
 def lookup(color):
     return colorMap.get(color)
 
+def piechart(modelData):
+    """
+    Takes JSON in this format:
+    {
+    "grass": {
+        "colors": {
+        "green": 380.1666666666666,
+        "white": 71.58333333333333,
+        "sea": 63.31666666666667,
+        "stone": 49.166666666666686,
+        "sky": 41.083333333333336,
+        "yellow": 39.416666666666664,
+        "grey": 36.38333333333333,
+        "blue": 33.21666666666667
+        [ ... ]
+        }}}
+
+    And makes a pie chart.
+    """
+    df = pd.DataFrame(modelData)
+    df['hex'] = df['colors'].apply(lookup)
+    chart = px.pie(df, values='colors', names='color', color_discrete_map=colorMap)
+    open('.html', 'w').write(fig.to_html())
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
     parser = argparse.ArgumentParser(description='Query the color word association model.')
     parser.add_argument('--colorMap', help='the color map to use. Default: XKCD rgb.txt')
     parser.add_argument('--model', help='the model to use. Default: model.json in this directory.')
+    parser.add_argument('--pieChart', help='Output a pie chart to html, instead of printing JSON.')
     parser.add_argument('word', help='the word to query')
     args = parser.parse_args()
 
@@ -79,4 +106,10 @@ if __name__ == "__main__":
         xkcdRaw = open(f"{dataDir}/maps/xkcd/rgb.txt").read()
         colorMap = xkcdMap(xkcdRaw)
 
-    print(query(args.word, model))
+    queryOut = query(args.word, model)
+    queryData = queryOut[args.word]['colors']
+
+    if args.pieChart:
+        piechart(queryData)
+    else:
+        print(queryOut)

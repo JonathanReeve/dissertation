@@ -102,6 +102,28 @@ Also note that /orangeish/ and /orangish/, variant spellings of the word, have d
 
 There are many, many more puzzles to be found by exploring the semi-permeable membrane of the color/word divide. But these should be enough for us to remember before proceeding to the algorithmic design of this computational model, where we will encounter more of these problems.
 
+** Color Associations
+
+Things and their colors define each other. In a metaphoric sense, things /are/ colors: we use things to describe our visual experience. Or: our color categories are shaped by the kinds of things we often see which are seemingly illuminated by these colors. /The sky is blue/ is a statement of such obvious fact that the phrase has come to emblematize obvious facts themselves. The sky is blue, leaves are green, roses are red, and violets are blue. Or are they violet?
+
+Put differently: are violets named such because they are violet in color, or is /violet/ the color the name for the color of the flower? Lexical data from the OED show that /violet/ the color appears at least a hundred years after /violet/ the name of the flower—in 1430 and in 1330, respectively. [TODO: cite OED /violet/] Similarily, we might ask, which came first, the color /orange/ or the orange fruit itself? And there, too, the name of the fruit, taken from the name of its tree, is ultimately descended from a Sanskrit, and is older than English itself, but the color sense only appears in the early 16th century. [TODO: Cite OED:orange] So we might deduce that the ambiguity, or polysemy, between these colors and their associated objects, is caused by the phenomenon of naming colors after common objects. 
+
+But in other cases, bigrammatic phrasal lexemes encode a magnetism between the object and its appearance. 
+
+I wanted to know: what objects are most often described as /blue/, /red/, and so on, to quantify the gravitational pull of certain colors with their associated objects. So I conducted an experiment which takes advantage of POS-tagged ngram data in $C_{NG}$[fn::Google Books Ngram Viewer Exports for English-language fiction, described below.] to find patterns $JJ NN$, where $JJ$ is a color word, tagged as an adjective, and $NN$ is any noun that follows. [cite:googleNgrams]. The list of color words I derive from Berlin and Kay, but augment with several auxialiary color words, for comparison [cite:berlin1991basic]. 
+
+[@Fig:associations] shows word cloud visualizations for each color word and its most commonly collocated nouns.[fn::Word clouds, or tag clouds, are a relatively recently popularized technique of textual data visualization, which depicts the frequency of words through typeface sizes. See [cite:viegas2008timelines] for a history of the visualization that traces it to Soviet Constructivism.] Surprisingly, the most frequent collocations are not the most stereotypical: /green grass/ and /green leaves/ are of course present, but are not as frequent as /green eyes/. /Blue sky/ is present, and /red blood/, but are subordinate to /hair/ and /eyes/. 
+
+#+INCLUDE: "04-colors/custom-ngrams-search/wordcloud.html" export html
+
+#+CAPTION: Color Associations Word Clouds. Click on a word cloud to visualize categorizations of these words. You may also use your web browser's search function to highlight individual words across clouds, to compare their frequencies in each. 
+#+LABEL: fig:associations
+[[./images/dummy.png]]
+
+*Color descriptions are color exceptions.* 
+
+We don't see things that aren't important to us, or exceptional in some way. It's not that the light, at certain color frequencies, doesn't pass through our eyes, but it isn't processed by our brains in the same way.  
+
 * Imagining Words: Mapping Words to Colors
 
 To model imagination, we start by working backwards, by creating an engine to generate a color from a word or phrase. We can either conceive of this as modeling the writer's imagination in reverse, or modeling a reader's imagination. Of course, the question then becomes: which reader's imagination do we attempt to model? One approach would be to model as many imaginations as we can, by averaging several mappings, from several different sources. But these sources vary greatly. So factors we would look for in a color/word mapping would include:
@@ -129,7 +151,7 @@ Some of the most ambitious attempts at mapping colors to their names, or naming 
 # TODO: get this page number
 
 *** $CM_S$, Saccardo
-Another influential work of color naming is the ambitious and polyglot volume from Italian botanist Pier Andrea Saccardo bearing the formidable Latin title, /Chromotaxia Seu Nomenclator Colorum, Polyglottus, Additis Specimibus Coloratis ad Usam Botanicorum et Zoologorum/ (1894). Although containing only fifty colors, it features an index of several hundred "synonyms" for these colors in Latin, Italian, French, English, and German. While some of these are recognizable to modern readers, others seem strangely specific, such as /Murinus/ (mousey) or /Fuligineus/ ("sooty"). Saccardo provides two supplementary colors: /achrous/, or colorless, glassy; and /sordidus/, or "sordid," "dirty," which he describes as a modifier rather than a color. [fn:"/non est color definitus sed indicat inquinamentum aliorum colorum. Exempla: sordide albus, luride ruber/" [cite:saccardo1891chromotaxia 16].]
+Another influential work of color naming is the ambitious and polyglot volume from Italian botanist Pier Andrea Saccardo bearing the formidable Latin title, /Chromotaxia Seu Nomenclator Colorum, Polyglottus, Additis Specimibus Coloratis ad Usam Botanicorum et Zoologorum/ (1894). Although containing only fifty colors, it features an index of several hundred "synonyms" for these colors in Latin, Italian, French, English, and German. While some of these are recognizable to modern readers, others seem strangely specific, such as /Murinus/ (mousey) or /Fuligineus/ ("sooty"). Saccardo provides two supplementary colors: /achrous/, or colorless, glassy; and /sordidus/, or "sordid," "dirty," which he describes as a modifier rather than a color. [fn::"/non est color definitus sed indicat inquinamentum aliorum colorum. Exempla: sordide albus, luride ruber/" [cite:saccardo1891chromotaxia 16].]
 
 # TODO: make these less of a list, more of a continuation of an argument. 
 
@@ -607,13 +629,16 @@ I now derive the model's best guesses for color spans in a number of corpora, wh
 *** $C_{PG}$: Project Gutenberg
 *** $C_{BL}$: British Library
 *** $C_{PGA}$: Project Gutenberg Australia
+*** $C_{NG}$: Google Books Fiction (Ngrams)
 *** Corpus-DB and Metadata Augmentation
 
 ** How does color change across literary history?
 
-This first analysis infers colors from $C_{PG}$, in order to answer the question of whether twentieth century writers are more colorful, or more descriptive, than their predecessors—in a sense, testing some of the hypotheses of Blaszcyk and Spiekermann, who in /Bright Modernity/ show how, owing to various material factors including the newly widespread availability of synthetic pigments, early twentieth century culture was much more colorful—literally—than that of the previous century [cite:blaszczykBrightModernityColor2017]. Pigments aside, however, my hypothesis is that the period in which we see the most works of literary modernism will also show the greatest proportions of color words. This could be attributed in part to technological developments, but I attribute them mainly to a renewed interest in the visual experience /as such/ (renewed, since many writers cite ancient Greek writers like Homer as their stylistic ancestors).
+In Virginia Woolf's meta-essay, "The Decay of Essay Writing," she claims that her moment in history "has painted itself more faithfully than any other in a myriad of clever and conscientious though not supremely great works of fiction; it has tried seriously to liven the faded colours of bygone ages" (cite:woolf2009selected). While she does not use "colours" exclusively in its literal sense, there is a pervasive sense that modernity is brighter, and more colorful, than its previous age. This is the thesis of Blaszcyk and Spiekermann's /Bright Modernity/, which shows how, owing to various material factors including the newly widespread availability of synthetic pigments, early twentieth century culture was much more colorful—literally—than that of the previous century [cite:blaszczykBrightModernityColor2017].
 
-To test this, it would be best to compare the dates of original publication for each text with the total proportions of color spans found in each. But even though I was able to fill in much of this data, by querying several book metadata APIs, much of it remained missing. The author's date of birth is present in $C_{PG}$, however, and so [@fig:proportionsByDOB] shows the correlation between the author's date of birth and the total proportions of detected color expressions in that author's text.
+The first of my analyses here puts this hypothesis to the test, inferring colors from $C_{PG}$, in order to answer the question of whether twentieth century writers are more colorful, or more descriptive, than their predecessors.
+
+As has been noted above, however, one of the drawbacks of $C_{PG}$ is that original publication dates are missing from the metadata. It would be best to compare the dates of original publication for each text with the total proportions of color spans found in each. But even though I was able to fill in much of this data, by querying several book metadata APIs, much of it remained missing. The author's date of birth is present in $C_{PG}$, however, and so [@fig:proportionsByDOB] shows the correlation between the author's date of birth and the total proportions of detected color expressions in that author's text.
 
 #+CAPTION: Base Color Proportions By Author Date of Birth
 #+LABEL: fig:proportionsByDOB
@@ -624,7 +649,6 @@ Using an author's date of birth as a proxy for date of publication is not ideal,
 #+CAPTION: Base Color Proportions By Genre,
 #+LABEL: fig:pubdateRegression
 [[./images/year-pubdate-linear-regression.png]]
-
 
 In both cases, we can see an obvious trend: British fiction and poetry become more colorful over the period of literary modernism.
 
@@ -668,7 +692,7 @@ I suspect that love stories are colorful because time is slower in a love story.
 
 It is ironic that Wells's slightly caricatured portrait of Peter, Ann Veronica's father, describes him reading "chiefly healthy light fiction with chromatic titles, The Red Sword, The Black Helmet, The Purple Robe, ... in order 'to distract his mind.'" [TODO: cite], given that the novel is otherwise so colorful. In one scene, Manning professes his love to Ann Veronica by saying: "I want my life to be beaten gold just in order to make it a fitting setting for yours. ... Forgive me if a certain warmth creeps into my words! The Park is green and gray to-day, but I am glowing pink and gold. It is difficult to express these things" [TODO: cite]. Wells paints a very bright, colorful scene, in which the lover's pink skin is glowing with excitement, and his feelings—as shiny and as valuable as gold—emanate from him as if they were colors, and he were a source of light. This all contrasts with the "green and gray" of the inert vegetation against which it is set. Manning's apology that "it is difficult to express" this shows how this kind of color description is so often rooted in reaching for fresh, unconventional ways of relating one's visual experience.
 
-But we should remember that love stories are not disproporately /bright/---that is, they don't have more numbers of colors, simply more unique colors. If we quantify the total proportions of colors, we see a different story. [@Fig:lcsh] shows a subset of base color proportions for each LCSH. Here, /psychological fiction/ is the most prominent, overall, although largely due to the incidence of /black/ and /white/. The subject heading /Psychological fiction/ contains no fewer than ten works from Conrad, two each from Wells, Stevenson, Sinclair, Lawrence, Gissing, and individual novels from Woolf, West, and Maugham. James Joyce's /Ulysses/ is also notably present here. [fn::Conrad's novels in this category are /Heart of Darkness/, /The Secret Sharer/, /An Outcast of the Islands,/ /Almayer's Folly,/ /Chance/, /Lord Jim/, /Victory/, and /The Nigger of the Narcissus/. Gissing's are /New Grub Street/ and /The Odd Women/. Lawrence's are /Women in Love/ and /The Lost Girl/, Stevenson's are /The Strange Case of Dr. Jekyll and Mr. Hyde/ and /The Master of Ballantrae/. Wells's are /The Secret Places of the Heart/ and /The Invisible Man/. Sinclair's are /Life and Death of Harriett Frean/ and /The Three Sisters/. Also included are Joyce's /Ulysses/, David Lindsay's /A Voyage to Arcturus/, Lucas Malet's /The History of Sir Richard Calmady/, Maugham's /The Moon and Sixpense/, Neil Monro's /Bud: a Novel/, Wests's /The Return of the Soldier/, and Woolf's /Jacob's Room/.]
+But we should remember that love stories are not disproportionately /bright/---that is, they don't have more numbers of colors, simply more unique colors. If we quantify the total proportions of colors, we see a different story. [@Fig:lcsh] shows a subset of base color proportions for each LCSH. Here, /psychological fiction/ is the most prominent, overall, although largely due to the incidence of /black/ and /white/. The subject heading /Psychological fiction/ contains no fewer than ten works from Conrad, two each from Wells, Stevenson, Sinclair, Lawrence, Gissing, and individual novels from Woolf, West, and Maugham. James Joyce's /Ulysses/ is also notably present here. [fn::Conrad's novels in this category are /Heart of Darkness/, /The Secret Sharer/, /An Outcast of the Islands,/ /Almayer's Folly,/ /Chance/, /Lord Jim/, /Victory/, and /The Nigger of the Narcissus/. Gissing's are /New Grub Street/ and /The Odd Women/. Lawrence's are /Women in Love/ and /The Lost Girl/, Stevenson's are /The Strange Case of Dr. Jekyll and Mr. Hyde/ and /The Master of Ballantrae/. Wells's are /The Secret Places of the Heart/ and /The Invisible Man/. Sinclair's are /Life and Death of Harriett Frean/ and /The Three Sisters/. Also included are Joyce's /Ulysses/, David Lindsay's /A Voyage to Arcturus/, Lucas Malet's /The History of Sir Richard Calmady/, Maugham's /The Moon and Sixpense/, Neil Monro's /Bud: a Novel/, Wests's /The Return of the Soldier/, and Woolf's /Jacob's Room/.]
 
 #+CAPTION: Base Color Proportions by LCSH
 #+LABEL: fig:lcsh
@@ -688,7 +712,7 @@ While fiction and drama have roughly the same proportions of colors, juvenile te
 Mark Doty, poet and author of /The Art of Description/, writes about what he calls "lyric time," as a temporal element of the descriptive mode. Here, he notes how it's a childlike state, in that it evokes a state in which causality and responsibility have not yet been eroded:
 
 #+BEGIN_QUOTE
-"lyric is concerned neither with the impingement of the past nor with anticipation of events to come. It represents instead a slipping out of story and into something still more fluid, less linear: the interior landscape of reverie. This sense of time originates in childhood, before the conception of causality and the solidifying of our temporal sense into an orderly sort of progression. [cite:doty2014art 30]
+Lyric is concerned neither with the impingement of the past nor with anticipation of events to come. It represents instead a slipping out of story and into something still more fluid, less linear: the interior landscape of reverie. This sense of time originates in childhood, before the conception of causality and the solidifying of our temporal sense into an orderly sort of progression. [cite:doty2014art 30]
 #+END_QUOTE
 
 Of course, writers of juvenile literature are not themselves children, but are writing to, and from, this state of mind. This is a state which attempts to convey the awe of early visual experiences. Before the names, purposes, and dangers of our immediate surroundings are known to us, they are first colors, sensations.
