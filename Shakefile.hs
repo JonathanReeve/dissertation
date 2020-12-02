@@ -122,7 +122,7 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "--metadata=tblPrefix:table",
                                        "--filter=PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
-                                       "--filter=pandoc-citeproc",
+                                       "--citeproc",
                                        "--filter=hex-filter.hs",
                                        "--mathjax",
                                        "--bibliography", bib,

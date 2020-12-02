@@ -1,4 +1,6 @@
 import json
+import sys
+import argparse
 
 def wordToLink(fn):
     """
@@ -10,7 +12,7 @@ def wordToLink(fn):
     link = f"<a href={url}>{fn}</a>"
     return link
 
-def visualizeModel(model):
+def visualizeModel(model, modelName):
     """
     Create an HTML file visualizing the mappings.
     """
@@ -21,15 +23,23 @@ def visualizeModel(model):
         body { }
         div.blockWrapper { height: 40em; overflow-y: scroll; display: flex; flex-wrap: wrap; }
         div.colorBlock { width: 10em; height: 10em; word-wrap: break-word; }"
-        a { background-color: white !important; color: black !important; }
+        a { background-color: white !important; color: black !important; text-shadow: none !important;} 
     """
     html = f"<html><head><style>{css}</style></head><body><div class=\"blockWrapper\">{colorBlocksHtml}</div></body></html>"
 
-    with open(f'colorAverages-colorblocks.html', 'w') as f:
+    with open(f'{modelName}-colorblocks.html', 'w') as f:
         f.write(html)
 
 if __name__ == '__main__':
-    with open('averages.json') as f:
+    parser = argparse.ArgumentParser(description='Visualize json averages.')
+    parser.add_argument('model', type=str, default='averages.json',
+                        help='the model to visualize')
+
+    args = parser.parse_args()
+
+    with open(args.model) as f:
         model = json.load(f)
 
-    visualizeModel(model)
+    modelName = args.model.split('.')[0]
+
+    visualizeModel(model, modelName)

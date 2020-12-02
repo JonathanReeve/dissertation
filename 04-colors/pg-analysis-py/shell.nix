@@ -46,6 +46,7 @@ with import <nixpkgs> {};
 in pkgs.python3.buildEnv.override rec {
     extraLibs = with pkgs.python3Packages; [
 	    matplotlib
+      ansi2html
       spacy
       pandas
       spacy_models.en_core_web_md
