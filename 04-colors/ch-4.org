@@ -104,25 +104,57 @@ There are many, many more puzzles to be found by exploring the semi-permeable me
 
 ** Color Associations
 
-Things and their colors define each other. In a metaphoric sense, things /are/ colors: we use things to describe our visual experience. Or: our color categories are shaped by the kinds of things we often see which are seemingly illuminated by these colors. /The sky is blue/ is a statement of such obvious fact that the phrase has come to emblematize obvious facts themselves. The sky is blue, leaves are green, roses are red, and violets are blue. Or are they violet?
+Things and their colors define each other. In a metaphoric sense, things /are/ colors: we use things to describe our visual experience. Alternatively, our color categories are shaped by the kinds of things we often see which are seemingly illuminated by these colors. /The sky is blue/ is a statement of such obvious fact that the phrase has come to emblematize obvious facts themselves. The sky is blue, leaves are green, roses are red, and violets are blue. Or are they violet?
 
-Put differently: are violets named such because they are violet in color, or is /violet/ the color the name for the color of the flower? Lexical data from the OED show that /violet/ the color appears at least a hundred years after /violet/ the name of the flower—in 1430 and in 1330, respectively. [TODO: cite OED /violet/] Similarily, we might ask, which came first, the color /orange/ or the orange fruit itself? And there, too, the name of the fruit, taken from the name of its tree, is ultimately descended from a Sanskrit, and is older than English itself, but the color sense only appears in the early 16th century. [TODO: Cite OED:orange] So we might deduce that the ambiguity, or polysemy, between these colors and their associated objects, is caused by the phenomenon of naming colors after common objects. 
+Put differently: are violets named such because they are violet in color, or is /violet/ the color the name for the color of the flower? Lexical data from the OED show that /violet/ the color appears at least a hundred years after /violet/ the name of the flower—in 1430 and in 1330, respectively. [TODO: cite OED /violet/ ] Similarily, we might ask, which came first, the color /orange/ or the orange fruit itself? And there, too, the name of the fruit, taken from the name of its tree, is ultimately descended from a Sanskrit, and is older than English itself, but the color sense only appears in the early 16th century. [TODO: Cite OED:orange] So we might deduce that the ambiguity, or polysemy, between these colors and their associated objects, is caused by the phenomenon of naming colors after common objects.
 
 But in other cases, bigrammatic phrasal lexemes encode a magnetism between the object and its appearance. 
 
-I wanted to know: what objects are most often described as /blue/, /red/, and so on, to quantify the gravitational pull of certain colors with their associated objects. So I conducted an experiment which takes advantage of POS-tagged ngram data in $C_{NG}$[fn::Google Books Ngram Viewer Exports for English-language fiction, described below.] to find patterns $JJ NN$, where $JJ$ is a color word, tagged as an adjective, and $NN$ is any noun that follows. [cite:googleNgrams]. The list of color words I derive from Berlin and Kay, but augment with several auxialiary color words, for comparison [cite:berlin1991basic]. 
+In designing the experiment below, I wanted to know: what objects are most often described as /blue/, /red/, and so on. I wanted to quantify the gravitational pull of certain colors with their associated objects. To investigate this, I use [[http://storage.googleapis.com/books/ngrams/books/datasetsv3.html][data from the Google Books Ngram Viewer project]], hereafter $C_{NG}$ [cite:googleNgrams]. Google Books provides n-gram (sequences of words of length $n$) data for the books in its vast collection, and the most recent version, 20200217, provides n-gramms tagged according to their parts of speech. I use the data subset English Fiction, which, although not strictly relegated to the time and place this I am studying here, is still useful to determine broad patterns.[fn::I describe this corpus in greater detail in the appendix below.] There, I query for patterns $_ADJ _NOUN$, where $_ADJ$ is a color word, tagged as an adjective, and $_NOUN# is any noun which follows. The list of color words I derive from Berlin and Kay, but augment with several auxiliary color words, for comparison [cite:berlin1991basic].
 
-[@Fig:associations] shows word cloud visualizations for each color word and its most commonly collocated nouns.[fn::Word clouds, or tag clouds, are a relatively recently popularized technique of textual data visualization, which depicts the frequency of words through typeface sizes. See [cite:viegas2008timelines] for a history of the visualization that traces it to Soviet Constructivism.] Surprisingly, the most frequent collocations are not the most stereotypical: /green grass/ and /green leaves/ are of course present, but are not as frequent as /green eyes/. /Blue sky/ is present, and /red blood/, but are subordinate to /hair/ and /eyes/. 
+[@Fig:associations] shows word cloud visualizations for each color word and its most commonly collocated nouns.[fn::Word clouds, or tag clouds, are a relatively recently popularized technique of textual data visualization, which depicts the frequency of words through typeface sizes. See [cite:viegas2008timelines] for a history of the visualization that traces it to Soviet Constructivism.] Surprisingly, the most frequent collocations are not the most cliché: /green grass/ and /green leaves/ are of course present, but are not as frequent as /green eyes/. /Blue sky/ is present, and /red blood/, but are subordinate to /hair/ and /eyes/. 
 
-#+INCLUDE: "04-colors/custom-ngrams-search/wordcloud.html" export html
+#+INCLUDE: "04-colors/includes/wordcloud.html" export html
 
 #+CAPTION: Color Associations Word Clouds. Click on a word cloud to visualize categorizations of these words. You may also use your web browser's search function to highlight individual words across clouds, to compare their frequencies in each. 
 #+LABEL: fig:associations
 [[./images/dummy.png]]
 
-*Color descriptions are color exceptions.* 
+Some overall trends are apparent in these words, which may be illuminated by categorizing them. Using WordNet, the relational lexical database, I am able to identify hypernyms for most of these words, and group the words according to these hypernyms [cite:miller1998wordnet]. [[http://localhost:8000/04-colors/custom-ngrams-search/categorize-words/red.html][The hypernym treemap for red,]] for instance, shows that a good proportion of the words are body parts (they have the hypernym synset /body_part.n.01/), or "coverings" such as hair (/covering.n.01/). A crucial similarity between these bodily descriptors, from /red hair/, the most frequent collocation, to /red eyes/, /red lips/, and /red face/, is that they describe exceptions, or aberrations, from their usual states. /Red hair/ (actually orange, as I will argue below) is among the least common natural hair colors. /Red eyes/ describe diseased, depigmentized, or albino eyes, of humans or other animals. And /red lips/ are lips that are unusually red: whether blood-filled through vigor, or excitement, or through the use of cosmetics.
 
-We don't see things that aren't important to us, or exceptional in some way. It's not that the light, at certain color frequencies, doesn't pass through our eyes, but it isn't processed by our brains in the same way.  
+Artificial objects comprise a second, equally large, hypernym, /artifact.n.01/. These are, with a few exceptions like /brick/, items which have been dyed red: /silk, velvet, dress, shirt, tape, lipstick, carpet./ If silk, or a dress, were always red, we might not need to describe it as such—it would be obvious. But since these are all items which are typically dyed, at least in modernity, they need to be described according to their dye. As with the read body parts above, the dye here is the difference, or the abnormality, which necessitates the color description.
+
+This leads me to a theory of color description: that color descriptions are color exceptions.
+
+** Color descriptions are color exceptions
+
+We don't see things that aren't important to us, or exceptional in some way. It's not that the light, at certain color frequencies, doesn't reach our eyes, but it isn't processed by our brains in the same way.
+
+Thus, what we describe, using color words and color expressions, is what we have /noticed/, or what we want to be noticed: something different, striking, or unusual. This is why /red hair/ is a more frequent collocation than /black hair/ or /brown hair/, despite the rarity of the gene that causes red hair.
+
+At this point, you may imagine counterexamples, not the least of which are those clichés I've just outlined: the /blue sky,/ or the even /wine-dark sea./ I would argue that, in most cases, these are a special kind of exception: one of magnitude, rather than category. In other words, when a writer describes leaves as /green/, it is less often a pure cliché than a calculated underscoring of the visuality of the leaves: that they are unusually green, noticeably green, or some other variety of green.
+
+Here is a passage from /Jacob's Room/, Virginia Woolf's novel, which, incidentally, I will later show is among the most colorful in this period of British Literature:
+
+#+BEGIN_QUOTE
+The tree had fallen, though it was a windless night, and the lantern,
+stood upon the ground, had lit up the still green leaves and the dead
+beech leaves. It was a dry place.  [TODO: Cite]
+#+END_QUOTE
+
+Here, /green leaves/ describes an exception to the rule in which leaves are green, and dead leaves are brown.
+
+But this theory remains manifest upon closer examination of some of the bigrams of [@fig:associations] as they appear in $C_{PG}$.[fn::[[./includes/green-leaves.html][A full concordance is available here.]]] There, the phrase /green leaves/ is rarely unaccompanied by an additional modifier. Leaves are /light green/, /emerald-green/, or /sea-green/: specificities that take color knowledge, via visual abberation, into the realm of color description.
+
+In James Joyce's 1914 short story collection /Dubliners/, the boy protagonist of "An Encounter" describes trees along the canal bridge:
+
+#+begin_quote
+All the branches of the tall trees which lined the mall were gay with little light green leaves and the sunlight slanted through them on to the water. [TODO: Cite]
+#+end_quote
+
+And in John Galsworthy's /The Dark Flower/, we read of "a blue sky thinly veiled from them by the crinkled brown-green leaves" [TODO: cite]. Sometimes the word-order is different, even though the same syntactic dependence remains: in May Sinclair's /Mary Oliver, a Life/, one of the most colorful novels as measured in the analysis below, we see "green leaves" which "had the cold glitter of wet, pointed metal" [TODO: cite]. Sinclair is not content with a description which paints leaves as green, but gives them qualities alien to their setting. These leaves appear so unusually, she implies, that the play of light on their surfaces appears as if their material were entirely different.
+
+It may seem as if this argument—that color descriptions are visual anomalies—deflates upon scrutiny. After all, it's obvious that we don't need to say the obvious. But this fact will have very material consequences as we begin to reverse-engineer textual imagination, which we will now see.
 
 * Imagining Words: Mapping Words to Colors
 
@@ -218,7 +250,7 @@ But this is a difficult problem: how can we derive the color of an object, or an
 
 If a poet or novelist presents us with imagery which is all of a single color, we want to be able to see that. One of the tasks of a literary critic, after all, is to be sensitive to the arrangements of the writer, so as to point out their resonances.
 
-Take Katherine Mansfield's 1922 story "The Garden Party," for instance, an inspiration for Woolf's /Mrs Dalloway/, and a classic of modernist short story. Set on a fine day in early summer, in New Zealand, it is resplindent in greenery, which is to say, flora. But besides the grass, the lawn, the green bushes, the karaka-trees, and the leaves and stems of the flowers, there is an unusual abundance of other green things, as well. Laura's sister Meg is wearing a "green turban" when she arrives for breakfast [cite:mansfield_katherine_2006 287]. A band plays music from a tennis court, which we might assume is green, since it's compared to a pond, and tennis courts are usually green (ibid.). The band itself are wearing green, which makes Kitty compare them to frogs (294). Green baize doors separate the servants' rooms from the rest of the house (289). Some of this is explicitly labeled as green, but some, like frogs and tennis courts, we are just expected to know are green things. While /frog green/ does appear in one of the sources of $CM_J$ sources, and /tennis court green/ appears in some responses of the original $CM_X$ survey, the value does not appear in the final mapping.
+Take Katherine Mansfield's 1922 story "The Garden Party," for instance, an inspiration for Woolf's /Mrs Dalloway/, and a classic of modernist short story. (The short story collection of the same name is among the most colorful works, as ascertained in an analysis below.) Set on a fine day in early summer, in New Zealand, it is resplendent in greenery, which is to say, flora. But besides the grass, the lawn, the green bushes, the karaka-trees, and the leaves and stems of the flowers, there is an unusual abundance of other green things, as well. Laura's sister Meg is wearing a "green turban" when she arrives for breakfast [cite:mansfield_katherine_2006 287]. A band plays music from a tennis court, which we might assume is green, since it's compared to a pond, and tennis courts are usually green (ibid.). The band itself are wearing green, which makes Kitty compare them to frogs (294). Green baize doors separate the servants' rooms from the rest of the house (289). Some of this is explicitly labeled as green, but some, like frogs and tennis courts, we are just expected to know are green things. While /frog green/ does appear in one of the sources of $CM_J$ sources, and /tennis court green/ appears in some responses of the original $CM_X$ survey, the value does not appear in the final mapping.
 
 So to computationally imagine not just /green/ itself, but things which are very likely to appear green, we need to find a way to imagine colors from any given word.
 
@@ -262,25 +294,13 @@ However, modifiers are not always direct descendants of their modified words, si
 5. All other words nouns and adjectives are now candidate $W_T$s, and are assigned a score: $1/i$ where $i$ is the distance, in number of tokens, from $W_C$. Thus, it gets a score of 1 if it is a directly adjacent word, or 0.5 if it is two tokens away.
 6. These scores are then averaged for each token that shares the same lemma.
 
-The resulting data structure looks like this, for /grass/:
+The resulting data structure looks like [@fig:grass-proximity-model-pie], for /grass/:
 
-#+BEGIN_SRC json
-{
-  "grass": {
-    "colors": {
-      "green": 380.1666666666666,
-      "white": 71.58333333333333,
-      "sea": 63.31666666666667,
-      "stone": 49.166666666666686,
-      "sky": 41.083333333333336,
-      "yellow": 39.416666666666664,
-      "grey": 36.38333333333333,
-      "blue": 33.21666666666667
-      [ ... ]
-    }
-  }
-}
-#+END_SRC
+#+INCLUDE: "04-colors/deep-imaginer/charts/grass-proximity-model-pie.html" export html
+
+#+CAPTION: Color inferences for /grass/, from $M_P$.
+#+LABEL: fig:grass-proximity-model-pie
+[[./images/dummy.png]]
 
 There are plenty of colors, like /blue/, which are uncommon for grass (except for the Appalachain style of music). Yet these other colors represent only a small proportion of that for /green/. I blend these colors together, by finding their hex values in $CM_X$, and then averaging their RGB values, after weighting them, so given RGB values $R_i ... R_j$, $G_i$, and $B_i$, and weights $W_i$, averaging them proportionally:
 
@@ -289,32 +309,15 @@ $$blended RGB =  \frac{ W \sum_{R_i}^{R_j} }{ \sum_{i}^{j} W } , \frac{ W \sum_{
 
 Or, for all colors, weighting and summing each component of RGB space, and then dividing by the total sum of all weights. For /grass/ above, we get #6b9c56, a pleasantly grassy color.
 
-This model works reasonably well—that is, meets our modern English-speaking expectations of the stereotypical colors of many nouns. But there are quite a few notable differences. One I'll call the "no white sheep problem," which is that, although sheep are typically white, and black sheep comparatively rare, the probability of encountering the phrase /black sheep/ in British fiction is about five times greater than that of encountering /white sheep/, according to the Google Ngrams dataset.
+This model works reasonably well—that is, meets our modern English-speaking expectations of the archetypal colors of many nouns. But there are quite a few notable differences. One is the principle of color description exceptionalism I outline above: color descriptions are anomalies. Although sheep are typically white, and black sheep comparatively rare, the probability of encountering the phrase /black sheep/ in British fiction is about five times greater than that of encountering /white sheep/, according to bigram data from $C_{NG}$.
 
 Here's a portion of the model's inferences for /sheep/:
 
-#+BEGIN_SRC json
-{
-  "sheep": {
-    "colors": {
-      "black": 163.25,
-      "white": 30.3499,
-      "grass": 24.833,
-      "heather": 17.9166,
-      "stone": 13.766
-      [ ... ]
-    }
-  }
-}
-#+END_SRC
+#+INCLUDE: "04-colors/deep-imaginer/charts/sheep-proximity-model-pie.html" export html
 
 The blended color from $CM_X$ is #5B5441, a dark greenish, and hardly the color one would expect of a sheep. Part of this is because, as you can see from the inferences above, $CM_X$ contains many metaphoric colors like /grass/, /heather/, and /stone/. Although these are almost certainly not used as color words in their original contexts, this model counts them as colors. This is perhaps not a bug, however, but a feature of the program: by picking up on elements like /stone/ and /grass/, we might fail to imagine the sheep itself, but we succeed in imagining the hue of its context, and in a sense, this is more information than we would get from simply imagining a sheep. And after all, when we ourselves imagine a sheep, we might very likely imagine it in its pastoral context, among grass and stones, rather than floating in a colorless void, away from everything else.
 
 But the converse of that phenomenon is also present. We might not expect to see /white/ and /gray/ occur so often close to /gull/, because these are obvious descriptors, yet we do. When a writer wants to underscore the visual properties of an object that already has well-known color properties, this contributes to the impressionism of the piece: it allows the reader to see through the writer's eyes.
-
-# /Silver/ gets mapped to #dbb40c, a very gold-like color, since the word appears next to /gold/ so often. So color words themselves are often distorted: if the word itself contains the color information, attempting to reading that information from the surrounding colors will likely cause it to be inaccurate. Another example of this is that /red/ is modeled as #770001, which seems to me to be more of a /blood red/, whereas /blood/ is actually #e50000, a canonical red, since this model is only seeing the surrounding words.
-
-# Cut the above? It seems to me now the solution is just to include the word itself, if a color word, as position zero.
 
 This phenomenon is brilliantly at play in another Katherine Mansfield story, "Bliss," written two years earlier in 1918. It is even more colorful than "The Garden Party," and its colors much more variegated. This reflects the mood of its protagonist, Bertha, who is so happy that she is almost manic. Her attentions are everywhere, and glittering, reflecting off of everything.
 
@@ -324,20 +327,7 @@ Bertha sees the fruit in this bowl also with an acute sense of newness: not quit
 
 "Apples stained with strawberry pink," is an uncommon metaphor for apples, which $M_P$ models as:
 
-#+BEGIN_SRC json
-{
-  "apple": {
-    "colors": {
-      "golden": 75.55,
-      "green": 60.56666666666667,
-      "red": 46.93333333333334,
-      "wine": 29.166666666666664,
-      "gold": 26.15,
-      [ ... ]
-    }
-  }
-}
-#+END_SRC
+#+INCLUDE: "04-colors/deep-imaginer/charts/apple-proximity-model-pie.html" export html
 
 And for which the blended color is #AC883B. In other words, apples are usually /golden, green, red, gold,/ or /yellow/, but rarely /strawberry pink/. (There is an apple cultivar called the "pink lady," but it wasn't cultivated until 1976.) As with /milk/, this is a food metaphor, one which uses these colors, as the foods themselves seem to do, as a marker for something delicious to come.
 
@@ -357,21 +347,7 @@ Other dictionary and encyclopedia-like works are available in the usual plain-te
 
 This model does not seem to perform as well as $M_P$, however. Here is an entry for /grass/, for example.
 
-#+BEGIN_SRC json
-{
-  "grass": {
-    "colors": {
-      "sea": 1,
-      "desert": 1,
-      "green": 1,
-      "ice": 1,
-      "wheat": 1,
-      "asparagus": 1
-    },
-    "mixed": "89bc6e"
-  }
-}
-#+END_SRC
+#+INCLUDE: "04-colors/deep-imaginer/charts/grass-dictionaryModel-pie.html" export html
 
 The model triangulates between the color word and entry/definition pairs, but only finds a few single instances each. Possibly as a happy coincidence, however, the resulting aggregate here is #89bc6e, a very grassy color.
 
@@ -499,7 +475,7 @@ On the other side of the debate, usually termed universalism, is an influential 
 
 Graphically, Berlin and Kay present this sequence as in the following diagram, where languages that have /red/ must have both /white/ and /black/, and so on. There is no order between /yellow/ and /green/, but languages that develop a word for green would then develop a word for yellow, and vice-versa. 
 
-#+LABEL: eq:berlinKay
+#+NAME: eq:berlinKay
 $$[\substack{white \\ black }] < [red] < [\substack{green \\ yellow}] < [blue] < [brown] < [\substack{purple \\ pink \\ orange \\ grey}]$$
 
 Berlin and Kay see this sequence as a linguistic evolution in more than one sense—a dangerous term, in that it suggests a linear progression of simple to complex languages. The reasons they give for this are "increasing technological and cultural advancement" among the languages they compare. By way of explanation, they suppose that, 
@@ -535,9 +511,9 @@ This red—again, not really the color red, but the concept—is the same red of
 
 # TODO: Bright modernity
 
-P. A. Saccardo's taxonomy does not place the color of blood with /red/ at all, however, but with purple: he gives /sanguineus/ as a Latin synonym of /purpureus/, along with the Greco-latin /hæmatochrous, hæmatinus,/ and /hæmatites/ [cite:saccardo1891chromotaxia 8]. This is the traditional categorization of classical antiquity: the mapping appears in Homer, where in the /Iliad/, the earth is wet with purple blood. A. T. Murray's English translation of Homer gives "thus mighty Aias charged them, and the earth grew wet with dark blood," [αἵματι δὲ χθὼν δεύετο πορφυρέῳ] although /πορφυρέῳ/, which is translated as /dark/, is an etymological ancestor of /purple/ [TODO: cite [[http://data.perseus.org/citations/urn:cts:greekLit:tlg0012.tlg001.perseus-eng1:17.319-17.365][Perseus project here]]]. This categorization continues through Vergil, Ovid, and Horace. In fact, as Jacquiline Clarke points out, Horace plays with the traditional Homeric association of /πορφύρεος/ with the sea and with death (/πορφύρεος θάνατος/, purple death or dark death, appears thrice in the /Iliad/), by juxtaposing the two in a purple blood-stained sea [cite:clarke2003imagery 132]. However, Liddell and Scott are quick to warn that "Homer seems not to have known the πορφύρα, [a purple fish, or purple dye] so that the word does not imply any definite colour." [TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=porfu%2Freos&la=greek&can=porfu%2Freos0&prior=e)/llabe&d=Perseus:text:1999.01.0133:book%3D5:card%3D43&i=1#lexicon][this purseus page]]].
+P.A. Saccardo's taxonomy does not place the color of blood with /red/ at all, however, but with purple: he gives /sanguineus/ as a Latin synonym of /purpureus/, along with the Greco-latin /hæmatochrous, hæmatinus,/ and /hæmatites/ [cite:saccardo1891chromotaxia 8]. This is the traditional categorization of classical antiquity: the mapping appears in Homer, where in the /Iliad/, the earth is wet with purple blood. A. T. Murray's English translation of Homer gives "thus mighty Aias charged them, and the earth grew wet with dark blood," [αἵματι δὲ χθὼν δεύετο πορφυρέῳ] although /πορφυρέῳ/, which is translated as /dark/, is an etymological ancestor of /purple/ [TODO: cite [[http://data.perseus.org/citations/urn:cts:greekLit:tlg0012.tlg001.perseus-eng1:17.319-17.365][Perseus project here]]]. This categorization continues through Vergil, Ovid, and Horace. In fact, as Jacquiline Clarke points out, Horace plays with the traditional Homeric association of /πορφύρεος/ with the sea and with death (/πορφύρεος θάνατος/, purple death or dark death, appears thrice in the /Iliad/), by juxtaposing the two in a purple blood-stained sea [cite:clarke2003imagery 132]. However, Liddell and Scott are quick to warn that "Homer seems not to have known the πορφύρα, [a purple fish, or purple dye] so that the word does not imply any definite colour." [TODO: cite [[http://www.perseus.tufts.edu/hopper/morph?l=porfu%2Freos&la=greek&can=porfu%2Freos0&prior=e)/llabe&d=Perseus:text:1999.01.0133:book%3D5:card%3D43&i=1#lexicon][this purseus page]]].
 
-To further complicate matters, saccardo's /purpureus/, while certainly on a spectrum that seems to range from red, to purple, and finally to brown, has a color of #8D0202, at least as it appears in the scanned edition from [[https://archive.org][archive.org]], however faded its original pigments may be. Some may rightly call this color red. So blood is not really red; it's purple. But purple is red.
+To further complicate matters, Saccardo's /purpureus/, while certainly on a spectrum that seems to range from red, to purple, and finally to brown, has a color of #8D0202, at least as it appears in the scanned edition from [[https://archive.org][archive.org]], however faded its original pigments may be. Some may rightly call this color red. So blood is not really red; it's purple. But purple is red.
 
 We may add blood to the long list of things called red which aren't: the Red Sea (it's blue), red wine and red grapes (they're purple), red hair, red pandas, and Mars, the red planet (they're orange). It comes as no surprise to report that /red hair/ appears close to 900 times in $C_{PG}$, but that /orange hair/, /ginger hair/, and /copper hair/ are used only thrice each. Or that /red wine/ appears 160 times, but /purple wine/ only thrice. These are simply English-language conventions. But they prove that we must be especially careful while modeling our imagination of these terms. When we read /red wine/, do we imagine something red, or purple?
 
@@ -728,7 +704,7 @@ This observation about juvenile literature becomes apparent, too, at the level o
 |----------------------------------------------+------------------------+--------------------------+----------|
 | 1918-TheBoyWhoKnewWhatTheBirdsSaid-24493     | Colum, Padraic         | Juvenile fantasy stories | 0.007085 |
 | 1910-ADreamersTales-8129                     | Dunsany, Lord          | Fantasy Stories          | 0.006036 |
-| 192156-MondayorTuesday-29220                 | Woolf, Virginia        | Stories                  | 0.005861 |
+| 192156-MondayorTuesday-29220                 | Woolf, Virginia        | Short Stories            | 0.005861 |
 | 1915-FiftyOneTales-7838                      | Dunsany, Lord          |                          | 0.005699 |
 | 1922-JacobsRoom-5670                         | Woolf, Virginia        | Novel, character study   | 0.005434 |
 | 1908-TheSwordofWelleranandOtherStories-10806 | Dunsany, Lord          | Fantasy Stories          | 0.005222 |
@@ -741,13 +717,37 @@ This observation about juvenile literature becomes apparent, too, at the level o
 | 191911-MaryOlivieraLife-9366                 | Sinclair, May          | Autobiog. novel          | 0.004566 |
 | 1922-TheGardenPartyandOtherStories-1429      | Mansfield, Katherine   | Stories                  | 0.004558 |
 | 1919-LivingAlone-14907                       | Benson, Stella         |                          | 0.004509 |
-| 1922-TheHawkofEgypt-15721                    | Conquest, Joan         |                          | 0.004494 |
+| 1922-TheHawkofEgypt-15721                    | Conquest, Joan         | Travel novel, Egypt      | 0.004494 |
 | 1887-TheFrozenPirate-22215                   | Russell, William Clark |                          | 0.004362 |
 | 1899-Findelkind-1367                         | Ouida                  |                          | 0.004227 |
 | 1918-TheReturnoftheSoldier-37189             | West, Rebecca          | Novel                    | 0.004213 |
 | 1892-TheNewMistressATale-32924               | Fenn, George Manville  |                          | 0.004028 |
 
 Note that most of these are post 1910, and in fact, the mean year is 1910. Put differently, of the four decades' of fiction seen here, from the 1880s to the early 1920s (where this corpus, for copyright reasons, stops), the last full decade is the one which contains the most positive outliers.
+** Which authors are the most colorful?
+
+In generating the list in [@tbl:authors] below, I attempted to control for what seem like genre signals. Although not strictly childrens' works, Padraic Column, Lord Dunsany write tales, folklore and fairy tales, whose colorfulness seem to be skewing the results. So here I improve my genre categorizer described above, by further categorizing all works with the LCSH /fairy tales/ as juvenile (even though, strictly speaking, this isn't necessarily true). 
+
+Still, though, the list remains very similar to the individual title list above. The Irish tale-writers and folklorists Padraic Colum and Lord Dunsany are joined by another, Donn Byrne. Stella Benson, another fantasy novelist whose /Living Alone/ is a fairy-tale novel, appears here, too, alongside Ouida, also a writer of juvenile fiction. Yet these are the works of these writers which are /not/ classified as juvenile fiction, which suggests that their writing style has been affected in some way by their elsewhere writing for children.  
+
+
+#+CAPTION: Color Proportions, Fiction: Sorted by Author 
+#+LABEL: tbl:authors
+| author               | proportion of color words |
+|----------------------+---------------------------|
+| Colum, Padraic       |                  0.003542 |
+| Dunsany, Lord        |                  0.002568 |
+| Byrne, Donn          |                  0.002284 |
+| Benson, Stella       |                  0.002255 |
+| Ouida                |                  0.002114 |
+| West, Rebecca        |                  0.002107 |
+| Housman, Clemence    |                  0.001984 |
+| Becke, Louis         |                  0.001973 |
+| Woolf, Virginia      |                  0.001958 |
+| Mansfield, Katherine |                  0.001956 |
+| Conquest, Joan       |                  0.001939 |
+| Yates, Dornford      |                  0.001921 |
+
 
 ** Which colors are the most prominent?
 
@@ -767,7 +767,7 @@ To combine all the colors of a text, using [@eq:blendingAlgorithm], is to imagin
 
 [This section is a work in progress.]
 
-#+INCLUDE: "04-colors/pg-analysis-py/colorAverages-colorblocks.html" export html
+#+INCLUDE: "04-colors/pg-analysis-py/averages/averages-colorblocks.html" export html
 
 #+CAPTION: Average colors of books
 #+LABEL: fig:colorAverages
