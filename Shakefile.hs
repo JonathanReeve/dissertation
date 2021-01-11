@@ -42,6 +42,7 @@ main = withUtf8 $ shakeArgs opts $ do
 
     "//references.bib" %> \f -> do
         let source = "/home/jon/Dokumentujo/Papers/library.bib"
+        need [source]
         cmd "cp" source f
 
     "02-history/ch-2.tex" %> \f -> do
@@ -107,7 +108,10 @@ main = withUtf8 $ shakeArgs opts $ do
             template = "templates/template.html"
             bib = "references.bib"
             csl = "templates/modern-language-association.csl"
-        need ([ source, template, csl, bib ] ++ deps)
+            filters = [ "templates/PandocSidenote.hs"
+                      , "templates/hex-filter.hs"
+                      ]
+        need ([ source, template, csl, bib ] ++ deps ++ filters)
         -- need ([ source ] ++ deps)
         contents <- readFileText source
         let replaced = T.unpack $ replaceCites contents
@@ -120,10 +124,10 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "--csl=" ++ csl,
                                        "--variable=autoSectionLabels:true",
                                        "--metadata=tblPrefix:table",
-                                       "--filter=PandocSidenote.hs",
+                                       "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
-                                       "--filter=hex-filter.hs",
+                                       "--filter=templates/hex-filter.hs",
                                        "--mathjax",
                                        "--bibliography", bib,
                                        "-o", f
