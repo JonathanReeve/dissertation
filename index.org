@@ -19,8 +19,8 @@ wc -w 02-history/ch-2.org 04-colors/ch-4.org
 
 #+RESULTS:
 | 13084 | 02-history/ch-2.org |
-| 18525 | 04-colors/ch-4.org  |
-| 31609 | total               |
+| 18590 | 04-colors/ch-4.org  |
+| 31674 | total               |
 
 ** Revision
 
@@ -31,11 +31,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
+| 1cc4353 | 2021-01-18 | 20:38:45 | -500 |
 | 2c81eb6 | 2021-01-11 | 00:08:10 | -500 |
 | 853fbdc | 2021-01-11 | 00:06:56 | -500 |
 | 0502db7 | 2020-12-03 | 12:38:14 | -500 |
 | f3817f0 | 2020-12-02 | 00:49:52 | -500 |
-| f544f2c | 2020-12-02 | 00:37:24 | -500 |
 
 ** Source Code and Source Text
 
