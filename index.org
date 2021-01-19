@@ -11,27 +11,32 @@
 - Chapter 5: Descriptions of Shapes, Bodies, Objects
 - Chapter 6: Descriptions of Spaces
 
-** Word counts:
+** Word counts
 
-#+BEGIN_SRC sh
+#+BEGIN_SRC sh :exports results
 wc -w 02-history/ch-2.org 04-colors/ch-4.org
-git log --oneline -n 1
 #+END_SRC
 
 #+RESULTS:
-| 18393 | 04-colors/ch-4.org  |
 | 13084 | 02-history/ch-2.org |
-| 31477 | total               |
+| 18525 | 04-colors/ch-4.org  |
+| 31609 | total               |
 
-** Revision number
+** Revision
 
-#+BEGIN_SRC sh
-git log --oneline -n 1
+Here are the last few revisions, of which this draft is the latest:
+
+#+BEGIN_SRC sh :exports results
+git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-: f544f2c tweaks to color associations section
+| 2c81eb6 | 2021-01-11 | 00:08:10 | -500 |
+| 853fbdc | 2021-01-11 | 00:06:56 | -500 |
+| 0502db7 | 2020-12-03 | 12:38:14 | -500 |
+| f3817f0 | 2020-12-02 | 00:49:52 | -500 |
+| f544f2c | 2020-12-02 | 00:37:24 | -500 |
 
-** Source
+** Source Code and Source Text
 
 - [[https://github.com/JonathanReeve/dissertation][GitHub repo]]
