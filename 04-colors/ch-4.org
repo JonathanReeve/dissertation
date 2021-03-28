@@ -826,14 +826,26 @@ He sang that song. That was his song.
 O, the geen wothe botheth. [cite:joyce_portrait_2007 5]
 #+end_verse
 
-Simon Dedalus substitutes "place" for what is in Thompson's song, "grave." The song's chorus reads: "'Oh! Lily, sweet Lily Dale, Now the wild rose blossoms  / O'er her little green grave, / 'Neath the trees in the flow'ry vale." [cite:gifford_joyce_1981 133]. This mistake is the first of many mistakes or parapraxes which will become hallmarks of Joyce's style. Young Stephen's refraction, "o, the geen wothe botheth," which makes the rose green, rather than the grave or place, appears several pages later, as an older Stephen muses in the classroom at Clongowes, where the class has been divided into white and red rose factions, an imitation of the English War of the Roses.
+Simon Dedalus substitutes "place" for what is in Thompson's song, "grave." The song's chorus reads:
+
+#+begin_verse
+'Oh! Lily, sweet Lily Dale,
+Now the wild rose blossoms
+O'er her little green grave,
+'Neath the trees in the flow'ry vale. [cite:gifford_joyce_1981 133].
+#+end_verse
+
+This mistake is the first of many parapraxes which will become hallmarks of Joyce's style. Young Stephen's refraction, "o, the geen wothe botheth," which makes the rose green, rather than the grave or place, appears several pages later, as an older Stephen muses in the classroom at Clongowes, where the class has been divided into white and red rose factions, an imitation of the English War of the Roses.
 
 #+begin_quote
 White roses and red roses: those were beautiful colours to think of. And the cards for first place and second place and third place were beautiful colours too: pink and cream and lavender. Lavender and cream and pink roses were beautiful to think of. Perhaps a wild rose might be like those colours: and he remembered the song about the wild rose blossoms on the little green place. But you could not have a green rose. But perhaps somewhere in the world you could. [cite:joyce_portrait_2007 10]
 #+end_quote
 
-Green roses are of course possible with artificial coloring, and
- - Valente on
+Green roses are of course possible with artificial coloring, and Joseph Valente reminds us that green carnations were "an aestheticist emblem of imaginative artifice ... and a badge of the homosexual subculture of fin-de-siècle England," and further suggests that "wild" may be a pun for "Wilde" [cite:valente2003 251].
+
+But in the geopolitical climate of Ireland of 1916—the year /Portrait/ was published, and the year of the Easter Rising—green roses are hardly aesthetic-as-apolitical, that is, art-for-art's-sake. Just as white and red roses symbolized the warring houses of Lancaster and York, green was a nationalist color for Irish homerule and independence. H. G. Wells's 1917 review of /Portrait/ celebrates the novel for its "too true" "account of the political atmosphere in which a number of brilliant Irishman have grown up," an atmosphere he diagnoses as "just hate, a cant cultivated to the pitch of monomania" [cite:wells_joyce 88]. Tellingly, Wells's epithet for these young Irishmen, is "bright-green": colored by nationalism, but also naive, inexperienced.
+
+
 
 Picasso on artists.
 
