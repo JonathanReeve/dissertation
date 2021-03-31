@@ -810,12 +810,12 @@ Novels prime their readers to imagine by presenting them with visual description
 
 [Description section goes here]
 
-*** Childlike wonder
+*** /Bildung/ and portraits
 A defining genre of the novels of this period is the /Bildungsroman/, a genre which Franco Moretti famously calls a "symbol" of modernity, in that modernity itself is a kind of society-level youth, self-mythologizing [cite:moretti00 4].
 
-I argue that visuality, and color in particular, are crucial to the modernist /Bildungsroman/. After all, the literal meaning of /Bild/ is /image/, /painting/, or /figure/, and /Bildung/, usually translated /education/, means literally /image creation/ or /formation/. It is no mere coincidence, then, that portraiture and self-portraiture are common themes of these novels, appearing even in the titles of Joyce's /A Portrait of the Artist as a Young Man/, Wilde's /The Picture of Dorian Gray/, and Pater's /Imaginary Portraits/. Gregory Castle calls these "portrait" novels "portraits of aesthetic life," and underscores their roots in the aestheticist literary movement, of which Pater and Wilde were visible figures, and which took place in the colorfully-titled Yellow Nineties [cite:castle_2019].
+I argue that visuality, and color in particular, are crucial to the modernist /Bildungsroman/. After all, the literal meaning of /Bild/ is /image/, /painting/, or /figure/, and /Bildung/, usually translated /education/, means literally /image creation/ or /formation/. It is no mere coincidence, then, that portraiture and self-portraiture are common themes of these novels, appearing even in the titles of Joyce's /A Portrait of the Artist as a Young Man/, Wilde's /The Picture of Dorian Gray/, and Pater's /Imaginary Portraits/, to name a few. If we count Henry James, then we might add /The Portrait of a Lady/, and T. S. Eliot's poem of the same name. Gregory Castle calls these "portrait" novels "portraits of aesthetic life," and underscores their roots in the aestheticist literary movement, of which Pater and Wilde were visible figures, and which took place in the colorfully-titled Yellow Nineties [cite:castle_2019].
 
-Portraits are a genre of painting that are mimetic by definition: they aim to represent the image of their subjects. But the portraits of modernist /Bildungsromane/, however autobiographical, are impressionistic, representing instead the unfiltered worlds of sensory impressions, in order to mimic the visual experience of children, who have not yet mastered pragmatic lexical categorizations of their visual worlds. Bildungsromane often mirror this developmental phenomenology: being novels of education, they usually proceed chronologically, beginning with youth, and often from the viewpoint of youth. Joyce's /A Portrait of the Artist as a Young Man/ is the classic example of this phenomenon, beginning with what Derek Attridge calls "one of the most revolutionary pages in the history of fiction" cite:attridgeJoyceJames. The page contains young Stephen Dedalus's refracted sensory impressions. Among them is his lisped misremembered version of his father's apparent bowdlerization of H.S. Thompson's song, "Lily Dale":
+Portraits are a genre of painting that are mimetic by definition: they aim to represent the image of their subjects. But the portraits of modernist /Bildungsromane/, however autobiographical, are impressionistic, representing instead the unfiltered worlds of sensory impressions, in order to mimic the visual experience of children, who have not yet mastered pragmatic lexical categorizations of their visual worlds. /Bildungsromane/ often mirror this developmental phenomenology: being novels of education, they usually proceed chronologically, beginning with youth, and often from the viewpoint of youth. Joyce's /A Portrait of the Artist as a Young Man/ is the classic example of this narrative style, its first page constituting what Derek Attridge calls "one of the most revolutionary pages in the history of fiction" [cite:attridgeJoyceJames]. The page contains young Stephen Dedalus's refracted sensory impressions. Among them is his lisped misremembered version of his father's apparent bowdlerization of H.S. Thompson's song, "Lily Dale":
 
 #+begin_verse
 O, the wild rose blossoms
@@ -826,7 +826,7 @@ He sang that song. That was his song.
 O, the geen wothe botheth. [cite:joyce_portrait_2007 5]
 #+end_verse
 
-Simon Dedalus substitutes "place" for what is in Thompson's song, "grave." The song's chorus reads:
+Simon Dedalus substitutes "place" for what is in Thompson's song, "grave," to make the song friendlier to children. The song's chorus goes:
 
 #+begin_verse
 'Oh! Lily, sweet Lily Dale,
@@ -837,19 +837,20 @@ O'er her little green grave,
 
 This mistake is the first of many parapraxes which will become hallmarks of Joyce's style. Young Stephen's refraction, "o, the geen wothe botheth," which makes the rose green, rather than the grave or place, appears several pages later, as an older Stephen muses in the classroom at Clongowes, where the class has been divided into white and red rose factions, an imitation of the English War of the Roses.
 
-#+begin_quote
-White roses and red roses: those were beautiful colours to think of. And the cards for first place and second place and third place were beautiful colours too: pink and cream and lavender. Lavender and cream and pink roses were beautiful to think of. Perhaps a wild rose might be like those colours: and he remembered the song about the wild rose blossoms on the little green place. But you could not have a green rose. But perhaps somewhere in the world you could. [cite:joyce_portrait_2007 10]
-#+end_quote
+#+begin_html
+<span style="color: #ffffff" class="color"> White </span> roses and <span style="color: #e50000" class="color"> red </span> roses: those were beautiful colours to think of. And the cards for first place and second place and third place were beautiful colours too: <span style="color: #ff81c0" class="color"> pink </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #c79fef" class="color"> lavender.</span>  <span style="color: #c79fef" class="color"> Lavender </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #ff81c0" class="color"> pink </span> roses were beautiful to think of. Perhaps a wild <span style="color: #cf6275" class="color"> rose </span> might be like those colours and he remembered the song about the wild <span style="color: #cf6275" class="color"> rose </span> blossoms on the little <span style="color: #15b01a" class="color"> green </span> place. But you could not have a <span style="color: #15b01a" class="color"> green </span> rose. But perhaps somewhere in the world you could. [cite:joyce_portrait_2007 10]
+#+end_html
 
-Green roses are of course possible with artificial coloring, and Joseph Valente reminds us that green carnations were "an aestheticist emblem of imaginative artifice ... and a badge of the homosexual subculture of fin-de-siècle England," and further suggests that "wild" may be a pun for "Wilde" [cite:valente2003 251].
+Green roses are of course possible with artificial coloring, and Joseph Valente reminds us that green carnations were "an aestheticist emblem of imaginative artifice ... and a badge of the homosexual subculture of fin-de-siècle England" [cite:valente2003 251].
 
-But in the geopolitical climate of Ireland of 1916—the year /Portrait/ was published, and the year of the Easter Rising—green roses are hardly aesthetic-as-apolitical, that is, art-for-art's-sake. Just as white and red roses symbolized the warring houses of Lancaster and York, green was a nationalist color for Irish homerule and independence. H. G. Wells's 1917 review of /Portrait/ celebrates the novel for its "too true" "account of the political atmosphere in which a number of brilliant Irishman have grown up," an atmosphere he diagnoses as "just hate, a cant cultivated to the pitch of monomania" [cite:wells_joyce 88]. Tellingly, Wells's epithet for these young Irishmen, is "bright-green": colored by nationalism, but also naive, inexperienced.
+ - and further suggests that "wild" may be a pun for "Wilde"
 
+But in the geopolitical climate of Ireland of 1916—the year /Portrait/ was published, and the year of the Easter Rising—green roses are hardly aesthetic-as-apolitical, that is, art-for-art's-sake. Just as white and red roses symbolized the warring houses of Lancaster and York, green was a nationalist color for Irish homerule and independence. So when H. G. Wells's 1917 review of /Portrait/ celebrates the novel for its "too true" "account of the political atmosphere in which a number of brilliant Irishman have grown up," an atmosphere he diagnoses as "just hate, a cant cultivated to the pitch of monomania," his epithet for these young Irishmen is "bright-green": colored by nationalism, but also naive, inexperienced [cite:wells_joyce 88].
 
+Katherine Mullin notes that the heightened sensory detail of young Stephen's narration "shows the interior thoughts of a character expressed in the language he might use at the time his thoughts are occurring," a technique she identifies as "coloured narrative" [cite:mullin_introduction_2016]. The term is Graham Hough's, from a 1970 essay on Jane Austen, and refers to a narrative mode akin to free indirect discourse [cite:Hough_1970 205]. The color of the term is meant metaphorically, and does not refer to literal colors, but is nonetheless an apt metaphor for Stephen's colorful prose: his narration is not only colored by his personality, as Hough hears in the narrative of /Emma/, but by the visual qualities of his heightened perception.
 
-Picasso on artists.
+- White and purity?
 
-**** Joyce's Portrait of the Artist
 
 **** Sinclair's Mary Oliver
 
