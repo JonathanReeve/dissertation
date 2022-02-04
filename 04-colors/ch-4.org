@@ -1,11 +1,16 @@
 #+TITLE: Chapter 4: Hue
 #+AUTHOR: Jonathan Reeve
-#+NOCITE: cite:ridgway1886nomenclature, cite:ridgway1912color
+#+bibliography: ../references.bib
+#+nocite: cite:ridgway1886nomenclature, cite:ridgway1912color
 # -*- eval: (org-hide-block-all)
+
+#+begin_box
+This document is originally formatted in HTML, and contains interactive charts, hyperlinks, and other dynamic elements. If you are reading this in another document format (PDF, DOCX, or paper), you are likely missing all of these dynamic elements. Please visit [[https://dissertation.jonreeve.com/][dissertation.jonreeve.com]] for the canonical edition of this text, and [[https://github.com/JonathanReeve/dissertation][github.com/JonathanReeve/dissertation]] for its source code.
+#+end_box
 
 * Background
 
-The dissertation from which this chapter is excerpted deals explores ocularities and imaginations of British literature, from about 1880 to about 1940.
+The dissertation from which this chapter is excerpted explores ocularities and imaginations of British literature, from about 1880 to about 1940.
 
 In Chapter 1, I introduce key terms in the theoretical framework I'm using, and the sense in which I use them, which is narrower than usual:
 
@@ -32,6 +37,53 @@ This is Chapter 4.
 
 * Introduction
 
+Modernity is colorful. And British literature of the modern, or modernist period, is brighter, more colorful, and more visual than ever before. The fiction and poetry published in Britain in the early 20th Century contains more color words, more colorful objects, and more descriptions of color phenomena than it ever did, and measurably so. Color and visual phenomena become not only modes of description, ancillary to plot and narrative arc, but themselves become themes, subject matter, and organizing principles.
+
+The quantitative analysis I describe below finds a steady increase in the proportions of color words, color expressions, and colorful objects, in British literature at the turn of the century. [@Fig:pubdateRegression] illustrates this literary-historical increase in colorfulness, showing these proportions over time, for several hundred novels and collections of poetry, according to their publication dates. Each point in this figure represents a book, and the upward-sloping line represents their linear regression. This trend is exaggerated once we take into account generational differences in writing styles, and view these proportions by the authors' dates of birth, as in [@fig:proportionsByDOB].
+
+#+CAPTION: Base color proportions of books, according to publication date, fitted with a linear regression
+#+LABEL: fig:pubdateRegression
+[[./images/year-pubdate-linear-regression.png]]
+
+#+CAPTION: Base color proportions, by author date of birth, smoothed with a five-year average
+#+LABEL: fig:proportionsByDOB
+[[./images/year-dob-smooth5.png]]
+
+How and why does this visual turn take place? What precisely happens at the vertical spike, seen in [@fig:proportionsByDOB], around 1910? This chapter explains these chromatic aspects of the visual turn in modernist literature: their causes, effects, modalities.
+
+In her often-cited essay from 1924, "Mr Bennett and Mrs Brown," Virginia Woolf famously asserts that December, 1910, was a turning-point for human character:
+
+#+BEGIN_QUOTE
+"My first assertion is ... that everyone in this room is a judge of character. Indeed it would be impossible to live for a year without disaster unless one practised character-reading and had some skill in the art. ... And now I will hazard a second assertion ... that in or about December, 1910, human character changed." [cite:@woolf1966collected 320]
+#+END_QUOTE
+
+The phrase "on or about December, 1910" appears over 1,192 times in publications since 1924,[fn::[[https://books.google.com/ngrams/graph?content=on+or+about+December+1910&year_start=1800&year_end=2019&corpus=26&smoothing=3][Mostly since 1980]]. I derive this total from [[http://storage.googleapis.com/books/ngrams/books/20200217/eng/5-15724-of-19423.gz][raw data from this 5-grams archive, via Google Books]].] and is the title of a monograph on the early Bloomsbury group [cite:stansky1996or]. In it, Peter Stansky cites a number of epoch-making events that straddle 1910. Among them are: the death of King Edward VII, signaling the end of the Edwardian era; Roger Fry's London exhibition, "Manet and the Post-Impressionists"; and the passing, in early 1910, of Halley's Comet. Each of these is worth addressing, not just as significant events of the new decade, but as events which contributed to the change in the literary ocularities that we see manifested in the figures above.
+
+First, let us consider the end of the Edwardian era. The death of the "rich and vulgar" Edward VII, in May 1910, along with the coronation of George V in 1911, while less culturally significant than other events, nonetheless provided for many Brits a useful shorthand for circumscribing an era of extravagance [cite:@stansky1996or 1].[fn:: Paul Thompson's study of the Edwardians finds that "the top 1 per cent of Edwardians ... owned 69 percent of the national capital," a wealth, and an inequality, which "was the highest in modern British history and probably then the highest in the western world" [cite:@thompson1975the 2]. We will return to this ostentation later, when dealing with material conditions of commercial pigmentation.]
+Woolf's essay begins by dividing early 20th Century writers along these lines: "Mr. Wells, Mr. Bennett, and Mr. Galsworthy I will call the Edwardians; Mr. Forster, Mr. Lawrence, Mr. Strachey, Mr. Joyce, and Mr. Eliot I will call the Georgians" [cite:@woolf1966collected 320].
+Woolf's list of British writers is very nearly in chronological order, by date of birth. The most senior of the "Edwardians," H. G. Wells, was born in 1866, quickly followed by Arnold Bennett and John Galsworthy in 1867, while the "Georgian" E. M. Forster was born a decade later in 1879, followed by Lytton Strachey in 1880, James Joyce in 1882 (as with Woolf herself), D. H. Lawrence in 1885, and T. S. Eliot in 1888.
+
+This generational difference—the motivating factor behind the analysis shown in [@fig:proportionsByDOB]—Woolf sees as manifest in an internal cohesion of the writers' works. While among the Georgians, or, in a proto-modernist work like /Tristram Shandy/, Woolf argues, "everything was inside the book, nothing outside," the Edwardians, in contrast, "were never interested in character in itself, or in the book in itself. They were interested in something outside. Their books, then, were incomplete as books, and required that the reader should finish them, active and practically, for himself" [cite:-@woolf1966collected 327].
+
+Woolf's concern for "character in itself" and "the book in itself" hearkens back to the autoteleological aphorism of Aestheticism, "/l'art pour l'art/," or "art for art's sake." (Aestheticism, the artistic and literary movement of the 1890s, was born of the late Victorians, a generation for whom modernists / "Georgians" felt affinity.) In fact, we might well call Woolf's essay "Mrs. Brown for Mrs. Brown's Own Sake." But what is more important is the mode in which this autotelos is enacted: sight. A sight is useful, or useless, unto itself: it is the progenitor of action, and precedes it.
+
+In comparing Wells, Bennett, and Galsworthy, by imagining the way each novelist would treat Mrs. Brown, Woolf's train car neighbor, Woolf uses visual and ocular metaphors to contrast their writing styles: Wells would "project a vision on the window-pane" of a utopian world without Mrs. Brown. "And what would Mr. Galsworthy see?", Woolf asks [cite:-@woolf1966collected 327]. (Crucially, this is not "what would Mr. Galsworthy /write/," but what would he /see/.) He would see a symptom of a failing society, she replies. Bennett, however, "would keep his eyes in the carriage" [cite:-@woolf1966collected 328]. Later, in describing Strachey's "against the grain" biography /Queen Victoria/, Woolf argues that "Mr. Strachey has had to open our eyes before he has made us see" [cite:-@woolf1966collected 335].
+
+This "make us see" is the very same which Conrad identifies as his goal, in the preface of /The Nigger of the Narcissus/, which I quote in Chapter 2. It is the goal of the novelist, according to Conrad, and to Woolf. In fact, Woolf acknowledges Conrad, in this essay, as one of the only exemplary writers available to the 1910 generation, most likely for his vision—that is, for his prose treatment of visual phenomena.
+
+The hypothesis of /active vision/, in studies of visual perception, is one which
+
+As Woolf sees it, the Georgians distinguish themselves through their sight—their eyes are "in the carriage" with Mrs. Brown, rather than lost in utopias, or concerned with grand societal problems. They see Mrs. Brown in detail, but they are not carried away with detail itself, and do not attempt to paint a complete picture. It is no coincidence that "Mrs. Brown"—Woolf's invented name for this real person—is also the name of a color. Woolf's description of her lists things that are likely brown, without needing to use the word: she is "threadbare," and wears "clean little boots" [cite:-@woolf1966collected 323]. Her appearance suggested to Woolf "extreme poverty" without needing "rags or dirt." Her only line of dialogue is, "can you tell me if an oak tree dies when the leaves have been eaten for two years in succession by caterpillars?"—a scene again full of brown things, like dead trees. In contrast, the villain of this story, Mr. Smith, is considerably richer, sporting "blue serge."
+
+Woolf's Edwardian/Georgian distinction is one of convenience, as she herself is quick to admit, and had Edward VII died ten years later, it likely would not have affected the novels of the 1910s. A more substantive event of the year is Roger Fry's exhibit of 1910.
+
+The art critic and painter Roger Fry, a late entry into Woolf's Bloomsbury group of friends, organized, in 1910, one of the most influential British art exhibitions of the early 20th century: "Manet and the Post-Impressionists," the exhibition which coined the term "post-impressionist." Post-impressionism, a temporal designation which implies a contiguity with the earlier artistic movement of Impressionism, emphasizes color and form. Its apotheosis, in terms of this emphasis, is fauvism, the early 1900s trend for reducing paintings to large swaths of extremely bright colors.
+
+
+
+
+
+* Old
 Among the most striking ocularities of literary description, and more broadly of any narrative, are pauses to convey the hue of that what is before the describer's imagination. /Pauses/ because description is a dilation of extradiegetic time. /Before/ in that the described, if it has hue, is in focus, in the center of the describer's field of vision. To describe is to settle one's gaze in a field, and at the same time, to move it linearly and programmatically across that field. It is always selective, and it always refracts. Description of hue is among the most concentrated subroutines of that process, since the creation of textual color from a mental image involves digitization: approximative translation from an analog, linear system (a spectrum) to a digital, discrete system (a word). This process is so deeply involved with our language/thought apparatus, and so charged with epistemological problems, that it is the perennial subject of linguistics, neuroscience, and psychology. But rather than explore the phenomenon of textual color theoretically, I will take the opposite approach, and model the imaginative process in reverse, and in aggregate.
 
 Modeling is a statistical mimesis. Given observable qualities of a subject—in our case, a text, or a corpus of texts—a model imitates those qualities, in order to study the subject's behavior under unobserved circumstances. In modeling a hurricane, a meterologist not only becomes capable of predicting that hurricane's path, albeit with some margin of error, but, by studying the model's error, learns further nuances of the system he or she is studying. To model literature is not to discover how Virginia Woolf would have written about the 2020 coronavirus epidemic—although that sort of prediction is possible—it's to understand the small swirls of rainwater that compose the greater phenomenon we know as the hurricane.
@@ -333,7 +385,7 @@ Bertha sees the fruit in this bowl also with an acute sense of newness: not quit
 
 In other words, apples are usually /golden, green, red, gold,/ or /yellow/, but rarely /strawberry pink/. (There is an apple cultivar called the "pink lady," but it wasn't cultivated until 1976.) As with /milk/, this is a food metaphor, one which uses these colors, as the foods themselves seem to do, as a marker for something delicious or desirable.
 
-Grapes, too, typically belong to the categories /red/ or /white/, like their wine. Yet white grapes, and white wine, are not white at all, but a pale green. Red grapes and red wine are not red, either, but are usually a deep purple. This illustrates the /lemon-yellow/ position I have outlined earlier: color designations are more a matter of convention than faithful representation of the visual world. Mansfield would have been aware of this quality of grapes, and has Bertha call them "purple" to show that she is attune to the phenomenon of their hue. Mansfield further highlights this by showing the chromatic harmony Bertha expected, and sees, between the grapes and the carpet.
+Grapes, too, typically belong to the categories /red/ or /white/, like their wine. Yet white grapes, and white wine, are not white at all, but a pale green.[fn::Anders Steinvall points this out, noting that the /white/ of /white wine/ is an instance of /type modification/: [cite:steinvall2006 57]] Red grapes and red wine are not red, either, but are usually a deep purple. This illustrates the /lemon-yellow/ position I have outlined earlier: color designations are more a matter of convention than faithful representation of the visual world. Mansfield would have been aware of this quality of grapes, and has Bertha call them "purple" to show that she is attune to the phenomenon of their hue. Mansfield further highlights this by showing the chromatic harmony Bertha expected, and sees, between the grapes and the carpet.
 
 So by modeling imagination in this way, we're able to take advantage of the ways writers show us the perceptual experience of words, rather than just their semantic categories. But this model is only one component of a larger system.
 
@@ -593,15 +645,9 @@ In Virginia Woolf's meta-essay, "The Decay of Essay Writing," she claims that he
 
 One of the drawbacks of $C_{PG}$ is that original publication dates are missing from the metadata. It would be best to compare the dates of original publication for each text with the total proportions of color spans found in each. But even though I was able to fill in much of this data, by querying several book metadata APIs, much of it remained missing. The author's date of birth is present in $C_{PG}$, however, and so [@fig:proportionsByDOB] shows the correlation between the author's date of birth and the total proportions of detected color expressions in that author's text.
 
-#+CAPTION: Base Color Proportions By Author Date of Birth
-#+LABEL: fig:proportionsByDOB
-[[./images/year-dob-smooth5.png]]
 
 Using an author's date of birth as a proxy for date of publication is not ideal, but this picture doesn't change much, however, when using what few publication dates are available: a linear regression of those points—even though this represents a subset of the total corpus—still shows an upward trend, however weaker: see [@fig:pubdateRegression]. In this case, each point represents a single novel or collection of poems.
 
-#+CAPTION: Base Color Proportions By Genre,
-#+LABEL: fig:pubdateRegression
-[[./images/year-pubdate-linear-regression.png]]
 
 In both cases, we can see an obvious trend: British fiction and poetry becomes more colorful over this literary period.
 
@@ -789,7 +835,6 @@ The novel ends just as colorfully as it started, and with an appropriate image. 
 
 Having seen ways in which color operates in description, ways which are analogous to, if not caused by, retinal cones, we now turn to those aspects of visual experience which are aligned with retinal rods: shapes, bodies, and forms. As in the retina, these categories are not mutually exclusive, but complement each other.
 
-
 * What makes modernist literature colorful?
 
 Let's skip ahead to the results of the experiment. Here is the distribution of images and colors in the narrative time of the novels of this period.
@@ -815,7 +860,7 @@ A defining genre of the novels of this period is the /Bildungsroman/, a genre wh
 
 I argue that visuality, and color in particular, are crucial to the modernist /Bildungsroman/. After all, the literal meaning of /Bild/ is /image/, /painting/, or /figure/, and /Bildung/, usually translated /education/, means literally /image creation/ or /formation/. It is no mere coincidence, then, that portraiture and self-portraiture are common themes of these novels, appearing even in the titles of Joyce's /A Portrait of the Artist as a Young Man/, Wilde's /The Picture of Dorian Gray/, and Pater's /Imaginary Portraits/, to name a few. If we count Henry James, then we might add /The Portrait of a Lady/, and T. S. Eliot's poem of the same name. Gregory Castle calls these "portrait" novels "portraits of aesthetic life," and underscores their roots in the aestheticist literary movement, of which Pater and Wilde were visible figures, and which took place in the colorfully-titled Yellow Nineties [cite:castle_2019].
 
-Portraits are a genre of painting that are mimetic by definition: they aim to represent the image of their subjects. But the portraits of modernist /Bildungsromane/, however autobiographical, are impressionistic, representing instead the unfiltered worlds of sensory impressions, in order to mimic the visual experience of children, who have not yet mastered pragmatic lexical categorizations of their visual worlds. /Bildungsromane/ often mirror this developmental phenomenology: being novels of education, they usually proceed chronologically, beginning with youth, and often from the viewpoint of youth. Joyce's /A Portrait of the Artist as a Young Man/ is the classic example of this narrative style, its first page constituting what Derek Attridge calls "one of the most revolutionary pages in the history of fiction" [cite:attridgeJoyceJames]. The page contains young Stephen Dedalus's refracted sensory impressions. Among them is his lisped misremembered version of his father's apparent bowdlerization of H.S. Thompson's song, "Lily Dale":
+Portraits are a genre of painting that are mimetic by definition: they aim to represent the image of their subjects. But the portraits of modernist /Bildungsromane/, however autobiographical, are impressionistic, representing instead the unfiltered worlds of sensory impressions, in order to mimic the visual experience of children, who have not yet mastered pragmatic lexical categorizations of their visual worlds. /Bildungsromane/ often mirror this developmental phenomenology: being novels of education, they usually proceed chronologically, beginning with youth, and often from the viewpoint of youth. Joyce's /A Portrait of the Artist as a Young Man/ is the classic example of this narrative style, its first page constituting what Derek Attridge calls "one of the most revolutionary pages in the history of fiction" [cite:attridgeJoyceJames]. The page contains young Stephen Dedalus's refracted sensory impressions. Among them is his lisped, misremembered version of his father's apparent bowdlerization of H.S. Thompson's song, "Lily Dale":
 
 #+begin_verse
 O, the wild rose blossoms
@@ -841,7 +886,7 @@ This mistake is the first of many parapraxes which will become hallmarks of Joyc
 <span style="color: #ffffff" class="color"> White </span> roses and <span style="color: #e50000" class="color"> red </span> roses: those were beautiful colours to think of. And the cards for first place and second place and third place were beautiful colours too: <span style="color: #ff81c0" class="color"> pink </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #c79fef" class="color"> lavender.</span>  <span style="color: #c79fef" class="color"> Lavender </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #ff81c0" class="color"> pink </span> roses were beautiful to think of. Perhaps a wild <span style="color: #cf6275" class="color"> rose </span> might be like those colours and he remembered the song about the wild <span style="color: #cf6275" class="color"> rose </span> blossoms on the little <span style="color: #15b01a" class="color"> green </span> place. But you could not have a <span style="color: #15b01a" class="color"> green </span> rose. But perhaps somewhere in the world you could. [cite:joyce_portrait_2007 10]
 #+end_html
 
-Green roses are of course possible with artificial coloring, and Joseph Valente reminds us that green carnations were "an aestheticist emblem of imaginative artifice ... and a badge of the homosexual subculture of fin-de-siècle England" [cite:valente2003 251].
+Green roses are of course possible with artificial coloring, and green carnations, as Joseph Valente and others have noted, were "an aestheticist emblem of imaginative artifice ... and a badge of the homosexual subculture of fin-de-siècle England" [cite:valente2003 251]. /The Green Carnation/ is also the title of Robert Hichens's 1894 /roman à clef/, first published anonymously, which satirizes Wilde and his coterie.
 
  - and further suggests that "wild" may be a pun for "Wilde"
 
