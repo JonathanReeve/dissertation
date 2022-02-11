@@ -49,8 +49,9 @@ The quantitative analysis I describe below finds a steady increase in the propor
 #+LABEL: fig:proportionsByDOB
 [[./images/year-dob-smooth5.png]]
 
-How and why does this visual turn take place? What precisely happens at the vertical spike, seen in [@fig:proportionsByDOB], around 1910? This chapter explains these chromatic aspects of the visual turn in modernist literature: their causes, effects, modalities.
+How and why does this visual turn take place? What precisely happens at the vertical spike, seen in [@fig:proportionsByDOB], around 1910? This chapter explains these chromatic aspects of the visual turn in modern British literature: their causes, effects, modalities.
 
+** On or About December, 1910: a King, an Art Exhibition, and a Comet
 In her often-cited essay from 1924, "Mr Bennett and Mrs Brown," Virginia Woolf famously asserts that December, 1910, was a turning-point for human character:
 
 #+BEGIN_QUOTE
@@ -75,12 +76,30 @@ The hypothesis of /active vision/, in studies of visual perception, is one which
 
 As Woolf sees it, the Georgians distinguish themselves through their sight—their eyes are "in the carriage" with Mrs. Brown, rather than lost in utopias, or concerned with grand societal problems. They see Mrs. Brown in detail, but they are not carried away with detail itself, and do not attempt to paint a complete picture. It is no coincidence that "Mrs. Brown"—Woolf's invented name for this real person—is also the name of a color. Woolf's description of her lists things that are likely brown, without needing to use the word: she is "threadbare," and wears "clean little boots" [cite:-@woolf1966collected 323]. Her appearance suggested to Woolf "extreme poverty" without needing "rags or dirt." Her only line of dialogue is, "can you tell me if an oak tree dies when the leaves have been eaten for two years in succession by caterpillars?"—a scene again full of brown things, like dead trees. In contrast, the villain of this story, Mr. Smith, is considerably richer, sporting "blue serge."
 
-Woolf's Edwardian/Georgian distinction is one of convenience, as she herself is quick to admit, and had Edward VII died ten years later, it likely would not have affected the novels of the 1910s. A more substantive event of the year is Roger Fry's exhibit of 1910.
+Woolf's Edwardian/Georgian distinction is one of convenience, as she herself is quick to admit, and had Edward VII died ten years later, it likely would not have affected the novels of the 1910s.
 
-The art critic and painter Roger Fry, a late entry into Woolf's Bloomsbury group of friends, organized, in 1910, one of the most influential British art exhibitions of the early 20th century: "Manet and the Post-Impressionists," the exhibition which coined the term "post-impressionist." Post-impressionism, a temporal designation which implies a contiguity with the earlier artistic movement of Impressionism, emphasizes color and form. Its apotheosis, in terms of this emphasis, is fauvism, the early 1900s trend for reducing paintings to large swaths of extremely bright colors.
+An even more substantive event of the year is Roger Fry's exhibit in 1910. The art critic and painter Roger Fry, a late entry into Woolf's Bloomsbury group of friends, organized, at the Grafton Galleries, one of the most influential British art exhibitions of the early 20th century: "Manet and the Post-Impressionists," the exhibition which coined the term "post-impressionist." Like its predecessor, impressionism, post-impressionism, places greater importance on bright color and form than in representation, drama, or chiaroscuro.
+
+Its apotheosis, in terms of this emphasis, is fauvism, the trend, circa 1905–1908, for reducing paintings to large swaths of extremely bright colors.
+
+The controversial exhibition featured the titular Edouard Manet, along with Paul Cézanne, Paul Gauguin, Maurice Denis, Vincent van Gogh, and other painters known for their use of bright color.
+
+A cartoon in the November 1910 issue of /The Bystander/ illustrates this controversy [cite:@bystander1910 375]. A segment of the cartoon labeled "you arrive thus" depicts two gentlemen arriving at the exhibition: one half-asleep, and the other, alert. The following segment, labeled "and depart thus" depicts the sleepy man suddenly alert, and the alert man with buckled knees, wiping the sweat from his brow. Another corner of the cartoon depicts an appreciative look from "an American art student who liked the colour harshness." Finally, a tableau at the bottom of the page shows four men and three women, in genteel hats and costume, doubled over in laughter. The caption is "From the Pictures' Point of View."
+
+#+NAME:
+#+CAPTION: "Post-Impressions of the Post-Impressionists," [cite:@bystander1910 375]
+[[./images/post-impressions.jpg]]
+
+Even Roger Fry's own comment on his exhibition had, in his biographer Virginia Woolf's phrase, "an apologetic air" [cite:@woolf1940roger 153]. "There is no denying," Woolf quotes Fry as saying, "that the work of the Post-Impressionists is sufficiently disconcerting. It may even appear ridiculous to those who do not recall the fact that a good rocking-horse has often more of the true horse about it than an instantaneous photograph of a Derby winner."
 
 
+# This is a fascinating comparison, which recalls some of the aesthestheticts' first appeals to artificiality.
 
+# The notion that a artificial reproduction, *due to its artificiality*, is somehow more real than a realistic depiction, hearkens back to the aesthestheticts'
+
+# This is somehow connected to ideas of "primitive art"
+
+The influence of this exhibit, for the writers, thinkers, and artists living in London, is difficult to overestimate.
 
 
 * Old

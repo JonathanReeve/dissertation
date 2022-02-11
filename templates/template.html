@@ -14,15 +14,22 @@ td
   padding : 0.29999em 0.29999em 0.29999em 0.29999em;
 }
 
+div.box
+{
+  background-color : #cbcbf7;
+  border-radius    : 10px 10px 10px 10px;
+  padding          : 0.8em 0.8em 0.8em 0.8em;
+}
+
 
 /* Generated with Clay, http://fvisser.nl/clay */</style><link href="/templates/tufte-css/latex.css" rel="stylesheet"><link href="/templates/tufte-css/tufte.css" rel="stylesheet"><script src="/04-colors/includes/plotly-latest.min.js"></script><style type="text/css">@page { margin: 3cm; @bottom-center { content: counter(page); } }</style></head><body><article>
  $for(include-before)$ 
  $include-before$ 
  $endfor$ 
 <header><h1 class="title">$title$</h1><p class="subtitle author">$author$</p><p class="date">$date$</p></header><main>$if(toc)$ 
-<nav role="doc-toc" id="$idprefix$TOC">$table-of-contents$ 
+<details><summary>Table of Contents</summary><nav role="doc-toc" id="$idprefix$TOC">$table-of-contents$ 
 </nav>$endif$ 
- $body$ 
+</details>$body$ 
  $for(include-after)$ 
  $include-after$ 
  $endfor$ 

@@ -34,8 +34,11 @@ pageHtml = do
           p_ [ class_ "date" ] "$date$"
         L.main_ $ do
           "$if(toc)$ \n"
-          nav_ [ id_ "$idprefix$TOC", role_ "doc-toc" ] "$table-of-contents$ \n"
-          "$endif$ \n $body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
+          details_ $ do
+            summary_ "Table of Contents"
+            nav_ [ id_ "$idprefix$TOC", role_ "doc-toc" ] "$table-of-contents$ \n"
+            "$endif$ \n"
+          "$body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
       footer_ $ do
         script_ [ id_ "MathJax-script", async_ "",  src_ "includes/MathJax/es5/tex-chtml.js" ] T.empty
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
@@ -54,6 +57,11 @@ css = do
     lineHeight (unitless 2)
   ".colorBlock" ? paddingAll (em 0.2)
   td ? sym padding (em 0.3)
+  "div.box" ? do
+    backgroundColor "#cbcbf7"
+    sym borderRadius (px 10)
+    sym padding (em 0.8)
+
 
 
 marginAll m = margin m m m m

@@ -17,9 +17,13 @@ opts = shakeOptions { shakeFiles    = ".shake/" }
 
 images = getDirectoryFiles "" [ "02-history/images/*" ]
 
--- Replace org style citation syntax with @-syntax for Pandoc
+-- Replace org style citation syntax with @-syntax for Pandoc.
+-- Why? cite: syntax is much better supported in emacs, and allows me to see
+-- at a glance which citations aren't working, and to jump to their entries.
+-- But cite: syntax isn't that well supported in Pandoc, so we use Pandoc's
+-- "Berkeley-style" citation syntax, instead.
 replaceCites :: T.Text -> T.Text
-replaceCites text = TR.replaceAll (regex [] (T.pack "cite:")) (TR.rstring "@") text
+replaceCites text = TR.replaceAll (regex [] (T.pack "cite:@?")) (TR.rstring "@") text
 
 readFileText text = need [text] >> liftIO (TIO.readFile text)
 
@@ -130,6 +134,34 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "--filter=templates/hex-filter.hs",
                                        "--mathjax",
                                        "--bibliography", bib,
+                                       "-o", f
+                                       ]
+
+    "04-colors/ch-4.pdf" %> \f -> do
+        deps <- images
+        let source = "04-colors/ch-4.org"
+            template = "templates/template.html"
+            bib = "references.bib"
+            csl = "templates/modern-language-association.csl"
+            filters = [ "templates/PandocSidenote.hs"
+                      , "templates/hex-filter.hs"
+                      ]
+        need ([ source, template, csl, bib ] ++ deps ++ filters)
+        -- need ([ source ] ++ deps)
+        contents <- readFileText source
+        let replaced = T.unpack $ replaceCites contents
+        cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
+                                       "--template", template,
+                                       "--standalone",
+                                       "--reference-location=block",
+                                       "--toc",
+                                       "--csl=" ++ csl,
+                                       "--variable=autoSectionLabels:true",
+                                       "--metadata=tblPrefix:table",
+                                       "--filter=pandoc-crossref",
+                                       "--citeproc",
+                                       "--bibliography", bib,
+                                       "--pdf-engine", "lualatex",
                                        "-o", f
                                        ]
 
