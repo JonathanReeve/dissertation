@@ -78,60 +78,79 @@ As Woolf sees it, the Georgians distinguish themselves through their sight—the
 
 Woolf's Edwardian/Georgian distinction is one of convenience, as she herself is quick to admit, and had Edward VII died ten years later, it likely would not have affected the novels of the 1910s.
 
-An even more substantive event of the year is Roger Fry's exhibit in 1910. The art critic and painter Roger Fry, a late entry into Woolf's Bloomsbury group of friends, organized, at the Grafton Galleries, one of the most influential British art exhibitions of the early 20th century: "Manet and the Post-Impressionists," the exhibition which coined the term "post-impressionist." Like its predecessor, impressionism, post-impressionism, places greater importance on bright color and form than in representation, drama, or chiaroscuro.
+An even more substantive event of the year is Roger Fry's exhibit in 1910. The art critic and painter Roger Fry, a late entry into Woolf's Bloomsbury group of friends, organized, at the Grafton Galleries, one of the most influential British art exhibitions of the early 20th century: "Manet and the Post-Impressionists," the exhibition which coined the term "post-impressionist." Like its predecessor, impressionism, post-impressionism, places greater importance on bright color and form than in representation, drama, or chiaroscuro. Its apotheosis, in terms of this emphasis, is fauvism, the trend, circa 1905–1908, for reducing paintings to large swaths of extremely bright colors.
 
-Its apotheosis, in terms of this emphasis, is fauvism, the trend, circa 1905–1908, for reducing paintings to large swaths of extremely bright colors.
+To speak precisely, post-impressionist paintings are, according to my image analysis, 37.4% brighter than European paintings of the early 19th Century.[fn::I arrive at this figure [[https://github.com/JonathanReeve/dissertation/blob/master/04-colors/experiment-post-impressionism/analyze-colors.ipynb][with this analysis]]: by querying Wikidata for paintings labeled with the movement "post-impressionism," by querying for paintings created between 1800–1850, by downloading one hundred images from each category, and by computing K-means centroids for their luminosity in HSL color space (hue, saturation, luminosity).]
 
-The controversial exhibition featured the titular Edouard Manet, along with Paul Cézanne, Paul Gauguin, Maurice Denis, Vincent van Gogh, and other painters known for their use of bright color.
+The controversial exhibition shows this new brightness, featuring the titular Edouard Manet, along with Paul Cézanne, Paul Gauguin, Maurice Denis, Vincent van Gogh, and other painters known for their use of bright color.
 
-A cartoon in the November 1910 issue of /The Bystander/ illustrates this controversy [cite:@bystander1910 375]. A segment of the cartoon labeled "you arrive thus" depicts two gentlemen arriving at the exhibition: one half-asleep, and the other, alert. The following segment, labeled "and depart thus" depicts the sleepy man suddenly alert, and the alert man with buckled knees, wiping the sweat from his brow. Another corner of the cartoon depicts an appreciative look from "an American art student who liked the colour harshness." Finally, a tableau at the bottom of the page shows four men and three women, in genteel hats and costume, doubled over in laughter. The caption is "From the Pictures' Point of View."
+A cartoon in the November 1910 issue of /The Bystander/ illustrates the controversy [cite:@bystander1910 375]. A segment of the cartoon labeled "you arrive thus" depicts two gentlemen arriving at the exhibition: one half-asleep, and the other, alert. The following segment, labeled "and depart thus" depicts the sleepy man suddenly alert, and the alert man with buckled knees, wiping the sweat from his brow. Another corner of the cartoon depicts an appreciative look from "an American art student who liked the colour harshness." Finally, a tableau at the bottom of the page shows four men and three women, in genteel hats and costume, doubled over in laughter. The caption is "From the Pictures' Point of View."
 
 #+NAME:
 #+CAPTION: "Post-Impressions of the Post-Impressionists," [cite:@bystander1910 375]
 [[./images/post-impressions.jpg]]
 
 Even Roger Fry's own comment on his exhibition had, in his biographer Virginia Woolf's phrase, "an apologetic air" [cite:@woolf1940roger 153]. "There is no denying," Woolf quotes Fry as saying, "that the work of the Post-Impressionists is sufficiently disconcerting. It may even appear ridiculous to those who do not recall the fact that a good rocking-horse has often more of the true horse about it than an instantaneous photograph of a Derby winner."
-
-
+# This is somehow connected to ideas of "primitive art"
 # This is a fascinating comparison, which recalls some of the aesthestheticts' first appeals to artificiality.
-
 # The notion that a artificial reproduction, *due to its artificiality*, is somehow more real than a realistic depiction, hearkens back to the aesthestheticts'
 
-# This is somehow connected to ideas of "primitive art"
+Thes reactions were not an exaggeration. As Woolf put it:
+
+#+BEGIN_QUOTE
+"it is difficult in 1939, when a great hospital is benefiting from a centenary exhibition of Cézanne's works, and the gallery is daily crowded with devout and submissive worshippers, to realize what violent emotions those pictures excited less than thirty years ago. ... The public in 1910 was thrown into paroxysms of rage and laughter. ... they were infuriated. The pictures were a joke, and a joke at their expense. ... The pictures were outrageous, anarchistic and childish. They were an insult to the British public and the man who was responsible for the insult was either a fool, an impostor or a knave"  [cite:@woolf1940roger 153–4].
+#+END_QUOTE
+
+"Anarchistic and childish." These reactions, while extreme, bear some examination. First, "childish" is telling, given the well-documented preference among children for bright colors [cite: See, e.g., @Boyatzis_1994]. In fact, Woolf relates the experience of fellow Bloomsbury member Desmond MacCarthy, to whom "Parents sent ... childish scribbles which they asserted were far superior to the works of Cézanne." [cite:@woolf1940roger 154]. Second, the reaction that the paintings were "anarchistic" speaks to a related thread of so-called primitive art that was incipient in modernism. These two observations are strikingly similar to these two points which art critic C.J. Holmes makes of the exhibition:
+
+#+begin_quote
+"The tradition of Post-Impressionism, then ... is the expression of a personal vision: 1. Through the methods, first applied to oil-paintings by the Impressionists, which aim at the greatest possible vibrancy and luminosity of colour, obtained by the juxtaposition of pure bright pigment in small separate touches. ... 2. Through rigid simplification on the lines of the Orientals and of Daumier, in which the means of expression are reduced to line and colour ..." [cite:@holmes_notes_1910 19]
+#+end_quote
+
+The "pure bright pigment in small separate touches" is a technique borrowed from impressionism, and its sister style, pointillism: it is one which leverages the ocular / neurologica interactions of color to produce new colors. The "lines of the Orientals" speaks to the influence of far Eastern art—in particular Japanese woodblock prints—that would become important for modernism, and which would come to its climax in the 1920s, with such works as "The Waste Land" in 1922, the first British performance of Stravinsky's ballet "The Rite of Spring" in 1921. As we will see later, rich visual descriptions are often correlated with geographic or imaginitive distance, and so appear often in travel narratives, period pieces, science fiction, and other genres of distance.
+
+But the point I am making here is not only one of the art-historical milieu in which modernist literature is steeped, but that this way of thinking about color perception is crucial to understanding the use of color words, in descriptive prose or poetry, since color words, like "pure bright pigment," are single brushstrokes that belong to their greater pictures—that is, textual context.
+
+# Though Cézanne is not the artist among the post-impressionists with the brightest colors, many of the paintings in the exhibit featured strikingly bold and saturated color choices, which recall childrens' or novice painters' use of color straight from the tube.
 
 The influence of this exhibit, for the writers, thinkers, and artists living in London, is difficult to overestimate.
 
+A less influential, yet still significant, event of the 1910s was the arrival, in the early part of the year, of Halley's Comet. A literal once-in-a-lifetime event, happening only every 75 years, the comet had long appeared as an omen at various turning-points in British and world history. It appeared in the year of the Norman conquest of England in 1066, and was depicted in the Bayeux Tapestry, which is its first known representation. In the late 17th Century, British astronomer Edmond Halley, in dialogue with Isaac Newton, noted its periodicity. Its arrival in 1910 was special, however, since it would come closer to the earth than ever before. Even more concerning was that recent developments in spectrometry found, in 1909, that its tail contained the poisonous gas cyanogen [cite:@stoyan2015atlas 147]. This caused mass hysteria in Europe, where gas masks, bottles of oxygen, and "comet pills" were sold in vast quantities.
 
-* Old
-Among the most striking ocularities of literary description, and more broadly of any narrative, are pauses to convey the hue of that what is before the describer's imagination. /Pauses/ because description is a dilation of extradiegetic time. /Before/ in that the described, if it has hue, is in focus, in the center of the describer's field of vision. To describe is to settle one's gaze in a field, and at the same time, to move it linearly and programmatically across that field. It is always selective, and it always refracts. Description of hue is among the most concentrated subroutines of that process, since the creation of textual color from a mental image involves digitization: approximative translation from an analog, linear system (a spectrum) to a digital, discrete system (a word). This process is so deeply involved with our language/thought apparatus, and so charged with epistemological problems, that it is the perennial subject of linguistics, neuroscience, and psychology. But rather than explore the phenomenon of textual color theoretically, I will take the opposite approach, and model the imaginative process in reverse, and in aggregate.
+All of this was fueled by comet-related catastrophe in science fiction: Edgar Allen Poe's story "The Conversation of Eiros and Charmion," Jules Verne's novel /Hector Servadac/ (or "Off on a Comet," in English editions), Camille Flammarion's /La Fin du Monde/, and H.G. Wells's 1906 /In the Days of the Comet/, the only one to speculate about positive effects of extraterrestrial gases. There, the comet's gases has the effect of opening the minds of the world's denizens, allowing them to engage in free love and polyamory.
 
-Modeling is a statistical mimesis. Given observable qualities of a subject—in our case, a text, or a corpus of texts—a model imitates those qualities, in order to study the subject's behavior under unobserved circumstances. In modeling a hurricane, a meterologist not only becomes capable of predicting that hurricane's path, albeit with some margin of error, but, by studying the model's error, learns further nuances of the system he or she is studying. To model literature is not to discover how Virginia Woolf would have written about the 2020 coronavirus epidemic—although that sort of prediction is possible—it's to understand the small swirls of rainwater that compose the greater phenomenon we know as the hurricane.
+Although British intellectuals, on the whole, did not buy in to this comet panic, or liberation, its effects were still felt. John Maynard Keynes, an economist in the Bloomsbury Group, wrote, "the comet’s tail last night produced a very odd state of affairs in the air here. It was oppressive & electric & rather exciting" [cite:@stansky1996or 120].
 
-I am motivated here, both by large questions about literary history, and smaller, more specialized ones about individual texts. Big ones include: Does literary writing get more colorful with time? (It does.) What are the dominant colors of this period's literature? (White and black.) and, Which genres are the most colorful? (Love stories.) But smaller questions have to do with the way color words operate syntactically, how they operate within description, and how their semiologies warp the reader's imagination. When Woolf describes a set of curtains as "mustard-coloured," or when Joyce describes a man's eyes as "nocoloured," how and why do those color choices do more work than their superficial significations? How, precisely, are color words used differently in poetry and fiction?
+George Dangerfield's influential 1935 history, /The Strange Death of Liberal England/, begins with the 1910 appearance of Halley's Comet, and the death of King Edward VII. "Upon the chill and vacant twilight blazed Halley’s Comet – which, visiting the European heavens but once in a century, had arrived with appalling promptness to blaze forth the death of a king" [cite:@dangerfield2012the 19]. He writes, in his characteristically dramatic style, that 1910 is "a landmark in English history, which stands out against a peculiar background of flame. For it was in 1910 that fires long smouldering in the English spirit suddenly flared up, so that by the end of 1913 Liberal England was reduced to ashes" (15-16).
 
-These questions are inseparable from the way they are modeled. In many cases, modeling them is what /generates/ the questions. In others, the model is, at least partially, the answer to these questions. It is with that in mind that I invite you to join me in my process of creating this model of imagination—an imagination machine—where each decision in the algorithmic design, however mathematical, probes at the workings of color in text.
+These three events are reflective of, if not emblematic of, the changes in human character which Woolf identifies as happening in 1910: they signal the strange death of the old beige order, and the coming of a new, brightly colored era.
 
-** A Critique of the Narration / Description Dichotomy
+But history is not a collection of events, and events misrepresent the slow change that we see enacted in the cultural trends above.
 
-Before we begin our experiment, it is necessary to discuss the textual structure in which representations of hue are typically found: literary description. Although textual color has its own behaviors and properties, the conditions of description shape how color operates in text. By /description/ here I am discussing a very particular writerly process which linearizes and descretizes visual information: that which transforms imaginable material into words, and arranges those words into lines.
+To better understand the wave of color in 1910, we need to go back a generation further, to the 1890s.
 
-Exactly what may be identified as description, and what its role and import in literature may be, has been a matter of some debate. One of the more hotly contested works is an essay by Georg Lukács, titled "Narrate or Describe?", the central dichotomy of which is apparent from the title [cite:lukacs2005]. Lukács contrasts writers such as Flaubert and Zola, whom he calls "descriptive," with writers like Tolstoy whom he claims use a more "narrative," action-oriented style. The descriptive style Lukács is quick to dismiss. Of descriptive details in Flaubert's /Madame Bovary/, he writes:
+** The Yellow Nineties: Decadence, Cosmetics, and Artificiality
 
-#+BEGIN_QUOTE
-to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization." (115)
-#+END_QUOTE
+Despite what Woolf would have us believe, human character, and with it a sense of colorfulness and brightness, didn't change all of a sudden in 1910, but was a gradual change, with a large number of causes. Even the 1910 post-impressionism exhibit had its origins a decade or more earlier, in France. One of the most significant of these cultural roots, and one to which Woolf alludes, is the environment of the late Victorian period: the 1890s, or "yellow nineties" as it was often known. This period saw a trend towards the celebration of artificiality: synthetic pigments and bright colors, exemplified by artistic movements such as the aestheticists / Decadents, and the pre-Raphaelites. Yellow was its color in more than one respect. As Frances Winwar puts it:
 
-He later asserts that description "lacks humanity," in that "its transformation of men into still lives is only the artistic manifestation of its inhumanity." (140). I join the many later critics who have written about Lukács's essay in disagreeing with him, but since they critics have done this so thoroughly, I won't bother to do so here [cite:love2010close; cite:marcus2016building]. My refutation is much more radical: I question the distinction between narrative and description at the root of Lukács's argument.
+#+begin_quote
+The color had been a favorite one with Rosetti, Morris and Burne-Jones who had first discovered it in the richness of medieval panels, then nearer at hand in the sunflower of rural gardens. ... There was something vivid and daring about the color, something of the times, like the golden bloom of the age on a century that was nearing its close---not to death but to greater achievement. Yellow and /fin-de-siecle/ began to have connotations open to many meanings but all leading to a definable sense of modernity, challenge, emancipation. People were no longer afraid to live. ... The public became yellow-conscious. [cite:@winwar1958oscar 239]
+#+end_quote
 
-There do exist some aspects of fiction that have no descriptive function, of course—they may not be imagined, and thus they convey no images. But nearly everything else in fiction does describe. The opposite is nearly true, as well: there exist very few elements in a story that are purely descriptive, and serve no role in furthering the plot, fleshing out the characters, or providing a scene which is inextricable from, and indespensible to, plot and character.
+Yellow had become a symbol of modernity. The journal at the center of this trend was /The Yellow Book/, a short-lived illustrated quarterly journal of literature and art, published between 1894–1897. The bright yellow color of its cover recalled the look of racy French novels of the day, which were similarly bound [cite:@wilde00_oscar_wilde xx]. It was also the color of avant-garde literature, and edgy books of all stripes [cite:@doran13_yellow 3].
 
-In other words, to narrate is to describe. Any text may be description if it contains a visual component (strong description) or may be imagined (weak description), and this includes the "epic artistry" Lukács sees in Tolstoy, and his "recounting of the vicissitudes of human beings" (111). Since, is not the visual experience one such vicissitude? This is about more than just a distinction between the stylistic pastoral and epic, though, where description recounts in minute detail because it has the bourgeois leisure of a shepherd, and narration practically presents the facts, with military precision. Description is not essentially static, even though it often is. The proof is simply that action can be, and is, imagined in the same way as a still-life. Furthermore, description's linearity makes it /a priori/ dynamic.
+Holbrook Jackson describes its impact thus: "Nothing like /The Yellow Book/ had been seen before. It was newness /in excelsis/: novelty naked and unashamed. People were puzzled and shocked and delighted, and yellow became the colour of the hour, the symbol of the time-spirit. It was associated with all that was /bizarre/ and queer in art and life, with all that was outrageourly modern" [cite:@jackson1914eighteen 54].
 
-To explain this further, I'll use a well-known metaphor from physics: the color spectrum. Although there do exist areas on a color spectrum where we could identify certain colors—spots at which one could point, and nine out of ten English speakers would call it /red/–if these same people were asked to draw a line that definitively separates red from pink, or red from blue, there would be ten very different answers. The same is true of description and narration: they exist along a spectrum, and overlap with each other considerably. It is in that sense that we could say that the distinction isn't real at all.
+Its inaugural issue began with a sketch by the pre-Raphaelite painter Frederich Leighton, the Henry James story "The Death of the Lion" which parodies literary canonization, and an essay by Max Beerbohm titled "A Defense of Cosmetics." Beerbohm's essay begins, "it is useless to protest. Artifice must queen it once more in the town"  [cite:@BeardsleyYellowBook1894 65].
+The "artifice" he exhalts is that of cosmetics, or the cosmetic, more generally. The epoch, as he sees it, is changing, and this has a distinctly visual effect: "For behold! THe Victorian era comes to its end and the day of sancta simplicitas is quite ended. The old signs are here and the portents to warn the seer of life that we are ripe for a new epoch of artifice. Are not the men rattling the dice-box and ladies dipping their fingers in the rouge-pots?" [cite:@BeardsleyYellowBook1894 65].
+Rouge, of course, is the cosmetic product, usually worn on the lips and face, and which takes its name from the French word for /red/. It is usually reddish in color, but not always. It not would have been fashionable for Victorian women, apart from actresses, to use rouge, since, as one historian of cosmetics put it: "women of the [Victorian era] had to disguise any attempts at self-improvement. The prudery of contemporary moral standards was totally prohibitive as far as female vanity was concerned ..." [cite:@gunn1973the 137]. But this was starting to change by the 1890s.
 
-This is a crucial context for understanding textual color. At first glance, and according to Lukács's followers, color is probably the one element of fiction most superfluous to the story, and thus the work's reason for being. But what I argue is that colors in text are not simply signifiers of their position on the visible spectrum, but are the material out of which the text is created.
+For Beerbohm, and many other contributors to /The Yellow Book/, modernity meant bright colors: yellow books, yellow paintings, and red lipstick. "The era of rouge is upon us," he wrote. "The good combinations of line and colour are nearly numberless ... No monotony will be" [cite:@BeardsleyYellowBook1894 78].
 
-* Problems and First Considerations
+/The Yellow Book/ was, depending on who you talk to, either a "Victorian precursor" to the modernist "little magazine," or one of its first exemplars.
+
+* Mechanics of Color and Description
+Problems and First Considerations
 
 The first of many color-related epistemological problems may be found among color metaphors like /lemon-yellow/. Lemons themselves are—paradoxically—not lemon-colored. But neither is /lemon-yellow/ a Platonic ideal to which all lemons, or paintings of lemons, should aspire. Instead, the term exists somewhere between lemons, our memory of them, our visual experience of them, and what we read about them. This view is allied with Heather Love's 2016 work, "Shimmering Description," which characterizes literary description as oscillating, or shimmering, between its lexemic and communicated significance. Beginning with Love's idea, I aim to find the dimensions in which this oscillation takes place.
 
@@ -221,8 +240,8 @@ All the branches of the tall trees which lined the mall were gay with little lig
 And in John Galsworthy's /The Dark Flower/, a colorful novel, as it narrates the life of a visual artist, we read of "a blue sky thinly veiled from them by the crinkled brown-green leaves" [cite:galsworthy1913dark 66]. Sometimes the word-order is different, even though the same syntactic dependence remains: in May Sinclair's /Mary Oliver, a Life/, one of the most colorful novels as measured in the analysis below, we see "green leaves" which "had the cold glitter of wet, pointed metal" [TODO: cite]. Sinclair is not content with a description which presents leaves as green, but presents them with alien qualities. These leaves appear so unusually, she implies, that the play of light on their surfaces appears as if their material were entirely different.
 
 It may seem as if this argument—that color descriptions are visual anomalies—deflates upon scrutiny. After all, it's obvious that we don't need to say the obvious. But this theory will be born out materially as we begin to reverse-engineer textual imagination, which we will now see.
-
-* Imagining Words: Mapping Words to Colors
+* The Experiment: Modeling Imagination
+** Imagining Words: Mapping Words to Colors
 
 To model imagination, we start by working backwards, by first creating an engine to generate a color from a word or phrase. Given a word or group of words, we infer a color code: the exact proportions of red, green, and blue needed to recreate it computationally. We can either conceive of this process as modeling the writer's imagination in reverse, or modeling a reader's imagination. Of course, the question then becomes: which reader's imagination do we attempt to model? One approach would be to model as many imaginations as we can, by averaging several mappings, from several different sources. But these sources vary greatly. So factors we would look for in a color/word mapping would include:
 
@@ -239,25 +258,25 @@ A related issue is the algorithm by which we decide to collapse color word ortho
 
 With these principles in mind, I chose several books, and several databases containing color/word mappings, and combined them into one master map, although I will occasionally use individual databases when appropriate.
 
-** Heuristic Maps
+*** Heuristic Maps
 
 The breadth of the text/color translation problem is suggested even in at a glance at its bibliography: dictionaries of color, or manuals of color nomenclature, were essential reference books for centuries, not only among visual artists, designers, and others that work with pigment, but among botanists, ornithologists, and anyone else in need of a standardized way to describe visual phenomena. These manuals invariably contained color plates—some hand-painted, even—intended to be concrete mappings between color words and their associated hues. I chose just a few of these, based on their proximity to the period, the availability of their electronic editions, and/or the number of colors they contained.
 
-*** $CM_R$, Ridgway
+**** $CM_R$, Ridgway
 Some of the most ambitious attempts at mapping colors to their names, or naming colors, came from the natural sciences. American ornithologist Robert Ridgway (1850-1929), for example, authored two influential works of color naming systems: /A Nomenclature of Colors for Naturalists/ in 1886, and /Color Standards and Color Nomenclature/ in 1912. In the preface of the earlier work, Ridgway names as his problem that "the author has in collection considerably over three hundred water-colors, each bearing a different name" [cite:ridgway1886nomenclature X]. This volume contains over a thousand colors, but the color names are less metaphorical (/lemon-yellow/), and more descriptive (/bright yellow/).
 
-*** $CM_S$, Saccardo
+**** $CM_S$, Saccardo
 A continental work of the same decade is the ambitious and polyglot volume from Italian botanist Pier Andrea Saccardo bearing the formidable Latin title, /Chromotaxia Seu Nomenclator Colorum, Polyglottus, Additis Specimibus Coloratis ad Usam Botanicorum et Zoologorum/ (1894). Although containing only fifty colors, it features an index of several hundred "synonyms" for these colors in Latin, Italian, French, English, and German. While some of these are recognizable to modern readers, others seem strangely specific, such as /Murinus/ (mousey) or /Fuligineus/ ("sooty"). Saccardo provides two supplementary colors: /achrous/, or colorless, glassy; and /sordidus/, or "sordid," "dirty," which he describes as a modifier rather than a color. [fn::"/non est color definitus sed indicat inquinamentum aliorum colorum. Exempla: sordide albus, luride ruber/" [cite:saccardo1891chromotaxia 16].]
 
-*** $CM_M$, Maerz and Paul
+**** $CM_M$, Maerz and Paul
 
 Maerz and Paul's 1930 /A Dictionary of Color/ provides the largest number of colors, and was itself meticulously compiled from a number of prior manuals. This volume contributes over three thousand colors.
 
-*** $CM_P$ Pantone
+**** $CM_P$ Pantone
 
 The Pantone set, one of the most common among designers and artists today, contains over two thousand colors, but they have names which are much more mercantile than others. Thus, these are biased towards food-related words, flower-related words, or anything else that would seem like a pleasant marketing term.
 
-*** $CM_X$, XKCD
+**** $CM_X$, XKCD
 
 The antidote to the Pantone set is one from Russell Monroe, an American author, former NASA engineer, and cartoonist best known for his webcomic XKCD. Monroe surveyed his wide readership, asking them to name colors they were shown at random on his website. He also took demographic data from them, logged their locations via their computers' addresses, and asked them whether they were colorblind, or used a cathode ray tube monitor. The survey results, which represent the five million color mappings from 220,500 users, show a consensus for many color names, as shown in [@tbl:xkcdBlocks].[fn::I've represented these hex values in RGB space using a script which displays them in the browser, overlaid on the hex value itself, to account for color differences in monitors, pages, and other media.]
 
@@ -279,7 +298,7 @@ This mapping presents a useful counterpoint to commercial mappings such as that 
 
 [fn:1] If an exact match for a hex value does not exist  in a color map, I find the closest color to it using $\Delta E^{*}_{ab}-76$. This is described in more detail in [[Categorization]].
 
-*** Summary and Comparison
+**** Summary and Comparison
 
 #+CAPTION: Table of color mappings
 #+LABEL: tbl:color-mappings
@@ -306,7 +325,7 @@ Or, the dot product of the two vectors, normalized by the product of their two $
 
 Given these tendencies, I weight these color maps as described in [@tbl:color-mappings], and combine them into one large master color mapping, which will become the basis of the imagination model below.
 
-** Deep Imagining: Color Inference
+*** Deep Imagining: Color Inference
 
 Mapping color expressions to hex values is only the beginning. Since explicit color words are not the only words that suggest color in the mind of the reader, and since broadly imagining a text will allow us to understand it more than narrowly, it would help to imagine those aspects of a text that are more difficult to imagine.
 
@@ -318,7 +337,7 @@ Take Katherine Mansfield's 1922 story "The Garden Party," for instance, an inspi
 
 So to computationally imagine not just /green/ itself, but things which are very likely to appear green, we need to find a way to imagine colors from any given word. This is where we must develop an engine to model deep imagination.
 
-*** Word Proximity-based, $M_P$
+**** Word Proximity-based, $M_P$
 One of the simplest methods of color inference is to calculate the syntactic distance from a known color word to a target word. Given a large enough corpus, it is quite likely that, for example, /green/ will appear within several words of /grass/, and so by measuring the distances from /green/ to /grass/, and noticing that these distances are much shorter than for the pair /red/ and /grass/, we might infer that /grass/ is green: that is, the literary imagination of /grass/ has the color category /green/.
 
 Another example might be inferring the color of a gull. Anyone who has visited the north Atlantic shore knows that gulls tend to be white and gray. Of the 170 times that the word /gull/ appears in $C_{PG}$, we see /white/ appear within about ten words of it nineteen times. The lemma /grey/ appears six times. /Red/, however, appears not once. Of course, both /green/ and /yellow/ appear twice, although not with the same relations in the dependency graph. Given this collocation data, we can write a model that guesses that /gull/ is mostly white, a little gray, and with hints of green and yellow.
@@ -408,7 +427,7 @@ Grapes, too, typically belong to the categories /red/ or /white/, like their win
 
 So by modeling imagination in this way, we're able to take advantage of the ways writers show us the perceptual experience of words, rather than just their semantic categories. But this model is only one component of a larger system.
 
-*** Dictionary-based inference, $M_D$
+**** Dictionary-based inference, $M_D$
 
 To short-circut the problem of color exceptionalism, I mine color inference data from more straightforward definitions, like those found in dictionaries and encyclopedias. There, sheep are more likely to be described as white. Project Gutenberg provides [[http://www.gutenberg.org/cache/epub/38538/pg38538.txt][a copy of Chambers's Twentieth Century Dictionary of the English Language]], published in London in 1908. If I did not already have color mappings for /grass/ ($CM_X$: /grassy green/, #419c03; /grass/, #5cac2d; /grass green/, #3f9b0b), we would find this entry for /grassy/: "covered with or resembling grass, green." Since words and their definitions are regularly formatted in this dictionary, it becomes possible to parse the dictionary entry into word/definition pair, and load them into a lookup table. From there, I construct an graph, where nodes are dictionary words and their colors, and edges accrue weight each time a color word from the color maps appears in the definition of one of the defined words. Thus, if we see /grassy/ appear on the left of the page, and /green/ in its definition, we give it a score of one. If /green/ were to appear twice in its definition, we'd give it a score of two, and so forth. I repeat this process with an encyclopedia: /The Nuttall Encyclopædia/, first published in London in 1900, and still in print by 1966. Other dictionary and encyclopedia-like works are available in the usual plain-text sources, but few meet the criteria of (a) British, (b) out-of-copyright, (c) in plain-text, and (d) in an easily parsable format.
 
@@ -422,7 +441,7 @@ The model triangulates between the color word and entry/definition pairs, but on
 
 When merging these models, I weight $M_D$ the lowest, since with a lack of data (dictionaries), and an inconsistent level of descriptive detail, it's less reliable.
 
-*** Image-based: $M_I$
+**** Image-based: $M_I$
 
 A third solution mitigates some of the problems described above, by escaping comparison between colors and objects, and looking to images as a source of color information. Given a database of images that are correctly labeled, it should be possible to extract color values from those images, and build a pipeline that infers a color given a word. Lucily, two somewhat newly-created web services provide such a database: [[https://unsplash.com/s/photos/sand][Unsplash]] and [[https://www.pexels.com/][Pexels]] are stores of open-licensed stock photos and illustrations, which provide open APIs (Application Programming Interfaces) which allow users to retrieve images based on a given keyword. This follows methods used by other projects that attempt to map words and colors [cite:guilbeault2020].
 
@@ -461,7 +480,7 @@ When projected in HSL space, certain patterns emerge, as well, as shown in [@fig
 
 For the problems cited above, I weigh this model higher than $M_D$ but still lower than $M_P$. In the absence of an evaluation metric—and I doubt one is possible—I feel like our intuition as readers, and imaginers, is enough to evaluate and weigh these methods of imagining.
 
-*** Comparison
+**** Comparison
 
 #+CAPTION: Model Weights
 #+LABEL: tbl:weights
@@ -473,8 +492,8 @@ For the problems cited above, I weigh this model higher than $M_D$ but still low
 
 I combine these three models according the weights given in [@tbl:weights], and produce a master mapping I'm calling a /deep imaginer/. This I then integrate with the shallow color maps described above, cascading all the models together.
 
-** Named Entity Recognition (NER)
-*** The Rose Problem
+*** Named Entity Recognition (NER)
+**** The Rose Problem
 
 Early iterations of this engine found a staggering incidence of the color word /rose/ in the literature of this period. It didn't take much introspection to determine that this was not exclusively the color /rose/, but either a woman's given name, /Rose/ (my parser is case-insensitive), an equivalent surname, or the past tense of the verb /rise/. One could remove all tokens where the first letter is capitalized, but then that would also eliminate the color rose which appears at the beginning of a sentence. One could run a part-of-speech tagger over the text, and throw out all the verbs, but this only solves half the problem.
 
@@ -488,7 +507,7 @@ I train two NER models, which I'll use to detect text with visual properties: a 
 
 # TODO: DisplaCy display of entity detection
 
-*** The Beret Test
+**** The Beret Test
 
 # Maybe cut this
 
@@ -500,9 +519,9 @@ What we are left with, after training, are probabilistic models capable of ident
 
 But first, we would need a way of categorizing the color values generated by these models. Much in the same way that a text analysis project needs a lemmatization system to group together words like /sky/ and /skies/, /go/ and /went/, we need a way to bring together variations, shades, and other common properties of colors.
 
-** Categorization
+*** Categorization
 
-*** Color Spaces and Color Difference
+**** Color Spaces and Color Difference
 
 We now move from categorical description of color to quantitative—i.e., from /that is blue/ to /that is 80% blue/. Now that we've mapped color words and other color-containing text to the model's guesses of their mappings, we need a way to organize them, in relation to one another, and in relation to our perception of them. This is problematic, since we are dealing with two ontological domains: a linguistic domain, and an analogous psycho-physical. Furthermore, there are a multitude of ways to quantify color properties, and to organize colors by those properties.
 
@@ -520,10 +539,10 @@ $$\Delta E = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}$$
 
 Since CIELAB space best represents human perception of color, I'll use it wherever possible, and calculate color distances using $\Delta E$.[fn::I implement this function [[https://github.com/JonathanReeve/color-word-analyzer/blob/ffab10147d71ce7b76144c9d96ccb0e5b81e8b47/src/CategorizeColor.hs#L35][here, in the color categorization module of my color analyzer.]]] However, I have to translate frequently between LAB space and RGB space, since most of the color maps I've derived, are either scanned using digital photography, or, in the case of the XKCD map, produced using computer monitors.
 
-*** Debates in Color Categories and Nomenclature
+**** Debates in Color Categories and Nomenclature
 If we aim to quantify the occurrences of certain color concepts, and not just the color words, then there must be a way to categorize visual experiences. For instance, if we encounter the expression /light blue,/ we must be able to categorize this as a variety of /blue,/ or else we will need to process and compare thousands of variables, instead of just a few. Yet the epistemological problems of the color/word interchange make this a difficult task. To begin with, since we are dealing with spectra, the boundaries of these categories are not well-defined. But the very existence of the categories themselves should not be assumed, either. While, to a painter or interior designer, the differences between /ecru/ and /eggshell/ may be crucial, these words may not be in the working vocabularies of some novelists. I say "working" here because they might be recognizable, and even familiar, to a writer, but they might not be the operative metaphors he or she chooses when describing a scene, or allowing a literary persona to describe it. So the color spectrum of a writer's idiolect is always a subset of his or her dialect.
 
-For instance, we might consider /light blue/ to be a subcategory of /blue,/ since the word /blue/ is contained within it. However, is /pink/ necessarily its own category, or is it simply a shade of red? And if so, is /light pink/ a subcategory of /pink/ or of /red/? We might categorize these colors differently if we were to use the hues rather than their written expressions. 
+For instance, we might consider /light blue/ to be a subcategory of /blue,/ since the word /blue/ is contained within it. However, is /pink/ necessarily its own category, or is it simply a shade of red? And if so, is /light pink/ a subcategory of /pink/ or of /red/? We might categorize these colors differently if we were to use the hues rather than their written expressions.
 
 We might look to other languages to see how these concepts are expressed, and learn about our own by comparison. Some languages lack a monolexemic term for /pink/, and others still have additional /pink/-like lexemes in other hue spectra. The Russian language, for instance, has the color-categories, or monolexemic color terms, /синий/ [sínij], usually translated as "blue" or "dark blue," and /Голубо́й/ [golubój] which we might gloss as "light blue," or "sky blue." The image-based color mapping model, described below, predicts similar, but not identical colors for these English and Russian words, as well as their most common French translations:
 
@@ -545,7 +564,7 @@ On the other side of the debate, usually termed universalism, is an influential 
 #+NAME: eq:berlinKay
 $$[\substack{white \\ black }] < [red] < [\substack{green \\ yellow}] < [blue] < [brown] < [\substack{purple \\ pink \\ orange \\ grey}]$$
 
-Berlin and Kay see this sequence as a linguistic evolution in more than one sense—a dangerous term, in that it suggests a linear progression of simple to complex languages. The reasons they give for this are "increasing technological and cultural advancement" among the languages they compare. By way of explanation, they suppose that, 
+Berlin and Kay see this sequence as a linguistic evolution in more than one sense—a dangerous term, in that it suggests a linear progression of simple to complex languages. The reasons they give for this are "increasing technological and cultural advancement" among the languages they compare. By way of explanation, they suppose that,
 
 #+BEGIN_QUOTE
 ... to a group whose members have frequent occasion to contrast fine shades of leaf color and who possess no dyed fabrics, color-coded electrical wires, and so forth, it may not be worthwhile to rote-learn labels for gross perceptual discriminations such as green/blue, despite the psychophysical salience of such contrasts. [cite:berlin1991basic 16]
@@ -555,7 +574,7 @@ While the /contrasts/ might have a physical basis, their linguistic categories d
 
 I take no sides in this debate, but present it as evidence of the bond between language and perception. While there are few hard-line Whorfians remaining in linguistics, or universalists, both camps seem to agree that there are exceptions pulling at their theoretical sweaters, and colors are frequently the axis along which that pulling happens.
 
-*** Is blood red?
+**** Is blood red?
 :LOGBOOK:
 CLOCK: [2020-09-21 lun 14:59]--[2020-09-21 lun 14:59] =>  0:00
 :END:
@@ -572,7 +591,9 @@ In Thomas Hardy's /Tess of the d'Urbervilles/, Tess is described, in an early fo
 
 When /blood-red/ is understood as blushing, however, Berlin and Kay note that many words for red are derived from blood [cite:berlin1991basic 38]. Yet this is not always the color of external, disembodied blood, which we have already established is more akin to brown, but often refers to pinkish, blood-rich skin. In the Hungarian language, to choose one cross-cultural example, there are famously two words for red, /vörös/, derived from the word for /blood/, and /piros/, of similar etymology, but referring instead to, as Wierzbicka posits, "the color of blood inside a person's body (visible sometimes in an open wound and in a person's 'red' face)" [cite:wierzbicka2006semantics].  A /red face,/ Wierzbicka suggests, is not an attempt at accurately describing the color of someone's face, but only that it has become more pink, i.e., taken on a more reddish hue than before. The red in question, then, is more of a reference to the /concept/ of red, via /blood/ and /blood-red/, than to the color phenomenon itself.
 
-This red—again, not really the color red, but the concept—is the same red of rouge, the cosmetic used to emulate blushing, and whose name is derived from the French word for /red/. Rouge itself is often not red, but a somewhat reddish, pinkish, or purplish tint of another color. Max Beerbohm famously sings the praises of rouge, as a symbol of colorfulness and artifice, in an 1894 polemic in the inaugural issue of the short-lived but highly influential aestheticist journal bearing the name of another bright color: /The Yellow Book/. "The Pervasion of Rouge," originally titled "A Defence of Cosmetics," declares the end of the Victorian era, and thus "sancta simplicitas," which we might interpret as a restricted color palette [cite:BeardsleyYellowBook1894 75]. Queen Victoria would not die, taking her eponymous era with her, for another seven years, but this declaration is an important herald of the "bright modernity" to come, as Blasszczyk and Spiekermann term it [cite:blaszczykBrightModernityColor2017].
+This red—again, not really the color red, but the concept—is the same red of rouge, the cosmetic used to emulate blushing, and whose name is derived from the French word for /red/. Rouge itself is often not red, but a somewhat reddish, pinkish, or purplish tint of another color.
+
+# Max Beerbohm famously sings the praises of rouge, as a symbol of colorfulness and artifice, in an 1894 polemic in the inaugural issue of the short-lived but highly influential aestheticist journal bearing the name of another bright color: /The Yellow Book/. "The Pervasion of Rouge," originally titled "A Defence of Cosmetics," declares the end of the Victorian era, and thus "sancta simplicitas," which we might interpret as a restricted color palette [cite:BeardsleyYellowBook1894 75]. Queen Victoria would not die, taking her eponymous era with her, for another seven years, but this declaration is an important herald of the "bright modernity" to come, as Blasszczyk and Spiekermann term it [cite:blaszczykBrightModernityColor2017].
 
 # TODO: Bright modernity
 
@@ -588,7 +609,7 @@ Similarly, when we read /red hair/, are we imagining red? The persistence of the
 
 I want to reiterate here that these difficulties of textual color are not, as they may seem, merely background linguistic components of a literary art that is unconscious of them. Rather, they are fundamental to the process of literary description. Some writers are more explicit than others about these optical mechanics. But the modernist writers I choose to study the deepest in this chapter foreground color epistemologies in a way that, while it may not be a /new/ literary device, is stronger, and brighter, and more variegated than before.
 
-*** The wine-dark sea
+**** The wine-dark sea
 
 Among the writers that deal most explicitly with color is James Joyce, an author I return to frequently. The first scene of /Ulysses/ introduces a motif that recurs throughout the novel: the color of the sea. There, Buck Mulligan is gazing out onto the Irish sea from the crenellated parapets of Martello tower, in Sandycove, south of Dublin, and musing at once irreverently and reverently:
 
@@ -637,7 +658,7 @@ Here, Stephen's poetically free-associating imagination conjures a nighttime sea
 
 What's important to recall here is that this purple is closer to how the sea /appears/ than how it is /categorized/. Again, conventional associations have it that the sea is blue, and that blood is red, and that red wine is of course red, but to read Homeric descriptions of the sea and blood and wine as purple, we are more reminded of the perceptual phenomenon than the linguistic category. And that, I argue, is a strong force in the literary description of this period.
 
-* Imagining Texts: Aggregating Color Mappings
+** Imagining Texts: Aggregating Color Mappings
 
 So far, we have encoded color mappings $CM$, which feed into color inference models $M$, which in turn feed into named entity recognition models $NER$, as illustrated in [@fig:flowchart] below.
 
@@ -658,7 +679,7 @@ So far, we have encoded color mappings $CM$, which feed into color inference mod
 
 I now derive the model's best guesses for color spans in a number of corpora, while collecting metadata: the title and author of the text, its publication date, its category or library subject heading, and a number of other data. I then use these models to infer color information about large collections of texts, according to groups of that metadata.
 
-** How does color change across literary history?
+*** How does color change across literary history?
 
 In Virginia Woolf's meta-essay, "The Decay of Essay Writing," she claims that her moment in history "has painted itself more faithfully than any other in a myriad of clever and conscientious though not supremely great works of fiction; it has tried seriously to liven the faded colours of bygone ages" [cite:woolf2009selected]. While she does not use "colours" exclusively in its literal sense, there is a pervasive sense that modernity is brighter, and more colorful, than the previous age. This is the thesis of Blaszcyk and Spiekermann's /Bright Modernity/, which shows how, owing to various material factors including the newly widespread availability of synthetic pigments, early twentieth century culture was much more colorful—literally—than that of the previous century [cite:blaszczykBrightModernityColor2017]. The first of my analyses here puts this hypothesis to the test, inferring colors from $C_{PG}$, in order to answer the question of whether twentieth century writers are more colorful, or more descriptive, than their predecessors.
 
@@ -670,7 +691,7 @@ Using an author's date of birth as a proxy for date of publication is not ideal,
 
 In both cases, we can see an obvious trend: British fiction and poetry becomes more colorful over this literary period.
 
-** Which subjects and genres are most colorful?
+*** Which subjects and genres are most colorful?
 
 It would make quick work of this study if it turned out that almost all highly colorful works in this corpus come from a single genre, like /painters' romances/. So by grouping these text by subject or genre, I can begin to see trends among colorful texts. I first examine correlations between texts' Library of Congress Subject Headings, which are metadata values present across $C_{PG}$, and the number of different unique colors the model detects. This is not measuring the number of colors, but their breadth: the creativity with which writers relate their visual domains. [@Tbl:lcsh-colors] below shows this correlation.
 
@@ -742,7 +763,7 @@ Lyric is concerned neither with the impingement of the past nor with anticipatio
 
 Of course, writers of juvenile literature are not themselves children, but are writing to, and from, this state of mind. This is a state which attempts to convey the awe of early visual experiences. Before the names, purposes, and dangers of our immediate surroundings are known to us, they are first colors, sensations.
 
-** Which texts are the most colorful?
+*** Which texts are the most colorful?
 
 This observation about juvenile literature becomes apparent, too, at the level of the individual work. [@Tbl:positiveOutliers] below shows the total proportions of color expressions, if the text is more than two standard deviations away from the mean. I've annotated this list with some genres, where they are unambiguous. Many of these are childrens' stories, and are full of bright colors and unfiltered perceptions. Many are collections of folk tales, some of which are for children. Padraic Colum's are adapted from Irish folk tales, along with many of Lord Dunsany's, and those alone account for five of the works on this list: both of these Irish writers were in some way involved in the Irish literary revival. Those works, and many others here, also belong, bibliographically, to the /fantasy/ genre, in which highly imaginative, fantastic creatures or settings would need to be described. Many other works in this list involve travel of some sort (although that is perhaps an unsurprising trait of British literature of the early twentieth century). Travel to especially distant places overseas, whether real or imaginary, would also require thick description. Some of Katherine Mansfield's stories are travel narratives in a different sense: although she writes about New Zealand as a native, she writes about it from England, and from a position of imagining something fictional happening in a very distant place.
 
@@ -774,14 +795,14 @@ This observation about juvenile literature becomes apparent, too, at the level o
 
 Note that most of these are post 1910, and in fact, the mean year is 1910. Put differently, of the four decades' of fiction seen here, from the 1880s to the early 1920s (where this corpus, for copyright reasons, stops), the last full decade is the one which contains the most positive outliers.
 
-** Which authors are the most colorful?
+*** Which authors are the most colorful?
 
-In generating the list in [@tbl:authors] below, I attempted to control for what seem like genre signals. Although not strictly childrens' works, Padraic Column, Lord Dunsany write tales, folklore and fairy tales, whose colorfulness seem to be skewing the results. So here I improve my genre categorizer described above, by further categorizing all works with the LCSH /fairy tales/ as juvenile (even though, strictly speaking, this isn't necessarily true). 
+In generating the list in [@tbl:authors] below, I attempted to control for what seem like genre signals. Although not strictly childrens' works, Padraic Column, Lord Dunsany write tales, folklore and fairy tales, whose colorfulness seem to be skewing the results. So here I improve my genre categorizer described above, by further categorizing all works with the LCSH /fairy tales/ as juvenile (even though, strictly speaking, this isn't necessarily true).
 
-Still, though, the list remains very similar to the individual title list above. The Irish tale-writers and folklorists Padraic Colum and Lord Dunsany are joined by another, Donn Byrne. Stella Benson, another fantasy novelist whose /Living Alone/ is a fairy-tale novel, appears here, too, alongside Ouida, also a writer of juvenile fiction. Yet these are the works of these writers which are /not/ classified as juvenile fiction, which suggests that their writing style has been affected in some way by their elsewhere writing for children.  
+Still, though, the list remains very similar to the individual title list above. The Irish tale-writers and folklorists Padraic Colum and Lord Dunsany are joined by another, Donn Byrne. Stella Benson, another fantasy novelist whose /Living Alone/ is a fairy-tale novel, appears here, too, alongside Ouida, also a writer of juvenile fiction. Yet these are the works of these writers which are /not/ classified as juvenile fiction, which suggests that their writing style has been affected in some way by their elsewhere writing for children.
 
 
-#+CAPTION: Color Proportions, Fiction: Sorted by Author 
+#+CAPTION: Color Proportions, Fiction: Sorted by Author
 #+LABEL: tbl:authors
 | author               | proportion of color words |
 |----------------------+---------------------------|
@@ -799,7 +820,7 @@ Still, though, the list remains very similar to the individual title list above.
 | Yates, Dornford      |                  0.001921 |
 
 
-** Which colors are the most prominent?
+*** Which colors are the most prominent?
 
 One of the first questions I asked of this data set was simply: what is the most common color in British literature of this period? This was, surprisingly, one of the most difficult questions to calculate, and necessitated the color categorizaton engine described above, since colors like /light green/ needed to be counted as /green/, and colors like /sky/ needed to be counted as /blue/. I hypothesized that the most common color here would be red, for its brightness, or green, for its ubiquity in flora. But I was very surprised to see that the most common colors are actually /black/ and /white/. This is especially true once you keep in mind that not many other colors are descendants of the /black/ and /white/ categories: /off-white/ is not very common in fiction, and neither are various other blacks. Grays belong to their own categories. So what could be causing this literary /chiaroscuro/?
 
@@ -811,7 +832,7 @@ Astoundingly, the color ranking shown below in [@fig:genres] follows the Berlin 
 
 # TODO: across narrative time
 
-** Imagining individual texts
+*** Imagining individual texts
 
 Zooming in to the level of an individual text will allow us to see how color, and description, operate within the narrative arc of a single work. Virginia Woolf's /To the Lighthouse/ is a perfect text for examining the role of color, since not only is it very colorful, but deals explicity with color perception. This is a novel that treats raw color perception, and raw sensation—as opposed to conventionally linguistic color writing—as transformative. On one of the first pages, we hear Mrs. Ramsay muse that "any turn in the wheel of sensation has the power to crystallise and transfix the moment upon which its gloom or radiance rests" [cite:woolfLighthouse 3]. On the one hand, as a novel that deals with an artist and painting, this is an extreme example of the phenomenon I'm outlining in this chapter, but on the other, this is also the best example. Let's start with how the novel treats painting, and its relation to its subject:
 
@@ -850,11 +871,11 @@ The novel ends just as colorfully as it started, and with an appropriate image. 
 
 # TODO: Color compounds in /Portrait/
 
-** Next Steps
+*** Next Steps
 
 Having seen ways in which color operates in description, ways which are analogous to, if not caused by, retinal cones, we now turn to those aspects of visual experience which are aligned with retinal rods: shapes, bodies, and forms. As in the retina, these categories are not mutually exclusive, but complement each other.
 
-* What makes modernist literature colorful?
+* Results and discussion: what makes modernist literature colorful?
 
 Let's skip ahead to the results of the experiment. Here is the distribution of images and colors in the narrative time of the novels of this period.
 
@@ -864,16 +885,7 @@ The beginnings and the ends of the novels of this period are by far the most col
 
 Some of these factors are generic: effects of the parent novel genre, the subject genre (romances, fantasies, /Bildungsromane/), or the audience (children's literature). They are also writerly modes or techniques which perform those genres.
 
-*** Descriptive scene-setting
-- Generic invocations
-
-Novels prime their readers to imagine by presenting them with visual descriptions.
-
-
-[Draw on criticism of description]
-
-[Description section goes here]
-
+** Genre
 *** /Bildung/ and portraits
 A defining genre of the novels of this period is the /Bildungsroman/, a genre which Franco Moretti famously calls a "symbol" of modernity, in that modernity itself is a kind of society-level youth, self-mythologizing [cite:moretti00 4].
 
@@ -920,4 +932,32 @@ Katherine Mullin notes that the heightened sensory detail of young Stephen's nar
 
 *** Prose poetry
 Modernist novels are famous for their formal subversions.
+** Medium
+** Style
+*** Descriptive scene-setting
+- Generic invocations
+
+Novels prime their readers to imagine by presenting them with visual descriptions.
+
+[Draw on criticism of description]
+
+[Description section goes here]
+
+Among the most striking ocularities of literary description, and more broadly of any narrative, are pauses to convey the hue of that what is before the describer's imagination. /Pauses/ because description is a dilation of extradiegetic time. /Before/ in that the described, if it has hue, is in focus, in the center of the describer's field of vision.
+
+
+To describe is to settle one's gaze in a field, and at the same time, to move it linearly and programmatically across that field. It is always selective, and it always refracts. Description of hue is among the most concentrated subroutines of that process, since the creation of textual color from a mental image involves digitization: approximative translation from an analog, linear system (a spectrum) to a digital, discrete system (a word). This process is so deeply involved with our language/thought apparatus, and so charged with epistemological problems, that it is the perennial subject of linguistics, neuroscience, and psychology. But rather than explore the phenomenon of textual color theoretically, I will take the opposite approach, and model the imaginative process in reverse, and in aggregate.
+
+Modeling is a statistical mimesis. Given observable qualities of a subject—in our case, a text, or a corpus of texts—a model imitates those qualities, in order to study the subject's behavior under unobserved circumstances. In modeling a hurricane, a meterologist not only becomes capable of predicting that hurricane's path, albeit with some margin of error, but, by studying the model's error, learns further nuances of the system he or she is studying. To model literature is not to discover how Virginia Woolf would have written about the 2020 coronavirus epidemic—although that sort of prediction is possible—it's to understand the small swirls of rainwater that compose the greater phenomenon we know as the hurricane.
+
+I am motivated here, both by large questions about literary history, and smaller, more specialized ones about individual texts. Big ones include: Does literary writing get more colorful with time? (It does.) What are the dominant colors of this period's literature? (White and black.) and, Which genres are the most colorful? (Love stories.) But smaller questions have to do with the way color words operate syntactically, how they operate within description, and how their semiologies warp the reader's imagination. When Woolf describes a set of curtains as "mustard-coloured," or when Joyce describes a man's eyes as "nocoloured," how and why do those color choices do more work than their superficial significations? How, precisely, are color words used differently in poetry and fiction? These questions are inseparable from the way they are modeled. In many cases, modeling them is what /generates/ the questions. In others, the model is, at least partially, the answer to these questions. It is with that in mind that I invite you to join me in my process of creating this model of imagination—an imagination machine—where each decision in the algorithmic design, however mathematical, probes at the workings of color in text.
+
+A Critique of the Narration / Description Dichotomy Before we begin our experiment, it is necessary to discuss the textual structure in which representations of hue are typically found: literary description. Although textual color has its own behaviors and properties, the conditions of description shape how color operates in text. By /description/ here I am discussing a very particular writerly process which linearizes and descretizes visual information: that which transforms imaginable material into words, and arranges those words into lines. Exactly what may be identified as description, and what its role and import in literature may be, has been a matter of some debate. One of the more hotly contested works is an essay by Georg Lukács, titled "Narrate or Describe?", the central dichotomy of which is apparent from the title [cite:lukacs2005]. Lukács contrasts writers such as Flaubert and Zola, whom he calls "descriptive," with writers like Tolstoy whom he claims use a more "narrative," action-oriented style. The descriptive style Lukács is quick to dismiss. Of descriptive details in Flaubert's /Madame Bovary/, he writes:
+
+#+BEGIN_QUOTE
+to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization." (115)
+#+END_QUOTE
+
+He later asserts that description "lacks humanity," in that "its transformation of men into still lives is only the artistic manifestation of its inhumanity." (140). I join the many later critics who have written about Lukács's essay in disagreeing with him, but since they critics have done this so thoroughly, I won't bother to do so here [cite:love2010close; cite:marcus2016building]. My refutation is much more radical: I question the distinction between narrative and description at the root of Lukács's argument. There do exist some aspects of fiction that have no descriptive function, of course—they may not be imagined, and thus they convey no images. But nearly everything else in fiction does describe. The opposite is nearly true, as well: there exist very few elements in a story that are purely descriptive, and serve no role in furthering the plot, fleshing out the characters, or providing a scene which is inextricable from, and indespensible to, plot and character. In other words, to narrate is to describe. Any text may be description if it contains a visual component (strong description) or may be imagined (weak description), and this includes the "epic artistry" Lukács sees in Tolstoy, and his "recounting of the vicissitudes of human beings" (111). Since, is not the visual experience one such vicissitude? This is about more than just a distinction between the stylistic pastoral and epic, though, where description recounts in minute detail because it has the bourgeois leisure of a shepherd, and narration practically presents the facts, with military precision. Description is not essentially static, even though it often is. The proof is simply that action can be, and is, imagined in the same way as a still-life. Furthermore, description's linearity makes it /a priori/ dynamic. To explain this further, I'll use a well-known metaphor from physics: the color spectrum. Although there do exist areas on a color spectrum where we could identify certain colors—spots at which one could point, and nine out of ten English speakers would call it /red/–if these same people were asked to draw a line that definitively separates red from pink, or red from blue, there would be ten very different answers. The same is true of description and narration: they exist along a spectrum, and overlap with each other considerably. It is in that sense that we could say that the distinction isn't real at all. This is a crucial context for understanding textual color. At first glance, and according to Lukács's followers, color is probably the one element of fiction most superfluous to the story, and thus the work's reason for being. But what I argue is that colors in text are not simply signifiers of their position on the visible spectrum, but are the material out of which the text is created.
+
 * Works Cited
