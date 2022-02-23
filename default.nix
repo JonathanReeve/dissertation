@@ -4,8 +4,10 @@ let
   # TODO
   # pandoc-sidenote = 
   ghc = pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
+          haskell-language-server
           lucid clay shake regex-compat text-regex-replace with-utf8
           pandoc pandoc-citeproc pandoc-crossref #pandoc-sidenote
+          warp wai-app-static # Dev webserver
         ]);
 in
 pkgs.stdenv.mkDerivation {

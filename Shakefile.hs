@@ -7,11 +7,14 @@ import Data.Text.ICU (regex)
 import qualified Data.Text.IO as TIO
 import qualified Data.Text.ICU.Replace as TR
 
+-- Server stuff
+import Network.Wai.Application.Static (defaultFileServerSettings, ssListing, staticApp)
+import qualified Network.Wai.Handler.Warp as Warp
+import WaiAppStatic.Types (StaticSettings)
+
 import Main.Utf8 (withUtf8)
-
 import Lucid (renderToFile)
-
-import Template
+import Template ( pageHtml )
 
 opts = shakeOptions { shakeFiles    = ".shake/" }
 
@@ -29,69 +32,24 @@ readFileText text = need [text] >> liftIO (TIO.readFile text)
 
 main :: IO ()
 main = withUtf8 $ shakeArgs opts $ do
-    want ["02-history/ch-2.pdf" ]
-   -- , "02-history/ch-2.docx"]
+    want [ "index.html"
+         , "02-history/ch-2.html"
+         , "04-colors/ch-4.html"
+         ]
 
-    phony "clean" $ do
-        removeFilesAfter "02-history" ["/*.log",
-                                      "/*.out",
-                                      "/*.tex",
-                                      "/*.toc",
-                                      "/*.run.xml",
-                                      "/*.aux",
-                                      "/*.bbl",
-                                      "/*.bcf",
-                                      "/*.blg",
-                                      "/references.bib"]
+    -- To serve the generated files (useful for previewing),
+    -- run `shake serve`.
+    phony "serve" $
+      liftIO $ serve 8080 "."
 
     "//references.bib" %> \f -> do
         let source = "/home/jon/Dokumentujo/Papers/library.bib"
         need [source]
         cmd "cp" source f
 
-    "02-history/ch-2.tex" %> \f -> do
-        deps <- images
-        let source = "02-history/ch-2.org"
-            template = "templates/chapter.tex"
-            bib = "references.bib"
-            csl = "templates/modern-language-association.csl"
-        need ([ source, template, csl, bib ] ++ deps)
-        contents <- readFileText source
-        let replaced = T.unpack $ replaceCites contents
-        cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
-                                       "--template", template,
-                                       "--standalone",
-                                       "--biblatex",
-                                       "--bibliography", bib,
-                                       "-o", f
-                                       ]
-
-    -- Do this using --bibtex instead
-    "02-history/ch-2.pdf" %> \f -> do
-        let dir = Cwd "02-history"
-        let source = "ch-2"
-        let bibliography = "references.bib"
-        need [ "02-history/ch-2.tex", "02-history/references.bib" ]
-        -- cmd_ dir "tectonic" "ch-2.tex"
-        cmd_ dir "xelatex" source
-        cmd_ dir "biber" source
-        cmd_ dir "xelatex" source
-        cmd_ dir "xelatex" source
-
-    "02-history/ch-2.docx" %> \f -> do
-        let source = "ch-2.tex"
-            bib = "02-history/references.bib"
-            csl = "../templates/modern-language-association.csl"
-        need [ "02-history/ch-2.tex" ]
-        cmd_ (Cwd "02-history") "pandoc" [ source,
-                                           "-f", "latex",
-                                           "--standalone",
-                                           "--toc",
-                                           "--bibliography", bib,
-                                           "--csl", csl,
-                                           "--filter", "pandoc-citeproc",
-                                           "-o", "ch-2.docx"
-                                         ]
+    "templates/template.html" %> \f -> do
+        need ["Template.hs"]
+        liftIO $ renderToFile f pageHtml
 
     "index.html" %> \f -> do
         let source = "index.org"
@@ -106,25 +64,21 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "-o", f
                                        ]
 
-    "04-colors/ch-4.html" %> \f -> do
+    let bib = "references.bib"
+        csl = "templates/modern-language-association.csl"
+        template = "templates/template.html"
+
+    "02-history/ch-2.html" %> \f -> do
         deps <- images
-        let source = "04-colors/ch-4.org"
-            template = "templates/template.html"
-            bib = "references.bib"
-            csl = "templates/modern-language-association.csl"
-            filters = [ "templates/PandocSidenote.hs"
-                      , "templates/hex-filter.hs"
-                      ]
-        need ([ source, template, csl, bib ] ++ deps ++ filters)
-        -- need ([ source ] ++ deps)
+        let source = "02-history/ch-2.org"
+        need ([ source, template, csl, bib ] ++ deps)
         contents <- readFileText source
         let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
-                                       "--reference-location=block",
-                                       "--toc",
                                        "--section-divs",
+                                       "--reference-location=block",
                                        "--csl=" ++ csl,
                                        "--variable=autoSectionLabels:true",
                                        "--metadata=tblPrefix:table",
@@ -137,34 +91,48 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "-o", f
                                        ]
 
-    "04-colors/ch-4.pdf" %> \f -> do
+    "04-colors/ch-4.html" %> \f -> do
         deps <- images
         let source = "04-colors/ch-4.org"
-            template = "templates/template.html"
-            bib = "references.bib"
-            csl = "templates/modern-language-association.csl"
             filters = [ "templates/PandocSidenote.hs"
                       , "templates/hex-filter.hs"
                       ]
         need ([ source, template, csl, bib ] ++ deps ++ filters)
-        -- need ([ source ] ++ deps)
         contents <- readFileText source
         let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
+                                       "--section-divs",
                                        "--reference-location=block",
-                                       "--toc",
                                        "--csl=" ++ csl,
                                        "--variable=autoSectionLabels:true",
                                        "--metadata=tblPrefix:table",
+                                       "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
+                                       "--filter=templates/hex-filter.hs",
+                                       "--mathjax",
                                        "--bibliography", bib,
-                                       "--pdf-engine", "lualatex",
                                        "-o", f
                                        ]
 
-    "templates/template.html" %> \f -> do
-        need ["Template.hs"]
-        liftIO $ renderToFile f pageHtml
+-- | WAI Settings suited for serving statically generated websites.
+staticSiteServerSettings :: FilePath -> StaticSettings
+staticSiteServerSettings root =
+  defaultSettings
+    -- Disable directory listings
+    { ssListing = Nothing }
+  where
+    defaultSettings = defaultFileServerSettings root
+
+-- | Run a HTTP server to serve a directory of static files
+serve ::
+  -- | Port number to bind to
+  Int ->
+  -- | Directory to serve.
+  FilePath ->
+  IO ()
+serve port path = do
+  putStrLn $ "Serving at http://localhost:" <> show port
+  Warp.run port $ staticApp $ staticSiteServerSettings path

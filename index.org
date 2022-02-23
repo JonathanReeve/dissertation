@@ -1,15 +1,13 @@
-#+title: Visual imaginations of British literature, 1880-1930
+#+title: The Eye of Modernism: Visual Imaginations of British literature, 1880-1930
 #+author: Jonathan Reeve
 
 **WARNING**: This is a preview of my dissertation, and represents its current state, which is very much a work-in-progress.
 
 - Introduction
 - Chapter 1: Cognitive Criticism and Reading Psychology
-- [[./02-history/02.html][Chapter 2: Imagisms (History)]]
-- Chapter 3: Procedures, Formalisms (Methods)
+- [[./02-history/ch-2.html][Chapter 2: Imagisms (History)]]
 - [[./04-colors/ch-4.html][Chapter 4: Descriptions of Color]]
 - Chapter 5: Descriptions of Shapes, Bodies, Objects
-- Chapter 6: Descriptions of Spaces
 
 ** Word counts
 
@@ -19,8 +17,8 @@ wc -w 02-history/ch-2.org 04-colors/ch-4.org
 
 #+RESULTS:
 | 13084 | 02-history/ch-2.org |
-| 21117 | 04-colors/ch-4.org  |
-| 34201 | total               |
+| 23219 | 04-colors/ch-4.org  |
+| 36303 | total               |
 
 ** Revision
 
@@ -31,11 +29,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| 1db65a1  | 2022-02-03 | 20:41:29 | -500 |
-| b989a62  | 2021-03-31 | 16:47:27 | -400 |
-| df5a69e  | 2021-03-28 | 15:08:09 | -400 |
-| ad31429  | 2021-03-27 | 15:16:12 | -400 |
-| 1.0e+INF | 2021-03-27 | 15:14:47 | -400 |
+| cc79b3c | 2022-02-18 | 15:48:44 | -500 |
+| 31f500f | 2022-02-10 | 22:23:55 | -500 |
+| 692dc67 | 2022-02-10 | 22:22:37 | -500 |
+| d4c9e73 | 2022-02-10 | 22:21:28 | -500 |
+| 1db65a1 | 2022-02-03 | 20:41:29 | -500 |
 
 ** Source Code and Source Text
 

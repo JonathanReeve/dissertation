@@ -5,6 +5,35 @@ module Template where
 -- | Template for dissertation HTML
 
 import Lucid as L
+    ( Html,
+      article_,
+      async_,
+      body_,
+      charset_,
+      class_,
+      content_,
+      details_,
+      footer_,
+      h1_,
+      head_,
+      header_,
+      href_,
+      html_,
+      id_,
+      link_,
+      main_,
+      meta_,
+      name_,
+      nav_,
+      p_,
+      rel_,
+      role_,
+      script_,
+      src_,
+      style_,
+      summary_,
+      title_,
+      type_ )
 import Clay as C
 import Data.Text.Lazy as T
 import Data.Text.Lazy.IO as TIO
@@ -61,8 +90,11 @@ css = do
     backgroundColor "#cbcbf7"
     sym borderRadius (px 10)
     sym padding (em 0.8)
-
-
+  "div.references" ? do
+    lineHeight (unitless 2)
+    marginLeft (em 1)
+    textIndent (indent (em (-1)))
+    fontSize (C.rem 1.4)
 
 marginAll m = margin m m m m
 paddingAll p = padding p p p p
