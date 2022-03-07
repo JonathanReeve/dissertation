@@ -1,12 +1,11 @@
-{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc883" }:
+{ nixpkgs ? import <nixpkgs> {} }:
 let
   inherit (nixpkgs) pkgs;
-  # TODO
-  # pandoc-sidenote = 
   ghc = pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
           haskell-language-server
           lucid clay shake regex-compat text-regex-replace with-utf8
-          pandoc pandoc-citeproc pandoc-crossref #pandoc-sidenote
+          pandoc
+          pandoc-crossref
           warp wai-app-static # Dev webserver
         ]);
 in

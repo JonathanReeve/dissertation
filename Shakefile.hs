@@ -52,6 +52,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         let source = "index.org"
             template = "templates/template.html"
         need ([ source, template ])
+        -- TODO: run all org blocks from index.org, to automatically update word counts and so on.
         contents <- liftIO $ readFile source
         cmd (Stdin contents) "pandoc" ["-f", "org+smart",
                                        "--template", template,
