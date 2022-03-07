@@ -13,7 +13,6 @@ makeColor :: Inline -> Inline
 makeColor (Str s) = RawInline "html" (replaceHexes s)
 makeColor x = x
 
-
--- Replace org style citation syntax with @-syntax for Pandoc
+-- Replace hex colors that look like #FFA8B5 with background colors to make them more readable.
 replaceHexes :: Text -> Text
 replaceHexes = TR.replace "(#[0-9a-fA-F]{6})" "<span class=\"colorBlock\" style=\"background-color: $1;\">$1</span>"

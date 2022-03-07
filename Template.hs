@@ -35,6 +35,25 @@ import Lucid as L
       title_,
       type_ )
 import Clay as C
+    ( margin,
+      rem,
+      fontSize,
+      indent,
+      textIndent,
+      marginLeft,
+      px,
+      borderRadius,
+      backgroundColor,
+      padding,
+      sym,
+      td,
+      em,
+      unitless,
+      lineHeight,
+      (?),
+      p,
+      render,
+      Css )
 import Data.Text.Lazy as T
 import Data.Text.Lazy.IO as TIO
 
