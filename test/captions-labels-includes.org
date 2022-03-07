@@ -1,0 +1,15 @@
+And this is a paragragh.
+
+#+CAPTION: Color map vector comparison
+#+LABEL: fig:cm-vecs
+[[./images/cm-vec-comparison.png]]
+
+See [@fig:cm-vecs]
+
+When projected in HSL space, certain patterns emerge, as well, as shown in [@fig:lighthouseHSL].
+
+#+INCLUDE: "04-colors/deep-imaginer/image-based/lighthouse-hsl-visualization.html" export html
+
+#+CAPTION: Color map vector comparison2
+#+LABEL: fig:lighthouseHSL
+[[./images/dummy.png]]

@@ -1,0 +1,10 @@
+#+title: The very persistent foo of bar
+
+$$ math $$ {#eq:label}
+
+See [@eq:label] for more details.
+
+#+LABEL: label2
+$$ math $$
+
+See [@eq:label2] for the second label.

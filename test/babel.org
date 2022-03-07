@@ -1,0 +1,15 @@
+#+TITLE: Babel
+
+#+begin_src python :results output :exports results
+for i in range(5):
+    print("hello world!")
+#+end_src
+
+#+RESULTS:
+: hello world!
+: hello world!
+: hello world!
+: hello world!
+: hello world!
+
+Something
