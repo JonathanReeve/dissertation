@@ -1,0 +1,15 @@
+* Dissertation
+This is my dissertation, a quantitative investigation of description in British literature, tentatively titled: "The Eye of Modernism: Visual Imaginations of British literature, 1880-1930."
+
+[[https://github.com/JonathanReeve/dissertation-prospectus/blob/master/reeve-prospectus.pdf][Read a more thorough description in my dissertation prospectus, here.]]
+
+** Building
+I don't know why you would want to build a copy of my dissertation from scratch, but if you did:
+
+Building requires the Nix package manager. Install nix, and then run:
+
+#+begin_src sh
+nix-shell --run shake
+#+end_src
+
+(Unless you have ~direnv~ installed, in which case you can just run ~direnv allow~ once, and then ~shake~.)
