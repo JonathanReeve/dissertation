@@ -179,6 +179,8 @@ The color had been a favorite one with Rosetti, Morris and Burne-Jones who had f
 
 Yellow had become a symbol of modernity. The journal at the center of this trend was /The Yellow Book/, a short-lived illustrated quarterly journal of literature and art, published between 1894–1897. The bright yellow color of its cover recalled the look of racy French novels of the day, which were similarly bound [cite:@wilde00_oscar_wilde xx]. It was also the color of avant-garde literature, and edgy books of all stripes [cite:@doran13_yellow 3].
 
+Sunflowers.
+
 Holbrook Jackson describes its impact thus: "Nothing like /The Yellow Book/ had been seen before. It was newness /in excelsis/: novelty naked and unashamed. People were puzzled and shocked and delighted, and yellow became the colour of the hour, the symbol of the time-spirit. It was associated with all that was /bizarre/ and queer in art and life, with all that was outrageourly modern" [cite:@jackson1914eighteen 54].
 
 Its inaugural issue began with a sketch by the pre-Raphaelite painter Frederich Leighton, the Henry James story "The Death of the Lion" which parodies literary canonization, and an essay by Max Beerbohm titled "A Defense of Cosmetics." Beerbohm's essay begins, "it is useless to protest. Artifice must queen it once more in the town"  [cite:@BeardsleyYellowBook1894 65].
@@ -188,13 +190,28 @@ Rouge, of course, is the cosmetic product, usually worn on the lips and face, an
 For Beerbohm, and many other contributors to /The Yellow Book/, modernity meant bright colors: yellow books, yellow paintings, and red lipstick. "The era of rouge is upon us," he wrote. "The good combinations of line and colour are nearly numberless ... No monotony will be" [cite:@BeardsleyYellowBook1894 78].
 
 /The Yellow Book/ was, depending on who you talk to, either a "Victorian precursor" to the modernist "little magazine," or one of its first exemplars.
+
 ** Materialities
+
+Part of what explains the explosion of color at the end of the 19th Century was that there simply were more colors in everyday life: commercial products of all sorts depended on dyes and pigments to make them commercially viable: clothes, interior and exterior paints, and other products all required pigments. Yet in the 19th Century not all pigments were equal: some were much more expensive to produce than others. Historically, one of the most expensive pigments to make was Tyrian Purple (#66023C). Although the hue could be approximated from mixtures of other dyes, it would never be as brilliant or as long-lasting as when it was made from its traditional source: a sercretion from rare sea snails. Thus, it was termed "royal purple," as royalty were usually the only ones who could afford it.
+
+This changed in 1856, when William Henry Perkin accidentally synthesized a substance from coal tar he would later call mauveine, the first aniline dye. Once mauvine entered mass production, the color /mauve/ took on
+
+Nabokov's favorite color
+
+One of the most famous stories invol
 - Mauvine
 - Crinoline dyes
 
+Bright modernity. Color revolution.
+
+This is the thesis of Blaszcyk and Spiekermann's /Bright Modernity/, which shows how, owing to various material factors including the newly widespread availability of synthetic pigments, early twentieth century culture was much more colorful—literally—than that of the previous century [cite:blaszczykBrightModernityColor2017].
+
+Light was another factor. Our current understanding of color
+
 * The Experiment: Modeling Imagination
 
-The literary-historical trends in textual color, shown in [@fig:pubdateRegression] and [@fig:year-dob-smooth] I arrive at through a complex process of modeling visual information, a process which bears discussion, since it highlights many of the problems with chromatic description which modernism continually wrestles with.
+The literary-historical trends in textual color, shown in [@fig:pubdateRegression] and [@fig:proportionsByDOB] I arrive at through a complex process of modeling visual information, a process which bears discussion, since it highlights many of the problems with chromatic description which modernism continually wrestles with.
 
 The first issue in the design of the algorithm is to be able to map a word to a color. That is, given a word like /blue/, the program should be able to imagine #0000FF.
 
@@ -268,9 +285,9 @@ This mapping presents a useful counterpoint to commercial mappings such as that 
 | $CM_X$       | XKCD Color Survey                                 |                954 |  2012 |      3 |
 
 
-To compare the tendencies, or biases, of these color maps, and to better know how to balance them, I calculate the average of their 300-dimensional GloVe vectors (Stanford's Global vectors for word representation, trained on English-language websites), and derived the cosine similarity to the vectors of a number of seed words:
+To compare the tendencies, or biases, of these color maps, and to better know how to balance them, I calculate the average of their 300-dimensional GloVe vectors (Stanford's Global vectors for word representation, trained on English-language websites), and derived the cosine similarity to the vectors of a number of seed words, shown in [eq:cosineSimilarity]:
 
-$$similarity(\vec{A}, \vec{B}) = \frac{ \vec{A} \cdot \vec{B} }{\|\vec{A}\| \times \| \vec{B} \|}$$
+$$similarity(\vec{A}, \vec{B}) = \frac{ \vec{A} \cdot \vec{B} }{\|\vec{A}\| \times \| \vec{B} \|}$$ {#eq:cosineSimilarity}
 
 Or, the dot product of the two vectors, normalized by the product of their two $L_2$ (Euclidean) norms.
 
@@ -346,7 +363,7 @@ The resulting data structure looks like [@fig:grass-proximity-model-pie], for /g
 There are plenty of colors, like /blue/, which are uncommon for grass (except for the Appalachain style of music). Yet these other colors represent only a small proportion of that for /green/. I blend these colors together, by finding their hex values in $CM_X$, and then averaging their RGB values, after weighting them, so given RGB values $R_i ... R_j$, $G_i$, and $B_i$, and weights $W_i$, averaging them proportionally:
 
 #+LABEL: eq:blendingAlgorithm
-$$blended RGB =  \frac{ W \sum_{R_i}^{R_j} }{ \sum_{i}^{j} W } , \frac{ W \sum_{G_i}^{G_j} }{ \sum_{i}^{j} W} , \frac{ W \sum_{B_i}^{B_j} }{\sum_{i}^{j} W}$$
+$$blended RGB =  \frac{ W \sum_{R_i}^{R_j} }{ \sum_{i}^{j} W } , \frac{ W \sum_{G_i}^{G_j} }{ \sum_{i}^{j} W} , \frac{ W \sum_{B_i}^{B_j} }{\sum_{i}^{j} W}$$ {#eq:blendingAlgorithm}
 
 Or, for all colors, weighting and summing each component of RGB space, and then dividing by the total sum of all weights. For /grass/ above, we get #6b9c56, a pleasantly grassy color.
 
@@ -518,8 +535,7 @@ One side of this debate calls into question the basis of fundamental colors, ins
 
 On the other side of the debate, usually termed universalism, is an influential study of cross-linguistic color terminology, in a 1969 monograph of Brent Berlin and Paul Kay, /Basic Color Terms: Their Universality and Evolution/ [cite:berlin1991basic 2]. In particular, they name eleven categories: "/white, black, red, green, yellow, blue, brown, purple, pink, orange, and grey/," and suggest that these categories develop in roughly that order—that all languages have words for white and black, that if they have a third, it is red, and so on. Graphically, Berlin and Kay present this sequence as in the following diagram, where languages that have /red/ must have both /white/ and /black/, and so on. There is no order between /yellow/ and /green/, but languages that develop a word for green would then develop a word for yellow, and vice-versa.
 
-#+NAME: eq:berlinKay
-$$[\substack{white \\ black }] < [red] < [\substack{green \\ yellow}] < [blue] < [brown] < [\substack{purple \\ pink \\ orange \\ grey}]$$
+$$[\substack{white \\ black }] < [red] < [\substack{green \\ yellow}] < [blue] < [brown] < [\substack{purple \\ pink \\ orange \\ grey}]$$ {#eq:berlinKay}
 
 Berlin and Kay see this sequence as a linguistic evolution in more than one sense—a dangerous term, in that it suggests a linear progression of simple to complex languages. The reasons they give for this are "increasing technological and cultural advancement" among the languages they compare. By way of explanation, they suppose that,
 
@@ -638,7 +654,8 @@ I now derive the model's best guesses for color spans in a number of corpora, wh
 
 *** How does color change across literary history?
 
-In Virginia Woolf's meta-essay, "The Decay of Essay Writing," she claims that her moment in history "has painted itself more faithfully than any other in a myriad of clever and conscientious though not supremely great works of fiction; it has tried seriously to liven the faded colours of bygone ages" [cite:woolf2009selected]. While she does not use "colours" exclusively in its literal sense, there is a pervasive sense that modernity is brighter, and more colorful, than the previous age. This is the thesis of Blaszcyk and Spiekermann's /Bright Modernity/, which shows how, owing to various material factors including the newly widespread availability of synthetic pigments, early twentieth century culture was much more colorful—literally—than that of the previous century [cite:blaszczykBrightModernityColor2017]. The first of my analyses here puts this hypothesis to the test, inferring colors from $C_{PG}$, in order to answer the question of whether twentieth century writers are more colorful, or more descriptive, than their predecessors.
+In Virginia Woolf's meta-essay, "The Decay of Essay Writing," she claims that her moment in history "has painted itself more faithfully than any other in a myriad of clever and conscientious though not supremely great works of fiction; it has tried seriously to liven the faded colours of bygone ages" [cite:woolf2009selected]. While she does not use "colours" exclusively in its literal sense, there is a pervasive sense that modernity is brighter, and more colorful, than the previous age.
+The first of my analyses here puts this hypothesis to the test, inferring colors from $C_{PG}$, in order to answer the question of whether twentieth century writers are more colorful, or more descriptive, than their predecessors.
 
 One of the drawbacks of $C_{PG}$ is that original publication dates are missing from the metadata. It would be best to compare the dates of original publication for each text with the total proportions of color spans found in each. But even though I was able to fill in much of this data, by querying several book metadata APIs, much of it remained missing. The author's date of birth is present in $C_{PG}$, however, and so [@fig:proportionsByDOB] shows the correlation between the author's date of birth and the total proportions of detected color expressions in that author's text.
 

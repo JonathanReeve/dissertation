@@ -1,5 +1,6 @@
 -- Shakefile Stuff
 import Development.Shake
+import Development.Shake.FilePath
 import Text.Regex
 import qualified Data.Text as T
 import Data.Text.ICU (regex)
@@ -16,42 +17,38 @@ import Main.Utf8 (withUtf8)
 import Lucid (renderToFile)
 import Template ( pageHtml )
 
-opts = shakeOptions { shakeFiles    = ".shake/" }
-
-images = getDirectoryFiles "" [ "02-history/images/*" ]
-
 -- Replace org style citation syntax with @-syntax for Pandoc.
 -- Why? cite: syntax is much better supported in emacs, and allows me to see
 -- at a glance which citations aren't working, and to jump to their entries.
 -- But cite: syntax isn't that well supported in Pandoc, so we use Pandoc's
 -- "Berkeley-style" citation syntax, instead.
 replaceCites :: T.Text -> T.Text
-replaceCites text = TR.replaceAll (regex [] (T.pack "cite:@?")) (TR.rstring "@") text
+replaceCites = TR.replaceAll (regex [] (T.pack "cite:@?")) (TR.rstring "@")
 
 readFileText text = need [text] >> liftIO (TIO.readFile text)
 
 main :: IO ()
-main = withUtf8 $ shakeArgs opts $ do
-    want [ "index.html"
-         , "02-history/ch-2.html"
-         , "04-colors/ch-4.html"
+main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
+    want [ "dest/index.html"
+         , "dest/02-history/ch-2.html"
+         , "dest/04-colors/ch-4.html"
          ]
 
     -- To serve the generated files (useful for previewing),
     -- run `shake serve`.
     phony "serve" $
-      liftIO $ serve 8080 "."
+      liftIO $ serve 8080 "dest/"
 
     "//references.bib" %> \f -> do
         let source = "/home/jon/Dokumentujo/Papers/library.bib"
         need [source]
-        cmd "cp" source f
+        copyFileChanged source f
 
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
         liftIO $ renderToFile f pageHtml
 
-    "index.html" %> \f -> do
+    "dest/index.html" %> \f -> do
         let source = "index.org"
             template = "templates/template.html"
         need ([ source, template ])
@@ -68,10 +65,16 @@ main = withUtf8 $ shakeArgs opts $ do
         csl = "templates/modern-language-association.csl"
         template = "templates/template.html"
 
-    "02-history/ch-2.html" %> \f -> do
-        deps <- images
+    ["dest//images/*", "dest//includes/*"] |%> \f -> do
+        let source = dropDirectory1 f
+        need [source]
+        copyFileChanged source f
+
+    "dest/02-history/ch-2.html" %> \f -> do
+        images <- getDirectoryFiles "" [ "02-history/images/*" ]
+        let outImages = map ("dest/" <>) images
         let source = "02-history/ch-2.org"
-        need ([ source, template, csl, bib ] ++ deps)
+        need ([ source, template, csl, bib ] ++ outImages)
         contents <- readFileText source
         let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
@@ -91,13 +94,16 @@ main = withUtf8 $ shakeArgs opts $ do
                                        "-o", f
                                        ]
 
-    "04-colors/ch-4.html" %> \f -> do
-        deps <- images
+    "dest/04-colors/ch-4.html" %> \f -> do
+        images <- getDirectoryFiles "" [ "04-colors/images/*" ]
+        let outImages = map ("dest/" <>) images
+        includes <- getDirectoryFiles "" [ "04-colors/includes/*" ]
+        let outIncludes = map ("dest/" <>) includes
         let source = "04-colors/ch-4.org"
             filters = [ "templates/PandocSidenote.hs"
                       , "templates/hex-filter.hs"
                       ]
-        need ([ source, template, csl, bib ] ++ deps ++ filters)
+        need ([ source, template, csl, bib ] ++ outImages ++ outIncludes ++ filters)
         contents <- readFileText source
         let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",

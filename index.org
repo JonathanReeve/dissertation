@@ -16,11 +16,11 @@ wc -w 02-history/ch-2.org 04-colors/ch-4.org
 #+END_SRC
 
 #+RESULTS:
-| 13084 | 02-history/ch-2.org |
-| 23219 | 04-colors/ch-4.org  |
-| 36303 | total               |
+| 13088 | 02-history/ch-2.org |
+| 24550 | 04-colors/ch-4.org  |
+| 37638 | total               |
 
-** Revision
+** Revisions
 
 Here are the last few revisions, of which this draft is the latest:
 
@@ -29,11 +29,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
+| 5d4adeb | 2022-03-06 | 23:09:34 | -500 |
+| 136eb91 | 2022-03-06 | 23:08:22 | -500 |
+| 67cd978 | 2022-02-23 | 00:06:39 | -500 |
 | cc79b3c | 2022-02-18 | 15:48:44 | -500 |
 | 31f500f | 2022-02-10 | 22:23:55 | -500 |
-| 692dc67 | 2022-02-10 | 22:22:37 | -500 |
-| d4c9e73 | 2022-02-10 | 22:21:28 | -500 |
-| 1db65a1 | 2022-02-03 | 20:41:29 | -500 |
 
 ** Source Code and Source Text
 
