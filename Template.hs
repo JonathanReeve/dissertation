@@ -68,8 +68,8 @@ pageHtml = do
       title_ "$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$"
       style_ [ L.type_ "text/css" ] $ C.render css
       -- Print styling argh
-      link_ [ rel_ "stylesheet", href_ "/templates/tufte-css/latex.css" ]
-      link_ [ rel_ "stylesheet", href_ "/templates/tufte-css/tufte.css" ]
+      link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/latex.css" ]
+      link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/tufte.css" ]
       script_ [ src_ "/04-colors/includes/plotly-latest.min.js" ] T.empty
       style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
     body_ $ do
@@ -88,7 +88,7 @@ pageHtml = do
             "$endif$ \n"
           "$body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
       footer_ $ do
-        script_ [ id_ "MathJax-script", async_ "",  src_ "includes/MathJax/es5/tex-chtml.js" ] T.empty
+        script_ [ id_ "MathJax-script", async_ "",  src_ "/assets/mathjax.js" ] T.empty
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
         -- Flowcharts
         script_ [ src_ "includes/mermaid.min.js" ] T.empty

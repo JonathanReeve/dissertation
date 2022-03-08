@@ -44,6 +44,11 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     --     need [source]
     --     copyFileChanged source f
 
+    "dest/assets//*" %> \f -> do
+        let source = dropDirectory1 f
+        need [source]
+        copyFileChanged source f
+
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
         liftIO $ renderToFile f pageHtml
@@ -66,16 +71,18 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         csl = "templates/modern-language-association.csl"
         template = "templates/template.html"
 
-    ["dest//images/*", "dest//includes/*"] |%> \f -> do
+    ["dest//images/*", "dest//includes/*", "dest/assets/**"] |%> \f -> do
         let source = dropDirectory1 f
         need [source]
         copyFileChanged source f
 
     "dest/02-history/ch-2.html" %> \f -> do
-        images <- getDirectoryFiles "" [ "02-history/images/*" ]
-        let outImages = map ("dest/" <>) images
+        assets <- getDirectoryFiles "" [ "02-history/images/*"
+                                       , "assets//*"
+                                       ]
+        let outAssets = map ("dest/" <>) assets
         let source = "02-history/ch-2.org"
-        need ([ source, template, csl, bib ] ++ outImages)
+        need ([ source, template, csl, bib ] ++ outAssets)
         contents <- readFileText source
         let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
@@ -96,15 +103,18 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        ]
 
     "dest/04-colors/ch-4.html" %> \f -> do
-        images <- getDirectoryFiles "" [ "04-colors/images/*" ]
-        let outImages = map ("dest/" <>) images
-        includes <- getDirectoryFiles "" [ "04-colors/includes/*" ]
-        let outIncludes = map ("dest/" <>) includes
+        assets <- getDirectoryFiles "" [ "04-colors/images/*"
+                                       , "assets/*/*"
+                                       , "04-colors/includes/*" ]
+        liftIO $ print assets
+        let outAssets = map ("dest/" <>) assets
         let source = "04-colors/ch-4.org"
             filters = [ "templates/PandocSidenote.hs"
                       , "templates/hex-filter.hs"
                       ]
-        need ([ source, template, csl, bib ] ++ outImages ++ outIncludes ++ filters)
+        need ([ source, template, csl, bib ]
+              ++ outAssets
+              ++ filters)
         contents <- readFileText source
         let replaced = T.unpack $ replaceCites contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",

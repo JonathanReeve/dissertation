@@ -74,8 +74,7 @@ Finally, I move to the /how/: how, precisely, color appears in text, how it hide
 Since color is such a well-discussed phenomenon, which spans so many academic disciplines—philosophy, psychology, physics, history, and literature, for starters—it will also help to say what this study is /not/.
  - I won't spend much time dealing with the symbolism of color, since it is so subjective, and conceptually slippery. Dozens, if not hundreds of books, exist, mostly for the popular market, which explain the symbolic connotations of given colors: /green/ means /envy/, /blue/ is cool, /yellow/ is for Aquarius, and /purple/ for Capricorn.
 
-
-* Background: the Fin-de-Siecle Explosion of Color
+* Modernity's Explosion of Color
 
 There is a significant increase in the proportions of color words, color expressions, and colorful objects, in British literature at the turn of the twentieth century. [@Fig:pubdateRegression] illustrates this literary-historical increase in colorfulness, showing these proportions over time, for several hundred novels and collections of poetry, according to their publication dates. Each point in this figure represents a book, and the upward-sloping line represents their linear regression. This trend is exaggerated once we take into account generational differences in writing styles, and view these proportions by the authors' dates of birth, as in [@fig:proportionsByDOB].
 
