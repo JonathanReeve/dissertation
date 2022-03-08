@@ -10,6 +10,3 @@
 [submodule "04-colors/custom-ngrams-search"]
 	path = 04-colors/custom-ngrams-search
 	url = https://github.com/JonathanReeve/custom-ngrams-search.git
-[submodule "assets/MathJax"]
-	path = assets/MathJax
-	url = git@github.com:mathjax/MathJax.git
