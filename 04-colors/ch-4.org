@@ -8,33 +8,6 @@
 This document is originally formatted in HTML, and contains interactive charts, hyperlinks, and other dynamic elements. If you are reading this in another document format (PDF, DOCX, or paper), you are missing these dynamic elements. Please visit [[https://dissertation.jonreeve.com/][dissertation.jonreeve.com]] for the canonical edition of this text, and [[https://github.com/JonathanReeve/dissertation][github.com/JonathanReeve/dissertation]] for its source code.
 #+end_box
 
-* Background
-
-The dissertation from which this chapter is excerpted explores ocularities and imaginations of British literature, from about 1880 to about 1940.
-
-In Chapter 1, I introduce key terms in the theoretical framework I'm using, and the sense in which I use them, which is narrower than usual:
-
- - imagination :: a cognitive process that translates text to mental images
- - image :: a group of words that causes or prompts imagination, and therefore mental images
-
-I argue that description may be understood through imagination, and that imagination may be understood by way of the eye.
-
-Chapter 2 examines literary theory and science contemporary to this period, to begin to build the case for how the eye is an apt metaphor for understanding this literature.
-
-Chapter 3 deals with methodology, and answers questions such as:
-
- - Why computational analysis?
- - How does computational/quantiative analysis fit in with other critical traditions?
- - Isn't this all an oversimplification? (It isn't.)
-
-Chapters 4-6 each deal with an aspect of vision:
-
- - Chapter 4 treats hue, photopic vision, (retinal cones)
- - Chapter 5 treats shape, scotopic vision, (retinal rods)
- - Ch. 6. treats space, proprioception (I might end up cutting this one)
-
-This is Chapter 4.
-
 * Introduction
 
 Modernity is colorful. And literature of the modern, or modernist period, is brighter, more colorful, and more visual than ever before: 19.5% more colorful, to be precise. By the early 20th century, the fiction and poetry published in Britain, and by extension in much of the Anglophone world, contains more color words, more colorful objects, and more descriptions of color phenomena than it ever did, and measurably so. Color and visual phenomena become not only modes of description, ancillary (as some would have it) to plot and narrative arc, but themselves become themes, subject matter, and organizing principles.

@@ -44,11 +44,6 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     --     need [source]
     --     copyFileChanged source f
 
-    "dest/assets//*" %> \f -> do
-        let source = dropDirectory1 f
-        need [source]
-        copyFileChanged source f
-
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
         liftIO $ renderToFile f pageHtml
@@ -92,6 +87,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--reference-location=block",
                                        "--csl=" ++ csl,
                                        "--variable=autoSectionLabels:true",
+                                       "--toc",
                                        "--metadata=tblPrefix:table",
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
@@ -123,6 +119,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--section-divs",
                                        "--reference-location=block",
                                        "--csl=" ++ csl,
+                                       "--toc",
                                        "--variable=autoSectionLabels:true",
                                        "--metadata=tblPrefix:table",
                                        "--filter=templates/PandocSidenote.hs",

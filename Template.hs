@@ -88,7 +88,10 @@ pageHtml = do
             "$endif$ \n"
           "$body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
       footer_ $ do
-        script_ [ id_ "MathJax-script", async_ "",  src_ "/assets/mathjax.js" ] T.empty
+        script_ [ src_ "https://polyfill.io/v3/polyfill.min.js?features=es6" ] T.empty
+        script_ [ id_ "MathJax-script"
+                , async_ ""
+                , src_ "/assets/MathJax/es5/tex-mml-chtml.js" ] T.empty
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
         -- Flowcharts
         script_ [ src_ "includes/mermaid.min.js" ] T.empty
