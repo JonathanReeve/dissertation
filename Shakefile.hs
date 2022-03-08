@@ -39,10 +39,10 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     phony "serve" $
       liftIO $ serve 8080 "dest/"
 
-    "//references.bib" %> \f -> do
-        let source = "/home/jon/Dokumentujo/Papers/library.bib"
-        need [source]
-        copyFileChanged source f
+    -- "references.bib" %> \f -> do
+    --     let source = "/home/jon/Dokumentujo/Papers/library.bib"
+    --     need [source]
+    --     copyFileChanged source f
 
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
