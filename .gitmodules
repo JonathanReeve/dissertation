@@ -13,6 +13,3 @@
 [submodule "assets/MathJax"]
 	path = assets/MathJax
 	url = git@github.com:mathjax/MathJax.git
-[submodule "assets/tufte-css"]
-	path = assets/tufte-css
-	url = https://github.com/edwardtufte/tufte-css.git
