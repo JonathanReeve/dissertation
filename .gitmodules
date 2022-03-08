@@ -1,12 +1,15 @@
 [submodule "dissertation-prospectus"]
 	path = dissertation-prospectus
 	url = https://github.com/JonathanReeve/dissertation-prospectus.git
+[submodule "assets/tufte-css"]
+	path = assets/tufte-css
+	url = https://github.com/edwardtufte/tufte-css.git
+[submodule "assets/MathJax"]
+	path = assets/MathJax
+	url = https://github.com/mathjax/MathJax.git
 [submodule "04-colors/color-word-analyzer"]
 	path = 04-colors/color-word-analyzer
 	url = https://github.com/JonathanReeve/color-word-analyzer.git
-[submodule "templates/tufte-css"]
-	path = templates/tufte-css
-	url = https://github.com/edwardtufte/tufte-css
 [submodule "04-colors/custom-ngrams-search"]
 	path = 04-colors/custom-ngrams-search
 	url = https://github.com/JonathanReeve/custom-ngrams-search.git
