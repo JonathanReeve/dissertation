@@ -17,23 +17,23 @@ wc -w 02-history/ch-2.org 04-colors/ch-4.org
 
 #+RESULTS:
 | 13088 | 02-history/ch-2.org |
-| 24550 | 04-colors/ch-4.org  |
-| 37638 | total               |
+| 24345 | 04-colors/ch-4.org  |
+| 37433 | total               |
 
 ** Revisions
 
-Here are the last few revisions, of which this draft is the latest:
+Here are the last few revisions, of which this draft is the latest.
 
 #+BEGIN_SRC sh :exports results
 git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| 5d4adeb | 2022-03-06 | 23:09:34 | -500 |
-| 136eb91 | 2022-03-06 | 23:08:22 | -500 |
-| 67cd978 | 2022-02-23 | 00:06:39 | -500 |
-| cc79b3c | 2022-02-18 | 15:48:44 | -500 |
-| 31f500f | 2022-02-10 | 22:23:55 | -500 |
+| 2bdad03  | 2022-03-08 | 17:35:20 | -500 |
+| fead36d  | 2022-03-08 | 17:30:50 | -500 |
+| 1.0e+INF | 2022-03-08 | 17:29:29 | -500 |
+| 3f112ac  | 2022-03-08 | 17:16:00 | -500 |
+| 42a9e3e  | 2022-03-08 | 17:15:23 | -500 |
 
 ** Source Code and Source Text
 

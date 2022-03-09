@@ -2,58 +2,10 @@
 
 module Template where
 
--- | Template for dissertation HTML
+-- Template for dissertation HTML
 
 import Lucid as L
-    ( Html,
-      article_,
-      async_,
-      body_,
-      charset_,
-      class_,
-      content_,
-      details_,
-      footer_,
-      h1_,
-      head_,
-      header_,
-      href_,
-      html_,
-      id_,
-      link_,
-      main_,
-      meta_,
-      name_,
-      nav_,
-      p_,
-      rel_,
-      role_,
-      script_,
-      src_,
-      style_,
-      summary_,
-      title_,
-      type_ )
 import Clay as C
-    ( margin,
-      rem,
-      fontSize,
-      indent,
-      textIndent,
-      marginLeft,
-      px,
-      borderRadius,
-      backgroundColor,
-      padding,
-      sym,
-      td,
-      em,
-      unitless,
-      lineHeight,
-      (?),
-      p,
-      render,
-      Css )
 import Data.Text.Lazy as T
 import Data.Text.Lazy.IO as TIO
 
@@ -89,9 +41,8 @@ pageHtml = do
           "$body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
       footer_ $ do
         script_ [ src_ "https://polyfill.io/v3/polyfill.min.js?features=es6" ] T.empty
-        script_ [ id_ "MathJax-script"
-                , async_ ""
-                , src_ "/assets/MathJax/es5/tex-mml-chtml.js" ] T.empty
+        script_ [ id_ "MathJax-script" , async_ ""
+                , src_ "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" ] T.empty
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
         -- Flowcharts
         script_ [ src_ "includes/mermaid.min.js" ] T.empty

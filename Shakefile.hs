@@ -3,7 +3,7 @@ import Development.Shake
 import Development.Shake.FilePath
 import Text.Regex
 import qualified Data.Text as T
-import Data.Text.ICU (regex)
+import Data.Text.ICU (regex, Regex)
 -- import Data.Text.Lazy as TL
 import qualified Data.Text.IO as TIO
 import qualified Data.Text.ICU.Replace as TR
@@ -23,7 +23,9 @@ import Template ( pageHtml )
 -- But cite: syntax isn't that well supported in Pandoc, so we use Pandoc's
 -- "Berkeley-style" citation syntax, instead.
 replaceCites :: T.Text -> T.Text
-replaceCites = TR.replaceAll (regex [] (T.pack "cite:@?")) (TR.rstring "@")
+replaceCites = TR.replaceAll toReplace replacement where
+  toReplace = (regex [] (T.pack "cite:(-)?@?")) :: Data.Text.ICU.Regex
+  replacement = TR.rgroup 1 <> TR.rstring "@" :: TR.Replace 
 
 readFileText text = need [text] >> liftIO (TIO.readFile text)
 
@@ -121,6 +123,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--csl=" ++ csl,
                                        "--toc",
                                        "--variable=autoSectionLabels:true",
+                                       "--variable=linkReferences:true",
                                        "--metadata=tblPrefix:table",
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
