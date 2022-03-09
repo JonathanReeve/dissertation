@@ -1,0 +1,12 @@
+#+TITLE: Sections
+
+You gotta understand that [@sec:mySection] is the section. 
+
+A link to the section is [[#mySection]]. 
+
+* Section
+:PROPERTIES:
+:Custom_ID: sec:mySection
+:END:
+
+And another reference to [@Sec:mySection]

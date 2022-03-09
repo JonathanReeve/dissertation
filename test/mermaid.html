@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="mermaid">
+  graph LR
+      lay --- S[slopes of]
+      S --- grassland
+      grassland --- bright
+      grassland --- green
+      lay --- A[above them]
+  </div>
+  <script src="https://unpkg.com/mermaid@8.5.2/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize(
+        { startOnLoad: true, 
+          securityLevel: 'loose' // needed for html inlines
+        }
+    );
+  </script>
+</body>
+</html>
