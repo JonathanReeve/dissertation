@@ -56,10 +56,7 @@ in pkgs.python3.buildEnv.override rec {
       vega_datasets
       cherrypy
       dominate
-      # plotly
-      newPlotly
-      newCufflinks
-      # chart-studio
+      plotly
       jupyterlab # Dev
       ipywidgets # Required by Cufflinks
       colorlover
