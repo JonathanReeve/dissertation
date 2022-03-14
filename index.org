@@ -17,8 +17,8 @@ wc -w 02-history/ch-2.org 04-colors/ch-4.org
 
 #+RESULTS:
 | 13088 | 02-history/ch-2.org |
-| 25555 | 04-colors/ch-4.org  |
-| 38643 | total               |
+| 27468 | 04-colors/ch-4.org  |
+| 40556 | total               |
 
 ** Revisions
 
