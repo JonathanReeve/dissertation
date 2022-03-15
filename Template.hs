@@ -22,7 +22,7 @@ pageHtml = do
       -- Print styling argh
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/latex.css" ]
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/tufte.css" ]
-      script_ [ src_ "/04-colors/includes/plotly-latest.min.js" ] T.empty
+      script_ [ src_ "/03-colors/includes/plotly-latest.min.js" ] T.empty
       style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
     body_ $ do
       article_ $ do
@@ -59,17 +59,43 @@ css = do
     lineHeight (unitless 2)
   ".colorBlock" ? paddingAll (em 0.2)
   td ? sym padding (em 0.3)
+  figure ? do
+    textAlign C.center
+  -- Automatically enlarge images on hover
+  figure |> img # hover ? transform (scale 1.5 1.5)
+  figure |> figcaption ? do
+    maxWidth none
+    textAlign $ alignSide sideLeft
+  figure |> img ? do
+    maxHeight (em 30)
+  -- Info boxes, like the one at the top of the page.
   "div.box" ? do
     sym margin (em 1)
     backgroundColor "#cbcbf7"
     sym borderRadius (px 10)
     sym padding (em 0.8)
+    width (pct 50)
+    borderBottom solid (px 1) "#999"
+    borderLeft solid (px 1) "#999"
     -- Fix weird-looking white background in links in boxes
-    textShadow (px 0) (px 0) (px 0) "#000000"
+    "a" ? do
+      textShadow (px 0) (px 0) (px 0) "#000"
+  "div.line-block" ? do
+    marginLeft (em 2)
+    fontSize (C.rem 1.4)
+  -- Color-annotated block quotes.
   "div.annotated" ? do
-    backgroundColor "#999999"
+    -- We make this gray so that white text can appear on it.
+    backgroundColor "#ccc"
     sym borderRadius (px 10)
     sym padding (em 0.8)
+    fontSize (C.rem 1.4)
+    maxWidth (em 25)
+    marginLeft (em 2)
+    borderBottom solid (px 1) "#999"
+    borderLeft solid (px 1) "#999"
+    "a" ? do
+      textShadow (px 0) (px 0) (px 0) "#000"
   "div.references" ? do
     lineHeight (unitless 2)
     marginLeft (em 1)
