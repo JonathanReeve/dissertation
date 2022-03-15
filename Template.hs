@@ -60,7 +60,14 @@ css = do
   ".colorBlock" ? paddingAll (em 0.2)
   td ? sym padding (em 0.3)
   "div.box" ? do
+    sym margin (em 1)
     backgroundColor "#cbcbf7"
+    sym borderRadius (px 10)
+    sym padding (em 0.8)
+    -- Fix weird-looking white background in links in boxes
+    textShadow (px 0) (px 0) (px 0) "#000000"
+  "div.annotated" ? do
+    backgroundColor "#999999"
     sym borderRadius (px 10)
     sym padding (em 0.8)
   "div.references" ? do
@@ -68,6 +75,10 @@ css = do
     marginLeft (em 1)
     textIndent (indent (em (-1)))
     fontSize (C.rem 1.4)
+  details ? do
+    fontSize (C.rem 1.5)
+    margin (em 1) (em 0) (em 1) (em 0)
+
 
 marginAll m = margin m m m m
 paddingAll p = padding p p p p

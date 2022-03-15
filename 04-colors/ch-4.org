@@ -387,6 +387,8 @@ Maerz and Paul recognize that there is a wide gulf between those of their source
 
 I am inclined to disagree somewhat: if I were to guess, I'd imagine "elephant's breath," despite breath itself being achromatic, to be close to the gray of elephants, and "Westminster" to be a grayish, brickish color, like that used in the eponymous Abbey of London. /Folly/ is harder to imagine, but it likely wouldn't be a subdued beige.
 
+# TODO Add a page here
+
 I assign an identical weight to $CM_M$ as I do the manuals of Saccardo and Ridgway.
 
 *** $CM_P$ Pantone
@@ -395,7 +397,8 @@ The Pantone set, one of the most common among designers and artists today, conta
 
 To find these trends more systematically, I vectorized their color names with GloVe vectors, and then clustered them using the K-means clustering technique, using 6 clusters [Glove vectors are described in @pennington2014glove; see @jain2010 for a historical overview and summary of K-means]. The categories here are very human-legible. Categories 0-3 are natural metaphors of various sorts (flora, fauna, landscape features). Category 4 is mostly varieties of white, as well as other light colors. Category 5 is colors derived from food.
 
-#+BEGIN_EXAMPLE
+
+#+BEGIN_QUOTE
 Category 0: gardenia #f1e8df, dew #eeded1, ecru #f3dfca, delicacy #f5e3e2, icicle #dadcd0, twill #a79b82, gunmetal #5c5d5b, pewter #666564, sheepskin #dab58f, beige #d5ba98, tan #b69574, pinecone #61473b, ermine #836b4f, sepia #6b543e, linen #edd2c0, hazel #ae7250, silver #a2a2a1, russet #8f5f50, henna #7c423c, afterglow #f3e6c9
 
 Category 1: white-asparagus #e1dbc8, vanilla-ice #f0eada, cloud-cream #e6ddc5, vanilla-custard #f3e0be, almond-oil #f4efc1, banana-crepe #e7d3ad, italian-straw #e7d1a1, creme-brulee #dbccb5, powder-puff #f3e0d6, pearled-ivory #f0dfcc, cream-pink #f6e4d9, pastel-parchment #e5d9d3, hint-of-mint #d8e8e6, sprout-green #cbd7d2, winter-wheat #dfc09f, summer-melon #ead3ae, apricot-gelato #f5d7af, asparagus-green #d2cdb4, smoked-pearl #656466, chocolate-chip #685a4e
@@ -407,7 +410,7 @@ Category 3: egret #f3ece0, pristine #f2e8da, birch #ddd5c7, angora #dfd1bb, fog 
 Category 4: snow-white #f2f0eb, bright-white #f4f5f0, cloud-dancer #f0eee9, blanc-de-blanc #e7e9e7, whisper-white #ede6db, bone-white #d7d0c0, silver-birch #d2cfc4, antique-white #ede3d2, winter-white #f5ecd2, alabaster-gleam #f0debd, whitecap-gray #e0d5c6, white-swan #e4d7c5, sheer-pink #f6e5db, white-smoke #eddcc9, almost-mauve #e7dcd9, petal-pink #f2e2e0, bridal-blush #eee2dd, angel-wing #f3dfd7, star-white #efefe8, lily-white #e2e2da
 
 Category 5: marshmallow #f0eee4, vanilla #f4e1c1, rutabaga #ecddbe, tapioca #dccdbc, parchment #dfd1be, chamomile #e8d0a7, biscotti #dac7ab, alfalfa #b7b59f, coriander #938772, oatmeal #cbc3b4, goat #a89a91, drizzle #a09f9c, capers #695e4b, licorice #3a3536, caviar #292a2d, latte #c5a582, nougat #b69885, croissant #c4ab86, toffee #755139, shitake #736253
-#+END_EXAMPLE
+#+END_QUOTE
 
 I derive this color map from [[https://github.com/Margaret2/pantone-colors][a web-scraped dataset]], itself derived from [[https://www.pantone.com/][Pantone's own]] website, but assign half the weight of the previous manuals [cite:@pantone_2022]. This dataset nicely balances the scientific modes of the previous ones, yet is still highly subjective. Still, I include it in order to train the imagination algorithm to imagine more concrete color metaphor. Now, it may be able to imagine /moonbeam/ (#696156) and /skyway/ (#adbed3).
 
@@ -819,14 +822,86 @@ We now move to the results of the experiments which this model enables. I use th
 
 * Results and Discussion
 
-Why is modernism colorful?
+We have already seen, in [@fig:proportionsByDOB], the proportions of color in literature, of this period, according to the author's date of birth. Those proportions, when viewed according to the work's date of original publication, are similar, as shown in [@fig:proportionsByPubYear]. Overall, there is a steady rise in the use of color words, in fiction and poetry, from 1880–1920. Outliers here include the "yellow nineties," where the use of color expressions is unusually high, 1910, when "human character changed," and 1920. There is a sharp decline around 1914, around the time of the outbreak of the first world war, but these proportions continue to rise, after.
 
-** Genre and Subject: Moment, /Bildung/
+#+CAPTION: Color proportions in literature, by date of publication
+#+LABEL: fig:proportionsByPubYear
+[[./images/proportionsByPubYear.png]]
+
+** What are the most colorful texts?
+
+A closer look at some of the most colorful works reveals some useful trends. [@Tbl:positiveOutliers] below shows the total proportions of color expressions, if the text is more than two standard deviations away from the mean. I've annotated this list with some genres, where they are unambiguous. Many of these are childrens' stories, and are full of bright colors and unfiltered perceptions. Many are collections of folk tales, some of which are for children. Padraic Colum's are adapted from Irish folk tales, along with many of Lord Dunsany's, and those alone account for five of the works on this list: both of these Irish writers were in some way involved in the Irish literary revival. Those works, and many others here, also belong, bibliographically, to the /fantasy/ genre, in which highly imaginative, fantastic creatures or settings would need to be described. Many other works in this list involve travel of some sort (although that is perhaps an unsurprising trait of British literature of the early twentieth century). Travel to especially distant places overseas, whether real or imaginary, would also require thick description. Some of Katherine Mansfield's stories are travel narratives in a different sense: although she writes about New Zealand as a native, she writes about it from England, and from a position of imagining something fictional happening in a very distant place.
+
+
+#+CAPTION: Color Proportions, Fiction: Positive Outliers
+#+LABEL: tbl:positiveOutliers
+| Year | Title                                   | Author                 | Genres                   |   totals |
+|------+-----------------------------------------+------------------------+--------------------------+----------|
+| 1918 | The Boy Who Knew What the Birds Said    | Colum, Padraic         | Juvenile fantasy stories | 0.007085 |
+| 1910 | A Dreamer's Tale                        | Dunsany, Lord          | Fantasy stories          | 0.006036 |
+| 1921 | Monday or Tuesday                       | Woolf, Virginia        | Short stories            | 0.005861 |
+| 1915 | Fifty One Tales                         | Dunsany, Lord          | Fantasy tales            | 0.005699 |
+| 1922 | Jacob's Room                            | Woolf, Virginia        | Novel, character study   | 0.005434 |
+| 1908 | The Sword of Welleran and Other Stories | Dunsany, Lord          | Fantasy stories          | 0.005222 |
+| 1919 | Tales of Three Hemispheres              | Dunsany, Lord          | Tales                    | 0.004885 |
+| 1880 | Greene Fern Farm                        | Jefferies, Richard     |                          | 0.004771 |
+| 1922 | Captain Blood                           | Sabatini, Rafael       |                          | 0.004699 |
+| 1898 | The Tragedy of the Korosko              | Doyle, Arthur Conan    | Travel novel, colonial   | 0.004673 |
+| 1895 | The Second Jungle Book                  | Kipling, Rudyard       | Stories set in India     | 0.004575 |
+| 1922 | The Wind Bloweth                        | Byrne, Donn            | Sea romance novel        | 0.004568 |
+| 1919 | Mary Oliver, a Life                     | Sinclair, May          | Autobiog. novel          | 0.004566 |
+| 1922 | The Garden Party and Other Stories      | Mansfield, Katherine   | Stories                  | 0.004558 |
+| 1919 | Living Alone                            | Benson, Stella         |                          | 0.004509 |
+| 1922 | The Hawk of Egypt                       | Conquest, Joan         | Travel novel, Egypt      | 0.004494 |
+| 1887 | The Frozen Pirate                       | Russell, William Clark |                          | 0.004362 |
+| 1899 | Findelkind                              | Ouida                  |                          | 0.004227 |
+| 1918 | The Return of the Soldier               | West, Rebecca          | Novel                    | 0.004213 |
+| 1892 | The New Mistress                        | Fenn, George Manville  |                          | 0.004028 |
+
+Note that most of these are post 1910, and in fact, the mean year is 1910. Put differently, of the four decades' of fiction seen here, from the 1880s to the early 1920s (where this corpus, for copyright reasons, stops), the last full decade is the one which contains the most positive outliers.
+
+** Who are the most colorful writers?
+
+In generating the list in [@tbl:authors] below, I attempted to control for what seem like genre signals. Although not strictly childrens' works, Padraic Column, Lord Dunsany write tales, folklore and fairy tales, whose colorfulness seem to be skewing the results. So here I improve my genre categorizer described above, by further categorizing all works with the LCSH /fairy tales/ as juvenile (even though, strictly speaking, this isn't necessarily true).
+
+Still, though, the list remains very similar to the individual title list above. The Irish tale-writers and folklorists Padraic Colum and Lord Dunsany are joined by another, Donn Byrne. Stella Benson, another fantasy novelist whose /Living Alone/ is a fairy-tale novel, appears here, too, alongside Ouida, also a writer of juvenile fiction. Yet these are the works of these writers which are /not/ classified as juvenile fiction, which suggests that their writing style has been affected in some way by their elsewhere writing for children.
+
+#+CAPTION: Color Proportions, Fiction: Sorted by Author
+#+LABEL: tbl:authors
+| author               | proportion of color words |
+|----------------------+---------------------------|
+| Colum, Padraic       |                  0.003542 |
+| Dunsany, Lord        |                  0.002568 |
+| Byrne, Donn          |                  0.002284 |
+| Benson, Stella       |                  0.002255 |
+| Ouida                |                  0.002114 |
+| West, Rebecca        |                  0.002107 |
+| Housman, Clemence    |                  0.001984 |
+| Becke, Louis         |                  0.001973 |
+| Woolf, Virginia      |                  0.001958 |
+| Mansfield, Katherine |                  0.001956 |
+| Conquest, Joan       |                  0.001939 |
+| Yates, Dornford      |                  0.001921 |
+
+** Which colors are the most prominent?
+
+One of the first questions I asked of this data set was simply: what is the most common color in British literature of this period? This was, surprisingly, one of the most difficult questions to calculate, and necessitated the color categorizaton engine described above, since colors like /light green/ needed to be counted as /green/, and colors like /sky/ needed to be counted as /blue/. I hypothesized that the most common color here would be red, for its brightness, or green, for its ubiquity in flora. But I was very surprised to see that the most common colors are actually /black/ and /white/. This is especially true once you keep in mind that not many other colors are descendants of the /black/ and /white/ categories: /off-white/ is not very common in fiction, and neither are various other blacks. Grays belong to their own categories. So what could be causing this literary /chiaroscuro/?
+
+#+CAPTION: Box Plot of Individual Color Words
+#+NAME: fig:genres
+[[./images/color-box.png]]
+
+Astoundingly, the color ranking shown below in [@fig:genres] follows the Berlin and Kay hierarchy from [@eq:berlinKay]: white is the foremost, then black, then red, and so on. This adds some evidence to the universalist view of the primacy of certain colors. But again, my object here is not to settle any linguistic debates, but to understand more of how color operates in literature.
+
+# TODO: across narrative time
+
+** What makes modernism colorful?
+- Bildung, Impression, Distance, Ecstasy
+
+*** /Bildung/
 :PROPERTIES:
 :Custom_ID: genre
 :END:
-
-
 The genre and subject matter of a literary work has a strong influence on its color and brightness. There are obvious genres, like painters' novels, which deal directly with pigments, and so should be expected to contain lots of color words and color descriptions. But textual color is correlated with a number of other suprising genres, as well.
 
 A defining genre of the novels of this period is the /Bildungsroman/, a genre which Franco Moretti famously calls a "symbol" of modernity, in that modernity itself is a kind of society-level youth, self-mythologizing [cite:moretti00 4].
@@ -865,9 +940,24 @@ Love stories are colorful because time (/durée/ in Bergsonian formulation) is s
 
 #+INCLUDE: "04-colors/includes/av-excerpt.html" export html
 
-#+CAPTION: Excerpt from /Ann Veronica/, with color words highlighted as they are imagined by the model.
-#+LABEL: fig:avExcerpt
-[[./images/dummy.png]]
+#+BEGIN_QUOTE
+#+BEGIN_ANNOTATION
+#+BEGIN_HTML
+By this time Capes’ hair had bleached nearly <span style="color: #ffffff" class="color"> white,</span>  and his skin had become a skin of <span style="color: #e50000" class="color"> red </span> copper shot with <span style="color: #dbb40c" class="color"> gold.</span>  They were now both in a state of unprecedented physical fitness.
+
+And such skirts as Ann Veronica had had when she entered the valley of Saas were safely packed away in the hotel, and she wore a <span style="color: #ac7434" class="color"> leather </span> belt and loose knickerbockers and puttees--a costume that suited the fine, long lines of her limbs far better than any feminine walking-dress could do. Her complexion had resisted the snow-glare wonderfully; her skin had only deepened its natural warmth a little under the Alpine sun. She had pushed aside her <span style="color: #069af3" class="color"> azure </span> veil, taken off her snow-glasses, and sat smiling under her hand at the shining glories--the lit cornices, the <span style="color: #0343df" class="color"> blue </span> shadows, the softly rounded, enormous snow masses, the deep places full of quivering luminosity--of the Taschhorn and Dom. The <span style="color: #82cafc" class="color"> sky </span> was cloudless, effulgent <span style="color: #0343df" class="color"> blue.</span>
+
+Capes sat watching and admiring her, and then he fell praising the day and fortune and their love for each other.
+
+“Here we are,” he said, “shining through each other like light through a stained-glass window. With this air in our <span style="color: #770001" class="color"> blood,</span>  this sunlight soaking us.... Life is so good. Can it ever be so good again?”
+
+Ann Veronica put out a firm hand and squeezed his arm. “It’s very good,” she said. “It’s glorious good!”
+
+“Suppose now--look at this long snow-slope and then that <span style="color: #0343df" class="color"> blue </span> deep beyond--do you see that round pool of color in the <span style="color: #d6fffa" class="color"> ice-</span> -a thousand feet or more below? Yes? Well, think--we’ve got to go but ten steps and lie down and put our arms about each other. See? Down we should rush in a foam--in a cloud of snow--to flight and a dream. All the rest of our lives would be together then, Ann Veronica. Every moment. And no ill-chances.”
+#+END_HTML
+[cite:WellsAnnVeronica2015 56]
+#+END_ANNOTATION
+#+END_QUOTE
 
 It is ironic that Wells's slightly caricatured portrait of Peter, Ann Veronica's father, describes him reading "chiefly healthy light fiction with chromatic titles, The Red Sword, The Black Helmet, The Purple Robe, ... in order 'to distract his mind.'" [cite:WellsAnnVeronica2015 57], given that the novel is otherwise so colorful. In one scene, Manning professes his love to Ann Veronica by saying: "I want my life to be beaten gold just in order to make it a fitting setting for yours. ... Forgive me if a certain warmth creeps into my words! The Park is green and gray to-day, but I am glowing pink and gold. It is difficult to express these things" (252). Wells paints a very bright, colorful scene, in which the lover's pink skin is glowing with excitement, and his feelings—as shiny and as valuable as gold—emanate from him as if they were colors, and he were a source of light. This all contrasts with the "green and gray" of the inert vegetation against which it is set. Manning's apology that "it is difficult to express" this shows how this kind of color description is so often rooted in reaching for fresh, unconventional ways of relating one's visual experience.
 
@@ -905,77 +995,63 @@ Of course, writers of juvenile literature are not themselves children, but are w
 
 Milton Bradley argued that "color is one of the earliest subjects which should be taught in any education course," since "bright color is the ﬁrst thing to attract the infant’s eye, winning his notice before he pays any attention to form." [cite:@blaszczykBrightModernityColor2017 58].
 
-** Which texts are the most colorful?
+*** Impression(ism)s
 
-This observation about juvenile literature becomes apparent, too, at the level of the individual work. [@Tbl:positiveOutliers] below shows the total proportions of color expressions, if the text is more than two standard deviations away from the mean. I've annotated this list with some genres, where they are unambiguous. Many of these are childrens' stories, and are full of bright colors and unfiltered perceptions. Many are collections of folk tales, some of which are for children. Padraic Colum's are adapted from Irish folk tales, along with many of Lord Dunsany's, and those alone account for five of the works on this list: both of these Irish writers were in some way involved in the Irish literary revival. Those works, and many others here, also belong, bibliographically, to the /fantasy/ genre, in which highly imaginative, fantastic creatures or settings would need to be described. Many other works in this list involve travel of some sort (although that is perhaps an unsurprising trait of British literature of the early twentieth century). Travel to especially distant places overseas, whether real or imaginary, would also require thick description. Some of Katherine Mansfield's stories are travel narratives in a different sense: although she writes about New Zealand as a native, she writes about it from England, and from a position of imagining something fictional happening in a very distant place.
+Impressionism, the art movement born in 1870s Paris, was a revolutionary style in painting, more concerned with light, visual perception, and the interaction of color, than with strict representation. In fact, one story has it that Roland Rood, on a trip to Paris, found that his father's book, Ogden Rood's /Modern Chromatics/, was considered by many to be "the impressionists' Bible" [cite:@rossi19 24]. /Modern Chromatics: With Applications to Art and Industry/ describes a variety of color phenomena: the interaction of colors with each other and their environment, their reflection, their refraction by water, and their absorption by certain materials, to name a few. There is no history of Impressionism that does not describe its love affair with color—especially violet.
 
+As impressionism spread throughout the world, it began to appear in literature, as well. Critics began using the term /literary impressionism/ to describe literature, chiefly modernist, which dealt with sensory perceptions in a fashion analogous to that of the painters. Some of its first definitions explain it just in terms of the painting style. One of its earliest definitions, for example, is from Ferdinand Brunetière, in /Le roman naturaliste/: "nous pourrons définir déjà l'impressionnisme littéraire une transposition systématique des moyens d'expression d'un art, qui est l'art de peindre, dans le domaine d'une autre art, qui est l'art d'écrire" [cite:@brunetière1883roman 88].[fn::[We could already define literary impressionism as a systematic transposition from means of expression in one art, painting, into another art, the art of writing.]]
 
-#+CAPTION: Color Proportions, Fiction: Positive Outliers
-#+LABEL: tbl:positiveOutliers
-| Filename                                     | Author                 | Genres                   |   totals |
-|----------------------------------------------+------------------------+--------------------------+----------|
-| 1918-TheBoyWhoKnewWhatTheBirdsSaid-24493     | Colum, Padraic         | Juvenile fantasy stories | 0.007085 |
-| 1910-ADreamersTales-8129                     | Dunsany, Lord          | Fantasy stories          | 0.006036 |
-| 192156-MondayorTuesday-29220                 | Woolf, Virginia        | Short stories            | 0.005861 |
-| 1915-FiftyOneTales-7838                      | Dunsany, Lord          | Fantasy tales            | 0.005699 |
-| 1922-JacobsRoom-5670                         | Woolf, Virginia        | Novel, character study   | 0.005434 |
-| 1908-TheSwordofWelleranandOtherStories-10806 | Dunsany, Lord          | Fantasy stories          | 0.005222 |
-| 1919-TalesofThreeHemispheres-11440           | Dunsany, Lord          | Tales                    | 0.004885 |
-| 1880-GreeneFerneFarm-37046                   | Jefferies, Richard     |                          | 0.004771 |
-| 1922-CaptainBlood-1965                       | Sabatini, Rafael       |                          | 0.004699 |
-| 1898212-TheTragedyoftheKorosko-12555         | Doyle, Arthur Conan    | Travel novel, colonial   | 0.004673 |
-| 1895-TheSecondJungleBook-1937                | Kipling, Rudyard       | Stories set in India     | 0.004575 |
-| 1922-TheWindBloweth-21999                    | Byrne, Donn            | Sea romance novel        | 0.004568 |
-| 191911-MaryOlivieraLife-9366                 | Sinclair, May          | Autobiog. novel          | 0.004566 |
-| 1922-TheGardenPartyandOtherStories-1429      | Mansfield, Katherine   | Stories                  | 0.004558 |
-| 1919-LivingAlone-14907                       | Benson, Stella         |                          | 0.004509 |
-| 1922-TheHawkofEgypt-15721                    | Conquest, Joan         | Travel novel, Egypt      | 0.004494 |
-| 1887-TheFrozenPirate-22215                   | Russell, William Clark |                          | 0.004362 |
-| 1899-Findelkind-1367                         | Ouida                  |                          | 0.004227 |
-| 1918-TheReturnoftheSoldier-37189             | West, Rebecca          | Novel                    | 0.004213 |
-| 1892-TheNewMistressATale-32924               | Fenn, George Manville  |                          | 0.004028 |
+But by the time the style reaches Britain, /literary impressionism/ has departed from its analogue in painting. It has since been defined in a number of ways. Michael Winkler defines it thus:
 
-Note that most of these are post 1910, and in fact, the mean year is 1910. Put differently, of the four decades' of fiction seen here, from the 1880s to the early 1920s (where this corpus, for copyright reasons, stops), the last full decade is the one which contains the most positive outliers.
+#+BEGIN_QUOTE
+One of several stylistic tendencies that emerged during the 1880s from the decline of realistic writing and its reliance on the mimetic function of lit. ... Impressionism thus came to share a penchant for subtle nuances, refined perception, and the ornamental use of 'precious' images ... with poetic [[id:f7cb2702-c1f4-4d25-a895-0979356f4f10][Jugendstil]] and the decorative arts around 1900; its preference for the openness of allusive hints over conceptually fixed meaning and its fluid suggestion of atmosphere through a quick succession of sensory impressions were made possible at the expense of a clearly delineated world of concrete objects and have also be called 'neoromantic'. [cite:@winklerImpressionism 579–580]
+#+END_QUOTE
 
-** Which authors are the most colorful?
-:PROPERTIES:
-:Custom_ID: authors
-:END:
+This definition could certainly apply to a number of modernist writers. /Literary impressionism/ as a style or distinction came to be used, in the first decades of the twentieth century, of a litany of writers who deal with color, or the ocular. Rebecca Fowler's /Literary Impressionism/ treats visual and ocular aspects of the works of Dorothy Richardson, Ford Madox Ford, H.D., and May Sinclair [cite:@bowler16_liter].
+Jesse Matz's /Literary Impressionism and Modernist Aesthetics/ deals with James, Hardy, Proust, Conrad, Ford, and Woolf  [cite:@matz01_liter]. Maria Kronegger's /Literary Impressionism/ reads French writers such as Gide, Flaubert, Proust, and Sartre [cite:@kronegger1973literary]. The term was used so often for writers of the day that it seems to have annoyed Skard, who defines the style thus:
 
+#+BEGIN_QUOTE
+The third movement which strove to replace Naturalism, /Impressionism/, was strictly speaking no movement of reaction but tried to deepen and intensify the Realistic means of expression and at the same time sublimate them. Impressionism has been /en vogue/ in the literary research of recent decades; one early writer after another has been registered as Impressionist, from La Fontaine down. Many of these attempts---for instance, Carlowitz' efforts to make Goethe an Impressionist ... doubtlessly are over-strained ... [cite:@skard1946 202]
+#+END_QUOTE
 
-In generating the list in [@tbl:authors] below, I attempted to control for what seem like genre signals. Although not strictly childrens' works, Padraic Column, Lord Dunsany write tales, folklore and fairy tales, whose colorfulness seem to be skewing the results. So here I improve my genre categorizer described above, by further categorizing all works with the LCSH /fairy tales/ as juvenile (even though, strictly speaking, this isn't necessarily true).
+There is a strong subjectivity implied in the term /impression/, it is a sensory perception /as perceived/. Thus, much of literary impressionism, and thus its textual color, takes place within a certain point of view. We have just seen a strong example of this in Joyce's /Portrait/, which ends with Stephen's journal. Journals and diaries abound in fiction of this period, where the form is used to the the writer's advantage. Maria Kronegger argues that this form is crucial to literary impressionism:
 
-Still, though, the list remains very similar to the individual title list above. The Irish tale-writers and folklorists Padraic Colum and Lord Dunsany are joined by another, Donn Byrne. Stella Benson, another fantasy novelist whose /Living Alone/ is a fairy-tale novel, appears here, too, alongside Ouida, also a writer of juvenile fiction. Yet these are the works of these writers which are /not/ classified as juvenile fiction, which suggests that their writing style has been affected in some way by their elsewhere writing for children.
+#+begin_quote
+Writers of diaries, notebooks, and memoirs have the advantage of making everything proceed from a certain instant: according to the moment, they can change writing styles, that is the manner of suggesting reality; they can change point of view in order to capture thee most volatile moments of life together with nuances of color and tone, and to seize in passing the variations in asspect which the same scene assumes at different moments; they can reveal the development of awareness of the protagonist. [cite:@kronegger1973literary 51]
+#+end_quote
 
+This changing point of view—perhaps more analagous to painterly cubism than to impressionism—is a style we see in Joyce's /Portrait/ and /Ulysses/, Woolf's /Mrs Dalloway/. Before all of those, however, there was Dorothy Richardson's /Pointed Roofs/, an examplar of literary impressionism, remarkable in its subjectivity and its sensory detail. It exhibits very high proportions of color expressions throughout.
 
-#+CAPTION: Color Proportions, Fiction: Sorted by Author
-#+LABEL: tbl:authors
-| author               | proportion of color words |
-|----------------------+---------------------------|
-| Colum, Padraic       |                  0.003542 |
-| Dunsany, Lord        |                  0.002568 |
-| Byrne, Donn          |                  0.002284 |
-| Benson, Stella       |                  0.002255 |
-| Ouida                |                  0.002114 |
-| West, Rebecca        |                  0.002107 |
-| Housman, Clemence    |                  0.001984 |
-| Becke, Louis         |                  0.001973 |
-| Woolf, Virginia      |                  0.001958 |
-| Mansfield, Katherine |                  0.001956 |
-| Conquest, Joan       |                  0.001939 |
-| Yates, Dornford      |                  0.001921 |
+J.D. Beresford, who writes the introduction to the first edition, doesn't quite know what to make of its point of view, at first. When he reads the novel in manuscript, he decides it "was realism, was objective" [cite:@richardson2014pointed 257]. The second time, however, when he reads the novel in typescript, he decides "it is the most subjective thing I have ever read." He imagines that "the writer of this has gone through life with eyes that looked inward; she has known every person and experience solely by her own sensations and reactions" [cite:@richardson2014pointed 258]. The third time he reads it, however, he is enlightened: he suspends his judgment about its objectivity or subjectivity entirely.
 
-** Which colors are the most prominent?
+May Sinclair's introduction to it agrees with Beresford, and polimicizes this view. It reads almost like a manifesto for literary impressionism. Sinclair writes:
 
-One of the first questions I asked of this data set was simply: what is the most common color in British literature of this period? This was, surprisingly, one of the most difficult questions to calculate, and necessitated the color categorizaton engine described above, since colors like /light green/ needed to be counted as /green/, and colors like /sky/ needed to be counted as /blue/. I hypothesized that the most common color here would be red, for its brightness, or green, for its ubiquity in flora. But I was very surprised to see that the most common colors are actually /black/ and /white/. This is especially true once you keep in mind that not many other colors are descendants of the /black/ and /white/ categories: /off-white/ is not very common in fiction, and neither are various other blacks. Grays belong to their own categories. So what could be causing this literary /chiaroscuro/?
+#+BEGIN_QUOTE
+It seems to me that the first step towards life is to throw off the philosophic cant of the nineteenth century. I don't mean that there is no philosophy of Art, or that if there has been there is to be no more of it; I meant that it is absurd to go on talking about realism and idealism, or objective and subjective art, as if the philosophies were sticking where they stood in the eighties. [cite:@richardson_pointed_1919 v]
+#+END_QUOTE
 
-#+CAPTION: Box Plot of Individual Color Words
-#+NAME: fig:genres
-[[./images/color-box.png]]
+Sinclair's introduction will make literary history, as it is the first time the term "stream of consciousness" appears. Describing Richardon's /Pilgrimage/ series, which /Pointed Roofs/ begins, she writes: "in this series there is no drama, no situation, no set scene. Nothing happens. It is just life going on and on. It is Miriam Henderson's stream of consciousness going on and on" [cite:@richardson_pointed_1919 ix].
 
-Astoundingly, the color ranking shown below in [@fig:genres] follows the Berlin and Kay hierarchy from [@eq:berlinKay]: white is the foremost, then black, then red, and so on. This adds some evidence to the universalist view of the primacy of certain colors. But again, my object here is not to settle any linguistic debates, but to understand more of how color operates in literature.
+As with Joyce's /coloured narrative/, the point of view is not entirely interior, or exterior. Here is a section from the first pages:
 
-# TODO: across narrative time
+#+begin_quote
+#+begin_annotation
+#+begin_html
+<p> The organ was playing "The Wearin' o' the <span style="color: #15b01a" class="color"> Green.</span> "</p>
+
+<p>It had begun that tune during the last term at school, in the summer. It made her think of rounders in the hot school garden, singing-classes in the large <span style="color: #15b01a" class="color"> green </span> room, all the class shouting "Gather roses while ye may," hot afternoons in the shady north room, the sound of turning pages, the hum of the garden beyond the sun-blinds, meetings in the sixth form study.... Lilla, with her <span style="color: #000000" class="color"> black </span> hair and the specks of bright <span style="color: #feb308" class="color"> amber </span> in the <span style="color: #653700" class="color"> brown </span> of her eyes, talking about free-will.</p>
+
+<p>She stirred the fire. The windows were quite <span style="color: #1b2431" class="color"> dark.</span>  The flames shot up
+and shadows darted.</p>
+</p>
+#+end_html
+[cite:@richardson2014pointed 57–59]
+#+end_annotation
+#+end_quote
+
+The song, and its usage of /green/, triggers, like Proust's madeleine, a flash flood of memories. Miriam's nostalgic reverie recalls for her the sights, sounds, and temperatures of her youth. Light is a crucial ingredient here, in the "shady north room," with the "sun-blinds," the "fire," its "flames" and its "shadows." Color pairs link the past and the present: the green of the song with the green of the classroom; Lilla's amber-flecked eyes and the flames of the fire; Lilla's black hair and the dark windows.
+
+After quoting an exceptionally colorful passage from Richardson's /Honeycomb/, Sinclair declares: "it is as if no other writers had ever used their senses so purely and with so intense a joy in their use" [cite:@richardson_pointed_1919 xii].
 
 * Case Study: Colors in /To the Lighthouse/
 
@@ -1097,8 +1173,9 @@ This mistake is the first of many parapraxes which will become hallmarks of Joyc
 
 #+BEGIN_QUOTE
 #+begin_html
-<span style="color: #ffffff" class="color"> White </span> roses and <span style="color: #e50000" class="color"> red </span> roses: those were beautiful colours to think of. And the cards for first place and second place and third place were beautiful colours too: <span style="color: #ff81c0" class="color"> pink </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #c79fef" class="color"> lavender.</span>  <span style="color: #c79fef" class="color"> Lavender </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #ff81c0" class="color"> pink </span> roses were beautiful to think of. Perhaps a wild <span style="color: #cf6275" class="color"> rose </span> might be like those colours and he remembered the song about the wild <span style="color: #cf6275" class="color"> rose </span> blossoms on the little <span style="color: #15b01a" class="color"> green </span> place. But you could not have a <span style="color: #15b01a" class="color"> green </span> rose. But perhaps somewhere in the world you could. [cite:joyce_portrait_2007 10]
+<span style="color: #ffffff" class="color"> White </span> roses and <span style="color: #e50000" class="color"> red </span> roses: those were beautiful colours to think of. And the cards for first place and second place and third place were beautiful colours too: <span style="color: #ff81c0" class="color"> pink </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #c79fef" class="color"> lavender.</span>  <span style="color: #c79fef" class="color"> Lavender </span> and <span style="color: #ffffc2" class="color"> cream </span> and <span style="color: #ff81c0" class="color"> pink </span> roses were beautiful to think of. Perhaps a wild <span style="color: #cf6275" class="color"> rose </span> might be like those colours and he remembered the song about the wild <span style="color: #cf6275" class="color"> rose </span> blossoms on the little <span style="color: #15b01a" class="color"> green </span> place. But you could not have a <span style="color: #15b01a" class="color"> green </span> rose. But perhaps somewhere in the world you could.
 #+end_html
+[cite:joyce_portrait_2007 10]
 #+END_QUOTE
 
 Green roses are of course possible with artificial coloring, as with green carnations, Wilde's aestheticist symbol that I've discussed above. This has led some to suggest that the "wild" of the "wild rose" may be a pun for "Wilde" [cite:valente2003 251].
@@ -1115,50 +1192,60 @@ So /Portrait/, in its colored narrative, exhibits the modernist struggle with su
 #+LABEL: fig:portraitNarrativeTime
 [[./images/portrait-narrative-time.png]]
 
-[@Fig:portraitNarrativeTime] shows the proportions of color in /Portrait/, plotted in narrative time.
+[@Fig:portraitNarrativeTime] shows the proportions of color in /Portrait/, plotted in narrative time. There are four main areas of color concentration here. The beginning, where Stephen is young and full of strong sense-impressions, exhibits the highest concentration. The next is at the halfway point of the novel (point 5). This is a segment from Father Arnall's hell sermon, a winding, verbose speech about the horrors of hell, here annotated with $CM_X$:
+
+#+BEGIN_QUOTE
+#+BEGIN_ANNOTATED
+#+BEGIN_HTML
+You have often seen the <span style="color: #e2ca76" class="color"> sand </span> on the seashore. How fine are its tiny grains! And how many of those tiny little grains go to make up the small handful which a child grasps in its play. Now imagine a mountain of that <span style="color: #e2ca76" class="color"> sand,</span>  a million miles high, reaching from the <span style="color: #a2653e" class="color"> earth </span> to the farthest heavens, and a million miles broad, extending to remotest space, and a million miles in thickness; and imagine such an enormous mass of countless particles of <span style="color: #e2ca76" class="color"> sand </span> multiplied as often as there are leaves in the <span style="color: #0b5509" class="color"> forest,</span>  drops of water in the mighty <span style="color: #017b92" class="color"> ocean,</span>  feathers on birds, scales on fish, hairs on animals, atoms in the vast expanse of the air: and imagine that at the end of every million years a little bird came to that mountain and carried away in its beak a tiny grain of that <span style="color: #e2ca76" class="color"> sand.</span>
+#+END_HTML
+#+END_ANNOTATED
+#+END_QUOTE
+
+# TODO: Cite
+
+This segment is notable, not because it uses traditionally-recognizable abstract color words, like /red/, /green/, /blue/, and so on, but because it is colorful for its imaginable nouns: /sand/ (#e2ca76), /earth/ (#a2653e), /forest/ (#0b5509), /ocean/ (#017b92), /sky/ (#82cafc), and /sea/ (#3c9992), for example.
+
+It is no coincidence that Father Arnall repeats, three times, his instruction for his young listeners to /imagine/.
+
+The next peak in colors comes at 60% of the novel, where an older Stephen, an aspiring poet, wonders what it is that attracts him to words. He reads one of his lines, "a day of dappled seaborne clouds," and all of a sudden, "the phrase and the day and the scene harmonized in a chord" [cite:joyce_portrait_2007 10]
+. Stephen thinks:
+
+#+BEGIN_QUOTE
+#+BEGIN_ANNOTATED
+#+BEGIN_HTML
+Words. Was it their colours? He allowed them to glow and fade, hue after hue: sunrise <span style="color: #dbb40c" class="color"> gold,</span>  the <span style="color: #a13905" class="color"> russet </span> and <span style="color: #15b01a" class="color"> green </span> of <span style="color: #6ecb3c" class="color"> apple </span> orchards, <span style="color: #069af3" class="color"> azure </span> of waves, the <span style="color: #929591" class="color"> grey-</span> fringed fleece of clouds.
+#+END_HTML
+#+END_ANNOTATED
+#+END_QUOTE
+
+But Stephen soon negates himself: it is not the colors of words, or color words, that enchants him:
+
+#+BEGIN_QUOTE
+No, it was not their colours: it was the poise and balance of the period itself. Did he then love the rhythmic rise and fall of words better than their associations of legend and colour? Or was it that, being as weak of sight as he was shy of mind, he drew less pleasure from the reflection of the glowing sensible world through the prism of a language many-coloured and richly storied than from the contemplation of an inner world of individual emotions mirrored perfectly in a lucid supple periodic prose? He passed from the trembling bridge on to firm land again.
+#+END_QUOTE
+
+He never answers this question, which seems to linger on "the trembling bridge" of language, a bridge which spans, on the one hand, vision, imagination, and color: the concrete, the plastic; and on the other hand, linguistic music: the sounds and rhythms of words. Stephen's phrase, "a day of dappled seaborne clouds," is not just an image, containing cloud and sea, and recalling the "dappled things" for which Gerad Manley Hopkins praises God in "Pied Beauty,"[fn::Although written in 1877, this poem would not be published until 1918, making it too late to have been an influence for Joyce. Had Hopkins live a little longer, or had Joyce been born a little later, they surely would have met: a Jesuit, Hopkins taught at University College Dublin, which Jesuit-educated Joyce attended.] but music: four alliterative iambs.
+
+Like Woolf, and so many other modernist writers, Joyce describes literary language using chromatic metaphors, because color, in text, is evocative of mental images. The "sensible world" "reflects" through the "prism" of language, a device which, as Newton demonstrated, splits its input into a spectrum. This prism is that of imagination: the writer's, and the reader's: a mental image is split through the prism of language into its constituent colors, and then reconstituted in the mind of the reader.
 
 # TODO: I must have more written about Portrait and color elsewhere.
 
-* Discussion: What makes modernist literature colorful?
-
-Let's skip ahead to the results of the experiment. Here is the distribution of images and colors in the narrative time of the novels of this period.
-
-[Chart here]
-
-The beginnings and the ends of the novels of this period are by far the most colorful, and the most consistently so. I will argue that this is due to three main factors, all of which are interrelated: descriptive scene-setting, childlike wonder, and prose poetry.
-
-Some of these factors are generic: effects of the parent novel genre, the subject genre (romances, fantasies, /Bildungsromane/), or the audience (children's literature). They are also writerly modes or techniques which perform those genres.
-
-** Genre
-*** Prose poetry
-Modernist novels are famous for their formal subversions.
-
-** Medium
-** Style
-*** Descriptive scene-setting
-- Generic invocations
-
-Novels prime their readers to imagine by presenting them with visual descriptions.
-
-[Draw on criticism of description]
-
-[Description section goes here]
-
-Among the most striking ocularities of literary description, and more broadly of any narrative, are pauses to convey the hue of that what is before the describer's imagination. /Pauses/ because description is a dilation of extradiegetic time. /Before/ in that the described, if it has hue, is in focus, in the center of the describer's field of vision.
-
-
-To describe is to settle one's gaze in a field, and at the same time, to move it linearly and programmatically across that field. It is always selective, and it always refracts. Description of hue is among the most concentrated subroutines of that process, since the creation of textual color from a mental image involves digitization: approximative translation from an analog, linear system (a spectrum) to a digital, discrete system (a word). This process is so deeply involved with our language/thought apparatus, and so charged with epistemological problems, that it is the perennial subject of linguistics, neuroscience, and psychology. But rather than explore the phenomenon of textual color theoretically, I will take the opposite approach, and model the imaginative process in reverse, and in aggregate.
-
-Modeling is a statistical mimesis. Given observable qualities of a subject—in our case, a text, or a corpus of texts—a model imitates those qualities, in order to study the subject's behavior under unobserved circumstances. In modeling a hurricane, a meterologist not only becomes capable of predicting that hurricane's path, albeit with some margin of error, but, by studying the model's error, learns further nuances of the system he or she is studying. To model literature is not to discover how Virginia Woolf would have written about the 2020 coronavirus epidemic—although that sort of prediction is possible—it's to understand the small swirls of rainwater that compose the greater phenomenon we know as the hurricane.
-
-I am motivated here, both by large questions about literary history, and smaller, more specialized ones about individual texts. Big ones include: Does literary writing get more colorful with time? (It does.) What are the dominant colors of this period's literature? (White and black.) and, Which genres are the most colorful? (Love stories.) But smaller questions have to do with the way color words operate syntactically, how they operate within description, and how their semiologies warp the reader's imagination. When Woolf describes a set of curtains as "mustard-coloured," or when Joyce describes a man's eyes as "nocoloured," how and why do those color choices do more work than their superficial significations? How, precisely, are color words used differently in poetry and fiction? These questions are inseparable from the way they are modeled. In many cases, modeling them is what /generates/ the questions. In others, the model is, at least partially, the answer to these questions. It is with that in mind that I invite you to join me in my process of creating this model of imagination—an imagination machine—where each decision in the algorithmic design, however mathematical, probes at the workings of color in text.
-
-A Critique of the Narration / Description Dichotomy Before we begin our experiment, it is necessary to discuss the textual structure in which representations of hue are typically found: literary description. Although textual color has its own behaviors and properties, the conditions of description shape how color operates in text. By /description/ here I am discussing a very particular writerly process which linearizes and descretizes visual information: that which transforms imaginable material into words, and arranges those words into lines. Exactly what may be identified as description, and what its role and import in literature may be, has been a matter of some debate. One of the more hotly contested works is an essay by Georg Lukács, titled "Narrate or Describe?", the central dichotomy of which is apparent from the title [cite:lukacs2005]. Lukács contrasts writers such as Flaubert and Zola, whom he calls "descriptive," with writers like Tolstoy whom he claims use a more "narrative," action-oriented style. The descriptive style Lukács is quick to dismiss. Of descriptive details in Flaubert's /Madame Bovary/, he writes:
+The jump in textual color at the end of /Portrait/ reflects the colorful descriptions in Stephen's journal entries, which conclude the novel. Here is one entry:
 
 #+BEGIN_QUOTE
-to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization." (115)
+#+BEGIN_ANNOTATED
+#+BEGIN_HTML
+APRIL 5. Wild spring. Scudding clouds. O life! <span style="color: #1b2431" class="color"> Dark </span> stream of swirling bogwater on which <span style="color: #6ecb3c" class="color"> apple-</span> trees have cast down their delicate flowers.
+Eyes of girls among the leaves. Girls demure and romping. All fair or <span style="color: #9a3001" class="color"> auburn:</span>  no <span style="color: #1b2431" class="color"> dark </span> ones. They <span style="color: #f29e8e" class="color"> blush </span> better. Houpla!
+#+END_HTML
+#+END_ANNOTATED
 #+END_QUOTE
 
-He later asserts that description "lacks humanity," in that "its transformation of men into still lives is only the artistic manifestation of its inhumanity." (140). I join the many later critics who have written about Lukács's essay in disagreeing with him, but since they critics have done this so thoroughly, I won't bother to do so here [cite:love2010close; cite:marcus2016building]. My refutation is much more radical: I question the distinction between narrative and description at the root of Lukács's argument. There do exist some aspects of fiction that have no descriptive function, of course—they may not be imagined, and thus they convey no images. But nearly everything else in fiction does describe. The opposite is nearly true, as well: there exist very few elements in a story that are purely descriptive, and serve no role in furthering the plot, fleshing out the characters, or providing a scene which is inextricable from, and indespensible to, plot and character. In other words, to narrate is to describe. Any text may be description if it contains a visual component (strong description) or may be imagined (weak description), and this includes the "epic artistry" Lukács sees in Tolstoy, and his "recounting of the vicissitudes of human beings" (111). Since, is not the visual experience one such vicissitude? This is about more than just a distinction between the stylistic pastoral and epic, though, where description recounts in minute detail because it has the bourgeois leisure of a shepherd, and narration practically presents the facts, with military precision. Description is not essentially static, even though it often is. The proof is simply that action can be, and is, imagined in the same way as a still-life. Furthermore, description's linearity makes it /a priori/ dynamic. To explain this further, I'll use a well-known metaphor from physics: the color spectrum. Although there do exist areas on a color spectrum where we could identify certain colors—spots at which one could point, and nine out of ten English speakers would call it /red/–if these same people were asked to draw a line that definitively separates red from pink, or red from blue, there would be ten very different answers. The same is true of description and narration: they exist along a spectrum, and overlap with each other considerably. It is in that sense that we could say that the distinction isn't real at all. This is a crucial context for understanding textual color. At first glance, and according to Lukács's followers, color is probably the one element of fiction most superfluous to the story, and thus the work's reason for being. But what I argue is that colors in text are not simply signifiers of their position on the visible spectrum, but are the material out of which the text is created.
+Here we have many of the properties of textual color converging. As I've discussed above, textual color tends to correlate with high emotions: ecstasy, love, rapture ("O life!"). And color words are color exceptions: they describe things which are visually unusual, or striking: such is the mood of springtime. The first days of spring—in Ireland, at least—are full of new colors: where there had been gray skies and bare trees, there are now brightly-colored apple flowers. People leave their houses to spend time outdoors, "romping." Stephen stares at the girls, notices their hair, and imagines them blushing (because of something he said?).
 
+
+# Next steps
+
+* Discussion: What makes modernist literature colorful?
 * Works Cited
