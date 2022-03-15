@@ -14,20 +14,68 @@ td
   padding : 0.29999em 0.29999em 0.29999em 0.29999em;
 }
 
+figure
+{
+  text-align : center;
+}
+
+figure > img:hover
+{
+  -webkit-transform : scale(1.5,1.5);
+  -moz-transform    : scale(1.5,1.5);
+  -ms-transform     : scale(1.5,1.5);
+  -o-transform      : scale(1.5,1.5);
+  transform         : scale(1.5,1.5);
+}
+
+figure > figcaption
+{
+  max-width  : none;
+  text-align : left;
+}
+
+figure > img
+{
+  max-height : 30em;
+}
+
 div.box
 {
   margin           : 1em 1em 1em 1em;
   background-color : #cbcbf7;
   border-radius    : 10px 10px 10px 10px;
   padding          : 0.8em 0.8em 0.8em 0.8em;
-  text-shadow      : 0px 0px 0px #000000;
+  width            : 50%;
+  border-bottom    : solid 1px #999999;
+  border-left      : solid 1px #999999;
+}
+
+div.box a
+{
+  text-shadow : 0px 0px 0px #000000;
+}
+
+div.line-block
+{
+  margin-left : 2em;
+  font-size   : 1.39999rem;
 }
 
 div.annotated
 {
-  background-color : #999999;
+  background-color : #cccccc;
   border-radius    : 10px 10px 10px 10px;
   padding          : 0.8em 0.8em 0.8em 0.8em;
+  font-size        : 1.39999rem;
+  max-width        : 25em;
+  margin-left      : 2em;
+  border-bottom    : solid 1px #999999;
+  border-left      : solid 1px #999999;
+}
+
+div.annotated a
+{
+  text-shadow : 0px 0px 0px #000000;
 }
 
 div.references
@@ -45,7 +93,7 @@ details
 }
 
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><link href="/assets/tufte-css/latex.css" rel="stylesheet"><link href="/assets/tufte-css/tufte.css" rel="stylesheet"><script src="/04-colors/includes/plotly-latest.min.js"></script><style type="text/css">@page { margin: 3cm; @bottom-center { content: counter(page); } }</style></head><body><article>
+/* Generated with Clay, http://fvisser.nl/clay */</style><link href="/assets/tufte-css/latex.css" rel="stylesheet"><link href="/assets/tufte-css/tufte.css" rel="stylesheet"><script src="/03-colors/includes/plotly-latest.min.js"></script><style type="text/css">@page { margin: 3cm; @bottom-center { content: counter(page); } }</style></head><body><article>
  $for(include-before)$ 
  $include-before$ 
  $endfor$ 
