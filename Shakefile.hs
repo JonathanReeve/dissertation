@@ -33,7 +33,7 @@ main :: IO ()
 main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     want [ "dest/index.html"
          , "dest/02-history/ch-2.html"
-         , "dest/04-colors/ch-4.html"
+         , "dest/03-colors/ch-3.html"
          ]
 
     -- To serve the generated files (useful for previewing),
@@ -41,10 +41,10 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     phony "serve" $
       liftIO $ serve 8080 "dest/"
 
-    "references.bib" %> \f -> do
-        let source = "/home/jon/Dokumentujo/Papers/library.bib"
-        need [source]
-        copyFileChanged source f
+    -- "references.bib" %> \f -> do
+    --     let source = "/home/jon/Dokumentujo/Papers/library.bib"
+    --     need [source]
+    --     copyFileChanged source f
 
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
@@ -105,13 +105,13 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
-    "dest/04-colors/ch-4.html" %> \f -> do
-        assets <- getDirectoryFiles "" [ "04-colors/images/*"
+    "dest/03-colors/ch-3.html" %> \f -> do
+        assets <- getDirectoryFiles "" [ "03-colors/images/*"
                                        , "assets/*/*"
-                                       , "04-colors/includes/*" ]
+                                       , "03-colors/includes/*" ]
         liftIO $ print assets
         let outAssets = map ("dest/" <>) assets
-        let source = "04-colors/ch-4.org"
+        let source = "03-colors/ch-3.org"
             filters = [ "templates/PandocSidenote.hs"
                       , "templates/hex-filter.hs"
                       ]
@@ -128,8 +128,10 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--csl=" ++ csl,
                                        "--toc",
                                        "--variable=autoSectionLabels:true",
-                                       "--variable=linkReferences:true",
+                                       "--metadata=linkReferences:true",
+                                       "--metadata=link-citations:true",
                                        "--metadata=tblPrefix:table",
+                                       "--citation-abbreviations=03-colors/abbreviations.json",
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
