@@ -6,19 +6,19 @@
 - Introduction
 - Chapter 1: Cognitive Criticism and Reading Psychology
 - [[./02-history/ch-2.html][Chapter 2: Imagisms (History)]]
-- [[./04-colors/ch-4.html][Chapter 4: Descriptions of Color]]
-- Chapter 5: Descriptions of Shapes, Bodies, Objects
+- [[./03-colors/ch-3.html][Chapter 3: Color]]
+- Chapter 5: Shapes, Bodies, Objects
 
 ** Word counts
 
 #+BEGIN_SRC sh :exports results
-wc -w 02-history/ch-2.org 04-colors/ch-4.org
+wc -w 02-history/ch-2.org 03-colors/ch-3.org
 #+END_SRC
 
 #+RESULTS:
 | 13088 | 02-history/ch-2.org |
-| 31849 | 04-colors/ch-4.org  |
-| 44937 | total               |
+| 31721 | 03-colors/ch-3.org  |
+| 44809 | total               |
 
 ** Revisions
 
@@ -29,11 +29,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
+| fdd8712 | 2022-03-15 | 09:16:34 | -400 |
+| 8f5d07c | 2022-03-14 | 23:55:00 | -400 |
 | 482060d | 2022-03-14 | 23:48:24 | -400 |
 | 2eadc14 | 2022-03-14 | 00:35:27 | -400 |
 | aeaae91 | 2022-03-14 | 00:34:39 | -400 |
-| db32d90 | 2022-03-14 | 00:34:00 | -400 |
-| b1bc063 | 2022-03-11 | 19:45:36 | -500 |
 
 ** Source Code and Source Text
 
