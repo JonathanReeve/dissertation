@@ -2,8 +2,8 @@
 **/.ipynb_checkpoints
 **/TAGS
 **/dist-newstyle/
-04-colors/deep-imaginer/models/
-04-colors/experiment-post-impressionism/img/
+03-colors/deep-imaginer/models/
+03-colors/experiment-post-impressionism/img/
 .direnv/
 .shake/
 dest/

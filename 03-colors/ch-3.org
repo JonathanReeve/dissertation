@@ -415,9 +415,20 @@ The Pantone set, one of the most common among designers and artists today, conta
 
 To find these trends more systematically, I vectorized their color names with GloVe vectors, and then clustered them using the K-means clustering technique, using 6 clusters [Glove vectors are described in @pennington2014glove; see @jain2010 for a historical overview and summary of K-means]. The categories here are very human-legible. Categories 0-3 are natural metaphors of various sorts (flora, fauna, landscape features). Category 4 is mostly varieties of white, as well as other light colors. Category 5 is colors derived from food.
 
-
 #+BEGIN_QUOTE
-Category 0: gardenia #f1e8df, dew #eeded1, ecru #f3dfca, delicacy #f5e3e2, icicle #dadcd0, twill #a79b82, Category 1: white-asparagus #e1dbc8, vanilla-ice #f0eada, cloud-cream #e6ddc5, vanilla-custard #f3e0be, Category 2: turtledove #ded7c8, papyrus #f5edd6, seedpearl #e6dac4, sandshell #d8ccbb, navajo #efdcc3, Category 3: egret #f3ece0, pristine #f2e8da, birch #ddd5c7, angora #dfd1bb, fog #d0c5b1, ice #e0e4d9, frost Category 4: snow-white #f2f0eb, bright-white #f4f5f0, cloud-dancer #f0eee9, blanc-de-blanc #e7e9e7, Category 5: marshmallow #f0eee4, vanilla #f4e1c1, rutabaga #ecddbe, tapioca #dccdbc, parchment #dfd1be, +END_QUOTE
+Category 0: gardenia #f1e8df, dew #eeded1, ecru #f3dfca, delicacy #f5e3e2, icicle #dadcd0, twill #a79b82,
+
+Category 1: white-asparagus #e1dbc8, vanilla-ice #f0eada, cloud-cream #e6ddc5, vanilla-custard #f3e0be,
+
+Category 2: turtledove #ded7c8, papyrus #f5edd6, seedpearl #e6dac4, sandshell #d8ccbb, navajo #efdcc3,
+
+Category 3: egret #f3ece0, pristine #f2e8da, birch #ddd5c7, angora #dfd1bb, fog #d0c5b1, ice #e0e4d9, frost
+
+Category 4: snow-white #f2f0eb, bright-white #f4f5f0, cloud-dancer #f0eee9, blanc-de-blanc #e7e9e7,
+
+Category 5: marshmallow #f0eee4, vanilla #f4e1c1, rutabaga #ecddbe, tapioca #dccdbc, parchment #dfd1be,
+#+END_QUOTE
+
 
 I derive this color map from [[https://github.com/Margaret2/pantone-colors][a web-scraped dataset]], itself derived from [[https://www.pantone.com/][Pantone's own]] website, but assign half the weight of the previous manuals [cite:@pantone_2022]. This dataset nicely balances the scientific modes of the previous ones, yet is still highly subjective. Still, I include it in order to train the imagination algorithm to imagine more concrete color metaphor. Now, it may be able to imagine /moonbeam/ (#696156) and /skyway/ (#adbed3).
 
