@@ -4,6 +4,11 @@
 **/dist-newstyle/
 03-colors/deep-imaginer/models/
 03-colors/experiment-post-impressionism/img/
+03-colors/color-ner/colorModel.jsonl
+03-colors/color-ner/colorModel/
+03-colors/color-ner/old/
+03-colors/color-ner/xkcdPats.jsonl
+03-colors/data/
 .direnv/
 .shake/
 dest/
