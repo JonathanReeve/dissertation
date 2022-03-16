@@ -1218,8 +1218,12 @@ APRIL 5. Wild spring. Scudding clouds. O life! <span style="color: #1b2431" clas
 [cite:@joyce_portrait_2007 222]
 #+END_ANNOTATED
 
-Here we have many of the properties of textual color converging. As I've discussed above, textual color tends to correlate with high emotions: ecstasy, love, rapture ("O life!"). And color words are color exceptions: they describe things which are visually unusual, or striking: such is the mood of springtime. The first days of spring—in Ireland, at least—are full of new colors: where there had been gray skies and bare trees, there are now brightly-colored apple flowers. People leave their houses to spend time outdoors, "romping." Stephen stares at the girls, notices their hair, and imagines them blushing (because of something he said?).
+Here we have many of the properties of textual color converging. As I've discussed above, textual color tends to correlate with high emotions: ecstasy, love, rapture ("O life!"). And color words are color exceptions: they describe things which are visually unusual, or striking: such is the mood of springtime. The first days of spring—in Ireland, at least—are full of new colors: where there had been gray skies and bare trees, there are now brightly-colored apple flowers. People leave their houses to spend time outdoors, "romping." Stephen stares at the girls, notices their hair, and imagines them blushing (because of something he said?). As Sinclair wrote of Richardson, "it is as if no other writers had ever used their senses so purely."
 
 * Coda
+
+Here we have modeled one aspect of imagination: color. This was an exceedingly complex task, owing to the gaps, fissures, and stumbling blocks inherent in the human vision/word interface. But along the way we have discovered a number of useful properties of textual color, that then feed back into the model, which, in turn, prompt new questions, and reveal more about visuality in modernist literature. We have completed a cycle of Box's loop.
+
+In the next chapter, I will model the second type of retinal cell: rods, which are responsible for the perception of shape. Just as I've used textual color to find generic and stylistic resonances in modernism, so I will use shape, size, and body to identify patterns in the literature of this period.
 
 * Works Cited
