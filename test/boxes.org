@@ -1,0 +1,23 @@
+#+TITLE: Boxes
+
+#+BEGIN_BOX
+Here is a box
+#+END_BOX
+
+
+#+BEGIN_COLORIZED
+Here is an annotated color block thing.
+#+END_COLORIZED
+
+#+BEGIN_QUOTE
+#+BEGIN_HTML
+<div style="background-color: #333">
+Mrs. Ramsay could not help exclaiming, "Oh, how beautiful!" For the great plateful of <span style="color: #0343df" class="color">
+blue </span> water was before her; the hoary Lighthouse, distant, austere, in the midst; and on the right, as far as the eye could see, fading and falling, in soft low pleats, the <span style="color: #15b01a" class="color"> green </span> sand dunes with the wild flowing grasses on them, which always seemed to be running away into some moon country, uninhabited of men.
+
+That was the view, she said, stopping, growing greyer-eyed, that her husband loved.
+
+She paused a moment. But now, she said, artists had come here. There indeed, only a few paces off, stood one of them, in Panama hat and <span style="color: #ffff14" class="color"> yellow </span> boots, seriously, softly, absorbedly, for all that he was watched by ten little boys, with an air of profound contentment on his round <span style="color: #e50000" class="color"> red </span> face gazing, and then, when he had gazed, dipping; imbuing the tip of his brush in some soft mound of <span style="color: #15b01a" class="color"> green </span> or <span style="color: #ff81c0" class="color"> pink.</span>  Since Mr. Paunceforte had been there, three years before, all the pictures were like that, she said, <span style="color: #15b01a" class="color"> green </span> and <span style="color: #929591" class="color"> grey,</span>  with <span style="color: #fdff52" class="color"> lemon-</span> coloured sailing-boats, and <span style="color: #ff81c0" class="color"> pink </span> women on the beach.
+</div>
+#+END_HTML
+#+END_QUOTE
