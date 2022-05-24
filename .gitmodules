@@ -13,3 +13,6 @@
 [submodule "04-colors/custom-ngrams-search"]
 	path = 03-colors/custom-ngrams-search
 	url = https://github.com/JonathanReeve/custom-ngrams-search.git
+[submodule "04-shapes/count-objects"]
+	path = 04-shapes/count-objects
+	url = https://github.com/JonathanReeve/count-objects.git
