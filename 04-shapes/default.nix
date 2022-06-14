@@ -67,5 +67,6 @@ in pkgs.python3.buildEnv.override rec {
       spacy_models.en_core_web_lg
       pywsd
       wn
+      scikit-learn
     ];
 }).env
