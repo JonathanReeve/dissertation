@@ -1,0 +1,58 @@
+#+TITLE: Test3
+#+bibliography: references.bib
+
+* Berkeley-style citations
+
+** Simple in-text
+
+Something something @lukacs2005 showed that DNA...
+
+** In-text citation list
+
+[cite: PREFIX; @lukacs2005; @witzel2018; SUFFIX]
+
+** Parenthetical citation
+
+[(cite): See; @lukacs2005; and @witzel2018]
+
+* Org-ref citation
+
+A line which ends with cite:lukacs2005
+
+A different line [[cite:witzel2018]]
+
+A line which ends with parenthetical citep:lukacs2005
+
+[[citep:lukacs2005][See page 20 of::, for example]]
+
+* Pandoc-markdown-like syntax
+
+** Simple Citation
+
+[prefix @lukacs2005 suffix]
+
+[see @witzel2018 pp. 23-42]
+[@witzel2018 p5; also @lukacs2005]
+
+* Some org-cite style citations
+
+Here's one with regular cite [cite:@lukacs2005]
+
+Here's another with citep [cite/t/p:@witzel2018]
+
+This one doesn't have brackets [[cite:witzel2018]]
+
+#+BEGIN_SRC elisp
+
+#+END_SRC
+
+- [cite/t:@witzel2018]
+- [cite/t:@witzel2018 p. 12]
+- [cite/t:@witzel2018 p.12; see also @lukacs2005]
+- [cite:@witzel2018]
+- [cite/na:@witzel2018]
+- [cite:see @witzel2018 p. 12]
+- [cite:see @witzel2018 p. 12]
+- [cite:see @witzel2018 p. 12 and /passim/]
+- [cite:@witzel2018; @lukacs2005]
+- [cite:see @witzel2018; @lukacs2005]

@@ -17,15 +17,6 @@ import Main.Utf8 (withUtf8)
 import Lucid (renderToFile)
 import Template ( pageHtml )
 
--- Replace org style citation syntax with @-syntax for Pandoc.
--- Why? cite: syntax is much better supported in emacs, and allows me to see
--- at a glance which citations aren't working, and to jump to their entries.
--- But cite: syntax isn't that well supported in Pandoc, so we use Pandoc's
--- "Berkeley-style" citation syntax, instead.
-replaceCites :: T.Text -> T.Text
-replaceCites = TR.replaceAll toReplace replacement where
-  toReplace = (regex [] (T.pack "cite:(-)?@?")) :: Data.Text.ICU.Regex
-  replacement = TR.rgroup 1 <> TR.rstring "@" :: TR.Replace 
 
 readFileText text = need [text] >> liftIO (TIO.readFile text)
 
@@ -86,7 +77,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         let source = "02-history/ch-2.org"
         need ([ source, template, csl, bib ] ++ outAssets)
         contents <- readFileText source
-        let replaced = T.unpack $ replaceCites contents
+        let replaced = T.unpack $ contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
@@ -119,7 +110,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
               ++ outAssets
               ++ filters)
         contents <- readFileText source
-        let replaced = T.unpack $ replaceCites contents
+        let replaced = T.unpack $ contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
