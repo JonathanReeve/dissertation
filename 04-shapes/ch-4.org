@@ -1,0 +1,152 @@
+#+TITLE: Chapter 4: Shape
+#+AUTHOR: Jonathan Reeve
+#+bibliography: ../references.bib
+# -*- eval: (org-hide-block-all)
+
+#+begin_box
+This dissertation chapter is a full-color, interactive document, originally formatted in HTML. It contains interactive plots, hyperlinks, and other dynamic elements. If you are reading this in another document format (PDF, DOCX, or paper), you are missing these dynamic elements. Please visit [[https://dissertation.jonreeve.com/][dissertation.jonreeve.com]] for the canonical edition of this text, and [[https://github.com/JonathanReeve/dissertation][github.com/JonathanReeve/dissertation]] for its source code. Annotations are welcome in the hypothes.is sidebar to the right.
+#+end_box
+
+* Introduction
+
+Color is bounded and contained by shape. The retinal cells responsible for color vision, cone cells, are complemented with rod cells which are responsible for the perception of shape. While cones, comprising 6-7 million cells per eye, are responsible for color perception, the much more numerous rod cells, at around 120 million cells, are responsible for night vision, peripheral vision, motion perception, and object recognition.
+
+# Do some more reading about rods in scientific / biological literature
+
+So to continue to model the visual imagination of literary modernism, we now turn to shapes, objects, and forms.
+
+In literature, things, shapes, and objects---and these are not synonyms, but we'll get to that later---are coextensive with words, since, in a sense, objects, although homomorphic with things, are by definition grammatical: they exist in relation to subjects and verbs. They are the stuff of nearly every sentence.
+
+So to count objects, one would count words. The experiments of this chapter are, first, to quantify the objects of modernism. Using state-of-the art word sense disambiguation, and hypernym-based categorization, using the Princeton WordNet, I am able to calculate the proportions of objects in a literary text, and to analyze their diachronic trends.
+
+Next, I investigate a particular type of object: human bodies, and their constituent parts, as they appear in fiction and poetry.
+
+* Objects
+** Objects in Modernist Studies
+
+The past few decades have seen a considerable amount of scholarship dealing with modernist literature and its relation to material objects.
+
+Douglas Mao's influential 1998 monograph /Solid Objects: Modernism and the Test of Production/ begins with an anecdote about a letter from Freud to H.D., in which the psychoanalyst acknowledges the receipt of flowers, accompanied with a note reading "to greet the return of the Gods." While others in Freud's circle had read "goods," H.D. had actually written "Gods." This "goods/Gods" dichotomy, while anecdotal, becomes for Mao a useful metaphor for literary modernism's struggles with materiality and, if not spirituality, at least, abstraction.
+
+
+
+Bill Brown's work is also instrumental in this field. His 1999 article, "The Secret Life of Things," also deals with Virginia Woolf's story, "Solid Objects." Brown cites William James's chapter on "perception of things," in which James "tells a story of what happens when our habits are broken, when for instance we look at a landscape with our head upside down or when we turn a painting bottom upward" [cite:@brown1999secret 5]. Under those conditions, James argues, "the colors grow richer and more varied, we don't understand the meaning of the painting, but, to compensate for the loss, we feel more freshly the value of the mere tints and shadings." Brown uses this to differentiate between /things/ and /objects/: "what I want to underscore is how in James the difference between the apperceptive constitution of the thing, in what I would call its /objecthood/, and the experience of a thing, in what I would call its /thinghood/, emerges in the moment (and no doubt only as a moment) of reobjectification that is a kind of misuse---turning the picture bottom up, standing on one's head" [cite:@brown1999secret 6].
+
+
+
+His 2004 edited collection of object theory essays, /Things/, begins by making the distinction between /things/ and /objects/. Objects, in this view, are things that have taken on the grammatical quality of their syntactic namesakes. Things, on the other hand, exist outside of grammar, action, and abstraction: they are "something warm, that relieves us from the chill of dogged ideation, something concrete that relieves us from unnecessary abstraction" [cite:@brownThings2004 1].
+
+[cite:@brownThings2004]
+
+He followed his 2004 /Things/ with 2016's /Other Things/, along with 2010's /A
+
+Among the modernists themselves, there is also no lack of object theory.
+
+I have already discussed, in chapter 2, Pound's manifesto of /imagisme/, which includes as its first precept "direct treatment of the thing."
+
+T.S. Eliot's famous critique of /Hamlet/, we recall, is that it lacks an "objective correlative," or "a set of objects, a situation, a chain of events which shall be the formula of that /particular/ emotion" [cite:@eliotWasteLand 120]. This aesthetic is apparent in "The Waste Land" and elsewhere, where emotions like "fear" are perceived through objects like "a handful of dust," and April's cruelty is shown with lilacs.
+
+Across the Atlantic, the American modernist poet William Carlos Williams, in the first few stanzas of /Paterson/, writes "say it, no ideas but in things." This is an oft-quoted maxim, but one which deals even more with objecthood in its context: Williams spends the initial passages of his poem anthropomorphizing places and things, particularly the Paterson, New Jersey, of its title. Paterson "lies in the valley under the Passaic Falls / its spent waters forming the outline of his back" [cite:@williams1995paterson 9]. In Williams' reification reverie, Paterson's houses have "blank faces," and his trees are forked by "preconception"; "split, furrowed, creased," as if of a human face.
+
+But it is easy to cherry-pick objects in fiction and poetry, of any century---all one must do is find nouns. Does that mean, as critics have argued, that objects are a particular concern of modernist literature?
+
+** Object Theory and Thing Theory
+
+Modernist studies on objects in literature draws upon a more general theory of things and objects.
+
+[[id:8936fbfd-c58f-4af6-bbd8-40514afc41b8][Henri Bergson]], /Creative Evolution/: "the human intellect feels at home among inanimate objects, more especially among solids, where our action finds its fulcrum and our industry its tools." 21
+
+[[id:948967e1-19f4-4bd8-a896-012962b8f782][Baudrillard]], /[[id:bcdce32e-6ae0-49c4-9587-34c8218f4935][The System of Objects]]/ 22
+
+[[id:64b8aa33-52b6-4877-87b7-3ecc8b55cde7][Woolf, /Solid Objects/]] 30
+
+** Experiment: Quantifying Objects in Literature
+
+This experiment attempts to quantify the presence of objects in British fiction and poetry. I want to know: what are the objects that are the most common? Which fall in and out of favor, over time? Which are incommensurate with lived experience? Of those objects, how many are natural objects, and how many are artificial?
+
+To do this, I apply cutting-edge techniques of word sense disambiguation to $C_PG$, and quantify the results using the Princeton WordNet.
+
+*** WordNet
+
+In computational linguistics, the most-used lexical relation database is the Princeton WordNet [cite:@miller1995wordnet; @miller1998wordnet]. As its name implies, WordNet is more than a machine-readable dictionary, or thesaurus, although it is both of those, but it is a network of relations between words. In the creators' own term, WordNet represents a particular theory of /componential semantics/: an agglutinative form of lexicography. "Componential semantics approaches the meaning of a word," WordNet contributor George A. Miller writes, "in much the same way as it approaches the meaning of a sentence: the meaning of a sentence should be decomposable into the meanings of its constituents, and the meaning of a word should be similarly decomposable into certain semantic primitives, or conceptual atoms" [cite:@miller1998wordnet xvi].
+
+The basic unit of WordNet is the /synset/: a "lexicalized concept of English," or "a set of synonyms that can be used (in an appropriate context) to express that concept" [cite:@miller1998wordnet 24]. Synsets are denoted in WordNet according to one of their lemmas, its part of speech, and its sense number, with the most common sense given the lowest number. So the first sense of the lemma /robin/, whose definition in WordNet is the "small Old World songbird with a reddish breast," is denoted /robin.n.01/.
+
+WordNet charts relations between synsets in terms of their hypernymy, hyponymy, meronymy, and more. For the purposes of this experiment, I will largely be exploring hypernymic and hyponymic relations. Hypernymy encompasses a variety of lexical supersets, of which one is taxonomic. A hypernym tree for /robin.n.01/, for instance, may be /robin.n.01 @-> thrush.n.03 @-> oscine.n.01 @-> passerine.n.01 @-> bird.n.01 @-> vertebrate.n.01 @-> chordate.n.01 @-> animal.n.01 @-> organism.n.01 @-> living_thing.n.01 @-> whole.n.02 @-> object.n.01 @-> physical_entity.n.01 @-> entity.n.01/, where @-> denotes a hypernymic relation.
+
+However, taxonomies like this can be technical, as the WordNet creators freely admit. An English speaker without a specialized education in biological taxonomy will likely describe a robin as a bird, but unlikely describe it as a passerine. Furthermore, taxonomy is but one of several varieties of hypernymy. As Anna Wierzbicka and others have shown, apples are not just a "kind of fruit," but a food: nouns have telic hypernymy, as well [cite:@wierzbicka1984apples]. So hypernymic relations in WordNet are not a simple hierarchy, like those found in 18th century encyclopedias. Rather, they are a "tangled hierarchy," or a directed graph of lexical relations [cite:@miller1998wordnet 35].
+
+# Examples of hypernymy and hyponyy
+
+Taxonomies like those in WordNet are useful, even if they diverge from our intuition. If we can suspend disbelief long enough to understand that these categories are opinions, then we can apply these taxonomies to a text, to derive a picture of the text's categories.
+
+I employ WordNet for this study, rather than, say, the Historical Thesaurus of the Oxford English Dictionary, since it is easily machine-readable, has a well-documented interface in the Python NLTK, has a long history of expansion and revision, since the 1990s, and catalogs a wide variety of semantic relations.
+
+In this first experiment, my goal is to find the objects of a literary text. What constitutes an object is difficult to define, as we have seen in the object theory section above, so to systematize this query, I identify any WordNet sense which has as one of its hypernyms, ~object.n.1~, defined as "a tangible and visible entity; an entity that can cast a shadow" [cite:@wordnet:object].
+
+The synset /object.n.1/ itself has 37 direct hyponyms, which include a number of oddly specific synsets: /keepsake.n.01/, /curio.n.01/, /hoodoo.n.04/, and /je_ne_sais_quoi.n.01/, all synsets which appear to be difficult to categorize. But there is a much larger set of hyponyms of /object.n.01/'s hyponym /whole.n.02/. The direct hyponyms of /whole.n.02/, shown in @tbl:wholeHyponyms, read as categories.
+
+#+LABEL: tbl:wholeHyponyms
+| Synset              | Definition                                                                |
+|---------------------+---------------------------------------------------------------------------|
+| artifact.n.01       | a man-made object taken as a whole                                        |
+| assembly.n.05       | a unit consisting of components that have been fitted together            |
+| congener.n.03       | a whole (a thing or person) of the same kind or category as another       |
+| item.n.03           | a whole individual unit; especially when included in a list or collection |
+| living_thing.n.01   | a living (or once living) entity                                          |
+| natural_object.n.01 | an object occurring naturally; not made by man                            |
+| sum.n.05            | the whole amount                                                          |
+
+These are not strictly categories, however, since a given synset may have more than one of these as hypernyms: a horse may be both a natural objects ("not made by man"), and a living thing.
+
+Given that /assembly.n.05/, /congener.n.03/, /item.n.03/, and /sum.n.05/ have relatively shallow hyponym trees, I will mostly be focusing on the proportions of words in literary texts with the hypernyms /artifact.n.01/, /living_thing.n.01/, and /natural_object.n.01/.
+
+*** Word Sense Disambiguation
+
+The problem of computationally analyzing a text's objects requires that it can correctly identify those objects. To do that, the computer program must first be able to discern between many different senses of a word. If we are to ascertain whether a given instance of /bank/ is a natural object (a river bank), we must first ensure that it is not a financial institution. In computational linguistics, this problem is known as word sense disambiguation, or WSD, and it has been one of the hardest problems for natural language processing over the past fifty years.
+
+The problem is at least as old as 1949, when Warren Weaver, a computer scientist working on machine translation, wrote:
+
+#+begin_quote
+If one examines the words in a book, one at a time through an opaque mask with a hole in it one word wide, then it is obviously impossible to determine, one at a time, the meaning of words. “Fast” may mean “rapid”; or it may mean “motionless”; and there is no way of telling which. But, if one lengthens the slit in the opaque mask, until one can see not only the central word in question but also say N words on either side, then, if N is large enough one can unambiguously decide the meaning. [cite:@weaver1955translation 20]
+#+end_quote
+
+Modern approaches to WS
+
+"For example, Bar-Hillel (1960) argued that 'no existing or imaginable program will enable an electronic computer to determine that the word 'pen' is used in its ‘enclosure’ sense in the passage below, because of the need to model, in general, all world knowledge like, for example, the relative sizes of objects: 'Little John was looking for his toy box. Finally he found it. The box was in the pen. John was very happy.'" 5-6
+
+The first step is to disambiguate the texts. Given a word like /bank/, we must ascertain whether it is a financial institution, or the side of a river. There have been a number of approaches to this problem, over the years. Among the oldest and most-well known of these techniques is the [[id:71b3c10c-fb49-43f6-9f36-b9032af87522][Lesk Algorithm]]. [cite:@lesk86_autom]
+
+Since then, there have been some improvements: simplified lesk,
+
+Gloss-Augmented WSD
+
+The one I'm using is EWISER, "Enhanced WSD Integrating Synset Embeddings and Relations." This is among the first to, as the title of their paper puts it, to "break through the 80% glass ceiling" [cite:@bevilacqua-navigli-2020-breaking]. This refers to the accuracy of WSD systems, which had only been up to about 80% accurate.
+
+EWISER is trained on SemCor, a sense-tagged corpus, and uses glosses and examples from WordNet.
+
+
+Even though EWISER uses a probabilistic model, and therefore obviates the need for a Lesk-style computation, disambiguating each word in a text is an extremely expensive operation, computationally.
+
+Disambiguating a single text in $C_{PG}$ takes around 20 minutes on a laptop. It runs much faster on the university's compute servers, however, and so I employed a node with 24 cores and 96GB of RAM, which even when running in parallel across all cores, got through an analysis of $C_{PG}$ in about four days.
+
+ This experiment attempts to quantify objects in British fiction and poetry.
+ What constitutes an object is difficult to define, as we have seen, so I choose any WordNet sense which is a hyponym of `object.n.1`, defined as "a tangible and visible entity; an entity that can cast a shadow. [TODO: cite wordnet webpage]
+ http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=physical+object&i=0&h=0#c
+
+*** Results
+
+* Bodies
+
+The human body is not only a special type of object, but in one sense, its archetype.
+The synonymy of /body/ with /object/, in its sense of "celestial bodies," hints at a lexical relation between the senses which extends beyond mere meronymy. In fact, this sense of /body/ is defined by the OED lexicographers as "a material thing, an object" [cite:@oed:body].
+
+Human bodies are of course objects, although this distinction is not made without some anxiety. The frequency of bigrams like "inanimate object" carry with them the necessity of differentiating between living bodies and other types of objects.
+
+Yet the human body is rarely discussed in critical studies of objects in modernism. Instead, a rich body of critical work exists which concerns "the body in literature." And in those corporeal studies, inanimate objects are rarely discussed.
+
+So bodies and objects are sometimes synonyms, and sometimes antonyms.
+
+** Bodies in Modernist Studies
+
+** Experiment: Bodies in Literature
