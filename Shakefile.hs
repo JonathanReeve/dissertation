@@ -132,6 +132,39 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
+    "dest/04-shapes/ch-4.html" %> \f -> do
+        assets <- getDirectoryFiles "" [ "04-shapes/images/*"
+                                       , "assets/*/*"
+                                       ]
+        liftIO $ print assets
+        let outAssets = map ("dest/" <>) assets
+        let source = "04-shapes/ch-4.org"
+            filters = [ "templates/PandocSidenote.hs"
+                      ]
+        need ([ source, template, csl, bib ]
+              ++ outAssets
+              ++ filters)
+        contents <- readFileText source
+        let replaced = T.unpack $ contents
+        cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
+                                       "--template", template,
+                                       "--standalone",
+                                       "--section-divs",
+                                       "--reference-location=block",
+                                       "--csl=" ++ csl,
+                                       "--toc",
+                                       "--variable=autoSectionLabels:true",
+                                       "--metadata=linkReferences:true",
+                                       "--metadata=link-citations:true",
+                                       "--metadata=tblPrefix:table",
+                                       "--filter=templates/PandocSidenote.hs",
+                                       "--filter=pandoc-crossref",
+                                       "--citeproc",
+                                       "--mathjax",
+                                       "--bibliography", bib,
+                                       "-o", f
+                                       ]
+
 -- | WAI Settings suited for serving statically generated websites.
 staticSiteServerSettings :: FilePath -> StaticSettings
 staticSiteServerSettings root =
