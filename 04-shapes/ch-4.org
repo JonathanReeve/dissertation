@@ -9,40 +9,53 @@ This dissertation chapter is a full-color, interactive document, originally form
 
 * Introduction
 
-Color is bounded and contained by shape. The retinal cells responsible for color vision, cone cells, are complemented with rod cells which are responsible for the perception of shape. While cones, comprising 6-7 million cells per eye, are responsible for color perception, the much more numerous rod cells, at around 120 million cells, are responsible for night vision, peripheral vision, motion perception, and object recognition.
+It is not only color that the modernist literary period begins to see differently, but its shapes, as well. Color is bounded and contained by shape, and the retinal cells responsible for color vision, cone cells, are complemented with rod cells which are responsible for the perception of shape. While cones, comprising 6-7 million cells per eye, are responsible for color perception, the much more numerous rod cells, at around 120 million cells, are responsible for night vision, peripheral vision, motion perception, and object recognition.
+# Do some more reading about rods in scientific / biological literature.
 
-# Do some more reading about rods in scientific / biological literature
+The modernist attention to detail, and expansion of description, which I show happening in the previous chapter, also takes place in its shapes, outlines, and oobjects.
 
-So to continue to model the visual imagination of literary modernism, we now turn to shapes, objects, and forms.
+But like color, matter exists along a kind of spectrum. We may say with confidence that a sunset, at a certain stage, is red, yet it is much more difficult to pinpoint the exact moment it became red, since it passes through a multitude of similar colors along the way. Shape operates in the same way. Objects have shape. And shape is part of what makes an object. So to be an object, it should have shape, and be quantized and discretized in some way: a handful of sand may be an object in the way that a beach full of sand may not. Can we find with the same confidence the moment that matter becomes an object? That it takes on qualities of a discrete entity, such as size, shape, and utility? Like the color spectrum, the matter/object spectrum is semantically slippery.
 
-In literature, things, shapes, and objects---and these are not synonyms, but we'll get to that later---are coextensive with words, since, in a sense, objects, although homomorphic with things, are by definition grammatical: they exist in relation to subjects and verbs. They are the stuff of nearly every sentence.
+These problems are compounded, too, once we start talking about the human body, one of the archetypes, as I will argue later, of shape and body. At what point, precisely, does a hand become a fist? Or at what point do thighs become a lap? At what point, during the process of standing up, does a lap disappear? And what are the spatial boundaries of these bodily objects? For instance, what, precisely, are the boundaries of the face, or the head? One's teeth are in one's head, yet when one has a toothache, it may not be considered a headache. So as with color, shape and objecthood are linguistically determined, to some degree.
 
-So to count objects, one would count words. The experiments of this chapter are, first, to quantify the objects of modernism. Using state-of-the art word sense disambiguation, and hypernym-based categorization, using the Princeton WordNet, I am able to calculate the proportions of objects in a literary text, and to analyze their diachronic trends.
-
-Next, I investigate a particular type of object: human bodies, and their constituent parts, as they appear in fiction and poetry.
+So to continue to model the visual imagination of literary modernism, we now turn to shapes, objects, and forms. In literature, things, shapes, and objects---and these are not synonyms, but we'll get to that later---are coextensive with words, since, in a sense, objects, although homomorphic with things, are by definition grammatical: they exist in relation to subjects and verbs. They are the stuff of nearly every sentence. So to count objects, one would count words. The experiments of this chapter are, first, to quantify the objects of modernism. Using state-of-the art word sense disambiguation, and hypernym-based categorization, using the Princeton WordNet, I am able to calculate the proportions of objects in a literary text, and to analyze their diachronic trends. Second, I quantify bodies, and their constituent parts, to better understand visualities the body in literature.
 
 * Objects
-** Objects in Modernist Studies
+** Objects in Theory
 
-The past few decades have seen a considerable amount of scholarship dealing with modernist literature and its relation to material objects.
+As with color, object theory, has a long history, across a wide variety of disciplines: in aesthetics, metaphysics, phenomenology, anthropology, and other disciplines, where it is variously called "thing theory," material culture studies, or materiality studies.
+
+[[id:8936fbfd-c58f-4af6-bbd8-40514afc41b8][Henri Bergson]], /Creative Evolution/: "the human intellect feels at home among inanimate objects, more especially among solids, where our action finds its fulcrum and our industry its tools." 21
+
+The cultural critic Jean Baudrillard, in /The System of Objects/, argues that "our urban civilization is witness to an ever-accelerating procession of generations of product, appliances and gadgets" [cite:@baudrillard2020system 3]. In the 18th century, he contends, these could be systematically catalogued in, for example, Diderot's /Encyclopédie/. But lately, "everyday objects ... proliferate, needs multiply, production speeds up the life-span of such objects—yet we lack the vocabulary to name them all" [cite:@baudrillard2020system 3].
+
+Edmund Husserl's phenomenology asserts that "the originarily presentive act" is "the /material perception (perception of physical things), perception of bodies. With this, a basic sort of perception is designated, fully delimited from every other sort of perception." [cite:@husserl1980phenomenology 1] In a fragment called "the constitutive role of the movement-sensations in comparison with other sensations and the relation between the constitution of animate organism and of physical thing," Husserl argues that "only by means of" the "free acts" in which "an object moves over the skin surface," or "the skin surface of the hand, feeling over it (the object) moves" may we "carry out" "the constitution of physical-thing objects" [cite:@husserl1980phenomenology 108].
+
+
+** Objects in Modernism Studies
+
+The past few decades have also seen a considerable amount of scholarship dealing with modernist literature and its relation to material objects.
 
 Douglas Mao's influential 1998 monograph /Solid Objects: Modernism and the Test of Production/ begins with an anecdote about a letter from Freud to H.D., in which the psychoanalyst acknowledges the receipt of flowers, accompanied with a note reading "to greet the return of the Gods." While others in Freud's circle had read "goods," H.D. had actually written "Gods." This "goods/Gods" dichotomy, while anecdotal, becomes for Mao a useful metaphor for literary modernism's struggles with materiality and, if not spirituality, at least, abstraction.
+
+Mao's centerpiece, as his title suggests, is Virginia Woolf's story "Solid Objects," a short story from the October 22nd, 1920 issue of /The Athenaeum/. It begins, "the only thing that moved upon the vast semi-circle of the beach was one small black spot."[fn::This seems to me strikingly similar to the opening stanza of Wallace Stevens's "Thirteen Ways of Looking at a Blackbird," which begins, "among twenty snowy mountains / the only moving thing / was the eye of the blackbird." Stevens's poem was published almost three years earlier, in the Chicago-based "little magazine" /Others/, but I make no claim as to an influence [cite:@others1917 25]] We soon learn that this black spot "possessed four legs," and that it was in fact the outline of two young men. John, one of the two men, discovers a chunk of green sea glass under the sand.
+
+Mao notes that the utility of the object (its /telic hypernymy/, as the WordNet lexicographers will describe this relation, in the section below) is its meaning, for Charles, who is looking for a stone to skip over the water, while its meaning for John is experiential, aesthetic. John's aestheticism, Mao points out, is Paterian, aligned with Pater's dictum, "not the fruit of experience, but experience itself, is the end."
+
+
 
 
 
 Bill Brown's work is also instrumental in this field. His 1999 article, "The Secret Life of Things," also deals with Virginia Woolf's story, "Solid Objects." Brown cites William James's chapter on "perception of things," in which James "tells a story of what happens when our habits are broken, when for instance we look at a landscape with our head upside down or when we turn a painting bottom upward" [cite:@brown1999secret 5]. Under those conditions, James argues, "the colors grow richer and more varied, we don't understand the meaning of the painting, but, to compensate for the loss, we feel more freshly the value of the mere tints and shadings." Brown uses this to differentiate between /things/ and /objects/: "what I want to underscore is how in James the difference between the apperceptive constitution of the thing, in what I would call its /objecthood/, and the experience of a thing, in what I would call its /thinghood/, emerges in the moment (and no doubt only as a moment) of reobjectification that is a kind of misuse---turning the picture bottom up, standing on one's head" [cite:@brown1999secret 6].
 
+His 2004 edited collection of object theory essays, /Things/, begins by making the distinction between /things/ and /objects/. Objects, in this view, are things that have taken on the grammatical quality of their syntactic namesakes. Things, on the other hand, exist outside of grammar, action, and abstraction: they are "something warm, that relieves us from the chill of dogged ideation, something concrete that relieves us from unnecessary abstraction" [cite:@brownThings2004 1]. Brown expands on this object theory in 2016's /Other Things/, where he argues that subject and object are engendered by things: "some thing, by which I will always mean the thingness of the constituted object, is the outcome of an interaction (beyond their mutual constitution) between subject and object" [cite:@brown2016other 22].
 
 
-His 2004 edited collection of object theory essays, /Things/, begins by making the distinction between /things/ and /objects/. Objects, in this view, are things that have taken on the grammatical quality of their syntactic namesakes. Things, on the other hand, exist outside of grammar, action, and abstraction: they are "something warm, that relieves us from the chill of dogged ideation, something concrete that relieves us from unnecessary abstraction" [cite:@brownThings2004 1].
-
-[cite:@brownThings2004]
-
-He followed his 2004 /Things/ with 2016's /Other Things/, along with 2010's /A
-
-Among the modernists themselves, there is also no lack of object theory.
+Among modernist writers themselves, there is also a trend towards object theory.
 
 I have already discussed, in chapter 2, Pound's manifesto of /imagisme/, which includes as its first precept "direct treatment of the thing."
+Put differently, this is also the aim of the critic, as Walter Pater has it:
+- "'To see the object as in itself it really is,' has been justly said to be the aim of all true criticism whatever, and in aesthetic criticism the first step towards seeing one's object as it really is, is to know one's own impression as it really is, to discriminate it, to realise it distinctly." [cite:@pater1980the xix]
 
 T.S. Eliot's famous critique of /Hamlet/, we recall, is that it lacks an "objective correlative," or "a set of objects, a situation, a chain of events which shall be the formula of that /particular/ emotion" [cite:@eliotWasteLand 120]. This aesthetic is apparent in "The Waste Land" and elsewhere, where emotions like "fear" are perceived through objects like "a handful of dust," and April's cruelty is shown with lilacs.
 
@@ -50,21 +63,11 @@ Across the Atlantic, the American modernist poet William Carlos Williams, in the
 
 But it is easy to cherry-pick objects in fiction and poetry, of any century---all one must do is find nouns. Does that mean, as critics have argued, that objects are a particular concern of modernist literature?
 
-** Object Theory and Thing Theory
-
-Modernist studies on objects in literature draws upon a more general theory of things and objects.
-
-[[id:8936fbfd-c58f-4af6-bbd8-40514afc41b8][Henri Bergson]], /Creative Evolution/: "the human intellect feels at home among inanimate objects, more especially among solids, where our action finds its fulcrum and our industry its tools." 21
-
-[[id:948967e1-19f4-4bd8-a896-012962b8f782][Baudrillard]], /[[id:bcdce32e-6ae0-49c4-9587-34c8218f4935][The System of Objects]]/ 22
-
-[[id:64b8aa33-52b6-4877-87b7-3ecc8b55cde7][Woolf, /Solid Objects/]] 30
-
 ** Experiment: Quantifying Objects in Literature
 
 This experiment attempts to quantify the presence of objects in British fiction and poetry. I want to know: what are the objects that are the most common? Which fall in and out of favor, over time? Which are incommensurate with lived experience? Of those objects, how many are natural objects, and how many are artificial?
 
-To do this, I apply cutting-edge techniques of word sense disambiguation to $C_PG$, and quantify the results using the Princeton WordNet.
+To do this, I apply state-of-the-art techniques of word sense disambiguation to $C_PG$ $C_CL$, and others, and quantify the results using the Princeton WordNet.
 
 *** WordNet
 
@@ -97,7 +100,7 @@ The synset /object.n.1/ itself has 37 direct hyponyms, which include a number of
 | natural_object.n.01 | an object occurring naturally; not made by man                            |
 | sum.n.05            | the whole amount                                                          |
 
-These are not strictly categories, however, since a given synset may have more than one of these as hypernyms: a horse may be both a natural objects ("not made by man"), and a living thing.
+These are not strictly categories, however, since a given synset may have more than one of these as hypernyms: a horse may be both a natural objects ("not made by man"), and a living thing
 
 Given that /assembly.n.05/, /congener.n.03/, /item.n.03/, and /sum.n.05/ have relatively shallow hyponym trees, I will mostly be focusing on the proportions of words in literary texts with the hypernyms /artifact.n.01/, /living_thing.n.01/, and /natural_object.n.01/.
 
@@ -111,42 +114,253 @@ The problem is at least as old as 1949, when Warren Weaver, a computer scientist
 If one examines the words in a book, one at a time through an opaque mask with a hole in it one word wide, then it is obviously impossible to determine, one at a time, the meaning of words. “Fast” may mean “rapid”; or it may mean “motionless”; and there is no way of telling which. But, if one lengthens the slit in the opaque mask, until one can see not only the central word in question but also say N words on either side, then, if N is large enough one can unambiguously decide the meaning. [cite:@weaver1955translation 20]
 #+end_quote
 
-Modern approaches to WS
+At various points in the 20th Century, effective WSD was considered an intractable problem. For example, referring to the phrase "the box is in the pen," Bar-Hillel argued, in 1960, that "no existing or imaginable program will enable an electronic computer to determine that the word 'pen' is used in its ‘enclosure’ sense in the passage ... because of the need to model, in general, all world knowledge like, for example, the relative sizes of objects" [cite:@agirre2007; quoted in; p. 5-6].
 
-"For example, Bar-Hillel (1960) argued that 'no existing or imaginable program will enable an electronic computer to determine that the word 'pen' is used in its ‘enclosure’ sense in the passage below, because of the need to model, in general, all world knowledge like, for example, the relative sizes of objects: 'Little John was looking for his toy box. Finally he found it. The box was in the pen. John was very happy.'" 5-6
+However, the field has seen much advancement over the years. One of the first WSD algorithms is the Lesk Algorithm, developed by Michael Lesk, of Bell Communications Research, in 1987
+[cite:@lesk86_autom]. In its original form, this algorithm disambiguates between senses by comparing the definitions of the context words. Lesk's own example presents the problem of guessing whether, /ash/ refers to the tree or the remains of a fire. If it appears in the phrase /coal ash,/ one could compare the sense definitions for /coal/ and for /ash/. Since one sense of /ash/ has the definition "the solid residue left when combustible material is fully burned," and one sense of /coal/ has the definition "a black or brownish solid combustible substance," we can determine that the two senses align by their overlapping definition word /combustible./
 
-The first step is to disambiguate the texts. Given a word like /bank/, we must ascertain whether it is a financial institution, or the side of a river. There have been a number of approaches to this problem, over the years. Among the oldest and most-well known of these techniques is the [[id:71b3c10c-fb49-43f6-9f36-b9032af87522][Lesk Algorithm]]. [cite:@lesk86_autom]
+Since the 80s, there have been some minor improvements to WSD, but which are mainly variations of the Lesk algoritm: simplified Lesk, adapted Lesk, and so on [cite:@banerjee2002].
 
-Since then, there have been some improvements: simplified lesk,
+Only in the past couple of years have WSD algorithms attained an accuracy greater than 80%. The one I'm using is EWISER, "Enhanced WSD Integrating Synset Embeddings and Relations." This is among the first to, as the title of their paper puts it, to "break through the 80% glass ceiling" [cite:@bevilacqua-navigli-2020-breaking].
 
-Gloss-Augmented WSD
+EWISER is trained on SemCor, a sense-tagged corpus, and uses glosses and examples from WordNet. Even though EWISER uses a probabilistic model, and therefore obviates the need for a Lesk-style computation, disambiguating each word in a text is an extremely expensive operation, computationally. Disambiguating a single text in $C_{PG}$ takes around 20 minutes on a laptop. It runs much faster on the university's compute servers, however, and so I employed a node with 24 cores and 96GB of RAM, which even when running in parallel across all cores, got through an analysis of $C_{PG}$ in about ten days.
 
-The one I'm using is EWISER, "Enhanced WSD Integrating Synset Embeddings and Relations." This is among the first to, as the title of their paper puts it, to "break through the 80% glass ceiling" [cite:@bevilacqua-navigli-2020-breaking]. This refers to the accuracy of WSD systems, which had only been up to about 80% accurate.
+*** Results and Discussion
+**** Literary-historical trends
 
-EWISER is trained on SemCor, a sense-tagged corpus, and uses glosses and examples from WordNet.
+@Fig:object-proportions shows the proportions of all objects over time in $C_{PG2}$: the number of words with /object.n.01/ hypernyms, divided by the total number of words in a text. An ordinary least squares linear regression on this data set shows that there is an 11.4% increase in objects from texts published in 1800, to texts published in 1920.
 
+#+INCLUDE: "04-shapes/includes/object-proportions-over-time.html" export html
 
-Even though EWISER uses a probabilistic model, and therefore obviates the need for a Lesk-style computation, disambiguating each word in a text is an extremely expensive operation, computationally.
+#+CAPTION: Object proportions over time, $C_{PG2}$
+#+LABEL: fig:object-proportions
+[[./images/dummy.png]]
 
-Disambiguating a single text in $C_{PG}$ takes around 20 minutes on a laptop. It runs much faster on the university's compute servers, however, and so I employed a node with 24 cores and 96GB of RAM, which even when running in parallel across all cores, got through an analysis of $C_{PG}$ in about four days.
+These trends look very different when we examine object hyponyms, however. The hyponym /living_thing.n.01/ decreases in proportion by about 8% over this same 1800–1920 period, as shown in @fig:livingThing. However, the /natural_object.n.01/ hyponym increases by a smaller 7%, (@fig:naturalObject), and /artifact.n.01/ increases by an astouding 15% (@fig:artifact).
 
- This experiment attempts to quantify objects in British fiction and poetry.
- What constitutes an object is difficult to define, as we have seen, so I choose any WordNet sense which is a hyponym of `object.n.1`, defined as "a tangible and visible entity; an entity that can cast a shadow. [TODO: cite wordnet webpage]
- http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=physical+object&i=0&h=0#c
+#+INCLUDE: "04-shapes/includes/living_thing.n.01.html" export html
 
-*** Results
+#+CAPTION: Object proportions over time, $C_{PG2}$
+#+LABEL: fig:livingThing
+[[./images/dummy.png]]
+
+#+INCLUDE: "04-shapes/includes/natural_object.n.01" export html
+
+#+CAPTION: /natural_object.n.01/ proportions over time, $C_{PG2}$
+#+LABEL: fig:naturalObject
+[[./images/dummy.png]]
+
+#+INCLUDE: "04-shapes/includes/artifact.n.01.html" export html
+
+#+CAPTION: /artifact.n.01/ proportions over time, $C_{PG2}$
+#+LABEL: fig:artifact
+[[./images/dummy.png]]
+
+**** Texts with the most objects
+
+@Tbl:objects shows the texts with the higest proportions of objects. Most of these are children's books: /Peacock Pie/, /Songs of Childhood/, and /Down-Adown-Derry/, by Walter de la Mare; and /Oswald Bastable/, /The Story of the Amulet/, and /The Wouldbegoods/, by Edith Nesbit, and /A Child's Garden of Verses/, by Robert Louis Stevenson. Here again, there is a pronounced visuality in juvenile fiction and poetry, which suggests that visual attention to the world is either known as a childlike state of mind, or in some other way expected of children's literature.
+
+#+CAPTION: Texts with the highest proportions of objects
+#+LABEL: tbl:objects
+| Year | Title                                   | Author                 | % Objects |
+|------+-----------------------------------------+------------------------+-----------|
+| 1913 | Peacock Pie: a Book of Rhymes           | Walter de la Mare      |  0.140294 |
+| 1885 | A Child's Garden of Verses              | Robert Louis Stevenson |  0.139886 |
+| 1880 | Round About a Great Estate              | Richard Jefferies      |  0.135495 |
+| 1902 | Songs of Childhood                      | Walter de la Mare      |  0.133442 |
+| 1905 | Oswald Bastable and Others              | Edith Nesbit           |  0.131815 |
+| 1922 | Down-Adown-Derry: a Book of Fairy Poems | Walter de la Mare      |  0.130030 |
+| 1920 | The Happy Foreigner                     | Enid Bagnold           |  0.128426 |
+| 1920 | Bliss and Other Stories                 | Katherine Mansfield    |  0.127254 |
+| 1922 | Ulysses                                 | James Joyce            |  0.127251 |
+| 1906 | The Story of the Amulet                 | Edith Nesbit           |  0.124882 |
+| 1922 | The Garden Party and Other Stories      | Katherine Mansfield    |  0.124400 |
+| 1901 | The Wouldbegoods                        | Edith Nesbit           |  0.123869 |
+| 1922 | Jacob's Room                            | Virginia Woolf         |  0.122597 |
+
+All of these were published squarely within the 1880–1930 period I am using as a proxy for literary modernism, but four were published in 1922, specifically---"the year that changed literature" according to Goldstein, and "modernism year one," according to Jackson: both subtitles of monographs about the year's literary import [cite:@goldstein17;@jackson2013constellation;].
+
+One book, Richard Jefferies's /Round About a Great Estate/, is not exactly a work of fiction, but an exemplar of literary nonfiction nature writing. The presence of this book among the other works of fiction and poetry here suggests that nature writing may explain much of the object proportions here. Nature writing is not only a category of book, of course, but a writing style, and passages of ecological description, in all its forms, may certainly be found in the other works here. Notably, /The Garden Party and Other Stories/, whose titular story features an abundance of nature description.
+
+The other works here are canonical modernist texts: two by Katherine Mansfield, /Ulysses/ by James Joyce, and /Jacob's Room/, Virginia Woolf's novel.
+
+When we turn to the hyponyms of /object.n.01/, we see most of these texts, although in slightly different orders. The text with the largest proportions of the hyponym /living_thing.n.01/ is the Jefferies book listed above, /Round About a Great Estate/. Then, there are the usual suspects of children's literature, this time also including children's poetry from Edward Lear, and children's stories by Rudyard Kipling. But also found here are two short works of nature writing by Mary Russell Mitford, an ecological novel from Mayne Reid, and poetry collections from the highly nature-oriented poets Thomas Hood and John Clare.
+
+#+CAPTION: Texts with the highest proportions of /living_thing.n.01/ hyponyms
+#+LABEL: tbl:livingThing
+| Year | Title                                   | Author                 | % Living Things |
+|------+-----------------------------------------+------------------------+-----------------|
+| 1880 | Round About a Great Estate              | Richard Jefferies      |        0.040316 |
+| 1902 | Songs of Childhood                      | Walter de la Mare      |        0.040277 |
+| 1922 | Down-Adown-Derry: a Book of Fairy Poems | Walter de la Mare      |        0.040238 |
+| 1913 | Peacock Pie: a Book of Rhymes           | Walter de la Mare      |        0.036339 |
+| 1837 | The Widow's Dog                         | Mary Russell Mitford   |        0.034270 |
+| 1885 | A Child's Garden of Verses              | Robert Louis Stevenson |        0.032761 |
+| 1871 | Nonsense Songs                          | Edward Lear            |        0.030896 |
+| 1902 | Just So Stories                         | Rudyard Kipling        |        0.030809 |
+| 1824 | Our Village                             | Mary Russell Mitford   |        0.028447 |
+| 1889 | The Poetical Works of Thomas Hood       | Thomas Hood            |        0.028076 |
+| 1920 | Poems Chiefly from Manuscript           | John Clare             |        0.027822 |
+| 1920 | Collected Poems                         | Walter de la Mare      |        0.027248 |
+| 1861 | Bruin: The Grand Bear Hunt              | Mayne Reid             |        0.027242 |
+
+The hyponyms of /natural_object.n.01/ show a similar cast of characters. Here, we find at the lead another Kipling work, /An Almanac of Twelve Sports/, a very short book of light rhymes which accompany a set of illustrations from William Nicholson. Although there is not a preponderance of natural objects, the total number of words is so small as to make the meager number of occurrences a decent proportion of the total. Here, for instance, is one of the twelve poems:
+
+#+BEGIN_VERSE
+Fishing.
+
+Behold a parable! A fished for B.
+C took her bait; her heart was set on D.
+Thank Heaven, who cooled your blood and cramped your wishes,
+Men and not Gods torment you, little fishes.
+#+END_VERSE
+
+Although /fishes/ is really the only word which qualifies as a natural object, the length of the poem is such that it is given more significance. With this in mind, we might want to treat with more skepticism the frequencies of objects in poems.
+
+#+CAPTION: Texts with the highest proportions of /natural_object.n.01/ hyponyms
+#+LABEL: tbl:naturalObject
+| Year | Title                                   | Author                      | % Natural Objects |
+|------+-----------------------------------------+-----------------------------+-------------------|
+| 1897 | An Almanac of Twelve Sports             | Rudyard Kipling             |          0.022523 |
+| 1850 | A Child's Dream of a Star               | Charles Dickens             |          0.018519 |
+| 1922 | Down-Adown-Derry: a Book of Fairy Poems | Walter de la Mare           |          0.015276 |
+| 1905 | Poems of William Blake                  | William Blake               |          0.014258 |
+| 1904 | A Dark Month                            | Algernon Swinburne          |          0.013971 |
+| 1871 | Nonsense Songs                          | Edward Lear                 |          0.013925 |
+| 1902 | Songs of Childhood                      | Walter de la Mare           |          0.013832 |
+| 1895 | Elegy and Other Poems                   | Robert Louis Stevenson      |          0.013570 |
+| 1913 | Peacock Pie: a Book of Rhymes           | Walter de la Mare           |          0.013339 |
+| 1913 | The Lonely Dancer and Other Poems       | Richard le Gallienne        |          0.013212 |
+| 1920 | The Song Book of Quong Lee of Limehouse | Thomas Burke                |          0.013201 |
+| 1880 | Round About a Great Estate              | Richard Jefferies           |          0.013201 |
+| 1847 | The Mahogany Tree                       | William Makepeace Thackeray |          0.012987 |
+| 1894 | For Love of the King: A Burmese Masque  | Oscar Wilde                 |          0.012987 |
+
+Finally, the hyponym /artifact.n.01/ again shows many of the same authors, as shown in @tbl:artifacts. Here again, either the texts are collections children's poems, or they are high modernist fiction.
+
+#+CAPTION: Texts with the highest proportions of /artifact.n.01/ hyponyms
+#+LABEL: tbl:artifacts
+| Year | Title                              | Author                 | % Natural Objects |
+|------+------------------------------------+------------------------+-------------------|
+| 1920 | The Happy Foreigner                | Enid Bagnold           |          0.108193 |
+| 1905 | Oswald Bastable and Others         | Edith Nesbit           |          0.108193 |
+| 1885 | A Child's Garden of Verses         | Robert Louis Stevenson |          0.099324 |
+| 1922 | The Garden Party and Other Stories | Katherine Mansfield    |          0.098977 |
+| 1922 | Ulysses                            | James Joyce            |          0.096026 |
+| 1920 | Bliss and Other Stories            | Katherine Mansfield    |          0.095625 |
+| 1899 | The Ship of Stars                  | Arthur Quiller-Couch   |          0.094220 |
+| 1898 | The Day's Work                     | Rudyard Kipling        |          0.093673 |
+| 1922 | Jacob's Room                       | Virginia Woolf         |          0.093673 |
+
+Are the childrens' poems collections just so short that they are more likely to have large proportions of objects? Or is there some affinity between children's poetry and modernist fiction?
+
+/The Happy Foreigner/ is Enid Bagnold's first novel, narrating her experiences of being a driver during the first world war. Consider the beginning passages of the novel:
+
+#+BEGIN_QUOTE
+The war had stopped.
+
+The King of England was in Paris, and the President of the United States was hourly expected.
+
+Humbler guests poured each night from the termini into the overflowing city, and sought anxiously for some bed, lounge-chair, or pillowed corner, in which to rest until the morning. Stretched upon the table in a branch of the Y.W.C.A. lay a young woman from England whose clothes were of brand-new khaki, and whose name was Fanny.
+#+END_QUOTE
+
+This passage is littered with artifacts: railway termini, the city, a beg, a lounge-chair, a pillow, the corner of a room, a table, and Fanny's clothes.
+
+And here is a passage from Katherine Mansfield's story "At the Bay," which begins her volume /The Garden Party and Other Stories/.
+
+#+begin_quote
+Very early morning. The sun was not yet risen, and the whole of Crescent Bay was hidden under a white sea-mist. The big bush-covered hills at the back were smothered. You could not see where they ended and the paddocks and bungalows began. The sandy road was gone and the paddocks and bungalows the other side of it; there were no white dunes covered with reddish grass beyond them; there was nothing to mark which was beach and where was the sea. A heavy dew had fallen. The grass was blue. Big drops hung on the bushes and just did not fall; the silvery, fluffy toi-toi was limp on its long stalks, and all the marigolds and the pinks in the bungalow gardens were bowed to the earth with wetness. Drenched were the cold fuchsias, round pearls of dew lay on the flat nasturtium leaves. It looked as though the sea had beaten up softly in the darkness, as though one immense wave had come rippling, rippling—how far? Perhaps if you had waked up in the middle of the night you might have seen a big fish flicking in at the window and gone again....
+[cite:@mansfield_garden_1998]
+#+end_quote
+
+The sun, the sea-mist, the bush, the paddocks, the bungalows, the sand, the dunes, the grass, the beach, the sea, the dew, the grass, the bushes, the /toi-toi/, the marigolds, the pinks, the earth, the fuchsias, the leaves, the waves, the fish, and the window: an abundance of living things, natural objects, and artifacts.
+
+**** Texts with the fewest objects
+
+At the other end of the spectrum are texts with low proportions of objects. These are worth discussing, insofar as they illuminate what the object count here is measuring. /Lady Susan/, Jane Austen's posthumously published epistolary novel, ranks as the work with the fewest hyponyms of /object.n.01/ [cite:@austen_lady]. Published in 1871, but probably written in 1794, it details the exploits of Lady Susan Vernon---marriage plots and otherwise---in her letters and others'. Consider the opening paragraph of the novel:
+
+#+begin_quote
+MY DEAR BROTHER,—I can no longer refuse myself the pleasure of profiting by your kind invitation when we last parted of spending some weeks with you at Churchhill, and, therefore, if quite convenient to you and Mrs. Vernon to receive me at present, I shall hope within a few days to be introduced to a sister whom I have so long desired to be acquainted with. My kind friends here are most affectionately urgent with me to prolong my stay, but their hospitable and cheerful dispositions lead them too much into society for my present situation and state of mind; and I impatiently look forward to the hour when I shall be admitted into your delightful retirement. [cite:@austen_lady]
+#+end_quote
+
+This epistolary fragment traffics in emotion: pleasure, profit, desire, hospitality, cheerfulness, delight; and in social relations: invitation, introduction, acquaintence, affection, friends, and society. The focus is the relation between people, rather than the relations between objects, or those between objects and people. Not a single object appears in this letter, or in the several that follow.
+
+Austen's /Pride and Prejudice/, another marriage-plot novel, appears at #12 in this list [cite:@austen_pride_2013]. Following that is Fanny Burney's final novel, /The Wanderer; or, Female Difficulties/ [cite:@burney_wanderer], about a woman who flees the France of the Reign of Terror, only to arrive in England poor and friendless, and /Kept in the Dark/ [cite:@trollope_kept_2007], an Anthony Trollope marriage-plot novel.
+
+The presence of so many marriage-plot novels here, and those bearing the Library of Congress subject heading "Domestic Fiction," suggests that these narratives negatively correlate with the presence of objects. If the primary focus of a literary work is interpersonal relationships, it seems that this occludes the presence of object details, descriptions, and other correlating visual phenomena.
 
 * Bodies
 
 The human body is not only a special type of object, but in one sense, its archetype.
-The synonymy of /body/ with /object/, in its sense of "celestial bodies," hints at a lexical relation between the senses which extends beyond mere meronymy. In fact, this sense of /body/ is defined by the OED lexicographers as "a material thing, an object" [cite:@oed:body].
+The synonymy of /body/ with /object/, in its sense of /celestial bodies,/ hints at a lexical relation between the senses which extends beyond mere meronymy. In fact, this sense of /body/ is defined by the OED lexicographers as "a material thing, an object" [cite:@oed:body].
 
-Human bodies are of course objects, although this distinction is not made without some anxiety. The frequency of bigrams like "inanimate object" carry with them the necessity of differentiating between living bodies and other types of objects.
+Human bodies are of course objects, although this distinction is not made without some anxiety. The frequencies of bigrams like /inanimate object/ carry with them the necessity of differentiating between living bodies and other types of objects.
+The use of bodies or body parts as objects, grammatically or physically, is often referred to as /objectification/, and carries with it an implication of dehumanization.
+
 
 Yet the human body is rarely discussed in critical studies of objects in modernism. Instead, a rich body of critical work exists which concerns "the body in literature." And in those corporeal studies, inanimate objects are rarely discussed.
 
 So bodies and objects are sometimes synonyms, and sometimes antonyms.
 
+
+Peter Brooks's /Body Work: Objects of Desire in Modern Narrative/ connects the intimacies of novels, and the experiences of reading them, through conditions such as privacy. It begins, "the rise of the novel is closely tied to the ride of the idea of privacy. The condition of privacy characterizes the reading and writing of novels. Perhaps as a consequence of this private production and consumption, private life was from the inception of the genre the novel's subject matter as well—or perhaps it was the other way around: the need to explore the relatively new concept of private experience entailed the invention of the novel." [cite:@9780674077249 28]
+
+
+
 ** Bodies in Modernist Studies
 
+In modernist studies, the body has become an increasing axis of inquiry, as well.
+
+James Joyce, as a young man, briefly attended medical school with aspirations to become a doctor [cite:@ellmann_james_1982 105–107]. The schemata for /Ulysses/, in which Joyce explains the structure of the novel, /ex post facto/, to his friends and aspiring reviewers, includes a column for organ correspondences: each chapter, beginning with the fourth, has a corresponding organ of the human body. "Calypso," the fourth episode, has "kidney" listed as the corresponding organ, and it is there that we find Leopold Bloom, who "ate with relish the inner organs of beasts and fowls," preparing to eat a kidney [cite:@joyce_ulysses_1986 45]. "Aeolus," named after the god of the wind, takes place at a windy newspaper office, and has as its organ the lungs. And "Nausicaa," the chapter which arguably got /Ulysses/ banned, in which Bloom stares at Gertie Mcdowell and pleasures himself, has as its dual organs the eye and the nose.
+
+Maud Ellman has catalogued many of these correspondences in /Ulysses/, which she calls "the epic of the human body" [cite:@ellmann2008ulysses].
+
+Christine Froula, in /Modernisms's Body: Sex, Culture, and Joyce/, argues that Joyce uses his "resisting artists' suffering, transgressions, symptoms, masquerade, parody, creativity, and play," often along sexual or somatic axes, to "turn the perversity of which he is often accured into a daring critique of his culture" [cite:@froula1996modernism xi].
+
+
+
+
 ** Experiment: Bodies in Literature
+
+#+begin_comment
+NER:
+
+To quantify bodies in literature, along with their parts, a slightly different approach is necessary. I wanted to be able to count not only synsets of a certain semantic domain (e.g., /body_part.n.01/), but also words metaphorically used of body parts.
+#+end_comment
+
+To quantify bodies in literature, I use the same annotations provided by EWISER's WSD, but search for hyponyms of /body_part.n.01/. @Fig:bodyPartSums shows the total proportions of various body parts, as they appear in $C_{PG2}$. What is shown here is not the original word forms, but their synsets. The synset /hand.n.01/ is by far the most common, at 20% of the total number of body parts; /eye.n.01/ is next most common, at almost 12%; and the subsequent body parts are all smaller by degrees: /face.n.01/ at almost 7%, /head.n.01/ at around 5%, /arm.n.01/ and /shoulder.n.01/ at around 3%, and /finger.n.01/, /lip.n.01/, /back.n.01/, and /foot.n.01/ around 2%. These numbers will come of use later, as I compare them to neurological findings, in the section below.
+
+#+INCLUDE: "04-shapes/includes/bodyPartSums.html" export html
+
+#+CAPTION: Body Part Sums, $C_{PG2}$
+#+LABEL: fig:bodyPartSums
+[[./images/dummy.png]]
+
+@Fig:bodyPartSumsBody shows those same proportions mapped to an image of a human body, to better illustrate the attention given to each, in fiction and poetry of this period. The larger the dot on this image of a body, the larger the proportion of the corresponding body part's appearances. The conclusion one draws from this visualization is that the hand and the face are undoubtedly the centra of attention, while the torso and leg are comparatively neglected.
+
+#+INCLUDE: "04-shapes/includes/bodyPartSumsBody.html" export html
+
+#+CAPTION: Body Part Sums, Body Projection, $C_{PG2}$
+#+LABEL: fig:bodyPartSumsBody
+[[./images/dummy.png]]
+
+
+** The Sensory Homonculus
+
+In 1937, neuroscientists Wilder Penfield and Edwin Boldrey electrically stimulated the somatosensory cortices of their subjects' brains, in order to map out the regions responsible for perceiving the various parts of the body [cite:@penfield1937]. They called the resulting map the "sensory homonculus": a topography of the brain's regions responsible for sensing the body. Here is Penfield and Boldrey describing this model:
+
+#+begin_quote
+The homonculus gives a visual image of the size and sequence of cortical areas, for the size of the parts of this grotesque creature were determined not so much by the number of responses ... but by the apparent perpendicular extent of representation of each part when these responses were multiple for the same part. / The large size of the thumb and lips indicates that the vertical extent of the Rolandic cortex devoted to those parts in individual cases is very large. Thus the trunk is quite small and the legs and head exceedingly small, while the tongue, which usually occupies a comparatively long strip of the Rolandic lip, is large. [cite:@penfield1937 432]
+#+end_quote
+
+@Fig:homonculus1 illustrates this map, laid over a cross-section of the cortex. This model, it might be said, is how the brain sees the body. In terms of the comparative sizes of neural cortices, the hands, lips, and tongue are very disproportionately important to the brain. In contrast, the limbs and torso are comparatively unimportant. @Fig:homonculus2 shows an artist's rendering of this neurological model. The hands of this model are made enormous, to show the disproportionate attention given to them by the brain; the same is true of the lips and tongue.
+
+#+CAPTION: Sensory homonculus illustration. Source: OpenStax College; [[https://commons.wikimedia.org/wiki/File:1421_Sensory_Homunculus.jpg][Wikimedia Commons]]; CC-BY
+#+LABEL: fig:homonculus1
+[[./images/1421_Sensory_Homonculus.jpg]]
+
+#+CAPTION: Sensory homonculus model. Source: OpenStax College; [[https://commons.wikimedia.org/wiki/File:1421_Sensory_Homunculus.jpg][Wikimedia Commons]]; CC-BY-SA
+#+LABEL: fig:homonculus2
+[[./images/Front_of_Sensory_Homonculus.jpg]]
+
+These proportions are very similar to those which I find in British literature of the 19th and 20th centuries, but with some notable differences.

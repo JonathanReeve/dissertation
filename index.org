@@ -5,20 +5,21 @@
 
 - Introduction
 - Chapter 1: Cognitive Criticism and Reading Psychology
-- [[./02-history/ch-2.html][Chapter 2: Imagisms (History)]]
+- [[./02-history/ch-2.html][Chapter 2: Imagisms]]
 - [[./03-colors/ch-3.html][Chapter 3: Color]]
-- Chapter 5: Shapes, Bodies, Objects
+- [[./04-shapes/ch-4.html][Chapter 4: Shapes, Bodies, Objects]]
 
 ** Word counts
 
 #+BEGIN_SRC sh :exports results
-wc -w 02-history/ch-2.org 03-colors/ch-3.org
+wc -w 02-history/ch-2.org 03-colors/ch-3.org 04-shapes/ch-4.org
 #+END_SRC
 
 #+RESULTS:
 | 13088 | 02-history/ch-2.org |
-| 32192 | 03-colors/ch-3.org  |
-| 45280 | total               |
+| 33052 | 03-colors/ch-3.org  |
+|  5105 | 04-shapes/ch-4.org  |
+| 51245 | total               |
 
 ** Revisions
 
@@ -29,11 +30,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| ef0aea5 | 2022-03-15 | 16:15:55 | -400 |
-| 75e66f4 | 2022-03-15 | 16:13:29 | -400 |
-| a7d883a | 2022-03-15 | 16:12:08 | -400 |
-| 1897369 | 2022-03-15 | 16:11:13 | -400 |
-| 139b8c1 | 2022-03-15 | 16:10:28 | -400 |
+| ea85089 | 2022-06-14 | 14:05:43 | -400 |
+| 4abd2f9 | 2022-06-14 | 14:03:52 | -400 |
+| 1dfeda2 | 2022-06-14 | 13:54:53 | -400 |
+| f87ee79 | 2022-06-14 | 13:52:57 | -400 |
+| e1b4e93 | 2022-06-14 | 13:46:52 | -400 |
 
 ** Source Code and Source Text
 
