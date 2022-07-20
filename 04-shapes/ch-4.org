@@ -9,28 +9,48 @@ This dissertation chapter is a full-color, interactive document, originally form
 
 * Introduction
 
-It is not only color that the modernist literary period begins to see differently, but its shapes, as well. Color is bounded and contained by shape, and the retinal cells responsible for color vision, cone cells, are complemented with rod cells which are responsible for the perception of shape. While cones, comprising 6-7 million cells per eye, are responsible for color perception, the much more numerous rod cells, at around 120 million cells, are responsible for night vision, peripheral vision, motion perception, and object recognition.
+Modernity is increasingly filled with objects. There are 11.4% more objects—artifacts, natural objects, bodies, and more—in the 1880–1930 period than before. Although much of this may be owed to the industrial revolution, and the  modernist literary period not only begins to see differently, but shapes, as well. Color is bounded and contained by shape, and the retinal cells responsible for color vision, cone cells, are complemented with rod cells which are responsible for the perception of shape. While cones, comprising 6-7 million cells per eye, are responsible for color perception, the much more numerous rod cells, at around 120 million cells, are responsible for night vision, peripheral vision, motion perception, and object recognition.
 # Do some more reading about rods in scientific / biological literature.
 
-The modernist attention to detail, and expansion of description, which I show happening in the previous chapter, also takes place in its shapes, outlines, and oobjects.
-
-But like color, matter exists along a kind of spectrum. We may say with confidence that a sunset, at a certain stage, is red, yet it is much more difficult to pinpoint the exact moment it became red, since it passes through a multitude of similar colors along the way. Shape operates in the same way. Objects have shape. And shape is part of what makes an object. So to be an object, it should have shape, and be quantized and discretized in some way: a handful of sand may be an object in the way that a beach full of sand may not. Can we find with the same confidence the moment that matter becomes an object? That it takes on qualities of a discrete entity, such as size, shape, and utility? Like the color spectrum, the matter/object spectrum is semantically slippery.
+The modernist attention to detail, and expansion of description, which I show happening in the previous chapter, also takes place in its shapes, outlines, and objects. But like color, matter exists along a kind of spectrum. We may say with confidence that a sunset, at a certain stage, is red, yet it is much more difficult to pinpoint the exact moment it became red, since it passes through a multitude of similar colors along the way. Shape operates in the same way. Objects have shape. And shape is part of what makes an object. So to be an object, it should have shape, and be quantized and discretized in some way: a handful of dust may be an object in the way that a beach full of sand may not. Can we find with the same confidence the moment that matter becomes an object? That it takes on qualities of a discrete entity, such as size, shape, and utility? Like the color spectrum, the matter/object spectrum is semantically slippery.
 
 These problems are compounded, too, once we start talking about the human body, one of the archetypes, as I will argue later, of shape and body. At what point, precisely, does a hand become a fist? Or at what point do thighs become a lap? At what point, during the process of standing up, does a lap disappear? And what are the spatial boundaries of these bodily objects? For instance, what, precisely, are the boundaries of the face, or the head? One's teeth are in one's head, yet when one has a toothache, it may not be considered a headache. So as with color, shape and objecthood are linguistically determined, to some degree.
 
-So to continue to model the visual imagination of literary modernism, we now turn to shapes, objects, and forms. In literature, things, shapes, and objects---and these are not synonyms, but we'll get to that later---are coextensive with words, since, in a sense, objects, although homomorphic with things, are by definition grammatical: they exist in relation to subjects and verbs. They are the stuff of nearly every sentence. So to count objects, one would count words. The experiments of this chapter are, first, to quantify the objects of modernism. Using state-of-the art word sense disambiguation, and hypernym-based categorization, using the Princeton WordNet, I am able to calculate the proportions of objects in a literary text, and to analyze their diachronic trends. Second, I quantify bodies, and their constituent parts, to better understand visualities the body in literature.
+So to continue to model the visual imagination of literary modernism, we now turn to shapes, objects, and forms. In literature, things, shapes, and objects---and these are not synonyms, but we'll get to that later---are coextensive with words, since, in a sense, objects, although homomorphic with things, are by definition grammatical: they exist in relation to subjects and verbs. They are the stuff of nearly every sentence. So to count objects, one would count words. The experiments of this chapter are, first, to quantify the objects of modernism. Using state-of-the art word sense disambiguation, and hypernym-based categorization, using the Princeton WordNet, I am able to calculate the proportions of objects in a literary text, and to analyze their diachronic trends. I show that objects in fiction and poetry increase by about 11.4%, but that this trend is much more complex than it may appear. Next, I quantify bodies, and their constituent parts, to better understand the visualities of the body in literature.
+
+First, however, some historical context is necessary. Trends in the intellectual climate of Britain, around the turn of the century, account for some of the period's treatment of objects, bodily or otherwise.
 
 * Objects
 ** Objects in Theory
 
 As with color, object theory, has a long history, across a wide variety of disciplines: in aesthetics, metaphysics, phenomenology, anthropology, and other disciplines, where it is variously called "thing theory," material culture studies, or materiality studies.
 
-[[id:8936fbfd-c58f-4af6-bbd8-40514afc41b8][Henri Bergson]], /Creative Evolution/: "the human intellect feels at home among inanimate objects, more especially among solids, where our action finds its fulcrum and our industry its tools." 21
+Objects are, seen through an anthropological and psychological lens, chiefly artifacts which have accumulated socio-cultural significance: those things which are possessed, carry a /telos/, or which otherwise require names, so that they may be discussed. This is especially true of objects as they are represented in language, and even more true of objects as they appear in literature. Thus, a discussion of objects in literature should start with their treatment in these disciplines.
+
+The turn of the century saw the publication and republication of the hugely influential work of early socio-cultural anthropology, /The Golden Bough/, subtitled /A Study in Magic and Religion./ First published in 1890, it was republished a number of times, until it had grown into a twelve-volume edition by 1915 [cite:@frazer_golden_1900]. Its influence on modernist literature, is wide and well-documented, most notably in John Vickery's 1973 /The Literary Impact of The Golden Bough/, which traces its echoes in Yeats, Eliot, Lawrence, and Joyce, among others [cite:@vickery2015literary].
+
+As a work of comparative religion—it was originally subtitled /A Study in Comparative Religion/---it provides taxonomies of "magic," or religious practices of smaller-scale societies, which often highlight their material aspects. Objects in Frazer are usually termed "totems" or "fetishes," now-archaic terms describing artifacts of religious or other social importance. /Fetish/, a polyvalent term which now carries a dismissive tone to ethnographers, arose out of early interactions between African peoples and Europeans. Etymologically derived from Portuguese /fetiço/, it means "magical practice," "spell," or "witchcraft," but ultimately comes from Latin /facticius/, "manufactured" [cite:@pietz1985fetish 5].
+
+In Frazer, "fetish" means more than just a religious object, however. It is sometimes used to mean an object: "the Feloupes of Senegambia cast down their fetishes and drag them about the fields, cursing them till rain falls"; sometimes as social status: "On the Grain Coast the high priest or fetish king, who bears the title of Bodio, is responsible for the health of the community"; for architectural features: "clearly this double-headed fetish at the gateway of the negro villages in Surinam bears a close resemblance to the double-headed images of Janus"; for /genius loci/: "on Mount Agu in Togo there lives a fetish or spirit called Bagba, who is of great importance for the whole of the surrounding country"; for systems of belief: "yet though his power is great ... the rule of the fetish forbids him ever to leave the mountain"; for socially proscripted natural features "the sea is the fetish of the Eyeos, to the north-west of Dahomey, and they and their king are threatened with death by their priests if ever they dare to look on it"; interregal holding cell: "he on whom the choice falls is suddenly seized, bound, and thrown into the fetish-house, where he is kept in durance till he consents to accept the crown"; or many others [cite:@frazer_golden_1996]. In short, /fetish/ in Frazer is a catch-all word for little-understood foreign objects, places, or practices which are imbued with some kind of cultural significance.
+
+This is important to note, since in Frazer, /fetish/ implies a significant social and geographic distance. French or German religious implements, or other important ritual artifacts, are never fetishes, but the term is reserved for societies at a cultural remove from Britain and Europe. As in the previous chapter, where I argue that the presence of a color word depends on a socio-cultural or geographic distance between the viewer and the described object, the presence of culturally significant foreign objects in fiction demand a defamiliarization with their telos. A door-frame, for instance, would not be named as such, in a novel, if it existed only as a waystation between inside and outside. But its cultural distance makes it into "a double-headed fetish."
+
+Meanwhile, in early psychology, Alfred Binet coined the term, /fétishisme érotique/ in 1887: sexual fetishism, in which "l'adoration de ces malades pour des objects inertes comme des bonnets de nuit or des clous de bottines ressemble de tous points à l'adoration du sauvage or du nègre pour des arêtes de poissons ou pour des cailloux brillants, sauf cette différence fondamentale que, dans le culte de nos malades, l'adoration religieuse est remplacée par un appétit sexuel" [cite:@binet1887fétichisme 144].[fn::"The adoration of our patients for inert objects, like nightcaps or boots, resembles in all ways the adorartion of the savage or the negro for fish bones or shiny rocks, except for the fundamental difference that, in the cult of our patients, religious adoration is replaced with a sexual appetite."]
+
+Sigmund Freud later expands this into a discussion of a wider range of paraphilias. Freud's explanation, following his characteristically convoluted castration theory, is that "the fetish is a substitute for the penis ... the woman's (the mother's) penis that the little boy once believed in and---for reasons familiar to us---does not want to give up. ... Thus the foot or shoe owes its preference as a fetish---or a part of it---to the circumstance that the inquisitive boy peered at the woman's genitals from below, from her legs up; fur and velvet---as has been long suspected---are a fixation of the sight of the pubic hair..." [cite:@9780701200671 79]. Castration theory aside, we may say that, objects as they appear in literature involve mechanisms of fixation that are partially or analogously sexual. This is especially true of body parts, as we shall see later, but is true of inanimate objects, as well.
+
+A related concept, from anthropology and psychology of this period, is the totem. Frazer, in /Totemism and Exogamy: a Treatise on Certain Early Forms of Superstition and Society/, defines this as "a class of material objects which a savage regards with superstitious respect, believing that there exists between him and every member of the class an intimate and altogether special relation" [cite:@frazer1910totemism 3]. Frazer is careful not to confuse a totem with a fetish, however: "as distinguished from a fetich, a totem is never an isolated individual, but always a class of objects, generally a species of animals or of plants, more rarely a class of inanimate natural objects, very rarely a class of artificial objects" [cite:@frazer1910totemism 4].
+
+Freud's definition, meanwhile, is somewhat more narrow. He defines a totem, in his 1913 /Totem and Taboo/, subtitled /Some Points of Agreement between the Mental Lives of Savages and Neurotics,/ as, "as a rule an animal (whether edible and harmless or dangerous and feared) and more rarely a plant or a natural phenomenon (such as rain or water), which stands in a peculiar relation to the whole clan" [cite:@9780415253871 5].
+
+In both Freud and Frazer, socio-cultural distance allows for an examination of the object as a culturally important object, whereas Western culture's telos obscures its visuality.
+
+In philosophy, Edmund Husserl's phenomenology deals with the perception of objects, and the recognition of their objecthood. Husserl contends that "the originarily presentive act" is "the /material perception/ (perception of physical things), perception of bodies. With this, a basic sort of perception is designated, fully delimited from every other sort of perception" [cite:@husserl1980phenomenology 1]. In a fragment called "the constitutive role of the movement-sensations in comparison with other sensations and the relation between the constitution of animate organism and of physical thing," Husserl argues that "only by means of" the "free acts" in which "an object moves over the skin surface," or "the skin surface of the hand, feeling over it (the object) moves" may we "carry out ... the constitution of physical-thing objects" [cite:@husserl1980phenomenology 108].
+
+
+Henri Bergson, /Creative Evolution/: "the human intellect feels at home among inanimate objects, more especially among solids, where our action finds its fulcrum and our industry its tools." 21
 
 The cultural critic Jean Baudrillard, in /The System of Objects/, argues that "our urban civilization is witness to an ever-accelerating procession of generations of product, appliances and gadgets" [cite:@baudrillard2020system 3]. In the 18th century, he contends, these could be systematically catalogued in, for example, Diderot's /Encyclopédie/. But lately, "everyday objects ... proliferate, needs multiply, production speeds up the life-span of such objects—yet we lack the vocabulary to name them all" [cite:@baudrillard2020system 3].
-
-Edmund Husserl's phenomenology asserts that "the originarily presentive act" is "the /material perception (perception of physical things), perception of bodies. With this, a basic sort of perception is designated, fully delimited from every other sort of perception." [cite:@husserl1980phenomenology 1] In a fragment called "the constitutive role of the movement-sensations in comparison with other sensations and the relation between the constitution of animate organism and of physical thing," Husserl argues that "only by means of" the "free acts" in which "an object moves over the skin surface," or "the skin surface of the hand, feeling over it (the object) moves" may we "carry out" "the constitution of physical-thing objects" [cite:@husserl1980phenomenology 108].
-
 
 ** Objects in Modernism Studies
 
@@ -38,11 +58,9 @@ The past few decades have also seen a considerable amount of scholarship dealing
 
 Douglas Mao's influential 1998 monograph /Solid Objects: Modernism and the Test of Production/ begins with an anecdote about a letter from Freud to H.D., in which the psychoanalyst acknowledges the receipt of flowers, accompanied with a note reading "to greet the return of the Gods." While others in Freud's circle had read "goods," H.D. had actually written "Gods." This "goods/Gods" dichotomy, while anecdotal, becomes for Mao a useful metaphor for literary modernism's struggles with materiality and, if not spirituality, at least, abstraction.
 
-Mao's centerpiece, as his title suggests, is Virginia Woolf's story "Solid Objects," a short story from the October 22nd, 1920 issue of /The Athenaeum/. It begins, "the only thing that moved upon the vast semi-circle of the beach was one small black spot."[fn::This seems to me strikingly similar to the opening stanza of Wallace Stevens's "Thirteen Ways of Looking at a Blackbird," which begins, "among twenty snowy mountains / the only moving thing / was the eye of the blackbird." Stevens's poem was published almost three years earlier, in the Chicago-based "little magazine" /Others/, but I make no claim as to an influence [cite:@others1917 25]] We soon learn that this black spot "possessed four legs," and that it was in fact the outline of two young men. John, one of the two men, discovers a chunk of green sea glass under the sand.
+Mao's centerpiece, as his title suggests, is Virginia Woolf's story "Solid Objects," a short story from the October 22nd, 1920 issue of /The Athenaeum/. It begins, "the only thing that moved upon the vast semi-circle of the beach was one small black spot."[fn::This seems to me strikingly similar to the opening stanza of Wallace Stevens's "Thirteen Ways of Looking at a Blackbird," which begins, "among twenty snowy mountains / the only moving thing / was the eye of the blackbird." SteVens's poem was published almost three years earlier, in the Chicago-based "little magazine" /Others/, but I make no claim as to an influence [cite:@others1917 25]] We soon learn that this black spot "possessed four legs," and that it was in fact the outline of two young men. John, one of the two men, discovers a chunk of green sea glass under the sand.
 
 Mao notes that the utility of the object (its /telic hypernymy/, as the WordNet lexicographers will describe this relation, in the section below) is its meaning, for Charles, who is looking for a stone to skip over the water, while its meaning for John is experiential, aesthetic. John's aestheticism, Mao points out, is Paterian, aligned with Pater's dictum, "not the fruit of experience, but experience itself, is the end."
-
-
 
 
 
@@ -51,13 +69,11 @@ Bill Brown's work is also instrumental in this field. His 1999 article, "The Sec
 His 2004 edited collection of object theory essays, /Things/, begins by making the distinction between /things/ and /objects/. Objects, in this view, are things that have taken on the grammatical quality of their syntactic namesakes. Things, on the other hand, exist outside of grammar, action, and abstraction: they are "something warm, that relieves us from the chill of dogged ideation, something concrete that relieves us from unnecessary abstraction" [cite:@brownThings2004 1]. Brown expands on this object theory in 2016's /Other Things/, where he argues that subject and object are engendered by things: "some thing, by which I will always mean the thingness of the constituted object, is the outcome of an interaction (beyond their mutual constitution) between subject and object" [cite:@brown2016other 22].
 
 
-Among modernist writers themselves, there is also a trend towards object theory.
+More recently, there has been even more interest in this field. In 2018, John Stout's /Objects Observed: the Poetry of Things in Twentieth-Century France and America/, traces objects in the poetic works of, among others, Pound, Zukofsky, Oppen, and Stevens, on the American side, and Mallarmé, Rimbaud, Appollinaire, Breton, Ponge, and Tortel, on the French, narrating the evolution of object, objectification, and desire through movements such as /imagisme/, /surréalisme,/ cubism, and objectivism.
 
-I have already discussed, in chapter 2, Pound's manifesto of /imagisme/, which includes as its first precept "direct treatment of the thing."
-Put differently, this is also the aim of the critic, as Walter Pater has it:
-- "'To see the object as in itself it really is,' has been justly said to be the aim of all true criticism whatever, and in aesthetic criticism the first step towards seeing one's object as it really is, is to know one's own impression as it really is, to discriminate it, to realise it distinctly." [cite:@pater1980the xix]
+Among modernist writers themselves, there is also a trend towards object theory. I have already discussed, in chapter 2, Pound's manifesto of /imagisme/, which includes as its first precept "direct treatment of the thing." This is also the aim of the critic, as Walter Pater has it. "'To see the object as in itself it really is,' has been justly said to be the aim of all true criticism whatever," Pater writes, "and in aesthetic criticism the first step towards seeing one's object as it really is, is to know one's own impression as it really is, to discriminate it, to realise it distinctly" [cite:@pater1980the xix].
 
-T.S. Eliot's famous critique of /Hamlet/, we recall, is that it lacks an "objective correlative," or "a set of objects, a situation, a chain of events which shall be the formula of that /particular/ emotion" [cite:@eliotWasteLand 120]. This aesthetic is apparent in "The Waste Land" and elsewhere, where emotions like "fear" are perceived through objects like "a handful of dust," and April's cruelty is shown with lilacs.
+T.S. Eliot's famous critique of /Hamlet/, we recall, is that it lacks an "objective correlative," or "a set of objects, a situation, a chain of events which shall be the formula of that /particular/ emotion" [cite:@eliot_waste_2001 120]. This aesthetic is apparent in "The Waste Land" and elsewhere, where emotions like "fear" are perceived through objects like "a handful of dust," and April's cruelty is shown with lilacs; Pound's war poem "Hugh Selwyn Mauberly" laments that "there died a myriad," not for patriotism or any other ideology, but "for two gross of broken statues, / for a few thousand battered books," that is, for objects [cite:@PoundSelectedPoems1957 67].
 
 Across the Atlantic, the American modernist poet William Carlos Williams, in the first few stanzas of /Paterson/, writes "say it, no ideas but in things." This is an oft-quoted maxim, but one which deals even more with objecthood in its context: Williams spends the initial passages of his poem anthropomorphizing places and things, particularly the Paterson, New Jersey, of its title. Paterson "lies in the valley under the Passaic Falls / its spent waters forming the outline of his back" [cite:@williams1995paterson 9]. In Williams' reification reverie, Paterson's houses have "blank faces," and his trees are forked by "preconception"; "split, furrowed, creased," as if of a human face.
 
@@ -65,7 +81,7 @@ But it is easy to cherry-pick objects in fiction and poetry, of any century---al
 
 ** Experiment: Quantifying Objects in Literature
 
-This experiment attempts to quantify the presence of objects in British fiction and poetry. I want to know: what are the objects that are the most common? Which fall in and out of favor, over time? Which are incommensurate with lived experience? Of those objects, how many are natural objects, and how many are artificial?
+This experiment quantifies the presence of objects in British fiction and poetry. I want to know: what are the objects that are the most common? Which fall in and out of favor, over time? Which are incommensurate with lived experience? Of those objects, how many are natural objects, and how many are artificial?
 
 To do this, I apply state-of-the-art techniques of word sense disambiguation to $C_PG$ $C_CL$, and others, and quantify the results using the Princeton WordNet.
 
@@ -144,7 +160,7 @@ These trends look very different when we examine object hyponyms, however. The h
 #+LABEL: fig:livingThing
 [[./images/dummy.png]]
 
-#+INCLUDE: "04-shapes/includes/natural_object.n.01" export html
+#+INCLUDE: "04-shapes/includes/natural_object.n.01.html" export html
 
 #+CAPTION: /natural_object.n.01/ proportions over time, $C_{PG2}$
 #+LABEL: fig:naturalObject
@@ -155,6 +171,8 @@ These trends look very different when we examine object hyponyms, however. The h
 #+CAPTION: /artifact.n.01/ proportions over time, $C_{PG2}$
 #+LABEL: fig:artifact
 [[./images/dummy.png]]
+The hypernym /artifact.n.01/ refers to a wide variety of objects. The most frequent hyponyms include /door.n.01/ and /doorway.n.01/, /window.n.01/, /room.n.01/, /ship.n.01/, /layer.n.01/, /floor.n.02/, /house.n.01/, /road.n.01/, /table.n.02/, /dwelling.n.01/, /letter.n.01/, /door.n.04/, and /step.n.04/.
+
 
 **** Texts with the most objects
 
@@ -292,32 +310,34 @@ The presence of so many marriage-plot novels here, and those bearing the Library
 * Bodies
 
 The human body is not only a special type of object, but in one sense, its archetype.
+# Developmental recognition of body parts
+
 The synonymy of /body/ with /object/, in its sense of /celestial bodies,/ hints at a lexical relation between the senses which extends beyond mere meronymy. In fact, this sense of /body/ is defined by the OED lexicographers as "a material thing, an object" [cite:@oed:body].
 
 Human bodies are of course objects, although this distinction is not made without some anxiety. The frequencies of bigrams like /inanimate object/ carry with them the necessity of differentiating between living bodies and other types of objects.
-The use of bodies or body parts as objects, grammatically or physically, is often referred to as /objectification/, and carries with it an implication of dehumanization.
+The use of bodies or body parts as objects, grammatically or physically, is often referred to as /objectification/, and carries with it an implication of dehumanization. Referring to a person as "a body" generally means that the person is dead---has become a corpse.
 
+Simultaneously, fixation on body parts, with disregard for the holistic body, often carries with it connotation of sexual fixation. Binet's foundational work on sexual fetishism quoted above deals in particular with "1. l'amant de l'œil; 2. l'amant de la main; 3. l'amant des cheveux; 4. l'amant de l'odeur" [cite:@binet1887fétichisme 146].
 
-Yet the human body is rarely discussed in critical studies of objects in modernism. Instead, a rich body of critical work exists which concerns "the body in literature." And in those corporeal studies, inanimate objects are rarely discussed.
+# Freud: Interpretation of dreams: chest of drawers
 
-So bodies and objects are sometimes synonyms, and sometimes antonyms.
-
-
-Peter Brooks's /Body Work: Objects of Desire in Modern Narrative/ connects the intimacies of novels, and the experiences of reading them, through conditions such as privacy. It begins, "the rise of the novel is closely tied to the ride of the idea of privacy. The condition of privacy characterizes the reading and writing of novels. Perhaps as a consequence of this private production and consumption, private life was from the inception of the genre the novel's subject matter as well—or perhaps it was the other way around: the need to explore the relatively new concept of private experience entailed the invention of the novel." [cite:@9780674077249 28]
-
+Yet the human body is rarely discussed in critical studies of objects in modernism. Instead, a rich body of critical work exists which concerns "the body in literature." And in those corporeal studies, inanimate objects are rarely discussed. So bodies and objects are sometimes synonyms, and sometimes antonyms.
 
 
 ** Bodies in Modernist Studies
 
 In modernist studies, the body has become an increasing axis of inquiry, as well.
 
+
+Peter Brooks's /Body Work: Objects of Desire in Modern Narrative/ connects the intimacies of novels, and the experiences of reading them, through conditions such as privacy. It begins, "the rise of the novel is closely tied to the ride of the idea of privacy. The condition of privacy characterizes the reading and writing of novels. Perhaps as a consequence of this private production and consumption, private life was from the inception of the genre the novel's subject matter as well—or perhaps it was the other way around: the need to explore the relatively new concept of private experience entailed the invention of the novel." [cite:@9780674077249 28]
+
+
 James Joyce, as a young man, briefly attended medical school with aspirations to become a doctor [cite:@ellmann_james_1982 105–107]. The schemata for /Ulysses/, in which Joyce explains the structure of the novel, /ex post facto/, to his friends and aspiring reviewers, includes a column for organ correspondences: each chapter, beginning with the fourth, has a corresponding organ of the human body. "Calypso," the fourth episode, has "kidney" listed as the corresponding organ, and it is there that we find Leopold Bloom, who "ate with relish the inner organs of beasts and fowls," preparing to eat a kidney [cite:@joyce_ulysses_1986 45]. "Aeolus," named after the god of the wind, takes place at a windy newspaper office, and has as its organ the lungs. And "Nausicaa," the chapter which arguably got /Ulysses/ banned, in which Bloom stares at Gertie Mcdowell and pleasures himself, has as its dual organs the eye and the nose.
 
-Maud Ellman has catalogued many of these correspondences in /Ulysses/, which she calls "the epic of the human body" [cite:@ellmann2008ulysses].
+Maud Ellman has catalogued many of these correspondences in /Ulysses/, which she calls, following Joyce's pronouncement, "the epic of the human body" [cite:@ellmann2008ulysses]. In "More Kicks Than Pricks: Modernist Body Parts," she argues that "a continuation of war by other means, art explodes the illusion of bodily integrity, reducing it to splintered body-parts" [cite:@ellmannKicks 254]. We might take this even further, and say that language itself splinters the body into parts.
+
 
 Christine Froula, in /Modernisms's Body: Sex, Culture, and Joyce/, argues that Joyce uses his "resisting artists' suffering, transgressions, symptoms, masquerade, parody, creativity, and play," often along sexual or somatic axes, to "turn the perversity of which he is often accured into a daring critique of his culture" [cite:@froula1996modernism xi].
-
-
 
 
 ** Experiment: Bodies in Literature
@@ -345,22 +365,25 @@ To quantify bodies in literature, I use the same annotations provided by EWISER'
 [[./images/dummy.png]]
 
 
-** The Sensory Homonculus
+** The Sensory Homunculus
 
-In 1937, neuroscientists Wilder Penfield and Edwin Boldrey electrically stimulated the somatosensory cortices of their subjects' brains, in order to map out the regions responsible for perceiving the various parts of the body [cite:@penfield1937]. They called the resulting map the "sensory homonculus": a topography of the brain's regions responsible for sensing the body. Here is Penfield and Boldrey describing this model:
+In 1937, neuroscientists Wilder Penfield and Edwin Boldrey electrically stimulated the somatosensory cortices of their subjects' brains, in order to map out the regions responsible for perceiving the various parts of the body [cite:@penfield1937]. They called the resulting map the "sensory homunculus": a topography of the brain's regions responsible for sensing the body. Here is Penfield and Boldrey describing this model:
 
 #+begin_quote
-The homonculus gives a visual image of the size and sequence of cortical areas, for the size of the parts of this grotesque creature were determined not so much by the number of responses ... but by the apparent perpendicular extent of representation of each part when these responses were multiple for the same part. / The large size of the thumb and lips indicates that the vertical extent of the Rolandic cortex devoted to those parts in individual cases is very large. Thus the trunk is quite small and the legs and head exceedingly small, while the tongue, which usually occupies a comparatively long strip of the Rolandic lip, is large. [cite:@penfield1937 432]
+The homunculus gives a visual image of the size and sequence of cortical areas, for the size of the parts of this grotesque creature were determined not so much by the number of responses ... but by the apparent perpendicular extent of representation of each part when these responses were multiple for the same part. / The large size of the thumb and lips indicates that the vertical extent of the Rolandic cortex devoted to those parts in individual cases is very large. Thus the trunk is quite small and the legs and head exceedingly small, while the tongue, which usually occupies a comparatively long strip of the Rolandic lip, is large. [cite:@penfield1937 432]
 #+end_quote
 
 @Fig:homonculus1 illustrates this map, laid over a cross-section of the cortex. This model, it might be said, is how the brain sees the body. In terms of the comparative sizes of neural cortices, the hands, lips, and tongue are very disproportionately important to the brain. In contrast, the limbs and torso are comparatively unimportant. @Fig:homonculus2 shows an artist's rendering of this neurological model. The hands of this model are made enormous, to show the disproportionate attention given to them by the brain; the same is true of the lips and tongue.
 
 #+CAPTION: Sensory homonculus illustration. Source: OpenStax College; [[https://commons.wikimedia.org/wiki/File:1421_Sensory_Homunculus.jpg][Wikimedia Commons]]; CC-BY
 #+LABEL: fig:homonculus1
-[[./images/1421_Sensory_Homonculus.jpg]]
+[[./images/1421_Sensory_Homunculus.jpg]]
 
 #+CAPTION: Sensory homonculus model. Source: OpenStax College; [[https://commons.wikimedia.org/wiki/File:1421_Sensory_Homunculus.jpg][Wikimedia Commons]]; CC-BY-SA
 #+LABEL: fig:homonculus2
-[[./images/Front_of_Sensory_Homonculus.jpg]]
+[[./images/Front_of_Sensory_Homunculus.gif]]
 
 These proportions are very similar to those which I find in British literature of the 19th and 20th centuries, but with some notable differences.
+
+
+* Works Cited
