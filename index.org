@@ -18,8 +18,8 @@ wc -w 02-history/ch-2.org 03-colors/ch-3.org 04-shapes/ch-4.org
 #+RESULTS:
 | 13088 | 02-history/ch-2.org |
 | 33052 | 03-colors/ch-3.org  |
-|  5105 | 04-shapes/ch-4.org  |
-| 51245 | total               |
+|  8848 | 04-shapes/ch-4.org  |
+| 54988 | total               |
 
 ** Revisions
 
