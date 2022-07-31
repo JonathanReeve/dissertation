@@ -1,3 +1,5 @@
+#!/usr/bin/env runhaskell
+
 {-# LANGUAGE OverloadedStrings #-}
 
 -- Transform color hexes like #af29b2 into HTML color blocks.
