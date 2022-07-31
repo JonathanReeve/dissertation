@@ -67,7 +67,6 @@ Across the Atlantic, the American modernist poet William Carlos Williams, in the
 
 Of course, this is all only a sample of the theory surrounding shape and object, in this literary period.
 
-
 ** Objects in Modernism Studies
 
 The past few decades have also seen a considerable amount of scholarship dealing with modernist literature and its relation to material objects.
@@ -90,19 +89,19 @@ More recently, there has been even more interest in this field. In 2018, John St
 
 But it is easy to cherry-pick objects in fiction and poetry, of any century---all one must do is find nouns. Does that mean, as critics have argued, that objects are a particular concern of modernist literature?
 
-** Experiment: Quantifying Objects in Literature
+* Experiment: Quantifying Objects in Literature
 
 This experiment quantifies the presence of objects in British fiction and poetry. I want to know: what are the objects that are the most common? Which fall in and out of favor, over time? Which are incommensurate with lived experience? Of those objects, how many are natural objects, and how many are artificial?
 
 To do this, I apply techniques of word sense disambiguation to $C_PG$ $C_CL$, and others, and quantify the results using the Princeton WordNet.
 
-*** WordNet
+** WordNet
 
 In computational linguistics, the most-used lexical relation database is the Princeton WordNet [cite:@miller1995wordnet; @miller1998wordnet]. As its name implies, WordNet is more than a machine-readable dictionary, or thesaurus, although it is both of those, but it is a network of relations between words. In the creators' own term, WordNet represents a particular theory of /componential semantics/: an agglutinative form of lexicography. "Componential semantics approaches the meaning of a word," WordNet contributor George A. Miller writes, "in much the same way as it approaches the meaning of a sentence: the meaning of a sentence should be decomposable into the meanings of its constituents, and the meaning of a word should be similarly decomposable into certain semantic primitives, or conceptual atoms" [cite:@miller1998wordnet xvi].
 
-The basic unit of WordNet is the /synset/: a "lexicalized concept of English," or "a set of synonyms that can be used (in an appropriate context) to express that concept" [cite:@miller1998wordnet 24]. Synsets are denoted in WordNet according to one of their lemmas, its part of speech, and its sense number, with the most common sense given the lowest number. So the first sense of the lemma /robin/, whose definition in WordNet is the "small Old World songbird with a reddish breast," is denoted /robin.n.01/.
+The basic unit of WordNet is the /synset/: a "lexicalized concept of English," or "a set of synonyms that can be used (in an appropriate context) to express that concept" [cite:@miller1998wordnet 24]. Synsets are denoted in WordNet according to one of their lemmas, its part of speech, and its sense number, with the most common sense given the lowest number. So the first sense of the lemma /robin/, whose definition in WordNet is the "small Old World songbird with a reddish breast," is denoted =robin.n.01=.
 
-WordNet charts relations between synsets in terms of their hypernymy, hyponymy, meronymy, and more. For the purposes of this experiment, I will largely be exploring hypernymic and hyponymic relations. Hypernymy encompasses a variety of lexical supersets, of which one is taxonomic. A hypernym tree for /robin.n.01/, for instance, may be /robin.n.01 @-> thrush.n.03 @-> oscine.n.01 @-> passerine.n.01 @-> bird.n.01 @-> vertebrate.n.01 @-> chordate.n.01 @-> animal.n.01 @-> organism.n.01 @-> living_thing.n.01 @-> whole.n.02 @-> object.n.01 @-> physical_entity.n.01 @-> entity.n.01/, where @-> denotes a hypernymic relation.
+WordNet charts relations between synsets in terms of their hypernymy, hyponymy, meronymy, and more. For the purposes of this experiment, I will largely be exploring hypernymic and hyponymic relations. Hypernymy encompasses a variety of lexical supersets, of which one is taxonomic. A hypernym tree for =robin.n.01=, for instance, may be /robin.n.01 @-> thrush.n.03 @-> oscine.n.01 @-> passerine.n.01 @-> bird.n.01 @-> vertebrate.n.01 @-> chordate.n.01 @-> animal.n.01 @-> organism.n.01 @-> living_thing.n.01 @-> whole.n.02 @-> object.n.01 @-> physical_entity.n.01 @-> entity.n.01/, where @-> denotes a hypernymic relation.
 
 However, taxonomies like this can be technical, as the WordNet creators freely admit. An English speaker without a specialized education in biological taxonomy will likely describe a robin as a bird, but unlikely describe it as a passerine. Furthermore, taxonomy is but one of several varieties of hypernymy. As Anna Wierzbicka and others have shown, apples are not just a "kind of fruit," but a food: nouns have telic hypernymy, as well [cite:@wierzbicka1984apples]. So hypernymic relations in WordNet are not a simple hierarchy, like those found in 18th century encyclopedias. Rather, they are a "tangled hierarchy," or a directed graph of lexical relations [cite:@miller1998wordnet 35].
 
@@ -110,22 +109,23 @@ Taxonomies like those in WordNet are useful, even if they diverge from our intui
 
 I employ WordNet for this study, rather than, say, the Historical Thesaurus of the Oxford English Dictionary, since it is easily machine-readable, has a well-documented interface in the Python NLTK, has a long history of expansion and revision, since the 1990s, and catalogs a wide variety of semantic relations.[fn::See [cite:@heuser_quantitative_2012] for an example of an analysis which uses the Historical Thesaurus of the OED.]
 
-In this first experiment, my goal is to find the objects of a literary text. What constitutes an object is difficult to define, as we have seen in the object theory section above, so to systematize this query, I identify any WordNet sense which has as one of its hypernyms, ~object.n.1~, defined as "a tangible and visible entity; an entity that can cast a shadow" [cite:@wordnet:object]. The synset /object.n.1/ itself has 37 direct hyponyms, which include a number of oddly specific synsets: /keepsake.n.01/, /curio.n.01/, /hoodoo.n.04/, and /je_ne_sais_quoi.n.01/, all synsets which appear to be difficult to categorize. But there is a much larger set of hyponyms of /object.n.01/'s hyponym /whole.n.02/. The direct hyponyms of /whole.n.02/, shown in @tbl:wholeHyponyms, read as categories.
+In this first experiment, my goal is to find the objects of a literary text. What constitutes an object is difficult to define, as we have seen in the object theory section above, so to systematize this query, I identify any WordNet sense which has as one of its hypernyms, ~object.n.1~, defined as "a tangible and visible entity; an entity that can cast a shadow" [cite:@wordnet:object]. The synset /object.n.1/ itself has 37 direct hyponyms, which include a number of oddly specific synsets: =keepsake.n.01=, =curio.n.01=, =hoodoo.n.04=, and =je_ne_sais_quoi.n.01=, all synsets which appear to be difficult to categorize. But there is a much larger set of hyponyms of =object.n.01='s hyponym =whole.n.02=. The direct hyponyms of =whole.n.02=, shown in [cite:@tbl:wholeHyponyms], read as categories.
 
+#+CAPTION: Hyponyms of =whole.n.02=
 #+LABEL: tbl:wholeHyponyms
-| Synset              | Definition                                                                |
-|---------------------+---------------------------------------------------------------------------|
-| artifact.n.01       | a man-made object taken as a whole                                        |
-| assembly.n.05       | a unit consisting of components that have been fitted together            |
-| congener.n.03       | a whole (a thing or person) of the same kind or category as another       |
-| item.n.03           | a whole individual unit; especially when included in a list or collection |
-| living_thing.n.01   | a living (or once living) entity                                          |
-| natural_object.n.01 | an object occurring naturally; not made by man                            |
-| sum.n.05            | the whole amount                                                          |
+| Synset                | Definition                                                                |
+|-----------------------+---------------------------------------------------------------------------|
+| =artifact.n.01=       | a man-made object taken as a whole                                        |
+| =assembly.n.05=       | a unit consisting of components that have been fitted together            |
+| =congener.n.03=       | a whole (a thing or person) of the same kind or category as another       |
+| =item.n.03=           | a whole individual unit; especially when included in a list or collection |
+| =living_thing.n.01=   | a living (or once living) entity                                          |
+| =natural_object.n.01= | an object occurring naturally; not made by man                            |
+| =sum.n.05=            | the whole amount                                                          |
 
-These are not strictly categories, however, since a given synset may have more than one of these as hypernyms: a horse may be both a natural objects ("not made by man"), and a living thing. Given that /assembly.n.05/, /congener.n.03/, /item.n.03/, and /sum.n.05/ have relatively shallow hyponym trees, I will mostly be focusing on the proportions of words in literary texts with the hypernyms /artifact.n.01/, /living_thing.n.01/, and /natural_object.n.01/.
+These are not strictly categories, however, since a given synset may have more than one of these as hypernyms: a horse may be both a natural objects ("not made by man"), and a living thing. Given that =assembly.n.05=, =congener.n.03=, =item.n.03=, and =sum.n.05= have relatively shallow hyponym trees, I will mostly be focusing on the proportions of words in literary texts with the hypernyms =artifact.n.01=, =living_thing.n.01=, and =natural_object.n.01=.
 
-*** Word Sense Disambiguation
+** Word Sense Disambiguation
 
 The problem of computationally analyzing a text's objects requires that it can correctly identify those objects. To do that, the computer program must first be able to discern between many different senses of a word. If we are to ascertain whether a given instance of /bank/ is a natural object (a river bank), we must first ensure that it is not a financial institution. In computational linguistics, this problem is known as word sense disambiguation, or WSD, and it has been one of the hardest problems for natural language processing over the past fifty years.
 
@@ -143,47 +143,47 @@ Since the 80s, there have been some minor improvements to WSD, but which are mai
 
 EWISER is trained on SemCor, a sense-tagged corpus, and uses glosses and examples from WordNet. Even though EWISER uses a probabilistic model, and therefore obviates the need for a Lesk-style computation, disambiguating each word in a text is an extremely expensive operation, computationally. Disambiguating a single text in $C_{PG}$ takes around 20 minutes on a laptop. It runs much faster on the university's cluster computing servers, however, and so I employed a node with 24 cores and 96GB of RAM, which even when running in parallel across all cores, got through an analysis of $C_{PG}$ in about ten days.
 
-*** Results and Discussion
-**** Literary-historical trends
+** Results and Discussion
+*** Literary-historical trends
 
-@Fig:object-proportions shows the proportions of all objects over time in $C_{PG2}$: the number of words with /object.n.01/ hypernyms, divided by the total number of words in a text. An ordinary least squares linear regression on this data set shows that there is an 11.4% increase in objects from texts published in 1800, to texts published in 1920.
+[cite:@Fig:object-proportions] shows the proportions of all objects over time in $C_{PG2}$: the number of words with =object.n.01= hypernyms, divided by the total number of words in a text. An ordinary least squares linear regression on this data set shows that there is an 11.4% increase in objects from texts published in 1800, to texts published in 1920.
 
-#+INCLUDE: "04-shapes/includes/object-proportions-over-time.html" export html
+#+INCLUDE: "04-shapes/includes/object_proportions.html" export html
 
 #+CAPTION: Object proportions over time, $C_{PG2}$
 #+LABEL: fig:object-proportions
 [[./images/dummy.png]]
 
-These trends look very different when we examine object hyponyms, however. The hyponym /living_thing.n.01/ decreases in proportion by about 8% over this same 1800–1920 period, as shown in @fig:livingThing. However, the /natural_object.n.01/ hyponym increases by a smaller 7%, (@fig:naturalObject), and /artifact.n.01/ increases by an astounding 15% (@fig:artifact).
+These trends look very different when we examine object hyponyms, however. The hyponym =living_thing.n.01= decreases in proportion by about 8% over this same 1800–1920 period, as shown in [cite:@fig:livingThing]. However, the =natural_object.n.01= hyponym increases by a smaller 7%, ([cite:@fig:naturalObject]), and =artifact.n.01= increases by an astounding 15% (@fig:artifact).
 
-A number of factors may help to explain the rise in object proportions, in the fiction and poetry of this period. First, mass production of consumer goods make artifacts much more common. At the same time, a diversification of mass-produced goods creates new words to describe new gadgets. Urbanization may account, in part, for the decline in /living_thing.n.01/ hyponyms: if more people live in cities, statistically, than in the country, fiction may be more likely to take place in cities, where encounters with (non-human) living things may be less common than in the country.
+A number of factors may help to explain the rise in object proportions, in the fiction and poetry of this period. First, mass production of consumer goods make artifacts much more common. At the same time, a diversification of mass-produced goods creates new words to describe new gadgets. Urbanization may account, in part, for the decline in =living_thing.n.01= hyponyms: if more people live in cities, statistically, than in the country, fiction may be more likely to take place in cities, where encounters with (non-human) living things may be less common than in the country.
 
 #+INCLUDE: "04-shapes/includes/living_thing.n.01.html" export html
 
-#+CAPTION: Object proportions over time, $C_{PG2}$
+#+CAPTION: =living_thing.n.01= proportions over time, $C_{PG2}$
 #+LABEL: fig:livingThing
 [[./images/dummy.png]]
 
 #+INCLUDE: "04-shapes/includes/natural_object.n.01.html" export html
 
-#+CAPTION: /natural_object.n.01/ proportions over time, $C_{PG2}$
+#+CAPTION: =natural_object.n.01= proportions over time, $C_{PG2}$
 #+LABEL: fig:naturalObject
 [[./images/dummy.png]]
 
 #+INCLUDE: "04-shapes/includes/artifact.n.01.html" export html
 
-#+CAPTION: /artifact.n.01/ proportions over time, $C_{PG2}$
+#+CAPTION: =artifact.n.01= proportions over time, $C_{PG2}$
 #+LABEL: fig:artifact
 [[./images/dummy.png]]
 
-The hypernym /artifact.n.01/ refers to a wide variety of objects. The most frequent hyponyms include /door.n.01/ and /doorway.n.01/, /window.n.01/, /room.n.01/, /ship.n.01/, /layer.n.01/, /floor.n.02/, /house.n.01/, /road.n.01/, /table.n.02/, /dwelling.n.01/, /letter.n.01/, /door.n.04/, and /step.n.04/.
+The hypernym =artifact.n.01= refers to a wide variety of objects. The most frequent hyponyms include =door.n.01= and =doorway.n.01=, =window.n.01=, =room.n.01=, =ship.n.01=, =layer.n.01=, =floor.n.02=, =house.n.01=, =road.n.01=, =table.n.02=, =dwelling.n.01=, =letter.n.01=, =door.n.04=, and =step.n.04=.
 
 
 
 
-**** Texts with the most objects
+*** Texts with the most objects
 
-@Tbl:objects shows the texts with the higest proportions of objects. Most of these are children's books: /Peacock Pie/, /Songs of Childhood/, and /Down-Adown-Derry/, by Walter de la Mare; and /Oswald Bastable/, /The Story of the Amulet/, and /The Wouldbegoods/, by Edith Nesbit, and /A Child's Garden of Verses/, by Robert Louis Stevenson. Here again, there is a pronounced visuality in juvenile fiction and poetry, which suggests that visual attention to the world is either known as a childlike state of mind, or in some other way expected of children's literature.
+[cite:@Tbl:objects] shows the texts with the higest proportions of objects. Most of these are children's books: /Peacock Pie/, /Songs of Childhood/, and /Down-Adown-Derry/, by Walter de la Mare; and /Oswald Bastable/, /The Story of the Amulet/, and /The Wouldbegoods/, by Edith Nesbit, and /A Child's Garden of Verses/, by Robert Louis Stevenson. Here again, there is a pronounced visuality in juvenile fiction and poetry, which suggests that visual attention to the world is either known as a childlike state of mind, or in some other way expected of children's literature.
 
 #+CAPTION: Texts with the highest proportions of objects
 #+LABEL: tbl:objects
@@ -209,9 +209,9 @@ One book, Richard Jefferies's /Round About a Great Estate/, is not exactly a wor
 
 The other works here are canonical modernist texts: two by Katherine Mansfield, /Ulysses/ by James Joyce, and /Jacob's Room/, Virginia Woolf's novel.
 
-When we turn to the hyponyms of /object.n.01/, we see most of these texts, although in slightly different orders. The text with the largest proportions of the hyponym /living_thing.n.01/ is the Jefferies book listed above, /Round About a Great Estate/. Then, there are the usual suspects of children's literature, this time also including children's poetry from Edward Lear, and children's stories by Rudyard Kipling. But also found here are two short works of nature writing by Mary Russell Mitford, an ecological novel from Mayne Reid, and poetry collections from the highly nature-oriented poets Thomas Hood and John Clare.
+When we turn to the hyponyms of =object.n.01=, we see most of these texts, although in slightly different orders. The text with the largest proportions of the hyponym =living_thing.n.01= is the Jefferies book listed above, /Round About a Great Estate/. Then, there are the usual suspects of children's literature, this time also including children's poetry from Edward Lear, and children's stories by Rudyard Kipling. But also found here are two short works of nature writing by Mary Russell Mitford, an ecological novel from Mayne Reid, and poetry collections from the highly nature-oriented poets Thomas Hood and John Clare.
 
-#+CAPTION: Texts with the highest proportions of /living_thing.n.01/ hyponyms
+#+CAPTION: Texts with the highest proportions of =living_thing.n.01= hyponyms
 #+LABEL: tbl:livingThing
 | Year | Title                                   | Author                 | % Living Things |
 |------+-----------------------------------------+------------------------+-----------------|
@@ -229,7 +229,7 @@ When we turn to the hyponyms of /object.n.01/, we see most of these texts, altho
 | 1920 | Collected Poems                         | Walter de la Mare      |        0.027248 |
 | 1861 | Bruin: The Grand Bear Hunt              | Mayne Reid             |        0.027242 |
 
-The hyponyms of /natural_object.n.01/ show a similar cast of characters. Here, we find at the lead another Kipling work, /An Almanac of Twelve Sports/, a very short book of light rhymes which accompany a set of illustrations from William Nicholson. Although there is not a preponderance of natural objects, the total number of words is so small as to make the meager number of occurrences a decent proportion of the total. Here, for instance, is one of the twelve poems:
+The hyponyms of =natural_object.n.01= show a similar cast of characters. Here, we find at the lead another Kipling work, /An Almanac of Twelve Sports/, a very short book of light rhymes which accompany a set of illustrations from William Nicholson. Although there is not a preponderance of natural objects, the total number of words is so small as to make the meager number of occurrences a decent proportion of the total. Here, for instance, is one of the twelve poems:
 
 #+BEGIN_VERSE
 Fishing.
@@ -242,7 +242,7 @@ Men and not Gods torment you, little fishes.
 
 Although /fishes/ is really the only word which qualifies as a natural object, the length of the poem is such that it is given more significance. With this in mind, we might want to treat with more skepticism the frequencies of objects in poems.
 
-#+CAPTION: Texts with the highest proportions of /natural_object.n.01/ hyponyms
+#+CAPTION: Texts with the highest proportions of =natural_object.n.01= hyponyms
 #+LABEL: tbl:naturalObject
 | Year | Title                                   | Author                      | % Natural Objects |
 |------+-----------------------------------------+-----------------------------+-------------------|
@@ -261,9 +261,9 @@ Although /fishes/ is really the only word which qualifies as a natural object, t
 | 1847 | The Mahogany Tree                       | William Makepeace Thackeray |          0.012987 |
 | 1894 | For Love of the King: A Burmese Masque  | Oscar Wilde                 |          0.012987 |
 
-Finally, the hyponym /artifact.n.01/ again shows many of the same authors, as shown in @tbl:artifacts. Here again, either the texts are collections children's poems, or they are high modernist fiction.
+Finally, the hyponym =artifact.n.01= again shows many of the same authors, as shown in [cite:@tbl:artifacts]. Here again, either the texts are collections children's poems, or they are high modernist fiction.
 
-#+CAPTION: Texts with the highest proportions of /artifact.n.01/ hyponyms
+#+CAPTION: Texts with the highest proportions of =artifact.n.01= hyponyms
 #+LABEL: tbl:artifacts
 | Year | Title                              | Author                 | % Natural Objects |
 |------+------------------------------------+------------------------+-------------------|
@@ -300,9 +300,9 @@ Very early morning. The sun was not yet risen, and the whole of Crescent Bay was
 
 The sun, the sea-mist, the bush, the paddocks, the bungalows, the sand, the dunes, the grass, the beach, the sea, the dew, the grass, the bushes, the /toi-toi/, the marigolds, the pinks, the earth, the fuchsias, the leaves, the waves, the fish, and the window: an abundance of living things, natural objects, and artifacts.
 
-**** Texts with the fewest objects
+*** Texts with the fewest objects
 
-At the other end of the spectrum are texts with low proportions of objects. These are worth discussing, insofar as they illuminate what the object count here is measuring. /Lady Susan/, Jane Austen's posthumously published epistolary novel, ranks as the work with the fewest hyponyms of /object.n.01/ [cite:@austen_lady]. Published in 1871, but probably written in 1794, it details the exploits of Lady Susan Vernon---marriage plots and otherwise---in her letters and others'. Consider the opening paragraph of the novel:
+At the other end of the spectrum are texts with low proportions of objects. These are worth discussing, insofar as they illuminate what the object count here is measuring. /Lady Susan/, Jane Austen's posthumously published epistolary novel, ranks as the work with the fewest hyponyms of =object.n.01= [cite:@austen_lady]. Published in 1871, but probably written in 1794, it details the exploits of Lady Susan Vernon---marriage plots and otherwise---in her letters and others'. Consider the opening paragraph of the novel:
 
 #+begin_quote
 MY DEAR BROTHER,—I can no longer refuse myself the pleasure of profiting by your kind invitation when we last parted of spending some weeks with you at Churchhill, and, therefore, if quite convenient to you and Mrs. Vernon to receive me at present, I shall hope within a few days to be introduced to a sister whom I have so long desired to be acquainted with. My kind friends here are most affectionately urgent with me to prolong my stay, but their hospitable and cheerful dispositions lead them too much into society for my present situation and state of mind; and I impatiently look forward to the hour when I shall be admitted into your delightful retirement. [cite:@austen_lady]
@@ -346,16 +346,15 @@ Maud Ellman has catalogued many of these correspondences in /Ulysses/, which she
 
 Christine Froula, in /Modernisms's Body: Sex, Culture, and Joyce/, argues that Joyce uses his "resisting artists' suffering, transgressions, symptoms, masquerade, parody, creativity, and play," often along sexual or somatic axes, to "turn the perversity of which he is often accured into a daring critique of his culture" [cite:@froula1996modernism xi].
 
-
-** Experiment: Bodies in Literature
+* Experiment: Bodies in Literature
 
 #+begin_comment
 NER:
 
-To quantify bodies in literature, along with their parts, a slightly different approach is necessary. I wanted to be able to count not only synsets of a certain semantic domain (e.g., /body_part.n.01/), but also words metaphorically used of body parts.
+To quantify bodies in literature, along with their parts, a slightly different approach is necessary. I wanted to be able to count not only synsets of a certain semantic domain (e.g., =body_part.n.01=), but also words metaphorically used of body parts.
 #+end_comment
 
-To quantify bodies in literature, I use the same annotations provided by EWISER's WSD, but search for hyponyms of /body_part.n.01/. @Fig:bodyPartSums shows the total proportions of various body parts, as they appear in $C_{PG2}$. What is shown here is not the original word forms, but their synsets. The synset /hand.n.01/ is by far the most common, at 20% of the total number of body parts; /eye.n.01/ is next most common, at almost 12%; and the subsequent body parts are all smaller by degrees: /face.n.01/ at almost 7%, /head.n.01/ at around 5%, /arm.n.01/ and /shoulder.n.01/ at around 3%, and /finger.n.01/, /lip.n.01/, /back.n.01/, and /foot.n.01/ around 2%. These numbers will come of use later, as I compare them to neurological findings, in the section below.
+To quantify bodies in literature, I use the same annotations provided by EWISER's WSD, but search for hyponyms of =body_part.n.01=. [cite:@Fig:bodyPartSums] shows the total proportions of various body parts, as they appear in $C_{PG2}$. What is shown here is not the original word forms, but their synsets. The synset =hand.n.01= is by far the most common, at 20% of the total number of body parts; =eye.n.01= is next most common, at almost 12%; and the subsequent body parts are all smaller by degrees: =face.n.01= at almost 7%, =head.n.01= at around 5%, =arm.n.01= and =shoulder.n.01= at around 3%, and =finger.n.01=, =lip.n.01=, =back.n.01=, and =foot.n.01= around 2%. These numbers will come of use later, as I compare them to neurological findings, in the section below.
 
 #+INCLUDE: "04-shapes/includes/bodyPartSums.html" export html
 
@@ -363,7 +362,7 @@ To quantify bodies in literature, I use the same annotations provided by EWISER'
 #+LABEL: fig:bodyPartSums
 [[./images/dummy.png]]
 
-@Fig:bodyPartSumsBody shows those same proportions mapped to an image of a human body, to better illustrate the attention given to each, in fiction and poetry of this period. The larger the dot on this image of a body, the larger the proportion of the corresponding body part's appearances. The conclusion one draws from this visualization is that the hand and the face are undoubtedly the centra of attention, while the torso and leg are comparatively neglected.
+[cite:@Fig:bodyPartSumsBody] shows those same proportions mapped to an image of a human body, to better illustrate the attention given to each, in fiction and poetry of this period. The larger the dot on this image of a body, the larger the proportion of the corresponding body part's appearances. The conclusion one draws from this visualization is that the hand and the face are undoubtedly the centra of attention, while the torso and leg are comparatively neglected.
 
 #+INCLUDE: "04-shapes/includes/bodyPartSumsBody.html" export html
 
@@ -371,8 +370,7 @@ To quantify bodies in literature, I use the same annotations provided by EWISER'
 #+LABEL: fig:bodyPartSumsBody
 [[./images/dummy.png]]
 
-
-** The Sensory Homunculus
+* The Sensory Homunculus
 
 In 1937, neuroscientists Wilder Penfield and Edwin Boldrey electrically stimulated the somatosensory cortices of their subjects' brains, in order to map out the regions responsible for perceiving the various parts of the body [cite:@penfield1937]. They called the resulting map the "sensory homunculus": a topography of the brain's regions responsible for sensing the body. Here is Penfield and Boldrey describing this model:
 
@@ -380,17 +378,13 @@ In 1937, neuroscientists Wilder Penfield and Edwin Boldrey electrically stimulat
 The homunculus gives a visual image of the size and sequence of cortical areas, for the size of the parts of this grotesque creature were determined not so much by the number of responses ... but by the apparent perpendicular extent of representation of each part when these responses were multiple for the same part. / The large size of the thumb and lips indicates that the vertical extent of the Rolandic cortex devoted to those parts in individual cases is very large. Thus the trunk is quite small and the legs and head exceedingly small, while the tongue, which usually occupies a comparatively long strip of the Rolandic lip, is large. [cite:@penfield1937 432]
 #+end_quote
 
-@Fig:homonculus1 illustrates this map, laid over a cross-section of the cortex. This model, it might be said, is how the brain sees the body. In terms of the comparative sizes of neural cortices, the hands, lips, and tongue are very disproportionately important to the brain. In contrast, the limbs and torso are comparatively unimportant. @Fig:homonculus2 shows an artist's rendering of this neurological model. The hands of this model are made enormous, to show the disproportionate attention given to them by the brain; the same is true of the lips and tongue.
+[cite:@Fig:homonculus1] illustrates this map, laid over a cross-section of the cortex. This model, it might be said, is how the brain sees the body. In terms of the comparative sizes of neural cortices, the hands, lips, and tongue are very disproportionately important to the brain. In contrast, the limbs and torso are comparatively unimportant.
 
 #+CAPTION: Sensory homonculus illustration. Source: OpenStax College; [[https://commons.wikimedia.org/wiki/File:1421_Sensory_Homunculus.jpg][Wikimedia Commons]]; CC-BY
 #+LABEL: fig:homonculus1
 [[./images/1421_Sensory_Homunculus.jpg]]
 
-#+CAPTION: Sensory homonculus model. Source: OpenStax College; [[https://commons.wikimedia.org/wiki/File:1421_Sensory_Homunculus.jpg][Wikimedia Commons]]; CC-BY-SA
-#+LABEL: fig:homonculus2
-[[./images/Front_of_Sensory_Homunculus.gif]]
 
 These proportions are very similar to those which I find in British literature of the 19th and 20th centuries, but with some notable differences.
-
 
 * Works Cited
