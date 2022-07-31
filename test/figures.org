@@ -1,11 +1,20 @@
 #+TITLE: Figures
 
 #+NAME: Post-Impressions of the Post-Impressionists {.myClass}
-#+CAPTION: "Post-Impressions of the Post-Impressionists" [cite:@bystander1910 375]
+#+CAPTION: "Post-Impressions of the Post-Impressionists"
 [[../03-colors/images/post-impressions.jpg]]
 
 #+NAME: fig:postImpressions
-#+CAPTION: "Post-Impressions of the Post-Impressionists" [cite:@bystander1910 375]
+#+LABEL: fig:postImpressions
+#+CAPTION: "Post-Impressions of the Post-Impressionists"
 [[../03-colors/images/post-impressions.jpg]]
 
 Check out [[fig:postImpressions][Figure 1]].
+
+Or check out [@fig:postImpressions]
+
+#+LABEL: fig:postImpressions2
+#+CAPTION: "Post-Impressions of the Post-Impressionists"
+[[../03-colors/images/post-impressions.jpg]]
+
+Or check out [@Fig:postImpressions2] and [@fig:postImpressions2].
