@@ -44,7 +44,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     "dest/index.html" %> \f -> do
         let source = "index.org"
             template = "templates/template.html"
-        need ([ source, template ])
+        need [ source, template ]
         -- Run all org blocks from index.org, to automatically update word counts and so on.
         -- cmd_ "emacs" ["--batch", "--load", "ob", "--load", "ob-shell", "--eval",
         --              "(let ((org-confirm-babel-evaluate nil))(dolist (file command-line-args-left)" ++
@@ -77,7 +77,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         let source = "02-history/ch-2.org"
         need ([ source, template, csl, bib ] ++ outAssets)
         contents <- readFileText source
-        let replaced = T.unpack $ contents
+        let replaced = T.unpack contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
@@ -110,7 +110,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
               ++ outAssets
               ++ filters)
         contents <- readFileText source
-        let replaced = T.unpack $ contents
+        let replaced = T.unpack contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
@@ -140,12 +140,13 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         let outAssets = map ("dest/" <>) assets
         let source = "04-shapes/ch-4.org"
             filters = [ "templates/PandocSidenote.hs"
+                      , "templates/synsetFilter.hs"
                       ]
         need ([ source, template, csl, bib ]
               ++ outAssets
               ++ filters)
         contents <- readFileText source
-        let replaced = T.unpack $ contents
+        let replaced = T.unpack contents
         cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
                                        "--template", template,
                                        "--standalone",
@@ -160,6 +161,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
+                                       "--filter=templates/synsetFilter.hs",
                                        "--mathjax",
                                        "--bibliography", bib,
                                        "-o", f
