@@ -75,8 +75,8 @@ css = do
     sym borderRadius (px 10)
     sym padding (em 0.8)
     width (pct 50)
-    borderBottom solid (px 1) "#999"
-    borderLeft solid (px 1) "#999"
+    borderBottom (px 1) solid "#999"
+    borderLeft (px 1) solid "#999"
     -- Fix weird-looking white background in links in boxes
     "a" ? do
       textShadow (px 0) (px 0) (px 0) "#000"
@@ -92,8 +92,8 @@ css = do
     fontSize (C.rem 1.4)
     maxWidth (em 25)
     marginLeft (em 2)
-    borderBottom solid (px 1) "#999"
-    borderLeft solid (px 1) "#999"
+    borderBottom (px 1) solid "#999"
+    borderLeft (px 1) solid "#999"
     "a" ? do
       textShadow (px 0) (px 0) (px 0) "#000"
   "div.references" ? do
