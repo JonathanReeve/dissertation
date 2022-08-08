@@ -63,9 +63,20 @@ Among modernist writers themselves, we can hear the echos of these contemporaneo
 
 T.S. Eliot's famous critique of /Hamlet/, often cited, is that it lacks an "objective correlative," or "a set of objects, a situation, a chain of events which shall be the formula of that /particular/ emotion" [cite:@eliot_waste_2001 120]. This aesthetic is apparent in "The Waste Land" and elsewhere, where emotions like "fear" are perceived through objects like "a handful of dust," and April's cruelty is shown with lilacs. Pound's war poem "Hugh Selwyn Mauberly" laments that "there died a myriad," not for patriotism or any other ideology, but "for two gross of broken statues, / for a few thousand battered books," that is, for objects [cite:@PoundSelectedPoems1957 67].
 
+
 Across the Atlantic, the American modernist poet William Carlos Williams, in the first few stanzas of /Paterson/, writes "say it, no ideas but in things." This is an oft-quoted maxim, but one which deals even more with objecthood in its context: Williams spends the initial passages of his poem anthropomorphizing places and things, particularly the Paterson, New Jersey, of its title. Paterson "lies in the valley under the Passaic Falls / its spent waters forming the outline of his back" [cite:@williams1995paterson 9]. In Williams' reification reverie, Paterson's houses have "blank faces," and his trees are forked by "preconception"; "split, furrowed, creased," as if of a human face.
 
-Of course, this is all only a sample of the theory surrounding shape and object, in this literary period.
+Max Beerbohm, whose "A Defense of Cosmetics" I discuss in the previous chapter, and whom Virginia Woolf called, "without a doubt the prince of his profession," and whom Philip Lopate, in a collection of the same name, calls "the prince of minor writers," emerges from the Yellow Nineties with an essay called "Ichabod," published in a 1900 issue of /The Living Age/ in which he describes the collection of travel labels he had accumulated on his hat box [cite:@woolf2009selected;@9781590178294;@beerbohm1923yet]. Just as "A Defense" argues, in good aestheticist form, in support of art for art's sake, "Ichabod" celebrates objects for their own sake. This is not quite the things-in-themselves, of the Kantian formulation, nor the neumenon of earlier philosophy, but an aesthetics of the useless. Here, Beerbohm describes the gradual development of the collector, and his collection:
+
+#+begin_quote
+My collection, like most collections, began imperceptibly. A man does not say to himself, 'I am going to collect' this thing or that. True, the schoolboy says so; but his are not, in the true sense of the word, collections. ... It follows that he has no real love of his collection... The sincere collector, how different! His hobby has a solid basis of personal preference. Some one gives him (say) a piece of jade. He admires it. He sees another piece in a shop, and buys it; later, he buys another. He does not regard these pieces of jade as distinct from the rest of his possessions; he has no idea of collecting jade. It is not till he has acquired several other pieces that he ceases to regard them as mere items in the decoration of his room, and gives them a little table, or a tray of a cabinet, all to themselves. How well they look there! How they intensify one another!
+... Thus awakes in him, quite gradually, the spirit of the collector. [cite:@beerbohm1923yet 134–5]
+#+end_quote
+
+Twenty years later, Virginia Woolf published a short story in /The Athenaeum/ called "Solid Objects" in which the protagonist follows a similar development as a collector, or appreciator of objects. In this story, much discussed by the critics I cite below, two young men, Charles and John, discuss politics on the beach. But John is distracted by a piece of green sea glass, which Woolf gives a lengthy description, through Charles's eyes. This bears quoting in full, to convey the scope and visuality of the description.
+
+#+INCLUDE: "04-shapes/includes/woolf.html" export html
+[cite:@1920athenaeum 543]
 
 ** Objects in Modernism Studies
 
