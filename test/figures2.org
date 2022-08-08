@@ -1,0 +1,12 @@
+#+title: Figures
+
+#+NAME: postImpressions2
+#+LABEL: fig:postImpressions2
+#+CAPTION: "Post-Impressions of the Post-Impressionists"
+[[../03-colors/images/post-impressions.jpg]]
+
+Or check out [cite:@fig:postImpressions2].
+
+[cite:@Fig:postImpressions2] is capitalized.
+
+Native org style is like [[fig:postImpressions2]]

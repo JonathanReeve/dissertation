@@ -1,0 +1,5 @@
+#+title: Synsets
+
+Here are some synsets like /living_thing.n.01/, or /robin.n.01/, or an adjective like /blue.a.03/.
+
+What about a hex? #AABBCC

@@ -1,0 +1,18 @@
+#+title: Citations
+
+Call this with =pandoc --citeproc --csl=templates/modern-language-association.csl -o citations.html citations.org=
+
+Cited by [cite:@miller1995wordnet]
+
+And another with a page number [cite:@frazer_golden_1996 126]
+
+- =cite/t:@miller1995wordnet= [cite/t:@miller1995wordnet]
+- =cite/t:@miller1995wordnet p. 12= [cite/t:@miller1995wordnet p. 12]
+- =cite/t:@miller1995wordnet p.12; see also @frazer_golden_1996= [cite/t:@miller1995wordnet p.12; see also @frazer_golden_1996]
+- =cite:@miller1995wordnet= [cite:@miller1995wordnet]
+- =cite/na:@miller1995wordnet= [cite/na:@miller1995wordnet]
+- =cite:see @miller1995wordnet p. 12= [cite:see @miller1995wordnet p. 12]
+- =cite:see @miller1995wordnet p. 12= [cite:see @miller1995wordnet p. 12]
+- =cite:see @miller1995wordnet p. 12 and /passim/= [cite:see @miller1995wordnet p. 12 and /passim/]
+- =cite:@miller1995wordnet; @frazer_golden_1996= [cite:@miller1995wordnet; @frazer_golden_1996]
+- =cite:see @miller1995wordnet; @frazer_golden_1996= [cite:see @miller1995wordnet; @frazer_golden_1996]
