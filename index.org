@@ -18,8 +18,8 @@ wc -w 02-history/ch-2.org 03-colors/ch-3.org 04-shapes/ch-4.org
 #+RESULTS:
 | 13088 | 02-history/ch-2.org |
 | 33052 | 03-colors/ch-3.org  |
-|  8875 | 04-shapes/ch-4.org  |
-| 55015 | total               |
+|  9926 | 04-shapes/ch-4.org  |
+| 56066 | total               |
 
 ** Revisions
 
@@ -30,11 +30,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| 0a49acb | 2022-07-31 | 16:06:52 | -400 |
-| c57f53a | 2022-07-31 | 16:06:19 | -400 |
-| 4d1ab47 | 2022-07-31 | 16:06:05 | -400 |
-| ac27c52 | 2022-07-31 | 16:05:24 | -400 |
-| 7f1ba06 | 2022-07-31 | 16:05:11 | -400 |
+| 1e2d4a9 | 2022-08-09 | 00:34:21 | -400 |
+| ccfb2de | 2022-08-08 | 13:26:54 | -400 |
+| 2c2dd4d | 2022-08-08 | 13:26:05 | -400 |
+| bbb8a65 | 2022-08-08 | 13:25:26 | -400 |
+| b5bdb9f | 2022-07-31 | 16:08:07 | -400 |
 
 ** Source Code and Source Text
 
