@@ -25,6 +25,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     want [ "dest/index.html"
          , "dest/02-history/ch-2.html"
          , "dest/03-colors/ch-3.html"
+         , "dest/04-shapes/ch-4.html"
          ]
 
     -- To serve the generated files (useful for previewing),
