@@ -90,7 +90,6 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
-                                       "--filter=templates/hex-filter.hs",
                                        "--mathjax",
                                        "--bibliography", bib,
                                        "-o", f
@@ -104,7 +103,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         let outAssets = map ("dest/" <>) assets
         let source = "03-colors/ch-3.org"
             filters = [ "templates/PandocSidenote.hs"
-                      , "templates/hex-filter.hs"
+                      , "templates/hexFilter.hs"
                       ]
         need ([ source, template, csl, bib ]
               ++ outAssets
@@ -126,7 +125,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
-                                       "--filter=templates/hex-filter.hs",
+                                       "--filter=templates/hexFilter.hs",
                                        "--mathjax",
                                        "--bibliography", bib,
                                        "-o", f
