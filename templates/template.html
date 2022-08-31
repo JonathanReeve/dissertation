@@ -1,4 +1,4 @@
-<html><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"><meta content="Jonathan Reeve" name="author"><meta content="$date-meta$" name="dcterms.date"><title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title><style type="text/css">
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"><meta name="author" content="Jonathan Reeve"><meta name="dcterms.date" content="$date-meta$"><title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title><style type="text/css">
 p
 {
   line-height : 2;
@@ -46,8 +46,8 @@ div.box
   border-radius    : 10px 10px 10px 10px;
   padding          : 0.8em 0.8em 0.8em 0.8em;
   width            : 50%;
-  border-bottom    : solid 1px #999999;
-  border-left      : solid 1px #999999;
+  border-bottom    : 1px solid #999999;
+  border-left      : 1px solid #999999;
 }
 
 div.box a
@@ -69,8 +69,8 @@ div.annotated
   font-size        : 1.39999rem;
   max-width        : 25em;
   margin-left      : 2em;
-  border-bottom    : solid 1px #999999;
-  border-left      : solid 1px #999999;
+  border-bottom    : 1px solid #999999;
+  border-left      : 1px solid #999999;
 }
 
 div.annotated a
@@ -93,15 +93,15 @@ details
 }
 
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><link href="/assets/tufte-css/latex.css" rel="stylesheet"><link href="/assets/tufte-css/tufte.css" rel="stylesheet"><script src="/03-colors/includes/plotly-latest.min.js"></script><style type="text/css">@page { margin: 3cm; @bottom-center { content: counter(page); } }</style></head><body><article>
+/* Generated with Clay, http://fvisser.nl/clay */</style><link rel="stylesheet" href="/assets/tufte-css/latex.css"><link rel="stylesheet" href="/assets/tufte-css/tufte.css"><script src="/03-colors/includes/plotly-latest.min.js"></script><style type="text/css">@page { margin: 3cm; @bottom-center { content: counter(page); } }</style></head><body><article>
  $for(include-before)$ 
  $include-before$ 
  $endfor$ 
 <header><h1 class="title">$title$</h1><p class="subtitle author">$author$</p><p class="date">$date$</p></header><main>$if(toc)$ 
-<details><summary>Table of Contents</summary><nav role="doc-toc" id="$idprefix$TOC">$table-of-contents$ 
+<details><summary>Table of Contents</summary><nav id="$idprefix$TOC" role="doc-toc">$table-of-contents$ 
 </nav>$endif$ 
 </details>$body$ 
  $for(include-after)$ 
  $include-after$ 
  $endfor$ 
-</main></article><footer><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script><script src="https://hypothes.is/embed.js"></script><script src="includes/mermaid.min.js"></script><script src="includes/zepto.min.js"></script><script src="includes/jquery.lazy.min.js"></script><script src="includes/custom.js"></script></footer></body></html>
+</main></article><footer><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="https://hypothes.is/embed.js"></script><script src="includes/mermaid.min.js"></script><script src="includes/zepto.min.js"></script><script src="includes/jquery.lazy.min.js"></script><script src="includes/custom.js"></script></footer></body></html>

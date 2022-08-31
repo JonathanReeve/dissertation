@@ -386,18 +386,20 @@ James Joyce, as a young man, briefly attended medical school with aspirations to
 
 Maud Ellman has catalogued many of these correspondences in /Ulysses/, which she calls, following Joyce's pronouncement, "the epic of the human body" [cite:@ellmann2008ulysses]. In "More Kicks Than Pricks: Modernist Body Parts," she argues that "a continuation of war by other means, art explodes the illusion of bodily integrity, reducing it to splintered body-parts" [cite:@ellmannKicks 254]. We might take this even further, and say that language itself splinters the body into parts.
 
-Christine Froula, in /Modernisms's Body: Sex, Culture, and Joyce/, argues that Joyce uses his "resisting artists' suffering, transgressions, symptoms, masquerade, parody, creativity, and play," often along sexual or somatic axes, to "turn the perversity of which he is often accured into a daring critique of his culture" [cite:@froula1996modernism xi].
+Christine Froula, in /Modernisms's Body: Sex, Culture, and Joyce/, argues that Joyce uses his "resisting artists' suffering, transgressions, symptoms, masquerade, parody, creativity, and play," often along sexual or somatic axes, to "turn the perversity of which he is often accused into a daring critique of his culture" [cite:@froula1996modernism xi].
 
 * Experiment: Bodies in Literature
 
-To quantify bodies in literature, I use the same annotations provided by EWISER's WSD, but search for hyponyms of =body_part.n.01=. This largely filters out any use of body parts as metaphors, which could, in more naive analyses, have accounted for most of the instances of given words. For instance, /heart/ as center should not be considered synonymous with /heart/, the organ, just as /hand/, help, as in, to give one a hand, should not be considered the same as the body part. I then aggregate the results, and divide by the total number of words in a text.
+To what extent does the literature of the early 20th century become corporeal? Do the bodies of literary characters become more legible, at the turn of the century, or less? How, precisely, do these bodies appear in fiction? What body parts are the foci of
+
+To answer these questions, I turn again to word sense disambiguation, with EWISER and WordNet, but search for hyponyms of =body_part.n.01=. This largely filters out any use of body parts as metaphors, which could, in more naive analyses, have accounted for most of the instances of given words. For instance, /heart/ as center should not be considered synonymous with /heart/, the organ, just as /hand/, help, as in, to give one a hand, should not be considered the same as the body part. I then aggregate the results, and divide by the total number of words in a text.
 
 [cite:@Fig:bodyPartDiachronic] shows the proportions of body parts per text, by year of publication, along with a line representing the ordinary least squares, modeling the chronological trend. Between 1800 and 1920, there is a 63% increase in the proportions of body parts in these texts.
 
 #+INCLUDE: "04-shapes/includes/bodyPartDiachronic.html" export html
 
 #+CAPTION: Body parts by year of publication, $C_{PG2}$
-#+LABEL: fig:bodyPartDiachronoic
+#+LABEL: fig:bodyPartDiachronic
 [[./images/dummy.png]]
 
 ** The Most and Least Corporeal Texts
@@ -415,7 +417,7 @@ The texts with the highest proportions of =body_part.n.01= hyponyms are shown in
 | 1922 | The Hawk of Egypt                         | Joan Conquest            |     0.011454 |
 | 1906 | The Fifth Queen and How She Came to Court | Ford Madox Ford          |     0.011236 |
 | 1920 | Desert Love                               | Joan Conquest            |     0.011103 |
-| 1907 | Privy Seal, Hist Last Venture             | Ford Madox Ford          |     0.010192 |
+| 1907 | Privy Seal, His Last Venture              | Ford Madox Ford          |     0.010192 |
 | 1898 | Bob, Son of Battle                        | Alfred Ollivant          |     0.009757 |
 | 1915 | Beltane the Smith                         | Jeffery Farnol           |     0.009569 |
 | 1922 | The Return of Blue Pete                   | Luke Allan               |     0.009509 |
@@ -423,37 +425,61 @@ The texts with the highest proportions of =body_part.n.01= hyponyms are shown in
 | 1916 | The Return of Dr. Fu-Manchu               | Sax Rohmer               |     0.009395 |
 | 1897 | The Nigger of the Narcissus               | Joseph Conrad            |     0.009242 |
 
-Following that are three works by Joan Conquest, a largely forgotten novelist of the early 20th Century, writing in the genre of fantasy romance. Set in India and Egypt, these are novels which use their Eastern locales as means towards rich description, of bodies and setting.
+Following that are three works by Joan Conquest, a largely forgotten novelist of the early 20th Century, formerly a nurse during the first world war, who writes chiefly in the genre of fantasy romance. Set in India and Egypt, these are novels which use their Eastern locales as means towards rich description, of bodies and setting.
 
-Also present are two novels by Ford Madox Ford, /The Fifth Queen/ and /Privy Seal/.
+Also present here are two novels by Ford Madox Ford, /The Fifth Queen/ and /Privy Seal/.
 
 Finally, there are two novels by Joseph Conrad, /Gaspar Ruiz/ and /The Nigger of the Narcissus/.
 
-The texts with the least hyponyms of =body_part.n.01= is similar to that of other objects. After removing non-fiction works erroneously categorized here, the result is largely a list of Victorian romances. Jane Austen figures heavily here,
+The texts with the least hyponyms of =body_part.n.01=, shown in [cite:@tbl:bodyPartsLow], is similar to that of other objects. After removing non-fiction works erroneously categorized here, the result is largely a list of Victorian romances. Jane Austen figures heavily here, where again /Lady Susan/ is a low-ranking text, as it was for other objects. /Pride and Prejudice/, /Mansfield Park/, and /Emma/ follow.
 
-| Year | Title                       | Author                      | % Body Parts |
-|------+-----------------------------+-----------------------------+--------------|
-| 1871 | Lady Susan                  | Jane Austen                 |     0.000914 |
-| 1813 | Pride and Prejudice         | Jane Austen                 |     0.000971 |
-| 1918 | Meccania, the Super-State   | Owen Gregory                |     0.001096 |
-| 1904 | Reginald                    | Saki                        |     0.001138 |
-| 1897 | An Almanac of Twelve Sports | Rudyard Kipling             |     0.001148 |
-| 1879 | Dr Wortle's School          | Anthony Trollope            |     0.001167 |
-| 1814 | Mansfield Park              | Jane Austen                 |     0.001185 |
-| 1913 | Old Friends and New Fancies | Sybil Brenton               |     0.001189 |
-| 1815 | Emma                        | Jane Austen                 |     0.001282 |
-| 1911 | The Feast of St. Friend     | Arnold Bennett              |     0.001284 |
+#+CAPTION: Texts with the lowest proportions of =body_part.n.01= hyponyms
+#+LABEL: tbl:bodyPartsLow
+| Year | Title                       | Author           | % Body Parts |
+|------+-----------------------------+------------------+--------------|
+| 1871 | Lady Susan                  | Jane Austen      |     0.000914 |
+| 1813 | Pride and Prejudice         | Jane Austen      |     0.000971 |
+| 1918 | Meccania, the Super-State   | Owen Gregory     |     0.001096 |
+| 1904 | Reginald                    | Saki             |     0.001138 |
+| 1897 | An Almanac of Twelve Sports | Rudyard Kipling  |     0.001148 |
+| 1879 | Dr Wortle's School          | Anthony Trollope |     0.001167 |
+| 1814 | Mansfield Park              | Jane Austen      |     0.001185 |
+| 1913 | Old Friends and New Fancies | Sybil Brenton    |     0.001189 |
+| 1815 | Emma                        | Jane Austen      |     0.001282 |
+| 1911 | The Feast of St. Friend     | Arnold Bennett   |     0.001284 |
+
+Consider this physical character description of Elizabeth from /Pride and Prejudice/:
+
+#+begin_quote
+Occupied in observing Mr. Bingley's attentions to her sister, Elizabeth was far from suspecting that she was herself becoming an object of some interest in the eyes of his friend. Mr. Darcy had at first scarcely allowed her to be pretty; he had looked at her without admiration at the ball; and when they next met, he looked at her only to criticise. But no sooner had he made it clear to himself and his friends that she had hardly a good feature in her face, than he began to find it was rendered uncommonly intelligent by the beautiful expression of her dark eyes. To this discovery succeeded some others equally mortifying. Though he had detected with a critical eye more than one failure of perfect symmetry in her form, he was forced to acknowledge her figure to be light and pleasing; and in spite of his asserting that her manners were not those of the fashionable world, he was caught by their easy playfulness. Of this she was perfectly unaware;—to her he was only the man who made himself agreeable no where, and who had not thought her handsome enough to dance with.
+#+end_quote
+[cite:@austen_pride_2013]
+
+While there are some body parts present here, "face" and "eyes" are the only explicit ones, "form" and "figure" being more abstract bodily attributes. Where there is a description of Elizabeth's body, it is rather a means, a vehicle, for describing her "uncommonly intelligent" appearance. For Austen, the body is a mode of perceiving character and personality.
+
+Compare this with a description of the titular character from Conrad's /Gaspar Ruiz/:
+
+#+begin_quote
+That voice, senores, proceeded from the head of Gaspar Ruiz. Of his body I could see nothing. Some of his fellow-captives had clambered upon his back. He was holding them up. His eyes blinked without looking at me. That and the moving of his lips was all he seemed able to manage in his overloaded state. And when I turned round, this head, that seemed more than human size resting on its chin under a multitude of other heads, asked me whether I really desired to quench the thirst of the captives.
+#+end_quote
+[cite:@conradGasparRuiz]
+
+Here, we learn of Gaspar's strong back, unblinking eyes, lips, oversized head, and chin. It is not Gaspar himself that looks, but "his eyes." And it is not Gaspar who speaks to this chapter's narrator, General Santierra, but "this head." As in "Solid Objects," where the two men first appear as "one small black spot," the visuality of bodily descriptions comes first. Unlike in Austen, where bodies are windows to personalities, in Conrad, the body eclipses even the self.
+
 
 ** Distribution of Body Parts
 
-#+INCLUDE: "04-shapes/includes/bodyPartSumsBody.html" export html
+#+INCLUDE: "04-shapes/includes/bodyPartSums.html" export html
 
 #+CAPTION: Body part sums, $C_{PG2}$
 #+LABEL: fig:bodyPartSums
 [[./images/dummy.png]]
+
 [cite:@Fig:bodyPartSums] shows the total proportions of various body parts, as they appear in $C_{PG2}$. What is shown here is not the original word forms, but their synsets. The synset =hand.n.01= is by far the most common, at 20% of the total number of body parts; =eye.n.01= is next most common, at almost 12%; and the subsequent body parts are all smaller by degrees: =face.n.01= at almost 7%, =head.n.01= at around 5%, =arm.n.01= and =shoulder.n.01= at around 3%, and =finger.n.01=, =lip.n.01=, =back.n.01=, and =foot.n.01= around 2%. These numbers will come of use later, as I compare them to neurological findings, in the section below.
 
 [cite:@Fig:bodyPartSumsBody] shows those same proportions mapped to an image of a human body, to better illustrate the attention given to each, in fiction and poetry of this period. The larger the dot on this image of a body, the larger the proportion of the corresponding body part's appearances. The conclusion one draws from this visualization is that the hand and the face are undoubtedly the centra of attention, while the torso and leg are comparatively neglected.
+
+#+INCLUDE: "04-shapes/includes/bodyPartSumsBody.html" export html
 
 #+CAPTION: Body Part Sums, Body Projection, $C_{PG2}$
 #+LABEL: fig:bodyPartSumsBody

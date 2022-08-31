@@ -33,9 +33,13 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
       liftIO $ serve 8080 "dest/"
 
     -- "references.bib" %> \f -> do
-    --     let source = "/home/jon/Dokumentujo/Papers/library.bib"
-    --     need [source]
-    --     copyFileChanged source f
+    --     let sources = [ "/home/jon/Dokumentujo/Papers/library.bib"
+    --                   , "/home/jon/Dokumentujo/Papers/library2.bib"
+    --                   ]
+    --     need sources
+    --     Stdout stdout <- cmd "cat" sources
+    --     writeFileChanged f stdout
+    --     -- copyFileChanged source f
 
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
