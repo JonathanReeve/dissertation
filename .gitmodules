@@ -16,3 +16,6 @@
 [submodule "04-shapes/count-objects"]
 	path = 04-shapes/count-objects
 	url = https://github.com/JonathanReeve/count-objects.git
+[submodule "05-image/description-detection"]
+	path = 05-image/description-detection
+	url = https://github.com/JonathanReeve/description-detection.git
