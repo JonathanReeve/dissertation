@@ -6,7 +6,7 @@
 #+begin_box
 This dissertation chapter is a full-color, interactive document, originally formatted in HTML. It contains interactive plots, hyperlinks, and other dynamic elements. If you are reading this in another document format (PDF, DOCX, or paper), you are missing these dynamic elements. Please visit [[https://dissertation.jonreeve.com/][dissertation.jonreeve.com]] for the canonical edition of this text, and [[https://github.com/JonathanReeve/dissertation][github.com/JonathanReeve/dissertation]] for its source code. Annotations are welcome in the hypothes.is sidebar to the right.
 #+end_box
-
+ #  base
 * Introduction
 
 Modernity is increasingly filled with objects. There are 11.4% more objects---artifacts, natural objects, bodies, and more---in the fiction and poetry of 1880–1930 period than of that in the previous century. Although much of this may be owed to the industrial revolution and its mass production of goods, I hope to show that the modernist literary period begins to /see/ objects differently, just as it did with color. Color is bounded and contained by shape, and the retinal cells responsible for color vision, cone cells, are complemented with rod cells which are responsible for the perception of shape. While cones, comprising 6-7 million cells per eye, are responsible for color perception, the much more numerous rod cells, at around 120 million cells, are responsible for night vision, peripheral vision, motion perception, and object recognition. This component of vision is the guiding metaphor for this chapter, which deals with objects, shapes, and bodies.
