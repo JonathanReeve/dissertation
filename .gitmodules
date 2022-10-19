@@ -8,14 +8,14 @@
 	path = assets/MathJax
 	url = https://github.com/mathjax/MathJax.git
 [submodule "04-colors/color-word-analyzer"]
-	path = 03-colors/color-word-analyzer
+	path = 01-colors/color-word-analyzer
 	url = https://github.com/JonathanReeve/color-word-analyzer.git
 [submodule "04-colors/custom-ngrams-search"]
-	path = 03-colors/custom-ngrams-search
+	path = 01-colors/custom-ngrams-search
 	url = https://github.com/JonathanReeve/custom-ngrams-search.git
 [submodule "04-shapes/count-objects"]
-	path = 04-shapes/count-objects
+	path = 02-shapes/count-objects
 	url = https://github.com/JonathanReeve/count-objects.git
 [submodule "05-image/description-detection"]
-	path = 05-image/description-detection
+	path = 03-images/description-detection
 	url = https://github.com/JonathanReeve/description-detection.git
