@@ -1,4 +1,4 @@
-#+TITLE: Chapter 3: Color
+#+TITLE: Chapter 1: Color
 #+AUTHOR: Jonathan Reeve
 #+bibliography: ../references.bib
 # -*- eval: (org-hide-block-all)
@@ -144,7 +144,7 @@ As Woolf sees it, the Georgians distinguish themselves through their sight—the
 
 An even more substantive event of the year is Roger Fry's exhibit in 1910. The art critic and painter Roger Fry, a late entry into Woolf's Bloomsbury group of friends, organized, at the Grafton Galleries, one of the most influential British art exhibitions of the early 20th century: "Manet and the Post-Impressionists," the exhibition which coined the term "post-impressionist." Like its predecessor, impressionism, post-impressionism places greater importance on bright color and form than in representation, drama, or chiaroscuro. Its apotheosis, in terms of this emphasis, is fauvism, the trend, circa 1905–1908, for reducing paintings to large swaths of extremely bright colors.
 
-To speak precisely, post-impressionist paintings are, according to my image analysis, 37.4% brighter than European paintings of the early 19th Century. I arrive at this figure by [[https://github.com/JonathanReeve/dissertation/blob/master/03-colors/experiment-post-impressionism/analyze-colors.ipynb][querying Wikidata for paintings]] labeled with the movement "post-impressionism," then querying for paintings created between 1800–1850, downloading one hundred images from each category, and finally by computing K-means centroids for their luminosity in HSL color space (hue, saturation, luminosity). Although we must account for some fading of the paintings' colors over time, this figure confirms my intuitive sense (and that of many art critics) that post-impressionism was an exceptionally bright artistic movement.
+To speak precisely, post-impressionist paintings are, according to my image analysis, 37.4% brighter than European paintings of the early 19th Century. I arrive at this figure by [[https://github.com/JonathanReeve/dissertation/blob/master/01-colors/experiment-post-impressionism/analyze-colors.ipynb][querying Wikidata for paintings]] labeled with the movement "post-impressionism," then querying for paintings created between 1800–1850, downloading one hundred images from each category, and finally by computing K-means centroids for their luminosity in HSL color space (hue, saturation, luminosity). Although we must account for some fading of the paintings' colors over time, this figure confirms my intuitive sense (and that of many art critics) that post-impressionism was an exceptionally bright artistic movement.
 
 The exhibition flaunts this new brightness, featuring the titular Edouard Manet, along with Paul Cézanne, Paul Gauguin, Maurice Denis, Vincent van Gogh, and other painters known for their use of bright color. It was highly controversial. A cartoon in the November 1910 issue of /The Bystander/, as shown in [@fig:postImpressions], illustrates the controversy [cite:@bystander1910 375]. A segment of the cartoon labeled "you arrive thus" depicts two gentlemen arriving at the exhibition: one half-asleep, and the other, alert. The following segment, labeled "and depart thus" depicts the sleepy man suddenly alert, and the alert man with buckled knees, wiping the sweat from his brow. Another corner of the cartoon depicts an appreciative look from "an American art student who liked the colour harshness." Finally, a tableau at the bottom of the page shows four men and three women, in genteel hats and costume, doubled over in laughter. The caption is "From the Pictures' Point of View."
 
@@ -478,7 +478,7 @@ Wittgenstein then asks whether a "reddish green" or other color combinations mig
 Saija Kerttula calls this the /derivational productivity/ of a color word, and lists a number of ways that a color term may be derived [cite:@kerttula2002english 89]. Adding /-ish/ is one, but there is also /-ied,/ as in /rubied/, /-y/ as in /bluey/, /-ate/ as in /roseate/, /off-/ as in /off-white/, and many others. For the sake of simplicity, however, let's stick with the most common, /-ish/, and attempt to test this question of Wittgenstein's, by examining patterns in literary data.
 To test this, I constructed a matrix of color expressions from the $CM_X$ color map,[fn::Described in more detail in the $CM_X$ section below, @sec:xkcd.] where one word ends in /-ish./ The resulting matrix is shown here in [@fig:ishMatrix].
 
-#+INCLUDE: "03-colors/includes/ishMatrix.html" export html
+#+INCLUDE: "01-colors/includes/ishMatrix.html" export html
 
 #+CAPTION: $CM_X$ "-ish" Word Matrix
 #+LABEL: fig:ishMatrix
@@ -508,7 +508,7 @@ To measure this, I designed the experiment below, in order to find out what obje
 
 [@Fig:associations] shows word cloud visualizations for each color word and its most commonly collocated nouns.[fn::Word clouds, or tag clouds, are a relatively recently popularized technique of textual data visualization, which depicts the frequency of words through typeface sizes. See @viegas2008timelines for a history of the visualization that traces it to Soviet Constructivism.] Surprisingly, the most frequent collocations are not always the most cliché: /green grass/ and /green leaves/ are of course present, but are not as frequent as /green eyes/. /Blue sky/ is present, and /red blood/, but are subordinate to /hair/ and /eyes/.
 
-#+INCLUDE: "03-colors/includes/wordcloud.html" export html
+#+INCLUDE: "01-colors/includes/wordcloud.html" export html
 
 #+CAPTION: Color Associations Word Clouds. Click on a word cloud to visualize categorizations of these words.
 #+LABEL: fig:associations
@@ -516,7 +516,7 @@ To measure this, I designed the experiment below, in order to find out what obje
 
 Some overall trends are apparent in these words, which may be illuminated by categorizing them. Using WordNet, the relational lexical database, I am able to identify hypernyms for most of these words, and group the words according to these hypernyms [cite:@miller1998wordnet]. The hypernym treemap for red, for instance, shown in [@fig:redHypernyms], shows that a good proportion of the words are body parts (they have the hypernym synset /body_part.n.01/), or "coverings" such as hair (/covering.n.01/). A crucial similarity between these bodily descriptors, from /red hair/, the most frequent collocation, to /red eyes/, /red lips/, and /red face/, is that they describe exceptions, or aberrations, from their usual states. /Red hair/ (actually orange, as I will show) is among the least common natural hair colors. /Red eyes/ describe diseased or depigmentized eyes, of humans or other animals. And /red lips/ are lips that are unusually red: whether blood-filled through vigor, or excitement, or through the use of cosmetics.
 
-#+INCLUDE: "03-colors/includes/red.html" export html
+#+INCLUDE: "01-colors/includes/red.html" export html
 
 #+CAPTION: Hypernym tree map for red, using WordNet hypernyms
 #+LABEL: fig:redHypernyms
@@ -609,7 +609,7 @@ The breadth of the text/color translation problem is suggested even in at a glan
 *** $CM_R$, Ridgway
 Some of the most ambitious attempts at mapping colors to their names, or naming colors, came from the natural sciences. American ornithologist Robert Ridgway (1850-1929), for example, authored two influential works of color naming systems: /A Nomenclature of Colors for Naturalists/ in 1886, and /Color Standards and Color Nomenclature/ in 1912 [cite:@ridgway1886nomenclature; @ridgway1912color]. In the preface of the earlier work, Ridgway names as his problem that "the author has in collection considerably over three hundred water-colors, each bearing a different name" [cite:@ridgway1886nomenclature X]. This volume contains over a thousand colors, although the color names are less metaphorical (/lemon-yellow/), and more descriptive (/bright yellow/).
 
-To extract the colors from this book, I create a method whereby I extract images from the digitized pages of the book, computationally crop color swatches from the pages, and compute the dominant color of each swatch.[fn::The code for extracting material from $CM_R$ may be found [[https://github.com/JonathanReeve/dissertation/blob/master/03-colors/data/maps/ridgway/parse-ridgway.hs][here in this project's repository.]]] [Fig:Ridgway1912] shows a page from the latter book, from which I extracted this data.
+To extract the colors from this book, I create a method whereby I extract images from the digitized pages of the book, computationally crop color swatches from the pages, and compute the dominant color of each swatch.[fn::The code for extracting material from $CM_R$ may be found [[https://github.com/JonathanReeve/dissertation/blob/master/01-colors/data/maps/ridgway/parse-ridgway.hs][here in this project's repository.]]] [Fig:Ridgway1912] shows a page from the latter book, from which I extracted this data.
 
 #+CAPTION: A page from Ridgway's 1912 /Color Standards and Color Nomenclature/
 #+LABEL: fig:Ridgway1912
@@ -778,7 +778,7 @@ However, modifiers are not always direct descendants of their modified words, si
 
 The resulting data structure looks like [@fig:grass-proximity-model-pie], for /grass/:
 
-#+INCLUDE: "03-colors/deep-imaginer/charts/grass-proximity-model-pie.html" export html
+#+INCLUDE: "01-colors/deep-imaginer/charts/grass-proximity-model-pie.html" export html
 
 #+CAPTION: Color inferences for /grass/, from $M_P$.
 #+LABEL: fig:grass-proximity-model-pie
@@ -795,7 +795,7 @@ This model works reasonably well—that is, meets our modern English-speaking ex
 
 [@Fig:sheep-proximity-model-pie] shows a portion of the model's inferences for /sheep/.
 
-#+INCLUDE: "03-colors/deep-imaginer/charts/sheep-proximity-model-pie.html" export html
+#+INCLUDE: "01-colors/deep-imaginer/charts/sheep-proximity-model-pie.html" export html
 
 #+CAPTION: Color inferences for /sheep/, from $M_P$.
 #+LABEL: fig:sheep-proximity-model-pie
@@ -813,7 +813,7 @@ Bertha sees the fruit in this bowl also with an acute sense of newness: not quit
 
 "Apples stained with strawberry pink," is an uncommon metaphor for apples, which $M_P$ models as in [@fig:apples-proximity-model-pie], and for which the blended color is #AC883B.
 
-#+INCLUDE: "03-colors/deep-imaginer/charts/apple-proximity-model-pie.html" export html
+#+INCLUDE: "01-colors/deep-imaginer/charts/apple-proximity-model-pie.html" export html
 
 #+CAPTION: Color inferences for /apples/, from $M_P$.
 #+LABEL: fig:apples-proximity-model-pie
@@ -833,7 +833,7 @@ To short-circuit the problem of color exceptionalism, I mine color inference dat
 
 This model does not seem to perform as well as $M_P$, however. Here is an entry for /grass/, for example.
 
-#+INCLUDE: "03-colors/deep-imaginer/charts/grass-dictionaryModel-pie.html" export html
+#+INCLUDE: "01-colors/deep-imaginer/charts/grass-dictionaryModel-pie.html" export html
 
 The model triangulates between the color word and entry/definition pairs, but only finds a few single instances each. Possibly as a happy coincidence, however, the resulting aggregate here is #89bc6e, a very grassy color.
 
@@ -858,7 +858,7 @@ The resulting algorithm may be summarized as follows:
 
 # This is nice to have in HTML, since I can style it, change the font, and so on.
 # But I'm worried that it's affecting the load time, so I'm substituting it with an image, for now.
-# Previously: include "03-colors/includes/imageBasedColorBlocks.html" export html
+# Previously: include "01-colors/includes/imageBasedColorBlocks.html" export html
 
 #+CAPTION: Image-based model inferences, with example images.
 #+LABEL: fig:imageBasedColorBlock
@@ -868,7 +868,7 @@ The resulting algorithm may be summarized as follows:
 
 A broader view of this model, shown below, gives one a sense of a few trends. First, almost all of these colors are very desaturated: they appear as if they began as pure pigments, and were mixed with a titanium white. This is owing to the way each of these is by nature an average of several colors: they are mixed. At a glance, the legal-sounding words /power/ and /possession/ appear darkest. The two words dealing with negative emotion, /rudeness/ and /objection/, appear redder than the others. And words that evoke comfort, /reliance/, /liberty/, and /amusement/, appear bluish. /Neighbour/ and /neighbourhood/, meanwhile, appear green, probably owing to stock images that involve green lawns.
 
-#+INCLUDE: "03-colors/includes/colorBlocks.html" export html
+#+INCLUDE: "01-colors/includes/colorBlocks.html" export html
 
 When projected in HSL space, certain patterns emerge, as well, as shown in [@fig:lighthouseHSL].
 

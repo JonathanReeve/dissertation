@@ -1,4 +1,4 @@
-#+TITLE: Chapter 4: Shape
+#+TITLE: Chapter 2: Shape
 #+AUTHOR: Jonathan Reeve
 #+bibliography: ../references.bib
 # -*- eval: (org-hide-block-all)
@@ -6,7 +6,7 @@
 #+begin_box
 This dissertation chapter is a full-color, interactive document, originally formatted in HTML. It contains interactive plots, hyperlinks, and other dynamic elements. If you are reading this in another document format (PDF, DOCX, or paper), you are missing these dynamic elements. Please visit [[https://dissertation.jonreeve.com/][dissertation.jonreeve.com]] for the canonical edition of this text, and [[https://github.com/JonathanReeve/dissertation][github.com/JonathanReeve/dissertation]] for its source code. Annotations are welcome in the hypothes.is sidebar to the right.
 #+end_box
- #  base
+
 * Introduction
 
 Modernity is increasingly filled with objects. There are 11.4% more objects---artifacts, natural objects, bodies, and more---in the fiction and poetry of 1880–1930 period than of that in the previous century. Although much of this may be owed to the industrial revolution and its mass production of goods, I hope to show that the modernist literary period begins to /see/ objects differently, just as it did with color. Color is bounded and contained by shape, and the retinal cells responsible for color vision, cone cells, are complemented with rod cells which are responsible for the perception of shape. While cones, comprising 6-7 million cells per eye, are responsible for color perception, the much more numerous rod cells, at around 120 million cells, are responsible for night vision, peripheral vision, motion perception, and object recognition. This component of vision is the guiding metaphor for this chapter, which deals with objects, shapes, and bodies.
@@ -190,7 +190,7 @@ EWISER is a neural net trained on SemCor, a sense-tagged corpus, and uses glosse
 
 Objects appear much more frequently in the modernist literary period. [cite:@Fig:object-proportions] shows the proportions of all objects over time in $C_{PG2}$: the number of words with =object.n.01= hypernyms, divided by the total number of words in a text. An ordinary least squares linear regression on this data set shows that there is an 11.4% increase in objects from texts published in 1800, to texts published in 1920.
 
-#+INCLUDE: "04-shapes/includes/object_proportions.html" export html
+#+INCLUDE: "02-shapes/includes/object_proportions.html" export html
 
 #+CAPTION: Object proportions over time, $C_{PG2}$
 #+LABEL: fig:object-proportions
@@ -200,19 +200,19 @@ These trends look very different when we examine object hyponyms, however. The h
 
 A number of factors may help to explain the rise in object proportions, in the fiction and poetry of this period. First, as Baudrillard argues above, mass production of consumer goods makes artifacts much more common. At the same time, a diversification of mass-produced goods creates new words to describe new gadgets. Urbanization may account, in part, for the decline in =living_thing.n.01= hyponyms: if more people live in cities, statistically, than in the country, fiction may be more likely to take place in cities, where encounters with (non-human) living things may be less common than in the country. But ultimately, I attribute most of this rise to a change in the way modernist writers /see/.
 
-#+INCLUDE: "04-shapes/includes/living_thing.n.01.html" export html
+#+INCLUDE: "02-shapes/includes/living_thing.n.01.html" export html
 
 #+CAPTION: =living_thing.n.01= proportions over time, $C_{PG2}$
 #+LABEL: fig:livingThing
 [[./images/dummy.png]]
 
-#+INCLUDE: "04-shapes/includes/natural_object.n.01.html" export html
+#+INCLUDE: "02-shapes/includes/natural_object.n.01.html" export html
 
 #+CAPTION: =natural_object.n.01= proportions over time, $C_{PG2}$
 #+LABEL: fig:naturalObject
 [[./images/dummy.png]]
 
-#+INCLUDE: "04-shapes/includes/artifact.n.01.html" export html
+#+INCLUDE: "02-shapes/includes/artifact.n.01.html" export html
 
 #+CAPTION: =artifact.n.01= proportions over time, $C_{PG2}$
 #+LABEL: fig:artifact
@@ -414,7 +414,7 @@ How, and to what extent, does the literature of the early 20th century become co
 
 [cite:@Fig:bodyPartDiachronic] shows the proportions of body parts per text, by year of publication, along with a line representing the ordinary least squares, modeling the chronological trend. Between 1800 and 1920, there is a 63% increase in the proportions of body parts in these texts.
 
-#+INCLUDE: "04-shapes/includes/bodyPartDiachronic.html" export html
+#+INCLUDE: "02-shapes/includes/bodyPartDiachronic.html" export html
 
 #+CAPTION: Body parts by year of publication, $C_{PG2}$
 #+LABEL: fig:bodyPartDiachronic
@@ -491,7 +491,7 @@ While there are some body parts present here, "face" and "eyes" are the only exp
 
 Next, I wanted to measure which body parts are the most common in the fiction and poetry of this period. [cite:@Fig:bodyPartSums] shows the total proportions of various body parts, as they appear in $C_{PG2}$. Again, what is shown here is not the original word forms, but their synsets. The synset =hand.n.01= is by far the most common, at 20% of the total number of body parts; =eye.n.01= is next most common, at almost 12%; and the subsequent body parts are all smaller by degrees: =face.n.01= at almost 7%, =head.n.01= at around 5%, =arm.n.01= and =shoulder.n.01= at around 3%, and =finger.n.01=, =lip.n.01=, =back.n.01=, and =foot.n.01= around 2%. These numbers will come of use later, as I compare them to neurological findings, in the section below.
 
-#+INCLUDE: "04-shapes/includes/bodyPartSums.html" export html
+#+INCLUDE: "02-shapes/includes/bodyPartSums.html" export html
 
 #+CAPTION: Body part sums, $C_{PG2}$
 #+LABEL: fig:bodyPartSums
@@ -499,7 +499,7 @@ Next, I wanted to measure which body parts are the most common in the fiction an
 
 [cite:@Fig:bodyPartSumsBody] shows those same proportions mapped to an image of a human body, to better illustrate the attention given to each, in fiction and poetry of this period. The larger the dot on this image of a body, the larger the proportion of the corresponding body part's appearances. The conclusion one draws from this visualization is that the hand and the face are undoubtedly the centra of attention, while the torso and leg are comparatively neglected.
 
-#+INCLUDE: "04-shapes/includes/bodyPartSumsBody.html" export html
+#+INCLUDE: "02-shapes/includes/bodyPartSumsBody.html" export html
 
 #+CAPTION: Body Part Sums, Body Projection, $C_{PG2}$
 #+LABEL: fig:bodyPartSumsBody

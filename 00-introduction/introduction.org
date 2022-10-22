@@ -1,2 +1,16 @@
 #+TITLE: Introduction
 #+AUTHOR: Jonathan Reeve
+
+* The Eye of Modernism
+
+The central question of this dissertation is one of literary history. It's one of how we get from point A to point B. Consider this passage from Jane Austen's /Pride and Prejudice/ to be point A:
+
+#+begin_quote
+At length the Parsonage was discernible. The garden sloping to the road, the house standing in it, the green pales and the laurel hedge, every thing declared they were arriving. Mr. Collins and Charlotte appeared at the door, and the carriage stopped at the small gate, which led by a short gravel walk to the house, amidst the nods and smiles of the whole party. In a moment they were all out of the chaise, rejoicing at the sight of each other. Mrs. Collins welcomed her friend with the liveliest pleasure, and Elizabeth was more and more satisfied with coming, when she found herself so affectionately received. She saw instantly that her cousin's manners were not altered by his marriage; his formal civility was just what it had been, and he detained her some minutes at the gate to hear and satisfy his enquiries after all her family. They were then, with no other delay than his pointing out the neatness of the entrance, taken into the house; and as soon as they were in the parlour, he welcomed them a second time with ostentatious formality to his humble abode, and punctually repeated all his wife's offers of refreshment.
+#+end_quote
+
+And this passage from Virginia Woolf's /To the Lighthouse/ to be point B:
+
+#+begin_quote
+The jacmanna was bright violet; the wall staring white. She would not have considered it honest to tamper with the bright violet and the staring white, since she saw them like that, fashionable though it was, since Mr. Paunceforte's visit, to see everything pale, elegant, semitransparent. Then beneath the colour there was the shape. She could see it all so clearly, so commandingly, when she looked: it was when she took her brush in hand that the whole thing changed. It was in that moment's flight between the picture and her canvas that the demons set on her who often brought her to the verge of tears and made this passage from conception to work as dreadful as any down a dark passage for a child. Such she often felt herself—struggling against terrific odds to maintain her courage; to say: "But this is what I see; this is what I see," and so to clasp some miserable remnant of her vision to her breast, which a thousand forces did their best to pluck from her.
+#+end_quote

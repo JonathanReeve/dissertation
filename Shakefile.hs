@@ -20,12 +20,21 @@ import Template ( pageHtml )
 
 readFileText text = need [text] >> liftIO (TIO.readFile text)
 
+-- | Convert "00-introduction/introduction.org" to "dest/00-introduction/introduction.html"
+sourceToDest :: FilePath -> FilePath
+sourceToDest fp = "dest/" </> fp <.> "html"
+
+-- | Convert "00-introduction/introduction.org" to "dest/00-introduction/introduction.html"
+destToSource :: FilePath -> FilePath
+destToSource fp = dropDirectory1 $ fp -<.> "org"
+
 main :: IO ()
 main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     want [ "dest/index.html"
-         , "dest/02-history/ch-2.html"
-         , "dest/03-colors/ch-3.html"
-         , "dest/04-shapes/ch-4.html"
+         , "dest/00-introduction/introduction.html"
+         , "dest/01-colors/ch-1.html"
+         , "dest/02-shapes/ch-2.html"
+         , "dest/03-images/ch-3.html"
          ]
 
     -- To serve the generated files (useful for previewing),
@@ -33,6 +42,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     phony "serve" $
       liftIO $ serve 8080 "dest/"
 
+    -- Keep this commented out in Git, since this references external files that aren't available in the CI
     -- "references.bib" %> \f -> do
     --     let sources = [ "/home/jon/Dokumentujo/Papers/library.bib"
     --                   , "/home/jon/Dokumentujo/Papers/library2.bib"
@@ -46,9 +56,12 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         need ["Template.hs"]
         liftIO $ renderToFile f pageHtml
 
+    let bib = "references.bib"
+        csl = "templates/modern-language-association.csl"
+        template = "templates/template.html"
+
     "dest/index.html" %> \f -> do
-        let source = "index.org"
-            template = "templates/template.html"
+        let source = destToSource f
         need [ source, template ]
         -- Run all org blocks from index.org, to automatically update word counts and so on.
         -- cmd_ "emacs" ["--batch", "--load", "ob", "--load", "ob-shell", "--eval",
@@ -65,21 +78,18 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
-    let bib = "references.bib"
-        csl = "templates/modern-language-association.csl"
-        template = "templates/template.html"
 
     ["dest//images/*", "dest//includes/*", "dest/assets/**"] |%> \f -> do
         let source = dropDirectory1 f
         need [source]
         copyFileChanged source f
 
-    "dest/02-history/ch-2.html" %> \f -> do
-        assets <- getDirectoryFiles "" [ "02-history/images/*"
+    "dest/00-introduction/introduction.html" %> \f -> do
+        assets <- getDirectoryFiles "" [ "00-introduction/images/*"
                                        , "assets//*"
                                        ]
         let outAssets = map ("dest/" <>) assets
-        let source = "02-history/ch-2.org"
+        let source = destToSource f
         need ([ source, template, csl, bib ] ++ outAssets)
         contents <- readFileText source
         let replaced = T.unpack contents
@@ -100,13 +110,13 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
-    "dest/03-colors/ch-3.html" %> \f -> do
-        assets <- getDirectoryFiles "" [ "03-colors/images/*"
+    "dest/01-colors/ch-1.html" %> \f -> do
+        assets <- getDirectoryFiles "" [ "01-colors/images/*"
                                        , "assets/*/*"
-                                       , "03-colors/includes/*" ]
+                                       , "01-colors/includes/*" ]
         liftIO $ print assets
+        let source = destToSource f
         let outAssets = map ("dest/" <>) assets
-        let source = "03-colors/ch-3.org"
             filters = [ "templates/PandocSidenote.hs"
                       , "templates/hexFilter.hs"
                       ]
@@ -126,7 +136,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--metadata=linkReferences:true",
                                        "--metadata=link-citations:true",
                                        "--metadata=tblPrefix:table",
-                                       "--citation-abbreviations=03-colors/abbreviations.json",
+                                       "--citation-abbreviations=01-colors/abbreviations.json",
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
@@ -136,13 +146,48 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
-    "dest/04-shapes/ch-4.html" %> \f -> do
-        assets <- getDirectoryFiles "" [ "04-shapes/images/*"
+    "dest/02-shapes/ch-2.html" %> \f -> do
+        assets <- getDirectoryFiles "" [ "02-shapes/images/*"
                                        , "assets/*/*"
                                        ]
         liftIO $ print assets
         let outAssets = map ("dest/" <>) assets
-        let source = "04-shapes/ch-4.org"
+        let source = destToSource f
+            filters = [ "templates/PandocSidenote.hs"
+                      , "templates/synsetFilter.hs"
+                      ]
+        need ([ source, template, csl, bib ]
+              ++ outAssets
+              ++ filters)
+        contents <- readFileText source
+        let replaced = T.unpack contents
+        cmd (Stdin replaced) "pandoc" ["-f", "org+smart",
+                                       "--template", template,
+                                       "--standalone",
+                                       "--section-divs",
+                                       "--reference-location=block",
+                                       "--csl=" ++ csl,
+                                       "--toc",
+                                       "--variable=autoSectionLabels:true",
+                                       "--metadata=linkReferences:true",
+                                       "--metadata=link-citations:true",
+                                       "--metadata=tblPrefix:table",
+                                       "--filter=templates/PandocSidenote.hs",
+                                       "--filter=pandoc-crossref",
+                                       "--citeproc",
+                                       "--filter=templates/synsetFilter.hs",
+                                       "--mathjax",
+                                       "--bibliography", bib,
+                                       "-o", f
+                                       ]
+
+    "dest/03-images/ch-3.html" %> \f -> do
+        assets <- getDirectoryFiles "" [ "03-images/images/*"
+                                       , "assets/*/*"
+                                       ]
+        liftIO $ print assets
+        let outAssets = map ("dest/" <>) assets
+        let source = destToSource f
             filters = [ "templates/PandocSidenote.hs"
                       , "templates/synsetFilter.hs"
                       ]
