@@ -6,7 +6,7 @@
 - [[./00-introduction/introduction.html][Introduction]]
 - [[./01-colors/ch-1.html][Chapter 1: Color]]
 - [[./02-shapes/ch-2.html][Chapter 2: Shapes, Bodies, Objects]]
-- [[./03-image/ch-3.html][Chapter 3: Image]]
+- [[./03-images/ch-3.html][Chapter 3: Image]]
 
 ** Word counts
 

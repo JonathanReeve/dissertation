@@ -12,86 +12,48 @@ Having measured color vision in Chapter 1, and object vision in Chapter 2, we no
 
 The analyses in Chapter 1 find an overall increase in color terms, and hued visuality more generally, across the 19th and 20th centuries. Those of Chapter 2 find a general increase in the presence of objects and shapes, as well. What could account for these trends? I have already discussed some generic considerations, in the LCSH analysis of Chapter 1, and in some of the lists provided in Chapter 2. But visuality is a complex phenomenon, which takes place across genres.
 
-In this chapter, I argue that three interrelated modes can account for the increase in visuality in 20th century British literature: an /image/ or imagist mode, an /impressionist/ mode, and a /descriptive/ mode. Although the term /mode/ is inadequate to describe what others in computational literary analysis have called, speaking of their empirical findings, a /thread/ or a /signal/, I prefer it to /genre/ and /type/, which imply that these categories are even more mutually exclusive than they are.
+In this chapter, I argue that three interrelated modes can largely account for the increase in visuality in 20th century British literature: an /imagist/ mode, an /impressionist/ mode, and a /descriptive/ mode. Although the term /mode/ is inadequate to describe what others in computational literary analysis have called, speaking of their empirical findings, a /thread/ or a /signal/, I prefer it to /genre/ and /type/, which imply that these categories are even more mutually exclusive than they are.
 
-* Imagisms
-** Persistence of Vision: Cinema and Photography; the Static and the Dynamic.
- :PROPERTIES:
- :CUSTOM_ID: persistence-of-vision-the-static-and-the-dynamic
- :END:
+# We have been under-discussing these things, and thinking about them incorrectly.
 
-Visual perception of movement, or "vibration" as Conrad puts it, depends on an ocular phenomenon known as persistence of vision. While this phenomenon has been well-known for centuries, it only began to be studied in earnest in the latter part of the 19th century. As one researcher defines it in 1898: "the retina of the human eye retains the impression of an object for a short time after the object itself has been withdrawn" [cite:@bruceProjectionLuminousObjects1898 201]. Were it not for this neurological effect, he continues, "the rain-shower would be falling drops, not lines of water; the meteor in the skies would be bereft of its glories, being merely a fiery ball, leaving no glittering path behind it" (202).
+I am also using the /-ist/ suffix loosely. Although there is a well-defined movement in early 20th Century poetry called Imagism or /Imagisme/, which I will discuss at length, I won't be restricting my discussion to those seven or so poets, but will consider a wider plurality of imagisms. Similarly, although there is a movement in 19th Century French painting called /Impressionism/, with its own membership rosters, I'll deal with implicit, as well as explicit, impressionisms as they appear in literature. Finally, while description doesn't have an associated school, its effects on the historical literary visuality appear just as strongly.
 
-The relation between a series of images and their perceived motion is complex, and analogous to the serialization and deserialization process of reading described in the previous chapter: discrete images, if shown in rapid succession, create the illusion of continuous motion, and continuous motion may be losslessly (to borrow a term from information theory) discretized into individual images. This is the principle on which the technology of the cinema depends: to be perceived as motion, the photographs that comprise a motion picture must be projected at a rate of at least 10-12 per second. The modern frame rate for films is around 24 frames per second, but it varied in early films, from about 16 to 24 [cite:@neumeyerOxfordHandbookFilm2014 588]. Since writing is by nature discrete and serial, this phenomenon is an apt metaphorical lens through which to understand turn of the century writing.
+These /-isms/ of the turn of the century, a period which Mary Ann Caws terms /A Century of Isms/, carry with them rules, manifestos, prescriptions, and proscriptions, and a rich body of autoexegetic critical writing, perhaps more so than any other artistic movements [cite:@cawsmanifesto]. While these critical works should not be considered the sole means of interpreting their movements, they nonetheless provide a useful means of understanding their philosophical underpinnings.
 
-As I have argued in the previous chapter, lexical ambiguities surrounding the image are manifest in the blossoming variety of media available in the early 20th century. However, to accept this ambiguity with problematizing it, is to ignore the nuanced properties of the textual image /as/ untranslated and untranslatably textual, rather than merely a representation of the visual. Ekphrastic readings, at their most fundamental, figure textual images as derivative of prior visual phenomena, such as works of visual art. Similarly, intermedial approaches, which draw on parallels between modernist works across media, risk eliding their textual pecularities. Here, I hope to unpack the affordances of the textual medium as a vehicle of image transmission.
+In literary scholarship, studies of Imagism and literary impressionism have largely fallen out of fashion. Serious treatments of literary description have had a similar fate. While it is not the purpose of this chapter to revive interest in the literary merits of Imagism, or to argue for a resurrection in the thought surrounding literary impressionism, I will argue that we can't explain the rise in visuality in 20th century literature without these -isms.
 
- # TODO: needs citation
- # "The stakes of this argument are" and imagine a specific community of respondants
- # Address that to these communities
+Since imagisms and impressionisms are much harder to identify computationally, the quantitative exploration of this chapter will be one of description detection, and analysis of diachronic trends in literary description. While the boundaries and the shapes of descriptions change over time, confounding any efforts to measurement, as I will explain later, I find that literary description generally decreases through the 19th and early 20th centuries. This complicates the findings of the past two chapters, since it suggests, for one, that descriptive modes on their own account for less of the literary visuality than one might expect.
 
-Writing and cinema were never far apart among the high modernists. James Joyce briefly interrupted his self-imposed exile on the continent to attempt to open a cinema in Dublin, in 1909 [cite:@attridge_cambridge_2004 xv]. And as Christopher Butler compellingly argues, the simultaneity of the "Wandering Rocks" episode of /Ulysses/ might owe its technique to the montage of filmmakers such as Eisenstein, with whom Joyce was in contact. Virginia Woolf's 1926 essay "The Cinema," although it begins by discussing the then-new artistic medium, spends more time discussing fiction. She is interested here in interfaces between thought and image, imaginal image and literary image:
+* Image / Imagisms
 
-#+BEGIN_QUOTE
-  For what characteristics does thought possess which can be rendered visible to the eye without the help of words? It has speed and slowness; dart-like directness and vaporous circumlocution. But it has also an inveterate tendency especially in moments of emotion to make images run side by side with itself, to create a likeness of the thing thought about, as if by so doing it took away its sting, or made it beautiful and comprehensible. In Shakespeare, as everybody knows, the most complex ideas, the most intense emotions form chains of images, through which we pass, however rapidly and completely they change, as up the loops and spirals of a twisting stair. [cite:@woolf2009selected 252-3]
-#+END_QUOTE
+Literary visualities at the turn of the century are certainly not limited to Imagism, proper. Nor is Imagism the only movement, school, or set of critical principles which enshrines the image. Still, Imagism remains one of the period's most legible set of statements and practices related to image in text, largely due to its rich body of autoexegetic and autotheoretic work. Imagism proper was a short-lived school of British and American poets which lasted for around five years in the 1910s, from the first essays in 1913, to the 1914 anthology /Des Imagistes/, to the last anthology /Some Imagist Poets/ in 1917 [cite:@a1914imagistes;@1915some;@1916some;@1917some]. Despite this short run, it has had a lasting influence.
 
-Here, for Woolf, literary art serializes what thought presents in parallel: it transforms images that "run side by side" with thought into "chains of images." Woolf's spiral staircase analogy illustrates this serialization, using a favorite image of Yeats's, whose house, a rennovated Norman tower, prominently featured one; his /The Winding Stair and Other Poems/ would be published in 1933. Yeats was also partial to the image of the gyre and to the cone, which derive from a theory of history he explains in /A Vision/. Pound and Wyndham Lewis, too, published the manifesto of their "Vorticist" movement only a few years earlier, one which takes as its central symbol a similar image: the vortex. Vortices, spirals, and other such symbols, are at once linear and recurrent: they repeat themselves, but with a difference. Vortices and spiral staircases are at once dizzying and transporting. Nico Israel treats this recurring symbol at length in his /Spirals/, where he argues that, "embodying tensions between teleology and cyclicality, repetition and difference, locality and globality, spirals challenge familiar modes of organizing disciplines of study" [cite:@israel15_spiral 2].
+Imagism has, however, fallen out of style in literary criticism. [[https://openlibrary.org/subjects/imagist_poetry][The book publication history for the LCSH /imagist poetry/, according to Open Library, peaks in about 1970,]] with a significant number of other retrospectives appear in the 1930s. To say that Imagism has mixed reviews would be an understatement. Glen Hughes, in a 1930 retrospective, argues that it "may be characterized as the best-organized and most influential 'movement' in English poetry since the activity of the pre-Raphaelites" [cite:@hughes1972imagism, vii]. Martin Gilkes, writing a year later, calls it "the real beginning of Modern Poetry, the first step towards twentieth-century emancipation" [cite:@gilkes1970key 43]. By the 1970s, however, David Perkins calls imagism "the grammar school of modern poetry, the instruction and drill in basic principles," and it is unclear whether he means this as praise, i.e., that the imagists prepared the way for later poetry, or whether that they are simplistic. Either way, he concedes that they "probably had a more distinct impact than any other group on the style of American poets" [cite:@perkins1976history 329].
 
-Woolf returns to this metaphor in her later essay, "How Should One Read a Book," referring again to the images of Shakespeare. Here, though, she elaborates on the quality of the image:
+Imagist poems draw much of their visual force from two of their most characteristic qualities. The first is their concision, which enables a fragmentary feeling. The second is the implied geographic distance which they uses to evoke a sense of the exotic. I have discussed this socio-cultural distance in the previous chapters, but nowhere is this quality stronger than in these poems. The imagists' exoticisms are further enabled and enacted by the concision, as well: the Imagists' influences in ancient Greek and Japanese poetry, both geographically and temporally distant literatures, lend to Imagist poems their fragmentary quality, as well as their sense of the exotic.
 
-#+BEGIN_QUOTE
-reading poetry often seems a state of rhapsody ... and we read on, understanding with the senses, not with the intellect, in a state of intoxication. Yet all this intoxication and intensity of delight depend upon the exactitude and truth of the image, on its being the counterpart of the reality within. Remote and extravagant as some of Shakespeare's images seem, far-fetched and etheral as some of Keats's, at the moment of reading they seem the cap and culmination of the thought; its final expression. [cite:@woolf2009selected 131-2]
-#+END_QUOTE
+One of their earliest and most well-known Imagist statements is a sequence of two short notes in a 1913 issue of /Poetry/, the first by F.S. Flint, and the second by Ezra Pound [cite:@flint1913]. Flint's begins with the tone of an investigative journalist, hot on the trail of the latest trend: "some curiosity has been aroused concerning /Imagisme/, and as I was unable to find anything definite about it in print, I sought out an /imagiste/, with intent to discover whether the group itself knew anything about the 'movement.' I gleaned these facts" (198--9). The irony is strong for us, and probably for some contemporaneous readers, since we know Flint to be a founding member of the imagists himself. Here, Flint names as imagist influences "the best writers of all time,"---Sappho, Catullus, and Villon. As an unusual selection, it deserves some discussion. First, the poems of Sappho, a Greek poet whose work survives only in fragments, presents a model, however unintentional, of the imagists's fragmentary brevity. Some of her fragments, if treated as intentionally short poems, would be at home in an imagist anthology.
 
-Woolf's descriptors, "exactitude and truth," convey an almost scientific tone, and echo the imagist rhetoric of Ezra Pound and F.S. Flint, as we will see below. This conceives of literary representation as one more aligned with photography than painting. The ambiguity in /truth/, both the opposite of a lie and an arrow's true flight, allows Woolf to hint that the literary image should be both representationally accurate to the thought or emotion, and mimetically accurate to the real-world referent. And as in T.S. Eliot's objective correlative, the image is that which corporializes the thought for Woolf---gives it body. Woolf's terms for Shakepeare's images, "remote" and "extravagant," depend on a notion of distance which is built into the concept of the mental image, or the image-making process, imagination.
-
-Woolf's "truth" as accuracy appears also in Conrad, who, in a letter to H.G. Wells in 1905 congratulating him for his /A Modern Utopia/, says that, as a novelist, he "must speak in images," rather than abstractions [cite:@aubryJosephConradLife1927, 16]. In another letter, where Conrad gives writing advice to R. B. Cunninghame Graham, he warns, "I don't start with an abstract notion. I start with definite images and as their rendering is true some little effect is produced" [cite:@aubryJosephConradLife1927 268]. Like Woolf, Conrad is concerned with the accuracy of the image and its ability to faithfully represent the thought or emotion that generated it.
-
-This essay-novel of Wells's, /A Modern Utopia/, describes a vision for a utopian world as an theatrical/cinematic image which is projected against a wall by a defective cinematograph, before which pass his two central characters, and the narrator, who resembles Wells himself:
-
-#+BEGIN_QUOTE
-  So much by way of portraiture is necessary to present the explorers of the Modern Utopia, which will unfold itself as a background to these two enquiring figures. The image of a cinematograph entertainment is the one to grasp. There will be an effect of these two people going to and fro in front of the circle of a rather defective lantern, which sometimes jams and sometimes gets out of focus, but which does occasionally succeed in displaying on a screen a momentary moving picture of Utopian conditions. Occasionally the picture goes out altogether, the Voice argues and argues, and the footlights return, and then you find yourself listening again to the rather too plump little man at his table laboriously enunciating propositions, upon whom the curtain rises now.
-#+END_QUOTE
-
-Wells highlights static aspects of a technology meant to depict motion ("cinematograph" is a compound of κίνημα, motion, and γράφειν, to depict), reminding us that illusion of motion that the device allows is, at its base, a sequence of still images.
-
-# Bergson on the sequential image
-
-** Fragmentation: Parts and Wholes. Imagism.
-   :PROPERTIES:
-   :CUSTOM_ID: fragmentation-parts-and-wholes
-   :END:
-
-The relation between a still image and a moving image is a subset of that between a part and its whole, in which the relation between stillness and motion is transformed from one of opposition to one of incompleteness, or potential. As in Wells's analogy, where the defects of the lantern create static images from motion, the imagist poets, or /imagistes/ as Pound preferred it, conceive of images as fragments. This is subtly apparent in the way they praise the fragmentary poetry of ancient Greek and Roman poets, as well as fragments of Japanese poetry.
-
-Brash, showy, and defiant in their rhetoric, these young poets at times seemed as interested in propagandizing their movement as participating in it. Often overlooked by critics today as well as critics then, their ideas are nonetheless seen as influential, even where unoriginal. To say that imagism has mixed reviews would be an understatement. Glen Hughes, in a 1930 retrospective of imagism, argues that it "may be characterized as the best-organized and most influential 'movement' in English poetry since the activity of the pre-Raphaelites" [cite:@hughes1972imagism, vii]. David Perkins, on the other hand, calls imagism "the grammar school of modern poetry, the instruction and drill in basic principles," and it is unclear whether he means this as praise, i.e., that the imagists prepared the way for later poetry, or whether that they are simplistic. Either way, he concedes that they "probably had a more distinct impact than any other group on the style of American poets" [cite:@perkins1976history 329]. However, it is not the purpose of this chapter to re-evaluate the imagists, but to re-examine their contributions to historical conceptions of the literary image.
-
-# TODO: Part-meronymic relations
-# TODO: Fragments more generally
-
-One of their earliest and most well-known statements is a sequence of two short notes in a 1913 issue of /Poetry/, the first by F.S. Flint, and the second by Ezra Pound [cite:@flint1913]. Flint's begins with the tone of an investigative journalist, hot on the trail of the latest trend: "some curiosity has been aroused concerning /Imagisme/, and as I was unable to find anything definite about it in print, I sought out an /imagiste/, with intent to discover whether the group itself knew anything about the 'movement.' I gleaned these facts" (198--9). The irony is strong for us, and probably for some contemporaneous readers, since we know Flint to be a founding member of the imagists himself. Here, Flint names as imagist influences "the best writers of all time,"---Sappho, Catullus, and Villon. As an unusual selection, it deserves some discussion. First, the poems of Sappho, a Greek poet whose work survives only in fragments, presents a model, however unintentional, of the imagists's fragmentary brevity. Some of her fragments, if treated as intentionally short poems, would be at home in an imagist anthology.
-
-Hugh Kenner treats Sappho's influence, and the fragmentariness of Sappho, on Pound in great detail in /The Pound Era/. Kenner shows just how little of some of Sappho's poems survive, and how much imagination would have been required for her imagist admirers. Since auxiliary grammatical structures, and fragments of words, often aren't translated intact, since they don't make much sense outside of their syntactic frame, what gets translated are the nouns, adjectives, and root verbs. In other words, what remains are images. Had Sappho's works survived intact, the imagists wouldn't have celebrated them, since their imagistic qualities are a result of the textual transformations undergone as they deteriorated into fragments, and were translated into smaller fragments.
+Hugh Kenner treats Sappho's influence, and the fragmentariness of Sappho, on Pound in great detail in /The Pound Era/ [cite:@kennerPoundEra1971]. Kenner shows just how little of some of Sappho's poems survive, and how much imagination would have been required for her imagist admirers. Since auxiliary grammatical structures, and fragments of words, often aren't translated intact, since they don't make much sense outside of their syntactic frame, what gets translated are the nouns, adjectives, and root verbs. In other words, what remains are images. Had Sappho's works survived intact, the imagists wouldn't have celebrated them, since their imagistic qualities are a result of the textual transformations undergone as they deteriorated into fragments, and were translated into smaller fragments.
 
 The next of these influences, Catullus, as a neoteric poet, is known for his choices of quotidian, rather than epic, subjects, similar to those chosen by imagists. His best known work, known as Catullus 64, is told in an ekphrastic mode---a description of an image---and begins with the lines, here translated by Sir Richard Francis Burton in 1894:
 
 #+BEGIN_QUOTE
-  #+BEGIN_VERSE
-    Pine-trees gendered whilome upon soaring Peliac summit
-    Swam (as the tale is told) through liquid surges of Neptune [cite:@catullusValeriusCatullusCarmina]
-  #+END_VERSE
+#+BEGIN_VERSE
+Pine-trees gendered whilome upon soaring Peliac summit
+Swam (as the tale is told) through liquid surges of Neptune [cite:@catullusValeriusCatullusCarmina]
+#+END_VERSE
 #+END_QUOTE
 
 This image is virtually identical to that in H.D.'s "Oread," which Pound cited as the exemplary imagist poem:
 
 #+BEGIN_QUOTE
-  #+BEGIN_VERSE
-    Whirl up, sea---
-    whirl your pointed pines,
-    splash your great pines
-    on our rocks [cite:1915some 28]
-  #+END_VERSE
+#+BEGIN_VERSE
+Whirl up, sea---
+whirl your pointed pines,
+splash your great pines
+on our rocks [cite:1915some 28]
+#+END_VERSE
 #+END_QUOTE
 
 Catullus, who was also inspired by Sappho, was also well-known for his love poems, known as the "Lesbia poems," many of which are unapologetically sexually explicit, i.e. specific. Richard Aldington quotes from one of these poems in the epigraph of "Daisy," which reprises the theme of Catullus 53 [cite:1915some 13].
@@ -103,7 +65,7 @@ The haiku evolved from the opening stanza of a /renga/, called a /hokku/, which 
 A frequent character in the modernist little magazines is Yoni Noguchi, an influential Japanese writer who often wrote in English. His work is admiringly reviewed in /The Little Review/ in 1915, and in 1916, he introduced the /hokku/ to readers of /The Egoist/, in a short article called "Seventeen Syllable Hokku Poems" [cite:@andersonLittleReview1915 45; cite:noguchi1916]. It begins, rather poetically for a critical work:
 
 #+BEGIN_QUOTE
-  The value of the seventeen-syllable Hokku poem of Japan is not in its physical directness, but in its psychological indirectness. To use a simile, it is like a dew upon lotus leaves of green, or under maple leaves of red, which, although it is nothing but a trifling drop of water, shines, glitters, and sparkles now pearl-white, then amethyst-blue, again ruby-red, according to the time of day and situation" [cite:@noguchi1916 175].
+The value of the seventeen-syllable Hokku poem of Japan is not in its physical directness, but in its psychological indirectness. To use a simile, it is like a dew upon lotus leaves of green, or under maple leaves of red, which, although it is nothing but a trifling drop of water, shines, glitters, and sparkles now pearl-white, then amethyst-blue, again ruby-red, according to the time of day and situation" [cite:@noguchi1916 175].
 #+END_QUOTE
 
 The visual properties of Noguchi's simile are very prominent, especially the hue. Each of these colors is described using a translucent precious stone of the same color, which constitutes a transformation in hardness from water to stone. Noguchi makes a point to mention that they are a sequence, rather than an assemblage. The scale of this simile is also very small: on the scale of centimeters. As in Pound's early work, leaves abound, and everything is very wet. It is the scale of an object: the scale of that which can be held in the hand.
@@ -124,37 +86,9 @@ Poetry should be burned to the bone by austere fires and washed white with rains
 
 West's images abound in part-whole relations: burning is a process which transforms single objects into many ashes; skeletons are disconnected assemblages of pieces, in contrast with the continuity of the flesh; and words are fragmentary "scattered star dust" which the poet must "whirl" into a solid "star of passion." Under a cosmological taxonomy, all matter is star dust, but ideas, and the words that approximate them, are immaterial. West's analogy, then, gestures towards the physical, as a remedy to a poetry of abstractions.
 
-#+BEGIN_COMMENT
-Section: Impressions, Blurs, Veils
+Like fragments, ideograms—image-writing said to be expressions of ideas—fascinated the writers of the early twentieth century, especially Pound and the Imagists. Although neither of the most common examples of ideogrammatic writing, ancient Egyptian and Chinese writing, are purely or even mostly ideogrammatic, they were so in the imaginations of many of these writers. Since the /japonismes/ and /chinoiseries/ of the imagists have been well-documented in recent years, [see cite:hayot2009chinese; cite:qian2008ezra; cite:qianOrientalismModernismLegacy1995; and cite:xie2015ezra] I will not continue to document their warped conceptions of the East. However, I would like to contribute to the metadiscourse, by showing how it is the distance, spacial and temporal, to these faraway places that enables their distortion in the imaginations of these poets, and that this imagination is what enables the production of images.
 
-Conrad was often labeled an impressionist, although he himself disliked this term. [Cite]
-
-Ford Madox Ford (then Ford Madox Hueffer) took the impressionist label more seriously. In a March 1913 essay in /Poetry and Drama/, he describes the difference in writing styles between a /Times/ agricultural correspondent, and W. H. Hudson, the naturalist and author of the novel /Green Mansions/, as one of subjective visuality. Unlike the /Times/ writer, Ford explains, Hudson "will give you nothing but the pleasure of coming into contact with his temperament, and I doubt whether, if you read with the greatest care his description of false sea-buckthorn (/hippophae rhamnoides/) you would very willingly recognise that greenish-grey plant, with the spines and the berries like reddish amber, if you came across it" [cite:@hueffer_poetry_drama, 38]. The translation of color into prose is a crucial facet of what Ford sees as the
-
-Katherine Mansfield
- - cite:gunsterenKatherineMansfieldLiterary1990
- - "As a modernist she does not always deploy the most experimental forms of modernist writing, but rather turns to realism and impressionism in order to affirm the primacy of individual perception, and to focus on the fragmentation of perceived reality in a complex and not fully knowable world" [cite:@boscagli2018 80]
-   - Bosagli calls M's impressionist style "simultaneously objective and subjective" (84).
-
- - "Her impressionism is the epistemological record of sensory experience, to be accompanied by reflection, internalization, fantasies and dreams. It is the ordinary, everyday life-speech that gives the sense of being real" [cite:@gunsterenKatherineMansfieldLiterary1990 9].
-
-Janet Wilson n
-
-In /ABC of Reading/, Ezra Pound recommends with a characteristic Poundian enthusiasm "the novels of Henry James, AND especially the prefaces to his collected edition; which are the one extant great treatise on novel writing in English" (cite:poundABCReading1960 90). Those prefaces are full of descriptions of James's technique, in which we hear echoes of proto-imagisms and impressionisms. His preface to "The Altar of the Dead," which introduces the New York edition of his 1895 short story collection /Terminations/, describes the "impressions" which drove him to write the story.
-
-"The Altar of the Dead" is a bittersweet story about a couple who become acquainted in a chapel where they have been regularly paying their respects to their recently deceased. It is a pensive, nostalgic story, which, has much in common with James Joyce's story, "The Dead": they are stories in which a couple is haunted by memories of their past loves. These memories James refers to in his preface as "impressions," and they bear distinctly visual qualities: "Other conceits might indeed come and go, born of light impressions and passing hours, for what sort of free intelligence would it be that, addressed to the human scene, should propose to itself, all vulgarly, never to be waylaid or arrested, never effectively insired, by some imaged appeal of the lost Dead?" (cite:jamesArtNovelCritical1934 242). The dead appear to James in images and impressions, which are effectuated by light-effects of illumination and shadow: he explains how his story was insipired by a "pair of illuminating incidents," which are etched into his mind, despite the "shadow" of forgetting (242, 245).
-#+END_COMMENT
-
-** Imaginative Distances, Ideograms.
-   :PROPERTIES:
-   :CUSTOM_ID: ideograms-the-idea-and-its-expression
-   :END:
-
-# Schotter, hieroglyphs
-
-Like fragments, ideograms—image-writing said to be expressions of ideas—fascinated the writers of the early twentieth century, especially Pound and the imagists. Although neither of the most common examples of idiographic writing, ancient Egyptian and Chinese writing, are purely or even mostly idiographic, they were so in the imaginations of many of these writers. Since the /japonismes/ and /chinoiseries/ of the imagists have been well-documented in recent years, [see cite:hayot2009chinese; cite:qian2008ezra; cite:qianOrientalismModernismLegacy1995; and cite:xie2015ezra] I will not continue to document their warped conceptions of the East. However, I would like to contribute to the metadiscourse, by showing how it is the distance, spacial and temporal, to these faraway places that enables their distortion in the imaginations of these poets, and that this imagination is what enables the production of images.
-
-In /ABC of Reading/, a theoretical book of his first published in 1934, but based on earlier writings, Pound explains what he imagines are the origins of Chinese ideogrammatic characters:
+In /ABC of Reading/, a theoretical book of Pound's first published in 1934, but based on earlier writings, he explains what he imagines are the origins of Chinese ideogrammatic characters:
 
 #+BEGIN_QUOTE
 When the Chinaman wanted to make something more complicated, or of a general idea, how did he go about it? He is to define red. How can he do it in a picture that isn't painted in red paint? He puts ... together the abbreviated pictures of ROSE; CHERRY; IRON RUST; FLAMINGO. The Chinese 'word' or ideogram for red is based on something everyone KNOWS. [cite:@poundABCReading1960]
@@ -166,16 +100,14 @@ Crucially, Pound either doesn't know, or avoids mentioning the phonetic indicato
 
 Pound's quickness to point out the provenance of his text feels anxiously insistent, not unlike the testimonials that accompany nineteenth-century hoax novels. As the only one with access to Fenollosa's notes, Pound becomes the priest with the sole power to "translate" them into poetry---had he worked directly from the Chinese texts, he would've had to have contended with Chinese scholars, who could accurately understand the original. But this marketing ploy seemed to have worked: the celebrity of /Cathay/ is what prompted T.S. Eliot, in his introduction to the 1928 /Selected Poems of Ezra Pound/, to call Pound "the inventor of Chinese poetry for our time" [cite:@PoundSelectedPoems1957]. Ming Xie compellingly glosses Eliot's statement as ambiguous, however: "it could mean either that Pound, equipped with knowledge of Chinese language and literature, single-handedly /created/ Chinese poetry for his contemporaries as a model for poetry, ... or equally that with no knowledge of Chinese at all Pound in fact /invented/, that is 'fabricated,' an image of Chinese poetry that does not correspond to the reality of Chinese poetry" [cite:@xie2015ezra, 223].
 
-The celebration of Chinese writing in /ABC of Reading/, besides being unfaithful to the Chinese language, has the effect of romanticizing, and ultimately dismissing, Chinese poetry. By ignoring the practical aspects of Chinese characters, such as their phonetic indicators, Pound only reinforces the stereotypical conception of Chinese culture as mysterious, spiritual, or symbolic. Chinese writing is not translated, in /Cathay/, but "deciphered." However, as scholars of Chinese literature are quick to interject, Pound is too easy of a target. The interest of Pound's /Cathay/ is not in its verisimilitude, that is, to its accuracy as translation, but in departure from the originals: in its /imagination/. As such, some of Pound's inventions, or imaginations, exhibit strong visual components. Timothy Billings traces some of Pound's additions to "The City of Choan," for instance, where he adds the word "bright" twice: "the bright cloths and bright caps of Shin" [cite:@pound2018cathay, 18]. The distances to the places Pound describes allows him the freedom to inject his own imaginative visions.
+The celebration of Chinese writing in /ABC of Reading/, besides being unfaithful to the Chinese language, has the effect of romanticizing, and ultimately dismissing, Chinese poetry. By ignoring the practical aspects of Chinese characters, such as their phonetic indicators, Pound only reinforces the stereotypical conception of Chinese culture as mysterious, spiritual, or symbolic. Chinese writing is not translated, in /Cathay/, but "deciphered," as if it were a secret code, rather than a living language. However, as scholars of Chinese literature are quick to interject, Pound is too easy of a target. The interest of Pound's /Cathay/ is not in its verisimilitude, that is, to its accuracy as translation, but in departure from the originals: in its /imagination/. As such, some of Pound's inventions, or imaginations, exhibit strong visual components. Timothy Billings traces some of Pound's additions to "The City of Choan," for instance, where he adds the word "bright" twice: "the bright cloths and bright caps of Shin" [cite:@pound2018cathay, 18]. The distances to the places Pound describes allows him the freedom to inject his own imaginative visions.
 
 One of the functions of /imagination/, that is, the willing creation of mental images, is to fill the gaps in one's sensory knowledge. Distant places, then---and to a greater degree distant and /inaccessible/ ones, become a matter of imagination, or extrapolation based on limited evidence. Whereas affluent Brits of the early 20th century routinely vacationed on the European continent, the "far" East of China and Japan lived up to its name. This was not due to the raw distance itself, but to the travel time necessary. English-language conceptions of distance are typically physical, and it is only in colloquial speech that they are temporal, in expressions such as "two hours away." One important exception is the isochronic map. As the cartographer John Gordon Bartholemew calculated in his 1914 isochronic map of the world, inland China was in the most inaccessible category of destinations, starting from London. (Another is the Congo of Conrad's /Heart of Darkness/.) While it would take a Londoner at best, 10-20 days to reach Shanghai, the places named in Li Bai could take over 40. By invoking the time-distant, then, Pound evokes an obscurantist epistemology which allows him the space for the intervention of his artistic vision.
 
 #+CAPTION: J. G. Bartholemew, Isochrone Map, 1914
 [[file:images/1914-isochrone-map.jpg]]
 
-It would have been appealing for Pound to translate poems about these distant places, since so few Europeans would have had direct experience of them. Thus, the imaginative freedom given the writer is broad, and the writing has built-in Brechtian estrangement effects: they are rich with images, since they are products of inventive imaginations. Edward Said, whose influential /Orientalism/ explicitly excludes China and Japan from the category of the oriental, nonetheless writes about this distance in an applicable manner: "imaginative geography and history help the mind to intensify its own sense of itself by dramatizing the distance and difference between what is close to it and what is far away" [cite:@saidOrientalism2014, 55]. Pound dramatizes the distance between London and China, thereby constructing his own identity, by positioning himself as mediator.
-
-# See thacker on Pound, orientalism: [cite:@Thacker2005 31]
+It would have been appealing for Pound to translate poems about these distant places, since so few Europeans would have had direct experience of them. Thus, the imaginative freedom given the writer is broad, and the writing has built-in Brechtian estrangement effects: they are rich with images, since they are products of inventive imaginations. Edward Said, whose influential /Orientalism/ explicitly excludes China and Japan from the category of the oriental, nonetheless writes about this distance in an applicable manner: "imaginative geography and history help the mind to intensify its own sense of itself by dramatizing the distance and difference between what is close to it and what is far away" [cite:@saidOrientalism2014, 55]. Pound dramatizes the distance between London and China, thereby constructing his own identity, by positioning himself as mediator. [fn:: For more on Pound and Orientalism, see [cite:@Thacker2005 31]]
 
 This exotic distance is illustrated elsewhere in the era's poetry, as well. In 1928, Pound collaborated with Mark van Doren to compile an anthology, /An Anthology of World Poetry/, with additional help from Ford Madox Ford, A.E. Housman, and other poets. This anthology's structure illustrates the imaginative distances---geographic, travel, cultural, and chronological---from its publication place. Van Doren arranges this anthology's poems seemingly in order of this distance from New York: starting with Chinese and Japanese poets, moving to Sanskrit and Persian; then Hebrew, Egyptian, Greek, and Latin; moving through modern European countries; and concluding with English, Irish, and American. Pound's translations appear throughout this anthology: from the Chinese, French, German, and Latin. Only one of his originals is printed, however, "The Garden," which, along with Eliot's "Prufrock" and H.D.'s "Oread," conclude the collection, and the American section, creating the illusion that they are the culmination of this tradition. A number of regions are noticeably absent from this collection, but tellingly, the countries that are included here are ones that are usually cited as influences of the imagists and modernists. One might read van Doren's anthology as retroactively validating the thematic choices of these writers, by painting a picture of the world in which they themselves are the most worldly.
 
@@ -362,35 +294,149 @@ Again, we hear the echo of Pound's theory of images as emotional expressions, an
   By this definition, imagism sees itself as lyric, with images presented in immediate relation to the artist. The Bergsonian immediacy is present here again. Joyce's use of "sets forth" also recalls Pound's "presents": the aim of the poet is not to interpret, to persuade, or to orate, but merely to *set forth*. This does not, and cannot, obviate mediation, or symbolic functions, but it is a stance toward that process which seeks to hide it.
 #+END_COMMENT
 
+** Persistence of Vision: Cinema and Photography; the Static and the Dynamic.
+ :PROPERTIES:
+ :CUSTOM_ID: persistence-of-vision-the-static-and-the-dynamic
+ :END:
+
+Visual perception of movement, or "vibration" as Conrad puts it, depends on an ocular phenomenon known as persistence of vision. While this phenomenon has been well-known for centuries, it only began to be studied in earnest in the latter part of the 19th century. As one researcher defines it in 1898: "the retina of the human eye retains the impression of an object for a short time after the object itself has been withdrawn" [cite:@bruceProjectionLuminousObjects1898 201]. Were it not for this neurological effect, he continues, "the rain-shower would be falling drops, not lines of water; the meteor in the skies would be bereft of its glories, being merely a fiery ball, leaving no glittering path behind it" (202).
+
+The relation between a series of images and their perceived motion is complex, and analogous to the serialization and deserialization process of reading described in the previous chapter: discrete images, if shown in rapid succession, create the illusion of continuous motion, and continuous motion may be losslessly (to borrow a term from information theory) discretized into individual images. This is the principle on which the technology of the cinema depends: to be perceived as motion, the photographs that comprise a motion picture must be projected at a rate of at least 10-12 per second. The modern frame rate for films is around 24 frames per second, but it varied in early films, from about 16 to 24 [cite:@neumeyerOxfordHandbookFilm2014 588]. Since writing is by nature discrete and serial, this phenomenon is an apt metaphorical lens through which to understand turn of the century writing.
+
+As I have argued in the previous chapter, lexical ambiguities surrounding the image are manifest in the blossoming variety of media available in the early 20th century. However, to accept this ambiguity with problematizing it, is to ignore the nuanced properties of the textual image /as/ untranslated and untranslatably textual, rather than merely a representation of the visual. Ekphrastic readings, at their most fundamental, figure textual images as derivative of prior visual phenomena, such as works of visual art. Similarly, intermedial approaches, which draw on parallels between modernist works across media, risk eliding their textual pecularities. Here, I hope to unpack the affordances of the textual medium as a vehicle of image transmission.
+
+ # TODO: needs citation
+ # "The stakes of this argument are" and imagine a specific community of respondants
+ # Address that to these communities
+
+Writing and cinema were never far apart among the high modernists. James Joyce briefly interrupted his self-imposed exile on the continent to attempt to open a cinema in Dublin, in 1909 [cite:@attridge_cambridge_2004 xv]. And as Christopher Butler compellingly argues, the simultaneity of the "Wandering Rocks" episode of /Ulysses/ might owe its technique to the montage of filmmakers such as Eisenstein, with whom Joyce was in contact. Virginia Woolf's 1926 essay "The Cinema," although it begins by discussing the then-new artistic medium, spends more time discussing fiction. She is interested here in interfaces between thought and image, imaginal image and literary image:
+
+#+BEGIN_QUOTE
+  For what characteristics does thought possess which can be rendered visible to the eye without the help of words? It has speed and slowness; dart-like directness and vaporous circumlocution. But it has also an inveterate tendency especially in moments of emotion to make images run side by side with itself, to create a likeness of the thing thought about, as if by so doing it took away its sting, or made it beautiful and comprehensible. In Shakespeare, as everybody knows, the most complex ideas, the most intense emotions form chains of images, through which we pass, however rapidly and completely they change, as up the loops and spirals of a twisting stair. [cite:@woolf2009selected 252-3]
+#+END_QUOTE
+
+Here, for Woolf, literary art serializes what thought presents in parallel: it transforms images that "run side by side" with thought into "chains of images." Woolf's spiral staircase analogy illustrates this serialization, using a favorite image of Yeats's, whose house, a rennovated Norman tower, prominently featured one; his /The Winding Stair and Other Poems/ would be published in 1933. Yeats was also partial to the image of the gyre and to the cone, which derive from a theory of history he explains in /A Vision/. Pound and Wyndham Lewis, too, published the manifesto of their "Vorticist" movement only a few years earlier, one which takes as its central symbol a similar image: the vortex. Vortices, spirals, and other such symbols, are at once linear and recurrent: they repeat themselves, but with a difference. Vortices and spiral staircases are at once dizzying and transporting. Nico Israel treats this recurring symbol at length in his /Spirals/, where he argues that, "embodying tensions between teleology and cyclicality, repetition and difference, locality and globality, spirals challenge familiar modes of organizing disciplines of study" [cite:@israel15_spiral 2].
+
+Woolf returns to this metaphor in her later essay, "How Should One Read a Book," referring again to the images of Shakespeare. Here, though, she elaborates on the quality of the image:
+
+#+BEGIN_QUOTE
+reading poetry often seems a state of rhapsody ... and we read on, understanding with the senses, not with the intellect, in a state of intoxication. Yet all this intoxication and intensity of delight depend upon the exactitude and truth of the image, on its being the counterpart of the reality within. Remote and extravagant as some of Shakespeare's images seem, far-fetched and etheral as some of Keats's, at the moment of reading they seem the cap and culmination of the thought; its final expression. [cite:@woolf2009selected 131-2]
+#+END_QUOTE
+
+Woolf's descriptors, "exactitude and truth," convey an almost scientific tone, and echo the imagist rhetoric of Ezra Pound and F.S. Flint, as we will see below. This conceives of literary representation as one more aligned with photography than painting. The ambiguity in /truth/, both the opposite of a lie and an arrow's true flight, allows Woolf to hint that the literary image should be both representationally accurate to the thought or emotion, and mimetically accurate to the real-world referent. And as in T.S. Eliot's objective correlative, the image is that which corporializes the thought for Woolf---gives it body. Woolf's terms for Shakepeare's images, "remote" and "extravagant," depend on a notion of distance which is built into the concept of the mental image, or the image-making process, imagination.
+
+Woolf's "truth" as accuracy appears also in Conrad, who, in a letter to H.G. Wells in 1905 congratulating him for his /A Modern Utopia/, says that, as a novelist, he "must speak in images," rather than abstractions [cite:@aubryJosephConradLife1927, 16]. In another letter, where Conrad gives writing advice to R. B. Cunninghame Graham, he warns, "I don't start with an abstract notion. I start with definite images and as their rendering is true some little effect is produced" [cite:@aubryJosephConradLife1927 268]. Like Woolf, Conrad is concerned with the accuracy of the image and its ability to faithfully represent the thought or emotion that generated it.
+
+This essay-novel of Wells's, /A Modern Utopia/, describes a vision for a utopian world as an theatrical/cinematic image which is projected against a wall by a defective cinematograph, before which pass his two central characters, and the narrator, who resembles Wells himself:
+
+#+BEGIN_QUOTE
+  So much by way of portraiture is necessary to present the explorers of the Modern Utopia, which will unfold itself as a background to these two enquiring figures. The image of a cinematograph entertainment is the one to grasp. There will be an effect of these two people going to and fro in front of the circle of a rather defective lantern, which sometimes jams and sometimes gets out of focus, but which does occasionally succeed in displaying on a screen a momentary moving picture of Utopian conditions. Occasionally the picture goes out altogether, the Voice argues and argues, and the footlights return, and then you find yourself listening again to the rather too plump little man at his table laboriously enunciating propositions, upon whom the curtain rises now.
+#+END_QUOTE
+
+Wells highlights static aspects of a technology meant to depict motion ("cinematograph" is a compound of κίνημα, motion, and γράφειν, to depict), reminding us that illusion of motion that the device allows is, at its base, a sequence of still images.
+
+# Bergson on the sequential image
+
 ** Coda
 
 Textual images, as conceived by this period's many imagisms, have a number of discernible visual properties. They are often free of "decoration" or "ornament"---"dry." We might construe decoration as as a term or set of terms both extrinsic to the information conveyed by the syntactic frame, and possessing also some other redeeming value, whether as a pleasant sonic quality or other similar property. Images also convey visual information, such as color, shape, size, or space. This visual information is well-defined, that is, carries "hard" boundaries. Images represent, or convey, an "emotional complex"---they must be translatable into human emotion. Therefore, they would need to interact on some level with the human scale, and with human conceptions of objects. Images represent events or experiences: occurrences in time. They do not always take place in time, but are suggestive of the passage of time. A skein of silk blown against a wall, as in Pound's poem "The Garden," holds within it a kind of potential energy: the silk will fall, and so the image contains within it the suggestion of a future movement through time. As seen, as written, as read, as experienced, and as imagined, Images are distinct entities from one another, yet analogous. The media of each condition their potential properties. They are interdependent, and are in some cases translations of each another.
 
 What can we do with this information? For one, this gives us a taxonomy of visual properties which we can use to test, quantitatively, trends in visual phenomena over the course of this period of time. For another, we now have a number of hypotheses related to these visual properties which we can verify. For example, is imagistic or impressionistic writing more dense with haiku-like nature imagery, or is that merely a side-effect of the world-literary interests of the imagists? Are the sizes of things represented in this writing that much smaller—less "cosmic"—than elsewhere? How much more often do the jewel-bright colors of Noguchi appear than other colors? It will be the task of the following chapters to answer these questions and more.
 
+* Impression / Impressionisms
 
+In contrast with Imagism, literary impressionism was not a delineated movement with manifestos and anthologies. Instead, it is largely a critical term used to describe visual qualities of prose, at roughly the same time period as imagism. The name derives from Impressionism, the school of French painting which flourished in the mid- to late-nineteeth century, and is often used to describe the styles of fiction writers such as Joseph Conrad, Katherine Mansfield, Henry James, and Ford Madox Ford.
 
-* Impressions
+Like the school of painting, literary impressionism uses bright colors and broad strokes to convey an impression of a visual scene. In fact, its earliest definitions were from the age, and home country, of Impressionism. Ferdinand Brunetière, in /Le Roman Naturaliste/, defines "l'impressionnisme littéraire" as simply "une transposition systématique des moyens d'expression d'un art, qui est l'art de peindre, dans le domaine d'une autre art, qui est l'art d'écrire" [cite:@brunetière1883roman 88].[fn:: a systematic transposition of the means of expression of one art, the art of painting, to the domain of another art, the art of writing.] In discussing a novel by Alphonse Daudet, Brunetière uses analogies from painting:
+"chaque scène ainsi devient un tableau, qui s'arrange comme dans une toile suspendue sous les yeux du lexteur, complète en elle-même, isolée des autres, comme dans une galerie, par sa bordure, par son cadre, par un large pan de mur vide" [cite:@brunetière1883roman 89].[fn:: each scene becomes a tableau which arranges itself like a canvas suspended under the eyes of the reader, complete in itself, isolated from others, as if in a gallery, by its border, by its frame, by a large expanse of blank wall.]
 
-* Descriptions
-** Often ignored by critics
- - Argues that it is surprising that critics "since the nineteenth century have continued to view descriptions as an 'extra' or as a dispensable ornament of narration, if not as a cumbersome set of textual segments that, standing in the way of storytelling, function as mere 'catalysts,' that is, as a series of devices to interrupt or delay the sequential unfolding of plots (Barthes 1966)." [cite:@lopes1995foregrounded 6]
- - "In much earlier work description was thought of as being doubly ontologically anchored, that is, definable in terms of both the kind of phenomena in the fictional world that are descriptively constituted and the set of linguistic devices in the literary text that constitute description. Now the focus is on the modality of the descriptive, the sensory channels to which its display of the fictional world appeals, as well as on the descriptive as a mode, a functionally distinct, but formally indistinct manner of literary (re-)presentation." [cite:@isekenmeier2017 80]
+As with the school of painting, literary impressionism as a style or practice, appears to have begun in its currently recognizable form in mid-nineteenth century France. Maria Kronegger's 1973 monograph /Literary Impressionism/ treats four francophone writers and only one anglophone: André Gide, Gustauve Flaubert, Marcel Proust, Jean-Paul Sartre, and James Joyce [cite:@kronegger1973literary].
+
+But shortly thereafter, the term appears in English. In an 1893 letter to the editor of the /National Review/, in response to a lecture from Virginia Woolf's father, Leslie Stephen, on the role of the critic. In it, the correspondent Arthur Rickett derides what he sees as a shortcoming in contemporary criticism, that of the "impressionist" critic. "Literary impressionism is too often only a fine name which covers a multitude of sins—e.g., a smart superficiality of treatment and a straining after cheap paradox" [cite:@rickett1893modern 718].
+
+In /ABC of Reading/, Ezra Pound recommends with a characteristic Poundian enthusiasm "the novels of Henry James, AND especially the prefaces to his collected edition; which are the one extant great treatise on novel writing in English" [cite:@poundABCReading1960 90]. Those prefaces are full of descriptions of James's technique, in which we hear echoes of proto-imagisms and impressionisms. His preface to "The Altar of the Dead," which introduces the New York edition of his 1895 short story collection /Terminations/, describes the "impressions" which drove him to write the story.
+
+"The Altar of the Dead" is a bittersweet story about a couple who become acquainted in a chapel where they have been regularly paying their respects to their recently deceased. It is a pensive, nostalgic story, which, has much in common with James Joyce's story, "The Dead": they are stories in which a couple is haunted by memories of their past loves. These memories James refers to in his preface as "impressions," and they bear distinctly visual qualities: "Other conceits might indeed come and go, born of light impressions and passing hours, for what sort of free intelligence would it be that, addressed to the human scene, should propose to itself, all vulgarly, never to be waylaid or arrested, never effectively insired, by some imaged appeal of the lost Dead?" [cite:@jamesArtNovelCritical1934 242]. The dead appear to James in images and impressions, which are effectuated by light-effects of illumination and shadow: he explains how his story was inspired by a "pair of illuminating incidents," which are etched into his mind, despite the "shadow" of forgetting (242, 245).
+
+Katherine Mansfield
+ - cite:gunsterenKatherineMansfieldLiterary1990
+ - "As a modernist she does not always deploy the most experimental forms of modernist writing, but rather turns to realism and impressionism in order to affirm the primacy of individual perception, and to focus on the fragmentation of perceived reality in a complex and not fully knowable world" [cite:@boscagli2018 80]
+   - Bosagli calls M's impressionist style "simultaneously objective and subjective" (84).
+
+ - "Her impressionism is the epistemological record of sensory experience, to be accompanied by reflection, internalization, fantasies and dreams. It is the ordinary, everyday life-speech that gives the sense of being real" [cite:@gunsterenKatherineMansfieldLiterary1990 9].
+
+Janet Wilson n
+
+* Description
+
+Literary description is another mode of visuality which has received relatively little critical attention, much of which is dismissive of it and its role in fiction, and much of it coming into fashion briefly, in the 1980s, before passing away. Most of the theory surrounding description is from French and German literary theory, which bears more of the mark of the continental philological tradition.
+
+José Manuel Lopes, in /Foregrounded Description in Prose Fiction/, contends that critics have largely considered it "purely ornamental, redundant, or even irrelevant," and that since the nineteenth century, they've considered descriptions an "'extra' or as a dispensable ornament of narration, if not as a cumbersome set of textual segments that, standing in the way of storytelling, function as mere 'catalysts,' that is, as a series of devices to interrupt or delay the sequential unfolding of plots" [cite:@lopes1995foregrounded 6].
+
+Lopes refers to Roland Barthes' famous essay of 1968, "The Reality Effect," in which he attempts to explain the presence of a detail in a stort story by Flaubert. In this story, we are told that "an old piano supported, under a barometer, a pyrimedal heap of boxes and cartons" [cite:@barthes1989bruissement quoted in 141]. About details, Barthes claims, in a Marxist economy of words, that "they seem to correspond to a kind of narrative /luxury/, lavish to the point of offering many 'futile' details ahd thereby increasing the cost of narrative information" [cite:@barthes1989bruissement quoted in 141].
+
+Guido Isekenmeier argues that description is largely considered "doubly ontologically anchored," meaning that it is "definable in terms of both the kind of phenomena in the fictional world that are descriptively constituted and the set of linguistic devices in the literary text that constitute description" [cite:@isekenmeier2017 80].
+
+In the much-discussed essay "Narrate or Describe?" of the 1930s [TODO: check] Georg Lukács pits narration against description. Choosing as his examples Zola's /Nana/ and Tolstoy's /Anna Karenina/, he claims that, "in Zola the race is /described/ from the standpoint of an observer; in Tolstoy it is /narrated/ from the standpoint of a participant" [cite:@lukacs2005 111].
+
+Of Flaubert's descriptions in /Madame Bovary/, he complains that "to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization" [cite:@lukacs2005 115].
+
+# How do these novels score in terms of description?
+
+# Reality effects
+
+# Laocoon as a rejection of description
+
+Ford Madox Ford (then Ford Madox Hueffer), in a March 1913 essay in /Poetry and Drama/, describes the difference in writing styles between a /Times/ agricultural correspondent, and W. H. Hudson, the naturalist and author of the novel /Green Mansions/, as one of subjective visuality. Unlike the /Times/ writer, Ford explains, Hudson "will give you nothing but the pleasure of coming into contact with his temperament, and I doubt whether, if you read with the greatest care his description of false sea-buckthorn (/hippophae rhamnoides/) you would very willingly recognise that greenish-grey plant, with the spines and the berries like reddish amber, if you came across it" [cite:@hueffer_poetry_drama, 38].
+
 ** As intermedial mode / ekphrasis
  - [[id:117c36f1-dd6f-4867-afa9-14631b7ede64][9789042023109: Description In Literature And Other Media]]
  - Wolf argues that "description appears to be not only a /transgeneric/ but also a /transmedial/ phenomenon" using examples such as a scene from /Alice in Wonderland/, in which the narrator gestures towards an illustration on a facing page, saying, "if you don't know what a Gryphon is, look at the picture." 3
 ** In pedagogy
  - [[id:3172db53-0af8-48fc-8db2-89bba015876e][literature textbooks]]
 ** Experiment: quantifying [[id:d3937d28-9520-417c-a443-c6624886049c][description]]
-- Trained a model using SpaCy
-  - based on en_core_web_sm
-  - from SpaCy docs: "uses a convolutional neural network to assign position-sensitive vectors to each word in the document."
+  - "Bond Street fascinated her; Bond Street early in the morning in the season; its flags flying; its shops; no splash; no glitter; one roll of tweed in the shop where her father had bought his suits for fifty years; a few pearls; salmon on an iceblock."
+  - Early model trained on only 19th century texts is bad at finding description in 20th.
+
+In this experiment, I train a convolutional neural network to recognize paragraphs containing literary descriptions. I begin with a corpus of manually identified paragraphs of literary descriptions, from a range of novels from the nineteenth and twentieth centuries, such as Charlotte Brontë's /Jane Eyre/, Thomas Hardy's /Tess of the d'Urbervilles/, and Virginia Woolf's /Mrs Dalloway/. I then create a corpus of non-descriptions, by randomly sampling paragrahphs not labeled as descriptions. [fn::Although description certainly occurs on a sub-paragraph level, the paragraph is a useful semantic unit. For an in-depth look at the paragraph as a literary unit, see [cite:@algee-hewitt_paragraphs:_2015]]
+
+Here are some examples of paragraphs I've manually labeled as description. The first is from /Tess of the d'Urbervilles/:
+
+#+begin_quote
+This fertile and sheltered tract of country, in which the fields are never brown and the springs never dry, is bounded on the south by the bold chalk ridge that embraces the prominences of Hambledon Hill, Bulbarrow, Nettlecombe-Tout, Dogbury, High Stoy, and Bubb Down. The traveller from the coast, who, after plodding northward for a score of miles over calcareous downs and corn-lands, suddenly reaches the verge of one of these escarpments, is surprised and delighted to behold, extended like a map beneath him, a country differing absolutely from that which he has passed through. Behind him the hills are open, the sun blazes down upon fields so large as to give an unenclosed character to the landscape, the lanes are white, the hedges low and plashed, the atmosphere colourless. Here, in the valley, the world seems to be constructed upon a smaller and more delicate scale; the fields are mere paddocks, so reduced that from this height their hedgerows appear a network of dark green threads overspreading the paler green of the grass. The atmosphere beneath is languorous, and is so tinged with azure that what artists call the middle distance partakes also of that hue, while the horizon beyond is of the deepest ultramarine. Arable lands are few and limited; with but slight exceptions the prospect is a broad rich mass of grass and trees, mantling minor hills and dales within the major. Such is the Vale of Blackmoor.
+#+end_quote
+
+
+Using the Python libraries SpaCy and Prodigy, from Explosion AI, I train a multi-label text categorizer, with the labels "description" and "nondescription." The model uses position-sensitive embeddings, and uses a convolutional neural network, based on an existing SpaCy language model of English. The training process holds back 20% of the training data, in order to evaluate its guesses, and iterates through about 5,000 epochs, until it achieves an 85% accuracy.
+
+For an introduction to convolutional neural networks, and their use in text categorization tasks, see TODO.
+ - https://scholar.google.com/scholar?q=convolutional%20neural%20network
+
+The result is a model which can guess whether a paragraph of text is a description or not. Since it's a multi-label model, it gives two probabilties for each paragraph it sees: the likelihood of it being a description paragraph, and the likelihood of it being a non-description paragraph.
+
+Here are some examples of paragraphs which have been labeled with high probabilities of being a description:
+
+TODO
+#+begin_quote
+
+#+end_quote
+
+The results, when viewed diachronically, are shown in [cite:@fig:descriptionProportions].
+
+#+INCLUDE: "03-images/includes/description_proportions.html" export html
+
+#+CAPTION: Object proportions over time, $C_{PG2}$
+#+LABEL: fig:descriptionProportions
+[[./images/dummy.png]]
+
+My initial hypothesis was that the proportion of descriptive paragraphs would increase over time, tracking the trends discovered in the two previous chapters: the increase in colors and shapes over time. However, the opposite occurred: a gradual decline in descriptive paragraphs over time.
+
+Several factors may account for this trend. The first, and most probable, is that descriptive paragraphs become less recognizable to the model I've been using to detect them. Since the model is trained on unambiguous examples, such as the paragraphs quoted above, it's possible that description is more tightly woven into narrative in the twentieth century than the nineteeth.
+
+If visuality, measured by color and shape, increases at the turn of the century, but description as a whole decreases, this might mean that narrative, in fiction, becomes more visual, instead of fiction becoming more descriptive.
+
+The texts with the highest proportions of description are non-fiction.
+ - Hamon points to eighteenth-century examples of /descriptions/, especially the natural sciences.
+
   - texts with the highest proportions of description are non-fiction
     - esp. Walter Pater
-  - trained with /Tess/, /Jane Eyre/, /Mrs Dalloway/:
-  - "Bond Street fascinated her; Bond Street early in the morning in the season; its flags flying; its shops; no splash; no glitter; one roll of tweed in the shop where her father had bought his suits for fifty years; a few pearls; salmon on an iceblock."
-- Maybe description is less recognizable now? Maybe it's more intertwined in narrative?
-- Early model trained on only 19th century texts is bad at finding description in 20th.
-- Training procedure holds back 20% of the data in order to evaluate it.
-- Achieves 84% accuracy.
-

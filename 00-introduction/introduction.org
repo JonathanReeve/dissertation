@@ -14,3 +14,13 @@ And this passage from Virginia Woolf's /To the Lighthouse/ to be point B:
 #+begin_quote
 The jacmanna was bright violet; the wall staring white. She would not have considered it honest to tamper with the bright violet and the staring white, since she saw them like that, fashionable though it was, since Mr. Paunceforte's visit, to see everything pale, elegant, semitransparent. Then beneath the colour there was the shape. She could see it all so clearly, so commandingly, when she looked: it was when she took her brush in hand that the whole thing changed. It was in that moment's flight between the picture and her canvas that the demons set on her who often brought her to the verge of tears and made this passage from conception to work as dreadful as any down a dark passage for a child. Such she often felt herself—struggling against terrific odds to maintain her courage; to say: "But this is what I see; this is what I see," and so to clasp some miserable remnant of her vision to her breast, which a thousand forces did their best to pluck from her.
 #+end_quote
+
+The Austen passage is one of her most descriptive: full of objects and visualities, yet with images that are nonetheless subordinated to the narrative.
+
+In contrast, Woolf's descriptive passage is thickly indulgent in its visuality.
+
+There is nothing quite as reductive as chronology, it must be conceded.
+
+By juxtaposing two paragraphs as historical artifacts, we are missing that A belongs to a certain romance genre, while B belongs to an artist-novel genre, in which aesthetic choices and visuality are necessarily foregrounded.
+
+* Technologies
