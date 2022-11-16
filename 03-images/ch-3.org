@@ -369,25 +369,24 @@ Janet Wilson n
 
 * Description
 
-Literary description is another mode of visuality which has received relatively little critical attention, much of which is dismissive of it and its role in fiction, and much of it coming into fashion briefly, in the 1980s, before passing away. Most of the theory surrounding description is from French and German literary theory, which bears more of the mark of the continental philological tradition.
+Literary description is another mode of visuality which has received relatively little critical attention, much of which is dismissive of it and its role in fiction. The remainder came into fashion briefly, in the 1980s, before passing away, and is primarily relegated to French and German literary theory, bearing the mark of the continental philological tradition.
 
 José Manuel Lopes, in /Foregrounded Description in Prose Fiction/, contends that critics have largely considered it "purely ornamental, redundant, or even irrelevant," and that since the nineteenth century, they've considered descriptions an "'extra' or as a dispensable ornament of narration, if not as a cumbersome set of textual segments that, standing in the way of storytelling, function as mere 'catalysts,' that is, as a series of devices to interrupt or delay the sequential unfolding of plots" [cite:@lopes1995foregrounded 6].
 
-Lopes refers to Roland Barthes' famous essay of 1968, "The Reality Effect," in which he attempts to explain the presence of a detail in a stort story by Flaubert. In this story, we are told that "an old piano supported, under a barometer, a pyrimedal heap of boxes and cartons" [cite:@barthes1989bruissement quoted in 141]. About details, Barthes claims, in a Marxist economy of words, that "they seem to correspond to a kind of narrative /luxury/, lavish to the point of offering many 'futile' details ahd thereby increasing the cost of narrative information" [cite:@barthes1989bruissement quoted in 141].
+Lopes refers to Roland Barthes' famous essay of 1968, "The Reality Effect," in which he attempts to explain the presence of a detail in a stort story by Flaubert. In this story, we are told that "an old piano supported, under a barometer, a pyrimedal heap of boxes and cartons" [cite:@barthes1989bruissement quoted in 141]. About details, Barthes claims, in a Marxist economy of words, that "they seem to correspond to a kind of narrative /luxury/, lavish to the point of offering many 'futile' details and thereby increasing the cost of narrative information" [cite:@barthes1989bruissement quoted in 141].
 
 Guido Isekenmeier argues that description is largely considered "doubly ontologically anchored," meaning that it is "definable in terms of both the kind of phenomena in the fictional world that are descriptively constituted and the set of linguistic devices in the literary text that constitute description" [cite:@isekenmeier2017 80].
 
-In the much-discussed essay "Narrate or Describe?" of the 1930s [TODO: check] Georg Lukács pits narration against description. Choosing as his examples Zola's /Nana/ and Tolstoy's /Anna Karenina/, he claims that, "in Zola the race is /described/ from the standpoint of an observer; in Tolstoy it is /narrated/ from the standpoint of a participant" [cite:@lukacs2005 111].
-
-Of Flaubert's descriptions in /Madame Bovary/, he complains that "to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization" [cite:@lukacs2005 115].
+In the much-discussed essay "Narrate or Describe?" of the 1930s [TODO: check] Georg Lukács pits narration against description. Choosing as his examples Zola's /Nana/ and Tolstoy's /Anna Karenina/, he claims that, "in Zola the race is /described/ from the standpoint of an observer; in Tolstoy it is /narrated/ from the standpoint of a participant" [cite:@lukacs2005 111]. Of Flaubert's descriptions in /Madame Bovary/, he complains that "to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization" [cite:@lukacs2005 115].
 
 # How do these novels score in terms of description?
 
-# Reality effects
-
 # Laocoon as a rejection of description
 
-Ford Madox Ford (then Ford Madox Hueffer), in a March 1913 essay in /Poetry and Drama/, describes the difference in writing styles between a /Times/ agricultural correspondent, and W. H. Hudson, the naturalist and author of the novel /Green Mansions/, as one of subjective visuality. Unlike the /Times/ writer, Ford explains, Hudson "will give you nothing but the pleasure of coming into contact with his temperament, and I doubt whether, if you read with the greatest care his description of false sea-buckthorn (/hippophae rhamnoides/) you would very willingly recognise that greenish-grey plant, with the spines and the berries like reddish amber, if you came across it" [cite:@hueffer_poetry_drama, 38].
+
+Similarly, in his /Laocoon/, Gotthold Lessing rejects description as a valid mode for poetry, claiming that static bodies are the appropriate subjects of painting, while actions are the appropriate subjects of poetry: "Those objects which are co-existent, or whose parts are co-existent, are called bodies; consequently bodies, with their visible properties, are the legitimate subjects of painting. Those things, on the contrary, which are consecutive, or whose parts are consecutive, are termed, generally speaking, actions. Actions are therefore the legitimate subjects of poetry" [cite:@lessing_laocoon_1836 150-1].
+
+# Ford Madox Ford (then Ford Madox Hueffer), in a March 1913 essay in /Poetry and Drama/, describes the difference in writing styles between a /Times/ agricultural correspondent, and W. H. Hudson, the naturalist and author of the novel /Green Mansions/, as one of subjective visuality. Unlike the /Times/ writer, Ford explains, Hudson "will give you nothing but the pleasure of coming into contact with his temperament, and I doubt whether, if you read with the greatest care his description of false sea-buckthorn (/hippophae rhamnoides/) you would very willingly recognise that greenish-grey plant, with the spines and the berries like reddish amber, if you came across it" [cite:@hueffer_poetry_drama, 38].
 
 ** As intermedial mode / ekphrasis
  - [[id:117c36f1-dd6f-4867-afa9-14631b7ede64][9789042023109: Description In Literature And Other Media]]
@@ -395,10 +394,13 @@ Ford Madox Ford (then Ford Madox Hueffer), in a March 1913 essay in /Poetry and 
 ** In pedagogy
  - [[id:3172db53-0af8-48fc-8db2-89bba015876e][literature textbooks]]
 ** Experiment: quantifying [[id:d3937d28-9520-417c-a443-c6624886049c][description]]
+
+#+begin_comment
   - "Bond Street fascinated her; Bond Street early in the morning in the season; its flags flying; its shops; no splash; no glitter; one roll of tweed in the shop where her father had bought his suits for fifty years; a few pearls; salmon on an iceblock."
   - Early model trained on only 19th century texts is bad at finding description in 20th.
+#+end_comment
 
-In this experiment, I train a convolutional neural network to recognize paragraphs containing literary descriptions. I begin with a corpus of manually identified paragraphs of literary descriptions, from a range of novels from the nineteenth and twentieth centuries, such as Charlotte Brontë's /Jane Eyre/, Thomas Hardy's /Tess of the d'Urbervilles/, and Virginia Woolf's /Mrs Dalloway/. I then create a corpus of non-descriptions, by randomly sampling paragrahphs not labeled as descriptions. [fn::Although description certainly occurs on a sub-paragraph level, the paragraph is a useful semantic unit. For an in-depth look at the paragraph as a literary unit, see [cite:@algee-hewitt_paragraphs:_2015]]
+In this experiment, I want to know whether visuality, which I model in the previous chapters with colors and objects, correlates with descriptions. To measure this, I train a convolutional neural network to recognize paragraphs containing literary descriptions. I begin with a corpus of manually identified paragraphs of literary descriptions, from a range of novels from the nineteenth and twentieth centuries, such as Charlotte Brontë's /Jane Eyre/, Thomas Hardy's /Tess of the d'Urbervilles/, and Virginia Woolf's /Mrs Dalloway/. I then create a corpus of non-descriptions, by randomly sampling paragraphs not labeled as descriptions. [fn::Although description certainly occurs on a sub-paragraph level, the paragraph is a useful semantic unit. For an in-depth look at the paragraph as a literary unit, see [cite:@algee-hewitt_paragraphs:_2015]]
 
 Here are some examples of paragraphs I've manually labeled as description. The first is from /Tess of the d'Urbervilles/:
 
