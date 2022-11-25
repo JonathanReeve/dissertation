@@ -22,7 +22,7 @@ import Template ( pageHtml, prefatoryPageHtml )
 import Text.HTML.TagSoup
 
 import Text.StringLike ( StringLike )
-import Data.Function.HT (Id)
+import Data.Maybe (fromMaybe)
 
 readFileText text = need [text] >> liftIO (TIO.readFile text)
 
@@ -51,16 +51,20 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     phony "serve" $
       liftIO $ serve 8080 "dest/"
 
-    -- Keep this commented out in Git, since this references external files that aren't available in the CI
-    -- "references.bib" %> \f -> do
-    --     let sources = [ "/home/jon/Dokumentujo/Papers/library.bib"
-    --                   , "/home/jon/Dokumentujo/Papers/library2.bib"
-    --                   ]
-    --     need sources
-    --     Stdout stdout <- cmd "cat" sources
-    --     writeFileChanged f stdout
-    --     -- copyFileChanged source f
+    -- Regenerate references bibtex file, but only if we're me, not GitHub Actions.
+    "references.bib" %> \f -> do
+        user <- getEnv "USERNAME"
+        let sources = [ "/home/jon/Dokumentujo/Papers/library.bib"
+                      , "/home/jon/Dokumentujo/Papers/library2.bib"
+                      ]
+        let username = fromMaybe "" user
+        if username == "jon" then do
+            need sources
+            Stdout stdout <- cmd "cat" sources
+            writeFileChanged f stdout
+        else putInfo "We're in CI. Skipping regeneration of references."
 
+    -- Automatically generate a list of figures and illustrations.
     "templates/figures.html" %> \f -> do
         need chapters
         liftIO $ findAllFigures f

@@ -377,23 +377,28 @@ Lopes refers to Roland Barthes' famous essay of 1968, "The Reality Effect," in w
 
 Guido Isekenmeier argues that description is largely considered "doubly ontologically anchored," meaning that it is "definable in terms of both the kind of phenomena in the fictional world that are descriptively constituted and the set of linguistic devices in the literary text that constitute description" [cite:@isekenmeier2017 80].
 
-In the much-discussed essay "Narrate or Describe?" of the 1930s [TODO: check] Georg Lukács pits narration against description. Choosing as his examples Zola's /Nana/ and Tolstoy's /Anna Karenina/, he claims that, "in Zola the race is /described/ from the standpoint of an observer; in Tolstoy it is /narrated/ from the standpoint of a participant" [cite:@lukacs2005 111]. Of Flaubert's descriptions in /Madame Bovary/, he complains that "to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization" [cite:@lukacs2005 115].
+
+In the much-discussed essay "Narrate or Describe?" of 1936, Georg Lukács pits narration against description. Comparing Zola's /Nana/ and Tolstoy's /Anna Karenina/, he prefers Tolstoy's style in that, "in Zola the race is /described/ from the standpoint of an observer; in Tolstoy it is /narrated/ from the standpoint of a participant" [cite:@lukacs2005 111]. Of Flaubert's descriptions in /Madame Bovary/, he complains that "to the reader they seem undifferentiated, additional elements of the environment Flaubert is describing. They become dabs of colour in a painting which rises above a lifeless level only insofar as it is elevated to an ironic symbol of philistinism. The painting assumes an importance which does not arise out of the subjective importance of the events, to which it is scarcely related, but from the artifice in the formal stylization" [cite:@lukacs2005 115]. This attitude to description is not uncommon at the time.
 
 # How do these novels score in terms of description?
 
-# Laocoon as a rejection of description
+Similarly, in his /Laocoon: or, The limits of Poetry and Painting/, Gotthold Lessing rejects description as a valid mode for poetry, and for all other literary writing, claiming that dynamic actions are the appropriate subjects for poetry, while static bodies are the appropriate subjects of painting: "those objects which are co-existent, or whose parts are co-existent, are called bodies; consequently bodies, with their visible properties, are the legitimate subjects of painting. Those things, on the contrary, which are consecutive, or whose parts are consecutive, are termed, generally speaking, actions. Actions are therefore the legitimate subjects of poetry" [cite:@lessing_laocoon_1836 150-1].
 
+In Lessing, writing is always defined in opposition to painting, and this intermedial definition abounds in the thought surrounding description.
+  - As intermedial mode / ekphrasis
+  - [[id:117c36f1-dd6f-4867-afa9-14631b7ede64][9789042023109: Description In Literature And Other Media]]
+  - Wolf argues that "description appears to be not only a /transgeneric/ but also a /transmedial/ phenomenon" using examples such as a scene from /Alice in Wonderland/, in which the narrator gestures towards an illustration on a facing page, saying, "if you don't know what a Gryphon is, look at the picture." 3
 
-Similarly, in his /Laocoon/, Gotthold Lessing rejects description as a valid mode for poetry, claiming that static bodies are the appropriate subjects of painting, while actions are the appropriate subjects of poetry: "Those objects which are co-existent, or whose parts are co-existent, are called bodies; consequently bodies, with their visible properties, are the legitimate subjects of painting. Those things, on the contrary, which are consecutive, or whose parts are consecutive, are termed, generally speaking, actions. Actions are therefore the legitimate subjects of poetry" [cite:@lessing_laocoon_1836 150-1].
 
 # Ford Madox Ford (then Ford Madox Hueffer), in a March 1913 essay in /Poetry and Drama/, describes the difference in writing styles between a /Times/ agricultural correspondent, and W. H. Hudson, the naturalist and author of the novel /Green Mansions/, as one of subjective visuality. Unlike the /Times/ writer, Ford explains, Hudson "will give you nothing but the pleasure of coming into contact with his temperament, and I doubt whether, if you read with the greatest care his description of false sea-buckthorn (/hippophae rhamnoides/) you would very willingly recognise that greenish-grey plant, with the spines and the berries like reddish amber, if you came across it" [cite:@hueffer_poetry_drama, 38].
 
-** As intermedial mode / ekphrasis
- - [[id:117c36f1-dd6f-4867-afa9-14631b7ede64][9789042023109: Description In Literature And Other Media]]
- - Wolf argues that "description appears to be not only a /transgeneric/ but also a /transmedial/ phenomenon" using examples such as a scene from /Alice in Wonderland/, in which the narrator gestures towards an illustration on a facing page, saying, "if you don't know what a Gryphon is, look at the picture." 3
+# French books of "descriptions"
+
+
 ** In pedagogy
  - [[id:3172db53-0af8-48fc-8db2-89bba015876e][literature textbooks]]
-** Experiment: quantifying [[id:d3937d28-9520-417c-a443-c6624886049c][description]]
+
+** Experiment: quantifying description
 
 #+begin_comment
   - "Bond Street fascinated her; Bond Street early in the morning in the season; its flags flying; its shops; no splash; no glitter; one roll of tweed in the shop where her father had bought his suits for fifty years; a few pearls; salmon on an iceblock."
@@ -405,16 +410,10 @@ In this experiment, I want to know whether visuality, which I model in the previ
 Here are some examples of paragraphs I've manually labeled as description. The first is from /Tess of the d'Urbervilles/:
 
 #+begin_quote
-This fertile and sheltered tract of country, in which the fields are never brown and the springs never dry, is bounded on the south by the bold chalk ridge that embraces the prominences of Hambledon Hill, Bulbarrow, Nettlecombe-Tout, Dogbury, High Stoy, and Bubb Down. The traveller from the coast, who, after plodding northward for a score of miles over calcareous downs and corn-lands, suddenly reaches the verge of one of these escarpments, is surprised and delighted to behold, extended like a map beneath him, a country differing absolutely from that which he has passed through. Behind him the hills are open, the sun blazes down upon fields so large as to give an unenclosed character to the landscape, the lanes are white, the hedges low and plashed, the atmosphere colourless. Here, in the valley, the world seems to be constructed upon a smaller and more delicate scale; the fields are mere paddocks, so reduced that from this height their hedgerows appear a network of dark green threads overspreading the paler green of the grass. The atmosphere beneath is languorous, and is so tinged with azure that what artists call the middle distance partakes also of that hue, while the horizon beyond is of the deepest ultramarine. Arable lands are few and limited; with but slight exceptions the prospect is a broad rich mass of grass and trees, mantling minor hills and dales within the major. Such is the Vale of Blackmoor.
+This fertile and sheltered tract of country, in which the fields are never brown and the springs never dry, is bounded on the south by the bold chalk ridge that embraces the prominences of Hambledon Hill, Bulbarrow, Nettlecombe-Tout, Dogbury, High Stoy, and Bubb Down. The traveller from the coast, who, after plodding northward for a score of miles over calcareous downs and corn-lands, suddenly reaches the verge of one of these escarpments, is surprised and delighted to behold, extended like a map beneath him, a country differing absolutely from that which he has passed through. Behind him the hills are open, the sun blazes down upon fields so large as to give an unenclosed character to the landscape, the lanes are white, the hedges low and plashed, the atmosphere colourless. Here, in the valley, the world seems to be constructed upon a smaller and more delicate scale; the fields are mere paddocks, so reduced that from this height their hedgerows appear a network of dark green threads overspreading the paler green of the grass. The atmosphere beneath is languorous, and is so tinged with azure that what artists call the middle distance partakes also of that hue, while the horizon beyond is of the deepest ultramarine. Arable lands are few and limited; with but slight exceptions the prospect is a broad rich mass of grass and trees, mantling minor hills and dales within the major. Such is the Vale of Blackmoor. [cite:@HardyTessUrbervilles2007 47]
 #+end_quote
 
-
-Using the Python libraries SpaCy and Prodigy, from Explosion AI, I train a multi-label text categorizer, with the labels "description" and "nondescription." The model uses position-sensitive embeddings, and uses a convolutional neural network, based on an existing SpaCy language model of English. The training process holds back 20% of the training data, in order to evaluate its guesses, and iterates through about 5,000 epochs, until it achieves an 85% accuracy.
-
-For an introduction to convolutional neural networks, and their use in text categorization tasks, see TODO.
- - https://scholar.google.com/scholar?q=convolutional%20neural%20network
-
-The result is a model which can guess whether a paragraph of text is a description or not. Since it's a multi-label model, it gives two probabilties for each paragraph it sees: the likelihood of it being a description paragraph, and the likelihood of it being a non-description paragraph.
+Using the Python libraries SpaCy and Prodigy, from Explosion AI, I train a multi-label text categorizer, with the labels "description" and "nondescription." The model uses position-sensitive embeddings, and uses a convolutional neural network, based on an existing SpaCy language model of English. The training process holds back 20% of the training data, in order to evaluate its guesses, and iterates through about 5,000 epochs, until it achieves an 85% accuracy. The result is a model which can guess whether a paragraph of text is a description or not. Since it's a multi-label model, it gives two probabilties for each paragraph it sees: the likelihood of it being a description paragraph, and the likelihood of it being a non-description paragraph.
 
 Here are some examples of paragraphs which have been labeled with high probabilities of being a description:
 
@@ -431,9 +430,7 @@ The results, when viewed diachronically, are shown in [cite:@fig:descriptionProp
 #+LABEL: fig:descriptionProportions
 [[./images/dummy.png]]
 
-My initial hypothesis was that the proportion of descriptive paragraphs would increase over time, tracking the trends discovered in the two previous chapters: the increase in colors and shapes over time. However, the opposite occurred: a gradual decline in descriptive paragraphs over time.
-
-Several factors may account for this trend. The first, and most probable, is that descriptive paragraphs become less recognizable to the model I've been using to detect them. Since the model is trained on unambiguous examples, such as the paragraphs quoted above, it's possible that description is more tightly woven into narrative in the twentieth century than the nineteeth.
+My initial hypothesis was that the proportion of descriptive paragraphs would increase over time, tracking the trends discovered in the two previous chapters: the increase in colors and shapes over time. However, the opposite occurred: a gradual decline in descriptive paragraphs over time. Several factors may account for this trend. The first, and most probable, is that descriptive paragraphs become less recognizable to the model I've been using to detect them. Since the model is trained on unambiguous examples, such as the paragraphs quoted above, it's possible that description is more tightly woven into narrative in the twentieth century than the nineteeth.
 
 If visuality, measured by color and shape, increases at the turn of the century, but description as a whole decreases, this might mean that narrative, in fiction, becomes more visual, instead of fiction becoming more descriptive.
 
@@ -442,3 +439,38 @@ The texts with the highest proportions of description are non-fiction.
 
   - texts with the highest proportions of description are non-fiction
     - esp. Walter Pater
+
+Here are some of the texts with the highest proportions of descriptions:
+
+| Year | Title                                 | Author                 | % Descr. Paras. |
+|------+---------------------------------------+------------------------+-----------------|
+| 1893 | The Rhythm of Life                    | Alice Meynell          |              72 |
+| 1916 | Letters from America                  | Rupert Brooke          |              71 |
+| 1887 | Memories and Portraits                | Robert Louis Stevenson |              69 |
+| 1892 | Views and Reviews                     | William Ernest Henley  |              69 |
+| 1880 | Round About a Great Estate            | Richard Jefferies      |              67 |
+| 1841 | On Heroes, Hero-Worship ...           | Thomas Carlyle         |              67 |
+| 1896 | Studies in Early Victorian Literature | Frederic Harrison      |              63 |
+| 1865 | The Life of John Clare                | Frederick Martin       |              63 |
+| 1907 | The Boats of the "Glen Carrig"        | William Hope Hodgson   |              62 |
+| 1887 | Imaginary Portraits                   | Walter Pater           |              62 |
+
+Strikingly, this list consists primarily of non-fiction or quasi-fictional works: essays, memoir, biography, and descriptive collections of "sketches" or "impressions."
+
+/The Rhythm of Life/ is a collection of short essays from the poet, suffragist, and essayist Alice Meynell, author of a critical work on John Ruskin, and several other poetic, descriptive essay collections [cite:@meynell1893rhythm;cite:@meynell1900john]. Here is a passage from "The Sun," which shows how descriptive this volume of essays can get:
+
+#+begin_quote
+Nowhere else does the greater light so rule the day, so measure, so divide, so reign, make so imperial laws, so visibly kindle, so immediately quicken, so suddenly efface, so banish, so restore, as in a plain like this of Suffolk with its enormous sky. The curious have an insufficient motive for going to the mountains if they do it to see the sunrise. The sun that leaps from a mountain peak is a sun past the dew of his birth; he has walked some way towards the common fires of noon. But on the flat country the uprising is early and fresh, the arc is wide, the career is long. The most distant clouds, converging in the beautiful and little-studied order of cloud-perspective (for most painters treat clouds as though they formed perpendicular and not horizontal scenery), are those that gather at the central point of sunrise.
+#+end_quote
+[cite:@meynell1893rhythm]
+
+Other essays in the volume deal with similarly descriptive, noun-heavy, extended treatments of single objects or scenes. "The Flower" is a meditation on flowers. "Domus Angusta" is an architectural discussion. "By the Railway Side" describes a rail journey through Tuscany. Others are writings on literature: Shelley, Wilde, and Swinburne all make appearances, as do the lesser-known American poets Oliver Wendell Holmes and James Russell Lowell.
+
+Two other volumes on this list are collections of literary critical essays: William Ernest Henley's /Views and Reviews: Essays in Appreciation: Literature/ deals with Dickens, Thackeray, Disraeli, Dumas, and Meredith, among others; so does Frederic Harrison's /Studies in Early Victorian Literature/, which adds essays on George Eliot and Thomas Carlyle [cite:@henley_views_2007;@harrison_studies_2006].
+
+Walter Pater's /Imaginary Portraits/ stands out as a generic anomaly: imaginary "portraits" of fictional people in historical times and places, these sketches are not quite narrative enough to be short stories, and could not be called novelistic, either. Here's how it begins:
+
+#+begin_quote
+They have been renovating my father's large workroom. That delightful, tumble-down old place has lost its moss-grown tiles and the green weather-stains we have known all our lives on the high whitewashed wall, opposite which we sit, in the little sculptor's yard, for the coolness, in summertime. Among old Watteau's workpeople came his son, "the genius," my father's godson and namesake, a dark-haired youth, whose large, unquiet eyes seemed perpetually wandering to the various drawings which lie exposed here. My father will have it that he is a genius indeed, and a painter born. We have had our September Fair in the Grande Place, a wonderful stir of sound and colour in the wide, open space beneath our windows. And just where the crowd was busiest young Antony was found, hoisted into one of those empty niches of the old Hotel de Ville, sketching the scene to the life, but with a kind of grace—a marvellous tact of omission, as my father pointed out to us, in dealing with the vulgar reality seen from one's own window—which has made trite old Harlequin, Clown, and Columbine, seem like people in some fairyland; or like infinitely clever tragic actors, who, for the humour of the thing, have put on motley for once, and are able to throw a world of serious innuendo into their burlesque looks, with a sort of comedy which shall be but tragedy seen from the other side. He brought his sketch to our house to-day, and I was present when my father questioned him and commended his work. But the lad seemed not greatly pleased, and left untasted the glass of old Malaga which was offered to him. His father will hear nothing of educating him as a painter. Yet he is not ill-to-do, and has lately built himself a new stone house, big and grey and cold. Their old plastered house with the black timbers, in the Rue des Cardinaux, was prettier; dating from the time of the Spaniards, and one of the oldest in Valenciennes.
+#+end_quote
+[cite:@pater1894imaginary]

@@ -1,8 +1,6 @@
 #+TITLE: Introduction
 #+AUTHOR: Jonathan Reeve
 
-* The Eye of Modernism
-
 The central question of this dissertation is one of literary history. It's one of how we get from point A to point B. Consider this passage from Jane Austen's /Pride and Prejudice/ to be point A:
 
 #+begin_quote
