@@ -71,7 +71,7 @@ There is a long and rich history of quantifying it, as well. The most famous stu
 There are also quantitative color word analyses, in linguistics and philology, by Seija Kerttula, whose /English Colour Terms: Etymology, Chronology, and Relative Basicness/ mines literary and linguistic corpora to determine the chronological development of color terms in English; Sigfried Wyler, whose /Color and Language: Color Terms in English/ finds the frequencies of color words in linguistic corpora, as well as their frequencies of use in metaphor; and Anders Steinvall, who in /English Colour Terms in Context/ takes a cognitive-linguistic approach to studying color terms in the corpus Bank of English [cite:@kerttula2002english; @Steinvall_2002; @wyler92_colour].
 # Make it clear that this is also quantitative
 
-In literary studies, Élodie Ripoll's /Penser la couleur en littérature: explorations romanesques des lumières au réalisme/ is a highly effective diachronic study of several centuries of novels, mostly French, which finds not only that literature passes from a "chromatic poverty" (/littérature pauvre en couleur/) in the 18th Century, to a 19th Century whose color is "at the heart of its poetics" [cite:@ripoll18_penser 10]. Ryan Heuser and Long Le-Khac, of the Stanford Literary Lab, also study color words in this period, with a view towards changing levels of abstraction and concreteness in British novels. They find a "sharp rise" in color word proportions from 1785 to 1900: from 0.04% to 0.19%, more than a 290% increase [cite:@heuser_quantitative_2012 22]. Most recently, Ted Underwood's /Distant Horizons: Digital Evidence and Literary Change/ begins with an analysis of a random sample of 347 volumes of fiction, and arrives at a similar result to mine, in [@fig:proportionsByDOB] below [cite:@underwood2019distant 10].
+In literary studies, Élodie Ripoll's /Penser la couleur en littérature: explorations romanesques des lumières au réalisme/ is a highly effective diachronic study of several centuries of novels, mostly French, which finds not only that literature passes from a "chromatic poverty" (/littérature pauvre en couleur/) in the 18th Century, to a 19th Century whose color is "at the heart of its poetics" [cite:@ripoll18_penser 10]. Ryan Heuser and Long Le-Khac, of the Stanford Literary Lab, also study color words in this period, with a view towards changing levels of abstraction and concreteness in British novels. They find a "sharp rise" in color word proportions from 1785 to 1900: from 0.04% to 0.19%, more than a 290% increase [cite:@heuser_quantitative_2012 22]. Most recently, Ted Underwood's /Distant Horizons: Digital Evidence and Literary Change/ begins with an analysis of a random sample of 347 volumes of fiction, and arrives at a similar result to mine, in [cite:@fig:proportionsByDOB] below [cite:@underwood2019distant 10].
 
 But these quantitative analysis all use narrower definitions of the textual colors they measure. With the exception of Gladstone, whose manual tabulation allowed him to disambiguate senses, these studies typically measure color words according to their lexemes, undisambiguated by word senses. Think of the ambiguity between /rose/ the color, and /rose/ the past tense of the verb /to rise/. /Orange/ the fruit, and /gold/ the metal are similar examples (although in imagination, there may be little difference, as I argue later). In Heuser and Le-Khac's appendix, for instance, they list all 50 color words they use, among which are included /orange/ and /gold/ [cite:@heuser_quantitative_2012 55]. Similarly, Underwood reveals that his list of color words "is long enough to include colors like 'cerulean,' but there will always be chromatic experiences it leaves out and emotions that it mistakes for a color when tallying up occurrences of a word like 'blue.'" [cite:@underwood2019distant 9].
 As I will demonstrate below, color word ambiguity and polysemy are much more problematic than these confessions suggest.
@@ -109,7 +109,7 @@ It will also help to say what this study is /not/. I won't spend much time deali
 In Virginia Woolf's meta-essay, "The Decay of Essay Writing," she argues that her moment in history "has painted itself more faithfully than any other in a myriad of clever and conscientious though not supremely great works of fiction; it has tried seriously to liven the faded colours of bygone ages" [cite:@woolf2009selected]. While she does not use "colours" exclusively in its literal sense, she gives the distinct impression that modernity is brighter, and more colorful, than the previous age.
 The first of my analyses puts this hypothesis to the test, inferring colors from a corpus of hundreds of thousands of novels and poems, in order to answer the question of whether twentieth century writers are more colorful, or more descriptive, than their predecessors. They are.
 
-There is a tremendous increase in the proportions of color words, color expressions, and colorful objects, in British literature at the turn of the twentieth century. [@Fig:proportionsByDOB] shows the proportions of these colors, in hundreds of thousands of novels and poems, and how they correlate with their authors' years of birth. Since the generation writing in the high-modernist decades of the 1910s and '20s is born in the 1870–1900 range, give or take a decade, we see a huge jump in color during this period. This is Woolf's generation quite literally "livening the faded colours of bygone ages."
+There is a tremendous increase in the proportions of color words, color expressions, and colorful objects, in British literature at the turn of the twentieth century. [cite:@Fig:proportionsByDOB] shows the proportions of these colors, in hundreds of thousands of novels and poems, and how they correlate with their authors' years of birth. Since the generation writing in the high-modernist decades of the 1910s and '20s is born in the 1870–1900 range, give or take a decade, we see a huge jump in color during this period. This is Woolf's generation quite literally "livening the faded colours of bygone ages."
 
 I use the word /generation/ advisedly, as does Woolf. The author's year of birth might seem like a strange choice of a variable, for an analysis of this sort, since virtually all quantitative studies of color words use publication dates. But as I will explain below, there are strong generational currents that make this choice necessary. Woolf herself divides then-living writers into "Edwardian" and "Georgian" camps, as we shall soon see.
 
@@ -132,7 +132,7 @@ First, let us consider the end of the Edwardian era. The death of the "rich and 
 Woolf's essay begins by dividing early 20th Century writers along these lines: "Mr. Wells, Mr. Bennett, and Mr. Galsworthy I will call the Edwardians; Mr. Forster, Mr. Lawrence, Mr. Strachey, Mr. Joyce, and Mr. Eliot I will call the Georgians" [cite:@woolf1966collected 320].
 Woolf's list of British writers is very nearly in chronological order, by date of birth. The most senior of the "Edwardians," H. G. Wells, was born in 1866, quickly followed by Arnold Bennett and John Galsworthy in 1867, while the "Georgian" E. M. Forster was born a decade later in 1879, followed by Lytton Strachey in 1880, James Joyce in 1882 (as with Woolf herself), D. H. Lawrence in 1885, and T. S. Eliot in 1888.
 
-This generational difference—the motivating factor behind the analysis shown in [@fig:proportionsByDOB]—Woolf sees as manifest in an internal cohesion of the writers' works. While among the Georgians, or, in a proto-modernist work like /Tristram Shandy/, Woolf argues, "everything was inside the book, nothing outside," the Edwardians, in contrast, "were never interested in character in itself, or in the book in itself. They were interested in something outside. Their books, then, were incomplete as books, and required that the reader should finish them, active and practically, for himself" [cite:-@woolf1966collected 327].
+This generational difference—the motivating factor behind the analysis shown in [cite:@fig:proportionsByDOB]—Woolf sees as manifest in an internal cohesion of the writers' works. While among the Georgians, or, in a proto-modernist work like /Tristram Shandy/, Woolf argues, "everything was inside the book, nothing outside," the Edwardians, in contrast, "were never interested in character in itself, or in the book in itself. They were interested in something outside. Their books, then, were incomplete as books, and required that the reader should finish them, active and practically, for himself" [cite:-@woolf1966collected 327].
 
 Woolf's concern for "character in itself" and "the book in itself" hearkens back to the autoteleological aphorism of Aestheticism, "/l'art pour l'art/," or "art for art's sake." (Aestheticism, the artistic and literary movement of the 1890s, was born of the late Victorians, a generation for whom modernists / "Georgians" felt affinity.) In fact, we might well call Woolf's essay "Mrs. Brown for Mrs. Brown's Own Sake." But what is more important is the mode in which this autotelos is enacted: sight. Sight is useful, or useless, unto itself: it is the progenitor of action, and precedes it.
 
@@ -146,7 +146,7 @@ An even more substantive event of the year is Roger Fry's exhibit in 1910. The a
 
 To speak precisely, post-impressionist paintings are, according to my image analysis, 37.4% brighter than European paintings of the early 19th Century. I arrive at this figure by [[https://github.com/JonathanReeve/dissertation/blob/master/01-colors/experiment-post-impressionism/analyze-colors.ipynb][querying Wikidata for paintings]] labeled with the movement "post-impressionism," then querying for paintings created between 1800–1850, downloading one hundred images from each category, and finally by computing K-means centroids for their luminosity in HSL color space (hue, saturation, luminosity). Although we must account for some fading of the paintings' colors over time, this figure confirms my intuitive sense (and that of many art critics) that post-impressionism was an exceptionally bright artistic movement.
 
-The exhibition flaunts this new brightness, featuring the titular Edouard Manet, along with Paul Cézanne, Paul Gauguin, Maurice Denis, Vincent van Gogh, and other painters known for their use of bright color. It was highly controversial. A cartoon in the November 1910 issue of /The Bystander/, as shown in [@fig:postImpressions], illustrates the controversy [cite:@bystander1910 375]. A segment of the cartoon labeled "you arrive thus" depicts two gentlemen arriving at the exhibition: one half-asleep, and the other, alert. The following segment, labeled "and depart thus" depicts the sleepy man suddenly alert, and the alert man with buckled knees, wiping the sweat from his brow. Another corner of the cartoon depicts an appreciative look from "an American art student who liked the colour harshness." Finally, a tableau at the bottom of the page shows four men and three women, in genteel hats and costume, doubled over in laughter. The caption is "From the Pictures' Point of View."
+The exhibition flaunts this new brightness, featuring the titular Edouard Manet, along with Paul Cézanne, Paul Gauguin, Maurice Denis, Vincent van Gogh, and other painters known for their use of bright color. It was highly controversial. A cartoon in the November 1910 issue of /The Bystander/, as shown in [cite:@fig:postImpressions], illustrates the controversy [cite:@bystander1910 375]. A segment of the cartoon labeled "you arrive thus" depicts two gentlemen arriving at the exhibition: one half-asleep, and the other, alert. The following segment, labeled "and depart thus" depicts the sleepy man suddenly alert, and the alert man with buckled knees, wiping the sweat from his brow. Another corner of the cartoon depicts an appreciative look from "an American art student who liked the colour harshness." Finally, a tableau at the bottom of the page shows four men and three women, in genteel hats and costume, doubled over in laughter. The caption is "From the Pictures' Point of View."
 
 #+NAME: Post-Impressions of the Post-Impressionists
 #+CAPTION: "Post-Impressions of the Post-Impressionists" [cite:@bystander1910 375]
@@ -196,7 +196,7 @@ Despite what Woolf would have us believe, human character, and with it a sense o
 The color had been a favorite one with Rosetti, Morris and Burne-Jones who had first discovered it in the richness of medieval panels, then nearer at hand in the sunflower of rural gardens. ... There was something vivid and daring about the color, something of the times, like the golden bloom of the age on a century that was nearing its close---not to death but to greater achievement. Yellow and /fin-de-siècle/ began to have connotations open to many meanings but all leading to a definable sense of modernity, challenge, emancipation. People were no longer afraid to live. ... The public became yellow-conscious. [cite:@winwar1958oscar 239]
 #+end_quote
 
-Yellow had become a symbol of modernity. It was a bright color, comparatively rare in nature—the color of the sun, of gold, and of sunflowers. It became the symbol of aestheticism. [@Fig:yellowNineties] shows the proportions of the hypernym /yellow/, according to the publication dates of the works where it appears. This isn't just the word /yellow/, I should reiterate, but its hyponyms, associated lemmas, and objects that are typically yellow-colored: lemons, sunflowers, and so on. Although proportions of textual color generally increase with time, in literature of this period, /yellow/ was never higher than it was in the 1890s.
+Yellow had become a symbol of modernity. It was a bright color, comparatively rare in nature—the color of the sun, of gold, and of sunflowers. It became the symbol of aestheticism. [cite:@Fig:yellowNineties] shows the proportions of the hypernym /yellow/, according to the publication dates of the works where it appears. This isn't just the word /yellow/, I should reiterate, but its hyponyms, associated lemmas, and objects that are typically yellow-colored: lemons, sunflowers, and so on. Although proportions of textual color generally increase with time, in literature of this period, /yellow/ was never higher than it was in the 1890s.
 
 #+CAPTION: Proportions of the color /yellow/ in novels and poems, according to date of publication.
 #+LABEL: fig:yellowNineties
@@ -223,7 +223,7 @@ There are some unusual color descriptors here: "soft lemon," "gilt," "brightest 
 
 Le Gallienne knows this kind of yellow light, which streams into the room, for in the "The Boom in Yellow," he observes that "when the sun comes out upon a yellow wall-paper the whole room seems suddenly to expand, to open like a flower"  [cite:@gallienne1896prose 87]. Incidentally, the famous short story by Charlotte Perkins Gillman, "The Yellow Wallpaper," had just been published, in 1892. In 1894, a novel appeared by the psydonymous "Iota," called /A Yellow Aster/, the popularity of which Le Gallienne cites as an indicator of the "boom." And /The Yellow Book/, the literary and arts journal to which Le Gallienne frequently contributed, began to be published, in the same year. Le Gallienne argues that, "with any other colour, it would hardly have sold as well" [cite:@gallienne1896prose 87].
 
-/The Yellow Book/ was a short-lived illustrated quarterly journal of literature and art, published between 1894–1897. The bright yellow color of its cover recalls the look of racy French novels of the day, which were similarly bound [cite:@wilde00_oscar_wilde xx]. It was also the color of avant-garde literature, and edgy books of all types [cite:@doran13_yellow 3]. Priced at five shillings, it was comparatively cheap, as well, costing less than a new volume of fiction [cite:@brookerOxfordCriticalCultural2009 78]. [@Fig:yellowBook] shows the cover of the first issue.
+/The Yellow Book/ was a short-lived illustrated quarterly journal of literature and art, published between 1894–1897. The bright yellow color of its cover recalls the look of racy French novels of the day, which were similarly bound [cite:@wilde00_oscar_wilde xx]. It was also the color of avant-garde literature, and edgy books of all types [cite:@doran13_yellow 3]. Priced at five shillings, it was comparatively cheap, as well, costing less than a new volume of fiction [cite:@brookerOxfordCriticalCultural2009 78]. [cite:@Fig:yellowBook] shows the cover of the first issue.
 
 #+CAPTION: The cover of the inaugural issue of /The Yellow Book/
 #+LABEL: fig:yellowBook
@@ -251,7 +251,7 @@ We owe the expansion of color words in part to the industrial revolution, and to
 That changed in 1856, when William Henry Perkin accidentally synthesized from coal tar a substance he would call mauveine, the first aniline dye [cite:@finlay2004color 354].
 While this may seem like a footnote in industrial chemistry, Perkin was hailed as a folk-hero: upon his arrival in New York, the /New York Herald/ ran an article with the headline: "Coal Tar Wizard, Just Arrived in Country, Transmuted Liquid Dross to Gold" [cite:@garfield14_mauve 4]. Once mauvine entered mass production, the color /mauve/ took on such popularity that the 1860s were termed /the mauve decade/.[fn::See @finlay2004color. Strangely, this is not the /mauve decade/ in America, as Thomas Beer terms it in the literary-social history /The Mauve Decade/, which chiefly deals with the 1890s [cite:@beer1926mauve].]
 
-The color word /mauve/ tracks the popularity of the dye. [[https://books.google.com/ngrams/graph?content=mauve&year_start=1800&year_end=2019&corpus=27&smoothing=3][A Google Ngrams search of the English Fiction corpus for /mauve/]], shown in [@fig:mauve-gb] shows a dramatic increase of the word's frequency after 1860. After 1870, however, the word (as, presumably, the color) falls into disfavor from which it won't recover until the 20th Century.
+The color word /mauve/ tracks the popularity of the dye. [[https://books.google.com/ngrams/graph?content=mauve&year_start=1800&year_end=2019&corpus=27&smoothing=3][A Google Ngrams search of the English Fiction corpus for /mauve/]], shown in [cite:@fig:mauve-gb] shows a dramatic increase of the word's frequency after 1860. After 1870, however, the word (as, presumably, the color) falls into disfavor from which it won't recover until the 20th Century.
 
 #+CAPTION: Proportions of the color /mauve/ in the Google Books corpus of English Fiction, in the 19th Century
 #+LABEL: fig:mauve-gb
@@ -296,7 +296,7 @@ Woolf juxtaposes the pragmatism of "politicians and business men" with children 
 ...When I first went into Sickert's show, said one of the diners, I became completely and solely an insect—all eye. I flew from colour to colour, from red to blue, from yellow to green. Colours went spirally through my body lighting a flare as if a rocket fell through the night and lit up greens and browns, grass and trees, and there in the grass a white bird. Colour warmed, thrilled, chafed, burnt, soothed, fed and finally exhausted me." [cite:@woolf1934walter 9]
 #+end_quote
 
-Many of Sickert's works contain exceptionally bright colors, straight from the tube, they often seem. His choice of subject matter often tells a story, not unlike those of a novelist. Like Edward Hopper, and other painters of the decades to follow, the luminosities of his paintings contrast sharply with a subject matter that can portray deep loneliness, ennui, regret, or other subtle forms of discontent. In fact, these are often the titles of his paintings: see his /Ennui/ (1913) in [@fig:ennui], /Despair/ (1908), or /What Shall We Do for the Rent?/.
+Many of Sickert's works contain exceptionally bright colors, straight from the tube, they often seem. His choice of subject matter often tells a story, not unlike those of a novelist. Like Edward Hopper, and other painters of the decades to follow, the luminosities of his paintings contrast sharply with a subject matter that can portray deep loneliness, ennui, regret, or other subtle forms of discontent. In fact, these are often the titles of his paintings: see his /Ennui/ (1913) in [cite:@fig:ennui], /Despair/ (1908), or /What Shall We Do for the Rent?/.
 
 #+CAPTION: Walter Sickert, /Ennui/, 1913
 #+LABEL: fig:ennui
@@ -341,7 +341,7 @@ In contrast to Mr. Paunceforte, who paints to create a pleasant, "elegant" paint
 
 Here again, textual colors are the vectors along which visual associations take place: transitions from one thought to the next. They enact a persistence of vision in prose. When Mrs. Ramsay imagines her son "all red and ermine on the Bench,"[fn::The court dress of Lord Justice Clerks, among other judges, is red and ermine.] that color is repeated in, or prompted by, the reddish-brown stockings that she knits for her son, only a paragraph later. Woolf suggests, then, through this chromatic association, that she knits him these stockings as an unconscious way of preparing him for a future career that she imagines for him. But the key is that she imagines /him/ red, not his clothes, suggesting that this color impressionistically overtakes the image. It is a blur, a composite image, as in a dream.
 
-When we examine the incidence of colors along the narrative time of the novel, as in [@fig:lighthouseNarrativeTime] with the x-axis representing ten sections from the novel's beginning to its end, we see an overview of its narrative-descriptive arc.
+When we examine the incidence of colors along the narrative time of the novel, as in [cite:@fig:lighthouseNarrativeTime] with the x-axis representing ten sections from the novel's beginning to its end, we see an overview of its narrative-descriptive arc.
 
 #+CAPTION: Colors in /To the Lighthouse/, plotted in narrative time. For an interactive plot, see [[./includes/lighthouse.html]].
 #+LABEL: fig:lighthouseNarrativeTime
@@ -403,7 +403,7 @@ Katherine Mullin notes that the heightened sensory detail of young Stephen's nar
 #+LABEL: fig:portraitNarrativeTime
 [[./images/portrait-narrative-time.png]]
 
-[@Fig:portraitNarrativeTime] shows the proportions of color in /Portrait/, plotted in narrative time. There are four main areas of color concentration here. The beginning, where Stephen is young and full of strong sense-impressions, exhibits the highest concentration. The next is at the halfway point of the novel (point 5). This is a segment from Father Arnall's hell sermon, a winding, verbose speech about the horrors of hell, here annotated with $CM_X$:
+[cite:@Fig:portraitNarrativeTime] shows the proportions of color in /Portrait/, plotted in narrative time. There are four main areas of color concentration here. The beginning, where Stephen is young and full of strong sense-impressions, exhibits the highest concentration. The next is at the halfway point of the novel (point 5). This is a segment from Father Arnall's hell sermon, a winding, verbose speech about the horrors of hell, here annotated with $CM_X$:
 
 #+BEGIN_ANNOTATED
 #+BEGIN_HTML
@@ -476,7 +476,7 @@ If you call green an intermediary colour between blue and yellow, then you must 
 Wittgenstein then asks whether a "reddish green" or other color combinations might be difficult to imagine, and why. He posits that the category of green is what prevents him from imagining "bluish yellow," since, he says, "for me, green is one special way-station on the coloured path from blue to yellow..." [cite:@wittgenstein1978remarks 22e]. This is an important question, with many implications. First, what colors are there which have greater primacy among speakers of English? And more generally: why do linguistic categories—color words and their weights in our language—transform our imaginative processes?[fn:: I say "our" here with some hesitation, since I suppose an affinity with others who might experience color terminology in the same way, but recognize that a painter, with years of experience mixing colors, might imagine these terms differently, as would, most likely, a speaker of a language very different from English. Still differently would a blind person imagine these colors.]
 
 Saija Kerttula calls this the /derivational productivity/ of a color word, and lists a number of ways that a color term may be derived [cite:@kerttula2002english 89]. Adding /-ish/ is one, but there is also /-ied,/ as in /rubied/, /-y/ as in /bluey/, /-ate/ as in /roseate/, /off-/ as in /off-white/, and many others. For the sake of simplicity, however, let's stick with the most common, /-ish/, and attempt to test this question of Wittgenstein's, by examining patterns in literary data.
-To test this, I constructed a matrix of color expressions from the $CM_X$ color map,[fn::Described in more detail in the $CM_X$ section below, @sec:xkcd.] where one word ends in /-ish./ The resulting matrix is shown here in [@fig:ishMatrix].
+To test this, I constructed a matrix of color expressions from the $CM_X$ color map,[fn::Described in more detail in the $CM_X$ section below, @sec:xkcd.] where one word ends in /-ish./ The resulting matrix is shown here in [cite:@fig:ishMatrix].
 
 #+INCLUDE: "01-colors/includes/ishMatrix.html" export html
 
@@ -506,7 +506,7 @@ But not all color words are metaphors, of course, and in other cases, the relati
 
 To measure this, I designed the experiment below, in order to find out what objects are most often described as /blue/, /red/, and so on. I wanted to quantify the gravitational pull of colors with their associated objects. I use [[http://storage.googleapis.com/books/ngrams/books/datasetsv3.html][data from the Google Books Ngram Viewer project]], hereafter $C_{NG}$ [cite:@googleNgrams]. Google Books provides n-gram (sequences of words of length $n$) data for the books in its vast collection, and the most recent version, 20200217, provides n-grams tagged according to their parts of speech. I use the data subset English Fiction, which, although not strictly relegated to the time and place this I am studying here, is still useful to determine broad patterns.[fn::I describe this corpus in greater detail in the appendix.] There, I query for patterns /ADJ NOUN/, where /ADJ/ is a color word, tagged as an adjective, and /NOUN/ is any noun which follows. The list of color words I derive from Berlin and Kay, but augment with several auxiliary color words, for comparison [cite:@berlin1991basic].
 
-[@Fig:associations] shows word cloud visualizations for each color word and its most commonly collocated nouns.[fn::Word clouds, or tag clouds, are a relatively recently popularized technique of textual data visualization, which depicts the frequency of words through typeface sizes. See @viegas2008timelines for a history of the visualization that traces it to Soviet Constructivism.] Surprisingly, the most frequent collocations are not always the most cliché: /green grass/ and /green leaves/ are of course present, but are not as frequent as /green eyes/. /Blue sky/ is present, and /red blood/, but are subordinate to /hair/ and /eyes/.
+[cite:@Fig:associations] shows word cloud visualizations for each color word and its most commonly collocated nouns.[fn::Word clouds, or tag clouds, are a relatively recently popularized technique of textual data visualization, which depicts the frequency of words through typeface sizes. See @viegas2008timelines for a history of the visualization that traces it to Soviet Constructivism.] Surprisingly, the most frequent collocations are not always the most cliché: /green grass/ and /green leaves/ are of course present, but are not as frequent as /green eyes/. /Blue sky/ is present, and /red blood/, but are subordinate to /hair/ and /eyes/.
 
 #+INCLUDE: "01-colors/includes/wordcloud.html" export html
 
@@ -514,7 +514,7 @@ To measure this, I designed the experiment below, in order to find out what obje
 #+LABEL: fig:associations
 [[./images/dummy.png]]
 
-Some overall trends are apparent in these words, which may be illuminated by categorizing them. Using WordNet, the relational lexical database, I am able to identify hypernyms for most of these words, and group the words according to these hypernyms [cite:@miller1998wordnet]. The hypernym treemap for red, for instance, shown in [@fig:redHypernyms], shows that a good proportion of the words are body parts (they have the hypernym synset /body_part.n.01/), or "coverings" such as hair (/covering.n.01/). A crucial similarity between these bodily descriptors, from /red hair/, the most frequent collocation, to /red eyes/, /red lips/, and /red face/, is that they describe exceptions, or aberrations, from their usual states. /Red hair/ (actually orange, as I will show) is among the least common natural hair colors. /Red eyes/ describe diseased or depigmentized eyes, of humans or other animals. And /red lips/ are lips that are unusually red: whether blood-filled through vigor, or excitement, or through the use of cosmetics.
+Some overall trends are apparent in these words, which may be illuminated by categorizing them. Using WordNet, the relational lexical database, I am able to identify hypernyms for most of these words, and group the words according to these hypernyms [cite:@miller1998wordnet]. The hypernym treemap for red, for instance, shown in [cite:@fig:redHypernyms], shows that a good proportion of the words are body parts (they have the hypernym synset /body_part.n.01/), or "coverings" such as hair (/covering.n.01/). A crucial similarity between these bodily descriptors, from /red hair/, the most frequent collocation, to /red eyes/, /red lips/, and /red face/, is that they describe exceptions, or aberrations, from their usual states. /Red hair/ (actually orange, as I will show) is among the least common natural hair colors. /Red eyes/ describe diseased or depigmentized eyes, of humans or other animals. And /red lips/ are lips that are unusually red: whether blood-filled through vigor, or excitement, or through the use of cosmetics.
 
 #+INCLUDE: "01-colors/includes/red.html" export html
 
@@ -538,7 +538,7 @@ To illustrate this phenomenon, here is a passage from /Jacob's Room/, Virginia W
 The tree had fallen, though it was a windless night, and the lantern, stood upon the ground, had lit up the still green leaves and the dead beech leaves. It was a dry place. [cite:@woolf08_jacob 21]
 #+END_QUOTE
 
-Here, /green leaves/ describes an exception to the rule in which living leaves are green, and dead leaves are brown. But this theory remains manifest upon closer examination of some of the bigrams of [@fig:associations] as they appear in $C_{PG}$.[fn::[[./includes/green-leaves.html][A full concordance is available here.]]] There, the phrase /green leaves/ is rarely unaccompanied by an additional modifier. Leaves are /light green/, /emerald-green/, or /sea-green/: specificities that take color knowledge, via visual abberation, into the realm of color description.
+Here, /green leaves/ describes an exception to the rule in which living leaves are green, and dead leaves are brown. But this theory remains manifest upon closer examination of some of the bigrams of [cite:@fig:associations] as they appear in $C_{PG}$.[fn::[[./includes/green-leaves.html][A full concordance is available here.]]] There, the phrase /green leaves/ is rarely unaccompanied by an additional modifier. Leaves are /light green/, /emerald-green/, or /sea-green/: specificities that take color knowledge, via visual abberation, into the realm of color description.
 
 As another example, in James Joyce's 1914 short story collection /Dubliners/, the boy protagonist of "An Encounter" describes trees along the canal bridge: "all the branches of the tall trees which lined the mall were gay with little light green leaves and the sunlight slanted through them on to the water" [cite:@dublinersGutenberg]. The leaves are /light green/---they're described with a level of specificity calculated to produce a mental image.
 
@@ -562,7 +562,7 @@ It may seem as if this argument—that color descriptions are visual anomalies�
   :CUSTOM_ID: sec:experiment
   :END:
 
-I arrive at the literary-historical trends in textual color, shown in [@fig:proportionsByDOB], and the more granular findings described below, through a complex process of modeling visual information. This process is not just a technical detail, I must reiterate, but is coextensive with my arguments about modernist literature, since it highlights many of the problems with visual description with which modernism continually wrestles.
+I arrive at the literary-historical trends in textual color, shown in [cite:@fig:proportionsByDOB], and the more granular findings described below, through a complex process of modeling visual information. This process is not just a technical detail, I must reiterate, but is coextensive with my arguments about modernist literature, since it highlights many of the problems with visual description with which modernism continually wrestles.
 
 In summary, the process involves a machine-learning model, originally designed to detect named entities (names, organizations, products, and so on), which has been taught to recognize colors words, complex color expressions, visual descriptions, and things or situations that evoke color. Since it must be fed a huge amount of training data, I provide several word-color maps, which store relations between color expressions like /fuchsia rose/  and #C74375, the hexadecimal representation of the color in RGB (red, green, blue) space. These maps are combined and weighted according to their individual strengths and weaknesses. I conduct the training using a quasi-supervised, or human-in-the-loop method, in which the model asks me to decide about edge-cases for which it has low confidence. I answer, the model is improved, and the process continues. Ultimately I create a model which imagines a wide category of objects, abstractions, verbs, and adjectives.
 
@@ -721,7 +721,7 @@ Or, the dot product of the two vectors, normalized by the product of their two $
 #+LABEL: fig:cm-vecs
 [[./images/cm-vec-comparison.png]]
 
-[@Fig:cm-vecs] shows a series of word vectors chosen to illustrate the vector similarity with the average vectors of each color map. $CM_P$, the Pantone map, has a higher similarity to positive, marketable-sounding words, and words evoking leisure, whereas $CM_X$ has a higher similarity for /snot/, a decidedly unmarketable word, discussed later, and Jaffer's aggregation of $CM_S$, $CM_R$, and $CM_M$ shows a slightly higher similarity for /blood/, also not a decidedly marketable term.
+[cite:@Fig:cm-vecs] shows a series of word vectors chosen to illustrate the vector similarity with the average vectors of each color map. $CM_P$, the Pantone map, has a higher similarity to positive, marketable-sounding words, and words evoking leisure, whereas $CM_X$ has a higher similarity for /snot/, a decidedly unmarketable word, discussed later, and Jaffer's aggregation of $CM_S$, $CM_R$, and $CM_M$ shows a slightly higher similarity for /blood/, also not a decidedly marketable term.
 
 Given these tendencies, I weight these color maps as described in [@tbl:color-mappings], and combine them into one large master color mapping, which will become the basis of the imagination model below.
 
@@ -746,7 +746,7 @@ However, syntactic proximity is preferable to raw proximity itself, and so I dev
 Next morning they found themselves in a dangerous rock studded sea with a small island upon their starboard quarter. It was girdled with high granite cliffs of a reddish hue, and slopes of bright green grassland lay above them. [cite:@doyle1906sir 250]
 #+END_QUOTE
 
-The syntax dependency graph of the clause, "slopes of bright green grassland lay above them" is parsed as shown in [@fig:grassland]:
+The syntax dependency graph of the clause, "slopes of bright green grassland lay above them" is parsed as shown in [cite:@fig:grassland]:
 
 #+CAPTION: Syntax dependency parse of "slopes of bright green grassland lay above them"
 #+LABEL: fig:grassland
@@ -776,7 +776,7 @@ However, modifiers are not always direct descendants of their modified words, si
 5. All other words nouns and adjectives are now candidate $W_T$s, and are assigned a score: $1/i$ where $i$ is the distance, in number of tokens, from $W_C$. Thus, it gets a score of 1 if it is a directly adjacent word, or 0.5 if it is two tokens away.
 6. These scores are then averaged for each token that shares the same lemma.
 
-The resulting data structure looks like [@fig:grass-proximity-model-pie], for /grass/:
+The resulting data structure looks like [cite:@fig:grass-proximity-model-pie], for /grass/:
 
 #+INCLUDE: "01-colors/deep-imaginer/charts/grass-proximity-model-pie.html" export html
 
@@ -793,7 +793,7 @@ Or, for all colors, weighting and summing each component of RGB space, and then 
 
 This model works reasonably well—that is, meets our modern English-speaking expectations of the archetypal colors of many nouns. But there are quite a few notable differences. One is the principle of color description exceptionalism I outline above: color descriptions are anomalies. Although sheep are typically white, and black sheep comparatively rare, the probability of encountering the phrase /black sheep/ in British fiction is about five times greater than that of encountering /white sheep/, according to bigram data from $C_{NG}$.
 
-[@Fig:sheep-proximity-model-pie] shows a portion of the model's inferences for /sheep/.
+[cite:@Fig:sheep-proximity-model-pie] shows a portion of the model's inferences for /sheep/.
 
 #+INCLUDE: "01-colors/deep-imaginer/charts/sheep-proximity-model-pie.html" export html
 
@@ -811,7 +811,7 @@ There is a very particular quality of light in this story: it is not a categoric
 
 Bertha sees the fruit in this bowl also with an acute sense of newness: not quite estrangement, in Shklovsky's formulation, but a newly intimate familiarization. "There were tangerines and apples stained with strawberry pink. Some yellow pears, smooth as silk; some white grapes covered with a silver bloom and a bug cluster of purple ones. These last she had bought to tone in with the new dining-room carpet" (146).
 
-"Apples stained with strawberry pink," is an uncommon metaphor for apples, which $M_P$ models as in [@fig:apples-proximity-model-pie], and for which the blended color is #AC883B.
+"Apples stained with strawberry pink," is an uncommon metaphor for apples, which $M_P$ models as in [@cite:fig:apples-proximity-model-pie], and for which the blended color is #AC883B.
 
 #+INCLUDE: "01-colors/deep-imaginer/charts/apple-proximity-model-pie.html" export html
 
@@ -854,7 +854,7 @@ The resulting algorithm may be summarized as follows:
 5. Average all these colors proportionally, using the algorithm described above.
 6. Return a pairing of a word with a corresponding RGB hex value.
 
-[@Fig:imageBasedColorBlock] is a sample of the model's inferences for three fairly concrete words, /wheat/, /butterfly/, and /tennis/, and with three more abstract words, /deposit/, /pure/, and /travelling./ I've included a few images used in the creation of each color, to allow for some model introspection.
+[cite:@Fig:imageBasedColorBlock] is a sample of the model's inferences for three fairly concrete words, /wheat/, /butterfly/, and /tennis/, and with three more abstract words, /deposit/, /pure/, and /travelling./ I've included a few images used in the creation of each color, to allow for some model introspection.
 
 # This is nice to have in HTML, since I can style it, change the font, and so on.
 # But I'm worried that it's affecting the load time, so I'm substituting it with an image, for now.
@@ -870,7 +870,7 @@ A broader view of this model, shown below, gives one a sense of a few trends. Fi
 
 #+INCLUDE: "01-colors/includes/colorBlocks.html" export html
 
-When projected in HSL space, certain patterns emerge, as well, as shown in [@fig:lighthouseHSL].
+When projected in HSL space, certain patterns emerge, as well, as shown in [cite:@fig:lighthouseHSL].
 
 # TODO: Describe trends here.
 
@@ -1053,7 +1053,7 @@ What's important to recall here is that this purple is closer to how the sea /ap
 
 ** Towards Imagining Texts: Aggregating Color Mappings
 
-So far, we have encoded color mappings $CM$, which feed into color inference models $M$, which in turn feed into named entity recognition models $NER$, as illustrated in [@fig:flowchart] below.
+So far, we have encoded color mappings $CM$, which feed into color inference models $M$, which in turn feed into named entity recognition models $NER$, as illustrated in [cite:@fig:flowchart] below.
 
 #+BEGIN_HTML
   <div class="mermaid">
@@ -1073,7 +1073,7 @@ We now move to the results of the experiments which this model enables. I use th
 
 * Results and Discussion
 
-We have already seen, in [@fig:proportionsByDOB], the proportions of color in literature, of this period, according to the author's date of birth. Those proportions, when viewed according to the work's date of original publication, are similar, as shown in [@fig:proportionsByPubYear]. Overall, there is a steady rise in the use of color words, in fiction and poetry, from 1880–1920. Outliers here include the "yellow nineties," where the use of color expressions is unusually high, 1910, when "human character changed," and 1920. There is a sharp decline around 1914, around the time of the outbreak of the first world war, but these proportions continue to rise, after.
+We have already seen, in [cite:@fig:proportionsByDOB], the proportions of color in literature, of this period, according to the author's date of birth. Those proportions, when viewed according to the work's date of original publication, are similar, as shown in [cite:@fig:proportionsByPubYear]. Overall, there is a steady rise in the use of color words, in fiction and poetry, from 1880–1920. Outliers here include the "yellow nineties," where the use of color expressions is unusually high, 1910, when "human character changed," and 1920. There is a sharp decline around 1914, around the time of the outbreak of the first world war, but these proportions continue to rise, after.
 
 #+CAPTION: Color proportions in literature, by date of publication
 #+LABEL: fig:proportionsByPubYear
@@ -1142,7 +1142,7 @@ One of the first questions I asked of this data set was simply: what is the most
 #+NAME: fig:genres
 [[./images/color-box.png]]
 
-Astoundingly, the color ranking shown below in [@fig:genres] follows the Berlin and Kay hierarchy from [@eq:berlinKay]: white is the foremost, then black, then red, and so on. This adds some evidence to the universalist view of the primacy of certain colors. But again, my object here is not to settle any linguistic debates, but to understand more of how color operates in literature.
+Astoundingly, the color ranking shown below in [cite:@fig:genres] follows the Berlin and Kay hierarchy from [@eq:berlinKay]: white is the foremost, then black, then red, and so on. This adds some evidence to the universalist view of the primacy of certain colors. But again, my object here is not to settle any linguistic debates, but to understand more of how color operates in literature.
 
 # TODO: across narrative time
 
@@ -1209,7 +1209,7 @@ fell in love with things as well as people. He would fall in love with a sea-gul
 
 This attention to color is that which we expect to read of lovers, in love stories.
 
-But we should remember that love stories are not disproportionately /bright/---that is, they don't have more numbers of colors, simply more unique colors. If we quantify the total proportions of colors, we see a different story. [@Fig:lcsh] shows a subset of base color proportions for each LCSH. Here, /psychological fiction/ is the most prominent, overall, although largely due to the incidence of /black/ and /white/. The subject heading /psychological fiction/ contains no fewer than ten works from Conrad, two each from Wells, Stevenson, Sinclair, Lawrence, Gissing, and individual novels from Woolf, West, and Maugham. James Joyce's /Ulysses/ is also notably present here. [fn::Conrad's novels in this category are /Heart of Darkness/, /The Secret Sharer/, /An Outcast of the Islands,/ /Almayer's Folly,/ /Chance/, /Lord Jim/, /Victory/, and /The Nigger of the Narcissus/. Gissing's are /New Grub Street/ and /The Odd Women/. Lawrence's are /Women in Love/ and /The Lost Girl/, Stevenson's are /The Strange Case of Dr. Jekyll and Mr. Hyde/ and /The Master of Ballantrae/. Wells's are /The Secret Places of the Heart/ and /The Invisible Man/. Sinclair's are /Life and Death of Harriett Frean/ and /The Three Sisters/. Also included are Joyce's /Ulysses/, David Lindsay's /A Voyage to Arcturus/, Lucas Malet's /The History of Sir Richard Calmady/, Maugham's /The Moon and Sixpense/, Neil Monro's /Bud: a Novel/, Wests's /The Return of the Soldier/, and Woolf's /Jacob's Room/.]
+But we should remember that love stories are not disproportionately /bright/---that is, they don't have more numbers of colors, simply more unique colors. If we quantify the total proportions of colors, we see a different story. [cite:@Fig:lcsh] shows a subset of base color proportions for each LCSH. Here, /psychological fiction/ is the most prominent, overall, although largely due to the incidence of /black/ and /white/. The subject heading /psychological fiction/ contains no fewer than ten works from Conrad, two each from Wells, Stevenson, Sinclair, Lawrence, Gissing, and individual novels from Woolf, West, and Maugham. James Joyce's /Ulysses/ is also notably present here. [fn::Conrad's novels in this category are /Heart of Darkness/, /The Secret Sharer/, /An Outcast of the Islands,/ /Almayer's Folly,/ /Chance/, /Lord Jim/, /Victory/, and /The Nigger of the Narcissus/. Gissing's are /New Grub Street/ and /The Odd Women/. Lawrence's are /Women in Love/ and /The Lost Girl/, Stevenson's are /The Strange Case of Dr. Jekyll and Mr. Hyde/ and /The Master of Ballantrae/. Wells's are /The Secret Places of the Heart/ and /The Invisible Man/. Sinclair's are /Life and Death of Harriett Frean/ and /The Three Sisters/. Also included are Joyce's /Ulysses/, David Lindsay's /A Voyage to Arcturus/, Lucas Malet's /The History of Sir Richard Calmady/, Maugham's /The Moon and Sixpense/, Neil Monro's /Bud: a Novel/, Wests's /The Return of the Soldier/, and Woolf's /Jacob's Room/.]
 
 #+CAPTION: Base Color Proportions by LCSH
 #+LABEL: fig:lcsh
@@ -1217,7 +1217,7 @@ But we should remember that love stories are not disproportionately /bright/---t
 
 # One of the most recognizable works in this group is Conrad's /Heart of Darkness/, which has a color word in its title.
 
-[@Tbl:lcsh-colors] shows that the LCSH is somewhat hierarchical: double hyphens separate time periods (19th century), locations (England), and genres (Fiction). Genres also include "drama," "poetry," and "juvenile fiction." I split out these commonly-occurring genre designations, programmatically, to form a new metadata column called "genre". Then, I compute the same proportions of base colors, and group by these genres. [@Fig:genres] shows the result of the grouping based on this genre inference.
+[@Tbl:lcsh-colors] shows that the LCSH is somewhat hierarchical: double hyphens separate time periods (19th century), locations (England), and genres (Fiction). Genres also include "drama," "poetry," and "juvenile fiction." I split out these commonly-occurring genre designations, programmatically, to form a new metadata column called "genre". Then, I compute the same proportions of base colors, and group by these genres. [cite:@Fig:genres] shows the result of the grouping based on this genre inference.
 
 #+CAPTION: Base Color Proportions By Genre
 #+LABEL: fig:genres

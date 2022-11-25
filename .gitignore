@@ -12,3 +12,4 @@
 .direnv/
 .shake/
 dest/
+**/model.json
