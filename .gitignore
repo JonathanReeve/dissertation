@@ -13,3 +13,4 @@
 .shake/
 dest/
 **/model.json
+templates/*.html
