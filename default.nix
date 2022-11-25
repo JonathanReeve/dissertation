@@ -14,6 +14,7 @@ let
           lucid clay shake regex-compat text-regex-replace with-utf8
           pandoc
           pandoc-crossref
+          tagsoup
           warp wai-app-static # Dev webserver
         ]);
 in
