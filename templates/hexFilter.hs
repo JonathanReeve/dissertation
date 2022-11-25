@@ -15,7 +15,6 @@ makeColor :: Inline -> Inline
 makeColor (Str s) = if s /= replaceHexes s
   then RawInline "html" (replaceHexes s)
   else Str s
-
 makeColor x = x
 
 -- Replace hex colors that look like #FFA8B5 with background colors to make them more readable.

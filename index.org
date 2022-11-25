@@ -4,36 +4,6 @@
 
 **WARNING**: This is a preview of my dissertation, and represents its current state, which is very much a work-in-progress.
 
-** Word counts
-
-#+BEGIN_SRC sh :exports results
-wc -w 00-introduction/introduction.org 01-colors/ch-1.org 02-shapes/ch-2.org 03-images/ch-3.org
-#+END_SRC
-
-#+RESULTS:
-|   515 | 00-introduction/introduction.org |
-| 33052 | 01-colors/ch-1.org               |
-| 14295 | 02-shapes/ch-2.org               |
-| 14823 | 03-images/ch-3.org               |
-| 62685 | total                            |
-
-** Revisions
-
-Here are the last few revisions, of which this draft is the latest.
-
-#+BEGIN_SRC sh :exports results
-git log --pretty --format='%h %ai' | head -n 5
-#+END_SRC
-
-#+RESULTS:
-| d89f440 | 2022-11-16 | 14:05:37 | -500 |
-| 1d6ac3f | 2022-11-13 | 16:43:02 | -500 |
-| 1ac20b3 | 2022-11-13 | 16:35:53 | -500 |
-| 327db46 | 2022-10-21 | 20:47:38 | -400 |
-| 6aa471a | 2022-10-19 | 15:29:13 | -400 |
-
-
-
 * Abstract
 
 Abstract here.
