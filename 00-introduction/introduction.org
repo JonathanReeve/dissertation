@@ -22,3 +22,22 @@ There is nothing quite as reductive as chronology, it must be conceded.
 By juxtaposing two paragraphs as historical artifacts, we are missing that A belongs to a certain romance genre, while B belongs to an artist-novel genre, in which aesthetic choices and visuality are necessarily foregrounded.
 
 * Technologies
+
+A number of software programs were prepared for this project, written in Python, Haskell, and using shell scripting languages.
+
+** The text itself
+The text of the dissertation text itself contains a number of innovations:
+
+ - A [[https://github.com/JonathanReeve/dissertation/blob/master/Shakefile.hs][Shakefile]] written in Haskell, for the [[https://shakebuild.com/][Shake build system]], which interfaces with Pandoc to convert plain text files to HTML, which I originally wrote in [[https://orgmode.org/][the org-mode text format]].
+ - [[https://github.com/JonathanReeve/dissertation/blob/master/Template.hs][A template]] written in [[https://chrisdone.com/posts/lucid/][Lucid]] and [[http://fvisser.nl/clay/][Clay]], Haskell domain-specific languages for HTML and CSS, which integrates [[https://edwardtufte.github.io/tufte-css/][Tufte-CSS]], [[https://mermaid-js.github.io/mermaid/#/][Mermaid]] diagram capability, and more.
+ - Custom Pandoc filters, written in Haskell: [[https://github.com/JonathanReeve/dissertation/blob/master/templates/hexFilter.hs][one for displaying color hex values]], used in Chapter 1, and [[https://github.com/JonathanReeve/dissertation/blob/master/templates/synsetFilter.hs][one for displaying WordNet synsets]], used in Chapter 2.
+
+This technological stack has been abstracted into the template project [[https://github.com/JonathanReeve/template-dissertation][template-dissertation]], a standards-focused, HTML-first dissertation build system.
+
+** Submodules
+- color-word-analyzer: a CLI program and web app to analyze color in a text
+- custom-ngrams-search: a framework for searching Google NGrams data for custom textual patterns
+- count-objects: software for counting objects in literary texts, using word sense disambiguation
+- description-detection: a program for probabilistically detecting literary description
+
+* Corpus
