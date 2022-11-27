@@ -73,6 +73,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         csl = "templates/modern-language-association.csl"
         template = "templates/template.html"
         prefatoryTemplate = "templates/prefatoryTemplate.html"
+        figuresList = "templates/template.html"
 
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
@@ -84,7 +85,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
 
     "dest/index.html" %> \f -> do
         let source = destToSource f
-        need [ source, template ]
+        need [ source, template, prefatoryTemplate, figuresList ]
         -- Run all org blocks from index.org, to automatically update word counts and so on.
         -- cmd_ "emacs" ["--batch", "--load", "ob", "--load", "ob-shell", "--eval",
         --              "(let ((org-confirm-babel-evaluate nil))(dolist (file command-line-args-left)" ++
