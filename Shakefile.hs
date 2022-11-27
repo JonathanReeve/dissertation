@@ -288,25 +288,20 @@ getFigures :: HtmlString -> [FigureTags]
 getFigures fileContents = map (takeWhile (~/= "</figure>")) $
   sections (~== "<figure>") $ parseTags fileContents
 
+-- | Gets chapter names and figures for each chapter
+-- Storing them in structured data 
 getChapterFigures :: (FilePath, HtmlString) -> ChapterFigures
 getChapterFigures (path, fileContents) = ChapterFigures path title figs where
   title = head $ innerHtml "title" fileContents
   figs = map figuresData $ getFigures fileContents
 
+-- Takes parsed Html (Tags list) and returns structured data Figure
 figuresData :: FigureTags -> Figure
 figuresData figTags = Figure (figureCaption figTags) (figureId figTags) where
   figureId fig = fromAttrib "id" $ head $ filter (~== "<img>") fig
   figureCaption fig = renderTags $ takeWhile (~/= "</figcaption>") $ tail $ dropWhile (~/= "<figcaption>") fig
 
-findAllFigures :: FilePath -> IO ()
-findAllFigures fn = do
-  fileContents <- mapM readFile chapters
-  let pathsAndContents = zip chapters fileContents
-  let chapterFigures = map getChapterFigures pathsAndContents
-  let chapterFiguresFormatted = map formatChapterFigures chapterFigures
-  LTIO.writeFile fn $ LT.concat chapterFiguresFormatted
-
--- -- | Takes structured data about chapters and figures and returns HTML formatted text
+-- | Takes structured data about chapters and figures and returns HTML formatted text
 formatChapterFigures :: ChapterFigures -> LT.Text
 formatChapterFigures cf = Lucid.renderText $ ul_ $ title >> figs where
   title = li_ $ toHtml $ chapterTitle cf
@@ -318,3 +313,12 @@ formatChapterFigures cf = Lucid.renderText $ ul_ $ title >> figs where
       url = T.pack $
         drop 5 $ -- Remove "dest/"
         path ++ "#" ++ figId fig
+
+-- | The main IO function for reading all the chapters and finding all the figures
+findAllFigures :: FilePath -> IO ()
+findAllFigures fn = do
+  fileContents <- mapM readFile chapters
+  let pathsAndContents = zip chapters fileContents
+  let chapterFigures = map getChapterFigures pathsAndContents
+  let chapterFiguresFormatted = map formatChapterFigures chapterFigures
+  LTIO.writeFile fn $ LT.concat chapterFiguresFormatted
