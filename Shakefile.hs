@@ -134,8 +134,9 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
 
     "dest/01-colors/ch-1.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "01-colors/images/*"
-                                       , "assets/*/*"
-                                       , "01-colors/includes/*" ]
+                                       , "01-colors/includes/*"
+                                       , "assets/*/*" -- Global assets
+                                       ]
         liftIO $ print assets
         let source = destToSource f
         let outAssets = map ("dest/" <>) assets
@@ -170,6 +171,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
 
     "dest/02-shapes/ch-2.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "02-shapes/images/*"
+                                       , "02-shapes/includes/*"
                                        , "assets/*/*"
                                        ]
         liftIO $ print assets
@@ -206,10 +208,10 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     "dest/03-images/ch-3.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "03-images/images/*"
                                        , "assets/*/*"
-                                       , "includes/*"
+                                       , "03-images/includes/*"
                                        ]
-        liftIO $ print assets
         let outAssets = map ("dest/" <>) assets
+        liftIO $ print outAssets
         let source = destToSource f
             filters = [ "templates/PandocSidenote.hs"
                       , "templates/synsetFilter.hs"
