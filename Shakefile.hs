@@ -206,6 +206,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     "dest/03-images/ch-3.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "03-images/images/*"
                                        , "assets/*/*"
+                                       , "includes/*"
                                        ]
         liftIO $ print assets
         let outAssets = map ("dest/" <>) assets
