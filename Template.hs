@@ -19,10 +19,9 @@ prefatoryPageHtml = do
       meta_ [ name_ "dcterms.date", content_ "$date-meta$" ]
       title_ "$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$"
       style_ [ L.type_ "text/css" ] $ C.render css
-      -- Print styling argh
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/latex.css" ]
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/tufte.css" ]
-      script_ [ src_ "/03-colors/includes/plotly-latest.min.js" ] T.empty
+      -- Print styling argh
       style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
     body_ [ class_ "prefatory" ] $ do
       article_ $ do
@@ -49,11 +48,7 @@ prefatoryPageHtml = do
         L.main_ $ do
           "$body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
       footer_ $ do
-        script_ [ src_ "https://polyfill.io/v3/polyfill.min.js?features=es6" ] T.empty
-        script_ [ id_ "MathJax-script" , async_ ""
-                , src_ "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" ] T.empty
-        script_ [src_ "https://hypothes.is/embed.js"] T.empty
-        script_ [ src_ "includes/custom.js" ] T.empty
+        script_ [ src_ "/assets/MathJax/es5/tex-chtml.js" ] T.empty
 
 pageHtml :: Html ()
 pageHtml = do
@@ -65,10 +60,11 @@ pageHtml = do
       meta_ [ name_ "dcterms.date", content_ "$date-meta$" ]
       title_ "$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$"
       style_ [ L.type_ "text/css" ] $ C.render css
-      -- Print styling argh
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/latex.css" ]
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/tufte.css" ]
-      script_ [ src_ "/03-colors/includes/plotly-latest.min.js" ] T.empty
+      -- Include Plotly early
+      script_ [ src_ "/assets/plotly-2.16.1.min.js" ] T.empty
+      -- Print styling argh
       style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
     body_ $ do
       article_ $ do
@@ -86,17 +82,17 @@ pageHtml = do
             "$endif$ \n"
           "$body$ \n $for(include-after)$ \n $include-after$ \n $endfor$ \n"
       footer_ $ do
-        script_ [ src_ "https://polyfill.io/v3/polyfill.min.js?features=es6" ] T.empty
-        script_ [ id_ "MathJax-script" , async_ ""
-                , src_ "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" ] T.empty
+        -- script_ [ src_ "https://polyfill.io/v3/polyfill.min.js?features=es6" ] T.empty
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
+        -- LaTeX math
+        script_ [ src_ "/assets/MathJax/es5/tex-chtml.js" ] T.empty
         -- Flowcharts
-        script_ [ src_ "includes/mermaid.min.js" ] T.empty
+        script_ [ src_ "/assets/mermaid.min.js" ] T.empty
         -- Required for jquery-lazy
-        script_ [ src_ "includes/zepto.min.js" ] T.empty
+        script_ [ src_ "/assets/zepto.min.js" ] T.empty
         -- Try to lazy-load stuff
-        script_ [ src_ "includes/jquery.lazy.min.js" ] T.empty
-        script_ [ src_ "includes/custom.js" ] T.empty
+        script_ [ src_ "/assets/jquery.lazy.min.js" ] T.empty
+        script_ [ src_ "/assets/custom.js" ] T.empty
 
 
 css :: Css

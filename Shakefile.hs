@@ -262,6 +262,7 @@ serve port path = do
   putStrLn $ "Serving at http://localhost:" <> show port
   Warp.run port $ staticApp $ staticSiteServerSettings path
 
+-- | Automatically find figures and generate a list of chapters with their figures.
 type HtmlString = String
 type TagName = String
 type FigureTags = [Tag String]
