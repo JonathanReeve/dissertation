@@ -5,9 +5,24 @@ module Template where
 -- Template for dissertation HTML
 
 import Lucid as L
+import Lucid.Base ( makeAttribute )
 import Clay as C
 import Data.Text.Lazy as T
 import Data.Text.Lazy.IO as TIO
+import Data.Text ( Text )
+
+-- | Wrap exported includes in HTML so we can display them on their own.
+includeHtml :: Data.Text.Text -> Html ()
+includeHtml innerHtml = do
+  html_ [ vocab_ "https://schema.org/", typeof_ "Thesis" ]  $ do
+    head_ $ do
+      meta_ [ charset_ "utf-8" ]
+      meta_ [ name_ "viewport", content_ "width=device-width, initial-scale=1.0, user-scalable=yes" ]
+      meta_ [ name_ "author", content_ "Jonathan Reeve" ]
+      meta_ [ name_ "dcterms.date", content_ "$date-meta$" ]
+      -- Include Plotly early
+      script_ [ src_ "/assets/plotly-2.16.1.min.js" ] T.empty
+    body_ $ toHtmlRaw innerHtml
 
 prefatoryPageHtml :: Html ()
 prefatoryPageHtml = do
@@ -31,8 +46,10 @@ prefatoryPageHtml = do
           section_ [ id_ "titlePage" ] $ do
             h1_ [ class_ "title" ] "$title$"
             p_ [ class_ "subtitle" ] "$subtitle$"
-            p_ [ class_ "subtitle author" ] "$author$"
-            p_ [ class_ "purpose" ] "Submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy under the Executive Committee of the Graduate School of Arts and Sciences"
+            p_ [ class_ "subtitle author", property_ "author" ] "$author$"
+            p_ [ class_ "purpose", property_ "inSupportOf" ] $ do
+              span_ [ property_ "inSupportOf" ] "Submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy under the Executive Committee of the Graduate School of Arts and Sciences, "
+              span_ [ property_ "sourceOrganization" ] "Columbia University"
             p_ [ class_ "date" ] "2023"
           section_ [ id_ "copyrightPage" ] $ do
             p_ [ class_ "copyright" ] "© 2023 Jonathan Reeve. All Rights Reserved."
@@ -94,6 +111,11 @@ pageHtml = do
         script_ [ src_ "/assets/jquery.lazy.min.js" ] T.empty
         script_ [ src_ "/assets/custom.js" ] T.empty
 
+-- Schema.org RDFa
+vocab_, typeof_, property_ :: Data.Text.Text -> Attribute
+vocab_ = makeAttribute "vocab"
+typeof_ = makeAttribute "typeof"
+property_ = makeAttribute "property"
 
 css :: Css
 css = do

@@ -17,7 +17,7 @@ import WaiAppStatic.Types (StaticSettings)
 
 import Main.Utf8 (withUtf8)
 import Lucid
-import Template ( pageHtml, prefatoryPageHtml )
+import Template ( pageHtml, prefatoryPageHtml, includeHtml )
 
 import Text.HTML.TagSoup
 
@@ -102,10 +102,19 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        ]
 
 
-    ["dest//images/*", "dest//includes/*", "dest/assets/**"] |%> \f -> do
+    ["dest//images/*", "dest//includes/*.js", "dest/assets/**"] |%> \f -> do
         let source = dropDirectory1 f
         need [source]
         copyFileChanged source f
+
+    "dest//includes/*.html" %> \f -> do
+        -- wrap exported includes in HTML so they can be displayed on their own
+        let source = dropDirectory1 f
+        need [source]
+        contents <- readFileText source
+        let wrapped = includeHtml contents
+        writeFileChanged f $ T.unpack $ LT.toStrict $ Lucid.renderText wrapped
+
 
     "dest/00-introduction/introduction.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "00-introduction/images/*"
