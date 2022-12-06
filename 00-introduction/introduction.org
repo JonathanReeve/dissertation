@@ -76,7 +76,7 @@ Epistemologies of visual perception, then, are a subset of a larger discussion s
 * Method
 The method I'm using in this study is one of computational literary analysis.
  - Not quite yet a field of study
- - Cite some of the major works here (Underwood, Jockers, Piper, Stanford, etc.)
+ - Cite some of the major works here (Underwood, Jockers, Piper, etc.)
  - As opposed to Digital Humanities, digital literary studies
    - "digital" is more general than "computational": the latter is more action-oriented: information will be computed, rather than simply digitized.
 
@@ -93,9 +93,14 @@ A number of software programs were prepared for this project, written in Python,
 
 ** The text itself
 
-I made the unconventional decision to write this dissertation in HTML, rather than produce a Microsoft Word document or a PDF file. Since Word and PDF were created as proprietary formats, developed by Microsoft and Adobe, they were made to sell software, rather than contribute to the community. Furthermore, they are made to mimic the paper office, using a virtual 8.5 by 11 inch "page." Since this dissertation will not be printed, this constraint is unnecessary. HTML, on the other hand, is much more featureful markup language, allowing for interactive charts, hyperlinks, variable page width, and much, much more. Since it it always-already published on the Internet, it is much more easily archivable, readable with a wider variety of reading software (web browsers), and provides a more seamless experience for those using screen readers or other accessibility software.
+I made the unconventional decision to produce this dissertation in HTML, rather than produce a Microsoft Word document or a PDF file. Since Word and PDF were created as proprietary formats, developed by Microsoft and Adobe, they were made to sell software, rather than contribute to the community. Furthermore, they are made to mimic the paper office, using a virtual 8.5 by 11 inch "page." Since this dissertation will not be printed, this constraint is unnecessary. HTML, on the other hand, is much more featureful markup language, allowing for interactive charts, hyperlinks, variable page width, and much, much more. Since it it always-already published on the Internet, it is much more easily archivable, readable with a wider variety of reading software (web browsers), and provides a more seamless experience for those using screen readers or other accessibility software.
 
-This text is originally written in a feature-rich markup language called [[https://orgmode.org/][Org]], which compiles to HTML
+One of the most important features of this HTML format is the capability to embed interactive charts. An interactive chart, like
+
+There is a growing trend of so-called "digital dissertations"
+ -
+
+This text is originally written in a feature-rich markup language called [[https://orgmode.org/][Org]], which compiles to HTML.
 
 The text of the dissertation text itself contains a number of innovations:
 
@@ -112,3 +117,4 @@ This technological stack has been abstracted into the template project [[https:/
 - count-objects: software for counting objects in literary texts, using word sense disambiguation
 - description-detection: a program for probabilistically detecting literary description
 
+* Works Cited
