@@ -21,6 +21,72 @@ There is nothing quite as reductive as chronology, it must be conceded.
 
 By juxtaposing two paragraphs as historical artifacts, we are missing that A belongs to a certain romance genre, while B belongs to an artist-novel genre, in which aesthetic choices and visuality are necessarily foregrounded.
 
+* Introduction
+How were textual images conceived at the turn of the century? What properties did they possess, measurable or unmeasurable? In the famous preface to his 1897 novella /The Nigger of the Narcissus/, Joseph Conrad announces that his project is, "by the power of the written word," "to make you hear, to make you feel, ... before all, to make you /see/. That---and no more, and it is everything." I will argue that he means "seeing" literally: not merely in the metaphorical sense of seeing as understanding, but in the physiological sense, of seeing as a neuro-ocular process. Conrad explains that his task is to hold up, "before all eyes," a "passing phase of life ... to show its vibration, its colour, its form, and through its movement, its form, and its colour, reveal the substance of its truth" [cite:@conradPortableConrad2007 49]. This trinity---color, form, and vibration/movement---is so important to Conrad, or so conceptually slippery, that he allows it two iterations, even in an essay that stresses the importance of verbal economy. It is tempting to read these three words figuratively, to say that "colour," when describing "a passing phase of life" refers to an affective experience, rather than a hue, and that "form" refers to a conceptual structure, rather than the visual boundaries of physical objects. That would not be wrong. In fact, these, and more esoteric readings, are among the most typical.[fn:1]  But they overlook an equally valuable surface reading: that color and form are physiologically distinguishable ocular categories, corresponding to the rods and cones of retinal photoreceptors, and that they depend on light (vibrations in the visible electromagnetic spectrum) and a temporal dimension along which their movements may be perceived.
+
+# "The main and perhaps most passionate tenet of impressionism was the suppression of the author from the pages of his book. He must not comment; he must not narrate; he must present his impressions of his imaginary affairs as if he had been present at them [...] the author is invisible and almost unnoticeable and [...] his attempt has been, above all, to make you see." [cite:@ford1939march 840].
+
+The eye is more than just an adequate metaphor for the imagination of this period's writers. To understand modernism, one must first understand the image, along with its primary interface, and first image-processing neural apparatus, the eye. Images are most legible in the novels and poems of these writers, as I will show in the case-studies of chapters 4 and 5, but these creative works, like Conrad's /Narcissus/, are almost always accompanied with theoretical writings that frame, explicate, contextualize, and market them. In addition to introductions like the one above, this theory also appears alongside the literary works in their first contexts: "little magazines" that published mixtures poems, essays, criticism, chapters of novels, and reproductions of visual art.[fn:2] The critical accompaniments in these journals are not supplementary, in the Derridean sense of /external to/, the literary works they discuss, but are part of them [cite:@derridaGrammatology2016 145]. This is especially true of poems like /The Waste Land/, where after the first printing, the text has rarely been unadorned with Eliot's own footnotes, but is also true of a wide range of writing at this time.
+# Matt: subject of above paragraph gets convoluted at the end
+
+This period of literary history is so strongly autoexegetic that the theories of these writers deserves close examination, even when that theory is not consistently practiced. There are frequent and often-cited contradictions between the theories of these poet-critics and their practice, and yet these theories support a way of understanding and manipulating visual language, which not only reveals the centrality of vision and the image, but which shows definite and measurable properties of those images, leading ultimately to an ocular taxonomy. A study of literary images of the turn of the century, then, first requires a look at these immediate contexts: the secondary literature written by the authors of the primary.
+
+The critical writings that appear in these journals: reviews, letters to the editor, essays, and more, provide the appearance of a complex network of discourse that surrounds the literature. Since that network is mostly comprised of a small coterie of recurring literary figures, some of them disguised with pseudonyms, and most of them friends, their publications in these public forums can at times feel staged. It has even been argued that the theoretical output of /imagisme/, the literary movement Ezra Pound furiously promoted in the early 1910s, was little more than a marketing tactic, or a constructed controversy. So it is with skepticism that we must proceed to study the many imagisms of this period: impressionism, symbolism, vorticism, and imagism itself, all of which, by nature of their visual preoccupations, I label as "imagisms." Instead of highlighting their differences, then, I would like to show their similarities: a common understanding of the image that transcends movements and manifestos.
+# TODO: more on this
+
+The most vivid theory of image in literature is found in I.A. Richards, a literary critic of this period who was influential to the school of "new critics." In his /Principles of Literary Criticism/ he diagrams the process of seeing, reading, and understanding a literary image, using a distinctly optical framework, as shown in [cite:@fig:richards] [cite:@richards2003principles 106].
+
+#+CAPTION: Richards's Optical Process of Reading
+#+LABEL: fig:richards
+[[file:images/richards.png]]
+
+Richards explains that the six distinct processes depicted vertically here correspond to events happening in succession, through which these lines cross, as "streams of impulses flowing through in the mind" (113):
+
+#+BEGIN_QUOTE
+  #+BEGIN_VERSE
+    I. The visual sensations of the printed words.
+    II. Images very closely associated with these sensations.
+    III. Images relatively free.
+    IV. References to, or 'thinkings of', various things.
+    V. Emotions.
+    VI. Affective-volitional attitudes. (106-7)
+  #+END_VERSE
+#+END_QUOTE
+
+Richards's schematic gives a sense of the complexity of the cognitive and emotional processes involved with reading words that bear visual significance. Not everyone produces mental images, as the psychological works covered in Chapter 1 attest, but images that readers produce are amalgamations of memories, emotions, attitudes, and sensations. Crucially, they are optic. Consider the resemblance of Richards's diagram to an illustration of retinal nerves, shown in Figure 2.
+
+#+CAPTION: Source: Rogers, /Perception/ [cite:@rogersPerceptionVeryShort2017]
+#+LABEL: fig:optic-nerve
+[[file:images/optic-nerve.png]]
+
+Richards, along with the modernists and imagists he studied, understood the reading process as a fundamentally visual one, shaped and even controlled by the mechanisms of the eye. I hope to show the ways in which ocular phenomena may be used to study the history of ideas in this period. This relies on a number of binaries, or distinctions these theorists make: the static and the dynamic, the fragment and the whole, the idea and its expression, the near and the distant, the specific and the general, the small and the cosmic, the hard and the soft, and the dry and the wet. These are not mutually exclusive categories, as I hope will be apparent, but are loci of ambiguities and complexities which attracted these writers to them in the first place, as they do us.
+
+Contemporary criticism has often pointed out these pairs, but almost always uses them as a starting place for symptomatic readings: for instance, in Peter Nicholls on the implications of "hard" modernism; Rachel duPlessis on gendered aspects of the "dry" and "wet" in Pound; and Gibson on the "dry" and "hard" as neoclassicist [cite:@nichollsHardSoftModernism2013; @duplessisPropoundingModernistMaleness2002; @gibsonCONTRADICTORYIMAGESCONFLICTING2011a]. Jesse Schotter admirably problematizes the material membranes of the image and writing with his notion of "hieroglyphic" modernism, which synthesizes materialities of writing and image-making [cite:@schotter2018hieroglyphic]. His notion of the hieroglyphic is one that fuses writing and image-production, and is present in the many faux-Egyptologies of the early 20th century, as well as in Pound's /chinoiseries/. For Martin Jay, the modernist moment is a "crisis in ocularcentrism" which reflects "a deep-seated distrust of the privileging of sight" [cite:@jay88_rise 309]. Claudia Olk, as well, argues that a break with realism in early 20th century writing shifts conceptions of the visual from a representational and "natural" visual epistemology, to one a more "conceptual" and less "positivist" one:
+
+#+BEGIN_QUOTE
+"The category of vision is not only central to many modernist texts, but also plays a key role in the unfolding paradigm of modernism itself. The received sense of a modernist break with realism, its pervasive interest in the workings of the individual mind, and its generic reclassifications of the novel also intimately affected the role of vision, which gained a conceptual rather than natural status. Whereas realist texts adhere to a visual language of representation and become legible within a positivist epistemology, modernist texts clearly depart from this positivist faith." [cite:@olkVaguenessVisionVeil2007 153]
+#+END_QUOTE
+
+Epistemologies of visual perception, then, are a subset of a larger discussion surrounding subjectivity in fiction of this period, and in particular, literary-historical shifts in the treatment of subjectivities. In /The Pound Era/, Hugh Kenner notes that despite Pound's official stance on Imagism, the movement is nonetheless "named for a component of the poem, not a state of the poet, and that its three principles establish technical, not psychic, criteria" [cite:@kennerPoundEra1971 179]. Literary images are subjective, created in the mind of the reader, according to instructions from the poet, yet those instructions must pretend to be at least partially objective, or they will not be effectively communicated. I hope to unravel here some of these contradictions, problematize some of these dichotomies, and extend the readings of these critics to include concrete visual properties of the images created and manipulated by the writers of this period.
+
+[fn:1] See, for example cite:@ennsVibrationSoundBirth2013 71. Ludwig Schnauder calls this sequence a blend of "the terms and concepts of Impressionism with a Victorian insistence on the truthfulness and moral sincerity of fiction" [cite:@schnauderFreeWillDeterminism2009, 98].
+
+[fn:2] In Britain, these included /The Freewoman/ (1911--13) and /The New Freewoman/ (1913--14), /The Egoist/ (1914--19), and /The English Review/ (1908-1937). In the United States, influential journals included /The Little Review/ (1914--29), /The Dial/ (1880--29), and /Poetry/ (1912--).
+
+* Method
+The method I'm using in this study is one of computational literary analysis.
+ - Not quite yet a field of study
+ - Cite some of the major works here (Underwood, Jockers, Piper, Stanford, etc.)
+ - As opposed to Digital Humanities, digital literary studies
+   - "digital" is more general than "computational": the latter is more action-oriented: information will be computed, rather than simply digitized.
+
+* Corpus
+ - PG
+ - PG2
+ - A short history of Project Gutenberg
+   - Problems of a corpus
+   - Hand-keyed in most cases
+   - Distributed proofreaders
 * Technologies
 
 A number of software programs were prepared for this project, written in Python, Haskell, and using shell scripting languages.
@@ -46,4 +112,3 @@ This technological stack has been abstracted into the template project [[https:/
 - count-objects: software for counting objects in literary texts, using word sense disambiguation
 - description-detection: a program for probabilistically detecting literary description
 
-* Corpus

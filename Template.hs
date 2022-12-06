@@ -105,10 +105,6 @@ pageHtml = do
         script_ [ src_ "/assets/MathJax/es5/tex-chtml.js" ] T.empty
         -- Flowcharts
         script_ [ src_ "/assets/mermaid.min.js" ] T.empty
-        -- Required for jquery-lazy
-        script_ [ src_ "/assets/zepto.min.js" ] T.empty
-        -- Try to lazy-load stuff
-        script_ [ src_ "/assets/jquery.lazy.min.js" ] T.empty
         script_ [ src_ "/assets/custom.js" ] T.empty
 
 -- Schema.org RDFa
@@ -168,6 +164,11 @@ css = do
   details ? do
     fontSize (C.rem 1.5)
     margin (em 1) (em 0) (em 1) (em 0)
+  ".marginnote.paragraphNumber" ? do
+    display none
+    ":hover" & display block
+    ":before" & content (stringContent "¶")
+
   -- Prefatory "pages"
   "body.prefatory" ? do
     paddingLeft (unitless 0)
