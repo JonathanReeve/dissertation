@@ -1,0 +1,586 @@
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"><meta name="author" content="Jonathan Reeve"><meta name="dcterms.date" content=""><title>Introduction</title><style type="text/css">
+p
+{
+  line-height : 2 !important;
+}
+
+.colorBlock
+{
+  padding : 0.2em 0.2em 0.2em 0.2em;
+}
+
+td
+{
+  padding : 0.29999em 0.29999em 0.29999em 0.29999em;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure > img:hover
+{
+  -webkit-transform : scale(1.5,1.5);
+  -moz-transform    : scale(1.5,1.5);
+  -ms-transform     : scale(1.5,1.5);
+  -o-transform      : scale(1.5,1.5);
+  transform         : scale(1.5,1.5);
+}
+
+figure > figcaption
+{
+  max-width  : none;
+  text-align : left;
+}
+
+figure > img
+{
+  max-height : 30em;
+}
+
+div.box
+{
+  margin           : 1em 1em 1em 1em;
+  background-color : #cbcbf7;
+  border-radius    : 10px 10px 10px 10px;
+  padding          : 0.8em 0.8em 0.8em 0.8em;
+  width            : 50%;
+  border-bottom    : 1px solid #999999;
+  border-left      : 1px solid #999999;
+}
+
+div.box a
+{
+  text-shadow : 0px 0px 0px #000000;
+}
+
+div.line-block
+{
+  margin-left : 2em;
+  font-size   : 1.39999rem;
+}
+
+div.annotated
+{
+  background-color : #cccccc;
+  border-radius    : 10px 10px 10px 10px;
+  padding          : 0.8em 0.8em 0.8em 0.8em;
+  font-size        : 1.39999rem;
+  max-width        : 25em;
+  margin-left      : 2em;
+  border-bottom    : 1px solid #999999;
+  border-left      : 1px solid #999999;
+}
+
+div.annotated a
+{
+  text-shadow : 0px 0px 0px #000000;
+}
+
+div.references
+{
+  line-height : 2;
+  margin-left : 1em;
+  text-indent : -1em;
+  font-size   : 1.39999rem;
+}
+
+details
+{
+  font-size : 1.5rem;
+  margin    : 1em 0em 1em 0em;
+}
+
+.marginnote.paragraphNumber
+{
+  display : none;
+}
+
+.marginnote.paragraphNumber:hover
+{
+  display : block;
+}
+
+.marginnote.paragraphNumber:before
+{
+  content : "¶";
+}
+
+body.prefatory
+{
+  padding-left : 0;
+}
+
+body.prefatory main
+{
+  padding-left : 12.5%;
+}
+
+body.prefatory header#prefatory
+{
+  text-align   : center;
+  margin-left  : 12.5%;
+  margin-right : 12.5%;
+}
+
+body.prefatory header#prefatory section > p
+{
+  width : 100%;
+}
+
+body.prefatory section#titlePage, section#copyrightPage
+{
+  margin-top    : 5em;
+  margin-bottom : 5em;
+}
+
+body.prefatory p.purpose
+{
+  margin-top : 5em;
+}
+
+
+/* Generated with Clay, http://fvisser.nl/clay */</style><link rel="stylesheet" href="/assets/tufte-css/latex.css"><link rel="stylesheet" href="/assets/tufte-css/tufte.css"><script src="/assets/plotly-2.16.1.min.js"></script><style type="text/css">@page { margin: 3cm; @bottom-center { content: counter(page); } }</style></head><body><article>
+  
+<header><h1 class="title">Introduction</h1><p class="subtitle author">Jonathan
+Reeve</p><p class="date"></p></header><main> 
+<details><summary>Table of Contents</summary><nav id="TOC" role="doc-toc"><ul>
+<li><a href="#introduction-1">Introduction</a></li>
+<li><a href="#method">Method</a></li>
+<li><a href="#corpus">Corpus</a></li>
+<li><a href="#technologies">Technologies</a>
+<ul>
+<li><a href="#the-text-itself">The text itself</a></li>
+<li><a href="#submodules">Submodules</a></li>
+</ul></li>
+<li><a href="#works-cited">Works Cited</a></li>
+</ul> 
+</nav> 
+</details><p>The central question of this dissertation is one of
+literary history. It’s one of how we get from point A to point B.
+Consider this passage from Jane Austen’s <em>Pride and Prejudice</em> to
+be point A:</p>
+<blockquote>
+<p>At length the Parsonage was discernible. The garden sloping to the
+road, the house standing in it, the green pales and the laurel hedge,
+every thing declared they were arriving. Mr. Collins and Charlotte
+appeared at the door, and the carriage stopped at the small gate, which
+led by a short gravel walk to the house, amidst the nods and smiles of
+the whole party. In a moment they were all out of the chaise, rejoicing
+at the sight of each other. Mrs. Collins welcomed her friend with the
+liveliest pleasure, and Elizabeth was more and more satisfied with
+coming, when she found herself so affectionately received. She saw
+instantly that her cousin’s manners were not altered by his marriage;
+his formal civility was just what it had been, and he detained her some
+minutes at the gate to hear and satisfy his enquiries after all her
+family. They were then, with no other delay than his pointing out the
+neatness of the entrance, taken into the house; and as soon as they were
+in the parlour, he welcomed them a second time with ostentatious
+formality to his humble abode, and punctually repeated all his wife’s
+offers of refreshment.</p>
+</blockquote>
+<p>And this passage from Virginia Woolf’s <em>To the Lighthouse</em> to
+be point B:</p>
+<blockquote>
+<p>The jacmanna was bright violet; the wall staring white. She would not
+have considered it honest to tamper with the bright violet and the
+staring white, since she saw them like that, fashionable though it was,
+since Mr. Paunceforte’s visit, to see everything pale, elegant,
+semitransparent. Then beneath the colour there was the shape. She could
+see it all so clearly, so commandingly, when she looked: it was when she
+took her brush in hand that the whole thing changed. It was in that
+moment’s flight between the picture and her canvas that the demons set
+on her who often brought her to the verge of tears and made this passage
+from conception to work as dreadful as any down a dark passage for a
+child. Such she often felt herself—struggling against terrific odds to
+maintain her courage; to say: “But this is what I see; this is what I
+see,” and so to clasp some miserable remnant of her vision to her
+breast, which a thousand forces did their best to pluck from her.</p>
+</blockquote>
+<p>The Austen passage is one of her most descriptive: full of objects
+and visualities, yet with images that are nonetheless subordinated to
+the narrative.</p>
+<p>In contrast, Woolf’s descriptive passage is thickly indulgent in its
+visuality.</p>
+<p>There is nothing quite as reductive as chronology, it must be
+conceded.</p>
+<p>By juxtaposing two paragraphs as historical artifacts, we are missing
+that A belongs to a certain romance genre, while B belongs to an
+artist-novel genre, in which aesthetic choices and visuality are
+necessarily foregrounded.</p>
+<section id="introduction-1" class="level1">
+<h1>Introduction</h1>
+<p>How were textual images conceived at the turn of the century? What
+properties did they possess, measurable or unmeasurable? In the famous
+preface to his 1897 novella <em>The Nigger of the Narcissus</em>, Joseph
+Conrad announces that his project is, “by the power of the written
+word,” “to make you hear, to make you feel, … before all, to make you
+<em>see</em>. That—and no more, and it is everything.” I will argue that
+he means “seeing” literally: not merely in the metaphorical sense of
+seeing as understanding, but in the physiological sense, of seeing as a
+neuro-ocular process. Conrad explains that his task is to hold up,
+“before all eyes,” a “passing phase of life … to show its vibration, its
+colour, its form, and through its movement, its form, and its colour,
+reveal the substance of its truth” <span class="citation"
+data-cites="conradPortableConrad2007">(Conrad 49)</span>. This
+trinity—color, form, and vibration/movement—is so important to Conrad,
+or so conceptually slippery, that he allows it two iterations, even in
+an essay that stresses the importance of verbal economy. It is tempting
+to read these three words figuratively, to say that “colour,” when
+describing “a passing phase of life” refers to an affective experience,
+rather than a hue, and that “form” refers to a conceptual structure,
+rather than the visual boundaries of physical objects. That would not be
+wrong. In fact, these, and more esoteric readings, are among the most
+typical.<span><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"/><span
+class="sidenote">See, for example cite:@ennsVibrationSoundBirth2013 71.
+Ludwig Schnauder calls this sequence a blend of “the terms and concepts
+of Impressionism with a Victorian insistence on the truthfulness and
+moral sincerity of fiction” <span class="citation"
+data-cites="schnauderFreeWillDeterminism2009">(Schnauder
+98)</span>.<br />
+<br />
+</span></span> But they overlook an equally valuable surface reading:
+that color and form are physiologically distinguishable ocular
+categories, corresponding to the rods and cones of retinal
+photoreceptors, and that they depend on light (vibrations in the visible
+electromagnetic spectrum) and a temporal dimension along which their
+movements may be perceived.</p>
+<p>The eye is more than just an adequate metaphor for the imagination of
+this period’s writers. To understand modernism, one must first
+understand the image, along with its primary interface, and first
+image-processing neural apparatus, the eye. Images are most legible in
+the novels and poems of these writers, as I will show in the
+case-studies of chapters 4 and 5, but these creative works, like
+Conrad’s <em>Narcissus</em>, are almost always accompanied with
+theoretical writings that frame, explicate, contextualize, and market
+them. In addition to introductions like the one above, this theory also
+appears alongside the literary works in their first contexts: “little
+magazines” that published mixtures poems, essays, criticism, chapters of
+novels, and reproductions of visual
+art.<span><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span
+class="sidenote">In Britain, these included <em>The Freewoman</em>
+(1911–13) and <em>The New Freewoman</em> (1913–14), <em>The Egoist</em>
+(1914–19), and <em>The English Review</em> (1908-1937). In the United
+States, influential journals included <em>The Little Review</em>
+(1914–29), <em>The Dial</em> (1880–29), and <em>Poetry</em>
+(1912–).<br />
+<br />
+</span></span> The critical accompaniments in these journals are not
+supplementary, in the Derridean sense of <em>external to</em>, the
+literary works they discuss, but are part of them <span class="citation"
+data-cites="derridaGrammatology2016">(Derrida and Butler 145)</span>.
+This is especially true of poems like <em>The Waste Land</em>, where
+after the first printing, the text has rarely been unadorned with
+Eliot’s own footnotes, but is also true of a wide range of writing at
+this time.</p>
+<p>This period of literary history is so strongly autoexegetic that the
+theories of these writers deserves close examination, even when that
+theory is not consistently practiced. There are frequent and often-cited
+contradictions between the theories of these poet-critics and their
+practice, and yet these theories support a way of understanding and
+manipulating visual language, which not only reveals the centrality of
+vision and the image, but which shows definite and measurable properties
+of those images, leading ultimately to an ocular taxonomy. A study of
+literary images of the turn of the century, then, first requires a look
+at these immediate contexts: the secondary literature written by the
+authors of the primary.</p>
+<p>The critical writings that appear in these journals: reviews, letters
+to the editor, essays, and more, provide the appearance of a complex
+network of discourse that surrounds the literature. Since that network
+is mostly comprised of a small coterie of recurring literary figures,
+some of them disguised with pseudonyms, and most of them friends, their
+publications in these public forums can at times feel staged. It has
+even been argued that the theoretical output of <em>imagisme</em>, the
+literary movement Ezra Pound furiously promoted in the early 1910s, was
+little more than a marketing tactic, or a constructed controversy. So it
+is with skepticism that we must proceed to study the many imagisms of
+this period: impressionism, symbolism, vorticism, and imagism itself,
+all of which, by nature of their visual preoccupations, I label as
+“imagisms.” Instead of highlighting their differences, then, I would
+like to show their similarities: a common understanding of the image
+that transcends movements and manifestos.</p>
+<p>The most vivid theory of image in literature is found in I.A.
+Richards, a literary critic of this period who was influential to the
+school of “new critics.” In his <em>Principles of Literary
+Criticism</em> he diagrams the process of seeing, reading, and
+understanding a literary image, using a distinctly optical framework, as
+shown in fig. 1 <span class="citation"
+data-cites="richards2003principles">(Richards 106)</span>.</p>
+<figure>
+<img src="images/richards.png" id="fig:richards"
+alt="Figure 1: Richards’s Optical Process of Reading" />
+<figcaption aria-hidden="true">Figure 1: Richards’s Optical Process of
+Reading</figcaption>
+</figure>
+<p>Richards explains that the six distinct processes depicted vertically
+here correspond to events happening in succession, through which these
+lines cross, as “streams of impulses flowing through in the mind”
+(113):</p>
+<blockquote>
+<div class="line-block">I. The visual sensations of the printed
+words.<br />
+II. Images very closely associated with these sensations.<br />
+III. Images relatively free.<br />
+IV. References to, or ‘thinkings of’, various things.<br />
+V. Emotions.<br />
+VI. Affective-volitional attitudes. (106-7)</div>
+</blockquote>
+<p>Richards’s schematic gives a sense of the complexity of the cognitive
+and emotional processes involved with reading words that bear visual
+significance. Not everyone produces mental images, as the psychological
+works covered in Chapter 1 attest, but images that readers produce are
+amalgamations of memories, emotions, attitudes, and sensations.
+Crucially, they are optic. Consider the resemblance of Richards’s
+diagram to an illustration of retinal nerves, shown in Figure 2.</p>
+<figure>
+<img src="images/optic-nerve.png" id="fig:optic-nerve"
+alt="Figure 2: Source: Rogers, Perception (Rogers)" />
+<figcaption aria-hidden="true">Figure 2: Source: Rogers,
+<em>Perception</em> <span class="citation"
+data-cites="rogersPerceptionVeryShort2017">(Rogers)</span></figcaption>
+</figure>
+<p>Richards, along with the modernists and imagists he studied,
+understood the reading process as a fundamentally visual one, shaped and
+even controlled by the mechanisms of the eye. I hope to show the ways in
+which ocular phenomena may be used to study the history of ideas in this
+period. This relies on a number of binaries, or distinctions these
+theorists make: the static and the dynamic, the fragment and the whole,
+the idea and its expression, the near and the distant, the specific and
+the general, the small and the cosmic, the hard and the soft, and the
+dry and the wet. These are not mutually exclusive categories, as I hope
+will be apparent, but are loci of ambiguities and complexities which
+attracted these writers to them in the first place, as they do us.</p>
+<p>Contemporary criticism has often pointed out these pairs, but almost
+always uses them as a starting place for symptomatic readings: for
+instance, in Peter Nicholls on the implications of “hard” modernism;
+Rachel duPlessis on gendered aspects of the “dry” and “wet” in Pound;
+and Gibson on the “dry” and “hard” as neoclassicist <span
+class="citation"
+data-cites="nichollsHardSoftModernism2013 duplessisPropoundingModernistMaleness2002 gibsonCONTRADICTORYIMAGESCONFLICTING2011a">(Nicholls;
+DuPlessis; GIBSON)</span>. Jesse Schotter admirably problematizes the
+material membranes of the image and writing with his notion of
+“hieroglyphic” modernism, which synthesizes materialities of writing and
+image-making <span class="citation"
+data-cites="schotter2018hieroglyphic">(Schotter)</span>. His notion of
+the hieroglyphic is one that fuses writing and image-production, and is
+present in the many faux-Egyptologies of the early 20th century, as well
+as in Pound’s <em>chinoiseries</em>. For Martin Jay, the modernist
+moment is a “crisis in ocularcentrism” which reflects “a deep-seated
+distrust of the privileging of sight” <span class="citation"
+data-cites="jay88_rise">(Jay 309)</span>. Claudia Olk, as well, argues
+that a break with realism in early 20th century writing shifts
+conceptions of the visual from a representational and “natural” visual
+epistemology, to one a more “conceptual” and less “positivist” one:</p>
+<blockquote>
+<p>“The category of vision is not only central to many modernist texts,
+but also plays a key role in the unfolding paradigm of modernism itself.
+The received sense of a modernist break with realism, its pervasive
+interest in the workings of the individual mind, and its generic
+reclassifications of the novel also intimately affected the role of
+vision, which gained a conceptual rather than natural status. Whereas
+realist texts adhere to a visual language of representation and become
+legible within a positivist epistemology, modernist texts clearly depart
+from this positivist faith.” <span class="citation"
+data-cites="olkVaguenessVisionVeil2007">(Olk 153)</span></p>
+</blockquote>
+<p>Epistemologies of visual perception, then, are a subset of a larger
+discussion surrounding subjectivity in fiction of this period, and in
+particular, literary-historical shifts in the treatment of
+subjectivities. In <em>The Pound Era</em>, Hugh Kenner notes that
+despite Pound’s official stance on Imagism, the movement is nonetheless
+“named for a component of the poem, not a state of the poet, and that
+its three principles establish technical, not psychic, criteria” <span
+class="citation" data-cites="kennerPoundEra1971">(Kenner 179)</span>.
+Literary images are subjective, created in the mind of the reader,
+according to instructions from the poet, yet those instructions must
+pretend to be at least partially objective, or they will not be
+effectively communicated. I hope to unravel here some of these
+contradictions, problematize some of these dichotomies, and extend the
+readings of these critics to include concrete visual properties of the
+images created and manipulated by the writers of this period.</p>
+</section>
+<section id="method" class="level1">
+<h1>Method</h1>
+<p>The method I’m using in this study is one of computational literary
+analysis.</p>
+<ul>
+<li>Not quite yet a field of study</li>
+<li>Cite some of the major works here (Underwood, Jockers, Piper,
+etc.)</li>
+<li>As opposed to Digital Humanities, digital literary studies
+<ul>
+<li>“digital” is more general than “computational”: the latter is more
+action-oriented: information will be computed, rather than simply
+digitized.</li>
+</ul></li>
+</ul>
+</section>
+<section id="corpus" class="level1">
+<h1>Corpus</h1>
+<ul>
+<li>PG</li>
+<li>PG2</li>
+<li>A short history of Project Gutenberg
+<ul>
+<li>Problems of a corpus</li>
+<li>Hand-keyed in most cases</li>
+<li>Distributed proofreaders</li>
+</ul></li>
+</ul>
+</section>
+<section id="technologies" class="level1">
+<h1>Technologies</h1>
+<p>A number of software programs were prepared for this project, written
+in Python, Haskell, and using shell scripting languages.</p>
+<section id="the-text-itself" class="level2">
+<h2>The text itself</h2>
+<p>I made the unconventional decision to produce this dissertation in
+HTML, rather than produce a Microsoft Word document or a PDF file. Since
+Word and PDF were created as proprietary formats, developed by Microsoft
+and Adobe, they were made to sell software, rather than contribute to
+the community. Furthermore, they are made to mimic the paper office,
+using a virtual 8.5 by 11 inch “page.” Since this dissertation will not
+be printed, this constraint is unnecessary. HTML, on the other hand, is
+much more featureful markup language, allowing for interactive charts,
+hyperlinks, variable page width, and much, much more. Since it it
+always-already published on the Internet, it is much more easily
+archivable, readable with a wider variety of reading software (web
+browsers), and provides a more seamless experience for those using
+screen readers or other accessibility software.</p>
+<p>One of the most important features of this HTML format is the
+capability to embed interactive charts. An interactive chart, like</p>
+<p>There is a growing trend of so-called “digital dissertations”</p>
+<ul>
+<li></li>
+</ul>
+<p>This text is originally written in a feature-rich markup language
+called <a href="https://orgmode.org/">Org</a>, which compiles to
+HTML.</p>
+<p>The text of the dissertation text itself contains a number of
+innovations:</p>
+<ul>
+<li>A <a
+href="https://github.com/JonathanReeve/dissertation/blob/master/Shakefile.hs">Shakefile</a>
+written in Haskell, for the <a href="https://shakebuild.com/">Shake
+build system</a>, which interfaces with Pandoc to convert plain text
+files to HTML, which I originally wrote in <a
+href="https://orgmode.org/">the org-mode text format</a>.</li>
+<li><a
+href="https://github.com/JonathanReeve/dissertation/blob/master/Template.hs">A
+template</a> written in <a
+href="https://chrisdone.com/posts/lucid/">Lucid</a> and <a
+href="http://fvisser.nl/clay/">Clay</a>, Haskell domain-specific
+languages for HTML and CSS, which integrates <a
+href="https://edwardtufte.github.io/tufte-css/">Tufte-CSS</a>, <a
+href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> diagram
+capability, and more.</li>
+<li>Custom Pandoc filters, written in Haskell: <a
+href="https://github.com/JonathanReeve/dissertation/blob/master/templates/hexFilter.hs">one
+for displaying color hex values</a>, used in Chapter 1, and <a
+href="https://github.com/JonathanReeve/dissertation/blob/master/templates/synsetFilter.hs">one
+for displaying WordNet synsets</a>, used in Chapter 2.</li>
+</ul>
+<p>This technological stack has been abstracted into the template
+project <a
+href="https://github.com/JonathanReeve/template-dissertation">template-dissertation</a>,
+a standards-focused, HTML-first dissertation build system.</p>
+</section>
+<section id="submodules" class="level2">
+<h2>Submodules</h2>
+<ul>
+<li>color-word-analyzer: a CLI program and web app to analyze color in a
+text</li>
+<li>custom-ngrams-search: a framework for searching Google NGrams data
+for custom textual patterns</li>
+<li>count-objects: software for counting objects in literary texts,
+using word sense disambiguation</li>
+<li>description-detection: a program for probabilistically detecting
+literary description</li>
+</ul>
+</section>
+</section>
+<section id="works-cited" class="level1 unnumbered">
+<h1 class="unnumbered">Works Cited</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-line-spacing="2" role="doc-bibliography">
+<div id="ref-conradPortableConrad2007" class="csl-entry"
+role="doc-biblioentry">
+Conrad, Joseph. <em>The <span>Portable Conrad</span></em>.
+<span>Penguin</span>, 2007.
+</div>
+<div id="ref-derridaGrammatology2016" class="csl-entry"
+role="doc-biblioentry">
+Derrida, Jacques, and Judith Butler. <em>Of
+<span>Grammatology</span></em>. <span>JHU Press</span>, 2016.
+</div>
+<div id="ref-duplessisPropoundingModernistMaleness2002"
+class="csl-entry" role="doc-biblioentry">
+DuPlessis, Rachel Blau. <span>“Propounding <span>Modernist
+Maleness</span>: <span>How Pound Managed</span> a
+<span>Muse</span>.”</span> <em>Modernism/Modernity</em>, vol. 9, no. 3,
+Sept. 2002, pp. 389–405, doi:<a
+href="https://doi.org/10.1353/mod.2002.0045">10.1353/mod.2002.0045</a>.
+</div>
+<div id="ref-gibsonCONTRADICTORYIMAGESCONFLICTING2011a"
+class="csl-entry" role="doc-biblioentry">
+GIBSON, MATTHEW. <span>“Contradictory Images: The Conflicting Influences
+of Henri Bergson and William James on t. E. Hulme, and the Consequences
+for Imagism.”</span> <em>The Review of English Studies</em>, vol. 62,
+no. 254, 2011, pp. 275–95, <a
+href="https://www.jstor.org/stable/23016466">https://www.jstor.org/stable/23016466</a>.
+</div>
+<div id="ref-jay88_rise" class="csl-entry" role="doc-biblioentry">
+Jay, Martin. <span>“The Rise of Hermeneutics and the Crisis of
+Ocularcentrism.”</span> <em>Poetics Today</em>, vol. 9, no. 2, 1988, p.
+307, doi:<a href="https://doi.org/10.2307/1772691">10.2307/1772691</a>.
+</div>
+<div id="ref-kennerPoundEra1971" class="csl-entry"
+role="doc-biblioentry">
+Kenner, Hugh. <em>The <span>Pound</span> Era</em>. <span>University of
+California Press</span>, 1971.
+</div>
+<div id="ref-nichollsHardSoftModernism2013" class="csl-entry"
+role="doc-biblioentry">
+Nicholls, Peter. <span>“Hard and <span>Soft Modernism</span>.”</span>
+<em>A <span>Handbook</span> of <span>Modernism Studies</span></em>,
+<span>Wiley-Blackwell</span>, 2013.
+</div>
+<div id="ref-olkVaguenessVisionVeil2007" class="csl-entry"
+role="doc-biblioentry">
+Olk, Claudia. <span>“Vagueness, <span>Vision</span>, and the
+<span>Veil</span>: <span>Perceptual Indeterminacy</span> in
+<span>Modernist Fiction</span>.”</span> <em>Visual <span>Culture
+Revisited</span>: <span>German</span> and <span>American
+Perspectives</span> on <span>Visual Culture</span>(s)</em>,
+<span>Herbert von Halem Verlag</span>, 2007, <a
+href="https://books.google.com/books?hl=en&amp;lr=&amp;id=YZoJRCsePY0C&amp;oi=fnd&amp;pg=PA153">https://books.google.com/books?hl=en&amp;lr=&amp;id=YZoJRCsePY0C&amp;oi=fnd&amp;pg=PA153</a>.
+</div>
+<div id="ref-richards2003principles" class="csl-entry"
+role="doc-biblioentry">
+Richards, I. A. <em>Principles of <span>Literary Criticism</span></em>.
+<span>Taylor &amp; Francis</span>, 2003, <a
+href="https://books.google.com/books?id=keuCAgAAQBAJ">https://books.google.com/books?id=keuCAgAAQBAJ</a>.
+</div>
+<div id="ref-rogersPerceptionVeryShort2017" class="csl-entry"
+role="doc-biblioentry">
+Rogers, Brian J. <em>Perception: <span>A Very Short
+Introduction</span></em>. <span>Oxford University Press</span>, 2017.
+</div>
+<div id="ref-schnauderFreeWillDeterminism2009" class="csl-entry"
+role="doc-biblioentry">
+Schnauder, Ludwig. <em>Free <span>Will</span> and
+<span>Determinism</span> in <span>Joseph Conrad</span>’s <span>Major
+Novels</span></em>. <span>Rodopi</span>, 2009.
+</div>
+<div id="ref-schotter2018hieroglyphic" class="csl-entry"
+role="doc-biblioentry">
+Schotter, J. <em>Hieroglyphic <span>Modernisms</span>:
+<span>Writing</span> and <span>New Media</span> in the <span>Twentieth
+Century</span></em>. <span>Edinburgh University Press</span>, 2018, <a
+href="https://books.google.com/books?id=e398DwAAQBAJ">https://books.google.com/books?id=e398DwAAQBAJ</a>.
+</div>
+</div>
+</section> 
+  
+</main></article><footer><script src="https://hypothes.is/embed.js"></script><script src="/assets/MathJax/es5/tex-chtml.js"></script><script src="/assets/mermaid.min.js"></script><script src="/assets/custom.js"></script></footer></body></html>
