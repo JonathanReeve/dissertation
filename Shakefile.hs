@@ -44,7 +44,7 @@ chapters =
 
 main :: IO ()
 main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
-    want $ [ "dest/index.html" ] ++ chapters
+    want $ [ "dest/index.html", "templates/figures.html" ] ++ chapters
 
     -- To serve the generated files (useful for previewing),
     -- run `shake serve`.
@@ -73,7 +73,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         csl = "templates/modern-language-association.csl"
         template = "templates/template.html"
         prefatoryTemplate = "templates/prefatoryTemplate.html"
-        figuresList = "templates/template.html"
+        figuresList = "templates/figures.html"
 
     "templates/template.html" %> \f -> do
         need ["Template.hs"]
@@ -86,12 +86,6 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
     "dest/index.html" %> \f -> do
         let source = destToSource f
         need [ source, template, prefatoryTemplate, figuresList ]
-        -- Run all org blocks from index.org, to automatically update word counts and so on.
-        -- cmd_ "emacs" ["--batch", "--load", "ob", "--load", "ob-shell", "--eval",
-        --              "(let ((org-confirm-babel-evaluate nil))(dolist (file command-line-args-left)" ++
-        --              "(with-current-buffer (find-file-noselect file)(org-babel-execute-buffer)(save-buffer))))"
-        --              , source
-        --              ]
         contents <- liftIO $ readFile source
         cmd (Stdin contents) "pandoc" ["-f", "org+smart",
                                        "--template", prefatoryTemplate,
