@@ -44,7 +44,7 @@ chapters =
 
 main :: IO ()
 main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
-    want $ [ "dest/index.html", "templates/figures.html" ] ++ chapters
+    want ( "dest/index.html" : chapters )
 
     -- To serve the generated files (useful for previewing),
     -- run `shake serve`.
@@ -53,10 +53,10 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
 
     -- Regenerate references bibtex file, but only if we're me, not GitHub Actions.
     "references.bib" %> \f -> do
-        user <- getEnv "USERNAME"
         let sources = [ "/home/jon/Dokumentujo/Papers/library.bib"
                       , "/home/jon/Dokumentujo/Papers/library2.bib"
                       ]
+        user <- getEnv "USERNAME"
         let username = fromMaybe "" user
         if username == "jon" then do
             need sources
