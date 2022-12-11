@@ -20,6 +20,8 @@ jobs:
           NIXPKGS_ALLOW_BROKEN: 1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: "dest/"
   deploy:
     environment:
       name: github-pages
