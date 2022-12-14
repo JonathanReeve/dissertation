@@ -21,6 +21,9 @@ There is nothing quite as reductive as chronology, it must be conceded.
 
 By juxtaposing two paragraphs as historical artifacts, we are missing that A belongs to a certain romance genre, while B belongs to an artist-novel genre, in which aesthetic choices and visuality are necessarily foregrounded.
 
+Explain the "eye"
+ - chapters are different parts of the retina
+
 * Introduction
 How were textual images conceived at the turn of the century? What properties did they possess, measurable or unmeasurable? In the famous preface to his 1897 novella /The Nigger of the Narcissus/, Joseph Conrad announces that his project is, "by the power of the written word," "to make you hear, to make you feel, ... before all, to make you /see/. That---and no more, and it is everything." I will argue that he means "seeing" literally: not merely in the metaphorical sense of seeing as understanding, but in the physiological sense, of seeing as a neuro-ocular process. Conrad explains that his task is to hold up, "before all eyes," a "passing phase of life ... to show its vibration, its colour, its form, and through its movement, its form, and its colour, reveal the substance of its truth" [cite:@conradPortableConrad2007 49]. This trinity---color, form, and vibration/movement---is so important to Conrad, or so conceptually slippery, that he allows it two iterations, even in an essay that stresses the importance of verbal economy. It is tempting to read these three words figuratively, to say that "colour," when describing "a passing phase of life" refers to an affective experience, rather than a hue, and that "form" refers to a conceptual structure, rather than the visual boundaries of physical objects. That would not be wrong. In fact, these, and more esoteric readings, are among the most typical.[fn:1]  But they overlook an equally valuable surface reading: that color and form are physiologically distinguishable ocular categories, corresponding to the rods and cones of retinal photoreceptors, and that they depend on light (vibrations in the visible electromagnetic spectrum) and a temporal dimension along which their movements may be perceived.
 
@@ -79,8 +82,6 @@ The method I'm using in this study is one of computational literary analysis.
  - As opposed to Digital Humanities, digital literary studies
    - "digital" is more general than "computational": the latter is more action-oriented: information will be computed, rather than simply digitized.
 
-Explain the "eye"
- - chapters are different parts of the retina
 
 * Corpus
 - British literature
