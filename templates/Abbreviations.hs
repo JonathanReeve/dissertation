@@ -9,4 +9,6 @@ abbreviations = fromList [
     ("OED", "Oxford English Dictionary")
   , ("C_{PG}", "Corpus: Project Gutenberg subset")
   , ("C_{PG2}", "Corpus: Project Gutenberg subset, 1800—1922")
+  , ("LCSH", "Library of Congress Subject Heading")
+  , ("LCC", "Library of Congress Category")
   ]
