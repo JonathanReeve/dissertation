@@ -79,6 +79,9 @@ The method I'm using in this study is one of computational literary analysis.
  - As opposed to Digital Humanities, digital literary studies
    - "digital" is more general than "computational": the latter is more action-oriented: information will be computed, rather than simply digitized.
 
+Explain the "eye"
+ - chapters are different parts of the retina
+
 * Corpus
 - British literature
   - What is British?

@@ -10,11 +10,11 @@ wc -w 00-introduction/introduction.org 01-colors/ch-1.org 02-shapes/ch-2.org 03-
 #+END_SRC
 
 #+RESULTS:
-|   855 | 00-introduction/introduction.org |
-| 33052 | 01-colors/ch-1.org               |
+|  2681 | 00-introduction/introduction.org |
+| 33149 | 01-colors/ch-1.org               |
 | 14295 | 02-shapes/ch-2.org               |
-| 16863 | 03-images/ch-3.org               |
-| 65065 | total                            |
+| 18744 | 03-images/ch-3.org               |
+| 68869 | total                            |
 
 ** Revisions
 
@@ -25,11 +25,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| 6d38f61 | 2022-11-30 | 11:32:45 | -500 |
-| e109caf | 2022-11-30 | 11:32:29 | -500 |
-| 09e05c6 | 2022-11-30 | 11:31:34 | -500 |
-| 0aa6c37 | 2022-11-27 | 00:35:46 | -500 |
-| 82d1341 | 2022-11-27 | 00:33:16 | -500 |
+| 8137704 | 2022-12-13 | 21:33:18 | -500 |
+| bae6ae3 | 2022-12-12 | 14:42:18 | -500 |
+| cdb9c8c | 2022-12-11 | 16:02:09 | -500 |
+| 9c80a38 | 2022-12-11 | 15:47:45 | -500 |
+| 0f48bfe | 2022-12-10 | 17:50:34 | -500 |
 
 
 ** Building
