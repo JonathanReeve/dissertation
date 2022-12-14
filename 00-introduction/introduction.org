@@ -72,7 +72,6 @@ Epistemologies of visual perception, then, are a subset of a larger discussion s
 [fn:1] See, for example cite:@ennsVibrationSoundBirth2013 71. Ludwig Schnauder calls this sequence a blend of "the terms and concepts of Impressionism with a Victorian insistence on the truthfulness and moral sincerity of fiction" [cite:@schnauderFreeWillDeterminism2009, 98].
 
 [fn:2] In Britain, these included /The Freewoman/ (1911--13) and /The New Freewoman/ (1913--14), /The Egoist/ (1914--19), and /The English Review/ (1908-1937). In the United States, influential journals included /The Little Review/ (1914--29), /The Dial/ (1880--29), and /Poetry/ (1912--).
-
 * Method
 The method I'm using in this study is one of computational literary analysis.
  - Not quite yet a field of study
@@ -81,12 +80,19 @@ The method I'm using in this study is one of computational literary analysis.
    - "digital" is more general than "computational": the latter is more action-oriented: information will be computed, rather than simply digitized.
 
 * Corpus
- - PG
- - PG2
- - A short history of Project Gutenberg
-   - Problems of a corpus
-   - Hand-keyed in most cases
-   - Distributed proofreaders
+- British literature
+  - What is British?
+  - Includes Irish
+  - Expats: Henry James, Ezra Pound, T.S. Eliot
+- Corpus-DB, SQL query for LCC: PR, written in English
+  - Not ideal, but it has happy accidents: juvenile literature
+- Poetry and Prose
+  - PG
+  - PG2
+  - A short history of Project Gutenberg
+    - Problems of a corpus
+    - Hand-keyed in most cases
+    - Distributed proofreaders
 * Technologies
 
 A number of software programs were prepared for this project, written in Python, Haskell, and using shell scripting languages.

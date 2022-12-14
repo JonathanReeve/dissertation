@@ -1246,7 +1246,6 @@ As impressionism spread throughout the world, it began to appear in literature, 
 In discussing a novel by Alphonse Daudet, Brunetière uses analogies from painting:
 "chaque scène ainsi devient un tableau, qui s'arrange comme dans une toile suspendue sous les yeux du lexteur, complète en elle-même, isolée des autres, comme dans une galerie, par sa bordure, par son cadre, par un large pan de mur vide" [cite:@brunetière1883roman 89].[fn:: each scene becomes a tableau which arranges itself like a canvas suspended under the eyes of the reader, complete in itself, isolated from others, as if in a gallery, by its border, by its frame, by a large expanse of blank wall.]
 
-
 But by the time the style reaches Britain, literary impressionism has departed from its analogue in painting. It has since been defined in a number of ways. Michael Winkler defines it thus:
 
 #+BEGIN_QUOTE
