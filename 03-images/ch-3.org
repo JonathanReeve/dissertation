@@ -86,7 +86,7 @@ These four things, description and presentation, poetry and prose, are the four 
 
 #+CAPTION: Moulton's "cardinal points" of literary form
 #+LABEL: fig:moulton
-[[file:images/Moulton.png]]
+[[file:./images/Moulton.png]]
 
 These texts show a tendency towards rejecting description, or to integrating it further within narration, which will be borne out in the following experiment.
 
@@ -112,7 +112,7 @@ The proportions of paragraphs labeled as descriptions, when viewed diachronicall
 
 #+CAPTION: Object proportions over time, $C_{PG2}$
 #+LABEL: fig:descriptionProportions
-[[file:images/dummy.png]]
+[[file:./images/dummy.png]]
 
 My initial hypothesis was that the proportion of descriptive paragraphs would increase over time, tracking the trends discovered in the two previous chapters: the increase in colors and shapes over time. However, the opposite occurred: a gradual decline in descriptive paragraphs over time. Several factors may account for this trend. The first, and most probable, is that descriptive paragraphs become less recognizable to the model I've been using to detect them. Since the model is trained on unambiguous examples, such as the paragraphs quoted above, it's possible that description is more tightly woven into narrative in the twentieth century than the nineteeth. If visuality, measured by color and shape, increases at the turn of the century, but description as a whole decreases, this might mean that narrative, in fiction, becomes more visual, instead of fiction becoming more descriptive.
 
@@ -301,7 +301,7 @@ One of the functions of /imagination/, that is, the willing creation of mental i
 
 #+CAPTION: J. G. Bartholemew, Isochrone Map, 1914
 #+LABEL: fig:isochroneMap
-[[file:images/1914-isochrone-map.jpg]]
+[[file:./images/1914-isochrone-map.jpg]]
 
 It would have been appealing for Pound to translate poems about these distant places, since so few Europeans would have had direct experience of them. Thus, the imaginative freedom given the writer is broad, and the writing has built-in Brechtian estrangement effects: they are rich with images, since they are products of inventive imaginations. Edward Said, whose influential /Orientalism/ explicitly excludes China and Japan from the category of the oriental, nonetheless writes about this distance in an applicable manner: "imaginative geography and history help the mind to intensify its own sense of itself by dramatizing the distance and difference between what is close to it and what is far away" [cite:@saidOrientalism2014, 55]. Pound dramatizes the distance between London and China, thereby constructing his own identity, by positioning himself as mediator. [fn::For more on Pound and Orientalism, see [cite/t:@brookerEzraPoundImagism2007 p.31]]
 
