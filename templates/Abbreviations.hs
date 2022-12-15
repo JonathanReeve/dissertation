@@ -11,4 +11,6 @@ abbreviations = fromList [
   , ("C_{PG2}", "Corpus: Project Gutenberg subset, 1800—1922")
   , ("LCSH", "Library of Congress Subject Heading")
   , ("LCC", "Library of Congress Category")
+  , ("TEI", "Text Encoding Initiative")
+  , ("XML", "Extensible Markup Language")
   ]

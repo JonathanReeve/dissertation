@@ -16,3 +16,9 @@ And another with a page number [cite:@frazer_golden_1996 126]
 - =cite:see @miller1995wordnet p. 12 and /passim/= [cite:see @miller1995wordnet p. 12 and /passim/]
 - =cite:@miller1995wordnet; @frazer_golden_1996= [cite:@miller1995wordnet; @frazer_golden_1996]
 - =cite:see @miller1995wordnet; @frazer_golden_1996= [cite:see @miller1995wordnet; @frazer_golden_1996]
+- =cite:quoted in @miller1995wordnet; @frazer_golden_1996= [cite:quoted in @miller1995wordnet; @frazer_golden_1996]
+- =[cite/t:@petersConradImpressionism2001;@kirschke1981henry;@scholar2020henry;@hannah2016henry]= [cite/t:@petersConradImpressionism2001;@kirschke1981henry;@scholar2020henry;@hannah2016henry]
+- =[cite/t:@petersConradImpressionism2001;@kirschke1981henry;@scholar2020henry;@hannah2016henry; and @gunsteren90_kather_mansf]= [cite/t:@petersConradImpressionism2001;@kirschke1981henry;@scholar2020henry;@hannah2016henry; and @gunsteren90_kather_mansf]
+- =[cite/t:@petersConradImpressionism2001]  [cite/t:@kirschke1981henry] [cite/t:@scholar2020henry] [cite/t:@hannah2016henry] and [cite/t:@gunsteren90_kather_mansf]= [cite/t:@petersConradImpressionism2001]  [cite/t:@kirschke1981henry] [cite/t:@scholar2020henry] [cite/t:@hannah2016henry] and [cite/t:@gunsteren90_kather_mansf]
+
+* Works Cited
