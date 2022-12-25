@@ -1,25 +1,26 @@
 #+TITLE: Introduction
 #+AUTHOR: Jonathan Reeve
 
-The central question of this dissertation is one of literary history. It's one of how we get from point A to point B. Consider this passage from Jane Austen's /Pride and Prejudice/ to be point A:
+The early 20th century saw a dramatic change in the styles of British literature. The end of the Victorian era, with the death of Queen Victoria in 1901, symbolized the beginning of a new era, and with it came a new aesthetics. This new aesthetics distinguishes itself from all those previous by means of its approach to visuality: not only did the writers of this generation /write/ differently, but they began to /see/ differently, as well. This dissertation investigates the changes in visuality that so strongly characterize this tumultuous time in literary history, and does so with qualitative and quantitive methods. Using techniques from computer science, statistics, and computational linguistics, I reveal the depth of the explosion of color and shape at the turn of the century, and present the reasons for this phenomenon.
+
+Consider, as our starting point, this passage from Jane Austen's /Pride and Prejudice/, from 1813:
 
 #+begin_quote
 At length the Parsonage was discernible. The garden sloping to the road, the house standing in it, the green pales and the laurel hedge, every thing declared they were arriving. Mr. Collins and Charlotte appeared at the door, and the carriage stopped at the small gate, which led by a short gravel walk to the house, amidst the nods and smiles of the whole party. In a moment they were all out of the chaise, rejoicing at the sight of each other. Mrs. Collins welcomed her friend with the liveliest pleasure, and Elizabeth was more and more satisfied with coming, when she found herself so affectionately received. She saw instantly that her cousin's manners were not altered by his marriage; his formal civility was just what it had been, and he detained her some minutes at the gate to hear and satisfy his enquiries after all her family. They were then, with no other delay than his pointing out the neatness of the entrance, taken into the house; and as soon as they were in the parlour, he welcomed them a second time with ostentatious formality to his humble abode, and punctually repeated all his wife's offers of refreshment.
 #+end_quote
 
-And this passage from Virginia Woolf's /To the Lighthouse/ to be point B:
+This passage contains concrete descriptors of people, places and things, and paints a clear and memorable tableau of the parsonage. Through the eyes of Austen's narrator, we see a house with a garden, a hedge, a gravel walk, and a small gate; an interior parlor, where drinks are being served, and where people are nodding and smiling. Yet this description is heavily subordinated to the interpersonal cordialities, relations, and emotions. We see indeed that the pales are "green," and the hedge made of laurel, but these things exist only to "declare they were arriving." In the foreground, we see a meeting between Elizabeth and Mr. and Mrs Collins, which is described in abstract emotional terms, emphasizing "the liveliest pleasure," in which Elizabeth is "more and more satisfied," and feels "affectionately received." We hear of rather vague "manners," "civility," and "enquiries after all her family," a certain "neatness" of the house, and the "ostentatious formality" of his welcome. While we should not dismiss these abstractions as /mere/ social drama---Austen's famously knowing style frequently contains subtexts of satire or social commentary---they nonetheless exemplify a style which is more concerned with social experience than vision. We will later find out that Austen is among the least visual writers of the 19th and 20th centuries.
+
+Now, consider a passage from our destination, this passage from Virginia Woolf's /To the Lighthouse/, from over a hundred years later, in 1927:
 
 #+begin_quote
 The jacmanna was bright violet; the wall staring white. She would not have considered it honest to tamper with the bright violet and the staring white, since she saw them like that, fashionable though it was, since Mr. Paunceforte's visit, to see everything pale, elegant, semitransparent. Then beneath the colour there was the shape. She could see it all so clearly, so commandingly, when she looked: it was when she took her brush in hand that the whole thing changed. It was in that moment's flight between the picture and her canvas that the demons set on her who often brought her to the verge of tears and made this passage from conception to work as dreadful as any down a dark passage for a child. Such she often felt herself—struggling against terrific odds to maintain her courage; to say: "But this is what I see; this is what I see," and so to clasp some miserable remnant of her vision to her breast, which a thousand forces did their best to pluck from her.
 #+end_quote
 
-The Austen passage is one of her most descriptive: full of objects and visualities, yet with images that are nonetheless subordinated to the narrative.
+In contrast, Woolf's descriptive passage is thickly indulgent in its visuality. Lily Briscoe, painting a clematis, sees it through the eyes of a painter. There is a specificity of color which we rarely see in earlier literature: not just /violet/ or /white/, but /bright violet/ and /staring white/. Furthermore, the experience of this color has an impressionist quality: it is /pale, elegant, semitransparent./ In addition to the color, perceived by the eye's retinal cones, there is the shape, perceived by its rods. This passage is not only visual, but ocular: it deals with perception over, and before, its distillation into feeling. Although there are emotions present here, too, as in Austen, with "demons" bringing her "to the verge of tears," Lily's primary concern is her vision, as she repeats: "this is what I see; this is what I see."
 
-In contrast, Woolf's descriptive passage is thickly indulgent in its visuality.
+So how do we get from point A to point B, from Austen to Woolf? This is a difficult question, since chronology alone cannot account for all these differences. For one, there is a huge generic difference: Austen writes within the genre of the social drama, romance, or social satire, depending on your point of view. Woolf's novel, however, is a /Künstlerroman/, and belongs to a high modernist genre of art-novel. There are also authorial styles and character voices to consider: the difference is not only between Austen and Woolf, but between Austen's narrator, aware of Elizabeth, and the free indirect discourse informed by Lily's thoughts. This is where computational analysis helps. By analyzing thousands of novels and poems, computationally---many more than a single human could hope to read---we can begin to isolate chronological signals, and adjust for the influence of genre, style, voice, and other factors.
 
-There is nothing quite as reductive as chronology, it must be conceded.
-
-By juxtaposing two paragraphs as historical artifacts, we are missing that A belongs to a certain romance genre, while B belongs to an artist-novel genre, in which aesthetic choices and visuality are necessarily foregrounded.
 
 Explain the "eye"
  - chapters are different parts of the retina
@@ -75,15 +76,49 @@ Epistemologies of visual perception, then, are a subset of a larger discussion s
 [fn:1] See, for example cite:@ennsVibrationSoundBirth2013 71. Ludwig Schnauder calls this sequence a blend of "the terms and concepts of Impressionism with a Victorian insistence on the truthfulness and moral sincerity of fiction" [cite:@schnauderFreeWillDeterminism2009, 98].
 
 [fn:2] In Britain, these included /The Freewoman/ (1911--13) and /The New Freewoman/ (1913--14), /The Egoist/ (1914--19), and /The English Review/ (1908-1937). In the United States, influential journals included /The Little Review/ (1914--29), /The Dial/ (1880--29), and /Poetry/ (1912--).
-* Method
-The method I'm using in this study is one of computational literary analysis.
- - Not quite yet a field of study
- - Cite some of the major works here (Underwood, Jockers, Piper, etc.)
- - As opposed to Digital Humanities, digital literary studies
-   - "digital" is more general than "computational": the latter is more action-oriented: information will be computed, rather than simply digitized.
 
+* Method
+The method I'm using in this study is one of computational literary analysis, a new discipline at the intersection of data science, computational linguistics, and the sub-discipline of computer science known as natural language processing. This is a practice of a discipline, or disciplines, variously termed digital literary studies, cultural analytics, or computational literary studies, which falls under a greater umbrella of digital humanities.[fn::For /digital literary studies/, see [cite/t:@siemens_companion_2013; and @hoover_digital_2014]. For /cultural analytics/, see [[https://culturalanalytics.org/][The Journal of Cultural Analytics]]. For /computational literary studies,/ see [[https://jcls.io/][The Journal of Computational Literary Studies]].]
+I prefer /computational/ to /digital/, since it's more action-oriented: information will be computed, rather than simply digitized.
+
+Franco Moretti famously calls his practice "distant reading" [cite:@moretti_distant_2013]; Ted Underwood also uses this term [cite:@underwood2019distant]; Matthew Jockers prefers "macroanalysis" [cite:@jockers_macroanalysis:_2013]; Andrew Piper, in /Enumerations/ studies quantitative aspects of literature through computational literary studies [cite:@piper2018enumerations].
 
 * Corpus
+
+I am limiting my analysis here to British literature of the 19th and 20th centuries.
+
+Computationally, there are several advantages to these limits. First, using works published in Britain, and which use British English rather than American, we can collapse several spelling discrepancies which might account for mismatched
+
+However, in practice, British literature is not so easy to define. The term as it is typically used includes the literatures of England, Wales, and Scotland, but often only those written in English, excluding Welsh, Scots, Scottish Gaelic, Cornish, and other languages of Great Britain.
+
+This study thus considers works of British literature, written in English. More specifically, it's those works which the Library of Congress labels "PR," for British Literature, although I'll be using the term /British literature/ to describe it.
+
+# Project Gutenberg
+The natural choice for a text source was [[https://www.gutenberg.org/][Project Gutenberg]], a repository of over 60,000 electronic texts, in operation since 1971 [cite:@hart1992]. The texts in Project Gutenberg were originally hand-keyed, i.e., manually entered into a computer, and proofread by a team known as [[https://www.pgdp.net/c/][Distributed Proofreaders]]. This allows the texts, in comparison to those generated via optical character recognition, or OCR, to be of relatively high quality, without textual errors that could confound statistical results.
+
+One drawback of Project Gutenberg, however, is that the metadata for its texts are not as complete as with other text repositories. Each text has metadata fields for title and author, a Project Gutenberg "bookshelf", a Library of Congress category, a Library of Congress subject heading, and the date of its publication on Project Gutenberg.
+# TODO what metadata are here?
+One missing field, which would be the most useful field for computational literary history, is the date of original publication. To find this, I had to devise a method for augmenting Project Gutenberg metadata with information from other public data repositories.
+
+To accomplish that, I created [[http://corpus-db.org/][Corpus-DB]], a database and API for electronic texts from Project Gutenberg and other repositories. Using the title and author of the texts, I was able to write SPARQL queries to query the graph databases DBPedia and Wikidata. Both dictionary-based knowledge graphs, these databases maintain statements in the form of triples, e.g., ~<Ulysses> <first published> <1922>~. A SPARQL query could thus ask the database to fill in the question marks for a query such as:
+
+#+begin_src sparql
+select ?year where
+<title> <written by> <author> .
+<title> <first published> ?year
+#+end_src
+# TODO define SPARQL
+
+I also gleaned some additional book data from APIs from Amazon, Goodreads, and Open Library.
+
+From this I was able to find several thousand
+
+# Corpus-DB
+
+
+
+Many of the major figures of the avant-garde lived and worked in London, but as expatriates from America. T. S. Eliot was born in Missouri, but moved to England at 25, where he lived for the rest of his life, eventually renouncing his American citizenship. Ezra Pound left America at 23, spending most of his life in England and on the contintent, and wouldn't return until facing trial for treason in the United States, and being committed to a mental institution.
+
 - British literature
   - What is British?
   - Includes Irish
