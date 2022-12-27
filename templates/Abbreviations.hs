@@ -13,4 +13,7 @@ abbreviations = fromList [
   , ("LCC", "Library of Congress Category")
   , ("TEI", "Text Encoding Initiative")
   , ("XML", "Extensible Markup Language")
+  , ("OCR", "Optical Character Recognition")
+  , ("API", "Application Programming Interface")
+  -- , ("SPARQL", )
   ]
