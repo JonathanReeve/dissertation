@@ -1,7 +1,6 @@
 * Dissertation
-This is my dissertation, a quantitative investigation of description in British literature, tentatively titled: "The Eye of Modernism: Visual Imaginations of British literature, 1880-1930."
 
-[[https://github.com/JonathanReeve/dissertation-prospectus/blob/master/reeve-prospectus.pdf][Read a more thorough description in my dissertation prospectus, here.]]
+This is my dissertation, a quantitative investigation of description in British literature, tentatively titled: "The Eye of Modernism: Visual Imaginations of British literature, 1880-1930."
 
 ** Word counts
 
@@ -10,11 +9,11 @@ wc -w 00-introduction/introduction.org 01-colors/ch-1.org 02-shapes/ch-2.org 03-
 #+END_SRC
 
 #+RESULTS:
-|  2681 | 00-introduction/introduction.org |
+|  4624 | 00-introduction/introduction.org |
 | 33149 | 01-colors/ch-1.org               |
 | 14295 | 02-shapes/ch-2.org               |
-| 18744 | 03-images/ch-3.org               |
-| 68869 | total                            |
+| 19218 | 03-images/ch-3.org               |
+| 71286 | total                            |
 
 ** Revisions
 
@@ -25,12 +24,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| 8137704 | 2022-12-13 | 21:33:18 | -500 |
-| bae6ae3 | 2022-12-12 | 14:42:18 | -500 |
-| cdb9c8c | 2022-12-11 | 16:02:09 | -500 |
-| 9c80a38 | 2022-12-11 | 15:47:45 | -500 |
-| 0f48bfe | 2022-12-10 | 17:50:34 | -500 |
-
+| 23c71e7  | 2022-12-29 | 01:21:38 | -500 |
+| 2771951  | 2022-12-28 | 23:21:28 | -500 |
+| 1.0e+INF | 2022-12-28 | 23:21:03 | -500 |
+| 833d6ef  | 2022-12-27 | 00:21:45 | -500 |
+| 78ea5b6  | 2022-12-25 | 17:08:36 | -500 |
 
 ** Building
 

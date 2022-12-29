@@ -1,7 +1,7 @@
 #+TITLE: Introduction
 #+AUTHOR: Jonathan Reeve
 
-The early 20th century saw a dramatic change in British literature. The end of the Victorian era, with the death of Queen Victoria in 1901, symbolized the beginning of a new era, and with it came a new aesthetics. This new aesthetics distinguishes itself from all those previous by means of its approach to visuality: not only did the writers of this generation /write/ differently, but they began to /see/ differently, as well. This dissertation investigates the changes in visuality that so strongly characterize this tumultuous time in literary history, and does so with qualitative and quantitive methods. Using techniques from computer science, statistics, and computational linguistics, I reveal the depth of the explosion of color and shape at the turn of the century, and present the circumstances, and the causal agents, of this phenomenon.
+The early 20th century saw a dramatic change in British literature. The end of the Victorian era, with the death of Queen Victoria in 1901, symbolized the beginning of a new era, and with it came a new aesthetics. This new aesthetics distinguishes itself from all those previous by means of its approach to visuality: not only did the writers of this generation /write/ differently, but they began to /see/ differently, as well. This dissertation investigates the changes in visuality that so strongly characterize this tumultuous time in literary history, using a blend of qualitative and quantitative methods. Using techniques from computer science, statistics, and computational linguistics, I reveal the depth of the explosion of color and shape at the turn of the century, and present the circumstances, and the causal agents, of this phenomenon.
 
 Consider, as a starting point, this passage from Jane Austen's /Pride and Prejudice/, from 1813:
 
@@ -67,17 +67,17 @@ The most vivid theory of image in literature is found in I.A. Richards, a litera
 Richards explains that the six distinct processes depicted vertically here correspond to events happening in succession, through which these lines cross, as "streams of impulses flowing through in the mind" (113):
 
 #+BEGIN_QUOTE
-  #+BEGIN_VERSE
-    I. The visual sensations of the printed words.
-    II. Images very closely associated with these sensations.
-    III. Images relatively free.
-    IV. References to, or 'thinkings of', various things.
-    V. Emotions.
-    VI. Affective-volitional attitudes. (106-7)
-  #+END_VERSE
+#+BEGIN_VERSE
+I. The visual sensations of the printed words.
+II. Images very closely associated with these sensations.
+III. Images relatively free.
+IV. References to, or 'thinkings of', various things.
+V. Emotions.
+VI. Affective-volitional attitudes. (106-7)
+#+END_VERSE
 #+END_QUOTE
 
-Richards's schematic gives a sense of the complexity of the cognitive and emotional processes involved with reading words that bear visual significance. Not everyone produces mental images, as the psychological works covered in Chapter 1 attest, but images that readers produce are amalgamations of memories, emotions, attitudes, and sensations. Crucially, they are optic. Consider the resemblance of Richards's diagram to an illustration of retinal nerves, shown in Figure 2.
+Richards's schematic gives a sense of the complexity of the cognitive and emotional processes involved with reading words that bear visual significance. Not everyone produces mental images, but images that readers produce are amalgamations of memories, emotions, attitudes, and sensations. Crucially, they are optic. Consider the resemblance of Richards's diagram to an illustration of retinal nerves, shown in Figure 2.
 
 #+CAPTION: Source: Rogers, /Perception/ [cite:@rogersPerceptionVeryShort2017]
 #+LABEL: fig:optic-nerve
@@ -93,7 +93,7 @@ Richards, along with the modernists and imagists he studied, understood the read
 
 Epistemologies of visual perception, then, are a subset of a larger discussion surrounding subjectivity in fiction of this period, and in particular, literary-historical shifts in the treatment of subjectivities. In /The Pound Era/, Hugh Kenner notes that despite Pound's official stance on Imagism, the movement is nonetheless "named for a component of the poem, not a state of the poet, and that its three principles establish technical, not psychic, criteria" [cite:@kennerPoundEra1971 179]. Literary images are subjective, created in the mind of the reader, according to instructions from the poet, yet those instructions must pretend to be at least partially objective, or they will not be effectively communicated. I hope to unravel here some of these contradictions, problematize some of these dichotomies, and extend the readings of these critics to include concrete visual properties of the images created and manipulated by the writers of this period.
 
-
+# Some more review of contemporary criticism here
 
 * Method
 The methods I employ in this study blend quantitative and qualitative criticism. While qualitative literary analysis is nothing new to literary studies, quantitative criticism is relatively rare, and goes under a variety of names. I largely employ methods from computational literary analysis, a field at the intersection of data science, computational linguistics, and the sub-discipline of computer science known as natural language processing. This is a practice of a discipline, or disciplines, variously termed digital literary studies, cultural analytics, or computational literary studies, and which falls under a greater umbrella of digital humanities.[fn::For /digital literary studies/, see [cite/t:@siemens_companion_2013; and @hoover_digital_2014]. For /cultural analytics/, see [[https://culturalanalytics.org/][The Journal of Cultural Analytics]]. For /computational literary studies,/ see [[https://jcls.io/][The Journal of Computational Literary Studies]].]
