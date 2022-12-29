@@ -15,5 +15,6 @@ abbreviations = fromList [
   , ("XML", "Extensible Markup Language")
   , ("OCR", "Optical Character Recognition")
   , ("API", "Application Programming Interface")
-  -- , ("SPARQL", )
+  , ("SPARQL", "SPARQL Protocol and RDF Query Language")
+  , ("RDF", "Resource Description Framework")
   ]
