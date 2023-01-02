@@ -17,4 +17,6 @@ abbreviations = fromList [
   , ("API", "Application Programming Interface")
   , ("SPARQL", "SPARQL Protocol and RDF Query Language")
   , ("RDF", "Resource Description Framework")
+  , ("ALTO", "Analyzed Layout and Text Object")
+  , ("CLI", "command line interface")
   ]
