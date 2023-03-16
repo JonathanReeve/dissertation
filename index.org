@@ -2,8 +2,6 @@
 #+SUBTITLE: Visualities of British Literature, 1880—1930
 #+AUTHOR: Jonathan Reeve
 
-**WARNING**: This is a preview of my dissertation, and represents its current state, which is very much a work-in-progress.
-
 * Abstract
 
 Abstract here.
