@@ -494,7 +494,7 @@ Sinclair is not content with a description which presents leaves as green, but i
 
 It may seem as if this argument—that color descriptions are visual anomalies—deflates upon scrutiny. After all, it's obvious that we don't need to say the obvious. But this theory will be born out materially as we begin to reverse-engineer textual imagination, which we will now see.
 
-* TODO Experimental Design: Modeling Imagination
+* Experimental Design: Modeling Imagination
   :PROPERTIES:
   :CUSTOM_ID: sec:experiment
   :END:

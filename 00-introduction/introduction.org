@@ -67,7 +67,7 @@ One of these early theories of image in literature, to choose an illustrative ex
 
 #+CAPTION: Richards's Optical Process of Reading
 #+LABEL: fig:richards
-[[file:images/richards.png]]
+[[file:./images/richards.png]]
 
 Richards explains that the six distinct processes depicted vertically here correspond to events happening in succession, through which these lines cross, as "streams of impulses flowing through in the mind" (113):
 
@@ -86,7 +86,7 @@ Although Richards's six-layer theory may read as old-fashioned to modern ears, p
 
 #+CAPTION: Source: Rogers, /Perception/ [cite:@rogersPerceptionVeryShort2017]
 #+LABEL: fig:optic-nerve
-[[file:images/optic-nerve.png]]
+[[file:/00-introduction/images/optic-nerve.png]]
 
 Richards, along with the modernists and imagists he studied, understood the reading process as a fundamentally visual one. The vision of the writer, then, is one which shapes a mental image into a textual one, to be later decoded by the reader. All of these processes are shaped and even controlled by the mechanisms of the eye.
 
