@@ -9,7 +9,7 @@ import Lucid.Base ( makeAttribute )
 import Clay as C
 import Data.Text.Lazy as T
 import Data.Text.Lazy.IO as TIO
-import Data.Text ( Text )
+import Data.Text ( Text, concat )
 
 -- | Wrap exported includes in HTML so we can display them on their own.
 includeHtml :: Data.Text.Text -> Html ()
@@ -37,7 +37,7 @@ prefatoryPageHtml = do
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/latex.css" ]
       link_ [ rel_ "stylesheet", href_ "/assets/tufte-css/tufte.css" ]
       -- Print styling argh
-      style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
+      mediaStyles
     body_ [ class_ "prefatory" ] $ do
       article_ $ do
         "\n $for(include-before)$ \n $include-before$ \n $endfor$ \n"
@@ -82,7 +82,7 @@ pageHtml = do
       -- Include Plotly early
       script_ [ src_ "/assets/plotly-2.16.1.min.js" ] T.empty
       -- Print styling argh
-      style_ [ L.type_ "text/css" ] ("@page { margin: 3cm; @bottom-center { content: counter(page); } }" :: Html ())
+      mediaStyles
     body_ $ do
       article_ $ do
         "\n $for(include-before)$ \n $include-before$ \n $endfor$ \n"
@@ -183,3 +183,12 @@ css = do
       marginTop (em 5)
       marginBottom (em 5)
     "p.purpose" ? marginTop (em 5)
+
+-- | Some page styles and media styles that aren't available in Clay
+mediaStyles :: Html ()
+mediaStyles = style_ [ L.type_ "text/css" ]
+  (L.toHtml $ T.concat ["@page { margin: 3cm; @bottom-center { content: counter(page); } }"
+                        -- Revert Tufte dark-mode stuff
+                        ,"@media (prefers-color-scheme: dark) { body { background-color: unset; color: unset; }}"
+                        ,"@media (prefers-color-scheme: dark) { a:link, .tufte-underline, .hover-tufte-underline:hover { text-shadow: unset; } }"
+                        ])
