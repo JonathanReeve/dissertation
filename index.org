@@ -8,11 +8,11 @@ British fiction and poetry explodes with textual visuality in the early twentiet
 
 * Table of Contents
 
-- [[./00-introduction/introduction.html][Introduction]]
-- [[./01-colors/ch-1.html][Chapter 1: Color]]
-- [[./02-shapes/ch-2.html][Chapter 2: Shapes, Bodies, Objects]]
-- [[./03-images/ch-3.html][Chapter 3: Image]]
-
+- [[./00-introduction/introduction-v01.html][Introduction]] 
+- [[./01-colors/ch-1-v01.html][Chapter 1: Color]] 
+- [[./02-shapes/ch-2-v01.html][Chapter 2: Shape]] 
+- [[./03-images/ch-3-v01.html][Chapter 3: Image]] 
+  
 * List of Charts, Graphs, Illustrations
 
 #+INCLUDE: "templates/figures.html" export html
