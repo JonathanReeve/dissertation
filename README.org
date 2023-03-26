@@ -1,19 +1,19 @@
 * Dissertation
 
-This is my dissertation, a quantitative investigation of description in British literature, tentatively titled: "The Eye of Modernism: Visual Imaginations of British literature, 1880-1930."
+This is my dissertation, a quantitative analysis of visuality in British literature, titled: "The Eye of Modernism: Visualities of British Literature, 1880—1930."
 
 ** Word counts
 
 #+BEGIN_SRC sh :exports results
-wc -w 00-introduction/introduction.org 01-colors/ch-1.org 02-shapes/ch-2.org 03-images/ch-3.org
+wc -w 00-introduction/introduction-v01.org 01-colors/ch-1-v01.org 02-shapes/ch-2-v01.org 03-images/ch-3-v01.org
 #+END_SRC
 
 #+RESULTS:
-|  4624 | 00-introduction/introduction.org |
-| 33149 | 01-colors/ch-1.org               |
-| 14295 | 02-shapes/ch-2.org               |
-| 19218 | 03-images/ch-3.org               |
-| 71286 | total                            |
+|  7151 | 00-introduction/introduction-v01.org |
+| 33143 | 01-colors/ch-1-v01.org               |
+| 14349 | 02-shapes/ch-2-v01.org               |
+| 18969 | 03-images/ch-3-v01.org               |
+| 73612 | total                                |
 
 ** Revisions
 
@@ -24,11 +24,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| 83d15a6  | 2022-12-29 | 01:33:04 | -500 |
-| 23c71e7  | 2022-12-29 | 01:21:38 | -500 |
-| 2771951  | 2022-12-28 | 23:21:28 | -500 |
-| 1.0e+INF | 2022-12-28 | 23:21:03 | -500 |
-| 833d6ef  | 2022-12-27 | 00:21:45 | -500 |
+| 9048eb1 | 2023-03-26 | 13:11:50 | -700 |
+| 2cecdbb | 2023-03-25 | 17:14:22 | -700 |
+| fbb143a | 2023-03-25 | 17:14:09 | -700 |
+| 9637786 | 2023-03-25 | 17:13:40 | -700 |
+| 5cf8de7 | 2023-03-16 | 00:16:18 | -700 |
 
 ** Building
 

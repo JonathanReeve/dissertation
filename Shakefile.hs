@@ -26,20 +26,20 @@ import Data.Maybe (fromMaybe)
 
 readFileText text = need [text] >> liftIO (TIO.readFile text)
 
--- | Convert "00-introduction/introduction.org" to "dest/00-introduction/introduction.html"
+-- | Convert "00-introduction/introduction-v01.org" to "dest/00-introduction/introduction-v01.html"
 sourceToDest :: FilePath -> FilePath
 sourceToDest fp = "dest/" </> fp <.> "html"
 
--- | Convert "00-introduction/introduction.org" to "dest/00-introduction/introduction.html"
+-- | Convert "00-introduction/introduction-v01.org" to "dest/00-introduction/introduction-v01.html"
 destToSource :: FilePath -> FilePath
 destToSource fp = dropDirectory1 $ fp -<.> "org"
 
 chapters :: [FilePath]
 chapters =
-  [ "dest/00-introduction/introduction.html",
-    "dest/01-colors/ch-1.html",
-    "dest/02-shapes/ch-2.html",
-    "dest/03-images/ch-3.html"
+  [ "dest/00-introduction/introduction-v01.html",
+    "dest/01-colors/ch-1-v01.html",
+    "dest/02-shapes/ch-2-v01.html",
+    "dest/03-images/ch-3-v01.html"
   ]
 
 main :: IO ()
@@ -110,7 +110,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
         writeFileChanged f $ T.unpack $ LT.toStrict $ Lucid.renderText wrapped
 
 
-    "dest/00-introduction/introduction.html" %> \f -> do
+    "dest/00-introduction/introduction-v01.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "00-introduction/images/*"
                                        , "assets//*"
                                        ]
@@ -136,7 +136,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
-    "dest/01-colors/ch-1.html" %> \f -> do
+    "dest/01-colors/ch-1-v01.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "01-colors/images/*"
                                        , "01-colors/includes/*"
                                        , "assets/*/*" -- Global assets
@@ -173,7 +173,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
-    "dest/02-shapes/ch-2.html" %> \f -> do
+    "dest/02-shapes/ch-2-v01.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "02-shapes/images/*"
                                        , "02-shapes/includes/*"
                                        , "assets/*/*"
@@ -209,7 +209,7 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "-o", f
                                        ]
 
-    "dest/03-images/ch-3.html" %> \f -> do
+    "dest/03-images/ch-3-v01.html" %> \f -> do
         assets <- getDirectoryFiles "" [ "03-images/images/*"
                                        , "assets/*/*"
                                        , "03-images/includes/*"

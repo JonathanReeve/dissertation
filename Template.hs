@@ -161,6 +161,7 @@ css = do
     marginLeft (em 1)
     textIndent (indent (em (-1)))
     fontSize (C.rem 1.4)
+    width (pct 55)
   details ? do
     fontSize (C.rem 1.5)
     margin (em 1) (em 0) (em 1) (em 0)
