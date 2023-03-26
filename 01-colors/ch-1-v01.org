@@ -415,11 +415,10 @@ Wittgenstein then asks whether a "reddish green" or other color combinations mig
 Saija Kerttula calls this the /derivational productivity/ of a color word, and lists a number of ways that a color term may be derived [cite:@kerttula2002english 89]. Adding /-ish/ is one, but there is also /-ied,/ as in /rubied/, /-y/ as in /bluey/, /-ate/ as in /roseate/, /off-/ as in /off-white/, and many others. For the sake of simplicity, however, let's stick with the most common, /-ish/, and attempt to test this question of Wittgenstein's, by examining patterns in literary data.
 To test this, I constructed a matrix of color expressions from the $CM_X$ color map,[fn::Described in more detail in [[#sec:xkcd][the $CM_X$ section below]].] where one word ends in /-ish./ The resulting matrix is shown here in [cite:@fig:ishMatrix].
 
-#+INCLUDE: "01-colors/includes/ishMatrix.html" export html
 
 #+CAPTION: $CM_X$ "-ish" Word Matrix
 #+LABEL: fig:ishMatrix
-[[./images/dummy.png]]
+[[./images/ish-matrix.png]]
 
 Not only are there no entries for /bluish yellow/ or /reddish green/ here, but a few other patterns are apparent. First, /yellowish green/ is not mapped to the same color as /greenish yellow/, indicating that the order of the adjectives dictates precedence. Second, those colors that take /-ish/ adjectives are common colors. However common a color like /maroon/ might be, /reddish maroon/ does not appear in this list, potentially because it's not considered a basic color with the ability to be mixed. However, some colors which are common in marketing, like /beige/ and /teal,/ but which are less common in paint names, are present here.
 
@@ -804,9 +803,11 @@ The resulting algorithm may be summarized as follows:
 
 /Wheat/ the model predicts reasonably well: the resulting color is a golden brown. /Butterfly/ is more uncertain, in part because there are a very large number of butterfly species, and so there is an incredible diversity of color patterns between them. /Tennis/ one might have expected to be more greenish, since most tennis courts are green. The averaged color here reflects the inclusion of the image where the court is red, and the image of the racket alone. /Deposit/ is curious: probably because it would be a rare word to use to tag a photo, the first four images are likely from the same photographer and shoot. The last is an image of bars of gold, however. This is interesting, since it is not a stack of paper money, but of an archetypal idea of money—the gold standard—which is no longer in widespread use. The inferred color for /pure/, interestingly, is anything but—it is a dirty grayish. Even though most of these images are water-related, one is of honey. This seems to show one of the pitfalls of computationally imagining an abstract concept. /Travelling/, on the other hand, is a very distinct blue, owing to the color of the beach scenes that have become emblematic of travel today. Coincidentally, however, blue seas would have been a common feature of international travel in the early twentieth century.
 
-A broader view of this model, shown below, gives one a sense of a few trends. First, almost all of these colors are very desaturated: they appear as if they began as pure pigments, and were mixed with a titanium white. This is owing to the way each of these is by nature an average of several colors: they are mixed. At a glance, the legal-sounding words /power/ and /possession/ appear darkest. The two words dealing with negative emotion, /rudeness/ and /objection/, appear redder than the others. And words that evoke comfort, /reliance/, /liberty/, and /amusement/, appear bluish. /Neighbour/ and /neighbourhood/, meanwhile, appear green, probably owing to stock images that involve green lawns.
+A broader view of this model, shown in [cite:@fig:colorBlocks], gives one a sense of a few trends. First, almost all of these colors are very desaturated: they appear as if they began as pure pigments, and were mixed with a titanium white. This is owing to the way each of these is by nature an average of several colors: they are mixed. At a glance, the legal-sounding words /power/ and /possession/ appear darkest. The two words dealing with negative emotion, /rudeness/ and /objection/, appear redder than the others. And words that evoke comfort, /reliance/, /liberty/, and /amusement/, appear bluish. /Neighbour/ and /neighbourhood/, meanwhile, appear green, probably owing to stock images that involve green lawns.
 
-#+INCLUDE: "01-colors/includes/colorBlocks.html" export html
+#+CAPTION: $M_I$ Sample Matrix
+#+LABEL: fig:colorBlocks
+[[./images/color-blocks.png]]
 
 When projected in HSL space, certain patterns emerge, as well, as shown in [cite:@fig:lighthouseHSL].
 
