@@ -209,7 +209,7 @@ With this explosion in the availability of pigments came a need to name all the 
 
 First, however, we must fully understand the problems presented by modeling visuality, by closely examining color language in two modernist exemplars: Virginia Wool'fs /To The Lighthouse/ and James Joyce's /A Portrait of the Artist as a Young Man/.
 
-* TODO Case Study: Colors in /To the Lighthouse/
+* Case Study: Colors in /To the Lighthouse/
 
 The works of Virginia Woolf make an exemplary case-study for a analysis of color words, not only because Woolf wrote so eloquently in her prose about the brightening colors of her generation, as I discuss above, or even that her works rank among the highest in terms of raw color proportions, as we will see in the results below in [cite:@tbl:authors], but because her fiction is remarkably painterly: at times impressionistic, at times cubistic, but always deeply visual. In Woolf's own term, as I will explain below, it is /all eye/.
 
