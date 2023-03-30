@@ -128,6 +128,8 @@ main = withUtf8 $ shakeArgs shakeOptions{shakeColor=True} $ do
                                        "--variable=autoSectionLabels:true",
                                        "--toc",
                                        "--metadata=tblPrefix:table",
+                                       "--metadata=linkReferences:true",
+                                       "--metadata=link-citations:true",
                                        "--filter=templates/PandocSidenote.hs",
                                        "--filter=pandoc-crossref",
                                        "--citeproc",
