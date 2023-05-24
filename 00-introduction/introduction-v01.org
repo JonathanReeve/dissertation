@@ -85,7 +85,7 @@ VI. Affective-volitional attitudes. (106-7)
 
 Although Richards's six-layer theory may read as old-fashioned to modern ears, perhaps more rooted in Richards's imagination than science, it gives a sense of the complexity of the cognitive and emotional processes involved with reading words that bear visual significance. Not everyone produces mental images, but images that readers produce are amalgamations of memories, emotions, attitudes, and sensations. Crucially, they are optic at their very root. Consider the resemblance of Richards's diagram to an illustration of retinal nerves, shown in Figure 2.
 
-#+CAPTION: Source: Rogers, /Perception/ [cite:@rogersPerceptionVeryShort2017]
+#+CAPTION: Cross-section of an optic nerve. [[https://commons.wikimedia.org/wiki/File:Visual_system_-_Retina_1_--_Smart-Servier.png][Credit: Laboratoires Servier. Creative Commons Attribution-Share Alike 3.0.]]
 #+LABEL: fig:optic-nerve
 [[file:/00-introduction/images/optic-nerve.png]]
 
