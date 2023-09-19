@@ -9,11 +9,11 @@ wc -w 00-introduction/introduction-v01.org 01-colors/ch-1-v01.org 02-shapes/ch-2
 #+END_SRC
 
 #+RESULTS:
-|  7151 | 00-introduction/introduction-v01.org |
-| 33143 | 01-colors/ch-1-v01.org               |
-| 14349 | 02-shapes/ch-2-v01.org               |
-| 18969 | 03-images/ch-3-v01.org               |
-| 73612 | total                                |
+|  7059 | 00-introduction/introduction-v01.org |
+| 33165 | 01-colors/ch-1-v01.org               |
+| 14821 | 02-shapes/ch-2-v01.org               |
+| 19301 | 03-images/ch-3-v01.org               |
+| 74346 | total                                |
 
 ** Revisions
 
@@ -24,11 +24,11 @@ git log --pretty --format='%h %ai' | head -n 5
 #+END_SRC
 
 #+RESULTS:
-| 9048eb1 | 2023-03-26 | 13:11:50 | -700 |
-| 2cecdbb | 2023-03-25 | 17:14:22 | -700 |
-| fbb143a | 2023-03-25 | 17:14:09 | -700 |
-| 9637786 | 2023-03-25 | 17:13:40 | -700 |
-| 5cf8de7 | 2023-03-16 | 00:16:18 | -700 |
+| 741f19d | 2023-08-24 | 19:14:53 | -700 |
+| 5aa7928 | 2023-05-23 | 23:21:51 | -700 |
+| f7ccc59 | 2023-05-23 | 22:52:43 | -700 |
+| 8d8e4bb | 2023-03-30 | 01:12:29 | -700 |
+| e1483f1 | 2023-03-30 | 00:28:40 | -700 |
 
 ** Building
 
