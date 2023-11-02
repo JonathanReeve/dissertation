@@ -172,7 +172,7 @@ In this first experiment, my goal is to find the objects of a literary text. Wha
 
 These are not strictly categories, however, since a given synset may have more than one of these as hypernyms: a horse may be both a natural objects ("not made by man"), and a living thing. Given that =assembly.n.05=, =congener.n.03=, =item.n.03=, and =sum.n.05= have relatively shallow hyponym trees, I will mostly be focusing on the proportions of words in literary texts with the hypernyms =artifact.n.01=, =living_thing.n.01=, and =natural_object.n.01=.
 
-** TODO Word Sense Disambiguation
+** Word Sense Disambiguation
 
 The problem of computationally analyzing a text's objects requires that it can correctly identify those objects. To do that, the computer program must first be able to discern between many different senses of a word. If we are to ascertain whether a given instance of /bank/ is a natural object (a river bank), we must first ensure that it is not a financial institution. In computational linguistics, this problem is known as word sense disambiguation, or WSD, and it has been one of the hardest problems for natural language processing over the past fifty years.
 
@@ -363,7 +363,6 @@ New clean bedlinen, additional odours, the presence of a human form, female, her
 #+end_quote
 
 The trinity of objects here—the bedlinen, crumbs, and potted meat—is the inverse of the previous trinity. Instead of decorative objects with no purpose, they are all objects with a definite purpose, and they are clues which show what has been happening there just before: sex and snacking. As we have seen in the discussion of Freud and Marx, in sexual and commodity fetishism, above, textual eros exhibits a convergence of object and body.
-
 
 *** Texts with the fewest objects
 
