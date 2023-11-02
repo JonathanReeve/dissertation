@@ -20,15 +20,15 @@ jobs:
         run: nix-shell --run "shake"
         env:
           NIXPKGS_ALLOW_BROKEN: 1
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "dest/"
       - name: Release
         uses: softprops/action-gh-release@v1
         # if: startsWith(github.ref, 'refs/tags/')
         with:
           files: "dest/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "dest/"
   deploy:
     # Add a dependency to the build job
     needs: build
